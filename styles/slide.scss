@@ -1,0 +1,17 @@
+.package-slide {
+  height: 80vh;
+  position: relative;
+  .swiper-container {
+    height: 80vh;
+  }
+  .swiper-container::before {
+    content: '';
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+    bottom: 0;
+    height: 30%;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    position: absolute;
+  }
+}

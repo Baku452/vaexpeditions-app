@@ -1,0 +1,5 @@
+.next/**
+public/**
+node_modules/**
+env.local
+jsconfig.json

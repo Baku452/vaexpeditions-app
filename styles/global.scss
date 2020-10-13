@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+$navbar-light-color: #000 !important;
+$btn-border-radius: 0;
+$input-border-radius: 0;
+$input-border-radius-lg: 0;
+$card-border-radius: 0;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1240px,
+) !default;
+
+.container {
+  //border: 1px solid;
+}
+@import '~bootstrap/scss/bootstrap';
+@import '~swiper/swiper.scss';
+@import 'base.scss';
+@import 'slide.scss';
+@import 'detail.scss';
+@import 'home.scss';
+
+@import 'banner.scss';
+@import 'accordion.scss';
+
+@import 'header.scss';
+@import 'nav.scss';
+@import 'footer.scss';
+@import 'form.scss';
+
+.border {
+  border: 1px solid red;
+}
+/* General */
+
+/* checkbox y radios */
+
+/* sidebar accordion */
+/* #sidebar-filter .card-header {
+  background-color: #ffffff;
+}
+#sidebar-filter .card-header button {
+  color: #000000;
+}
+#sidebar-filter .card-body {
+  background-color: #e5e5e5;
+  margin-bottom: 18px;
+}
+.accordion .card-header {
+  background-color: #000;
+}
+.accordion .card-header button {
+  font-size: 22px;
+  line-height: 23px;
+  color: #ffffff;
+  padding: 0;
+}
+.accordion .card-body .card {
+  border: 0;
+}
+.accordion .card-body .card-header {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+.accordion .card-body .card-header button {
+  border: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+} */
+/* combobox personalizado */
+/* .custom-select {
+  background: #c4c4c4;
+  border: 0;
+  border-radius: 0;
+  font-size: 18px;
+  height: 68px;
+  padding: 0;
+  position: relative;
+}
+.custom-select-spacing {
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+.custom-select select {
+  display: none;
+}
+.select-selected:after {
+  position: absolute;
+  content: '';
+  top: 34px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #000000 transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #000000 transparent;
+  top: 26px;
+}
+.select-items div,
+.select-selected {
+  color: #000000;
+  height: 68px;
+  line-height: 68px;
+  border-top: 1px solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+.select-items div {
+  border-top: 1px solid #000000;
+}
+.select-items {
+  position: absolute;
+  background-color: #c4c4c4;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.select-hide {
+  display: none;
+}
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+/* modales */
+/* header */
+
+/* .btn-contact {
+  width: 170px;
+  height: 68px;
+  line-height: 50px;
+} */
+/* cuerpo de paginas */
+/* .title {
+  font-weight: bold;
+  margin: 0;
+}
+ */
+/* .carousel-caption-flex {
+  display: flex !important;
+  top: 0;
+  right: 0;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  bottom: 0;
+} */
+
+/* #tours .card {
+  margin-bottom: 45px;
+}
+#tours .card-body {
+  min-height: 255px;
+}
+.rectangulo_gris {
+  width: 100%;
+  background-color: #c4c4c4;
+  max-height: 95px;
+  min-height: 142px;
+  margin-bottom: 25px;
+} */
+
+/* .rectangulo_gris {
+  width: 100%;
+  background-color: #c4c4c4;
+  max-height: 95px;
+  min-height: 142px;
+  margin-bottom: 25px;
+}
+.tour_item .card {
+  margin-bottom: 30px;
+}
+.tour_item .card-body {
+  min-height: 105px;
+  padding: 15px;
+}
+#vacation_type_style {
+  padding-bottom: 90px;
+}
+.circle-star {
+  color: #1c97db;
+  text-align: center;
+  font-size: 48px;
+  vertical-align: middle;
+}
+.day_item {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+#following .container {
+  background-color: #f7f5f5;
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+.pageTourDetails .content-details {
+  background-color: #f7f5f5;
+  padding: 15px 20px;
+}
+.pageTourDetails .details {
+  margin: 25px 0;
+}
+.pageTourDetails .details .circle {
+  width: 21px;
+  height: 21px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.pageTourDetails .details .circle.active {
+  background-color: #0097da;
+  border: 1px solid #0097da;
+}
+.pageTourDetails .card-details {
+  padding: 30px;
+}
+
+.package-types-slide {
+  width: 262px;
+}
+ */
+/* footer */
+
+/*.demo p{ display: none; }
+  .demo:hover .vacation_info p{ display: block;}*/
+/* media querie */
+/* @media (min-width: 1441px) {
+  .container {
+    max-width: 1440px;
+  }
+  .vacation_item:hover .vacation_info p {
+    display: block !important;
+  }
+}
+@media (max-width: 414px) {
+  #slider .carousel-caption {
+    padding: 30px 0;
+    position: relative;
+    background-color: #000000;
+  }
+  .fs-35 {
+    font-size: 24px;
+  }
+  #travelers .carousel-caption,
+  #recommendations .carousel-caption {
+    position: relative;
+  }
+  #travelers .traveler_item {
+    background-color: #000000;
+  }
+  #recommendations .recommendation_subscribe {
+    background-color: #000000;
+    padding: 30px 0;
+  }
+  #recommendations .recommendation_subscribe h4 {
+    font-size: 20px;
+  }
+  .pageDestinationDetail #slider .carousel-caption,
+  .pageVacationTypes #slider .carousel-caption,
+  .pageVacationTypesDetail #slider .carousel-caption,
+  .vacation_item:hover .vacation_info p {
+    display: none !important;
+  }
+  .pageOurPurpose #slider .carousel-caption .right-50i,
+  .pageTailorMadeTour #slider .carousel-caption .right-50i {
+    right: 0 !important;
+  }
+  .pageOurPurpose #mision_vision .p-r-50,
+  .pageOurPurpose #mision_vision .p-l-50 {
+    padding: 0;
+  }
+  footer {
+  }
+}
+ */

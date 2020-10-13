@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "module": "es6",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "paths": {
+      "@/components/*": ["shared/components/*"],
+      "@/layouts/*": ["shared/layouts/*"],
+      "@/core/*": ["core/*"],
+      "@/middlewares/*": ["core/middlewares/*"],
+      "@/services/*": ["core/services/*"],
+      "@/hooks/*": ["shared/hooks/*"],
+      "@/pages/*": ["pages/*"],
+      "@/styles/*": ["styles/*"],
+      "@/icons/*": ["public/icons/*"],
+      "@/context-api/*": ["shared/context-api/*"]
+    }
+  },
+  "exclude": ["build", "coverage", "dist", "lib", "app"]
+}

@@ -1,0 +1,37 @@
+footer {
+  background-color: #000;
+}
+footer .container {
+  padding: 80px 55px 40px 55px;
+}
+footer ul {
+  padding: 0;
+}
+footer ul li {
+  list-style: none;
+}
+footer ul li a {
+  color: #ffffff !important;
+  margin-bottom: 17px;
+  display: block;
+}
+.icon {
+  font-size: 45px !important;
+}
+
+
+footer .feedback {
+  background-color: #e5e5e5;
+  color: #000000 !important;
+  display: block;
+  height: 84px;
+  line-height: 84px;
+  font-size: 40px;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  text-align: center;
+  width: 293px;
+  position: absolute;
+  right: -145px;
+  top: 105px;
+}

@@ -1,0 +1,77 @@
+.header-lg .level-1 {
+  //border-bottom: 1px solid #c4c4c4;
+  padding-top: 26px;
+  padding-bottom: 25px;
+}
+
+.header-lg .menu1 {
+  height: 86px;
+}
+
+.header-lg nav ul li > a {
+  padding-left: 64px !important;
+}
+
+.level-1 .navbar-brand {
+  padding-left: 40px;
+  padding-top: 11px;
+}
+
+.level-1 .right {
+  padding-top: 13px !important;
+  padding-right: 46px !important;
+  padding-left: 0;
+}
+
+.package-types-slide {
+  width: 262px !important;
+}
+
+.logo {
+  font-size: 140px !important;
+  position: absolute;
+  top: -12px;
+}
+.button-search {
+  height: 55px !important;
+}
+
+.navbar {
+  z-index: 999;
+  background: #fff;
+  width: 100%;
+  min-height: 55px;
+}
+
+.logo-responsive {
+  font-size: 120px !important;
+  position: absolute;
+  top: -28px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  z-index: 99;
+}
+
+.toggle-burguer {
+  position: absolute;
+  right: 0px;
+  border: 0;
+  div {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .nav {
+    border: 0 !important;
+  }
+  .button-search {
+    margin-top: 4px !important;
+  }
+}
+
+
