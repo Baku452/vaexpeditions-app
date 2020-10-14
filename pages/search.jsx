@@ -390,9 +390,8 @@ function Search({ destinationList, packageTypeList }) {
                 </div>
                 <div className="col-12 col-md-9">
                   <div className="row">
-                    {packagesList.map(item => (
-                      <PackageItem key={item.id} {...item} />
-                    ))}
+                    {packagesList.length > 0 &&
+                      packagesList.map(item => <PackageItem key={item.id} {...item} />)}
                   </div>
                 </div>
               </div>

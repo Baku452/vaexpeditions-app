@@ -2,10 +2,6 @@ import Link from 'next/link';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-const trimString = (string, length) => {
-  return string.length > length ? `${string.substring(0, length)}...` : string;
-};
-
 function TopTours({ tours }) {
   return (
     <>
@@ -28,10 +24,10 @@ function TopTours({ tours }) {
           </div>
           <div className="row">
             <div className="col-12 mx-auto">
-              <div className="row">
+              <div className="row card-tops">
                 {tours.map(item => (
                   <Link key={item.id} href={`/package/${item.slug}`}>
-                    <div className="col-12 col-md-3 pb-4 mb-2">
+                    <div className="col-12 col-md-4 pb-4 mb-2">
                       <div className="card">
                         <img
                           src={PUBLIC_API + item.thumbnail}
@@ -46,9 +42,7 @@ function TopTours({ tours }) {
                           <h6 className="fs-18 m-0 pb-3">
                             {item?.days > 1 ? `${item?.days} days` : 'Half-Day'}
                           </h6>
-                          <p className="card-text fs-18 lh-25 p-b-30">
-                            {trimString(item.summary, 94)}
-                          </p>
+                          <p className="card-text fs-15 lh-25 p-b-30">{item.summary}</p>
                         </div>
                       </div>
                     </div>

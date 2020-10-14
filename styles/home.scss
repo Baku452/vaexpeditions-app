@@ -139,5 +139,22 @@
   .form-check {
     display: inline-block;
     width: 33.3%;
-      }
+  }
+}
+
+.card-tops {
+  .card {
+    border: none;
+    cursor: pointer;
+  }
+  .card-body {
+    border-left: 1px solid #c4c4c4;
+    border-right: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+  }
+  .card-title {
+    margin-bottom: 0.75rem;
+    height: 50px;
+    line-height: 24px;
+  }
 }

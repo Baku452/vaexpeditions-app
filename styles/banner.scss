@@ -10,7 +10,7 @@
     top: 0;
   }
   .swiper-container {
-    height: 80vh;
+    height: calc(100vh - 167px);
   }
   img {
     height: 100%;
@@ -36,7 +36,7 @@
 }
 
 .banner-secondary {
-  height: 400px;
+  height: calc(100vh - 167px);
 }
 
 .banner-align {

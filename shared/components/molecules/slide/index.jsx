@@ -27,7 +27,7 @@ function Slide({ images, navigation = true, pagination = true, title = false }) 
           ))}
       </Swiper>
       {title && (
-        <h2 className="title-slide fs-30 font-weight-bold text-white text-left">
+        <h2 className="title-slide fs-40 font-weight-bold text-white text-left">
           {title}
         </h2>
       )}
