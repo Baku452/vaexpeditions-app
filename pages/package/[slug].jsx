@@ -84,11 +84,11 @@ function Post({ pack }) {
           </div>
         </div>
       </div>
-      <div className="container package-detail pt-5">
+      <div className="container package-detail pt-5 pb-5">
         {pack?.itineraries.length > 1 && (
-          <div className="row">
+          <div className="row p-4">
             <div className="col-12">
-              <h2 className="fs-16 m-0 font-weight-bold">Day by Day Schedule</h2>
+              <h2 className="fs-16 m-0 font-weight-bold">DAY BY DAY SCHEDULE</h2>
             </div>
           </div>
         )}

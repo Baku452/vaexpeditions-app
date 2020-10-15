@@ -11,3 +11,4 @@ export * from './molecules/newsletter/index';
 export * from './molecules/contact-us/index';
 export * from './molecules/rating/index';
 export * from './molecules/itineraries/index';
+export * from './atoms/acoordion/index';

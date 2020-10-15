@@ -1,8 +1,10 @@
 /* eslint-disable react/no-danger */
 import { useState } from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 
-import { Slide } from '@/components/index';
+import { ContextAwareToggle, Slide } from '@/components/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -28,35 +30,53 @@ function Itineraries({ itineraries }) {
     setModalShow(true);
   }
 
+  function getColorContent(index) {
+    return (index + 1) % 2 === 0 ? 'content-gray' : 'content-white';
+  }
+
   return (
     <>
-      {itineraries.map(item => (
-        <div className="row pb-4 pt-4 mt-3 itinerary" key={item?.id}>
-          <div className="col-12 col-md-8">
-            <h2 className="fs-16 m-0 font-weight-bold pb-2">{item?.subtitle}</h2>
-            <div
-              className="fs-16 lh-29"
-              dangerouslySetInnerHTML={{ __html: item?.content }}
-            />
-          </div>
+      <Accordion defaultActiveKey={1} className="mb-5">
+        {itineraries.map((item, index) => (
+          <div key={item?.id}>
+            <Card.Header>
+              <ContextAwareToggle eventKey={index + 1} className={getColorContent(index)}>
+                <h2 className="fs-16 m-0 font-weight-bold p-0">{item?.subtitle}</h2>
+              </ContextAwareToggle>
+            </Card.Header>
 
-          {item.images.length > 0 && (
-            <div className="col-12 offset-md-1 col-md-3 pt-2 text-right">
-              <img
-                src={PUBLIC_API + item.images[0].image}
-                className="d-block w-100 fit"
-                alt={item.alt}
-              />
-              <a
-                href="/gallery"
-                onClick={event => openModal(event, item)}
-                className="btn btn-link fs-16 pt-3 d-block text-right">
-                View all photos
-              </a>
-            </div>
-          )}
-        </div>
-      ))}
+            <Accordion.Collapse eventKey={index + 1}>
+              <Card.Body className={getColorContent(index)}>
+                <div className="row pb-4 itinerary">
+                  <div className="col-12 col-md-8">
+                    <div
+                      className="fs-16 lh-29"
+                      dangerouslySetInnerHTML={{ __html: item?.content }}
+                    />
+                  </div>
+
+                  {item.images.length > 0 && (
+                    <div className="col-12 offset-md-1 col-md-3 pt-2 text-right">
+                      <img
+                        src={PUBLIC_API + item.images[0].image}
+                        className="d-block w-100 fit"
+                        alt={item.alt}
+                      />
+                      <a
+                        href="/gallery"
+                        onClick={event => openModal(event, item)}
+                        className="btn btn-link fs-16 pt-3 d-block text-right">
+                        View all photos
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </Card.Body>
+            </Accordion.Collapse>
+          </div>
+        ))}
+      </Accordion>
+
       <Gallery images={images} show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
