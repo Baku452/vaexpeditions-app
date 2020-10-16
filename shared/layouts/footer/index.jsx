@@ -30,32 +30,32 @@ function Footer() {
             <h5 className="fs-15 font-weight-bold text-white pb-4">Follow us</h5>
             <a href="#" className="d-inline-block pb-2">
               {/*  <img width="50" src="static/img/ico-facebook.png" alt="" /> */}
-              <Icon component={Facebook} viewBox="0 0 54 53" className="icon" />
+              <Icon component={Facebook} viewBox="0 0 54 53" className="icon-size-l" />
             </a>
             <a href="#" className="d-inline-block  pb-2">
-              <Icon component={Instagram} viewBox="0 0 59 58" className="icon" />
+              <Icon component={Instagram} viewBox="0 0 59 58" className="icon-size-l" />
             </a>
             <a href="#" className="d-inline-block pb-2">
-              <Icon component={Vimeo} viewBox="0 0 54 53" className="icon" />
+              <Icon component={Vimeo} viewBox="0 0 54 53" className="icon-size-l" />
             </a>
             <a href="#" className="d-inline-block pb-2">
-              <Icon component={Pinterest} viewBox="0 0 55 55" className="icon" />
+              <Icon component={Pinterest} viewBox="0 0 55 55" className="icon-size-l" />
             </a>
             <a href="#" className="d-inline-block pb-2">
-              <Icon component={Linkedin} viewBox="0 0 57 56" className="icon" />
+              <Icon component={Linkedin} viewBox="0 0 57 56" className="icon-size-l" />
             </a>
             <br />
             <a href="#" className="d-inline-block pb-2">
-              <Icon component={Advisor} viewBox="0 0 54 53" className="icon" />
+              <Icon component={Advisor} viewBox="0 0 54 53" className="icon-size-l" />
             </a>
             <a href="#" className="d-inline-block pb-2">
-              <Icon component={Skype} viewBox="0 0 59 58" className="icon" />
+              <Icon component={Skype} viewBox="0 0 59 58" className="icon-size-l" />
             </a>
             <a href="#" className="d-inline-block pb-2">
-              <Icon component={Youtube} viewBox="0 0 59 59" className="icon" />
+              <Icon component={Youtube} viewBox="0 0 59 59" className="icon-size-l" />
             </a>
             <a href="#" className="d-inline-block pb-2">
-              <Icon component={Twitter} viewBox="0 0 59 58" className="icon" />
+              <Icon component={Twitter} viewBox="0 0 59 58" className="icon-size-l" />
             </a>
           </div>
           <div className="col-12 col-md-5 p-0">

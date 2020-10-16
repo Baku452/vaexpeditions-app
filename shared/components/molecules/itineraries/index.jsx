@@ -4,7 +4,9 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 
-import { ContextAwareToggle, Slide } from '@/components/index';
+import { ContextAwareToggle, Icon, Slide } from '@/components/index';
+import Bed from '@/icons/bed.svg';
+import Restaurant from '@/icons/restaurant.svg';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -53,6 +55,22 @@ function Itineraries({ itineraries }) {
                       className="fs-16 lh-29"
                       dangerouslySetInnerHTML={{ __html: item?.content }}
                     />
+
+                    <ul className="itinerary-items pt-2 pb-2 pl-0">
+                      {item.items.map(element => (
+                        <li key={element.id} className="pb-3">
+                          <Icon
+                            component={
+                              element.types === 'Meals Included' ? Restaurant : Bed
+                            }
+                            viewBox="0 0 512 512"
+                            className="icon-size-m mr-2"
+                          />
+                          <span className="font-weight-bold">{element.types}: </span>
+                          {element.text}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
                   {item.images.length > 0 && (

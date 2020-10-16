@@ -4,7 +4,9 @@ import Form from 'react-bootstrap/Form';
 
 import { Base } from '@/layouts/index';
 
-function Newsletter() {
+const PUBLIC_API = process.env.NEXT_PUBLIC_API;
+
+function Newsletter({ packageTypeList }) {
   const router = useRouter();
 
   const [validated, setValidated] = useState(false);
@@ -86,21 +88,32 @@ function Newsletter() {
                           </div>
                         </div>
                       </div>
-                      {/* <div className="row form-group">
+                      <div className="row form-group">
                         <p className="col-12 fs-18 lh-29 pt-5 pb-4">
                           Please tell us some of your interests
                         </p>
                         <div className="col-12 col-md-4 m-b-25 text-left">
-                          <Form.Check
+                          {packageTypeList.map(item => (
+                            <Form.Check
+                              key={item.id}
+                              // checked={setActionChecked(item.id, checkedTypes)}
+                              type="checkbox"
+                              // onChange={event => actionFiltersTypes(event, item.id)}
+                              name={`type${item.id}`}
+                              id={`type${item.id}`}
+                              label={item.title}
+                            />
+                          ))}
+                          {/*  <Form.Check
                             required
                             name="terms"
                             label="Please send me your newsletter"
                             // onChange={handleChange}
                             // isInvalid={!!errors.terms}
                             // feedback={errors.terms}
-                          />
+                          /> */}
                         </div>
-                      </div> */}
+                      </div>
                       <div className="row form-group pt-5">
                         <div className="col-12 col-md-5 mx-auto">
                           <input
@@ -120,6 +133,13 @@ function Newsletter() {
       </section>
     </Base>
   );
+}
+
+export async function getStaticProps() {
+  const packageTypes = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packageTypeList = await packageTypes.json();
+
+  return { props: { packageTypeList } };
 }
 
 export default Newsletter;

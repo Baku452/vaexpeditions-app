@@ -92,6 +92,9 @@ button:focus {
 .fs-40 {
   font-size: 40px;
 }
+.fs-45 {
+  font-size: 45px;
+}
 .fs-48 {
   font-size: 48px;
 }
@@ -211,4 +214,12 @@ select {
   background-color: #ccc;
   height: 70px;
   margin-bottom: 10px;
+}
+
+.icon-size-l {
+  font-size: 45px !important;
+}
+
+.icon-size-m {
+  font-size: 30px !important;
 }

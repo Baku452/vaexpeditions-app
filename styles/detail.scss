@@ -19,10 +19,6 @@
   }
 }
 
-.itinerary {
-  //border-bottom: 1px solid #000;
-}
-
 .image-circle {
   width: 120px;
   border-radius: 50%;
@@ -34,4 +30,8 @@
 
 .package-item .card-title {
   min-height: 46px;
+}
+
+.itinerary-items {
+  list-style: none;
 }

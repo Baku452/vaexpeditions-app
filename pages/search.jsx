@@ -5,7 +5,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 
-import { Icon, PackageItem } from '@/components/index';
+import { ContextAwareToggle, Icon, PackageItem } from '@/components/index';
 import { activities, days, packages, years } from '@/core/index';
 import Close from '@/icons/close.svg';
 import { Base } from '@/layouts/index';
@@ -228,22 +228,25 @@ function Search({ destinationList, packageTypeList }) {
                     </a>
                   </div>
                   <Accordion defaultActiveKey="A0">
-                    <Accordion.Toggle
-                      as={Card.Header}
-                      className="card-parent"
-                      eventKey="A0">
-                      Destinations
-                    </Accordion.Toggle>
+                    <Card.Header className="card-header-filters">
+                      <ContextAwareToggle eventKey="A0" className="content-gray">
+                        <h2 className="fs-16 m-0 font-weight-bold p-0">Destinations</h2>
+                      </ContextAwareToggle>
+                    </Card.Header>
                     <Accordion.Collapse eventKey="A0">
                       <Card.Body>
                         {destinationList.map(country => (
                           <Accordion defaultActiveKey={country.id} key={country.id}>
-                            <Accordion.Toggle
-                              as={Card.Header}
-                              className="card-child"
-                              eventKey={country.id}>
-                              {country.name}
-                            </Accordion.Toggle>
+                            <Card.Header className="card-header-filters">
+                              <ContextAwareToggle
+                                eventKey={country.id}
+                                className="content-gray">
+                                <h2 className="fs-16 m-0 font-weight-bold p-0">
+                                  {country.name}
+                                </h2>
+                              </ContextAwareToggle>
+                            </Card.Header>
+
                             <Accordion.Collapse eventKey={country.id}>
                               <Card.Body>
                                 {country.destinations.map(destination => (
@@ -259,7 +262,7 @@ function Search({ destinationList, packageTypeList }) {
                                     }
                                     name={destination.slug}
                                     id={destination.id}
-                                    label={`${destination.title} ${destination.id}`}
+                                    label={`${destination.title}`}
                                   />
                                 ))}
                               </Card.Body>
@@ -271,12 +274,13 @@ function Search({ destinationList, packageTypeList }) {
                   </Accordion>
 
                   <Accordion defaultActiveKey="A1">
-                    <Accordion.Toggle
-                      as={Card.Header}
-                      className="card-parent"
-                      eventKey="A1">
-                      Duration (Days)
-                    </Accordion.Toggle>
+                    <Card.Header className="card-header-filters">
+                      <ContextAwareToggle eventKey="A1" className="content-gray">
+                        <h2 className="fs-16 m-0 font-weight-bold p-0">
+                          Duration (Days)
+                        </h2>
+                      </ContextAwareToggle>
+                    </Card.Header>
                     <Accordion.Collapse eventKey="A1">
                       <Card.Body>
                         {days.map(item => (
@@ -295,12 +299,11 @@ function Search({ destinationList, packageTypeList }) {
                   </Accordion>
 
                   <Accordion defaultActiveKey="A2">
-                    <Accordion.Toggle
-                      as={Card.Header}
-                      className="card-parent"
-                      eventKey="A2">
-                      Type of Travel
-                    </Accordion.Toggle>
+                    <Card.Header className="card-header-filters">
+                      <ContextAwareToggle eventKey="A2" className="content-gray">
+                        <h2 className="fs-16 m-0 font-weight-bold p-0">Type of Travel</h2>
+                      </ContextAwareToggle>
+                    </Card.Header>
                     <Accordion.Collapse eventKey="A2">
                       <Card.Body>
                         {packageTypeList.map(item => (
@@ -319,12 +322,11 @@ function Search({ destinationList, packageTypeList }) {
                   </Accordion>
 
                   <Accordion defaultActiveKey="A3">
-                    <Accordion.Toggle
-                      as={Card.Header}
-                      className="card-parent"
-                      eventKey="A3">
-                      Activity Level
-                    </Accordion.Toggle>
+                    <Card.Header className="card-header-filters">
+                      <ContextAwareToggle eventKey="A3" className="content-gray">
+                        <h2 className="fs-16 m-0 font-weight-bold p-0">Activity Level</h2>
+                      </ContextAwareToggle>
+                    </Card.Header>
                     <Accordion.Collapse eventKey="A3">
                       <Card.Body>
                         {activities.map(item => (
@@ -343,12 +345,13 @@ function Search({ destinationList, packageTypeList }) {
                   </Accordion>
 
                   <Accordion defaultActiveKey="A4">
-                    <Accordion.Toggle
-                      as={Card.Header}
-                      className="card-parent"
-                      eventKey="A4">
-                      Month of Travel
-                    </Accordion.Toggle>
+                    <Card.Header className="card-header-filters">
+                      <ContextAwareToggle eventKey="A4" className="content-gray">
+                        <h2 className="fs-16 m-0 font-weight-bold p-0">
+                          Month of Travel
+                        </h2>
+                      </ContextAwareToggle>
+                    </Card.Header>
                     <Accordion.Collapse eventKey="A4">
                       <Card.Body>
                         {years.map((year, yearIndex) => (
