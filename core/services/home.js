@@ -20,14 +20,4 @@ function getBanners() {
     });
 }
 
-/* function create(data) {
-  return services({ url: 'chapter/create', method: 'POST', data })
-    .then(result => {
-      return { result };
-    })
-    .catch(error => {
-      return { error: error.response };
-    });
-} */
-
 export { destinations, getBanners };

@@ -30,4 +30,14 @@ function saveContactUs({ data }) {
     });
 }
 
-export { getPackageDetail, getItinerariesByPackage, saveContactUs };
+function saveNewsletter({ data }) {
+  return services({ url: `/newsletter/`, method: 'POST', data })
+    .then(result => {
+      return { result };
+    })
+    .catch(error => {
+      return { error: error.response };
+    });
+}
+
+export { getPackageDetail, getItinerariesByPackage, saveContactUs, saveNewsletter };

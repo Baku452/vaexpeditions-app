@@ -87,7 +87,7 @@ function ContactUsForm({ destinations, title = true }) {
                             </Form.Control.Feedback>
                           </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12">
                           <div className="form-group">
                             <Form.Control
                               type="email"
@@ -120,7 +120,7 @@ function ContactUsForm({ destinations, title = true }) {
                             </Form.Control.Feedback>
                           </div>
                         </div>
-                        <div className="col-12">
+                        <div className="col-12 col-md-6">
                           <div className="form-group">
                             <Form.Control
                               as="select"
@@ -132,7 +132,7 @@ function ContactUsForm({ destinations, title = true }) {
                                 <option key={item.title} value={item.title}>
                                   {item.title}
                                 </option>
-                              ))}{' '}
+                              ))}
                             </Form.Control>
                             <Form.Control.Feedback type="invalid">
                               Please provide a valid Destination of interest.

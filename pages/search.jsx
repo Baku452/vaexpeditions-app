@@ -227,6 +227,7 @@ function Search({ destinationList, packageTypeList }) {
                       <Icon component={Close} viewBox="0 0 16 16" className="icon" />
                     </a>
                   </div>
+
                   <Accordion defaultActiveKey="A0">
                     <Card.Header className="card-header-filters">
                       <ContextAwareToggle eventKey="A0" className="content-gray">
