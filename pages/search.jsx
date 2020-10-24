@@ -12,15 +12,17 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({ destinationList, packageTypeList }) {
+function Search({ destinations, packagetypes, interests }) {
   const router = useRouter();
   const [packagesList, setPackagesList] = useState([]);
-  // const [destinationList, setDestinationList] = useState([]);
-  // const [packageTypeList, setPackageTypeList] = useState([]);
+  // const [destinations, setdestinations] = useState([]);
+  // const [packagetypes, setpackagetypes] = useState([]);
   const [checkedDestination, setCheckedDestination] = useState([]);
   const [checkedDays, setCheckedDays] = useState([]);
   const [checkedActvity, setCheckedActvity] = useState([]);
   const [checkedTypes, setCheckedTypes] = useState([]);
+  const [checkedInterest, setCheckedInterest] = useState([]);
+
   const [checkedMonths, setCheckedMonths] = useState([]);
   const [checkedYearMonth, setCheckedYearMonth] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
@@ -62,6 +64,18 @@ function Search({ destinationList, packageTypeList }) {
     router.push({
       pathname: '/search',
       query: { ...router.query, types: checkedTypes.join() },
+    });
+  }
+
+  function actionFiltersInterest(value, id) {
+    const index = checkedInterest.findIndex(item => item === String(id));
+
+    if (index === -1) checkedInterest.push(id);
+    else checkedInterest.splice(index, 1);
+
+    router.push({
+      pathname: '/search',
+      query: { ...router.query, interests: checkedInterest.join() },
     });
   }
 
@@ -134,7 +148,7 @@ function Search({ destinationList, packageTypeList }) {
       setCheckedDestination(destinationsActive);
 
       destinationsActive.forEach(active => {
-        destinationList.forEach(destination => {
+        destinations.forEach(destination => {
           const destinationActiveItem = destination.destinations.find(
             item => String(item.id) === active,
           );
@@ -162,6 +176,10 @@ function Search({ destinationList, packageTypeList }) {
       setCheckedTypes(router?.query?.types.split(','));
     }
 
+    if (router?.query?.interests) {
+      setCheckedInterest(router?.query?.interests.split(','));
+    }
+
     if (router?.query?.months) {
       const statusMonths = router?.query?.months?.split(',') || [];
       const statusYearMonth = router?.query?.ym?.split(',') || [];
@@ -179,7 +197,7 @@ function Search({ destinationList, packageTypeList }) {
   }, [router]);
 
   return (
-    <Base>
+    <Base destinations={destinations} packagetypes={packagetypes}>
       <div className="filters-header">
         <button
           type="button"
@@ -236,7 +254,7 @@ function Search({ destinationList, packageTypeList }) {
                     </Card.Header>
                     <Accordion.Collapse eventKey="A0">
                       <Card.Body>
-                        {destinationList.map(country => (
+                        {destinations.map(country => (
                           <Accordion defaultActiveKey={country.id} key={country.id}>
                             <Card.Header className="card-header-filters">
                               <ContextAwareToggle
@@ -307,7 +325,7 @@ function Search({ destinationList, packageTypeList }) {
                     </Card.Header>
                     <Accordion.Collapse eventKey="A2">
                       <Card.Body>
-                        {packageTypeList.map(item => (
+                        {packagetypes.map(item => (
                           <Form.Check
                             key={item.id}
                             checked={setActionChecked(item.id, checkedTypes)}
@@ -325,10 +343,33 @@ function Search({ destinationList, packageTypeList }) {
                   <Accordion defaultActiveKey="A3">
                     <Card.Header className="card-header-filters">
                       <ContextAwareToggle eventKey="A3" className="content-gray">
-                        <h2 className="fs-16 m-0 font-weight-bold p-0">Activity Level</h2>
+                        <h2 className="fs-16 m-0 font-weight-bold p-0">Interests</h2>
                       </ContextAwareToggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="A3">
+                      <Card.Body>
+                        {interests.map(item => (
+                          <Form.Check
+                            key={item.id}
+                            checked={setActionChecked(item.id, checkedInterest)}
+                            type="checkbox"
+                            onChange={event => actionFiltersInterest(event, item.id)}
+                            name={`interest${item.id}`}
+                            id={`interest${item.id}`}
+                            label={item.title}
+                          />
+                        ))}
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Accordion>
+
+                  <Accordion defaultActiveKey="A4">
+                    <Card.Header className="card-header-filters">
+                      <ContextAwareToggle eventKey="A4" className="content-gray">
+                        <h2 className="fs-16 m-0 font-weight-bold p-0">Activity Level</h2>
+                      </ContextAwareToggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="A4">
                       <Card.Body>
                         {activities.map(item => (
                           <Form.Check
@@ -345,15 +386,15 @@ function Search({ destinationList, packageTypeList }) {
                     </Accordion.Collapse>
                   </Accordion>
 
-                  <Accordion defaultActiveKey="A4">
+                  <Accordion defaultActiveKey="A5">
                     <Card.Header className="card-header-filters">
-                      <ContextAwareToggle eventKey="A4" className="content-gray">
+                      <ContextAwareToggle eventKey="A5" className="content-gray">
                         <h2 className="fs-16 m-0 font-weight-bold p-0">
                           Month of Travel
                         </h2>
                       </ContextAwareToggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="A4">
+                    <Accordion.Collapse eventKey="A5">
                       <Card.Body>
                         {years.map((year, yearIndex) => (
                           <Accordion defaultActiveKey={year.id} key={year.id}>
@@ -408,13 +449,22 @@ function Search({ destinationList, packageTypeList }) {
 }
 
 export async function getStaticProps() {
-  const destinations = await fetch(`${PUBLIC_API}/destinations/`);
-  const destinationList = await destinations.json();
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinations = await destinationsResponse.json();
 
-  const packageTypes = await fetch(`${PUBLIC_API}/packagestype/`);
-  const packageTypeList = await packageTypes.json();
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypes = await packagetypesResponse.json();
 
-  return { props: { destinationList, packageTypeList } };
+  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interests = await interestResponse.json();
+
+  return {
+    props: {
+      destinations,
+      packagetypes,
+      interests,
+    },
+  };
 }
 
 export default Search;

@@ -1,8 +1,14 @@
 .package-slide {
-  height: calc(100vh - 167px);
+  height: calc(100vh - 165px);
+  @include media-breakpoint-down(md) {
+    height: calc(80vh - 165px);
+  }
   position: relative;
   .swiper-container {
     height: calc(100vh - 167px);
+    @include media-breakpoint-down(md) {
+      height: calc(80vh - 165px);
+    }
   }
   .swiper-container::before {
     content: '';

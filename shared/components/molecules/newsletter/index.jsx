@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 import { Icon } from '@/components/index';
-import Logo from '@/icons/logo2.svg';
+import Logo from '@/icons/valencia.svg';
 
 function Newsletter() {
   const router = useRouter();
@@ -37,9 +37,9 @@ function Newsletter() {
 
   return (
     <>
-      <div className="header-lg container d-none d-md-block">
+      <div className="header-lg container d-none d-lg-block">
         <div className="row flex-nowrap justify-content-between align-items-start level-1">
-          <div className="col-auto p-0">
+          <div className="col-2 p-0">
             <Link href="/">
               <a className="position relatice">
                 <Icon component={Logo} viewBox="0 0 600 600" className="logo" />
@@ -60,16 +60,16 @@ function Newsletter() {
                 placeholder="Email"
                 required
               />
-              <button className="btn bc-3583E0 text-white fs-15 h-36" type="submit">
-                Subscribe
+              <button className="btn bc-3583E0 text-white fs-13 h-38" type="submit">
+                SUBSCRIBE
               </button>
             </Form>
           </div>
 
-          <div className="col-auto pt-2">
-            <div className="row flex-nowrap align-items-start right">
+          <div className="col-auto pt-3">
+            <div className="row flex-nowrap align-items-start">
               <div className="col-auto p-0">
-                <div className="fw-bold text-right fs-13 p-r-28i">
+                <div className="fw-bold text-right fs-13">
                   Toll Free: 1-(888)803-8004 <br />
                   {/*                 <img src="static/img/ico_usa.png" alt="" /> <br />
                    */}{' '}
@@ -80,7 +80,9 @@ function Newsletter() {
               </div>
               <div className="col-auto">
                 <Link href="/contact-us">
-                  <a className="btn btn-contact btn-outline-dark fs-15">Contact Us</a>
+                  <button type="button" className="btn bc-3583E0 text-white fs-13 h-38">
+                    CONTACT US
+                  </button>
                 </Link>
               </div>
             </div>
@@ -88,7 +90,7 @@ function Newsletter() {
         </div>
       </div>
 
-      <Navbar collapseOnSelect expand="lg" className="navbar d-md-none d-block">
+      <Navbar collapseOnSelect expand="lg" className="navbar d-lg-none d-block">
         <Link href="/">
           <Navbar.Brand className="position-relative">
             <Icon component={Logo} viewBox="0 0 600 600" className="logo-responsive" />

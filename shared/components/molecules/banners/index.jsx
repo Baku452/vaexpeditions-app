@@ -1,17 +1,15 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
 import { Slide } from '@/components/index';
-import { years } from '@/core/index';
 
-function Banners({ destinations, banners, packagetypes }) {
+function Banners({ destinations, banners, packagetypes, interests }) {
   const router = useRouter();
   const [destination, setdDestination] = useState('');
   const [types, setTypes] = useState('');
-  const [months, setMonths] = useState('');
-  const [dates, setDates] = useState([]);
+  const [interestsList, setInterestsList] = useState(interests);
+  const [interestsType, setInterestsType] = useState('');
 
   function handleChangeDestination(event) {
     setdDestination(event.target.value);
@@ -19,45 +17,42 @@ function Banners({ destinations, banners, packagetypes }) {
 
   function handleChangePackage(event) {
     setTypes(event.target.value);
+
+    const newList = [];
+
+    interests.forEach(interest => {
+      interest.package_types.forEach(type => {
+        if (Number(type) === Number(event.target.value)) newList.push(interest);
+      });
+    });
+
+    setInterestsList(newList);
   }
 
-  function handleChangeMonth(event) {
-    setMonths(event.target.value);
+  function handleChangeInterest(event) {
+    setInterestsType(event.target.value);
   }
 
   function handleSearch() {
-    const myDate = dates.find(item => item.values === months);
     router.push({
       pathname: '/search',
       query: {
         ...router.query,
         destination,
         types,
-        months: myDate?.name || '',
-        ym: myDate?.values || '',
+        interests: interestsType,
       },
     });
   }
-
-  useEffect(() => {
-    const myDates = [];
-    years.forEach((year, index) => {
-      year.months.forEach((month, indexMonth) => {
-        month.values = `${index}-${indexMonth}`;
-        if (!month.disabled) myDates.push(month);
-      });
-    });
-    setDates(myDates);
-  }, []);
 
   return (
     <section className="banner position-relative">
       <div className="form-destinations position-absolute">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-12 col-md-8 text-center">
+            <div className="col-12 col-lg-8 text-center">
               <div className="row m-t-30 m-b-30 m-0">
-                <div className="col-11 col-md-4 mx-auto m-b-25 p-0">
+                <div className="col-11 col-lg-4 mx-auto m-b-25 p-0">
                   <Form.Control
                     as="select"
                     size="lg"
@@ -71,7 +66,7 @@ function Banners({ destinations, banners, packagetypes }) {
                       ))}
                   </Form.Control>
                 </div>
-                <div className="col-11 col-md-4 mx-auto m-b-25 p-0">
+                <div className="col-11 col-lg-4 mx-auto m-b-25 p-0">
                   <Form.Control
                     as="select"
                     size="lg"
@@ -85,30 +80,30 @@ function Banners({ destinations, banners, packagetypes }) {
                       ))}
                   </Form.Control>
                 </div>
-                <div className="col-11 col-md-4 mx-auto m-b-25 p-0">
+                <div className="col-11 col-lg-4 mx-auto m-b-25 p-0">
                   <Form.Control
                     as="select"
                     size="lg"
-                    onChange={event => handleChangeMonth(event)}>
-                    <option>Month of Travel</option>
-                    {dates.length > 0 &&
-                      dates.map(item => (
-                        <option value={item.values} key={item.name}>
-                          {item.name}
+                    onChange={event => handleChangeInterest(event)}>
+                    <option>Interests</option>
+                    {interestsList.length > 0 &&
+                      interestsList.map(item => (
+                        <option value={item.id} key={item.id}>
+                          {item.title}
                         </option>
                       ))}
                   </Form.Control>
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-auto text-center">
+            <div className="col-12 col-lg-2 text-center p-lg-0">
               <div className="row m-0">
-                <div className="col-11 mx-auto p-0">
+                <div className="col-11 col-lg-12 mx-auto p-0">
                   <button
                     onClick={handleSearch}
                     type="button"
-                    className="btn bc-266DD8 fs-18 w-100 mw-170 text-white">
-                    Search
+                    className="btn bc-266DD8 fs-15 w-100 text-white mt-1 mt-lg-0">
+                    SEARCH TRIPS
                   </button>
                 </div>
               </div>

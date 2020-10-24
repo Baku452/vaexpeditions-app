@@ -96,9 +96,18 @@
 .filters-header {
   display: none;
 }
+
 .header-fill {
   display: none;
 }
+
+.filters-overlay {
+  background-color: #f2f2f2;
+  .form-check-label {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 575.98px) {
   .filters-overlay {
     position: fixed;

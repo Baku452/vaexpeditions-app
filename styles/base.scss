@@ -26,6 +26,9 @@ button:focus {
   outline: none !important;
 }
 
+input {
+  background: #fff !important;
+}
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
   background-image: none;
@@ -40,10 +43,10 @@ button:focus {
   right: 50px !important;
 }
 .bc-3583E0 {
-  background-color: #3583e0;
+  background-color: #0095ce;
 }
 .bc-266DD8 {
-  background-color: #266dd8;
+  background-color: #0095ce;
 }
 .bc-F7F5F5 {
   background-color: #f7f5f5;
@@ -131,6 +134,9 @@ button:focus {
 }
 .h-36 {
   height: 36px;
+}
+.h-38 {
+  height: 38px;
 }
 .h-45 {
   height: 45px;
@@ -244,4 +250,9 @@ select {
 .address {
   letter-spacing: 0.3px;
   line-height: 30px;
+}
+
+.btn {
+  font-weight: 600;
+  letter-spacing: 1px;
 }

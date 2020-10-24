@@ -1,23 +1,17 @@
 import { useEffect, useState } from 'react';
 
 import { Newsletter } from '@/components/index';
-import { destinations } from '@/core/index';
 
+// import { destinations } from '@/core/index';
 import { Nav } from '../nav/index';
 
-function Header() {
-  const [countries, setCountries] = useState([]);
+function Header({ destinations, packagetypes }) {
   const [destinationList, setDestinationList] = useState([]);
 
-  async function fetchDestinations() {
-    const { result } = await destinations();
-    setCountries(result?.data);
-    const destination = result?.data?.filter(item => item.id === 1);
-    setDestinationList(destination);
-  }
+  const destinationItems = destinations?.filter(item => item.id === 1);
 
   useEffect(() => {
-    fetchDestinations();
+    setDestinationList(destinationItems);
   }, []);
 
   return (
@@ -28,7 +22,8 @@ function Header() {
       <Nav
         destinations={destinationList}
         setDestinations={setDestinationList}
-        countries={countries}
+        countries={destinations}
+        packagetypes={packagetypes}
       />
     </>
   );

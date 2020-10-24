@@ -8,7 +8,7 @@ import { Home } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Index({ types, tours, destinations, banners, packagetypes }) {
+function Index({ types, tours, destinations, banners, packagetypes, interests }) {
   const router = useRouter();
 
   const [validated, setValidated] = useState(false);
@@ -32,18 +32,15 @@ function Index({ types, tours, destinations, banners, packagetypes }) {
   };
 
   return (
-    <Home destinations={destinations} banners={banners} packagetypes={packagetypes}>
+    <Home
+      destinations={destinations}
+      banners={banners}
+      packagetypes={packagetypes}
+      interests={interests}>
       <Head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2047841,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
+            __html: `(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:2047841,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
           }}
         />
       </Head>
@@ -70,7 +67,7 @@ function Index({ types, tours, destinations, banners, packagetypes }) {
                 <div className="col-10 col-md-9 mx-auto p-0">
                   <div className="row justify-content-between align-items-center">
                     <div className="col-12 col-md-5 text-left">
-                      <h4 className="fs-30 font-weight-bold text-white pb-3">
+                      <h4 className="fs-26 font-weight-bold text-white pb-3">
                         Suscribe to our newsletter to get tips and travelling ideas
                       </h4>
                     </div>
@@ -85,7 +82,7 @@ function Index({ types, tours, destinations, banners, packagetypes }) {
                             required
                           />
                         </div>
-                        <div className="col-12 col-md-3">
+                        <div className="col-12 col-md-3 p-0">
                           <button
                             className="btn w-100 h-45 bc-3583E0 text-white fs-15"
                             type="submit">
@@ -131,6 +128,9 @@ export async function getStaticProps() {
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
   const packagetypes = await packagetypesResponse.json();
 
+  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interests = await interestResponse.json();
+
   return {
     props: {
       types,
@@ -138,9 +138,9 @@ export async function getStaticProps() {
       destinations,
       banners,
       packagetypes,
+      interests,
     },
-    revalidate: 1, // In seconds
-    // fallback: true,
+    revalidate: 1,
   };
 }
 

@@ -27,7 +27,7 @@ function TopTours({ tours }) {
               <div className="row card-tops">
                 {tours.map(item => (
                   <Link key={item.id} href={`/package/${item.slug}`}>
-                    <div className="col-12 col-md-4 pb-4 mb-2">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-4 pb-4 mb-2">
                       <div className="card">
                         <img
                           src={PUBLIC_API + item.thumbnail}

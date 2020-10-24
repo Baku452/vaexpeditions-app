@@ -10,13 +10,16 @@
     top: 0;
   } */
   .swiper-container {
-    height: calc(100vh - 167px);
+    height: calc(100vh - 165px);
+    @include media-breakpoint-down(md) {
+      height: calc(80vh - 165px);
+    }
   }
-  img {
+  /*   img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-  }
+  } */
 }
 
 .form-destinations {

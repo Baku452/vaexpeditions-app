@@ -1,14 +1,31 @@
+header {
+  overflow: hidden;
+}
+
+.hide {
+  display: none !important;
+}
 .nav {
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   background-color: #000;
-}
-.nav .container {
-  position: relative;
+  .navbar {
+    position: static;
+  }
+  .container {
+    display: block;
+  }
+  h5 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    width: auto;
+    display: inline-block;
+  }
 }
 
 .nav-item {
-  padding: 0 20px;
+  padding: 0 30px 0 0;
 }
 
 .nav-destionations:hover .destinations {
@@ -21,33 +38,46 @@
   position: absolute;
   left: 0;
   width: 100%;
-  padding: 12px 0;
+  padding: 8px 0;
   a {
     color: #000;
   }
 }
 
-.destinations-column {
-  border-right: 1px solid #c4c4c4;
-}
-
 .destinations-content {
   padding: 30px 40px;
   background-color: #fff;
-  border-left: 1px solid #c4c4c4;
-  border-right: 1px solid #c4c4c4;
-  border-bottom: 1px solid #c4c4c4;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
   ul {
     padding: 0;
     list-style-type: none;
   }
 }
+
 .destinations-items {
   padding: 0;
   list-style-type: none;
-  column-count: 3;
+  flex-wrap: wrap;
+  display: flex;
   li {
-    flex: 1 0 25%;
+    flex: 1 0 30%;
+
+    &.types-item {
+      //border-bottom: 1px solid #000;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+      i {
+        width: 40px;
+        padding-right: 6px;
+      }
+      a {
+        flex: 1;
+        line-height: 18px;
+        font-size: 15px;
+      }
+    }
   }
 }
 
@@ -69,6 +99,8 @@
 .navbar-light .navbar-nav .nav-link {
   color: #fff !important;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.15em;
+  font-weight: 600;
+  padding-top: 12px;
 }
