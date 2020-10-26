@@ -8,7 +8,7 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Newsletter({ packageTypeList }) {
+function Newsletter({ destinations, packagetypes }) {
   const router = useRouter();
 
   const [validated, setValidated] = useState(false);
@@ -45,7 +45,7 @@ function Newsletter({ packageTypeList }) {
     if (router?.query?.email) setEmail(router?.query?.email);
   }, [router]);
   return (
-    <Base>
+    <Base destinations={destinations} packagetypes={packagetypes}>
       <section id="thank_you">
         <div className="container">
           <div className="row">
@@ -126,7 +126,7 @@ function Newsletter({ packageTypeList }) {
                           <p className="col-12 fs-18 lh-29 pt-5 pb-4">
                             Please tell us some of your interests
                           </p>
-                          {packageTypeList.map(item => (
+                          {packagetypes.map(item => (
                             <div
                               key={item.id}
                               className="col-12 col-md-4 m-b-25 text-left">
@@ -164,10 +164,18 @@ function Newsletter({ packageTypeList }) {
 }
 
 export async function getStaticProps() {
-  const packageTypes = await fetch(`${PUBLIC_API}/packagestype/`);
-  const packageTypeList = await packageTypes.json();
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinations = await destinationsResponse.json();
 
-  return { props: { packageTypeList } };
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypes = await packagetypesResponse.json();
+
+  return {
+    props: {
+      destinations,
+      packagetypes,
+    },
+  };
 }
 
 export default Newsletter;

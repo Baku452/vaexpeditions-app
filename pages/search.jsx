@@ -256,7 +256,7 @@ function Search({ destinations, packagetypes, interests }) {
                       <Card.Body>
                         {destinations.map(country => (
                           <Accordion defaultActiveKey={country.id} key={country.id}>
-                            <Card.Header className="card-header-filters">
+                            <Card.Header className="card-header-filters no-border">
                               <ContextAwareToggle
                                 eventKey={country.id}
                                 className="content-gray">
@@ -398,12 +398,16 @@ function Search({ destinations, packagetypes, interests }) {
                       <Card.Body>
                         {years.map((year, yearIndex) => (
                           <Accordion defaultActiveKey={year.id} key={year.id}>
-                            <Accordion.Toggle
-                              as={Card.Header}
-                              className="card-child"
-                              eventKey={year.id}>
-                              {year.name}
-                            </Accordion.Toggle>
+                            <Card.Header className="card-header-filters no-border">
+                              <ContextAwareToggle
+                                eventKey={year.id}
+                                className="content-gray">
+                                <h2 className="fs-16 m-0 font-weight-bold p-0">
+                                  {year.name}
+                                </h2>
+                              </ContextAwareToggle>
+                            </Card.Header>
+
                             <Accordion.Collapse eventKey={year.id}>
                               <div className="card-month">
                                 {year.months.map((month, monthIndex) => (

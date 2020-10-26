@@ -1,13 +1,13 @@
 .package-slide {
   height: calc(100vh - 165px);
   @include media-breakpoint-down(md) {
-    height: calc(80vh - 165px);
+    height: calc(70vh - 165px);
   }
   position: relative;
   .swiper-container {
-    height: calc(100vh - 167px);
+    height: calc(100vh - 165px);
     @include media-breakpoint-down(md) {
-      height: calc(80vh - 165px);
+      height: calc(70vh - 165px);
     }
   }
   .swiper-container::before {
@@ -38,5 +38,14 @@
     z-index: 99;
     height: auto;
     width: 50%;
+    @include media-breakpoint-down(md) {
+      font-size: 30px;
+    }
+    @include media-breakpoint-down(sm) {
+      bottom: 10px;
+      width: 95%;
+      font-size: 23px;
+      left: 5%;
+    }
   }
 }

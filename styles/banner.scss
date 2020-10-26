@@ -1,40 +1,25 @@
 .banner {
-  /*   &::after {
-    content: '';
-    height: 30%;
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    z-index: 3;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
-    top: 0;
-  } */
   .swiper-container {
     height: calc(100vh - 165px);
     @include media-breakpoint-down(md) {
-      height: calc(80vh - 165px);
+      height: calc(70vh - 165px);
     }
   }
-  /*   img {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  } */
 }
 
 .form-destinations {
   z-index: 9;
   width: 100%;
-  bottom: 80px;
+  bottom: 40px;
   .form-control {
     color: #000 !important;
     border-radius: 0;
-    height: calc(1.5em + 1.8rem + 2px);
+    height: calc(1.5em + 1.3rem + 2px);
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid transparent; // rgba(196, 196, 196, 0.9);
   }
   button {
-    height: 56px;
+    height: 48px;
   }
 }
 

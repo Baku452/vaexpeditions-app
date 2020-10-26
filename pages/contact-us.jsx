@@ -3,9 +3,9 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function ContactUs({ destinations }) {
+function ContactUs({ destinations, packagetypes }) {
   return (
-    <Base>
+    <Base destinations={destinations} packagetypes={packagetypes}>
       <ContactUsForm destinations={destinations} />
     </Base>
   );
@@ -14,10 +14,12 @@ function ContactUs({ destinations }) {
 export async function getStaticProps() {
   const responseTypes = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await responseTypes.json();
-
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypes = await packagetypesResponse.json();
   return {
     props: {
       destinations,
+      packagetypes,
     },
     revalidate: 1,
   };

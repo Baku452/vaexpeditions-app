@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+import Head from 'next/head';
 import Link from 'next/link';
 
 import { Itineraries, Rating, Slide } from '@/components/index';
@@ -5,9 +7,13 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Post({ pack }) {
+function Post({ pack, destinations, packagetypes }) {
   return (
-    <Base>
+    <Base destinations={destinations} packagetypes={packagetypes}>
+      <Head>
+        <meta name="description" content={pack.summary} />
+        <meta name="keywords" content={pack.keywords} />
+      </Head>
       {pack.images.length > 0 && (
         <Slide images={pack.images} title={pack.title} pagination={false} />
       )}
@@ -113,7 +119,13 @@ export async function getStaticProps({ params }) {
   const response = await fetch(`${PUBLIC_API}/package/${params.slug}`);
   const pack = await response.json();
 
-  return { props: { pack } };
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinations = await destinationsResponse.json();
+
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypes = await packagetypesResponse.json();
+
+  return { props: { pack, destinations, packagetypes } };
 }
 
 export default Post;

@@ -15,13 +15,16 @@
       position: absolute;
       right: 10px;
       top: 50%;
-      margin-top: -15px;
-      font-size: 30px !important;
+      margin-top: -12px;
+      font-size: 26px !important;
     }
     &.card-header-filters {
       button {
         padding: 12px;
       }
+    }
+    &.no-border {
+      border: 0;
     }
   }
   .content-white {
@@ -34,5 +37,14 @@
 .rotate {
   .icon {
     transform: rotate(180deg);
+  }
+}
+
+.filters-overlay {
+  .card-body {
+    padding: 6px 0 15px;
+  }
+  .card-body-sub-child {
+    padding: 0;
   }
 }

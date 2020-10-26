@@ -3,7 +3,7 @@ import Link from 'next/link';
 function PackageItem({ id, title, days, slug, thumbnail }) {
   return (
     <Link href={`/package/${slug}`}>
-      <div key={id} className="col-12 col-md-4 mb-4 package-item cursor-pointer">
+      <div key={id} className="d-flex col-12 col-md-4 mb-4 package-item cursor-pointer">
         <div className="card">
           <img src={thumbnail} className="card-img-top" alt={title} />
 

@@ -29,9 +29,13 @@
 }
 
 .package-item .card-title {
-  min-height: 46px;
+  min-height: 23px;
 }
 
 .itinerary-items {
   list-style: none;
+}
+
+.card-header {
+  border-bottom: 1px solid #999;
 }

@@ -57,7 +57,7 @@ function Banners({ destinations, banners, packagetypes, interests }) {
                     as="select"
                     size="lg"
                     onChange={event => handleChangeDestination(event)}>
-                    <option>Destinations</option>
+                    <option>Destination</option>
                     {destinations.length > 0 &&
                       destinations[0].destinations.map(item => (
                         <option value={item.id} key={item.id}>
@@ -85,7 +85,7 @@ function Banners({ destinations, banners, packagetypes, interests }) {
                     as="select"
                     size="lg"
                     onChange={event => handleChangeInterest(event)}>
-                    <option>Interests</option>
+                    <option>Interest</option>
                     {interestsList.length > 0 &&
                       interestsList.map(item => (
                         <option value={item.id} key={item.id}>
@@ -111,7 +111,7 @@ function Banners({ destinations, banners, packagetypes, interests }) {
           </div>
         </div>
       </div>
-      <Slide images={banners} navigation={false} />
+      <Slide images={banners} navigation pagination={false} />
     </section>
   );
 }

@@ -1,9 +1,11 @@
 import { Banner } from '@/components/index';
 import { Base } from '@/layouts/index';
 
-export default function OurPurpose() {
+const PUBLIC_API = process.env.NEXT_PUBLIC_API;
+
+export default function OurPurpose({ destinations, packagetypes }) {
   return (
-    <Base>
+    <Base destinations={destinations} packagetypes={packagetypes}>
       <Banner
         description="15 years or experience, 6,000 travellers 20 Destinations 100% Satisfation"
         image="/images/arequipa3.jpg"
@@ -135,4 +137,19 @@ export default function OurPurpose() {
       </section>
     </Base>
   );
+}
+
+export async function getStaticProps() {
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinations = await destinationsResponse.json();
+
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypes = await packagetypesResponse.json();
+
+  return {
+    props: {
+      destinations,
+      packagetypes,
+    },
+  };
 }
