@@ -73,6 +73,11 @@ function Post({ pack, destinations, packagetypes }) {
                     alt="Contact Us"
                     className="image-circle"
                   />
+                  {pack?.show_specialist && (
+                    <h6 className="pt-2 font-weight-bold">
+                      {pack?.specialist?.fullname}
+                    </h6>
+                  )}
                 </div>
                 <div className="col-12 col-md-6 text-center pt-2">
                   <h4 className="fs-20 font-weight-bold pb-3">
@@ -112,7 +117,7 @@ export async function getStaticPaths() {
     params: { slug: item.slug },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {

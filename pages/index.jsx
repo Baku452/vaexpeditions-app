@@ -21,7 +21,15 @@ import { Home } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Index({ types, tours, destinations, banners, packagetypes, interests }) {
+function Index({
+  types,
+  tours,
+  destinations,
+  banners,
+  packagetypes,
+  interests,
+  notification,
+}) {
   const router = useRouter();
 
   const [validated, setValidated] = useState(false);
@@ -49,7 +57,8 @@ function Index({ types, tours, destinations, banners, packagetypes, interests })
       destinations={destinations}
       banners={banners}
       packagetypes={packagetypes}
-      interests={interests}>
+      interests={interests}
+      notification={notification}>
       <Head>
         <script
           dangerouslySetInnerHTML={{
@@ -194,6 +203,9 @@ export async function getStaticProps() {
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
   const interests = await interestResponse.json();
 
+  const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
+  const notification = await notificationResponse.json();
+
   return {
     props: {
       types,
@@ -202,6 +214,7 @@ export async function getStaticProps() {
       banners,
       packagetypes,
       interests,
+      notification,
     },
     revalidate: 1,
   };

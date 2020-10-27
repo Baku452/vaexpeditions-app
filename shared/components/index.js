@@ -12,3 +12,4 @@ export * from './molecules/contact-us/index';
 export * from './molecules/rating/index';
 export * from './molecules/itineraries/index';
 export * from './atoms/acoordion/index';
+export * from './molecules/slide/gallery';

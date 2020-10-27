@@ -54,6 +54,10 @@ input {
 .bc-000000 {
   background-color: #000000;
 }
+.btn-outline-dark {
+  color: #000000;
+  border-color: #000000;
+}
 .fs-i {
   font-style: italic;
 }
@@ -255,4 +259,8 @@ select {
 .btn {
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.modal-body {
+  padding: 0.1rem;
 }

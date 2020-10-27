@@ -1,7 +1,14 @@
 import { Footer } from '../footer/index';
 import { Header } from '../header/home';
 
-function Home({ destinations, banners, packagetypes, interests, children }) {
+function Home({
+  destinations,
+  banners,
+  packagetypes,
+  interests,
+  notification,
+  children,
+}) {
   return (
     <>
       <Header
@@ -9,6 +16,7 @@ function Home({ destinations, banners, packagetypes, interests, children }) {
         banners={banners}
         packagetypes={packagetypes}
         interests={interests}
+        notification={notification}
       />
       <section>{children}</section>
       <Footer />

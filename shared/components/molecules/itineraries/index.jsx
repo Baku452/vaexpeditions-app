@@ -4,19 +4,19 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 
-import { ContextAwareToggle, Icon, Slide } from '@/components/index';
+import { ContextAwareToggle, Gallery, Icon } from '@/components/index';
 import Bed from '@/icons/bed.svg';
 import Restaurant from '@/icons/restaurant.svg';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Gallery(props) {
+function GalleryWrapper(props) {
   const { images } = props;
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Body>
-        {images.length > 0 && <Slide images={images} navigation pagination={false} />}
+        {images.length > 0 && <Gallery images={images} navigation pagination={false} />}
       </Modal.Body>
     </Modal>
   );
@@ -95,7 +95,11 @@ function Itineraries({ itineraries }) {
         ))}
       </Accordion>
 
-      <Gallery images={images} show={modalShow} onHide={() => setModalShow(false)} />
+      <GalleryWrapper
+        images={images}
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </>
   );
 }

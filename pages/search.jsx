@@ -242,7 +242,11 @@ function Search({ destinations, packagetypes, interests }) {
                       href="#"
                       className="filter-close"
                       onClick={() => setShowFilters(false)}>
-                      <Icon component={Close} viewBox="0 0 16 16" className="icon" />
+                      <Icon
+                        component={Close}
+                        viewBox="0 0 16 16"
+                        className="icon-size-m"
+                      />
                     </a>
                   </div>
 
@@ -437,7 +441,7 @@ function Search({ destinations, packagetypes, interests }) {
                     </Accordion.Collapse>
                   </Accordion>
                 </div>
-                <div className="col-12 col-md-9">
+                <div className="col-12 col-lg-9">
                   <div className="row">
                     {packagesList.length > 0 &&
                       packagesList.map(item => <PackageItem key={item.id} {...item} />)}
