@@ -97,7 +97,10 @@ header {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #000 !important;
+  color: #fff !important;
+  @include media-breakpoint-down(md) {
+    color: #000 !important;
+  }
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.15em;
