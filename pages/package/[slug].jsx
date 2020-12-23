@@ -8,6 +8,8 @@ import { Base } from '@/layouts/index';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Post({ pack, destinations, packagetypes }) {
+  console.log('pack', pack.itineraries[0].content);
+
   return (
     <Base destinations={destinations} packagetypes={packagetypes}>
       <Head>

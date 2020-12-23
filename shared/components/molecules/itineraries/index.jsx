@@ -10,6 +10,40 @@ import Restaurant from '@/icons/restaurant.svg';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
+const SmartText = ({ text, length = 492 }) => {
+  const [showLess, setShowLess] = useState(true);
+
+  return (
+    <div>
+      {length === 0 ? (
+        <div className="fs-16 lh-29" dangerouslySetInnerHTML={{ __html: text }} />
+      ) : (
+        <>
+          <div
+            className="fs-16 lh-29"
+            dangerouslySetInnerHTML={{
+              __html: showLess ? `${text.slice(0, length)}...` : text,
+            }}
+          />
+          <a
+            role="presentation"
+            style={{
+              cursor: 'pointer',
+              color: '#007bff',
+              marginTop: '-12px',
+              display: 'block',
+              fontSize: '14px',
+              textDecoration: 'underline !important',
+            }}
+            onClick={() => setShowLess(!showLess)}>
+            {showLess ? 'Ver más' : 'Ver menos'}
+          </a>
+        </>
+      )}
+    </div>
+  );
+};
+
 function GalleryWrapper(props) {
   const { images } = props;
 
@@ -50,12 +84,13 @@ function Itineraries({ itineraries }) {
             <Accordion.Collapse eventKey={index + 1}>
               <Card.Body className={getColorContent(index)}>
                 <div className="row pb-4 itinerary">
-                  <div className="col-12 col-md-8">
-                    <div
+                  <div className="col-12 col-md-8 order-2 order-md-1">
+                    {/* <div
                       className="fs-16 lh-29"
                       dangerouslySetInnerHTML={{ __html: item?.content }}
-                    />
+                    /> */}
 
+                    <SmartText text={item?.content} length={item?.limit} />
                     <ul className="itinerary-items pt-2 pb-2 pl-0">
                       {item.items.map(element => (
                         <li key={element.id} className="pb-3">
@@ -74,7 +109,7 @@ function Itineraries({ itineraries }) {
                   </div>
 
                   {item.images.length > 0 && (
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 text-right">
+                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
                         src={PUBLIC_API + item.images[0].image}
                         className="d-block w-100 fit"
