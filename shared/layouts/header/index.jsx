@@ -7,7 +7,6 @@ import { Nav } from '../nav/index';
 
 function Header({ destinations, packagetypes }) {
   const [destinationList, setDestinationList] = useState([]);
-
   const destinationItems = destinations?.filter(item => item.id === 1);
 
   useEffect(() => {

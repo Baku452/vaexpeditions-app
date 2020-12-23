@@ -8,15 +8,13 @@ import { Base } from '@/layouts/index';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Post({ pack, destinations, packagetypes }) {
-  console.log('pack', pack.itineraries[0].content);
-
   return (
     <Base destinations={destinations} packagetypes={packagetypes}>
       <Head>
-        <meta name="description" content={pack.summary} />
-        <meta name="keywords" content={pack.keywords} />
+        <meta name="description" content={pack?.summary} />
+        <meta name="keywords" content={pack?.keywords} />
       </Head>
-      {pack.images.length > 0 && (
+      {pack?.images?.length > 0 && (
         <Slide images={pack.images} title={pack.title} pagination={false} />
       )}
       <div className="container">

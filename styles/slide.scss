@@ -53,13 +53,13 @@
 .package-slide-modal {
   height: calc(100vh - 150px);
   @include media-breakpoint-down(md) {
-    height: calc(90vh - 150px);
+    height: calc(90vh - 50px);
   }
   position: relative;
   .swiper-container {
     height: calc(100vh - 150px);
     @include media-breakpoint-down(md) {
-      height: calc(90vh - 150px);
+      height: calc(90vh - 50px);
       h1 {
         font-size: 24px;
       }

@@ -66,7 +66,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                   <div className="destinations-content">
                     <div className="container">
                       <div className="row">
-                        {destinations.length > 0 &&
+                        {destinations &&
                           destinations.map(destination => (
                             <div key={destination.name} className="col-9">
                               <h5 className="font-weight-bold">{destination.name}</h5>
@@ -111,7 +111,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                         <div className="col-9">
                           <h5 className="font-weight-bold">By Types</h5>
                           <ul className="destinations-items types-items">
-                            {packagetypes.length > 0 &&
+                            {packagetypes &&
                               packagetypes.map(types => (
                                 <li key={types.id} className="types-item pb-3">
                                   <i>
@@ -148,7 +148,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                   <div className="destinations-content">
                     <div className="container">
                       <div className="row">
-                        {destinations.length > 0 &&
+                        {destinations &&
                           destinations.map(destination => (
                             <div key={destination.name} className="col-12">
                               <h5 className="font-weight-bold">{destination.name}</h5>

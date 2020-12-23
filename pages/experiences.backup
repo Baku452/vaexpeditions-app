@@ -1,4 +1,4 @@
-import Link from 'next/link';
+/* import Link from 'next/link';
 
 import { Banner } from '@/components/index';
 import { Base } from '@/layouts/index';
@@ -64,3 +64,4 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
+ */
