@@ -47,6 +47,8 @@ function Banners({ destinations, banners, packagetypes, interests }) {
 
   return (
     <section className="banner position-relative">
+      <Slide images={banners} navigation pagination={false} />
+
       <div className="form-destinations position-absolute">
         <div className="container">
           <div className="row justify-content-center">
@@ -111,7 +113,6 @@ function Banners({ destinations, banners, packagetypes, interests }) {
           </div>
         </div>
       </div>
-      <Slide images={banners} navigation pagination={false} />
     </section>
   );
 }

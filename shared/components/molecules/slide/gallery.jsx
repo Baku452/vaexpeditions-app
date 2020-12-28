@@ -34,6 +34,9 @@ function Gallery({ images }) {
   const size = useWindowSize();
 
   let width = 1000;
+  if (size.width < 991) {
+    width = 500;
+  }
   if (size.width < 500) {
     width = size.width;
   }
@@ -44,7 +47,8 @@ function Gallery({ images }) {
         width={width}
         slidesPerView={1}
         navigation
-        onSlideChange={() => console.log('slide change')}
+        /*         autoHeight
+         */ onSlideChange={() => console.log('slide change')}
         onSwiper={swiper => console.log(swiper)}>
         {images &&
           images.map(item => (

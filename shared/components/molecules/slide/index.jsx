@@ -10,7 +10,8 @@ function Slide({ images, navigation = true, pagination = true, title = false }) 
     <div className="package-slide position-relative">
       <Swiper
         slidesPerView={1}
-        navigation={navigation}
+        /*         autoHeight
+         */ navigation={navigation}
         pagination={pagination ? { pagination, ...{ clickable: true } } : false} // { clickable: true }}
         loop
         // onSlideChange={() => console.log('slide change')}
@@ -21,7 +22,7 @@ function Slide({ images, navigation = true, pagination = true, title = false }) 
             <SwiperSlide key={item.id}>
               <img
                 src={PUBLIC_API + item.image}
-                className="d-block w-100 h-100 fit"
+                className="d-block w-100 fit"
                 alt={item.alt}
               />
             </SwiperSlide>
