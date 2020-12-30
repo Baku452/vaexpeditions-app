@@ -10,13 +10,9 @@ function Slide({ images, navigation = true, pagination = true, title = false }) 
     <div className="package-slide position-relative">
       <Swiper
         slidesPerView={1}
-        /*         autoHeight
-         */ navigation={navigation}
+        navigation={navigation}
         pagination={pagination ? { pagination, ...{ clickable: true } } : false} // { clickable: true }}
-        loop
-        // onSlideChange={() => console.log('slide change')}
-        // onSwiper={swiper => console.log(swiper)}
-      >
+        loop>
         {images &&
           images.map(item => (
             <SwiperSlide key={item.id}>

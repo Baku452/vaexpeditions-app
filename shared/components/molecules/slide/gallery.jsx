@@ -47,8 +47,7 @@ function Gallery({ images }) {
         width={width}
         slidesPerView={1}
         navigation
-        /*         autoHeight
-         */ onSlideChange={() => console.log('slide change')}
+        onSlideChange={() => console.log('slide change')}
         onSwiper={swiper => console.log(swiper)}>
         {images &&
           images.map(item => (

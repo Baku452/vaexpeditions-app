@@ -5,15 +5,16 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Destinationitem({ item }) {
   return (
-    !item.tailor_made && (
-      <li key={item.slug} className="pb-2">
+    !item.tailor_made &&
+    item.active && (
+      <li key={item.slug} className="pb-2 mb-2 pr-3">
         <Link
           href={{
             pathname: '/search',
             query: { destination: item.id },
           }}>
           <a>
-            {item.title} - {item.sub_title}
+            {item.title} {item.sub_title && `- ${item.sub_title}`}
           </a>
         </Link>
       </li>
@@ -23,15 +24,16 @@ function Destinationitem({ item }) {
 
 function TailorMadeitem({ item }) {
   return (
-    item.tailor_made && (
-      <li key={item.slug}>
+    item.tailor_made &&
+    item.active && (
+      <li key={item.slug} className="pb-2 mb-2 pr-3">
         <Link
           href={{
             pathname: '/search',
             query: { destination: item.id },
           }}>
           <a>
-            {item.title} - {item.sub_title}
+            {item.title} {item.sub_title && `- ${item.sub_title}`}
           </a>
         </Link>
       </li>
