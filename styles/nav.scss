@@ -24,8 +24,12 @@ header {
   }
 }
 
-.nav-item {
-  padding: 0 30px 0 0;
+.nav-iten-link {
+  padding: 5px 20px 0 20px;
+  height: 55px;
+  &:hover {
+    border-bottom: 1px solid #0095ce;
+  }
 }
 
 .nav-destionations:hover .destinations {
@@ -38,7 +42,7 @@ header {
   position: absolute;
   left: 0;
   width: 100%;
-  padding: 8px 0;
+  padding: 12px 0;
   a {
     color: #000;
   }

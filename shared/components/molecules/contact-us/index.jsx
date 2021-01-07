@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 import { countries, saveContactUs } from '@/core/index';
 
-function ContactUsForm({ destinations, title = true }) {
+function ContactUsForm({ destinations, packages, title = true }) {
   const [validated, setValidated] = useState(false);
   const [success, setSuccess] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
@@ -139,6 +139,23 @@ function ContactUsForm({ destinations, title = true }) {
                             </Form.Control.Feedback>
                           </div>
                         </div>
+
+                        <div className="col-12 col-md-12">
+                          <div className="form-group">
+                            <Form.Control as="select" size="lg" name="package" required>
+                              <option value="">Tour</option>
+                              {packages?.map(item => (
+                                <option key={item.slug} value={item.title}>
+                                  {item.title}
+                                </option>
+                              ))}
+                            </Form.Control>
+                            <Form.Control.Feedback type="invalid">
+                              Please provide a valid Tour
+                            </Form.Control.Feedback>
+                          </div>
+                        </div>
+
                         <div className="col-12">
                           <div className="form-group">
                             <Form.Control

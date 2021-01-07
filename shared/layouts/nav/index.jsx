@@ -60,7 +60,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
         <nav className="navbar navbar-expand-lg navbar-light d-none d-md-block px-0">
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav">
-              <li className="nav-item nav-destionations ">
+              <li className="nav-item nav-destionations nav-iten-link">
                 <a className={active(router.pathname, '/search')} role="button">
                   Destinations
                 </a>
@@ -103,7 +103,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                   </div>
                 </div>
               </li>
-              <li className="nav-item nav-destionations">
+              <li className="nav-item nav-destionations nav-iten-link">
                 <a className={active(router.pathname, '/experiences')}>HOLYDAY TYPES</a>
 
                 <div className="destinations ">
@@ -141,7 +141,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                   </div>
                 </div>
               </li>
-              <li className="nav-item nav-destionations">
+              <li className="nav-item nav-destionations nav-iten-link">
                 <a className={active(router.pathname, '/tailor-made-tour')}>
                   Tailor Made Tours
                 </a>
@@ -185,17 +185,17 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                   </div>
                 </div>
               </li>
-              <li className="nav-item">
+              <li className="nav-item nav-iten-link">
                 <Link href="/our-purpose">
                   <a className={active(router.pathname, '/our-purpose')}>Our Purpose</a>
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item nav-iten-link">
                 <a className="nav-link" href="#">
                   Blog
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item nav-iten-link">
                 <Link href="/contact-us">
                   <a className={active(router.pathname, '/contact-us')}>Contact Us</a>
                 </Link>
