@@ -6,7 +6,9 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 SwiperCore.use([Navigation]);
 
-function PackageTypes({ types }) {
+function PackageTypes({ types, packagetypes }) {
+  const packagesTypes = packagetypes.map(item => item.id);
+
   return (
     <>
       <div className="container">
@@ -20,9 +22,15 @@ function PackageTypes({ types }) {
                 </h2>
               </div>
               <div className="col-md-3 d-none d-md-block text-right">
-                <a href="#" className="btn bc-3583E0 text-white fs-15">
-                  Explore all vacation types
-                </a>
+                <Link
+                  href={{
+                    pathname: '/search',
+                    query: { types: packagesTypes.join() },
+                  }}>
+                  <a className="btn bc-3583E0 text-white fs-15">
+                    Explore all vacation types
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

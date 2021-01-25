@@ -66,7 +66,7 @@ function Index({
           }}
         />
       </Head>
-      <PackageTypes types={types} />
+      <PackageTypes types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
       <Reviews />
