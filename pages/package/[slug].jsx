@@ -84,7 +84,11 @@ function Post({ pack, destinations, packagetypes }) {
                     Talk to your travel specialists
                   </h4>
 
-                  <Link href="/contact-us">
+                  <Link
+                    href={{
+                      pathname: '/contact-us',
+                      query: { package: pack.slug },
+                    }}>
                     <a className="btn btn-contact btn-outline-dark fs-16 w-100">
                       Contact Us
                     </a>

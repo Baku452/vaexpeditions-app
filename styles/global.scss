@@ -7,26 +7,12 @@ $input-border-radius-lg: 0;
 $card-border-radius: 0;
 $modal-lg: 1000px;
 
-/* $input-border-color: red;
- */
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1240px,
 ) !default;
-
-/* $custom-control-indicator-checked-color: red;
-
-$custom-control-indicator-checked-bg: red;
-$custom-checkbox-indicator-border-radius: 0;
-$custom-checkbox-indicator-icon-checked: none;
-$custom-checkbox-indicator-indeterminate-bg: red;
-
-$custom-checkbox-indicator-indeterminate-border-color: red;
-
-$component-active-bg: red;
- */
 
 @import '~bootstrap/scss/bootstrap';
 @import '~swiper/swiper.scss';

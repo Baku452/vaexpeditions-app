@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 import { countries, saveContactUs } from '@/core/index';
 
-function ContactUsForm({ destinations, packages, title = true }) {
+function ContactUsForm({ destinations, packages, title = true, pack }) {
   const [validated, setValidated] = useState(false);
   const [success, setSuccess] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
@@ -142,10 +142,18 @@ function ContactUsForm({ destinations, packages, title = true }) {
 
                         <div className="col-12 col-md-12">
                           <div className="form-group">
-                            <Form.Control as="select" size="lg" name="package" required>
+                            <Form.Control
+                              as="select"
+                              size="lg"
+                              name="package"
+                              defaultValue=""
+                              required>
                               <option value="">Tour</option>
                               {packages?.map(item => (
-                                <option key={item.slug} value={item.title}>
+                                <option
+                                  key={item.slug}
+                                  value={item.title}
+                                  selected={item.slug === pack}>
                                   {item.title}
                                 </option>
                               ))}

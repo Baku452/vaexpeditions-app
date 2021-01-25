@@ -42,7 +42,7 @@ header {
   position: absolute;
   left: 0;
   width: 100%;
-  padding: 12px 0;
+  padding: 8px 0;
   a {
     color: #000;
   }
@@ -101,12 +101,24 @@ header {
 
 .navbar-light .navbar-nav .nav-link {
   color: #fff !important;
+
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  padding-top: 14px;
+
   @include media-breakpoint-down(md) {
     color: #000 !important;
   }
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  padding-top: 12px;
+}
+
+.filter-actions {
+  background-color: #000;
+  color: #fff;
+  font-weight: #fff;
+  min-width: 250px;
+  &:hover {
+    background-color: #fff;
+  }
 }

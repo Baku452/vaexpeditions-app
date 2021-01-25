@@ -71,11 +71,7 @@ function Newsletter() {
               <div className="col-auto p-0">
                 <div className="fw-bold text-right fs-13">
                   Toll Free: 1-(888)803-8004 <br />
-                  {/*                 <img src="static/img/ico_usa.png" alt="" /> <br />
-                   */}{' '}
                   (511) 423 6758
-                  {/*                 <img src="static/img/ico_peru.png" alt="" />
-                   */}{' '}
                 </div>
               </div>
               <div className="col-auto">
@@ -102,15 +98,13 @@ function Newsletter() {
           <div />
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto mt-4">
-            <Link href="/experiences">
-              <a className={active(router.pathname, '/experiences')}>Experiences</a>
+          <Nav className="mr-auto mt-1 pt-4 pl-3 pb-4">
+            <Link href="/search">
+              <a className={active(router.pathname, '/experiences')}>Destinations</a>
             </Link>
 
-            <Link href="/tailor-made-tour">
-              <a className={active(router.pathname, '/tailor-made-tour')}>
-                Tailor Made Tours
-              </a>
+            <Link href="/search">
+              <a className={active(router.pathname, '/search')}>Tailor Made Tours</a>
             </Link>
 
             <Link href="/our-purpose">
@@ -124,14 +118,6 @@ function Newsletter() {
             <Link href="/contact-us">
               <a className={active(router.pathname, '/contact-us')}>Contact Us</a>
             </Link>
-
-            {/*  <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

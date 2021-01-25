@@ -77,7 +77,7 @@
 }
 
 .package-slide-modal {
-  height: calc(100vh - 150px);
+  height: 758px;
   position: relative;
 
   @include media-breakpoint-down(lg) {
@@ -110,7 +110,11 @@
   }
 
   .swiper-container {
-    height: calc(100vh - 150px);
+    height: 758px;
+    img {
+      width: 1000px;
+      height: 700px;
+    }
     @include media-breakpoint-down(lg) {
       height: auto;
       h1 {

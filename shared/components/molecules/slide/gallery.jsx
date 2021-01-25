@@ -54,11 +54,7 @@ function Gallery({ images }) {
             <SwiperSlide key={item.id}>
               <h3 className="p-2 p-lg-2">{item.alt}</h3>
 
-              <img
-                src={PUBLIC_API + item.image}
-                className="d-block w-100 h-100 fit"
-                alt={item.alt}
-              />
+              <img src={PUBLIC_API + item.image} className="d-block" alt={item.alt} />
             </SwiperSlide>
           ))}
       </Swiper>

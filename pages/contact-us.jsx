@@ -1,12 +1,22 @@
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+
 import { ContactUsForm } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function ContactUs({ destinations, packagetypes, packages }) {
+  const router = useRouter();
+  const [pack, setPack] = useState('');
+
+  useEffect(() => {
+    if (router?.query?.package) setPack(router?.query?.package);
+  }, [router]);
+
   return (
     <Base destinations={destinations} packagetypes={packagetypes}>
-      <ContactUsForm destinations={destinations} packages={packages} />
+      <ContactUsForm destinations={destinations} packages={packages} pack={pack} />
     </Base>
   );
 }

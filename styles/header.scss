@@ -16,12 +16,6 @@
   padding-top: 11px;
 }
 
-/* .level-1 .right {
-  padding-top: 13px !important;
-  padding-right: 46px !important;
-  padding-left: 0;
-} */
-
 .package-types-slide {
   width: 262px !important;
 }
@@ -46,7 +40,8 @@
 .logo-responsive {
   font-size: 120px !important;
   position: absolute;
-  top: -28px;
+  top: -22px;
+  left: 6px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -57,6 +52,7 @@
   position: absolute;
   right: 0px;
   border: 0;
+  top: 5px;
   div {
     width: 30px;
     height: 4px;

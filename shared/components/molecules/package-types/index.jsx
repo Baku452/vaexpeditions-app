@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -47,17 +48,24 @@ function PackageTypes({ types }) {
             onSwiper={swiper => console.log(swiper)}>
             {types.map(type => (
               <SwiperSlide key={type.id} className="package-types-slide">
-                <div className="vacation position-relative">
-                  <img
-                    src={PUBLIC_API + type.thumbnail}
-                    className="d-block w-100 h-100"
-                    alt={type.title}
-                  />
-                  <div className="vacation-info">
-                    <h3 className="fs-24 font-weight-bold lh-25">{type.title}</h3>
-                    <p className="fs-15 lh-27 d-none">{type.content}</p>
+                <Link
+                  key={type.id}
+                  href={{
+                    pathname: '/search',
+                    query: { types: type.package_type.join() },
+                  }}>
+                  <div className="vacation position-relative">
+                    <img
+                      src={PUBLIC_API + type.thumbnail}
+                      className="d-block w-100 h-100"
+                      alt={type.title}
+                    />
+                    <div className="vacation-info">
+                      <h3 className="fs-24 font-weight-bold lh-25">{type.title} jaka</h3>
+                      <p className="fs-15 lh-27 d-none">{type.content}</p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

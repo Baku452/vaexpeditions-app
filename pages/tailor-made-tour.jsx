@@ -44,7 +44,7 @@ function TailorMade({ destinations }) {
 
                 {show && (
                   <div className="w-100">
-                    <ContactUsForm destinations={destinations} title={false} />
+                    <ContactUsForm destinations={destinations} title={false} pack="" />
                   </div>
                 )}
               </div>
