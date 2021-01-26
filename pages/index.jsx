@@ -90,7 +90,7 @@ function Index({
                   <div className="row justify-content-between align-items-center">
                     <div className="col-12 col-md-5 text-left p-0 p-lg-2">
                       <h4 className="fs-26 font-weight-bold text-white pb-3">
-                        Suscribe to our newsletter to get tips and travelling ideas
+                        Subscribe to our newsletter to get tips and travelling ideas
                       </h4>
                     </div>
                     <div className="col-12 col-md-7">
@@ -108,7 +108,7 @@ function Index({
                           <button
                             className="btn w-100 h-45 bc-3583E0 text-white fs-15"
                             type="submit">
-                            Search
+                            Subscribe
                           </button>
                         </div>
                       </div>

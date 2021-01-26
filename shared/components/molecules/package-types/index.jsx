@@ -69,7 +69,7 @@ function PackageTypes({ types, packagetypes }) {
                       alt={type.title}
                     />
                     <div className="vacation-info">
-                      <h3 className="fs-24 font-weight-bold lh-25">{type.title} jaka</h3>
+                      <h3 className="fs-24 font-weight-bold lh-25">{type.title}</h3>
                       <p className="fs-15 lh-27 d-none">{type.content}</p>
                     </div>
                   </div>
