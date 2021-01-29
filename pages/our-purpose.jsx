@@ -8,7 +8,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
     <Base destinations={destinations} packagetypes={packagetypes}>
       <Banner
         description="15 years or experience, 6,000 travellers 20 Destinations 100% Satisfation"
-        image="/images/arequipa3.jpg"
+        image="/images/our-purpose.jpg"
         alt="weq"
       />
 
@@ -19,76 +19,140 @@ export default function OurPurpose({ destinations, packagetypes }) {
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-3">
                   <h2 className="fs-20 lh-34 font-weight-bold">
-                    We have more than 15 years in the travel industry
+                    Our Purpose
                   </h2>
-                  <p className="m-0 fs-20 lh-34">
-                    Valencia travel’s histoy began 15 years ago. It is a family owned
-                    business but we have taken more than 6,000 travelleres in adventure
-                    all over Peru. Escribir un poco más sobre la agencia de viajes pero
-                    que no sea un texto interminable. Algo relativamente corto que vaya al
-                    grano.
+                  <p className="m-0 fs-17 lh-34">
+                    We strive to connect people's lives. Through each trip, we seek to create a global community of travelers, free from fear and aware of a sustainable future.
+                  </p><p></p>
+                  <p className="m-0 fs-17 lh-34">
+                    With 12 years of experience in the industry, we are passionate local experts with a deep and genuine love for our culture. We love to share the natural wonders of our country and, at the same time, connect with the global community of world travelers.
                   </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/cusco2.jpg" alt="" className="img-fluid" />
+                  <img src="images/our-purpose-min.jpg" alt="Our Purpose" className="img-fluid" />
                 </div>
               </div>
               <div className="row m-b-5">
                 <div className="col-12 col-md-4 mb-5">
                   <div className="card">
-                    <img
-                      src="images/cusco2.jpg"
-                      height="247"
-                      className="card-img-top"
-                      alt="..."
-                    />
-                    <div className="card-body">
-                      <div className="row align-items-start justify-content-start">
-                        <div className="col-12 text-center">
-                          <h5 className="card-title p-t-25 fs-25 fw-bold lh-23">
-                            Our team of experts
+                    <a href="why-valencia-travel" className="link-our">
+                      <img
+                        src="images/why-chose-valencia-min.jpg"
+                        className="card-img-top"
+                        alt="Why Valencia Travel"
+                      />
+                      <div className="card-body">
+                        <div className="row align-items-start justify-content-start">
+                          <div className="col-12 text-center">
+                            <h5 className="card-title p-t-25 fs-20 fw-bold lh-23">
+                              Why Valencia Travel
                           </h5>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <div className="col-12 col-md-4 mb-5">
                   <div className="card">
-                    <img
-                      src="images/cusco2.jpg"
-                      height="247"
-                      className="card-img-top"
-                      alt="..."
-                    />
-                    <div className="card-body">
-                      <div className="row align-items-start justify-content-start">
-                        <div className="col-12 text-center">
-                          <h5 className="card-title p-t-25 fs-25 fw-bold lh-23">
-                            Social Responsabiliy
-                          </h5>
+                    <a href="travel-with-purpose" className="link-our">
+                      <img
+                        src="images/social-responsability-min.jpg"
+                        className="card-img-top"
+                        alt="Travel with Purpose"
+                      />
+                      <div className="card-body">
+                        <div className="row align-items-start justify-content-start">
+                          <div className="col-12 text-center">
+                            <h5 className="card-title p-t-25 fs-20 fw-bold lh-23">
+                              Travel with Purpose
+                            </h5>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <div className="col-12 col-md-4 mb-5">
                   <div className="card">
-                    <img
-                      src="images/cusco2.jpg"
-                      height="247"
-                      className="card-img-top"
-                      alt="..."
-                    />
-                    <div className="card-body">
-                      <div className="row align-items-start justify-content-start">
-                        <div className="col-12 text-center">
-                          <h5 className="card-title p-t-25 fs-25 fw-bold lh-23">
-                            Cusco, our home
-                          </h5>
+                    <a href="our-core-values" className="link-our">
+                      <img
+                        src="images/our-values-min.jpg"
+                        className="card-img-top"
+                        alt="Our core values"
+                      />
+                      <div className="card-body">
+                        <div className="row align-items-start justify-content-start">
+                          <div className="col-12 text-center">
+                            <h5 className="card-title p-t-25 fs-20 fw-bold lh-23">
+                              Our core values
+                            </h5>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="row m-b-5">
+                <div className="col-12 col-md-4 mb-5">
+                  <div className="card">
+                    <a href="valencia-travel-history" className="link-our">
+                      <img
+                        src="images/history-of-the-valencia-min.jpg"
+                        className="card-img-top"
+                        alt="Valencia Travel history"
+                      />
+                      <div className="card-body">
+                        <div className="row align-items-start justify-content-start">
+                          <div className="col-12 text-center">
+                            <h5 className="card-title p-t-25 fs-20 fw-bold lh-23">
+                              Valencia Travel history
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div className="col-12 col-md-4 mb-5">
+                  <div className="card">
+                    <a href="our-philosophy" className="link-our">
+                      <img
+                        src="images/our-philosophy-min.jpg"
+                        className="card-img-top"
+                        alt="Our philosophy"
+                      />
+                      <div className="card-body">
+                        <div className="row align-items-start justify-content-start">
+                          <div className="col-12 text-center">
+                            <h5 className="card-title p-t-25 fs-20 fw-bold lh-23">
+                              Our philosophy
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div className="col-12 col-md-4 mb-5">
+                  <div className="card">
+                    <a href="local-experts" className="link-our">
+                      <img
+                        src="images/local-experts-min.jpg"
+                        className="card-img-top"
+                        alt="Local Experts"
+                      />
+                      <div className="card-body">
+                        <div className="row align-items-start justify-content-start">
+                          <div className="col-12 text-center">
+                            <h5 className="card-title p-t-25 fs-20 fw-bold lh-23">
+                              Local Experts
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -102,32 +166,24 @@ export default function OurPurpose({ destinations, packagetypes }) {
             <div className="col-10 mx-auto">
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-1">
-                  <h2 className="m-0 fs-25 font-weight-bold pb-5">Our Mision</h2>
-                  <p className="m-0 fs-20 lh-34">
-                    Acá debería ir la misión de la empresa. This is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen
-                    book.
+                  <h2 className="m-0 fs-20 font-weight-bold pb-5">Our Mision</h2>
+                  <p className="m-0 fs-17 lh-34">
+                    We strive to create innovative travel experiences that motivate you to explore the incredible geographic diversity of Peru, and at the same time learn from its historical and cultural legacy, providing a personalized and responsible service that contributes to the development of both the community and the travel sector.
                   </p>
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-2">
-                  <img src="images/cusco2.jpg" className="img-fluid" />
+                  <img src="images/mision.jpg" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
-                  <img src="images/cusco2.jpg" className="img-fluid" />
+                  <img src="images/vision.jpg" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-1 order-md-2">
-                  <h2 className="m-0 fs-25 font-weight-bold pb-5">Our Vision</h2>
+                  <h2 className="m-0 fs-20 font-weight-bold pb-5">Our Vision</h2>
 
-                  <p className="m-0 fs-20 lh-34">
-                    Acá debería ir la misión de la empresa. This is simply dummy text of
-                    the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen
-                    book.
+                  <p className="m-0 fs-17 lh-34">
+                    We aim to place ourselves as the Peruvian tourism company with the greatest presence in the national and international market, with a people-first ethic focused on customer satisfaction and the promotion of sustainable tourism.
                   </p>
                 </div>
               </div>

@@ -32,3 +32,22 @@ $container-max-widths: (
 .border {
   border: 1px solid red;
 }
+.contactus-text
+{
+  padding-left: 80px;
+  text-align:left;
+  @include media-breakpoint-down(md)
+  {
+    padding-left: 50px;
+    padding-right: 20px;
+  }
+  @include media-breakpoint-down(xs)
+  {
+    padding-left: 10px;
+  }
+}
+
+.redtext
+{
+color:red;
+}

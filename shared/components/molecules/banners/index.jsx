@@ -57,7 +57,7 @@ function Banners({ destinations, banners, packagetypes, interests }) {
                 <div className="col-11 col-lg-4 mx-auto m-b-25 p-0">
                   <Form.Control
                     as="select"
-                    size="lg"
+                    size="md"
                     onChange={event => handleChangeDestination(event)}>
                     <option>Destination</option>
                     {destinations.length > 0 &&
@@ -71,7 +71,7 @@ function Banners({ destinations, banners, packagetypes, interests }) {
                 <div className="col-11 col-lg-4 mx-auto m-b-25 p-0">
                   <Form.Control
                     as="select"
-                    size="lg"
+                    size="md"
                     onChange={event => handleChangePackage(event)}>
                     <option>Trip Type</option>
                     {packagetypes.length > 0 &&
@@ -85,7 +85,7 @@ function Banners({ destinations, banners, packagetypes, interests }) {
                 <div className="col-11 col-lg-4 mx-auto m-b-25 p-0">
                   <Form.Control
                     as="select"
-                    size="lg"
+                    size="md"
                     onChange={event => handleChangeInterest(event)}>
                     <option>Interest</option>
                     {interestsList.length > 0 &&

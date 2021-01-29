@@ -14,7 +14,7 @@ function Destinationitem({ item }) {
             query: { destination: item.id },
           }}>
           <a>
-            {item.title} {item.sub_title && `- ${item.sub_title}`}
+            <span className="holys-types">{item.title} {item.sub_title && `- ${item.sub_title}`}</span>
           </a>
         </Link>
       </li>
@@ -33,7 +33,7 @@ function TailorMadeitem({ item }) {
             query: { destination: item.id },
           }}>
           <a>
-            {item.title} {item.sub_title && `- ${item.sub_title}`}
+            <span className="holys-types"> {item.title} {item.sub_title && `- ${item.sub_title}`}</span>
           </a>
         </Link>
       </li>
@@ -88,12 +88,12 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                           <ul>
                             {countries &&
                               countries.map(item => (
-                                <li key={item.name}>
+                                <li key={item.name}><span className="holys-types">
                                   <a
                                     href="#"
                                     onClick={event => changeCountry(event, item.id)}>
                                     {item.name}
-                                  </a>
+                                  </a></span>
                                 </li>
                               ))}
                           </ul>
@@ -104,7 +104,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                 </div>
               </li>
               <li className="nav-item nav-destionations nav-iten-link">
-                <a className={active(router.pathname, '/experiences')}>HOLYDAY TYPES</a>
+                <a className={active(router.pathname, '/experiences')} role="button">HOLYDAY TYPES</a>
 
                 <div className="destinations ">
                   <div className="destinations-content">
@@ -115,7 +115,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                           <ul className="destinations-items types-items">
                             {packagetypes &&
                               packagetypes.map(types => (
-                                <li key={types.id} className="types-item pb-3">
+                                <li key={types.id} className="types-item pb-3 mb-2 pr-3">
                                   <i>
                                     {types.svg && (
                                       <img
@@ -130,10 +130,11 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                                       pathname: '/search',
                                       query: { types: types.id },
                                     }}>
-                                    <a>{types.title} </a>
+                                    <a><span className="holys-types">{types.title}</span> </a>
                                   </Link>
                                 </li>
                               ))}
+                            <li className="types-item pb-3"></li>
                           </ul>
                         </div>
                       </div>
@@ -142,7 +143,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                 </div>
               </li>
               <li className="nav-item nav-destionations nav-iten-link">
-                <a className={active(router.pathname, '/tailor-made-tour')}>
+                <a className={active(router.pathname, '/tailor-made-tour')} role="button">
                   Tailor Made Tours
                 </a>
 
@@ -150,6 +151,8 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                   <div className="destinations-content">
                     <div className="container">
                       <div className="row">
+
+
                         {destinations &&
                           destinations.map(destination => (
                             <div key={destination.name} className="col-12">
@@ -162,24 +165,10 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                             </div>
                           ))}
 
-                        <div className="col-12 pt-5 mt-4 pb-5">
-                          <h5 className="font-weight-bold">
-                            Other destinations in South America
-                          </h5>
 
-                          <ul>
-                            {countries &&
-                              countries.map(item => (
-                                <li key={item.name}>
-                                  <a
-                                    href="#"
-                                    onClick={event => changeCountry(event, item.id)}>
-                                    {item.name}
-                                  </a>
-                                </li>
-                              ))}
-                          </ul>
-                        </div>
+
+
+
                       </div>
                     </div>
                   </div>
