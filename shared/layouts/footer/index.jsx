@@ -21,22 +21,34 @@ function Footer() {
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
               <ul className="fs-15">
                 <li>
-                  <a href="#">Arequipa</a>
+                  <Link href="/search?destination=1">
+                    <a href="#">Arequipa</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Cusco</a>
+                  <Link href="/search?destination=4">
+                    <a href="#">Cusco</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Lima</a>
+                  <Link href="/search?destination=7">
+                    <a href="#">Lima</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Nazca</a>
+                  <Link href="/search?destination=5">
+                    <a href="#">Nazca</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Amazon</a>
+                  <Link href="/search?destination=6">
+                    <a href="#">Amazon</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Titicaca Lake</a>
+                  <Link href="/search?destination=10">
+                    <a href="#">Titicaca Lake</a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -76,9 +88,11 @@ function Footer() {
 
               <ul className="fs-15">
                 <li>
-                  <a href="#">
-                    USA and Canada Toll Free: <br /> <b>(+1) 800 773 9048</b>
-                  </a>
+                  <Link href="" onclick="call()">
+                    <a href="#">
+                      USA and Canada Toll Free: <br /> <b>(+1) 800 773 9048</b>
+                    </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#">
@@ -87,13 +101,13 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    Address:
+
+                  Address:
                     <br />
                     Portal Panes #123 / Centro Comercial Ruiseñores Office #: 306-307
                     <br />
-                    <b>Cusco - Peru</b>
-                  </a>
+                  <b>Cusco - Peru</b>
+
                 </li>
               </ul>
             </div>
@@ -160,7 +174,8 @@ function Footer() {
             <div className="col-12 p-0 text-center">
               <p className="m-0 fs-13 text-white">
                 2016 Valencia Travel Cusco, Inc. All Rights Reserved: Terms & Conditions -
-                Contact us
+                <Link href="/contact-us"><a href="#" class="skyblue"> Contact us</a>
+                </Link>
               </p>
             </div>
           </div>

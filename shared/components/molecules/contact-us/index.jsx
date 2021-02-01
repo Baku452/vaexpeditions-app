@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
+
 import { countries, saveContactUs } from '@/core/index';
 
 function ContactUsForm({ destinations, packages, title = true, pack }) {
@@ -57,7 +58,7 @@ function ContactUsForm({ destinations, packages, title = true, pack }) {
                     We will get back to you in a maximum time of 48 hours.
                   </p>
                     <div class="contactus-text">
-                      <h3>VALENCIA TRAVEL</h3>
+
                       <p>
                         Portal Panes #123 / Centro Comercial Ruiseñores<br />
                   Office #: 306-307 / Cusco - Peru
@@ -83,7 +84,7 @@ function ContactUsForm({ destinations, packages, title = true, pack }) {
                               <Form.Control
                                 type="text"
                                 name="first_name"
-                                placeholder="First Name"
+                                placeholder="First Name *"
                                 size="lg"
                                 required
                               />
@@ -97,7 +98,7 @@ function ContactUsForm({ destinations, packages, title = true, pack }) {
                               <Form.Control
                                 type="text"
                                 name="last_name"
-                                placeholder="Last Name"
+                                placeholder="Last Name *"
                                 size="lg"
                                 required
                               />
@@ -111,7 +112,7 @@ function ContactUsForm({ destinations, packages, title = true, pack }) {
                               <Form.Control
                                 type="email"
                                 name="email"
-                                placeholder="E-mail Address"
+                                placeholder="E-mail Address *"
                                 size="lg"
                                 required
                               />
@@ -191,17 +192,17 @@ function ContactUsForm({ destinations, packages, title = true, pack }) {
                                 size="lg"
                                 rows="5"
                                 name="message"
-                                required
                               />
                               <Form.Control.Feedback type="invalid">
                                 Please provide a valid message
                             </Form.Control.Feedback>
                             </div>
                           </div>
-                          <div className="col-12 text-left">
+
+                          <div className="col-12 text-left hr1">
                             <Form.Check
                               value
-                              label="Please send me your newsletter"
+                              label="Please send me your email newsletter"
                               onChange={e => setNewsletter(e.target.checked)}
                               // isInvalid={!!errors.terms}
                               // feedback={errors.terms}
@@ -209,6 +210,19 @@ function ContactUsForm({ destinations, packages, title = true, pack }) {
                               id="validationFormik0"
                             />
                           </div>
+                          <p class="mintext">
+                            We respond to all inquiries within one business day. If you do not hear back from us within this timeframe,
+                            please check your spam folder or call 1-860-856-5858. By Signing up for this email, you are agreeing
+                            to receive new, offers, and information from Valencia Travel or our partners.
+                            Click
+                            <Link href="/Privacy-Policy">
+                              <a> here </a>
+                            </Link>
+                            to
+                             visit our Privacy Policy.
+                            Easy unsubscribe links are provided in every email.
+
+                          </p>
                         </div>
                         <div className="row form-group">
                           <div className="col-12 col-md-5 mx-auto">
@@ -227,7 +241,7 @@ function ContactUsForm({ destinations, packages, title = true, pack }) {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 

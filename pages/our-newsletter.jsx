@@ -67,12 +67,19 @@ function Newsletter({ destinations, packagetypes }) {
                   </div>
                 </div>
               ) : (
-                <div className="card">
-                  <div className="card-body pt-5 mt-3 text-center">
-                    <p className="card-text fs-20 lh-29 mb-4">
-                      In order to complete your subscription please fill out the following
-                      information
+                  <div className="card">
+                    <div className="pt-5 mt-3 text-left newsletter">
+
+                      <h2>Start watching the world with a different view </h2>
+                      <p>
+                        Travel destinations will surprise you, stories that inspire, life experiences, mindful Travel
+                        and advices of our experts travellers delivered straight to your mail inbox.
                     </p>
+                      <p className="card-text fs-20 lh-29 mb-4">
+                        In order to complete your subscription please fill out the following
+                        information
+                    </p>
+                    </div>
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                       <div className="col-12 col-md-10 p-0 mx-auto text-left">
                         <div className="row pt-3 pb-0 pb-md-3">
@@ -152,9 +159,9 @@ function Newsletter({ destinations, packagetypes }) {
                         </div>
                       </div>
                     </Form>
+
                   </div>
-                </div>
-              )}
+                )}
             </div>
           </div>
         </div>

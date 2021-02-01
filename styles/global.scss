@@ -34,7 +34,7 @@ $container-max-widths: (
 }
 .contactus-text
 {
-  padding-left: 80px;
+  padding-left: 8%;
   text-align:left;
   @include media-breakpoint-down(md)
   {
@@ -46,8 +46,26 @@ $container-max-widths: (
     padding-left: 10px;
   }
 }
+.mintext
+{
+  font-size: 9px;
+  padding: 4% 10px;
 
+}
 .redtext
 {
 color:red;
+}
+.hr1
+{
+  border-top: 1px solid #52525238;
+  padding-top: 5px;
+}
+.skyblue:hover
+{
+  color:#0095ce;
+}
+.skyblue
+{
+  color:#ffffff;
 }

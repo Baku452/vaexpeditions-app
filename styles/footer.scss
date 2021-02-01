@@ -11,12 +11,14 @@ footer ul li {
   list-style: none;
 }
 footer ul li a {
-  color: #ffffff !important;
+  color: #ffffff;
   margin-bottom: 7px;
   display: block;
   font-size: 13px;
 }
-
+footer ul li a:hover {
+color:#0095ce;
+}
 footer .feedback {
   background-color: #e5e5e5;
   color: #000000 !important;
@@ -36,3 +38,4 @@ footer .feedback {
 .footer-title {
   border-bottom: 1px solid #525252;
 }
+
