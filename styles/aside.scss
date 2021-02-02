@@ -1,0 +1,6 @@
+.aside {
+  background: linear-gradient(to right, #f2f2f2 0%, #f2f2f2 25%, #fff 25%, #fff 100%);
+  @include media-breakpoint-down(md) {
+    background: transparent;
+  }
+}

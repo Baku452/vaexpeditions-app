@@ -1,0 +1,24 @@
+.table {
+  border: 1px solid #dcdcdc;
+  .row {
+    background-color: #f2f2f2;
+    &:nth-child(even) {
+      background-color: #fff;
+    }
+    .column {
+      border: 0;
+      font-weight: 600;
+      padding: 24px 24px;
+    }
+  }
+}
+
+.wrapper {
+  border: 0 !important;
+  .header {
+    border: 0 !important;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+}

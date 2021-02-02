@@ -5,13 +5,15 @@ $btn-border-radius: 0;
 $input-border-radius: 0;
 $input-border-radius-lg: 0;
 $card-border-radius: 0;
+$card-border-width: 0;
+$font-weight-bold: 600;
 $modal-lg: 1000px;
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1240px,
+  xl: 1400px,
 ) !default;
 
 @import '~bootstrap/scss/bootstrap';
@@ -28,6 +30,8 @@ $container-max-widths: (
 @import 'nav.scss';
 @import 'footer.scss';
 @import 'form.scss';
+
+@import 'aside.scss';
 
 .border {
   border: 1px solid red;

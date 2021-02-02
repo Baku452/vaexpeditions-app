@@ -134,6 +134,8 @@ function Search({ destinations, packagetypes, interests }) {
 
     const queryParams = querySet ? `?${querySet}` : '';
     const { result } = await packages({ queryParams });
+
+    console.log('result', result);
     setPackagesList(result?.data);
   }
 
@@ -450,7 +452,18 @@ function Search({ destinations, packagetypes, interests }) {
                 <div className="col-12 col-lg-9">
                   <div className="row">
                     {packagesList.length > 0 &&
-                      packagesList.map(item => <PackageItem key={item.id} {...item} />)}
+                      packagesList.map(item => (
+                        <div
+                          key={item?.id}
+                          className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                          <PackageItem
+                            title={item.title}
+                            days={item.days}
+                            slug={item.slug}
+                            thumbnail={item.thumbnail}
+                          />
+                        </div>
+                      ))}
                   </div>
                 </div>
               </div>
