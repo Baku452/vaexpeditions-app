@@ -116,6 +116,7 @@ function Nav({ destinations, setDestinations, countries, packagetypes }) {
                             {packagetypes &&
                               packagetypes.map(types => (
                                 <li key={types.id} className="types-item pb-3 mb-2 pr-3">
+
                                   <i>
                                     {types.svg && (
                                       <img

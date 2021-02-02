@@ -6,6 +6,7 @@ $input-border-radius: 0;
 $input-border-radius-lg: 0;
 $card-border-radius: 0;
 $modal-lg: 1000px;
+$skybluee:#0095ce;
 
 $container-max-widths: (
   sm: 540px,
@@ -63,9 +64,17 @@ color:red;
 }
 .skyblue:hover
 {
-  color:#0095ce;
+  color:$skybluee;
 }
 .skyblue
 {
   color:#ffffff;
+}
+.purpose
+{
+  color: rgb(68, 75, 77);
+  &:hover
+  {
+    color: $skybluee;
+  }
 }

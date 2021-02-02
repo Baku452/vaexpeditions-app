@@ -15,6 +15,8 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 function Search({ destinations, packagetypes, interests }) {
   const router = useRouter();
   const [packagesList, setPackagesList] = useState([]);
+  // const [destinations, setdestinations] = useState([]);
+  // const [packagetypes, setpackagetypes] = useState([]);
   const [checkedDestination, setCheckedDestination] = useState([]);
   const [checkedDays, setCheckedDays] = useState([]);
   const [checkedActvity, setCheckedActvity] = useState([]);
@@ -24,6 +26,7 @@ function Search({ destinations, packagetypes, interests }) {
   const [checkedMonths, setCheckedMonths] = useState([]);
   const [checkedYearMonth, setCheckedYearMonth] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
+  const [filters, setFilters] = useState([]);
 
   function actionFiltersMonths(event, id, yearIndex, monthIndex) {
     years[yearIndex].months[monthIndex].checked = event.target.checked;
@@ -138,6 +141,7 @@ function Search({ destinations, packagetypes, interests }) {
   }
 
   useEffect(() => {
+    console.log('object', router);
     const destinationActiveItems = [];
     if (router?.query?.destination) {
       const destinationsActive = router?.query?.destination.split(',');
@@ -217,9 +221,8 @@ function Search({ destinations, packagetypes, interests }) {
             <div className="col-12">
               <div className="row">
                 <div
-                  className={` ${
-                    showFilters ? 'filter-show' : ''
-                  } col-12 col-md-3 p-0 filters-overlay`}>
+                  className={` ${showFilters ? 'filter-show' : ''
+                    } col-12 col-md-3 p-0 filters-overlay`}>
                   {/* <Accordion defaultActiveKey="F0">
                     <Accordion.Toggle
                       as={Card.Header}
@@ -254,50 +257,40 @@ function Search({ destinations, packagetypes, interests }) {
                     </Card.Header>
                     <Accordion.Collapse eventKey="A0">
                       <Card.Body>
-                        {destinations.map(
-                          country =>
-                            country.destinations.filter(item => item.active).length >
-                              0 && (
-                              <Accordion defaultActiveKey={country.id} key={country.id}>
-                                <Card.Header className="card-header-filters no-border">
-                                  <ContextAwareToggle
-                                    eventKey={country.id}
-                                    className="content-gray">
-                                    <h2 className="fs-16 m-0 font-weight-bold p-0">
-                                      {country.name}
-                                    </h2>
-                                  </ContextAwareToggle>
-                                </Card.Header>
+                        {destinations.map(country => (
+                          <Accordion defaultActiveKey={country.id} key={country.id}>
+                            <Card.Header className="card-header-filters no-border">
+                              <ContextAwareToggle
+                                eventKey={country.id}
+                                className="content-gray">
+                                <h2 className="fs-16 m-0 font-weight-bold p-0">
+                                  {country.name}
+                                </h2>
+                              </ContextAwareToggle>
+                            </Card.Header>
 
-                                <Accordion.Collapse eventKey={country.id}>
-                                  <Card.Body>
-                                    {country.destinations.map(
-                                      destination =>
-                                        destination.active && (
-                                          <Form.Check
-                                            key={destination.id}
-                                            checked={setActionChecked(
-                                              destination.id,
-                                              checkedDestination,
-                                            )}
-                                            type="checkbox"
-                                            onChange={event =>
-                                              actionFiltersDestinations(
-                                                event,
-                                                destination.id,
-                                              )
-                                            }
-                                            name={destination.slug}
-                                            id={destination.id}
-                                            label={`${destination.title}`}
-                                          />
-                                        ),
+                            <Accordion.Collapse eventKey={country.id}>
+                              <Card.Body>
+                                {country.destinations.map(destination => (
+                                  <Form.Check
+                                    key={destination.id}
+                                    checked={setActionChecked(
+                                      destination.id,
+                                      checkedDestination,
                                     )}
-                                  </Card.Body>
-                                </Accordion.Collapse>
-                              </Accordion>
-                            ),
-                        )}
+                                    type="checkbox"
+                                    onChange={event =>
+                                      actionFiltersDestinations(event, destination.id)
+                                    }
+                                    name={destination.slug}
+                                    id={destination.id}
+                                    label={`${destination.title}`}
+                                  />
+                                ))}
+                              </Card.Body>
+                            </Accordion.Collapse>
+                          </Accordion>
+                        ))}
                       </Card.Body>
                     </Accordion.Collapse>
                   </Accordion>

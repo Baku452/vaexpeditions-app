@@ -88,7 +88,7 @@ function Footer() {
 
               <ul className="fs-15">
                 <li>
-                  <Link href="" onclick="call()">
+                  <Link href="" >
                     <a href="#">
                       USA and Canada Toll Free: <br /> <b>(+1) 800 773 9048</b>
                     </a>
