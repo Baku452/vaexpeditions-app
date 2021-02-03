@@ -16,7 +16,10 @@ export default function OurPurpose({ destinations, packagetypes }) {
 
         <div className="container text-justify">
           <div className="row mb-5 px-5">
-            <div className="col-lg-7 col-md-12 mt-4">
+            <div className="col-lg-7 col-md-12 mt-5">
+
+              <h3>History of Valencia Travel</h3>
+              <br />
               <p>
                 Valencia Travel was born in 2009 as the fulfillment of a dream shared by the Hurtado Valencia brothers: René, a professional guide and the current manager of the company, and Amílcar, a professor of philosophy and the assistant manager of the company. Both came from a relatively large family from Chumbivilcas, a province about eight hours from Cusco, and both shared the same entrepreneurial spirit.
                     </p>
@@ -24,7 +27,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                 The two brothers had the vision of creating the best travel agency located in the city of Cusco: a company that connects people through travel, to foster a single global community of travelers, free of fear and aware of the sustainable future. The origin of the company name was inspired by the maternal surname of the family, Valencia, a name of Spanish descent.
                     </p>
             </div>
-            <div className="col-lg-5 col-md-12 mt-4">
+            <div className="col-lg-5 col-md-12 mt-5">
               <img src="images/cusco2.jpg" alt="" className="img-fluid" />
             </div>
           </div>
