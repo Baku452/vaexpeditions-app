@@ -56,6 +56,32 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                     Please fill out the following information. <br />
                     We will get back to you in a maximum time of 48 hours.
                   </p>
+                  <div className="contactus-text">
+                    <p>
+                      Portal Panes #123 / Centro Comercial Ruiseñores
+                      <br />
+                      Office #: 306-307 / Cusco - Peru
+                    </p>
+                    <p>
+                      Hours of Operation <br />
+                      Monday through Friday: 9:00am to 6:00pm
+                    </p>
+
+                    <p>
+                      For general questions about our Expeditions, please call 1 - (860)
+                      856 5858 or 1 - (917) 983 2727.
+                    </p>
+
+                    <p>
+                      If you have a question about our Valencia Travel trips, please
+                      submit your inquiry via the form below:
+                    </p>
+
+                    <p>
+                      <span className="redtext">*</span> Indicates required field
+                    </p>
+                  </div>
+
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <div className="col-12 col-md-10 mx-auto p-0 text-left">
                       <div className="row mb-4">
@@ -64,7 +90,7 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                             <Form.Control
                               type="text"
                               name="first_name"
-                              placeholder="First Name"
+                              placeholder="First Name *"
                               size="lg"
                               required
                             />
@@ -78,7 +104,7 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                             <Form.Control
                               type="text"
                               name="last_name"
-                              placeholder="Last Name"
+                              placeholder="Last Name *"
                               size="lg"
                               required
                             />
@@ -92,7 +118,7 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                             <Form.Control
                               type="email"
                               name="email"
-                              placeholder="E-mail Address"
+                              placeholder="E-mail Address *"
                               size="lg"
                               required
                             />
@@ -172,33 +198,43 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                               size="lg"
                               rows="5"
                               name="message"
-                              required
                             />
                             <Form.Control.Feedback type="invalid">
                               Please provide a valid message
                             </Form.Control.Feedback>
                           </div>
                         </div>
+
                         <div className="col-12 text-left">
                           <Form.Check
                             value
-                            label="Please send me your newsletter"
+                            label="Please send me your email newsletter"
                             onChange={e => setNewsletter(e.target.checked)}
-                            // isInvalid={!!errors.terms}
-                            // feedback={errors.terms}
                             name="is_newsletter"
                             id="validationFormik0"
                           />
                         </div>
+                        <p className="col-12 pt-3 fs-9">
+                          We respond to all inquiries within one business day. If you do
+                          not hear back from us within this timeframe, please check your
+                          spam folder or call 1-860-856-5858. By Signing up for this
+                          email, you are agreeing to receive new, offers, and information
+                          from Valencia Travel or our partners. Click
+                          <Link href="/Privacy-Policy">
+                            <a> here </a>
+                          </Link>
+                          to visit our Privacy Policy. Easy unsubscribe links are provided
+                          in every email.
+                        </p>
                       </div>
-                      <div className="row form-group">
-                        <div className="col-12 col-md-5 mx-auto">
-                          <input
-                            type="submit"
-                            value="Send Message"
-                            className="btn btn-primary btn-block"
-                          />
-                        </div>
+                    </div>
+                    <div className="row form-group">
+                      <div className="col-12 col-md-5 mx-auto">
+                        <input
+                          type="submit"
+                          value="Send Message"
+                          className="btn btn-primary btn-block"
+                        />
                       </div>
                     </div>
                   </Form>

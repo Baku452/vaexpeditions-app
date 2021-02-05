@@ -14,7 +14,15 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Index({ types, tours, destinations, banners, packagetypes, interests, notification }) {
+function Index({
+  types,
+  tours,
+  destinations,
+  banners,
+  packagetypes,
+  interests,
+  notification,
+}) {
   return (
     <Base destinations={destinations} notification={notification}>
       <Head>
@@ -24,7 +32,12 @@ function Index({ types, tours, destinations, banners, packagetypes, interests, n
           }}
         />
       </Head>
-      <Cover destinations={destinations} banners={banners} packagetypes={packagetypes} interests={interests} />
+      <Cover
+        destinations={destinations}
+        banners={banners}
+        packagetypes={packagetypes}
+        interests={interests}
+      />
       <VacationType types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />

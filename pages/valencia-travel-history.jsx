@@ -8,36 +8,47 @@ export default function OurPurpose({ destinations, packagetypes }) {
     <Base destinations={destinations} packagetypes={packagetypes}>
       <Banner
         description="15 years or experience, 6,000 travellers 20 Destinations 100% Satisfation"
-        image="/images/our-purpose.jpg"
+        image="/images/history-of-the-valencia.jpg"
         alt="weq"
       />
 
       <section id="more">
+
         <div className="container text-justify">
-          <div className="row pt-5">
-            <div className="col-10 mx-auto">
-              <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-3">
-                  <h2 className="fs-20 lh-34 font-weight-bold">
-                    Our Purpose
-                  </h2>
-                  <p className="m-0 fs-17 lh-34">
-                    We strive to connect people's lives. Through each trip, we seek to create a global community of travelers, free from fear and aware of a sustainable future.
-                  </p><p></p>
-                  <p className="m-0 fs-17 lh-34">
-                    With 12 years of experience in the industry, we are passionate local experts with a deep and genuine love for our culture. We love to share the natural wonders of our country and, at the same time, connect with the global community of world travelers.
+          <div className="row mb-5 px-5">
+            <div className="col-lg-7 col-md-12 mt-4">
+              <p>
+                Valencia Travel was born in 2009 as the fulfillment of a dream shared by the Hurtado Valencia brothers: René, a professional guide and the current manager of the company, and Amílcar, a professor of philosophy and the assistant manager of the company. Both came from a relatively large family from Chumbivilcas, a province about eight hours from Cusco, and both shared the same entrepreneurial spirit.
+                    </p>
+              <p>
+                The two brothers had the vision of creating the best travel agency located in the city of Cusco: a company that connects people through travel, to foster a single global community of travelers, free of fear and aware of the sustainable future. The origin of the company name was inspired by the maternal surname of the family, Valencia, a name of Spanish descent.
+                    </p>
+            </div>
+            <div className="col-lg-5 col-md-12 mt-4">
+              <img src="images/cusco2.jpg" alt="" className="img-fluid" />
+            </div>
+          </div>
+          <div className="px-5">
+            <p>
+              And as the two brothers say today: “We started with a small office, but a very big dream. Now our company is one of the most recognized travel agencies in Cusco, for its exemplary quality of service, unique experiences and commitment to the empowerment of local people.”
                   </p>
-                </div>
-                <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose-min.jpg" alt="Our Purpose" className="img-fluid" />
-                </div>
-              </div>
+            <h2 className="fs-20 lh-34 font-weight-bold">What inspired the company logo?</h2>
+            <p>The idea for the company logo was inspired by Rene’s experience as a guide and tour leader at Machu Picchu. After taking many photos of the Inca citadel, one image caught his attention: Two llamas, with their necks crossed one over the other, standing right in front of Machu Picchu. </p>
+            <p>This is where the history of Valencia Travel began, with the wonder of Machu Picchu: “It is impossible not to wonder what Machu Picchu is doing there, with so many possible places to build an empire that controlled a territory that spanned from Chile to Ecuador. Why were the Incas inspired to build such a magnificent site in this remote corner five hundred meters above the Urubamba River? It seems like an unanswered question, but now we know that the Incas had more than one reason to choose this hidden place in the center of four peaks, each oriented according to the cardinal points.” Still, many mysteries surround this incredible archaeological site. </p></div>
+        </div>
+
+      </section>
+      <section id="mision_vision">
+        <div className="container bc-F7F5F5 mt-5 pt-5">
+          <div className="row pt-5 pb-5">
+            <div className="col-10 mx-auto">
               <div className="row m-b-5">
                 <div className="col-12 col-md-4 mb-5">
                   <div className="card">
                     <a href="why-valencia-travel" className="link-our">
                       <img
                         src="images/why-chose-valencia-min.jpg"
+                        height="auto"
                         className="card-img-top"
                         alt="Why Valencia Travel"
                       />
@@ -58,6 +69,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                     <a href="travel-with-purpose" className="link-our">
                       <img
                         src="images/social-responsability-min.jpg"
+                        height="auto"
                         className="card-img-top"
                         alt="Travel with Purpose"
                       />
@@ -78,6 +90,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                     <a href="our-core-values" className="link-our">
                       <img
                         src="images/our-values-min.jpg"
+                        height="auto"
                         className="card-img-top"
                         alt="Our core values"
                       />
@@ -100,6 +113,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                     <a href="valencia-travel-history" className="link-our">
                       <img
                         src="images/history-of-the-valencia-min.jpg"
+                        height="auto"
                         className="card-img-top"
                         alt="Valencia Travel history"
                       />
@@ -120,6 +134,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                     <a href="our-philosophy" className="link-our">
                       <img
                         src="images/our-philosophy-min.jpg"
+                        height="auto"
                         className="card-img-top"
                         alt="Our philosophy"
                       />
@@ -140,6 +155,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                     <a href="local-experts" className="link-our">
                       <img
                         src="images/local-experts-min.jpg"
+                        height="auto"
                         className="card-img-top"
                         alt="Local Experts"
                       />
@@ -154,37 +170,6 @@ export default function OurPurpose({ destinations, packagetypes }) {
                       </div>
                     </a>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="mision_vision">
-        <div className="container bc-F7F5F5 mt-5 pt-5 text-justify">
-          <div className="row pt-5 pb-5">
-            <div className="col-10 mx-auto">
-              <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-5 order-1">
-                  <h2 className="m-0 fs-20 font-weight-bold pb-5">Our Mision</h2>
-                  <p className="m-0 fs-17 lh-34">
-                    We strive to create innovative travel experiences that motivate you to explore the incredible geographic diversity of Peru, and at the same time learn from its historical and cultural legacy, providing a personalized and responsible service that contributes to the development of both the community and the travel sector.
-                  </p>
-                </div>
-                <div className="col-12 col-md-6 mb-5 order-2">
-                  <img src="images/mision.jpg" className="img-fluid" />
-                </div>
-              </div>
-              <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
-                  <img src="images/vision.jpg" className="img-fluid" />
-                </div>
-                <div className="col-12 col-md-6 mb-5 order-1 order-md-2">
-                  <h2 className="m-0 fs-20 font-weight-bold pb-5">Our Vision</h2>
-
-                  <p className="m-0 fs-17 lh-34">
-                    We aim to place ourselves as the Peruvian tourism company with the greatest presence in the national and international market, with a people-first ethic focused on customer satisfaction and the promotion of sustainable tourism.
-                  </p>
                 </div>
               </div>
             </div>

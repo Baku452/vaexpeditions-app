@@ -30,9 +30,6 @@ button:focus {
 .was-validated .form-control:invalid {
   background-image: none;
 }
-.black {
-  color: #000;
-}
 
 ul,
 li {
@@ -41,6 +38,9 @@ li {
   padding: 0;
 }
 
+.fs-9 {
+  font-size: 9px;
+}
 .fs-12 {
   font-size: 12px;
 }
@@ -48,7 +48,7 @@ li {
   font-size: 13px;
 }
 .fs-15 {
-  font-size: 15px;
+  font-size: 12px;
 }
 .fs-16 {
   font-size: 16px;
@@ -76,6 +76,7 @@ li {
 }
 .fs-35 {
   font-size: 35px;
+  font-weight: bold;
 }
 .fs-40 {
   font-size: 40px;
@@ -184,6 +185,9 @@ select {
   @include media-breakpoint-down(md) {
     background: transparent;
   }
+}
+.black {
+  color: #000;
 }
 
 .cursor-pointer {

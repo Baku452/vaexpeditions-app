@@ -8,7 +8,6 @@ export * from './atoms/logo/index';
 
 // MOLECULES
 export * from './molecules/top-tours/index';
-export * from './molecules/reviews/index';
 export * from './molecules/banner/index';
 export * from './molecules/package-item/index';
 export * from './molecules/slide/index';
@@ -34,3 +33,4 @@ export * from './organism/our-recommendations/index';
 export * from './organism/associations/index';
 export * from './organism/sub-newsletter/index';
 export * from './organism/contact-form/index';
+export * from './organism/reviews/index';

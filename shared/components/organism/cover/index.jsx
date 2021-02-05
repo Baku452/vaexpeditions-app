@@ -57,7 +57,10 @@ function Cover({ destinations, banners, packagetypes, interests }) {
             <div className="col-12 col-lg-8 text-center">
               <div className="row m-0">
                 <div className="col-11 col-lg-4 mx-auto p-0">
-                  <Form.Control as="select" size="lg" onChange={event => handleChangeDestination(event)}>
+                  <Form.Control
+                    as="select"
+                    size="lg"
+                    onChange={event => handleChangeDestination(event)}>
                     <option>Destination</option>
                     {destinations.length > 0 &&
                       destinations[0].destinations.map(item => (
@@ -68,7 +71,10 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                   </Form.Control>
                 </div>
                 <div className="col-11 col-lg-4 mx-auto p-0">
-                  <Form.Control as="select" size="lg" onChange={event => handleChangePackage(event)}>
+                  <Form.Control
+                    as="select"
+                    size="lg"
+                    onChange={event => handleChangePackage(event)}>
                     <option>Trip Type</option>
                     {packagetypes.length > 0 &&
                       packagetypes.map(item => (
@@ -79,7 +85,10 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                   </Form.Control>
                 </div>
                 <div className="col-11 col-lg-4 mx-auto p-0">
-                  <Form.Control as="select" size="lg" onChange={event => handleChangeInterest(event)}>
+                  <Form.Control
+                    as="select"
+                    size="lg"
+                    onChange={event => handleChangeInterest(event)}>
                     <option>Interest</option>
                     {interestsList.length > 0 &&
                       interestsList.map(item => (
@@ -94,7 +103,10 @@ function Cover({ destinations, banners, packagetypes, interests }) {
             <div className="col-12 col-lg-2 text-center">
               <div className="row m-0">
                 <div className="col-11 col-lg-12 mx-auto p-0">
-                  <button onClick={handleSearch} type="button" className="btn btn-primary btn-block">
+                  <button
+                    onClick={handleSearch}
+                    type="button"
+                    className="btn btn-primary btn-block">
                     SEARCH TRIPS
                   </button>
                 </div>
