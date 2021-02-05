@@ -7,7 +7,7 @@ body {
 body {
   background-color: #ffffff;
   color: #000000;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   -webkit-user-select: none;
@@ -26,41 +26,21 @@ button:focus {
   outline: none !important;
 }
 
-input {
-  background: #fff !important;
-}
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
   background-image: none;
 }
-.bottom-45i {
-  bottom: 45px !important;
+.black {
+  color: #000;
 }
-.right-25i {
-  right: 25px !important;
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-.right-50i {
-  right: 50px !important;
-}
-.bc-3583E0 {
-  background-color: #0095ce !important;
-}
-.bc-266DD8 {
-  background-color: #0095ce !important;
-}
-.bc-F7F5F5 {
-  background-color: #f7f5f5;
-}
-.bc-000000 {
-  background-color: #000000;
-}
-.btn-outline-dark {
-  color: #000000;
-  border-color: #000000;
-}
-.fs-i {
-  font-style: italic;
-}
+
 .fs-12 {
   font-size: 12px;
 }
@@ -78,9 +58,6 @@ input {
 }
 .fs-20 {
   font-size: 20px;
-}
-.fs-20i {
-  font-size: 20px !important;
 }
 .fs-22 {
   font-size: 22px;
@@ -109,48 +86,16 @@ input {
 .fs-48 {
   font-size: 48px;
 }
-/* width */
-.w-88 {
-  width: 88px;
-}
-.w-110 {
-  width: 110px;
-}
-.mw-170 {
-  min-width: 170px;
-}
-.w-260 {
-  width: 260px;
-}
-.w-300 {
-  width: 300px;
-}
-.w-280i {
-  width: 280px !important;
-}
-.w-350i {
-  width: 350px !important;
-}
-/* padding y margin */
 
-.b-b-1 {
-  border-bottom: 1px solid #c4c4c4;
+.fit {
+  object-fit: cover;
+  object-position: center;
 }
-.h-36 {
-  height: 36px;
+
+.border {
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
-.h-38 {
-  height: 38px;
-}
-.h-45 {
-  height: 45px;
-}
-.h-57 {
-  height: 57px;
-}
-.h-68 {
-  height: 68px;
-}
+
 .lh-17 {
   line-height: 17px;
 }
@@ -176,8 +121,16 @@ input {
   line-height: 48px;
 }
 
+.l0 {
+  left: 0;
+}
+
+.r0 {
+  left: 0;
+}
+
 select {
-  color: #8d8c8c !important;
+  color: #000 !important;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -188,6 +141,23 @@ select {
   background-position: 97% center;
   background-size: 27px;
   background-repeat: no-repeat;
+}
+.cover {
+  select {
+    border: 1px solid transparent !important;
+  }
+}
+
+.icon-size-l {
+  font-size: 45px !important;
+}
+
+.icon-size-m {
+  font-size: 30px !important;
+}
+
+.icon-size-w {
+  font-size: 20px !important;
 }
 
 ::-webkit-input-placeholder {
@@ -209,9 +179,11 @@ select {
   color: #8d8c8c !important;
 }
 
-.fit {
-  object-fit: cover;
-  object-position: center;
+.aside {
+  background: linear-gradient(to right, #f2f2f2 0%, #f2f2f2 25%, #fff 25%, #fff 100%);
+  @include media-breakpoint-down(md) {
+    background: transparent;
+  }
 }
 
 .cursor-pointer {
@@ -222,45 +194,61 @@ select {
 .swiper-button-prev:after {
   font-weight: bolder;
   color: #fff;
+  font-size: 32px !important;
+  @include media-breakpoint-down(md) {
+    font-size: 25px !important;
+  }
 }
 
-.package-slide .swiper-pagination-bullet {
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  opacity: 0.5;
-  z-index: 9;
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  @include media-breakpoint-down(md) {
+    right: 0px !important;
+  }
 }
 
-.package-slide .swiper-pagination-bullet-active {
-  background: #fff;
-  opacity: 1;
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  @include media-breakpoint-down(md) {
+    left: 0px !important;
+  }
 }
 
-.image-dummy {
-  background-color: #ccc;
-  height: 70px;
-  margin-bottom: 10px;
+.form-check {
+  padding-left: 3.25rem;
+}
+.form-check-input {
+  width: 22px;
+  height: 22px;
+  border-color: #c4c4c4;
+  margin-left: -2.25rem;
+}
+.form-check-label {
+  font-size: 1.05rem;
+  line-height: 32px;
 }
 
-.icon-size-l {
-  font-size: 45px !important;
+.form-control-lg {
+  font-size: 1.05rem;
 }
 
-.icon-size-m {
-  font-size: 30px !important;
+.was-validated .form-control:valid,
+.form-control.is-valid {
+  border-color: #ced4da;
+  padding-right: inherit;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: none;
+  background-size: none;
 }
 
-.address {
-  letter-spacing: 0.3px;
-  line-height: 30px;
+.was-validated .form-control:valid:focus,
+.form-control.is-valid:focus {
+  border-color: inherit;
+  box-shadow: inherit;
 }
 
-.btn {
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.modal-body {
-  padding: 0.1rem;
+.was-validated .form-check-input:valid ~ .form-check-label,
+.form-check-input.is-valid ~ .form-check-label {
+  color: inherit;
 }

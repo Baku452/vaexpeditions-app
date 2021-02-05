@@ -1,0 +1,17 @@
+.package {
+  .card {
+    border: none;
+    cursor: pointer;
+  }
+  .body {
+    border-left: 1px solid #c4c4c4;
+    border-right: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    height: 320px;
+  }
+  .title {
+    margin-bottom: 0.75rem;
+    height: 50px;
+    line-height: 24px;
+  }
+}

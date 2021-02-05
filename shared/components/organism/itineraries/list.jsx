@@ -49,9 +49,7 @@ function GalleryWrapper(props) {
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Body>
-        {images.length > 0 && <Gallery images={images} navigation pagination={false} />}
-      </Modal.Body>
+      <Modal.Body>{images.length > 0 && <Gallery images={images} navigation pagination={false} />}</Modal.Body>
     </Modal>
   );
 }
@@ -91,11 +89,7 @@ function List({ itineraries }) {
 
               {item.images.length > 0 && (
                 <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
-                  <img
-                    src={PUBLIC_API + item.images[0].image}
-                    className="d-block w-100 fit"
-                    alt={item.alt}
-                  />
+                  <img src={PUBLIC_API + item.images[0].image} className="d-block w-100 fit" alt={item.alt} />
                   <a
                     href="/gallery"
                     onClick={event => openModal(event, item)}
@@ -109,11 +103,7 @@ function List({ itineraries }) {
         ))}
       </Collapse>
 
-      <GalleryWrapper
-        images={images}
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+      <GalleryWrapper images={images} show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }

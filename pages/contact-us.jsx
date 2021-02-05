@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { ContactUsForm } from '@/components/index';
+import { ContactForm } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -16,7 +16,7 @@ function ContactUs({ destinations, packagetypes, packages }) {
 
   return (
     <Base destinations={destinations} packagetypes={packagetypes}>
-      <ContactUsForm destinations={destinations} packages={packages} pack={pack} />
+      <ContactForm destinations={destinations} packages={packages} pack={pack} />
     </Base>
   );
 }

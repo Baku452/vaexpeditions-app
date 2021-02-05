@@ -25,3 +25,17 @@ function Faqs({ faqs }) {
 }
 
 export { Faqs };
+
+{
+  /* <Accordion defaultActiveKey="F0">
+                    <Accordion.Toggle
+                      as={Card.Header}
+                      className="card-parent"
+                      eventKey="F0">
+                      Filters
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="F0">
+                      <Card.Body>akajka</Card.Body>
+                    </Accordion.Collapse>
+                  </Accordion> */
+}

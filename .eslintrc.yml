@@ -67,7 +67,7 @@ rules:
   import/first: 'error'
   max-len:
     - 'error'
-    - 140
+    - 90
     - 1
     - ignoreUrls: true
       ignoreComments: false

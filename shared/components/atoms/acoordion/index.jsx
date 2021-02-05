@@ -37,7 +37,7 @@ function ContextAwareToggle({ children, eventKey, callback, className }) {
 
 function Collapse({ children, open = 1 }) {
   return (
-    <Accordion defaultActiveKey={open} className="col-12 accordion">
+    <Accordion defaultActiveKey={open} className="accordion w-100">
       {children}
     </Accordion>
   );
@@ -45,7 +45,7 @@ function Collapse({ children, open = 1 }) {
 
 function CollapseContent({ index, title, children }) {
   function getColor(colorIndex) {
-    return (colorIndex + 1) % 2 === 0 ? '#f2f2f2 ' : '#ffffff';
+    return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
   }
 
   return (

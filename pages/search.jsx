@@ -1,14 +1,14 @@
 // import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 
-import { ContextAwareToggle, Icon, PackageItem } from '@/components/index';
+import { Collapse, CollapseContent, Icon, PackageItem } from '@/components/index';
 import { activities, days, packages, years } from '@/core/index';
 import Close from '@/icons/close.svg';
 import { Base } from '@/layouts/index';
+
+import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -135,7 +135,6 @@ function Search({ destinations, packagetypes, interests }) {
     const queryParams = querySet ? `?${querySet}` : '';
     const { result } = await packages({ queryParams });
 
-    console.log('result', result);
     setPackagesList(result?.data);
   }
 
@@ -196,13 +195,17 @@ function Search({ destinations, packagetypes, interests }) {
 
   return (
     <Base destinations={destinations} packagetypes={packagetypes}>
-      <div className="filters-header">
-        <button
-          type="button"
-          className="btn filter-actions"
-          onClick={() => setShowFilters(true)}>
-          Filters
-        </button>
+      <div className="container d-block d-lg-none pt-3">
+        <div className="row ">
+          <div className="offset-2 col-8">
+            <button
+              type="button"
+              className="btn btn-primary btn-block filter-actions"
+              onClick={() => setShowFilters(true)}>
+              Show filters
+            </button>
+          </div>
+        </div>
       </div>
       <section id="tours_all">
         <div className="container">
@@ -219,235 +222,149 @@ function Search({ destinations, packagetypes, interests }) {
             <div className="col-12">
               <div className="row">
                 <div
-                  className={` ${
-                    showFilters ? 'filter-show' : ''
-                  } col-12 col-md-3 p-0 filters-overlay`}>
-                  {/* <Accordion defaultActiveKey="F0">
-                    <Accordion.Toggle
-                      as={Card.Header}
-                      className="card-parent"
-                      eventKey="F0">
-                      Filters
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="F0">
-                      <Card.Body>akajka</Card.Body>
-                    </Accordion.Collapse>
-                  </Accordion> */}
-
-                  <div className="card-parent header-fill">
+                  className={`${styles.aside} ${
+                    showFilters ? 'd-block' : 'd-none'
+                  }  d-none d-lg-block col-12 col-lg-3 p-0`}>
+                  <div className="d-block d-lg-none pt-3 pb-3">
                     <h3 className="text-center pt-3">Filters</h3>
                     <a
                       href="#"
-                      className="filter-close"
+                      className={styles.close}
                       onClick={() => setShowFilters(false)}>
                       <Icon
                         component={Close}
                         viewBox="0 0 16 16"
-                        className="icon-size-m"
+                        className="icon-size-l"
                       />
                     </a>
                   </div>
+                  <Collapse open={1}>
+                    <CollapseContent index={0} title="Destinations">
+                      {destinations.map(
+                        country =>
+                          country.destinations.filter(item => item.active).length > 0 && (
+                            <Collapse open={1}>
+                              <CollapseContent index={0} title={country.name}>
+                                {country.destinations.map(
+                                  destination =>
+                                    destination.active && (
+                                      <Form.Check
+                                        key={destination.id}
+                                        checked={setActionChecked(
+                                          destination.id,
+                                          checkedDestination,
+                                        )}
+                                        type="checkbox"
+                                        onChange={event =>
+                                          actionFiltersDestinations(event, destination.id)
+                                        }
+                                        name={destination.slug}
+                                        id={destination.id}
+                                        label={`${destination.title}`}
+                                      />
+                                    ),
+                                )}
+                              </CollapseContent>
+                            </Collapse>
+                          ),
+                      )}
+                    </CollapseContent>
+                  </Collapse>
 
-                  <Accordion defaultActiveKey="A0">
-                    <Card.Header className="card-header-filters">
-                      <ContextAwareToggle eventKey="A0" className="content-gray">
-                        <h2 className="fs-16 m-0 font-weight-bold p-0">Destinations</h2>
-                      </ContextAwareToggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="A0">
-                      <Card.Body>
-                        {destinations.map(
-                          country =>
-                            country.destinations.filter(item => item.active).length >
-                              0 && (
-                              <Accordion defaultActiveKey={country.id} key={country.id}>
-                                <Card.Header className="card-header-filters no-border">
-                                  <ContextAwareToggle
-                                    eventKey={country.id}
-                                    className="content-gray">
-                                    <h2 className="fs-16 m-0 font-weight-bold p-0">
-                                      {country.name}
-                                    </h2>
-                                  </ContextAwareToggle>
-                                </Card.Header>
+                  <Collapse open={1}>
+                    <CollapseContent index={0} title="Duration (Days)">
+                      {days.map(item => (
+                        <Form.Check
+                          key={item.id}
+                          checked={item.checked}
+                          type="checkbox"
+                          onChange={event => actionFiltersDays(event, item.id)}
+                          name={`day${item.id}`}
+                          id={`day${item.id}`}
+                          label={`${item.start} - ${item.end}`}
+                        />
+                      ))}
+                    </CollapseContent>
+                  </Collapse>
 
-                                <Accordion.Collapse eventKey={country.id}>
-                                  <Card.Body>
-                                    {country.destinations.map(
-                                      destination =>
-                                        destination.active && (
-                                          <Form.Check
-                                            key={destination.id}
-                                            checked={setActionChecked(
-                                              destination.id,
-                                              checkedDestination,
-                                            )}
-                                            type="checkbox"
-                                            onChange={event =>
-                                              actionFiltersDestinations(
-                                                event,
-                                                destination.id,
-                                              )
-                                            }
-                                            name={destination.slug}
-                                            id={destination.id}
-                                            label={`${destination.title}`}
-                                          />
-                                        ),
-                                    )}
-                                  </Card.Body>
-                                </Accordion.Collapse>
-                              </Accordion>
-                            ),
-                        )}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Accordion>
+                  <Collapse open={1}>
+                    <CollapseContent index={0} title="Type of Travel">
+                      {packagetypes.map(item => (
+                        <Form.Check
+                          key={item.id}
+                          checked={setActionChecked(item.id, checkedTypes)}
+                          type="checkbox"
+                          onChange={event => actionFiltersTypes(event, item.id)}
+                          name={`type${item.id}`}
+                          id={`type${item.id}`}
+                          label={item.title}
+                        />
+                      ))}
+                    </CollapseContent>
+                  </Collapse>
 
-                  <Accordion defaultActiveKey="A1">
-                    <Card.Header className="card-header-filters">
-                      <ContextAwareToggle eventKey="A1" className="content-gray">
-                        <h2 className="fs-16 m-0 font-weight-bold p-0">
-                          Duration (Days)
-                        </h2>
-                      </ContextAwareToggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="A1">
-                      <Card.Body>
-                        {days.map(item => (
-                          <Form.Check
-                            key={item.id}
-                            checked={item.checked}
-                            type="checkbox"
-                            onChange={event => actionFiltersDays(event, item.id)}
-                            name={`day${item.id}`}
-                            id={`day${item.id}`}
-                            label={`${item.start} - ${item.end}`}
-                          />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Accordion>
+                  <Collapse open={1}>
+                    <CollapseContent index={0} title="Interests">
+                      {interests.map(item => (
+                        <Form.Check
+                          key={item.id}
+                          checked={setActionChecked(item.id, checkedInterest)}
+                          type="checkbox"
+                          onChange={event => actionFiltersInterest(event, item.id)}
+                          name={`interest${item.id}`}
+                          id={`interest${item.id}`}
+                          label={item.title}
+                        />
+                      ))}
+                    </CollapseContent>
+                  </Collapse>
 
-                  <Accordion defaultActiveKey="A2">
-                    <Card.Header className="card-header-filters">
-                      <ContextAwareToggle eventKey="A2" className="content-gray">
-                        <h2 className="fs-16 m-0 font-weight-bold p-0">Type of Travel</h2>
-                      </ContextAwareToggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="A2">
-                      <Card.Body>
-                        {packagetypes.map(item => (
-                          <Form.Check
-                            key={item.id}
-                            checked={setActionChecked(item.id, checkedTypes)}
-                            type="checkbox"
-                            onChange={event => actionFiltersTypes(event, item.id)}
-                            name={`type${item.id}`}
-                            id={`type${item.id}`}
-                            label={item.title}
-                          />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Accordion>
+                  <Collapse open={1}>
+                    <CollapseContent index={0} title="Activity Level">
+                      {activities.map(item => (
+                        <Form.Check
+                          key={item.id}
+                          checked={setActionChecked(item.id, checkedActvity)}
+                          type="checkbox"
+                          onChange={event => actionFiltersActivities(event, item.id)}
+                          name={`activity${item.id}`}
+                          id={`activity${item.id}`}
+                          label={item.label}
+                        />
+                      ))}
+                    </CollapseContent>
+                  </Collapse>
 
-                  <Accordion defaultActiveKey="A3">
-                    <Card.Header className="card-header-filters">
-                      <ContextAwareToggle eventKey="A3" className="content-gray">
-                        <h2 className="fs-16 m-0 font-weight-bold p-0">Interests</h2>
-                      </ContextAwareToggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="A3">
-                      <Card.Body>
-                        {interests.map(item => (
-                          <Form.Check
-                            key={item.id}
-                            checked={setActionChecked(item.id, checkedInterest)}
-                            type="checkbox"
-                            onChange={event => actionFiltersInterest(event, item.id)}
-                            name={`interest${item.id}`}
-                            id={`interest${item.id}`}
-                            label={item.title}
-                          />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Accordion>
-
-                  <Accordion defaultActiveKey="A4">
-                    <Card.Header className="card-header-filters">
-                      <ContextAwareToggle eventKey="A4" className="content-gray">
-                        <h2 className="fs-16 m-0 font-weight-bold p-0">Activity Level</h2>
-                      </ContextAwareToggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="A4">
-                      <Card.Body>
-                        {activities.map(item => (
-                          <Form.Check
-                            key={item.id}
-                            checked={setActionChecked(item.id, checkedActvity)}
-                            type="checkbox"
-                            onChange={event => actionFiltersActivities(event, item.id)}
-                            name={`activity${item.id}`}
-                            id={`activity${item.id}`}
-                            label={item.label}
-                          />
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Accordion>
-
-                  <Accordion defaultActiveKey="A5">
-                    <Card.Header className="card-header-filters">
-                      <ContextAwareToggle eventKey="A5" className="content-gray">
-                        <h2 className="fs-16 m-0 font-weight-bold p-0">
-                          Month of Travel
-                        </h2>
-                      </ContextAwareToggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="A5">
-                      <Card.Body>
-                        {years.map((year, yearIndex) => (
-                          <Accordion defaultActiveKey={year.id} key={year.id}>
-                            <Card.Header className="card-header-filters no-border">
-                              <ContextAwareToggle
-                                eventKey={year.id}
-                                className="content-gray">
-                                <h2 className="fs-16 m-0 font-weight-bold p-0">
-                                  {year.name}
-                                </h2>
-                              </ContextAwareToggle>
-                            </Card.Header>
-
-                            <Accordion.Collapse eventKey={year.id}>
-                              <div className="card-month">
-                                {year.months.map((month, monthIndex) => (
-                                  <Form.Check
-                                    disabled={month.disabled}
-                                    key={year.id + month.id}
-                                    checked={month.checked}
-                                    type="checkbox"
-                                    onChange={event =>
-                                      actionFiltersMonths(
-                                        event,
-                                        month.id,
-                                        yearIndex,
-                                        monthIndex,
-                                      )
-                                    }
-                                    name={year.id + month.id}
-                                    id={year.id + month.id}
-                                    label={month.id.substring(0, 3)}
-                                  />
-                                ))}
-                              </div>
-                            </Accordion.Collapse>
-                          </Accordion>
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Accordion>
+                  <Collapse open={1}>
+                    <CollapseContent index={0} title="Month of Travel">
+                      {years.map((year, yearIndex) => (
+                        <Collapse open={1} key={year.id}>
+                          <CollapseContent index={0} title={year.name}>
+                            {year.months.map((month, monthIndex) => (
+                              <Form.Check
+                                disabled={month.disabled}
+                                key={year.id + month.id}
+                                checked={month.checked}
+                                type="checkbox"
+                                className={styles.month}
+                                onChange={event =>
+                                  actionFiltersMonths(
+                                    event,
+                                    month.id,
+                                    yearIndex,
+                                    monthIndex,
+                                  )
+                                }
+                                name={year.id + month.id}
+                                id={year.id + month.id}
+                                label={month.id.substring(0, 3)}
+                              />
+                            ))}
+                          </CollapseContent>
+                        </Collapse>
+                      ))}
+                    </CollapseContent>
+                  </Collapse>
                 </div>
                 <div className="col-12 col-lg-9">
                   <div className="row">

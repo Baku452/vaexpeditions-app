@@ -34,21 +34,30 @@ function Package({ pack, destinations, packagetypes }) {
           <StikyBox />
           <div className="col-12 col-lg-9 column-left">
             <TripOverview pack={pack} />
+
             <Itineraries itineraries={pack?.itineraries} />
+
             <Divider />
 
             <WhatsIncluded
               include={pack?.whats_included}
               exclude={pack?.whats_not_included}
             />
+
             <Divider />
-            <PricesAndDates dates={pack?.dates_prices} />
+
+            {pack?.dates_prices.length > 0 && (
+              <PricesAndDates dates={pack?.dates_prices} />
+            )}
+
             <Divider />
 
             {pack?.optionals.length > 0 && <OptionalReting optionals={pack?.optionals} />}
+
             <Divider />
 
             {pack?.faqs.length > 0 && <Faqs faqs={pack?.faqs} />}
+
             <Divider />
 
             {pack?.related_packages.length > 0 && (

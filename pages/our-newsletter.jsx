@@ -53,7 +53,7 @@ function Newsletter({ destinations, packagetypes }) {
               <h2 className="fs-35 pt-5 pb-4">Newsletter</h2>
 
               {success ? (
-                <div className="card mb-5 pb-5">
+                <div className="card border mb-5 pb-5">
                   <div className="card-body pb-5 pt-5 mt-4 text-center">
                     <h5 className="card-title fs-30 pb-5">
                       Thank you for subscribing to our newsletter!
@@ -67,7 +67,7 @@ function Newsletter({ destinations, packagetypes }) {
                   </div>
                 </div>
               ) : (
-                <div className="card">
+                <div className="card border">
                   <div className="card-body pt-5 mt-3 text-center">
                     <p className="card-text fs-20 lh-29 mb-4">
                       In order to complete your subscription please fill out the following
@@ -146,7 +146,7 @@ function Newsletter({ destinations, packagetypes }) {
                             <input
                               type="submit"
                               value="Finish Subscription"
-                              className="btn bc-3583E0 text-white fs-18 w-100"
+                              className="btn btn-primary btn-block"
                             />
                           </div>
                         </div>

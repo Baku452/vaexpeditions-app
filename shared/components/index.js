@@ -3,20 +3,18 @@ export * from './atoms/icon/index';
 export * from './atoms/acoordion/index';
 export * from './atoms/title/index';
 export * from './atoms/divider/index';
+export * from './atoms/toggle/index';
+export * from './atoms/logo/index';
 
 // MOLECULES
-export * from './molecules/package-types/index';
-export * from './molecules/banners/index';
-export * from './molecules/our-recommendations/index';
 export * from './molecules/top-tours/index';
 export * from './molecules/reviews/index';
 export * from './molecules/banner/index';
 export * from './molecules/package-item/index';
 export * from './molecules/slide/index';
-export * from './molecules/newsletter/index';
-export * from './molecules/contact-us/index';
 export * from './molecules/rating/index';
 export * from './molecules/slide/gallery';
+export * from './molecules/navigation/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -27,3 +25,12 @@ export * from './organism/prices-dates/index';
 export * from './organism/whats-included/index';
 export * from './organism/itineraries/index';
 export * from './organism/trip-overview/index';
+export * from './organism/navbar/index';
+export * from './organism/menu/index';
+export * from './organism/newsletter/index';
+export * from './organism/cover/index';
+export * from './organism/vacation-type/index';
+export * from './organism/our-recommendations/index';
+export * from './organism/associations/index';
+export * from './organism/sub-newsletter/index';
+export * from './organism/contact-form/index';

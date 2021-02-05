@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;500;700&display=swap');
 
 $navbar-light-color: #000 !important;
 $btn-border-radius: 0;
@@ -9,30 +9,16 @@ $card-border-width: 0;
 $font-weight-bold: 600;
 $modal-lg: 1000px;
 
+$theme-colors: (
+  'primary': #179bd7,
+);
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1400px,
+  xl: 1300px,
 ) !default;
 
 @import '~bootstrap/scss/bootstrap';
 @import '~swiper/swiper.scss';
 @import 'base.scss';
-@import 'slide.scss';
-@import 'detail.scss';
-@import 'home.scss';
-
-@import 'banner.scss';
-@import 'accordion.scss';
-
-@import 'header.scss';
-@import 'nav.scss';
-@import 'footer.scss';
-@import 'form.scss';
-
-@import 'aside.scss';
-
-.border {
-  border: 1px solid red;
-}

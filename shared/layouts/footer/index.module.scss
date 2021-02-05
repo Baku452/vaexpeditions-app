@@ -1,0 +1,22 @@
+.footer {
+  background-color: #000;
+
+  padding: 80px 55px 40px 55px;
+
+  ul {
+    padding: 0;
+  }
+  ul li {
+    list-style: none;
+  }
+  ul li a {
+    color: #ffffff !important;
+    margin-bottom: 7px;
+    display: block;
+    font-size: 15px;
+  }
+
+  .title {
+    border-bottom: 1px solid #525252;
+  }
+}

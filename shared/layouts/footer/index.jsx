@@ -11,12 +11,14 @@ import Skype from '@/icons/skype.svg';
 import Vimeo from '@/icons/vimeo.svg';
 import Youtube from '@/icons/youtube.svg';
 
+import styles from './index.module.scss';
+
 function Footer() {
   return (
     <>
-      <footer>
-        <div className="container bc-000000">
-          <div className="row position-relative pb-4 mb-4 footer-title">
+      <footer className={styles.footer}>
+        <div className="container">
+          <div className="row position-relative pb-4 mb-4 title">
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
               <ul className="fs-15">
@@ -41,9 +43,7 @@ function Footer() {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
-              <h6 className="text-white font-weight-bold fs-13 pb-2 ">
-                EXPLORE VALENCIA TRAVEL
-              </h6>
+              <h6 className="text-white font-weight-bold fs-13 pb-2 ">EXPLORE VALENCIA TRAVEL</h6>
 
               <ul className="fs-15">
                 <li>
@@ -141,9 +141,7 @@ function Footer() {
                 className="d-inline-block pb-3 pr-1">
                 <Icon component={Advisor} viewBox="0 0 54 53" className="icon-size-l" />
               </a>
-              <a
-                href="skype:valenciatravel.cusco?call"
-                className="d-inline-block pb-3 pr-1">
+              <a href="skype:valenciatravel.cusco?call" className="d-inline-block pb-3 pr-1">
                 <Icon component={Skype} viewBox="0 0 59 58" className="icon-size-l" />
               </a>
               <a
@@ -159,8 +157,7 @@ function Footer() {
           <div className="row position-relative">
             <div className="col-12 p-0 text-center">
               <p className="m-0 fs-13 text-white">
-                2016 Valencia Travel Cusco, Inc. All Rights Reserved: Terms & Conditions -
-                Contact us
+                2016 Valencia Travel Cusco, Inc. All Rights Reserved: Terms & Conditions - Contact us
               </p>
             </div>
           </div>
