@@ -2,11 +2,7 @@
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-import { Gallery, Icon } from '@/components/index';
-import Bed from '@/icons/bed.svg';
-import Restaurant from '@/icons/restaurant.svg';
-
-import { Collapse, CollapseContent } from '../../atoms/acoordion/index';
+import { Collapse, CollapseContent, Gallery, ItineraryItems } from '@/components/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -79,21 +75,7 @@ function List({ itineraries }) {
                 <div className="row pb-4">
                   <div className="col-12 col-md-8 order-2 order-md-1">
                     <SmartText text={item?.content} length={item?.limit} />
-                    <ul className="pt-4 pb-2 pl-0">
-                      {item.items.map(element => (
-                        <li key={element.id} className="pb-3">
-                          <Icon
-                            component={
-                              element.types === 'Meals Included' ? Restaurant : Bed
-                            }
-                            viewBox="0 0 512 512"
-                            className="icon-size-m mr-2"
-                          />
-                          <span className="font-weight-bold">{element.types}: </span>
-                          {element.text}
-                        </li>
-                      ))}
-                    </ul>
+                    <ItineraryItems items={item?.items} />
                   </div>
 
                   {item.images.length > 0 && (

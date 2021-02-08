@@ -18,7 +18,7 @@ function TopTours({ tours }) {
                 </div>
                 <div className="col-3 d-none d-md-block text-right">
                   <Link href="/search">
-                    <a className="btn bc-3583E0 text-white fs-15">Explore all tours</a>
+                    <a className="btn btn-primary">Explore all tours</a>
                   </Link>
                 </div>
               </div>
@@ -31,11 +31,19 @@ function TopTours({ tours }) {
                   <Link key={item.id} href={`/package/${item.slug}`}>
                     <div className="d-flex col-12 col-md-6 col-lg-6 col-xl-4 pb-4 mb-2">
                       <div className={styles.card}>
-                        <img src={PUBLIC_API + item.thumbnail} className="card-img-top" alt={item.title} />
+                        <img
+                          src={PUBLIC_API + item.thumbnail}
+                          className="card-img-top"
+                          alt={item.title}
+                        />
 
                         <div className={`${styles.body} p-4`}>
-                          <h5 className="card-title mb-2 fs-18 font-weight-bold">{item.title}</h5>
-                          <h6 className="fs-18 m-0 pb-3">{item?.days > 1 ? `${item?.days} days` : 'Half-Day'}</h6>
+                          <h5 className="card-title mb-2 fs-18 font-weight-bold">
+                            {item.title}
+                          </h5>
+                          <h6 className="fs-18 m-0 pb-3">
+                            {item?.days > 1 ? `${item?.days} days` : 'Half-Day'}
+                          </h6>
                           <p className="card-text fs-15 lh-25 p-b-30">{item.summary}</p>
                         </div>
                       </div>

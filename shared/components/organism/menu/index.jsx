@@ -34,7 +34,7 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
             {destinations &&
               destinations.map(destination => (
                 <div key={destination.name} className="col-12">
-                  <h5 className="font-weight-bold black pb-3">{destination.name}</h5>
+                  <h5 className="font-weight-bold black">{destination.name}</h5>
                   <ul className={styles.items}>
                     {destination.destinations.map(item => (
                       <MenuItem item={item} key={item.id} tailorMade={tailorMade} />
@@ -75,7 +75,7 @@ function MenuHoliday({ packagetypes }) {
         <div className="container d-block">
           <div className="row">
             <div className="col-12">
-              <h5 className="font-weight-bold black pb-3">By Types</h5>
+              <h5 className="font-weight-bold black">By Types</h5>
               <ul className={`${styles.items} row`}>
                 {packagetypes &&
                   packagetypes.map(types => (
@@ -117,7 +117,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
   }
 
   useEffect(() => {
-    setDestinations(destinationsCurrent?.filter(item => item.id === 2));
+    setDestinations(destinationsCurrent?.filter(item => item.id === 1));
   }, []);
 
   function active(pathname, page) {

@@ -18,31 +18,53 @@ export default function OurPurpose({ destinations, packagetypes }) {
             <div className="col-10 mx-auto">
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-3">
-
                   <p>
-                    At Valencia Travel we have a philosophy that guides everything we do. We believe:
+                    At Valencia Travel we have a philosophy that guides everything we do.
+                    We believe:
                   </p>
                   <p>
-                    We are all the same regardless of countries, social classes and gender.
+                    We are all the same regardless of countries, social classes and
+                    gender.
                   </p>
                   <p>
-                    We promote equal opportunities through authenticity, collaboration, passion and diversity in an environment where everyone, from any origin or location, can contribute to the best of their abilities and have a positive impact that comes from the heart.
+                    We promote equal opportunities through authenticity, collaboration,
+                    passion and diversity in an environment where everyone, from any
+                    origin or location, can contribute to the best of their abilities and
+                    have a positive impact that comes from the heart.
                   </p>
                   <p>
-                    Our lives can be transformed by the travel experience, by the people, the traditions and the customs of every destination.
+                    Our lives can be transformed by the travel experience, by the people,
+                    the traditions and the customs of every destination.
                   </p>
-
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
                   <img src="images/cusco2.jpg" alt="" className="img-fluid" />
                 </div>
-                <div><p>
-                  We are committed to sharing the great cultural and natural wealth of our country, we want all world travelers to be part of it.
+                <div>
+                  <p>
+                    We are committed to sharing the great cultural and natural wealth of
+                    our country, we want all world travelers to be part of it.
                   </p>
-                  <p>Disproving false beliefs will help us to live without fear and ascertain the true nature of all destinations.</p>
-                  <p>We always have an open mind and an inclusive perspective when we look at different cultures and the huge diversity they reveal, and we believe that you have to travel to open your mind and learn to trust new people.</p>
-                  <p>Being responsible and aware of the environment will help us grow as one global community.</p>
-                  <p>We always promote the highest environmental sustainability practices, as a basis for achieving global development and improving people's quality of life.</p></div>
+                  <p>
+                    Disproving false beliefs will help us to live without fear and
+                    ascertain the true nature of all destinations.
+                  </p>
+                  <p>
+                    We always have an open mind and an inclusive perspective when we look
+                    at different cultures and the huge diversity they reveal, and we
+                    believe that you have to travel to open your mind and learn to trust
+                    new people.
+                  </p>
+                  <p>
+                    Being responsible and aware of the environment will help us grow as
+                    one global community.
+                  </p>
+                  <p>
+                    We always promote the highest environmental sustainability practices,
+                    as a basis for achieving global development and improving people's
+                    quality of life.
+                  </p>
+                </div>
               </div>
               <div className="row m-b-5">
                 <div className="col-12 col-md-4 mb-5">
@@ -57,9 +79,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                       <div className="card-body">
                         <div className="row align-items-start justify-content-start">
                           <div className="col-12 text-center">
-                            <h5 className="card-title purpose">
-                              Why Valencia Travel
-                          </h5>
+                            <h5 className="card-title purpose">Why Valencia Travel</h5>
                           </div>
                         </div>
                       </div>
@@ -78,9 +98,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                       <div className="card-body">
                         <div className="row align-items-start justify-content-start">
                           <div className="col-12 text-center">
-                            <h5 className="card-title purpose">
-                              Travel with Purpose
-                            </h5>
+                            <h5 className="card-title purpose">Travel with Purpose</h5>
                           </div>
                         </div>
                       </div>
@@ -99,9 +117,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                       <div className="card-body">
                         <div className="row align-items-start justify-content-start">
                           <div className="col-12 text-center">
-                            <h5 className="card-title purpose">
-                              Our core values
-                            </h5>
+                            <h5 className="card-title purpose">Our core values</h5>
                           </div>
                         </div>
                       </div>
@@ -143,9 +159,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                       <div className="card-body">
                         <div className="row align-items-start justify-content-start">
                           <div className="col-12 text-center">
-                            <h5 className="card-title purpose">
-                              Our philosophy
-                            </h5>
+                            <h5 className="card-title purpose">Our philosophy</h5>
                           </div>
                         </div>
                       </div>
@@ -164,9 +178,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
                       <div className="card-body">
                         <div className="row align-items-start justify-content-start">
                           <div className="col-12 text-center">
-                            <h5 className="card-title purpose">
-                              Local Experts
-                            </h5>
+                            <h5 className="card-title purpose">Local Experts</h5>
                           </div>
                         </div>
                       </div>

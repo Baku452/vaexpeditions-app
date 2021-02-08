@@ -32,11 +32,19 @@ function SubNewsletter() {
 
   return (
     <section id="recommendations" className={`${styles.news} mt-5`}>
-      <img src="/images/newsletter.png" className="fit  w-100 h-100 position-absolute" alt="..." />
+      <img
+        src="/images/newsletter.png"
+        className="fit  w-100 h-100 position-absolute"
+        alt="newsletter"
+      />
       <div className={styles.found} />
 
       <div className="container">
-        <Form className="form-inline" noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form
+          className="form-inline"
+          noValidate
+          validated={validated}
+          onSubmit={handleSubmit}>
           <div className="row pt-5">
             <div className="d-md-flex pt-5">
               <div className="col-10 col-md-9 mx-auto p-0">
@@ -59,7 +67,7 @@ function SubNewsletter() {
                       </div>
                       <div className="col-12 col-md-3 p-0">
                         <button className="btn btn-primary btn-block" type="submit">
-                          Search
+                          Subscribe
                         </button>
                       </div>
                     </div>

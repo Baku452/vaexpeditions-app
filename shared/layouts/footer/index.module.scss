@@ -1,12 +1,20 @@
 .footer {
   background-color: #000;
+  .container {
+    padding: 80px 55px 40px 55px;
+  }
+  ul,
+  li {
+    font-size: 13px;
+    a {
+      display: block;
+    }
+  }
 
-  padding: 80px 55px 40px 55px;
   a {
     color: #ffffff;
     margin-bottom: 7px;
-    display: block;
-    font-size: 15px;
+    font-size: 13px;
     &:hover {
       color: #179bd7;
     }

@@ -14,6 +14,8 @@ export * from './molecules/slide/index';
 export * from './molecules/rating/index';
 export * from './molecules/slide/gallery';
 export * from './molecules/navigation/index';
+export * from './molecules/itinerary-items/index';
+export * from './molecules/itinerary-icons/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';

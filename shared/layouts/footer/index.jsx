@@ -16,8 +16,8 @@ function Footer() {
   return (
     <>
       <footer className={styles.footer}>
-        <div className="container">
-          <div className="row position-relative pb-4 mb-4 title">
+        <div className={`container ${styles.container}`}>
+          <div className={`row position-relative pb-4 mb-4 ${styles.title}`}>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
               <ul className="fs-15">
@@ -175,6 +175,7 @@ function Footer() {
                 2016 Valencia Travel Cusco, Inc. All Rights Reserved: Terms & Conditions -
                 <Link href="/contact-us">
                   <a href="#" className="skyblue">
+                    {' '}
                     Contact us
                   </a>
                 </Link>

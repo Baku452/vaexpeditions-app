@@ -32,7 +32,7 @@ function Newsletter() {
   };
 
   return (
-    <div className={`header-lg container d-none d-lg-block pt-3 pb-3 overflow-hidden ${styles.header}`}>
+    <div className={`header-lg container d-none d-lg-block pt-4 pb-4 ${styles.header}`}>
       <div className="row flex-nowrap justify-content-between align-items-start level-1">
         <div className="col-2 p-0">
           <Link href="/">
@@ -43,10 +43,21 @@ function Newsletter() {
         </div>
         <div className="col-auto p-0">
           <p className="m-0 fs-13">Subscribe to our newsletter</p>
-          <Form className="form-inline" noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Control type="email" className="mr-1 w-280i" name="email" placeholder="Email" required />
+          <Form
+            className="form-inline"
+            noValidate
+            validated={validated}
+            onSubmit={handleSubmit}>
+            <Form.Control
+              type="email"
+              style={{ width: '280px' }}
+              className="mr-1"
+              name="email"
+              placeholder="Email"
+              required
+            />
             <button className="btn btn-primary" type="submit">
-              Subscribe
+              SUBSCRIBE
             </button>
           </Form>
         </div>
@@ -62,7 +73,7 @@ function Newsletter() {
             <div className="col-auto">
               <Link href="/contact-us">
                 <button type="button" className="btn btn-primary">
-                  Contact us
+                  CONTACT US
                 </button>
               </Link>
             </div>
