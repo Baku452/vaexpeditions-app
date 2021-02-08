@@ -5,9 +5,18 @@ $btn-border-radius: 0;
 $input-border-radius: 0;
 $input-border-radius-lg: 0;
 $card-border-radius: 0;
+$card-border-width: 0;
+$font-weight-bold: 800;
 $modal-lg: 1000px;
-$skybluee:#0095ce;
+$skybluee: #0095ce;
+$modal-inner-padding: 0;
 
+$btn-font-weight: 600;
+$btn-font-size: 13px;
+
+$theme-colors: (
+  'primary': #0095ce,
+);
 $container-max-widths: (
   sm: 540px,
   md: 720px,
@@ -18,63 +27,3 @@ $container-max-widths: (
 @import '~bootstrap/scss/bootstrap';
 @import '~swiper/swiper.scss';
 @import 'base.scss';
-@import 'slide.scss';
-@import 'detail.scss';
-@import 'home.scss';
-
-@import 'banner.scss';
-@import 'accordion.scss';
-
-@import 'header.scss';
-@import 'nav.scss';
-@import 'footer.scss';
-@import 'form.scss';
-
-.border {
-  border: 1px solid red;
-}
-.contactus-text
-{
-  padding-left: 8%;
-  text-align:left;
-  @include media-breakpoint-down(md)
-  {
-    padding-left: 50px;
-    padding-right: 20px;
-  }
-  @include media-breakpoint-down(xs)
-  {
-    padding-left: 10px;
-  }
-}
-.mintext
-{
-  font-size: 9px;
-  padding: 4% 10px;
-
-}
-.redtext
-{
-color:red;
-}
-.hr1
-{
-  border-top: 1px solid #52525238;
-  padding-top: 5px;
-}
-.skyblue:hover
-{
-  color:$skybluee;
-}
-.skyblue
-{
-  color:#ffffff;
-}
-.purpose
-{
-  color: rgb(68, 75, 77);
-  &:hover
-  {
-    color: $skybluee;
-  }
-}

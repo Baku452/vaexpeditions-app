@@ -1,0 +1,26 @@
+.footer {
+  background-color: #000;
+  .container {
+    padding: 80px 55px 40px 55px;
+  }
+  ul,
+  li {
+    font-size: 13px;
+    a {
+      display: block;
+    }
+  }
+
+  a {
+    color: #ffffff;
+    margin-bottom: 7px;
+    font-size: 13px;
+    &:hover {
+      color: #179bd7;
+    }
+  }
+
+  .title {
+    border-bottom: 1px solid #525252;
+  }
+}

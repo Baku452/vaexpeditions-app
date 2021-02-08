@@ -1,13 +1,24 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
-import Link from 'next/link';
 
-import { Itineraries, Rating, Slide } from '@/components/index';
+import {
+  Divider,
+  Faqs,
+  Itineraries,
+  OptionalReting,
+  PricesAndDates,
+  RelatedTrips,
+  Slide,
+  StikyBox,
+  TripOverview,
+  WhatsIncluded,
+} from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Post({ pack, destinations, packagetypes }) {
+function Package({ pack, destinations, packagetypes }) {
+  console.log('object', pack);
   return (
     <Base destinations={destinations} packagetypes={packagetypes}>
       <Head>
@@ -17,97 +28,43 @@ function Post({ pack, destinations, packagetypes }) {
       {pack?.images?.length > 0 && (
         <Slide images={pack.images} title={pack.title} pagination={false} />
       )}
-      <div className="container">
-        <div className="row pt-5 pb-4 mb-3">
-          <div className="col-12">
-            <div
-              className="fs-16 lh-29"
-              dangerouslySetInnerHTML={{ __html: pack?.description }}
+
+      <div className="container aside">
+        <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
+          <StikyBox />
+          <div className="col-12 col-lg-9 column-left">
+            <TripOverview pack={pack} />
+
+            <Itineraries itineraries={pack?.itineraries} />
+
+            <Divider />
+
+            <WhatsIncluded
+              include={pack?.whats_included}
+              exclude={pack?.whats_not_included}
             />
+
+            <Divider />
+
+            {pack?.dates_prices.length > 0 && (
+              <PricesAndDates dates={pack?.dates_prices} />
+            )}
+
+            <Divider />
+
+            {pack?.optionals.length > 0 && <OptionalReting optionals={pack?.optionals} />}
+
+            <Divider />
+
+            {pack?.faqs.length > 0 && <Faqs faqs={pack?.faqs} />}
+
+            <Divider />
+
+            {pack?.related_packages.length > 0 && (
+              <RelatedTrips packages={pack?.related_packages} />
+            )}
           </div>
         </div>
-      </div>
-      <div className="package-panel">
-        <div className="container package-detail">
-          <div className="row pb-4 mb-3">
-            <div className="col-12 col-md-4">
-              <div className="row pt-4 content-details">
-                <div className="col-12 pt-2 pb-2">
-                  <div className="row align-items-center">
-                    <div className="col-12 col-md-7 fs-16 pt-1 pb-3 pt-md-0 pb-md-0 font-weight-bold w-300">
-                      Physical Difficulty
-                    </div>
-                    <div className="col-12 col-md-5 d-flex">
-                      <Rating number={pack?.physical_difficulty} />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 pb-2">
-                  <div className="row align-items-center">
-                    <div className="col-12 col-md-7 fs-16 pt-1 pb-3 pt-md-0 pb-md-0  font-weight-bold w-300">
-                      Cultural rating
-                    </div>
-                    <div className="col-12 col-md-5 d-flex">
-                      <Rating number={pack?.cultural_rating} />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 pb-2">
-                  <div className="row align-items-center">
-                    <div className="col-12 col-md-7 pt-1 pb-3 pt-md-0 pb-md-0  fs-16 font-weight-bold w-300">
-                      Wildlife expectation
-                    </div>
-                    <div className="col-12 col-md-5 d-flex">
-                      <Rating number={pack?.wildlife_expectation} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 col-md-5">
-              <div className="row  pt-4 content-details">
-                <div className="col-12 col-md-6 text-center">
-                  <img
-                    src={PUBLIC_API + pack?.specialist?.thumbnail}
-                    alt="Contact Us"
-                    className="image-circle"
-                  />
-                  {pack?.show_specialist && (
-                    <h6 className="pt-2 font-weight-bold">
-                      {pack?.specialist?.fullname}
-                    </h6>
-                  )}
-                </div>
-                <div className="col-12 col-md-6 text-center pt-2">
-                  <h4 className="fs-20 font-weight-bold pb-3">
-                    Talk to your travel specialists
-                  </h4>
-
-                  <Link
-                    href={{
-                      pathname: '/contact-us',
-                      query: { package: pack.slug },
-                    }}>
-                    <a className="btn btn-contact btn-outline-dark fs-16 w-100">
-                      Contact Us
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container package-detail pt-5 pb-5">
-        {pack?.itineraries.length > 1 && (
-          <div className="row p-4">
-            <div className="col-12">
-              <h2 className="fs-16 m-0 font-weight-bold">DAY BY DAY SCHEDULE</h2>
-            </div>
-          </div>
-        )}
-        <Itineraries itineraries={pack?.itineraries} />
       </div>
     </Base>
   );
@@ -137,4 +94,4 @@ export async function getStaticProps({ params }) {
   return { props: { pack, destinations, packagetypes } };
 }
 
-export default Post;
+export default Package;

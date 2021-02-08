@@ -7,16 +7,17 @@ import Instagram from '@/icons/instagram.svg';
 import Linkedin from '@/icons/linkedin.svg';
 import Pinterest from '@/icons/pinterest.svg';
 import Skype from '@/icons/skype.svg';
-// import Twitter from '@/icons/twitter.svg';
 import Vimeo from '@/icons/vimeo.svg';
 import Youtube from '@/icons/youtube.svg';
+
+import styles from './index.module.scss';
 
 function Footer() {
   return (
     <>
-      <footer>
-        <div className="container bc-000000">
-          <div className="row position-relative pb-4 mb-4 footer-title">
+      <footer className={styles.footer}>
+        <div className={`container ${styles.container}`}>
+          <div className={`row position-relative pb-4 mb-4 ${styles.title}`}>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
               <ul className="fs-15">
@@ -88,7 +89,7 @@ function Footer() {
 
               <ul className="fs-15">
                 <li>
-                  <Link href="" >
+                  <Link href="">
                     <a href="#">
                       USA and Canada Toll Free: <br /> <b>(+1) 800 773 9048</b>
                     </a>
@@ -101,13 +102,11 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-
                   Address:
-                    <br />
-                    Portal Panes #123 / Centro Comercial Ruiseñores Office #: 306-307
-                    <br />
+                  <br />
+                  Portal Panes #123 / Centro Comercial Ruiseñores Office #: 306-307
+                  <br />
                   <b>Cusco - Peru</b>
-
                 </li>
               </ul>
             </div>
@@ -174,7 +173,11 @@ function Footer() {
             <div className="col-12 p-0 text-center">
               <p className="m-0 fs-13 text-white">
                 2016 Valencia Travel Cusco, Inc. All Rights Reserved: Terms & Conditions -
-                <Link href="/contact-us"><a href="#" class="skyblue"> Contact us</a>
+                <Link href="/contact-us">
+                  <a href="#" className="skyblue">
+                    {' '}
+                    Contact us
+                  </a>
                 </Link>
               </p>
             </div>

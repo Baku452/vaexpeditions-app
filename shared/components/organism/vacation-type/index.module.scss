@@ -1,0 +1,32 @@
+.vacation {
+  .slide {
+    width: 262px;
+  }
+  .info {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    color: #ffffff;
+    position: absolute;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease;
+    cursor: pointer;
+    min-height: 78px;
+    p {
+      padding-top: 15px;
+    }
+    &:hover {
+      top: 0;
+    }
+    &:hover p {
+      display: block !important;
+    }
+  }
+}

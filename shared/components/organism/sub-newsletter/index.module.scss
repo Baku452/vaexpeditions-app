@@ -1,0 +1,31 @@
+@import '../../../../styles/media-queries.scss';
+
+.news {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: $sm) {
+    height: 400px;
+  }
+  .found {
+    background: radial-gradient(
+      35.77% 35.77% at 50% 50%,
+      rgba(43, 41, 41, 0) 0%,
+      rgba(0, 0, 0, 0.144) 55.52%,
+      rgba(0, 0, 0, 0.576) 100%
+    );
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @media (max-width: $sm) {
+      background: rgba(0, 0, 0, 0.95);
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.95));
+    }
+  }
+  button {
+    height: 38px;
+  }
+}

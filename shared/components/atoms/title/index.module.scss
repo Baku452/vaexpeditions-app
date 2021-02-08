@@ -1,0 +1,18 @@
+.title {
+  margin: 0 0 40px;
+  display: flex;
+  flex: 1 1 auto;
+
+  &::before {
+    background: #0095ce;
+    content: '';
+    display: block;
+    -webkit-flex: 0 0 5px;
+    -ms-flex: 0 0 5px;
+    flex: 0 0 5px;
+    margin-bottom: 8px;
+    margin-right: 20px;
+    margin-top: 8px;
+    position: relative;
+  }
+}

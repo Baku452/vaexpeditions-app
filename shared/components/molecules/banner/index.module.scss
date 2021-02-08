@@ -1,0 +1,27 @@
+.banner {
+  height: calc(100vh - 162px);
+}
+
+.align {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  p,
+  h2 {
+    z-index: 3;
+    width: 400px;
+  }
+}
+.alignend {
+  align-items: flex-end;
+}
+
+.shadow {
+  z-index: 1;
+  background: linear-gradient(
+    267.13deg,
+    rgba(0, 0, 0, 0.7) 29.42%,
+    rgba(0, 0, 0, 0) 67.17%
+  );
+}

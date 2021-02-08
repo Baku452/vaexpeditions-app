@@ -1,13 +1,15 @@
 import Link from 'next/link';
 
+import styles from './index.module.scss';
+
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function TopTours({ tours }) {
   return (
     <>
-      <section id="tours">
+      <section className={styles.package}>
         <div className="container">
-          <div className="row pt-5 pb-5">
+          <div className="row mt-5 pt-5 pb-5">
             <div className="col-12 mx-auto">
               <div className="row">
                 <div className="col-3 d-none d-md-block" />
@@ -16,7 +18,7 @@ function TopTours({ tours }) {
                 </div>
                 <div className="col-3 d-none d-md-block text-right">
                   <Link href="/search">
-                    <a className="btn bc-3583E0 text-white fs-15">Explore all tours</a>
+                    <a className="btn btn-primary">Explore all tours</a>
                   </Link>
                 </div>
               </div>
@@ -24,18 +26,18 @@ function TopTours({ tours }) {
           </div>
           <div className="row">
             <div className="col-12 mx-auto">
-              <div className="row card-tops">
+              <div className={`${styles.card} row`}>
                 {tours.map(item => (
                   <Link key={item.id} href={`/package/${item.slug}`}>
                     <div className="d-flex col-12 col-md-6 col-lg-6 col-xl-4 pb-4 mb-2">
-                      <div className="card">
+                      <div className={styles.card}>
                         <img
                           src={PUBLIC_API + item.thumbnail}
                           className="card-img-top"
                           alt={item.title}
                         />
 
-                        <div className="card-body">
+                        <div className={`${styles.body} p-4`}>
                           <h5 className="card-title mb-2 fs-18 font-weight-bold">
                             {item.title}
                           </h5>
