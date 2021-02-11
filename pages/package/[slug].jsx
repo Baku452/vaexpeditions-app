@@ -18,7 +18,6 @@ import { Base } from '@/layouts/index';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Package({ pack, destinations, packagetypes }) {
-  console.log('object', pack);
   return (
     <Base destinations={destinations} packagetypes={packagetypes}>
       <Head>
@@ -31,7 +30,7 @@ function Package({ pack, destinations, packagetypes }) {
 
       <div className="container aside">
         <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
-          <StikyBox />
+          <StikyBox pack={pack} />
           <div className="col-12 col-lg-9 column-left">
             <TripOverview pack={pack} />
 

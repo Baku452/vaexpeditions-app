@@ -233,7 +233,7 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                         <input
                           type="submit"
                           value="Send Message"
-                          className="btn btn-primary btn-block"
+                          className="btn btn-primary fs-16 w-100"
                         />
                       </div>
                     </div>

@@ -1,13 +1,13 @@
 @import '../../../../styles/media-queries.scss';
 
 .slide {
-  height: calc(100vh - 144px);
+  height: calc(100vh - 162px);
   position: relative;
   @media (max-width: $md) {
     height: 350px;
   }
   .swiper {
-    height: calc(100vh - 144px);
+    height: calc(100vh - 162px);
     @media (max-width: $md) {
       height: 350px;
     }

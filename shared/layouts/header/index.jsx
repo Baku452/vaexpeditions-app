@@ -1,26 +1,15 @@
-import { Menu, NavToolbar, Newsletter } from '@/components/index';
-import styles from './index.module.scss';
+import { Menu, NavToolbar, Newsletter, Notification } from '@/components/index';
 
-
-function Header({ destinations, packagetypes, notification }) {
+function Header({ destinations, packagetypes, notifications }) {
   return (
-    <div className={styles.stickyHeader}>
-
-      {notification &&
-        notification.map(item => (
-          <div key={item.id} className="container-fluid text-center notification">
-            <Link href={`/notification/${item.slug}`}>
-              <a>{item.title}</a>
-            </Link>
-          </div>
-        ))}
-      <h1>{notification}</h1>
+    <>
+      <Notification notifications={notifications} />
       <header>
         <Newsletter />
         <NavToolbar />
       </header>
       <Menu destinations={destinations} packagetypes={packagetypes} />
-    </div>
+    </>
   );
 }
 

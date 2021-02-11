@@ -24,12 +24,13 @@ $box-shadow: -6px -11px 12px 3px;
 
 $theme-colors: (
   'primary': #0095ce,
+  'secondary': #000,
 );
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1240px,
+  xl: 1700px,
 ) !default;
 
 @import '~bootstrap/scss/bootstrap';
