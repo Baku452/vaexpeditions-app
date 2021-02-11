@@ -22,6 +22,24 @@
   .title {
     position: absolute;
     left: 16px;
+    bottom: 60px;
+    z-index: 99;
+    height: auto;
+    width: 50%;
+    @media (max-width: $md) {
+      font-size: 30px;
+    }
+    @media (max-width: $sm) {
+      bottom: 2px;
+      width: 95%;
+      font-size: 24px;
+      left: 3%;
+    }
+  }
+
+  .subtitle {
+    position: absolute;
+    left: 16px;
     bottom: 16px;
     z-index: 99;
     height: auto;

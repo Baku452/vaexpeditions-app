@@ -26,7 +26,7 @@ function Package({ pack, destinations, packagetypes }) {
         <meta name="keywords" content={pack?.keywords} />
       </Head>
       {pack?.images?.length > 0 && (
-        <Slide images={pack.images} title={pack.title} pagination={false} />
+        <Slide images={pack.images} title={pack.title} subtitle={pack.days} pagination={false} />
       )}
 
       <div className="container aside">

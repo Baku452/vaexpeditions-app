@@ -7,7 +7,7 @@ body {
 body {
   background-color: #ffffff;
   color: #000000;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   -webkit-user-select: none;
@@ -246,6 +246,11 @@ select {
     left: 0px !important;
   }
 }
+// Add slides Fonts //
+.slidesHeadings{
+  font-family: 'Electra LT Std', sans-serif;
+}
+
 
 .form-check {
   padding-left: 3.25rem;

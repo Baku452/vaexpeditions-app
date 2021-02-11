@@ -5,7 +5,7 @@ import { Logo, Navigation, Toggle } from '@/components/index';
 
 function NavToolbar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar d-lg-none d-block pb-4">
+    <Navbar collapseOnSelect expand="lg" className="navbar box-shadow d-lg-none d-block pb-4">
       <Logo />
       <Toggle />
       <Navigation />

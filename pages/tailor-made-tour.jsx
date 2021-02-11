@@ -2,7 +2,11 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import { useState } from 'react';
 
-import { Banner, ContactUsForm } from '@/components/index';
+//Error de immportac
+// import { Banner, ContactUsForm } from '@/components/index';
+
+//Linea agregada de componente Contact
+import { Banner, ContactForm } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;

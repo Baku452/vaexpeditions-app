@@ -14,28 +14,28 @@ const SmartText = ({ text, length = 492 }) => {
       {length === 0 ? (
         <div className="fs-16 lh-29" dangerouslySetInnerHTML={{ __html: text }} />
       ) : (
-        <>
-          <div
-            className="fs-16 lh-29"
-            dangerouslySetInnerHTML={{
-              __html: showLess ? `${text.slice(0, length)}...` : text,
-            }}
-          />
-          <a
-            role="presentation"
-            style={{
-              cursor: 'pointer',
-              color: '#007bff',
-              marginTop: '-12px',
-              display: 'block',
-              fontSize: '14px',
-              textDecoration: 'underline !important',
-            }}
-            onClick={() => setShowLess(!showLess)}>
-            {showLess ? 'Ver más' : 'Ver menos'}
-          </a>
-        </>
-      )}
+          <>
+            <div
+              className="fs-16 lh-29"
+              dangerouslySetInnerHTML={{
+                __html: showLess ? `${text.slice(0, length)}...` : text,
+              }}
+            />
+            <a
+              role="presentation"
+              style={{
+                cursor: 'pointer',
+                color: '#007bff',
+                marginTop: '-12px',
+                display: 'block',
+                fontSize: '14px',
+                textDecoration: 'underline !important',
+              }}
+              onClick={() => setShowLess(!showLess)}>
+              {showLess ? 'Show more' : 'Show less'}
+            </a>
+          </>
+        )}
     </div>
   );
 };

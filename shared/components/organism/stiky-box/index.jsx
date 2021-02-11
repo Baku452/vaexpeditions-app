@@ -17,7 +17,7 @@ const menuList = [
 function StikyBox() {
   return (
     <StickyBox
-      offsetTop={0}
+      offsetTop={161}
       offsetBottom={20}
       className="col-3 d-none d-sm-none d-md-none d-lg-block d-lx-block">
       <ul className={styles.styky}>

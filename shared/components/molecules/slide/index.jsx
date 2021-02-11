@@ -7,12 +7,14 @@ import styles from './index.module.scss';
 SwiperCore.use([Navigation, Pagination]);
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
+const subtitulo = "Slides sub";
 
 function Slide({
   images,
   navigation = true,
   pagination = true,
   title = false,
+  subtitle,
   isHome = false,
 }) {
   return (
@@ -33,17 +35,22 @@ function Slide({
               />
               {isHome && (
                 <section>
-                  <h2>{item?.name}</h2>
-                  <h3>{item?.summary}</h3>
+                  <h2 className="slidesHeadings">{item?.name}</h2>
+                  <h3>{item?.subtitle}</h3>
                 </section>
               )}
             </SwiperSlide>
           ))}
       </Swiper>
       {title && (
-        <h2 className={`${styles.title} fs-48 font-weight-bold text-white text-left`}>
-          {title}
-        </h2>
+        <>
+          <h2 className={`${styles.title} fs-48 font-weight-bold text-white text-left`}>
+            {title}
+          </h2>
+          <p className={`${styles.subtitle} fs-24 font-weight-light text-white text-left`}>
+            {subtitle}
+          </p>
+        </>
       )}
     </div>
   );

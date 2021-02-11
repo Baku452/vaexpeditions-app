@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
+@font-face {
+  font-family: "Electra LT Std";
+  src: url("/fonts/ElectraLTStd-BoldCursive.otf");
+  font-style: normal;
+  font-display: swap;
+}
+
 $navbar-light-color: #000 !important;
 $btn-border-radius: 0;
 $input-border-radius: 0;
@@ -13,6 +20,7 @@ $modal-inner-padding: 0;
 
 $btn-font-weight: 600;
 $btn-font-size: 13px;
+$box-shadow: -6px -11px 12px 3px;
 
 $theme-colors: (
   'primary': #0095ce,
