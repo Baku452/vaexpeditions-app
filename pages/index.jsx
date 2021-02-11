@@ -21,10 +21,13 @@ function Index({
   banners,
   packagetypes,
   interests,
-  notification,
+  notifications,
 }) {
   return (
-    <Base destinations={destinations} notification={notification}>
+    <Base
+      destinations={destinations}
+      packagetypes={packagetypes}
+      notifications={notifications}>
       <Head>
         <script
           dangerouslySetInnerHTML={{
@@ -68,7 +71,7 @@ export async function getStaticProps() {
   const interests = await interestResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
-  const notification = await notificationResponse.json();
+  const notifications = await notificationResponse.json();
 
   return {
     props: {
@@ -78,7 +81,7 @@ export async function getStaticProps() {
       banners,
       packagetypes,
       interests,
-      notification,
+      notifications,
     },
     revalidate: 1,
   };

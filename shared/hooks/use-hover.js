@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function useHover() {
   const [value, setValue] = useState(false);
@@ -9,6 +9,7 @@ function useHover() {
   const handleMouseOut = () => setValue(false);
 
   useEffect(
+    // eslint-disable-next-line consistent-return
     () => {
       const node = ref.current;
       if (node) {

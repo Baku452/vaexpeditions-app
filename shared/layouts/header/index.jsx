@@ -1,18 +1,9 @@
-import { Menu, NavToolbar, Newsletter } from '@/components/index';
+import { Menu, NavToolbar, Newsletter, Notification } from '@/components/index';
 
-function Header({ destinations, packagetypes, notification }) {
+function Header({ destinations, packagetypes, notifications }) {
   return (
     <>
-      {/*    
-      {notification &&
-        notification.map(item => (
-          <div key={item.id} className="container-fluid text-center notification">
-            <Link href={`/notification/${item.slug}`}>
-              <a>{item.title}</a>
-            </Link>
-          </div>
-        ))} 
-        */}
+      <Notification notifications={notifications} />
       <header>
         <Newsletter />
         <NavToolbar />

@@ -151,7 +151,7 @@ function Newsletter({ destinations, packagetypes }) {
                           <input
                             type="submit"
                             value="Finish Subscription"
-                            className="btn btn-primary btn-block"
+                            className="btn btn-primary fs-16 w-100"
                           />
                         </div>
                       </div>

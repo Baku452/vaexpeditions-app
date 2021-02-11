@@ -72,9 +72,7 @@ function TripOverview({ pack }) {
                       pathname: '/contact-us',
                       query: { package: pack.slug },
                     }}>
-                    <a className="btn btn-contact btn-outline-dark fs-16 w-100">
-                      Contact Us
-                    </a>
+                    <a className="btn btn-outline-secondary fs-16 w-100">Contact Us</a>
                   </Link>
                 </div>
               </div>

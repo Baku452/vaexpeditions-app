@@ -1,6 +1,9 @@
+import Link from 'next/link';
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link as LinkScroll } from 'react-scroll';
 import StickyBox from 'react-sticky-box';
+
+import { Divider } from '@/components/index';
 
 import styles from './index.module.scss';
 
@@ -14,16 +17,17 @@ const menuList = [
   { name: 'Related Trips', to: 'related-trips' },
 ];
 
-function StikyBox() {
+function StikyBox({ pack }) {
+  console.log('object', pack);
   return (
     <StickyBox
       offsetTop={0}
       offsetBottom={20}
-      className="col-3 d-none d-sm-none d-md-none d-lg-block d-lx-block">
+      className="col-3 d-none d-sm-none d-md-none d-lg-block d-lx-block px-5">
       <ul className={styles.styky}>
         {menuList.map((item, index) => (
           <li key={index.toString()}>
-            <Link
+            <LinkScroll
               className={styles.link}
               activeClass={styles.active}
               to={item.to}
@@ -31,10 +35,27 @@ function StikyBox() {
               smooth
               duration={500}>
               {item.name}
-            </Link>
+            </LinkScroll>
           </li>
         ))}
       </ul>
+      <Divider />
+      <br />
+      <Link
+        href={{
+          pathname: '/contact-us',
+          query: { package: pack.slug },
+        }}>
+        <a className="btn btn-secondary fs-16 w-100 mb-2">Contact Us</a>
+      </Link>
+      <p
+        className="mb-5 px-3"
+        style={{
+          fontSize: '14px',
+          color: '#a4a4a4',
+        }}>
+        Or call Toll Free: 1-(888)803-8004 / (511) 423 6758
+      </p>
     </StickyBox>
   );
 }
