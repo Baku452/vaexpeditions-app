@@ -21,6 +21,7 @@ export * from './molecules/notification/index';
 // ORGANISM
 export * from './organism/stiky-box/index';
 export * from './organism/related-trips/index';
+export * from './organism/optional-tours/index';
 export * from './organism/faqs/index';
 export * from './organism/optional-rent/index';
 export * from './organism/prices-dates/index';

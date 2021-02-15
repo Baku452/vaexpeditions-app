@@ -11,10 +11,10 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function TailorMade({ destinations }) {
+function TailorMade({ destinations, notifications }) {
   const [show, setShow] = useState(false);
   return (
-    <Base>
+    <Base notifications={notifications}>
       <Banner
         description="We are ready to design your ideal travel experiencia with you"
         image="/images/arequipa3.jpg"
@@ -113,9 +113,13 @@ export async function getStaticProps() {
   const responseTypes = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await responseTypes.json();
 
+  const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
+  const notifications = await notificationResponse.json();
+
   return {
     props: {
       destinations,
+      notifications,
     },
     revalidate: 1,
   };

@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
-
+import { useEffect, useState } from 'react';
+import { packages, packagesOptional } from '@/core/index';
 import {
   Divider,
   Faqs,
@@ -8,18 +9,51 @@ import {
   OptionalReting,
   PricesAndDates,
   RelatedTrips,
+  OptionalTours,
   Slide,
   StikyBox,
   TripOverview,
   WhatsIncluded,
 } from '@/components/index';
 import { Base } from '@/layouts/index';
+import fetch from 'cross-fetch';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Package({ pack, destinations, packagetypes }) {
+function Package({ pack, destinations, packagetypes, notifications }) {
+  const [packagesList, setPackagesList] = useState([]);
+  const [packagesOptionals, setPackagesOptionals] = useState([]);
+
+  async function fetchOptional() {
+    const { destination } = pack;
+    const queryStr = { destination }
+    const querySet = Object.keys(queryStr).map(key => `${key}=${queryStr[key]}`).join('&');
+    const queryParams = querySet ? `?${querySet}` : '';
+    const { result } = await packagesOptional({ queryParams });
+    if (result && packagesOptionals.length === 0) {
+      setPackagesOptionals(result?.data);
+    }
+  }
+
+  async function fetchPackages() {
+    const { activity, package_type, destination } = pack;
+    const queryStr = { activity, package_type, destination }
+    const querySet = Object.keys(queryStr).map(key => `${key}=${queryStr[key]}`).join('&');
+    const queryParams = querySet ? `?${querySet}` : '';
+
+    const { result } = await packages({ queryParams });
+    if (result && packagesList.length === 0) {
+      setPackagesList(result?.data);
+    }
+  }
+  useEffect(() => {
+    fetchPackages();
+    fetchOptional();
+  })
+
+
   return (
-    <Base destinations={destinations} packagetypes={packagetypes}>
+    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
       <Head>
         <meta name="description" content={pack?.summary} />
         <meta name="keywords" content={pack?.keywords} />
@@ -59,9 +93,15 @@ function Package({ pack, destinations, packagetypes }) {
 
             <Divider />
 
-            {pack?.related_packages.length > 0 && (
-              <RelatedTrips packages={pack?.related_packages} />
-            )}
+            {
+              // pack?.related_packages.length > 0 && (
+              // <RelatedTrips packages={pack?.related_packages} />
+              <RelatedTrips packages={packagesList} pack={pack} />
+
+              // )
+            }
+            <Divider />
+            <OptionalTours packages={packagesOptionals} pack={pack} />
           </div>
         </div>
       </div>
@@ -90,7 +130,11 @@ export async function getStaticProps({ params }) {
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
   const packagetypes = await packagetypesResponse.json();
 
-  return { props: { pack, destinations, packagetypes } };
+  const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
+  const notifications = await notificationResponse.json();
+
+
+  return { props: { pack, destinations, packagetypes, notifications } };
 }
 
 export default Package;

@@ -15,6 +15,8 @@ const menuList = [
   { name: 'Optional for renting', to: 'optional-for-renting' },
   { name: 'Trip Preparation & FAQS', to: 'trip-preparation-faqs' },
   { name: 'Related Trips', to: 'related-trips' },
+  { name: 'Optional Tours', to: 'optional-tours' },
+
 ];
 
 function StikyBox({ pack }) {
@@ -46,7 +48,7 @@ function StikyBox({ pack }) {
           pathname: '/contact-us',
           query: { package: pack.slug },
         }}>
-        <a className="btn btn-secondary fs-16 w-100 mb-2">Contact Us</a>
+        <a className="btn btn-primary fs-16 w-100 mb-2">Contact Us</a>
       </Link>
       <p
         className="mb-5 px-3"

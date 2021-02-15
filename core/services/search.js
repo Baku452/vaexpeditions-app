@@ -9,6 +9,15 @@ function packages({ queryParams = '' }) {
       return { error: error.response };
     });
 }
+function packagesOptional({ queryParams = '' }) {
+  return services({ url: `/packages/optional/${queryParams}`, method: 'GET' })
+    .then(result => {
+      return { result };
+    })
+    .catch(error => {
+      return { error: error.response };
+    });
+}
 
 function packagesTypes() {
   return services({ url: `/packagestype/`, method: 'GET' })
@@ -20,4 +29,4 @@ function packagesTypes() {
     });
 }
 
-export { packages, packagesTypes };
+export { packages, packagesTypes, packagesOptional };

@@ -9,6 +9,21 @@ SwiperCore.use([Navigation, Pagination]);
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 const subtitulo = "Slides sub";
 
+function Days({ days }) {
+  function getNameDays(day) {
+    switch (day) {
+      case 0:
+        return 'Half-Day';
+      case 1:
+        return 'Full Day';
+      default:
+        return `${day} days / ${day - 1} nights`;
+    }
+  }
+  return <h6 className={`${styles.subtitle} fs-24 font-weight-light text-white text-left`}>{getNameDays(days)}</h6>;
+}
+
+
 function Slide({
   images,
   navigation = true,
@@ -47,9 +62,7 @@ function Slide({
           <h2 className={`${styles.title} fs-48 font-weight-bold text-white text-left`}>
             {title}
           </h2>
-          <p className={`${styles.subtitle} fs-24 font-weight-light text-white text-left`}>
-            {subtitle}
-          </p>
+          <Days days={subtitle} />
         </>
       )}
     </div>

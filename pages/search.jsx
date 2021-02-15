@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({ destinations, packagetypes, interests }) {
+function Search({ destinations, packagetypes, interests, notifications }) {
   const router = useRouter();
   const [packagesList, setPackagesList] = useState([]);
   const [checkedDestination, setCheckedDestination] = useState([]);
@@ -131,9 +131,9 @@ function Search({ destinations, packagetypes, interests }) {
 
   async function fetchPackages() {
     const [, querySet] = router.asPath.split('?');
-
     const queryParams = querySet ? `?${querySet}` : '';
     const { result } = await packages({ queryParams });
+    console.log(queryParams);
 
     setPackagesList(result?.data);
   }
@@ -194,7 +194,7 @@ function Search({ destinations, packagetypes, interests }) {
   }, [router]);
 
   return (
-    <Base destinations={destinations} packagetypes={packagetypes}>
+    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
       <div className="container d-block d-lg-none pt-3">
         <div className="row ">
           <div className="offset-2 col-8">
@@ -222,9 +222,8 @@ function Search({ destinations, packagetypes, interests }) {
             <div className="col-12">
               <div className="row">
                 <div
-                  className={`${styles.aside} ${
-                    showFilters ? 'd-block' : 'd-none'
-                  }  d-none d-lg-block col-12 col-lg-3 p-0`}>
+                  className={`${styles.aside} ${showFilters ? 'd-block' : 'd-none'
+                    }  d-none d-lg-block col-12 col-lg-3 p-0`}>
                   <div className="d-block d-lg-none pt-3 pb-3">
                     <h3 className="text-center pt-3">Filters</h3>
                     <a
@@ -402,11 +401,15 @@ export async function getStaticProps() {
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
   const interests = await interestResponse.json();
 
+  const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
+  const notifications = await notificationResponse.json();
+
   return {
     props: {
       destinations,
       packagetypes,
       interests,
+      notifications,
     },
   };
 }
