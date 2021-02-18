@@ -25,7 +25,10 @@ function Package({ pack, destinations, packagetypes, notifications }) {
   const [packagesOptionals, setPackagesOptionals] = useState([]);
 
   async function fetchOptional() {
-    const { destination } = pack;
+    let { destination } = pack;
+    if (destination === 14 || 6 || 11) {
+      destination = 4;
+    }
     const queryStr = { destination }
     const querySet = Object.keys(queryStr).map(key => `${key}=${queryStr[key]}`).join('&');
     const queryParams = querySet ? `?${querySet}` : '';
@@ -43,7 +46,7 @@ function Package({ pack, destinations, packagetypes, notifications }) {
 
     const { result } = await packages({ queryParams });
     if (result && packagesList.length === 0) {
-      setPackagesList(result?.data);
+      setPackagesList(result.data);
     }
   }
   useEffect(() => {
@@ -93,15 +96,10 @@ function Package({ pack, destinations, packagetypes, notifications }) {
 
             <Divider />
 
-            {
-              // pack?.related_packages.length > 0 && (
-              // <RelatedTrips packages={pack?.related_packages} />
-              <RelatedTrips packages={packagesList} pack={pack} />
+            <OptionalTours packages={packagesOptionals.slice(0, 6)} pack={pack} />
 
-              // )
-            }
             <Divider />
-            <OptionalTours packages={packagesOptionals} pack={pack} />
+            <RelatedTrips packages={packagesList.slice(0, 7)} pack={pack} />
           </div>
         </div>
       </div>

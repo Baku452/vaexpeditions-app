@@ -18,8 +18,8 @@ function OptionalTours({ packages, pack }) {
                                 title={item.title}
                                 days={item.days}
                                 slug={item.slug}
-                                thumbnail={PUBLIC_API + item.thumbnail}
-                            // thumbnail={item.thumbnail}
+                                // thumbnail={PUBLIC_API + item.thumbnail}
+                                thumbnail={item.thumbnail}
 
                             />
                         </div>

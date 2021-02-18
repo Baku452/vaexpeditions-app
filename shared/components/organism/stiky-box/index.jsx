@@ -14,8 +14,8 @@ const menuList = [
   { name: 'Prices and dates', to: 'prices-and-dates' },
   { name: 'Optional for renting', to: 'optional-for-renting' },
   { name: 'Trip Preparation & FAQS', to: 'trip-preparation-faqs' },
-  { name: 'Related Trips', to: 'related-trips' },
   { name: 'Optional Tours', to: 'optional-tours' },
+  { name: 'Related Trips', to: 'related-trips' },
 
 ];
 

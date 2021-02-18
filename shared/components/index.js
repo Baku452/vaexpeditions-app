@@ -17,6 +17,7 @@ export * from './molecules/navigation/index';
 export * from './molecules/itinerary-items/index';
 export * from './molecules/itinerary-icons/index';
 export * from './molecules/notification/index';
+export * from './molecules/destination-check/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -38,3 +39,7 @@ export * from './organism/associations/index';
 export * from './organism/sub-newsletter/index';
 export * from './organism/contact-form/index';
 export * from './organism/reviews/index';
+export * from './organism/why-tailor/index';
+export * from './organism/tailor-form/index';
+
+
