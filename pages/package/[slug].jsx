@@ -100,6 +100,13 @@ function Package({ pack, destinations, packagetypes, notifications }) {
 
             <Divider />
             <RelatedTrips packages={packagesList.slice(0, 7)} pack={pack} />
+
+            <Divider />
+            <TripOverview pack={pack} />
+
+            <Divider />
+            {/* <Itineraries itineraries={pack?.itineraries_old} /> */}
+
           </div>
         </div>
       </div>

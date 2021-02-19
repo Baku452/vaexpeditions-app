@@ -54,7 +54,7 @@ function StikyBox({ pack }) {
         className="mb-5 px-3"
         style={{
           fontSize: '14px',
-          color: '#a4a4a4',
+          color: '#424242',
         }}>
         Or call Toll Free: 1-(888)803-8004 / (511) 423 6758
       </p>
