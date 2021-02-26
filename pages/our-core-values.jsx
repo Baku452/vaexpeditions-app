@@ -5,7 +5,7 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 export default function OurPurpose({ destinations, packagetypes, notifications }) {
   return (
-    <Base destinations={destinations} packagetypes={packagetypes, notifications = { notifications }}>
+    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
       <Banner
         description="15 years or experience, 6,000 travellers 20 Destinations 100% Satisfation"
         image="/images/our-values.jpg"

@@ -48,7 +48,7 @@ function OurRecommendations() {
                     <h4 className="m-0 fs-18 lh-20 text-white">
                       Design your own travel experience. We can help you.
                     </h4>
-                    <a href="#" className={styles.more}>
+                    <a href="/tailor-made-tour" className={styles.more}>
                       More information
                     </a>
                   </div>

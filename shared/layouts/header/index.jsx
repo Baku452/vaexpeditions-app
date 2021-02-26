@@ -3,14 +3,14 @@ import styles from './index.module.scss';
 
 function Header({ destinations, packagetypes, notifications }) {
   return (
-    <div className={styles.stickyHeader}>
+    <>
       <Notification notifications={notifications} />
-      <header>
+      <header className={styles.stickyHeader}>
         <Newsletter />
         <NavToolbar />
       </header>
       <Menu destinations={destinations} packagetypes={packagetypes} />
-    </div>
+    </>
   );
 }
 

@@ -75,10 +75,12 @@ function List({ itineraries }) {
                 <div className="row pb-4">
                   <div className="col-12 col-md-8 order-2 order-md-1">
                     <SmartText text={item?.content} length={item?.limit} />
-                    <ItineraryItems items={item?.items} />
+                    {item.items ?
+                      <ItineraryItems items={item?.items} />
+                      : null}
                   </div>
 
-                  {item.images.length > 0 && (
+                  {item.images ? item.images.length > 0 && (
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
                       <img
                         src={PUBLIC_API + item.images[0].image}
@@ -92,7 +94,7 @@ function List({ itineraries }) {
                         View all photos
                       </a>
                     </div>
-                  )}
+                  ) : null}
                 </div>
               </CollapseContent>
             ),

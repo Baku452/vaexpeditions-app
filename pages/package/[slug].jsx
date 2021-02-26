@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { packages, packagesOptional } from '@/core/index';
 import {
+  Title,
   Divider,
   Faqs,
   Itineraries,
@@ -82,19 +83,30 @@ function Package({ pack, destinations, packagetypes, notifications }) {
 
             <Divider />
 
-            {pack?.dates_prices.length > 0 && (
-              <PricesAndDates dates={pack?.dates_prices} />
-            )}
+            {pack?.dates_prices.length > 0 ?
+              <>
+                <PricesAndDates dates={pack?.dates_prices} />
+                <Divider />
+              </>
+              : null
+            }
 
-            <Divider />
 
-            {pack?.optionals.length > 0 && <OptionalReting optionals={pack?.optionals} />}
+            {pack?.optionals.length > 0 ?
+              <>
+                <OptionalReting optionals={pack?.optionals} />
+                <Divider />
+              </> : null
+            }
 
-            <Divider />
 
-            {pack?.faqs.length > 0 && <Faqs faqs={pack?.faqs} />}
+            {pack?.faqs.length > 0 ?
+              <>
+                <Faqs faqs={pack?.faqs} />
+                <Divider />
+              </> : null
+            }
 
-            <Divider />
 
             <OptionalTours packages={packagesOptionals.slice(0, 6)} pack={pack} />
 
@@ -102,10 +114,22 @@ function Package({ pack, destinations, packagetypes, notifications }) {
             <RelatedTrips packages={packagesList.slice(0, 7)} pack={pack} />
 
             <Divider />
-            <TripOverview pack={pack} />
+            {
+              pack.old_overview ?
+                <div name="old-overview" className="container pt-5 pb-5">
+                  <Title title="Related Overview" />
+                  <div
+                    className="col-12 fs-16 lh-29"
+                    dangerouslySetInnerHTML={{ __html: pack?.old_overview }}
+                  />
+                </div> : null
+            }
 
             <Divider />
-            {/* <Itineraries itineraries={pack?.itineraries_old} /> */}
+            {
+              pack?.old_itinerario ?
+                <Itineraries name="old-itinerario" title="Related Itinerary" itineraries={pack?.old_itinerario} /> : null
+            }
 
           </div>
         </div>

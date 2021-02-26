@@ -18,6 +18,8 @@ export * from './molecules/itinerary-items/index';
 export * from './molecules/itinerary-icons/index';
 export * from './molecules/notification/index';
 export * from './molecules/destination-check/index';
+export * from './molecules/card-box/index';
+
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -41,5 +43,7 @@ export * from './organism/contact-form/index';
 export * from './organism/reviews/index';
 export * from './organism/why-tailor/index';
 export * from './organism/tailor-form/index';
+export * from './organism/page-content/index';
+
 
 
