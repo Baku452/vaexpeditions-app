@@ -3,6 +3,7 @@ export * from './data/years';
 export * from './data/days';
 export * from './data/activities';
 export * from './data/accommodation';
+export * from './data/weeks';
 export * from './data/budget';
 export * from './data/hear_about';
 export * from './services/home';

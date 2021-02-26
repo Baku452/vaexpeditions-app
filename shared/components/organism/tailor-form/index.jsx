@@ -2,15 +2,15 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-import { accomodations, budget, hear, saveContactUs } from '@/core/index';
+import { accomodations, budget, hear, weeks, saveContactUs } from '@/core/index';
 import { DestinationCheck } from '@/components/index'
 
-function TailorForm({ destinations, packages, title = true, pack }) {
+function TailorForm({ destinations, title = true, types }) {
     const [validated, setValidated] = useState(false);
     const [success, setSuccess] = useState(false);
     const [newsletter, setNewsletter] = useState(false);
 
-
+    const adults = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const handleSubmit = async event => {
         event.preventDefault();
         event.stopPropagation();
@@ -33,8 +33,8 @@ function TailorForm({ destinations, packages, title = true, pack }) {
     return (
         <section id="thank_you">
             <div className="container">
-                <div className="row pb-5 mb-5">
-                    <div className="col-11 col-md-10 p-0 pb-5 mb-5 p-0 mx-auto">
+                <div className="row pb-5 ">
+                    <div className="col-11 col-md-10 p-0 pb-5 p-0 mx-auto">
                         {success ? (
                             <div className="card mb-5 pb-5">
                                 <div className="card-body pb-5 pt-5 mt-4 text-center">
@@ -127,9 +127,7 @@ function TailorForm({ destinations, packages, title = true, pack }) {
                                                             }
                                                         </div>
                                                     </div>
-                                                    <div className="col-12">
-                                                    </div>
-                                                    <div className="col-12 col-md-8">
+                                                    <div className="col-12 col-md-4">
                                                         <label>Accommodation Type</label>
                                                         <div className="form-group">
                                                             <Form.Control
@@ -157,13 +155,30 @@ function TailorForm({ destinations, packages, title = true, pack }) {
                                                         <label>Departure Date</label>
                                                         <div className="form-group">
                                                             <Form.Control
+                                                                as="input"
+                                                                type="date"
+                                                                size="lg"
+                                                                name="departureDate"
+                                                                defaultValue=""
+                                                                required>
+
+                                                            </Form.Control>
+                                                            <Form.Control.Feedback type="invalid">
+                                                                Please provide a valid Departure Date
+                            </Form.Control.Feedback>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-12 col-md-4">
+                                                        <label>Length of stay</label>
+                                                        <div className="form-group">
+                                                            <Form.Control
                                                                 as="select"
                                                                 size="lg"
-                                                                name="package"
+                                                                name="lengthStay"
                                                                 defaultValue=""
                                                                 required>
                                                                 <option value="">Please select an option</option>
-                                                                {accomodations?.map(item => (
+                                                                {weeks?.map(item => (
                                                                     <option
                                                                         key={item.id}
                                                                         value={item.label}
@@ -173,37 +188,123 @@ function TailorForm({ destinations, packages, title = true, pack }) {
                                                                 ))}
                                                             </Form.Control>
                                                             <Form.Control.Feedback type="invalid">
-                                                                Please provide a valid Accommodation Type
+                                                                Please provide a valid week selection
                             </Form.Control.Feedback>
                                                         </div>
                                                     </div>
                                                     <div className="col-12 col-md-4">
-                                                        <label>How many are travelling?</label>
-                                                        <div className="col-12 col-md-4">
+                                                        <label>How many adults are travelling?</label>
+                                                        <div className="form-group">
                                                             <Form.Control
                                                                 as="select"
                                                                 size="lg"
-                                                                name="package"
+                                                                name="adults"
                                                                 defaultValue=""
                                                                 required>
-                                                                <option value="">How many adults?</option>
+                                                                <option value="">0</option>
                                                                 {
 
-                                                                    accomodations?.map(item => (
+                                                                    adults?.map(item => (
                                                                         <option
-                                                                            key={item.id}
-                                                                            value={item.label}
+                                                                            key={item}
+                                                                            value={item}
                                                                         >
-                                                                            {item.label}
+                                                                            {item}
                                                                         </option>
                                                                     ))}
                                                             </Form.Control>
                                                         </div>
-                                                        <div className="col-12 col-md-4">
+                                                    </div>
+                                                    <div className="col-12 col-md-4">
+                                                        <label>How many children are travelling?</label>
+                                                        <div className="form-group">
+                                                            <Form.Control
+                                                                as="select"
+                                                                size="lg"
+                                                                name="children"
+                                                                defaultValue=""
+                                                                required>
+                                                                <option value="">0</option>
+                                                                {
+
+                                                                    adults?.map(item => (
+                                                                        <option
+                                                                            key={item}
+                                                                            value={item}
+                                                                        >
+                                                                            {item}
+                                                                        </option>
+                                                                    ))}
+                                                            </Form.Control>
                                                         </div>
                                                     </div>
+                                                    <div className="col-12 col-md-4">
+                                                        <label>Include international Flights?</label>
+                                                        <div className="form-group">
+                                                            <Form.Check
+                                                                type="radio"
+                                                                name="internationalFlight"
+                                                                required
+                                                                inline
+                                                                value="yes"
+                                                            />
+                                                            <label for="yes">Yes</label>
+                                                            <Form.Check
+                                                                type="radio"
+                                                                name="internationalFlight"
+                                                                required
+                                                                inline
+                                                                value="no"
+                                                            />
+                                                            <label for="no">No</label>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-12 col-md-4">
+                                                        <label>Budget per Person</label>
+                                                        <div className="form-group">
+                                                            <Form.Control
+                                                                as="select"
+                                                                size="lg"
+                                                                name="budget"
+                                                                defaultValue=""
+                                                                required>
+                                                                <option value="">Please select an option</option>
+                                                                {budget?.map(item => (
+                                                                    <option
+                                                                        key={item.id}
+                                                                        value={item.label}
+                                                                    >
+                                                                        {item.label}
+                                                                    </option>
+                                                                ))}
+                                                            </Form.Control>
+                                                            <Form.Control.Feedback type="invalid">
+                                                                Please provide a valid budget selection
+                            </Form.Control.Feedback>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-12 col-md-12">
+                                                        <label>Budget per Person</label>
+                                                        <div className="form-group">
+                                                            <div className="row">
 
+                                                                {
+                                                                    types.map(item =>
+                                                                        (
+                                                                            <Form.Check
+                                                                                key={item.title}
+                                                                                name={item.name} value={item.title}
+                                                                                label={item.title}
+                                                                                className="col-lg-2 col-md-3 col-sm-3 col-xs-12"
+                                                                            />
+                                                                        )
+                                                                    )
+                                                                }
 
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                     <div className="col-12">
                                                         <div className="form-group">
                                                             <Form.Control
@@ -219,15 +320,6 @@ function TailorForm({ destinations, packages, title = true, pack }) {
                                                         </div>
                                                     </div>
 
-                                                    <div className="col-12 text-left">
-                                                        <Form.Check
-                                                            value
-                                                            label="Please send me your email newsletter"
-                                                            onChange={e => setNewsletter(e.target.checked)}
-                                                            name="is_newsletter"
-                                                            id="validationFormik0"
-                                                        />
-                                                    </div>
                                                     <p className="col-12 pt-3 fs-9">
                                                         We respond to all inquiries within one business day. If you do
                                                         not hear back from us within this timeframe, please check your
@@ -246,7 +338,7 @@ function TailorForm({ destinations, packages, title = true, pack }) {
                                                 <div className="col-12 col-md-5 mx-auto">
                                                     <input
                                                         type="submit"
-                                                        value="Send Message"
+                                                        value="Submit Request"
                                                         className="btn btn-primary fs-16 w-100"
                                                     />
                                                 </div>

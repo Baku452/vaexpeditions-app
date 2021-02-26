@@ -44,6 +44,10 @@ export * from './organism/reviews/index';
 export * from './organism/why-tailor/index';
 export * from './organism/tailor-form/index';
 export * from './organism/page-content/index';
+export * from './organism/tailor-works/index';
+export * from './organism/pop-up/index';
+
+
 
 
 
