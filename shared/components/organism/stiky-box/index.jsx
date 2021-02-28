@@ -14,14 +14,19 @@ const menuList = [
   { name: 'Prices and dates', to: 'prices-and-dates' },
   { name: 'Optional for renting', to: 'optional-for-renting' },
   { name: 'Trip Preparation & FAQS', to: 'trip-preparation-faqs' },
+  { name: 'Optional Tours', to: 'optional-tours' },
   { name: 'Related Trips', to: 'related-trips' },
+  { name: 'Related Overview', to: 'old-overview' },
+  { name: 'Related Itinerary', to: 'old-itinerario' },
+
+
 ];
 
 function StikyBox({ pack }) {
   console.log('object', pack);
   return (
     <StickyBox
-      offsetTop={0}
+      offsetTop={95}
       offsetBottom={20}
       className="col-3 d-none d-sm-none d-md-none d-lg-block d-lx-block px-5">
       <ul className={styles.styky}>
@@ -30,6 +35,7 @@ function StikyBox({ pack }) {
             <LinkScroll
               className={styles.link}
               activeClass={styles.active}
+              offset={-130}
               to={item.to}
               spy
               smooth
@@ -46,13 +52,13 @@ function StikyBox({ pack }) {
           pathname: '/contact-us',
           query: { package: pack.slug },
         }}>
-        <a className="btn btn-secondary fs-16 w-100 mb-2">Contact Us</a>
+        <a className="btn btn-primary fs-16 w-100 mb-2">Contact Us</a>
       </Link>
       <p
         className="mb-5 px-3"
         style={{
           fontSize: '14px',
-          color: '#a4a4a4',
+          color: '#424242',
         }}>
         Or call Toll Free: 1-(888)803-8004 / (511) 423 6758
       </p>

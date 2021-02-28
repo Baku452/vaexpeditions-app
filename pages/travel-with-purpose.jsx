@@ -7,9 +7,9 @@ import { ContextAwareToggle, Gallery, Icon } from '@/components/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-export default function OurPurpose({ destinations, packagetypes }) {
+export default function OurPurpose({ destinations, packagetypes, notifications }) {
   return (
-    <Base destinations={destinations} packagetypes={packagetypes}>
+    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
       <Banner
         description="15 years or experience, 6,000 travellers 20 Destinations 100% Satisfation"
         image="/images/social-responsability.jpg"
@@ -19,7 +19,7 @@ export default function OurPurpose({ destinations, packagetypes }) {
       <section id="more">
         <div className="container">
           <div className="row pt-5">
-            <p>Falta texto Falta texto Falta texto Falta texto Falta texto Falta texto Falta texto</p>
+            <p>We believe that by traveling in a sustainable and conscientious manner, we can transform the world, and connect different cultures. For this reason, we are committed to preserving the magic of the local communities, wildlife and the planet as a whole, with the aim of sharing our wisdom and that of the local people, to contribute to making a better world</p>
           </div>
         </div>
       </section>
@@ -594,10 +594,15 @@ export async function getStaticProps() {
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
   const packagetypes = await packagetypesResponse.json();
 
+  const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
+  const notifications = await notificationResponse.json();
+
+
   return {
     props: {
       destinations,
       packagetypes,
+      notifications
     },
   };
 }

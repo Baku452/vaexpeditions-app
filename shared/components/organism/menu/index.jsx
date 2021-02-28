@@ -152,27 +152,27 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                 <MenuHoliday packagetypes={packagetypes} />
               </li>
               <li className={styles.nav}>
-                <a
-                  className={`${active(router.pathname, '/tailor-made-tour')} ${
-                    styles.link
-                  }`}
-                  role="button">
-                  Tailor Made Tours
-                </a>
+                <Link href="/tailor-made-tour">
+                  <a
+                    className={`${active(router.pathname, '/tailor-made-tour')} ${styles.link
+                      }`}
+                    role="button">
+                    Tailor Made Tours
+                  </a>
+                </Link>
 
-                <MenuContent
+                {/* <MenuContent
                   destinations={destinations}
                   countries={countries}
                   changeCountry={changeCountry}
                   tailorMade
-                />
+                /> */}
               </li>
               <li className={styles.nav}>
                 <Link href="/our-purpose">
                   <a
-                    className={`${active(router.pathname, '/our-purpose')} ${
-                      styles.link
-                    }`}
+                    className={`${active(router.pathname, '/our-purpose')} ${styles.link
+                      }`}
                     role="button">
                     Our Purpose
                   </a>

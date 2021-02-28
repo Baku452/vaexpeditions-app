@@ -1,5 +1,9 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
+import ScriptTag from 'react-script-tag';
+import { PopUp } from '@/components/index';
+import React, { useState, useEffect } from 'react';
+
 
 import {
   Associations,
@@ -23,17 +27,21 @@ function Index({
   interests,
   notifications,
 }) {
+
+
   return (
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}>
       <Head>
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:2047841,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
           }}
-        />
+        /> */
+          <ScriptTag type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7151923.js"></ScriptTag>
+        }
       </Head>
       <Cover
         destinations={destinations}
@@ -41,12 +49,18 @@ function Index({
         packagetypes={packagetypes}
         interests={interests}
       />
+      <PopUp></PopUp>
       <VacationType types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
       <Reviews />
       <SubNewsletter />
       <Associations />
+      {<>
+        <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer></ScriptTag>
+        <div class="elfsight-app-e76c2df3-57df-4924-a3b4-257b7e21a253"></div>
+      </>
+      }
     </Base>
   );
 }

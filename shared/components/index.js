@@ -17,10 +17,14 @@ export * from './molecules/navigation/index';
 export * from './molecules/itinerary-items/index';
 export * from './molecules/itinerary-icons/index';
 export * from './molecules/notification/index';
+export * from './molecules/destination-check/index';
+export * from './molecules/card-box/index';
+
 
 // ORGANISM
 export * from './organism/stiky-box/index';
 export * from './organism/related-trips/index';
+export * from './organism/optional-tours/index';
 export * from './organism/faqs/index';
 export * from './organism/optional-rent/index';
 export * from './organism/prices-dates/index';
@@ -37,3 +41,13 @@ export * from './organism/associations/index';
 export * from './organism/sub-newsletter/index';
 export * from './organism/contact-form/index';
 export * from './organism/reviews/index';
+export * from './organism/why-tailor/index';
+export * from './organism/tailor-form/index';
+export * from './organism/page-content/index';
+export * from './organism/tailor-works/index';
+export * from './organism/pop-up/index';
+
+
+
+
+
