@@ -83,7 +83,7 @@ function TripOverview({ pack }) {
 
       <div className="row">
         <div
-          className="col-12 fs-16 lh-29"
+          className="col-12 fs-16 lh-25"
           dangerouslySetInnerHTML={{ __html: pack?.description }}
         />
       </div>

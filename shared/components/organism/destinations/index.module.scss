@@ -1,0 +1,20 @@
+.destination {
+  .title {
+    content: '';
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.75), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+    bottom: 0;
+    height: 30%;
+    left: 0;
+    z-index: 5;
+    margin-left: 15px;
+    width: calc(100% - 30px);
+    position: absolute;
+    text-align: center;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 23px;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../styles/media-queries.scss';
+
+.aside {
+  @media (max-width: $md) {
+    position: fixed;
+    z-index: 9999;
+    background: #f2f2f2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: scroll;
+    display: none;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #000;
+}
+
+.month {
+  display: inline-block;
+  width: 33.3%;
+  padding-left: 30px;
+}

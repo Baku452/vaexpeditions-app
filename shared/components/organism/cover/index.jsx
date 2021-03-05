@@ -7,6 +7,7 @@ import { Slide } from '@/components/index';
 import styles from './index.module.scss';
 
 function Cover({ destinations, banners, packagetypes, interests }) {
+  console.log('AAAA', destinations);
   const router = useRouter();
   const [destination, setdDestination] = useState('');
   const [types, setTypes] = useState('');
@@ -36,15 +37,26 @@ function Cover({ destinations, banners, packagetypes, interests }) {
   }
 
   function handleSearch() {
-    router.push({
-      pathname: '/search',
-      query: {
-        ...router.query,
-        destination,
-        types,
-        interests: interestsType,
-      },
-    });
+    if (destination) {
+      router.push({
+        pathname: `/country/${destination}`,
+        query: {
+          ...router.query,
+          slug: destination,
+          types,
+          interests: interestsType,
+        },
+      });
+    } else {
+      router.push({
+        pathname: '/search',
+        query: {
+          ...router.query,
+          types,
+          interests: interestsType,
+        },
+      });
+    }
   }
 
   return (
@@ -63,9 +75,9 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                     onChange={event => handleChangeDestination(event)}>
                     <option>Destination</option>
                     {destinations.length > 0 &&
-                      destinations[0].destinations.map(item => (
-                        <option value={item.id} key={item.id}>
-                          {item.title}
+                      destinations.map(item => (
+                        <option value={item.slug} key={item.id}>
+                          {item.name}
                         </option>
                       ))}
                   </Form.Control>

@@ -7,7 +7,7 @@ body {
 body {
   background-color: #ffffff;
   color: #000000;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   -webkit-user-select: none;
@@ -49,6 +49,9 @@ li {
 }
 .fs-13 {
   font-size: 13px;
+}
+.fs-14 {
+  font-size: 14px;
 }
 .fs-15 {
   font-size: 15px;
@@ -94,6 +97,15 @@ li {
 .fit {
   object-fit: cover;
   object-position: center;
+}
+
+.line {
+  padding-bottom: 3px;
+  border-bottom: 2px solid #0095ce;
+}
+
+.font-weight-semibold {
+  font-weight: 600 !important;
 }
 
 .border {
@@ -223,6 +235,12 @@ select {
   cursor: pointer;
 }
 
+.bordered {
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-weight: bolder;
@@ -247,10 +265,9 @@ select {
   }
 }
 // Add slides Fonts //
-.slidesHeadings{
+.slidesHeadings {
   font-family: 'Electra LT Std', sans-serif;
 }
-
 
 .form-check {
   padding-left: 3.25rem;
@@ -289,4 +306,125 @@ select {
 .was-validated .form-check-input:valid ~ .form-check-label,
 .form-check-input.is-valid ~ .form-check-label {
   color: inherit;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  padding: 30px 0 0;
+  margin-bottom: 35px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #000;
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.form-check-label {
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.temp-1,
+.temp-2,
+.temp-3,
+.temp-4 {
+  background-color: #c1def0;
+  border-color: #c1def0;
+}
+
+.temp-5,
+.temp-6,
+.temp-7,
+.temp-8 {
+  background-color: #90d0f4;
+  border-color: #90d0f4;
+}
+
+.temp-9,
+.temp-10,
+.temp-11,
+.temp-12,
+.temp-13 {
+  background-color: #92cecf;
+  border-color: #92cecf;
+}
+
+.temp-14,
+.temp-15,
+.temp-16,
+.temp-17,
+.temp-18 {
+  background-color: #f1d357;
+  border-color: #f1d357;
+}
+
+.temp-19,
+.temp-20,
+.temp-21,
+.temp-22,
+.temp-23 {
+  background-color: #fbce33;
+  border-color: #fbce33;
+}
+
+.temp-24,
+.temp-25,
+.temp-26,
+.temp-27,
+.temp-28 {
+  background-color: #f7b916;
+  border-color: #f7b916;
+}
+
+.temp-29,
+.temp-30,
+.temp-31,
+.temp-32,
+.temp-33 {
+  background-color: #f3a21b;
+  border-color: #f3a21b;
+}
+
+.temp-34,
+.temp-35,
+.temp-36,
+.temp-37,
+.temp-38 {
+  background-color: #ec7e1c;
+  border-color: #ec7e1c;
+}
+
+.temp-39,
+.temp-40,
+.temp-41,
+.temp-42,
+.temp-43 {
+  background-color: #df660d;
+  border-color: #df660d;
+}
+
+/* line 95, style.scss */
+.temp-44,
+.temp-45,
+.temp-46,
+.temp-47,
+.temp-48,
+.temp-49,
+.temp-50,
+.temp-51,
+.temp-52 {
+  background-color: #d21f22;
+  border-color: #d21f22;
 }

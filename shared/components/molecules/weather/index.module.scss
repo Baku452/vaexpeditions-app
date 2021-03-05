@@ -1,0 +1,40 @@
+.weather {
+  display: inline-block;
+  text-align: center;
+  margin-right: 10px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.degrees {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  top: 13px;
+}
+
+.glob {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  padding-top: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rain {
+  background-color: #43bde4;
+  position: absolute;
+  bottom: 0;
+  z-index: 9;
+  width: 100%;
+}
+
+.label {
+  text-transform: uppercase;
+}

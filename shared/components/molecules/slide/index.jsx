@@ -7,7 +7,6 @@ import styles from './index.module.scss';
 SwiperCore.use([Navigation, Pagination]);
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
-const subtitulo = "Slides sub";
 
 function Days({ days }) {
   function getNameDays(day) {
@@ -20,9 +19,12 @@ function Days({ days }) {
         return `${day} days / ${day - 1} nights`;
     }
   }
-  return <h6 className={`${styles.subtitle} fs-24 font-weight-light text-white text-left`}>{getNameDays(days)}</h6>;
+  return (
+    <p className={`${styles.subtitle} fs-24 font-weight-light text-white text-left`}>
+      {getNameDays(days)}
+    </p>
+  );
 }
-
 
 function Slide({
   images,
@@ -32,11 +34,13 @@ function Slide({
   subtitle,
   isHome = false,
 }) {
+  const navigate = images.length > 1 ? navigation : false;
+
   return (
     <div className={styles.slide}>
       <Swiper
         slidesPerView={1}
-        navigation={navigation}
+        navigation={navigate}
         pagination={pagination ? { pagination, ...{ clickable: true } } : false}
         className={styles.swiper}
         loop>
@@ -61,8 +65,8 @@ function Slide({
         <>
           <h2 className={`${styles.title} fs-48 font-weight-bold text-white text-left`}>
             {title}
+            {subtitle && <Days days={subtitle} />}
           </h2>
-          <Days days={subtitle} />
         </>
       )}
     </div>

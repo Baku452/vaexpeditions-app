@@ -31,7 +31,7 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
       <div className={styles.content}>
         <div className="container d-block">
           <div className="row">
-            {destinations &&
+            {/*             {destinations &&
               destinations.map(destination => (
                 <div key={destination.name} className="col-12">
                   <h5 className="font-weight-bold black">{destination.name}</h5>
@@ -41,22 +41,19 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
                     ))}
                   </ul>
                 </div>
-              ))}
+              ))} */}
 
-            <div className="col-12 pt-5 pb-5">
+            <div className="col-12pb-5">
               <h5 className="black font-weight-bold mb-3">
-                Other destinations in South America
+                {/* Other destinations in  */}South America
               </h5>
               <ul>
                 {countries &&
                   countries.map(item => (
                     <li key={item.name}>
-                      <a
-                        href="#"
-                        className="black"
-                        onClick={event => changeCountry(event, item.id)}>
-                        {item.name}
-                      </a>
+                      <Link href={`/country/${item.slug}?slug=${item.slug}`}>
+                        <a className="black">{item.name}</a>
+                      </Link>
                     </li>
                   ))}
               </ul>
@@ -154,25 +151,20 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
               <li className={styles.nav}>
                 <Link href="/tailor-made-tour">
                   <a
-                    className={`${active(router.pathname, '/tailor-made-tour')} ${styles.link
-                      }`}
+                    className={`${active(router.pathname, '/tailor-made-tour')} ${
+                      styles.link
+                    }`}
                     role="button">
                     Tailor Made Tours
                   </a>
                 </Link>
-
-                {/* <MenuContent
-                  destinations={destinations}
-                  countries={countries}
-                  changeCountry={changeCountry}
-                  tailorMade
-                /> */}
               </li>
               <li className={styles.nav}>
                 <Link href="/our-purpose">
                   <a
-                    className={`${active(router.pathname, '/our-purpose')} ${styles.link
-                      }`}
+                    className={`${active(router.pathname, '/our-purpose')} ${
+                      styles.link
+                    }`}
                     role="button">
                     Our Purpose
                   </a>

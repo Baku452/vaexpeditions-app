@@ -1,8 +1,20 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
-import { Collapse, CollapseContent, Icon, PackageItem } from '@/components/index';
+import {
+  Collapse,
+  CollapseContent,
+  DestinationItem,
+  Icon,
+  PackageItem,
+  PackageTypeItem,
+  Slide,
+  Title,
+  Weather,
+} from '@/components/index';
 import { activities, days, packages, years } from '@/core/index';
 import Close from '@/icons/close.svg';
 import { Base } from '@/layouts/index';
@@ -11,7 +23,26 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({ destinations, packagetypes, interests, notifications }) {
+function Search({
+  country: SSRCountry,
+  destinations,
+  packagetypes,
+  interests,
+  notifications,
+}) {
+  // console.log('destinations', destination);
+
+  const images = [
+    {
+      id: SSRCountry.id,
+      alt: SSRCountry.name,
+      name: SSRCountry.name,
+      image: SSRCountry.original,
+    },
+  ];
+
+  console.log('images', SSRCountry);
+
   const router = useRouter();
   const [packagesList, setPackagesList] = useState([]);
   const [checkedDestination, setCheckedDestination] = useState([]);
@@ -58,7 +89,7 @@ function Search({ destinations, packagetypes, interests, notifications }) {
     else checkedTypes.splice(index, 1);
 
     router.push({
-      pathname: '/search',
+      pathname: `/country/${router.query.slug}`,
       query: { ...router.query, types: checkedTypes.join() },
     });
   }
@@ -70,7 +101,7 @@ function Search({ destinations, packagetypes, interests, notifications }) {
     else checkedInterest.splice(index, 1);
 
     router.push({
-      pathname: '/search',
+      pathname: `/country/${router.query.slug}`,
       query: { ...router.query, interests: checkedInterest.join() },
     });
   }
@@ -82,7 +113,7 @@ function Search({ destinations, packagetypes, interests, notifications }) {
     else checkedActvity.splice(index, 1);
 
     router.push({
-      pathname: '/search',
+      pathname: `/country/${router.query.slug}`,
       query: { ...router.query, activity: checkedActvity.join() },
     });
   }
@@ -101,12 +132,12 @@ function Search({ destinations, packagetypes, interests, notifications }) {
       const { start } = currentdays[0];
       const { end } = currentdays[currentdays.length - 1];
       router.push({
-        pathname: '/search',
+        pathname: `/country/${router.query.slug}`,
         query: { ...router.query, start, end, status: statusDays.slice(0, -1) },
       });
     } else {
       router.push({
-        pathname: '/search',
+        pathname: `/country/${router.query.slug}`,
         query: { ...router.query, start: '', end: '', status: '' },
       });
     }
@@ -194,6 +225,8 @@ function Search({ destinations, packagetypes, interests, notifications }) {
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}>
+      <Slide images={images} navigation pagination={false} isHome />
+
       <div className="container d-block d-lg-none pt-3">
         <div className="row ">
           <div className="offset-2 col-8">
@@ -208,15 +241,6 @@ function Search({ destinations, packagetypes, interests, notifications }) {
       </div>
       <section id="tours_all">
         <div className="container">
-          <div className="row pt-5 pb-4">
-            <div className="col-12 mx-auto">
-              <div className="row">
-                <h2 className="title text-center font-weight-bold fs-25 pl-3">
-                  All our Tours
-                </h2>
-              </div>
-            </div>
-          </div>
           <div className="row">
             <div className="col-12">
               <div className="row">
@@ -237,12 +261,14 @@ function Search({ destinations, packagetypes, interests, notifications }) {
                       />
                     </a>
                   </div>
+
+                  {/*                 
                   <Collapse open={1}>
                     <CollapseContent index={0} title="Destinations">
                       {destinations.map(
                         country =>
                           country.destinations.filter(item => item.active).length > 0 && (
-                            <Collapse open={1}>
+                            <Collapse open={1} key={country.id}>
                               <CollapseContent index={0} title={country.name}>
                                 {country.destinations.map(
                                   destination =>
@@ -269,22 +295,7 @@ function Search({ destinations, packagetypes, interests, notifications }) {
                       )}
                     </CollapseContent>
                   </Collapse>
-
-                  <Collapse open={1}>
-                    <CollapseContent index={0} title="Duration (Days)">
-                      {days.map(item => (
-                        <Form.Check
-                          key={item.id}
-                          checked={item.checked}
-                          type="checkbox"
-                          onChange={event => actionFiltersDays(event, item.id)}
-                          name={`day${item.id}`}
-                          id={`day${item.id}`}
-                          label={`${item.start} - ${item.end}`}
-                        />
-                      ))}
-                    </CollapseContent>
-                  </Collapse>
+ */}
 
                   <Collapse open={1}>
                     <CollapseContent index={0} title="Type of Travel">
@@ -297,6 +308,22 @@ function Search({ destinations, packagetypes, interests, notifications }) {
                           name={`type${item.id}`}
                           id={`type${item.id}`}
                           label={item.title}
+                        />
+                      ))}
+                    </CollapseContent>
+                  </Collapse>
+
+                  <Collapse open={1}>
+                    <CollapseContent index={0} title="Duration (Days)">
+                      {days.map(item => (
+                        <Form.Check
+                          key={item.id}
+                          checked={item.checked}
+                          type="checkbox"
+                          onChange={event => actionFiltersDays(event, item.id)}
+                          name={`day${item.id}`}
+                          id={`day${item.id}`}
+                          label={`${item.start} - ${item.end}`}
                         />
                       ))}
                     </CollapseContent>
@@ -366,21 +393,157 @@ function Search({ destinations, packagetypes, interests, notifications }) {
                   </Collapse>
                 </div>
                 <div className="col-12 col-lg-9">
-                  <div className="row">
-                    {packagesList.length > 0 &&
-                      packagesList.map(item => (
+                  <Tabs defaultActiveKey="Overview">
+                    <Tab eventKey="Overview" title="Overview">
+                      <div className="row">
                         <div
-                          key={item?.id}
-                          className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                          <PackageItem
-                            title={item.title}
-                            days={item.days}
-                            slug={item.slug}
-                            thumbnail={item.thumbnail}
-                          />
-                        </div>
-                      ))}
-                  </div>
+                          className="col-12 fs-16 lh-25"
+                          dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
+                        />
+                      </div>
+                      <div className="row">
+                        {packagesList.length > 0 &&
+                          packagesList.map(item => (
+                            <div
+                              key={item?.id.toString()}
+                              className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                              <PackageItem
+                                title={item.title}
+                                days={item.days}
+                                slug={item.slug}
+                                thumbnail={item.thumbnail}
+                              />
+                            </div>
+                          ))}
+                      </div>
+                    </Tab>
+                    <Tab eventKey="Holidays" title="Holidays">
+                      <h3 className="text-center pb-5">
+                        Holidays in{' '}
+                        <span className="line font-weight-semibold">
+                          {SSRCountry?.name}
+                        </span>
+                      </h3>
+                      <div className="row">
+                        {SSRCountry.package_type.length > 0 &&
+                          SSRCountry.package_type.map(item => (
+                            <div
+                              key={item?.id.toString()}
+                              className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                              <PackageTypeItem
+                                id={item.id}
+                                title={item.title}
+                                thumbnail={PUBLIC_API + item.thumbnail}
+                              />
+                            </div>
+                          ))}
+                      </div>
+                    </Tab>
+                    <Tab eventKey="Tour" title={`Tour in ${SSRCountry?.name}`}>
+                      <h3 className="text-center pb-5">
+                        Tour in{' '}
+                        <span className="line font-weight-semibold">
+                          {SSRCountry?.name}
+                        </span>
+                      </h3>
+                      <div className="row">
+                        {SSRCountry.destinations.length > 0 &&
+                          SSRCountry.destinations.map(item => (
+                            <div
+                              key={item?.id.toString()}
+                              className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                              <DestinationItem
+                                title={item.title}
+                                summary={item.summary}
+                                slug={{
+                                  pathname: '/search',
+                                  query: {
+                                    destination: item.id,
+                                  },
+                                }}
+                                thumbnail={PUBLIC_API + item.thumbnail}
+                              />
+                            </div>
+                          ))}
+                      </div>
+                    </Tab>
+
+                    <Tab eventKey="Reason" title={`Reason why ${SSRCountry?.name}`}>
+                      <h3 className="text-center pb-5">
+                        Reason why{' '}
+                        <span className="line font-weight-semibold">
+                          {SSRCountry?.name}
+                        </span>
+                      </h3>
+
+                      <div className="row">
+                        {SSRCountry.destinations.length > 0 &&
+                          SSRCountry.destinations.map(
+                            item =>
+                              item.is_why_reason && (
+                                <div
+                                  key={item?.id.toString()}
+                                  className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                                  <DestinationItem
+                                    title={item.title}
+                                    summary={item.summary}
+                                    slug={`/destination/reason-why/${item.slug}`}
+                                    thumbnail={PUBLIC_API + item.thumbnail}
+                                  />
+                                </div>
+                              ),
+                          )}
+                      </div>
+                    </Tab>
+                    <Tab eventKey="What" title="What To Do">
+                      <h3 className="text-center pb-5">
+                        What To Do{' '}
+                        <span className="line font-weight-semibold">
+                          {SSRCountry?.name}
+                        </span>
+                      </h3>
+
+                      <div className="row">
+                        {SSRCountry.destinations.length > 0 &&
+                          SSRCountry.destinations.map(
+                            item =>
+                              item.is_what_to_do && (
+                                <div
+                                  key={item?.id.toString()}
+                                  className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                                  <DestinationItem
+                                    title={item.title}
+                                    summary={item.summary}
+                                    slug={`/destination/what-to-do/${item.slug}`}
+                                    thumbnail={PUBLIC_API + item.thumbnail}
+                                  />
+                                </div>
+                              ),
+                          )}
+                      </div>
+                    </Tab>
+
+                    <Tab eventKey="When" title="When To Go">
+                      <h3 className="text-center pb-5">
+                        When To Go{' '}
+                        <span className="line font-weight-semibold">
+                          {SSRCountry?.name}
+                        </span>
+                      </h3>
+
+                      <div className="row">
+                        {SSRCountry.destinations.length > 0 &&
+                          SSRCountry.destinations.map(destination => (
+                            <div
+                              key={destination?.id.toString()}
+                              className="col-12 text-center">
+                              <h3>{destination.title}</h3>
+                              <Weather weathers={destination.weathers} />
+                            </div>
+                          ))}
+                      </div>
+                    </Tab>
+                  </Tabs>
                 </div>
               </div>
             </div>
@@ -391,9 +554,23 @@ function Search({ destinations, packagetypes, interests, notifications }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  const response = await fetch(`${PUBLIC_API}/countries/`);
+  const countriesResponse = await response.json();
+
+  const paths = countriesResponse.map(item => ({
+    params: { slug: item.slug },
+  }));
+
+  return { paths, fallback: true };
+}
+
+export async function getStaticProps({ params }) {
   const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
+
+  const countryResponse = await fetch(`${PUBLIC_API}/countries/${params.slug}`);
+  const country = await countryResponse.json();
 
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
   const packagetypes = await packagetypesResponse.json();
@@ -406,6 +583,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      country,
       destinations,
       packagetypes,
       interests,
