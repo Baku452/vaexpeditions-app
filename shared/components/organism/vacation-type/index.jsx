@@ -58,11 +58,15 @@ function VacationType({ types, packagetypes }) {
                     query: { types: type.package_type.join() },
                   }}>
                   <div className="vacation position-relative">
+                    {
+                      type.thumbnail ?
+                    
                     <img
                       src={PUBLIC_API + type.thumbnail}
                       className="d-block w-100 h-100"
                       alt={type.title}
                     />
+                  :null}
                     <div className={styles.info}>
                       <h3 className="fs-24 font-weight-bold lh-25">{type.title}</h3>
                       <p className="fs-15 lh-27 d-none">{type.content}</p>

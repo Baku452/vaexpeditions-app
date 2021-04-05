@@ -10,10 +10,6 @@ export * from './atoms/logo/index';
 export * from './molecules/top-tours/index';
 export * from './molecules/banner/index';
 export * from './molecules/package-item/index';
-export * from './molecules/package-type-item/index';
-export * from './molecules/destination-item/index';
-export * from './molecules/atypical-item/index';
-
 export * from './molecules/slide/index';
 export * from './molecules/rating/index';
 export * from './molecules/slide/gallery';
@@ -23,7 +19,10 @@ export * from './molecules/itinerary-icons/index';
 export * from './molecules/notification/index';
 export * from './molecules/destination-check/index';
 export * from './molecules/card-box/index';
-export * from './molecules/weather/index';
+export * from './molecules/form-modal/index';
+export * from './molecules/why-valencia/index';
+export * from './molecules/ways_to_save/index';
+
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -50,4 +49,8 @@ export * from './organism/tailor-form/index';
 export * from './organism/page-content/index';
 export * from './organism/tailor-works/index';
 export * from './organism/pop-up/index';
-export * from './organism/destinations/index';
+
+
+
+
+

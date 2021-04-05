@@ -1,0 +1,21 @@
+.item {
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    transition: ease-out 0.1s;
+  }
+
+  & img:hover {
+    color: #0095ce;
+  }
+
+  img {
+    width: 100px;
+  }
+
+  a {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
