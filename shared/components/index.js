@@ -22,7 +22,9 @@ export * from './molecules/card-box/index';
 export * from './molecules/form-modal/index';
 export * from './molecules/why-valencia/index';
 export * from './molecules/ways_to_save/index';
-
+export * from './molecules/destination-item/index';
+export * from './molecules/package-type-item/index';
+export * from './molecules/weather/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -49,8 +51,3 @@ export * from './organism/tailor-form/index';
 export * from './organism/page-content/index';
 export * from './organism/tailor-works/index';
 export * from './organism/pop-up/index';
-
-
-
-
-

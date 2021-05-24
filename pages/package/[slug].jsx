@@ -8,7 +8,7 @@ import {
   Divider,
   Faqs,
   Itineraries,
-  OptionalReting,
+  // OptionalReting,
   OptionalTours,
   PricesAndDates,
   RelatedTrips,
@@ -105,12 +105,12 @@ function Package({ pack, destinations, packagetypes, notifications }) {
               </>
             )}
 
-            {pack?.optionals.length > 0 && (
+            {/* {pack?.optionals.length > 0 && (
               <>
                 <OptionalReting optionals={pack?.optionals} />
                 <Divider />
               </>
-            )}
+            )} */}
 
             {pack?.faqs.length > 0 && (
               <>

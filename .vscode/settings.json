@@ -7,5 +7,27 @@
     "source.fixAll.eslint": true
   },
   "editor.formatOnSave": true,
-  "eslint.workingDirectories": ["./pages", "./core", "./components", "/layouts"]
+  "eslint.workingDirectories": [
+    "./pages",
+    "./core",
+    "./components",
+    "/layouts"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#5182d4",
+    "activityBar.activeBorder": "#ecb2c8",
+    "activityBar.background": "#5182d4",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ecb2c8",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBar.background": "#3067c2",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#5182d4",
+    "titleBar.activeBackground": "#3067c2",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#3067c299",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#3067C2"
 }

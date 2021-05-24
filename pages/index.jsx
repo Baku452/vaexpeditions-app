@@ -1,19 +1,17 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
-import ScriptTag from 'react-script-tag';
-import { PopUp } from '@/components/index';
 import React from 'react';
+import ScriptTag from 'react-script-tag';
 
 import {
   Associations,
   Cover,
   OurRecommendations,
-  Reviews,
   SubNewsletter,
   TopTours,
   VacationType,
+  WaysToSave,
   WhyValencia,
-  WaysToSave
 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
@@ -27,18 +25,15 @@ function Index({
   packagetypes,
   interests,
   notifications,
-  popups
 }) {
-
-
   return (
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}>
       <Head>
-        {
-          <><script
+        <>
+          <script
             dangerouslySetInnerHTML={{
               __html: `(function(h,o,t,j,a,r){
                       h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -50,26 +45,51 @@ function Index({
                   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
             }}
           />
-            <ScriptTag
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=UA-75417007-1`}
-            >
-
-            </ScriptTag>
-
-          </>
-        }
+          <ScriptTag
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-75417007-1"
+          />
+        </>
         <title>Machu Picchu Tour, Travel Peru - Valencia Travel Cusco</title>
-        <meta name="Description" content="Explore Peru and all the country has to offer with the help of Valencia Travel Cusco. Book a Machu Picchu tour with one of our exciting packages today." />
-        <meta name="Keywords" content="machu, picchu, machu picchu tour, inca trail trek, travel cusco, salkantay trek " />
-        <meta name="subject" content="machu, picchu, machu picchu tour, inca trail trek, travel cusco, salkantay trek " />
-        <meta name="classification" content="The Best Inca Trail trek Operator in Peru. When it comes the Inca Trail trek, Salkantay trek or Machu Picchu tour, we are the go-to adventure travel expert!." />
+        <meta
+          name="Description"
+          content="Explore Peru and all the country has to offer with the help of 
+          Valencia Travel Cusco. Book a Machu Picchu tour with one 
+          of our exciting packages today."
+        />
+        <meta
+          name="Keywords"
+          content="machu, picchu, machu picchu tour, inca trail trek, 
+          travel cusco, salkantay trek "
+        />
+        <meta
+          name="subject"
+          content="machu, picchu, machu picchu tour, inca trail trek, 
+          travel cusco, salkantay trek "
+        />
+        <meta
+          name="classification"
+          content="The Best Inca Trail trek Operator in Peru. 
+          When it comes the Inca Trail trek, 
+          Salkantay trek or Machu Picchu tour, we are the go-to adventure travel expert!."
+        />
 
-        <meta property="og:title" content="Machu Picchu Tour, Travel Peru - Valencia Travel Cusco" />
+        <meta
+          property="og:title"
+          content="Machu Picchu Tour, Travel Peru - Valencia Travel Cusco"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.valenciatravelcusco.com/" />
-        <meta property="og:description" content="Explore Peru and all the country has to offer with the help of Valencia Travel Cusco. Book a Machu Picchu tour with one of our exciting packages today." />
-        <meta name="google-site-verification" content="XbDonWLNIunfWu05Mn8hOngklQ0lIp_58MiCLsghbbU" />
+        <meta
+          property="og:description"
+          content="Explore Peru and all the country has to offer with the help of 
+          Valencia Travel Cusco. 
+          Book a Machu Picchu tour with one of our exciting packages today."
+        />
+        <meta
+          name="google-site-verification"
+          content="XbDonWLNIunfWu05Mn8hOngklQ0lIp_58MiCLsghbbU"
+        />
       </Head>
       <Cover
         destinations={destinations}
@@ -77,31 +97,26 @@ function Index({
         packagetypes={packagetypes}
         interests={interests}
       />
-      {
-        popups.map(item => (
-          <PopUp popup={item}></PopUp>
-        ))
-
-      }
       <WhyValencia />
       <VacationType types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
-      <section className="overflow-hidden" style={{ "background-color": '#f4f4f4' }}>
-        <h2 className="font-weight-bold text-center fs-30 titleUnderline py-4">Tripadvisor Rating</h2>
+      <section className="overflow-hidden" style={{ 'background-color': '#f4f4f4' }}>
+        <h2 className="font-weight-bold text-center fs-30 titleUnderline py-4">
+          Tripadvisor Rating
+        </h2>
 
-        {<>
-          <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer></ScriptTag>
-          <div class="elfsight-app-a0921e8f-6a48-43ca-b306-5f34845c8c0e"></div>
-        </>
+        {
+          <>
+            <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer />
+            <div className="elfsight-app-a0921e8f-6a48-43ca-b306-5f34845c8c0e" />
+          </>
         }
         {/* <Reviews /> */}
-
       </section>
       <WaysToSave />
       <SubNewsletter />
       <Associations />
-
     </Base>
   );
 }
@@ -128,9 +143,6 @@ export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
-  const popupResponse = await fetch(`${PUBLIC_API}/popup/`);
-  const popups = await popupResponse.json();
-
   return {
     props: {
       types,
@@ -140,7 +152,6 @@ export async function getStaticProps() {
       packagetypes,
       interests,
       notifications,
-      popups
     },
     revalidate: 1,
   };
