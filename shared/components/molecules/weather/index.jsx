@@ -1,5 +1,3 @@
-import style from 'node_modules/dom-helpers/cjs/css';
-
 import styles from './index.module.scss';
 
 function Weather({ weathers }) {

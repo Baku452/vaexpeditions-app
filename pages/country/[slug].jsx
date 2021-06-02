@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
@@ -12,7 +13,6 @@ import {
   PackageItem,
   PackageTypeItem,
   Slide,
-  Title,
   Weather,
 } from '@/components/index';
 import { activities, days, packages, years } from '@/core/index';
@@ -29,6 +29,7 @@ function Search({
   packagetypes,
   interests,
   notifications,
+  packagesAll,
 }) {
   // console.log('destinations', destination);
 
@@ -41,11 +42,9 @@ function Search({
     },
   ];
 
-  console.log('images', SSRCountry);
-
   const router = useRouter();
   const [packagesList, setPackagesList] = useState([]);
-  const [checkedDestination, setCheckedDestination] = useState([]);
+  // const [checkedDestination, setCheckedDestination] = useState([]);
   const [checkedDays, setCheckedDays] = useState([]);
   const [checkedActvity, setCheckedActvity] = useState([]);
   const [checkedTypes, setCheckedTypes] = useState([]);
@@ -143,17 +142,17 @@ function Search({
     }
   }
 
-  function actionFiltersDestinations(value, id) {
-    const index = checkedDestination.findIndex(item => item === String(id));
+  // function actionFiltersDestinations(value, id) {
+  //   const index = checkedDestination.findIndex(item => item === String(id));
 
-    if (index === -1) checkedDestination.push(String(id));
-    else checkedDestination.splice(index, 1);
+  //   if (index === -1) checkedDestination.push(String(id));
+  //   else checkedDestination.splice(index, 1);
 
-    router.push({
-      pathname: '/search',
-      query: { ...router.query, destination: checkedDestination.join() },
-    });
-  }
+  //   router.push({
+  //     pathname: '/search',
+  //     query: { ...router.query, destination: checkedDestination.join() },
+  //   });
+  // }
 
   function setActionChecked(id, state) {
     return state.find(item => item === String(id)) === String(id);
@@ -171,7 +170,7 @@ function Search({
     const destinationActiveItems = [];
     if (router?.query?.destination) {
       const destinationsActive = router?.query?.destination.split(',');
-      setCheckedDestination(destinationsActive);
+      // setCheckedDestination(destinationsActive);
 
       destinationsActive.forEach(active => {
         destinations.forEach(destination => {
@@ -224,7 +223,8 @@ function Search({
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
-      notifications={notifications}>
+      notifications={notifications}
+      packagesAll={packagesAll}>
       <Slide images={images} navigation pagination={false} isHome />
 
       <div className="container d-block d-lg-none pt-3">
@@ -412,6 +412,15 @@ function Search({
                                 days={item.days}
                                 slug={item.slug}
                                 thumbnail={item.thumbnail}
+                                type={item.type_name}
+                                destination={item.destination_name}
+                                featured={item.featured}
+                                packagetypes={packagetypes}
+                                activity={activities.map(act =>
+                                  act.id.toString() === item.activity_name.toString()
+                                    ? act.label
+                                    : null,
+                                )}
                               />
                             </div>
                           ))}
@@ -581,6 +590,9 @@ export async function getStaticProps({ params }) {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
+  const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
+  const packagesAll = await packagesRes.json();
+
   return {
     props: {
       country,
@@ -588,6 +600,7 @@ export async function getStaticProps({ params }) {
       packagetypes,
       interests,
       notifications,
+      packagesAll,
     },
   };
 }

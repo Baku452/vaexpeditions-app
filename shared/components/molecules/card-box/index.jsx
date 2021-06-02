@@ -5,39 +5,35 @@ import styles from './index.module.scss';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function CardBox({ items }) {
-    return (
-        <>
-            <section className={styles.package}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12 mx-auto">
-                            <div className={`${styles.card} row`}>
-                                {items.map(item => (
-                                    <Link key={item.id} href={`/${item.slug}`}>
-                                        <div className="d-flex col-12 col-md-6 col-lg-6 col-xl-4 pb-4 mb-2">
-                                            <div className={styles.card}>
-                                                <img
-                                                    src={PUBLIC_API + item.thumbnail}
-                                                    className="card-img-top"
-                                                    alt={item.title}
-                                                />
-
-                                                <div className={`${styles.body} p-4`}>
-                                                    <h5 className="card-title mb-2 fs-18 font-weight-bold">
-                                                        {item.title}
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+  return (
+    <>
+      <section id="Card box" className="containerBox">
+        <h2 className="font-weight-bold text-center titleUnderline pb-3 m-0">
+          More About Us
+        </h2>
+        <div className="row">
+          {items.map(item => (
+            <Link key={item.id} href={`/${item.slug}`}>
+              <div className={`${styles.card} col-12 col-sm-6 col-lg-4 pb-0 pb-lg-5`}>
+                <div className="w-100 overflow-hidden">
+                  <img
+                    src={PUBLIC_API + item.thumbnail}
+                    className="card-img-top"
+                    alt={item.title}
+                  />
                 </div>
-            </section>
-        </>
-    );
+                <div className={`${styles.body} p-2 p-md-4`}>
+                  <h5 className="card-title font-weight-bold text-center">
+                    {item.title}
+                  </h5>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
+  );
 }
 
 export { CardBox };

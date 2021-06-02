@@ -1,0 +1,26 @@
+@import '../../../../styles/media-queries.scss';
+
+.cinta {
+  background: #000;
+  color: #fff;
+  & > div:not(:last-child) {
+    border-right: 1px solid #696a68;
+  }
+  & > div:nth-child(1),
+  & > div:nth-child(4) {
+    @media (max-width: $md) {
+      border: 0;
+    }
+  }
+  .circle {
+    width: 60px;
+    border-radius: 50%;
+  }
+  .icons {
+    max-width: 35px;
+    color: #fff;
+  }
+  // div {
+  //   border-right: 1px solid #696a68;
+  // }
+}

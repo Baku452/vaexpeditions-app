@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function WhyValencia() {
   return (
@@ -8,9 +8,16 @@ function WhyValencia() {
           <div className="container containerBox">
             <div className="row pt-5 justify-content-md-center">
               <div className="col-lg-10 col-sm-12 ">
-                <h1 className="font-weight-bold mb-4 fs-30 text-center titleUnderline">WHY VALENCIA TRAVEL</h1>
-                <p>
-                  Valencia Travel Cusco offers the best in tour, Inca Trail Trek and Salkantay Trek to Machu Picchu packages along with special deals! It specializes from relaxing tours for the baby boomers to challenging treks for the adventurous ! We customize Machu Picchu Tour packages according to the price and likes of potential travellers! Come explore Peru today with Valencia Travel!
+                <h1 className="mb-4 text-center titleUnderline">WHY VALENCIA TRAVEL</h1>
+                <p className="lh-34 px-lg-5 text-justify">
+                  Valencia Travel Cusco offers the optimum in unique travel experiences.
+                  Whether you are looking for adventure on the Inca Trail hike or
+                  Salkantay Trek to Machu Picchu, or if you are looking to take it a
+                  little easier, with an all-included luxury train tour to Machu Picchu,
+                  you can be sure that we will specifically develop the best tour for you,
+                  taking into account your every requirement, personal preference and
+                  while maintaining our rigorous health and safety procedures for the
+                  duration of your trip.
                 </p>
               </div>
             </div>

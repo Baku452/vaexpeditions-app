@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid #cfcfcf;
+  font-weight: 600;
+  .box {
+    color: #0095ce;
+  }
+  .box::after {
+    content: 'x';
+    // display: block;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #0095ce;
+    vertical-align: middle;
+  }
+}

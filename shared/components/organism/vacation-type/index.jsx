@@ -13,19 +13,18 @@ function VacationType({ types, packagetypes }) {
 
   return (
     <>
-      <div className={`${styles.vacation} container mb-5`}>
-        <div className="row pt-5 pb-5">
+      <section id="vacation-type" className={`${styles.vacation} container mb-5`}>
+        <div className="row pt-5 pb-4">
           <div className="col-12 mx-auto">
             <div className="row">
               <div className="col-3 d-none d-md-block" />
               <div className="col-12 col-md-6">
-                <h2 className="font-weight-bold text-center fs-30">
-                  Choose your vacation type
-                </h2>
+                <h2 className=" titleUnderline text-center">Choose your vacation type</h2>
               </div>
-              <div className="col-md-3 d-none d-md-block text-right">
+              <div className="col-md-3 d-none d-md-block  text-md-right align-self-end ">
                 <Link
-                  href={{ pathname: '/search', query: { types: packagesTypes.join() } }}>
+                  href={{ pathname: '/search', query: { types: packagesTypes.join() } }}
+                  prefetch={false}>
                   <a className="btn btn-primary fs-15">Explore all vacation types</a>
                 </Link>
               </div>
@@ -35,18 +34,26 @@ function VacationType({ types, packagetypes }) {
         {types.length > 0 && (
           <Swiper
             navigation
-            slidesPerView="auto"
+            // centeredSlides="true"
+            preventClicks={false}
             loop
+            slidesPerView={5}
+            grabCursor
+            // preventClicksPropagation={false}
             breakpoints={{
               280: {
-                width: 300,
+                // width: 300,
                 spaceBetween: 20,
-                slidesPerView: 'auto',
+                slidesPerView: 1,
               },
               420: {
-                width: 300,
+                // width: 300,
                 spaceBetween: 20,
-                slidesPerView: 'auto',
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
               },
             }}>
             {types.map(type => (
@@ -58,18 +65,14 @@ function VacationType({ types, packagetypes }) {
                     query: { types: type.package_type.join() },
                   }}>
                   <div className="vacation position-relative">
-                    {
-                      type.thumbnail ?
-                    
                     <img
                       src={PUBLIC_API + type.thumbnail}
                       className="d-block w-100 h-100"
                       alt={type.title}
                     />
-                  :null}
                     <div className={styles.info}>
-                      <h3 className="fs-24 font-weight-bold lh-25">{type.title}</h3>
-                      <p className="fs-15 lh-27 d-none">{type.content}</p>
+                      <h3 className="lh-25">{type.title}</h3>
+                      <p className="fs-15 lh-27">{type.content}</p>
                     </div>
                   </div>
                 </Link>
@@ -77,7 +80,14 @@ function VacationType({ types, packagetypes }) {
             ))}
           </Swiper>
         )}
-      </div>
+        <div className="col-12 d-md-none d-sm-block text-center pt-4">
+          <Link
+            href={{ pathname: '/search', query: { types: packagesTypes.join() } }}
+            prefetch={false}>
+            <a className="btn btn-primary fs-15">Explore all vacation types</a>
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

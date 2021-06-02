@@ -29,4 +29,13 @@ function packagesTypes() {
     });
 }
 
-export { packages, packagesTypes, packagesOptional };
+function posts({ queryParams = '' }) {
+  return services({ url: `/blog/${queryParams}`, method: 'GET' })
+    .then(result => {
+      return { result };
+    })
+    .catch(error => {
+      return { error: error.response };
+    });
+}
+export { packages, packagesTypes, packagesOptional, posts };

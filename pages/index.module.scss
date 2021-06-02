@@ -1,6 +1,28 @@
 @import '../styles/media-queries.scss';
 
 .aside {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgb(242, 242, 242) !important;
+
+  .boxaside {
+    padding: 20px 20px 0px 20px;
+    background-color: rgb(242, 242, 242);
+  }
+  .asideHeaderMobile {
+    background-color: black;
+  }
+  .asideHeaderMobile h3 {
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+  .asideHeaderMobile svg {
+    color: #fff !important;
+  }
   @media (max-width: $md) {
     position: fixed;
     z-index: 9999;
@@ -8,11 +30,18 @@
     width: 100%;
     height: 100%;
     top: 0;
+    left: 0;
     overflow: scroll;
     display: none;
+    padding: 80px 0 !important;
   }
 }
-
+.asideMobileFooter {
+  border-top: 1px solid #aaaaaa;
+  background-color: #f2f2f2;
+  height: 75px;
+  text-align: center;
+}
 .close {
   position: absolute;
   right: 10px;
@@ -24,4 +53,19 @@
   display: inline-block;
   width: 33.3%;
   padding-left: 30px;
+}
+
+.maintenance {
+  background-image: url('/images/machu-picchu-fotos-DRIS.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  color: #f2f2f2;
+  min-height: 500px;
+  text-shadow: 1px 1px 1px black;
+  line-height: 0.5rem;
+}
+
+.maintenance > div {
+  background-color: rgba($color: #000000, $alpha: 0.5);
 }

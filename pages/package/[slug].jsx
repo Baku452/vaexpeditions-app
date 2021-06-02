@@ -5,10 +5,10 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 import {
+  CintaNegra,
   Divider,
   Faqs,
   Itineraries,
-  // OptionalReting,
   OptionalTours,
   PricesAndDates,
   RelatedTrips,
@@ -18,14 +18,17 @@ import {
   TripOverview,
   WhatsIncluded,
 } from '@/components/index';
-import { packages, packagesOptional } from '@/core/index';
+import { activities, levelActivity, packages, packagesOptional } from '@/core/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Package({ pack, destinations, packagetypes, notifications }) {
+function Package({ pack, destinations, packagetypes, notifications, packagesAll }) {
   const [packagesList, setPackagesList] = useState([]);
   const [packagesOptionals, setPackagesOptionals] = useState([]);
+  const [packageTypeLabel, setpackageTypeLabel] = useState('');
+  const [packageActivityLabel, setpackageActivityLabel] = useState([]);
+  const [packageTypeSvg, setpackageSvg] = useState('');
 
   async function fetchOptional() {
     let { destination } = pack;
@@ -57,6 +60,15 @@ function Package({ pack, destinations, packagetypes, notifications }) {
     if (result && packagesList.length === 0) {
       setPackagesList(result.data);
     }
+    packagetypes.map(item => {
+      if (item.id == pack.package_type) {
+        setpackageTypeLabel(item.title);
+        setpackageSvg(item.svg);
+      }
+    });
+    levelActivity.map(item => {
+      if (item.id == pack.activity) return setpackageActivityLabel(item.label);
+    });
   }
   useEffect(() => {
     fetchPackages();
@@ -67,20 +79,29 @@ function Package({ pack, destinations, packagetypes, notifications }) {
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
-      notifications={notifications}>
+      notifications={notifications}
+      packagesAll={packagesAll}>
       <Head>
+        {pack.titleSEO ? <title>{pack.titleSEO}</title> : <title>{pack.title}</title>}
         <meta name="description" content={pack?.summary} />
         <meta name="keywords" content={pack?.keywords} />
       </Head>
-      {pack?.images?.length > 0 && (
-        <Slide
-          images={pack.images}
-          title={pack.title}
-          subtitle={pack.days}
-          pagination={false}
-        />
-      )}
-
+      <Slide
+        images={pack.images}
+        title={pack.title}
+        subtitle={pack.days}
+        pagination={false}
+      />
+      <CintaNegra
+        price={pack.price}
+        offer={pack.offer}
+        type={packageTypeLabel}
+        activityID={pack.activity}
+        activity={packageActivityLabel}
+        specialist={pack?.specialist?.thumbnail}
+        showspecialist={pack?.show_specialist}
+        packageTypeSvg={packageTypeSvg}
+      />
       <div className="container aside">
         <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
           <StikyBox pack={pack} />
@@ -104,24 +125,29 @@ function Package({ pack, destinations, packagetypes, notifications }) {
                 <Divider />
               </>
             )}
-
-            {/* {pack?.optionals.length > 0 && (
-              <>
-                <OptionalReting optionals={pack?.optionals} />
-                <Divider />
-              </>
-            )} */}
-
             {pack?.faqs.length > 0 && (
               <>
                 <Faqs faqs={pack?.faqs} />
                 <Divider />
               </>
             )}
-
-            <OptionalTours packages={packagesOptionals.slice(0, 6)} pack={pack} />
-            <Divider />
-            <RelatedTrips packages={packagesList.slice(0, 7)} pack={pack} />
+            {packagesOptionals.length > 0 ? (
+              <>
+                <OptionalTours
+                  packages={packagesOptionals.slice(0, 6)}
+                  pack={pack}
+                  packagetypes={packagetypes}
+                  activities={activities}
+                />
+                <Divider />
+              </>
+            ) : null}
+            <RelatedTrips
+              packages={packagesList.slice(0, 7)}
+              pack={pack}
+              packagetypes={packagetypes}
+              activities={activities}
+            />
             <Divider />
             {pack.old_overview && (
               <div name="old-overview" className="container pt-5 pb-5">
@@ -171,7 +197,10 @@ export async function getStaticProps({ params }) {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
-  return { props: { pack, destinations, packagetypes, notifications } };
+  const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
+  const packagesAll = await packagesRes.json();
+
+  return { props: { pack, destinations, packagetypes, notifications, packagesAll } };
 }
 
 export default Package;

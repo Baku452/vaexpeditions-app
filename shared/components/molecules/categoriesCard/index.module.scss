@@ -1,0 +1,27 @@
+.box {
+  max-width: 380px;
+  cursor: pointer;
+  overflow: hidden;
+  h3 {
+    background-color: #fff;
+    overflow: hidden;
+    font-weight: 600;
+    &:hover {
+      color: #0095ce;
+    }
+  }
+  & svg:hover {
+    color: #0095ce;
+  }
+  //   height: 250px;
+}
+.imgBox {
+  overflow: hidden;
+  img {
+    width: 100%;
+    transition: 0.1s ease-in;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

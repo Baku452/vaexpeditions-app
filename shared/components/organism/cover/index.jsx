@@ -7,7 +7,6 @@ import { Slide } from '@/components/index';
 import styles from './index.module.scss';
 
 function Cover({ destinations, banners, packagetypes, interests }) {
-  console.log('AAAA', destinations);
   const router = useRouter();
   const [destination, setdDestination] = useState('');
   const [types, setTypes] = useState('');
@@ -35,35 +34,32 @@ function Cover({ destinations, banners, packagetypes, interests }) {
   function handleChangeInterest(event) {
     setInterestsType(event.target.value);
   }
-
+  const scrollButton = ref => {
+    window.scrollIntoView({ top: 1500, behavior: 'smooth' });
+  };
   function handleSearch() {
-    if (destination) {
-      router.push({
-        pathname: `/country/${destination}`,
-        query: {
-          ...router.query,
-          slug: destination,
-          types,
-          interests: interestsType,
-        },
-      });
-    } else {
-      router.push({
-        pathname: '/search',
-        query: {
-          ...router.query,
-          types,
-          interests: interestsType,
-        },
-      });
-    }
+    router.push({
+      pathname: '/search',
+      query: {
+        ...router.query,
+        destination,
+        types,
+        interests: interestsType,
+      },
+    });
   }
 
   return (
-    <section className="cover position-relative">
+    <section className="cover position-relative overflow-hidden">
       <Slide images={banners} navigation pagination={false} isHome />
-
       <div className={styles.form}>
+        <div className="row justify-content-center">
+          {/* <button className="btn btn-outline-light btn-lg mb-5"> */}
+          <a className="btn btn-light btn-lg mb-5" href="/#top-rated-tours">
+            See Top Rated Tours
+          </a>
+          {/* </button> */}
+        </div>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8 text-center">
@@ -74,12 +70,22 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                     size="lg"
                     onChange={event => handleChangeDestination(event)}>
                     <option>Destination</option>
-                    {destinations.length > 0 &&
-                      destinations.map(item => (
-                        <option value={item.slug} key={item.id}>
-                          {item.name}
-                        </option>
-                      ))}
+                    {
+                      destinations.length > 0 &&
+                        destinations.map(country =>
+                          country.destinations.map(
+                            item =>
+                              item.active && (
+                                <option value={item.id} key={item.id}>
+                                  {item.title} - {item.active && `${item.sub_title}`}
+                                </option>
+                              ),
+                          ),
+                        )
+                      // destinations[0].destinations.map(item => (
+                      // )
+                      // )
+                    }
                   </Form.Control>
                 </div>
                 <div className="col-11 col-lg-4 mx-auto p-0">
@@ -87,7 +93,7 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                     as="select"
                     size="lg"
                     onChange={event => handleChangePackage(event)}>
-                    <option>Trip Type</option>
+                    <option>All Trip Types</option>
                     {packagetypes.length > 0 &&
                       packagetypes.map(item => (
                         <option value={item.id} key={item.id}>
@@ -101,7 +107,7 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                     as="select"
                     size="lg"
                     onChange={event => handleChangeInterest(event)}>
-                    <option>Interest</option>
+                    <option>All Interest</option>
                     {interestsList.length > 0 &&
                       interestsList.map(item => (
                         <option value={item.id} key={item.id}>

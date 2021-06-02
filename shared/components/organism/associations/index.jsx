@@ -1,68 +1,76 @@
 import SwiperCore, { Navigation } from 'swiper';
 
-import { Icon } from '@/components/index';
-import Asta from '@/icons/asta.svg';
-import Attamember from '@/icons/attamember.svg';
-import Guarranty from '@/icons/guarranty.svg';
-import Lata from '@/icons/lata.svg';
-import Tripadvisor from '@/icons/tripadvisor.svg';
-import Ustoa from '@/icons/ustoa.svg';
+import styles from './index.module.scss';
 
 SwiperCore.use([Navigation]);
 
 function Associations() {
   return (
     <>
-      <div className="container">
+      <section id="associations" className="container overflow-hidden">
         <div className="row">
-          <div className="container pt-4 pb-4">
-            <div className="row">
-              <div className="col-6 col-md-4 col-lg-2 text-center">
-                <Icon
-                  component={Attamember}
-                  viewBox="0 0 268 70"
-                  style={{ fontSize: '150px' }}
-                />
+          <div className=" pt-4 pb-4">
+            <div className={`row ${styles.containerBox} d-flex justify-content-center`}>
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <a
+                  target="blank"
+                  href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d2469804-Reviews-Valencia_Travel_Day_Tours-Cusco_Cusco_Region.html">
+                  <img alt="Trip Advisor Logo" src="/images/aso_trip_advisor_logo.png" />
+                </a>
               </div>
-              <div className="col-6 col-md-4 col-lg-2 text-center pt-4">
-                <Icon
-                  component={Tripadvisor}
-                  viewBox="0 0 146 144"
-                  style={{ fontSize: '100px' }}
-                />
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <img alt="Safe Travels" src="/images/aso_safetravels.png" />
               </div>
-              <div className="col-6 col-md-4 col-lg-2 text-center  pt-3">
-                <Icon
-                  component={Lata}
-                  viewBox="0 0 176 129"
-                  style={{ fontSize: '110px' }}
-                />
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <a
+                  href="https://www.kayak.es/Machu-Picchu.45618.guide"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  <img
+                    alt="kayak logo"
+                    width="150"
+                    height="150"
+                    src="https://www.kayak.com/news/wp-content/uploads/sites/78/2020/02/design_image_kayak_travel-guides_circle_orange_find-us-on-tg_150x150_20022x.png"
+                  />
+                </a>
               </div>
-              <div className="col-6 col-md-4 col-lg-2 text-center pt-3">
-                <Icon
-                  component={Guarranty}
-                  viewBox="0 0 176 144"
-                  style={{ fontSize: '120px' }}
-                />
+
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <img alt="guarranty logo" src="/images/aso_guarranty_logo.png" />
               </div>
-              <div className="col-6 col-md-4 col-lg-2 text-center">
-                <Icon
-                  component={Ustoa}
-                  viewBox="0 0 240 70"
-                  style={{ fontSize: '150px' }}
-                />
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <a
+                  rel="noopener noreferrer"
+                  target="blank"
+                  href="https://www.lata.travel/pre_registration/valencia-travel-cusco/#sthash.4lGwMWqs.dpbs">
+                  <img alt="lata logo" src="/images/aso_lata_logo.png" />
+                </a>
               </div>
-              <div className="col-6 col-md-4 col-lg-2 text-center">
-                <Icon
-                  component={Asta}
-                  viewBox="0 0 190 82"
-                  style={{ fontSize: '150px' }}
-                />
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.adventuretravel.biz/about/atta-members/">
+                  <img
+                    alt="adventure travel trade"
+                    src="/images/aso_adventure-travel-trade.png"
+                  />
+                </a>
+              </div>
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <a rel="noopener noreferrer" target="_blank" href="https://ustoa.com/">
+                  <img alt="Ustoa Logo" src="/images/aso_ustoa_logo.png" />
+                </a>
+              </div>
+              <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
+                <a rel="noopener noreferrer" target="_blank" href="https://www.asta.org/">
+                  <img alt="Asta logo" src="/images/aso_asta.png" />
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

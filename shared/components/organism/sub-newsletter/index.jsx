@@ -33,7 +33,7 @@ function SubNewsletter() {
   return (
     <section id="recommendations" className={`${styles.news} mt-5`}>
       <img
-        src="/images/newsletter.png"
+        src="/images/newsletter.jpg"
         className="fit  w-100 h-100 position-absolute"
         alt="newsletter"
       />

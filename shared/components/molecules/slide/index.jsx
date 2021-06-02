@@ -37,14 +37,14 @@ function Slide({
   const navigate = images.length > 1 ? navigation : false;
 
   return (
-    <div className={styles.slide}>
+    <div className={`${styles.slide} ${isHome ? styles.slideHome : ''}`}>
       <Swiper
         slidesPerView={1}
         navigation={navigate}
         pagination={pagination ? { pagination, ...{ clickable: true } } : false}
         className={styles.swiper}
         loop>
-        {images &&
+        {images.length > 0 ? (
           images.map(item => (
             <SwiperSlide key={item.id} className={styles.shadow}>
               <img
@@ -59,7 +59,16 @@ function Slide({
                 </section>
               )}
             </SwiperSlide>
-          ))}
+          ))
+        ) : (
+          <SwiperSlide key="1" className={styles.shadow}>
+            <img
+              src="/images/colca.jpg"
+              className="d-block w-100 fit"
+              alt="Va Expeditions"
+            />
+          </SwiperSlide>
+        )}
       </Swiper>
       {title && (
         <>

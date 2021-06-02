@@ -31,7 +31,7 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
       <div className={styles.content}>
         <div className="container d-block">
           <div className="row">
-            {/*             {destinations &&
+            {destinations &&
               destinations.map(destination => (
                 <div key={destination.name} className="col-12">
                   <h5 className="font-weight-bold black">{destination.name}</h5>
@@ -41,11 +41,11 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
                     ))}
                   </ul>
                 </div>
-              ))} */}
+              ))}
 
-            <div className="col-12pb-5">
+            <div className="col-12 pt-5 pb-5">
               <h5 className="black font-weight-bold mb-3">
-                {/* Other destinations in  */}South America
+                Other destinations in South America
               </h5>
               <ul>
                 {countries &&
@@ -144,7 +144,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                 <a
                   className={`${active(router.pathname, '/experiences')} ${styles.link}`}
                   role="button">
-                  HOLYDAY TYPES
+                  HOLIDAY TYPES
                 </a>
                 <MenuHoliday packagetypes={packagetypes} />
               </li>
@@ -158,6 +158,13 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                     Tailor Made Tours
                   </a>
                 </Link>
+
+                {/* <MenuContent
+                  destinations={destinations}
+                  countries={countries}
+                  changeCountry={changeCountry}
+                  tailorMade
+                /> */}
               </li>
               <li className={styles.nav}>
                 <Link href="/our-purpose">
@@ -171,9 +178,9 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                 </Link>
               </li>
               <li className={styles.nav}>
-                <a className={`nav-link ${styles.link}`} href="#">
-                  Blog
-                </a>
+                <Link href="/blog">
+                  <a className={`nav-link ${styles.link}`}>Blog</a>
+                </Link>
               </li>
               <li className={styles.nav}>
                 <Link href="/contact-us">

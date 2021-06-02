@@ -1,0 +1,69 @@
+.label {
+  font-size: 11px;
+  position: absolute;
+  color: transparent;
+  left: 23px;
+
+  transition: 0.2s ease-in;
+  // position: absolute;
+  // font-size: 15px;
+  // color: #3a3a3a;
+  // background: #fff;
+  z-index: -1;
+}
+.labelFocus {
+  transition: 0.2s ease-in;
+  position: absolute;
+  font-size: 11px;
+  color: #000000;
+  background: transparent;
+  top: -9px;
+  left: 23px;
+}
+.input {
+  color: #383838;
+  font-size: 14px;
+  padding: 10px 20px;
+  width: 100%;
+  border: 1px solid #cdcdcd;
+}
+.input:focus,
+.input:hover {
+  outline: none;
+}
+.suggestionsList {
+  border: 1px solid #cdcdcd;
+}
+.suggestion {
+  color: #383838;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+.suggestionHighlighted {
+  cursor: pointer;
+  background: #ebebeb;
+}
+.suggestionsList {
+  width: 100%;
+  display: block;
+  position: absolute;
+  z-index: 999;
+  background: #fff;
+}
+
+.iconSearch svg {
+  position: absolute;
+  top: 34%;
+  right: 20px;
+}
+
+.svg {
+  width: 25px;
+  padding-right: 6px;
+  img {
+    width: 30px;
+  }
+}
+.title {
+  max-width: 80%;
+}

@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
-/* @font-face {
-  font-family: "Electra LT Std";
-  src: url("/fonts/ElectraLTStd-BoldCursive.otf");
+@font-face {
+  font-family: 'Electra LT Std';
+  src: url('/fonts/ElectraLTStd-BoldCursive.otf');
   font-style: normal;
   font-display: swap;
-} */
+}
 
 $navbar-light-color: #000 !important;
 $btn-border-radius: 0;
@@ -30,7 +30,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1700px,
+  xl: 1600px,
 ) !default;
 
 @import '~bootstrap/scss/bootstrap';

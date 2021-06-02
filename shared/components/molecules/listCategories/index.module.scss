@@ -1,0 +1,18 @@
+.boxCategory {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  transition: 0.1.5s ease;
+  font-size: 14px;
+  a {
+    color: #9b9b9b !important;
+  }
+  &:hover {
+    background-color: #0095ce;
+    a {
+      color: #fff !important;
+    }
+  }
+}

@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
+import Head from 'next/head';
 import { useState } from 'react';
 
-//Error de immportac
+// Error de immportac
 // import { Banner, ContactUsForm } from '@/components/index';
-
-//Linea agregada de componente Contact
-import { Banner, TailorForm, WhyTailor, TailorWork } from '@/components/index';
+// Linea agregada de componente Contact
+import { Banner, TailorForm, TailorWork, WhyTailor } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -15,11 +15,21 @@ function TailorMade({
   destinations,
   packagetypes,
   tailors,
-  notifications
+  notifications,
+  popups,
+  packagesAll,
 }) {
   const [show, setShow] = useState(false);
   return (
-    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
+    <Base
+      destinations={destinations}
+      packagetypes={packagetypes}
+      notifications={notifications}
+      popups={popups}
+      packagesAll={packagesAll}>
+      <Head>
+        <title>Peru Travel Tips, Facts, and Information | Valencia Travel</title>
+      </Head>
       <Banner
         description="DESIGN YOUR ULTIMATE ADVENTURE WITH OUR TAILORMADE TOURS SERVICE"
         image="/images/tailor-made.jpg"
@@ -27,15 +37,27 @@ function TailorMade({
       />
 
       <section id="descripion">
-        <div className="container">
+        <div className="containerBox">
           <div className="row pt-5">
             <div className="col-12 mx-auto">
               <div className="row">
                 <div className="col-12">
-                  <p className="fs-20 pb-5 m-0 text-center">
-                    Real life experiences are extremely difficult to find by simply performing a Google search. Experience a total change of perspective by allowing us to design a unique and flexible travel itinerary to enjoy the vacation you have always dreamed of. Offering the freedom to go, see and do exactly what you like.
-                    Far removed from large group tours and well-trodden paths, our focus is on visiting authentic local cultures in a sustainable manner, overflowing with uniquely rich experiences. A holiday with Valencia Travel, is a personal experience from the moment you contact us, until you have returned home and become absorbed by your daily routine.
-                    Our personalized travel experts will assist you in taking maximum advantage of your time restraints and your holiday budget. All you need to do is start dreaming about your perfect itinerary and we will take charge of the remaining details.  Contact us today or fill in the contact form and one of our experts will be in touch before you know it.
+                  <p className="fs-16 pb-5 m-0 text-justify">
+                    Real life experiences are extremely difficult to find by simply
+                    performing a Google search. Experience a total change of perspective
+                    by allowing us to design a unique and flexible travel itinerary to
+                    enjoy the vacation you have always dreamed of. Offering the freedom to
+                    go, see and do exactly what you like. Far removed from large group
+                    tours and well-trodden paths, our focus is on visiting authentic local
+                    cultures in a sustainable manner, overflowing with uniquely rich
+                    experiences. A holiday with Valencia Travel, is a personal experience
+                    from the moment you contact us, until you have returned home and
+                    become absorbed by your daily routine. Our personalized travel experts
+                    will assist you in taking maximum advantage of your time restraints
+                    and your holiday budget. All you need to do is start dreaming about
+                    your perfect itinerary and we will take charge of the remaining
+                    details. Contact us today or fill in the contact form and one of our
+                    experts will be in touch before you know it.
                   </p>
                 </div>
                 <div className="col-12 col-md-3 mx-auto mb-5">
@@ -45,13 +67,17 @@ function TailorMade({
                     onClick={() => setShow(v => !v)}
                     aria-expanded="false"
                     className="btn btn-primary w-100">
-                    Begin here
+                    Enquire now
                   </a>
                 </div>
 
                 {show && (
                   <div className="w-100">
-                    <TailorForm destinations={destinations} title={false} types={packagetypes} />
+                    <TailorForm
+                      destinations={destinations}
+                      title={false}
+                      types={packagetypes}
+                    />
                   </div>
                 )}
               </div>
@@ -78,12 +104,15 @@ export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
+  const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
+  const packagesAll = await packagesRes.json();
   return {
     props: {
       destinations,
       packagetypes,
       tailors,
       notifications,
+      packagesAll,
     },
     revalidate: 1,
   };

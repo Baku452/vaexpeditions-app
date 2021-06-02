@@ -1,0 +1,52 @@
+.carta {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.cardPost {
+  position: relative;
+  margin: 0 auto;
+  z-index: 10;
+  width: 100%;
+  font-size: 12px;
+  h3 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: black;
+    transition: 0.2s ease;
+  }
+  h3:hover {
+    color: #0095ce;
+  }
+  h4 {
+    font-size: 15px;
+    // position: absolute;
+    bottom: 0;
+  }
+}
+.boxTags {
+  //   display: flex;
+  padding-top: 10px;
+  margin: 10px 0;
+
+  & > * {
+    margin-left: 15px;
+    background-color: #0095ce;
+    color: #fff;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  & > *:hover {
+    background-color: #056a92;
+    color: #fff;
+  }
+}

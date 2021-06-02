@@ -1,14 +1,25 @@
 .package {
+  overflow-x: hidden;
+
   .card {
     border: none;
     cursor: pointer;
+    overflow: hidden;
+    transition: ease 0.3s;
   }
+
+  .card:hover {
+    transform: scale(1.025);
+    box-shadow: 1px 2px 11px 0px #989898;
+  }
+
   .body {
     border-left: 1px solid #c4c4c4;
     border-right: 1px solid #c4c4c4;
     border-bottom: 1px solid #c4c4c4;
-    height: 320px;
+    min-height: 286px;
   }
+
   .title {
     margin-bottom: 0.75rem;
     height: 50px;

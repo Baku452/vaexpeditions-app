@@ -1,5 +1,6 @@
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+
 import styles from './index.module.scss';
 
 function WaysToSave() {
@@ -10,16 +11,19 @@ function WaysToSave() {
           <div className="container containerBox pt-4 pb-4">
             <div className="row mb-2">
               <div className="col-12">
-                <h2 className="font-weight-bold text-center fs-30 mb-5 titleUnderline">Ways To Save</h2>
+                <h2 className="text-center mb-5 titleUnderline">Ways To Save</h2>
               </div>
               <div className="col-lg-3 col-sm-12 text-center">
                 <div className={`${styles.item}`}>
                   <Link href="/our-newsletter">
                     <div>
-                      <img src="icons/subscribe_for_deals.svg" className={`${styles.img} card-img-top`}>
-                      </img>
+                      <img
+                        alt="subscribe for deals"
+                        src="icons/subscribe_for_deals.svg"
+                        className={`${styles.img} card-img-top`}
+                      />
                       <div className="card-body">
-                        <a>Subscribe For Deals</a>
+                        <a href="#">Subscribe For Deals</a>
                       </div>
                     </div>
                   </Link>
@@ -29,11 +33,13 @@ function WaysToSave() {
                 <div className={`${styles.item}`}>
                   <Link href="/friends-and-family-discounts">
                     <div>
-                      <img src="icons/friends_and_family.svg" className={`${styles.img} card-img-top`}>
-                      </img>
+                      <img
+                        alt="friends and family"
+                        src="icons/friends_and_family.svg"
+                        className={`${styles.img} card-img-top`}
+                      />
                       <div className="card-body">
-                        <a>Friends and Family Discounts</a>
-
+                        <a href="#">Friends and Family Discounts</a>
                       </div>
                     </div>
                   </Link>
@@ -43,30 +49,33 @@ function WaysToSave() {
                 <div className={`${styles.item}`}>
                   <Link href="/refer-a-friend">
                     <div>
-                      <img src="icons/refer_a_friends.svg" className={`${styles.img} card-img-top`}>
-                      </img>
+                      <img
+                        alt="refer a friends"
+                        src="icons/refer_a_friends.svg"
+                        className={`${styles.img} card-img-top`}
+                      />
                       <div className="card-body">
-                        <a>Refer a Friends</a>
+                        <a href="#">Refer a Friends</a>
                       </div>
                     </div>
                   </Link>
                 </div>
-
               </div>
               <div className="col-lg-3 col-sm-12 text-center">
                 <div className={`${styles.item}`}>
                   <Link href="/cuopons-discounts">
                     <div>
-
-                      <img src="icons/coupons and discounts.svg" className={`${styles.img} card-img-top`}>
-                      </img>
+                      <img
+                        alt="coupons and discounts"
+                        src="icons/coupons and discounts.svg"
+                        className={`${styles.img} card-img-top`}
+                      />
                       <div className="card-body">
-                        <a>Coupons and Discounts</a>
+                        <a href="#">Coupons and Discounts</a>
                       </div>
                     </div>
                   </Link>
                 </div>
-
               </div>
             </div>
           </div>

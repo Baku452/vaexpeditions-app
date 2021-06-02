@@ -25,12 +25,14 @@ function Index({
   packagetypes,
   interests,
   notifications,
+  packagesAll,
 }) {
   return (
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
-      notifications={notifications}>
+      notifications={notifications}
+      packagesAll={packagesAll}>
       <Head>
         <>
           <script
@@ -50,46 +52,8 @@ function Index({
             src="https://www.googletagmanager.com/gtag/js?id=UA-75417007-1"
           />
         </>
-        <title>Machu Picchu Tour, Travel Peru - Valencia Travel Cusco</title>
-        <meta
-          name="Description"
-          content="Explore Peru and all the country has to offer with the help of 
-          Valencia Travel Cusco. Book a Machu Picchu tour with one 
-          of our exciting packages today."
-        />
-        <meta
-          name="Keywords"
-          content="machu, picchu, machu picchu tour, inca trail trek, 
-          travel cusco, salkantay trek "
-        />
-        <meta
-          name="subject"
-          content="machu, picchu, machu picchu tour, inca trail trek, 
-          travel cusco, salkantay trek "
-        />
-        <meta
-          name="classification"
-          content="The Best Inca Trail trek Operator in Peru. 
-          When it comes the Inca Trail trek, 
-          Salkantay trek or Machu Picchu tour, we are the go-to adventure travel expert!."
-        />
-
-        <meta
-          property="og:title"
-          content="Machu Picchu Tour, Travel Peru - Valencia Travel Cusco"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.valenciatravelcusco.com/" />
-        <meta
-          property="og:description"
-          content="Explore Peru and all the country has to offer with the help of 
-          Valencia Travel Cusco. 
-          Book a Machu Picchu tour with one of our exciting packages today."
-        />
-        <meta
-          name="google-site-verification"
-          content="XbDonWLNIunfWu05Mn8hOngklQ0lIp_58MiCLsghbbU"
-        />
+        <title>Va Expeditions</title>
+        <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
       <Cover
         destinations={destinations}
@@ -101,19 +65,13 @@ function Index({
       <VacationType types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
-      <section className="overflow-hidden" style={{ 'background-color': '#f4f4f4' }}>
-        <h2 className="font-weight-bold text-center fs-30 titleUnderline py-4">
-          Tripadvisor Rating
-        </h2>
-
-        {
-          <>
-            <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer />
-            <div className="elfsight-app-a0921e8f-6a48-43ca-b306-5f34845c8c0e" />
-          </>
-        }
-        {/* <Reviews /> */}
-      </section>
+      {/* <section className="overflow-hidden" style={{ backgroundColor: '#f4f4f4' }}>
+        <h2 className="text-center titleUnderline py-4">Tripadvisor Rating</h2>
+        <>
+          <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer />
+          <div className="elfsight-app-a0921e8f-6a48-43ca-b306-5f34845c8c0e" />
+        </>
+      </section> */}
       <WaysToSave />
       <SubNewsletter />
       <Associations />
@@ -143,6 +101,9 @@ export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
+  const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
+  const packagesAll = await packagesRes.json();
+
   return {
     props: {
       types,
@@ -152,6 +113,7 @@ export async function getStaticProps() {
       packagetypes,
       interests,
       notifications,
+      packagesAll,
     },
     revalidate: 1,
   };

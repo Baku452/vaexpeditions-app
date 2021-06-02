@@ -1,10 +1,15 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { InputGroup } from 'node_modules/react-bootstrap/esm/index';
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { FaHome, FaMapMarker, FaPhoneAlt, FaUserAlt } from 'react-icons/fa';
+import { GrMail } from 'react-icons/gr';
 
 import { countries, saveContactUs } from '@/core/index';
 
-function ContactForm({ destinations, packages, title = true, pack }) {
+function ContactForm({ destinations, title = true }) {
+  const router = useRouter();
   const [validated, setValidated] = useState(false);
   const [success, setSuccess] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
@@ -19,8 +24,8 @@ function ContactForm({ destinations, packages, title = true, pack }) {
       const formData = new FormData(event.target);
       const formDataEntries = Object.fromEntries(formData.entries());
       const formValues = { ...formDataEntries, ...{ is_newsletter: newsletter } };
-
-      const { result, error } = await saveContactUs({ data: formValues });
+      await saveContactUs({ data: formValues });
+      router.push('/contact-us/thank-you-contact-us');
 
       setSuccess(true);
       window.scroll(0, 0);
@@ -31,32 +36,21 @@ function ContactForm({ destinations, packages, title = true, pack }) {
   return (
     <section id="thank_you">
       <div className="container">
-        <div className="row pb-5 mb-5">
+        <div className="row mb-5">
           <div className="col-11 col-md-10 p-0 pb-5 mb-5 p-0 mx-auto">
             {title && <h2 className="fs-35 pt-5 pb-4">Contact Us</h2>}
 
             {success ? (
-              <div className="card mb-5 pb-5">
-                <div className="card-body pb-5 pt-5 mt-4 text-center">
-                  <h5 className="card-title fs-30 pb-5">Thank you for contacting us!</h5>
-                  <p className="card-text fs-18 lh-29">
-                    One of our Travel Specialists will contact you in less than 48 hours
-                    <br />
-                    While you are still here, feel free to navigate through our
-                    <Link href="/">
-                      <a> travel destinations</a>
-                    </Link>
-                  </p>
-                </div>
-              </div>
+              // router.push('/contact-us/thank-you-contact-us')
+              <h2 className="text-center">Sending Mail...</h2>
             ) : (
               <div className="card border">
-                <div className="card-body pt-5 mt-3 text-center">
-                  <p className="card-text fs-20 lh-29 mb-5">
-                    Please fill out the following information. <br />
-                    We will get back to you in a maximum time of 48 hours.
-                  </p>
-                  <div className="contactus-text">
+                <p className="card-text fs-20 lh-29 py-5 text-center">
+                  Please fill out the following information. <br />
+                  We will get back to you in a maximum time of 48 hours.
+                </p>
+                <div className="row px-5">
+                  <div className="fs-14 col-sm-12 col-md-12 col-lg-3">
                     <p>
                       Portal Panes #123 / Centro Comercial Ruiseñores
                       <br />
@@ -82,18 +76,31 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                     </p>
                   </div>
 
-                  <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                    <div className="col-12 col-md-10 mx-auto p-0 text-left">
+                  <Form
+                    id="contact-us-form"
+                    className="col-sm-12 col-md-12 col-lg-9 mx-auto p-0 text-left"
+                    noValidate
+                    validated={validated}
+                    onSubmit={handleSubmit}>
+                    <div>
                       <div className="row mb-4">
                         <div className="col-12 col-md-6">
                           <div className="form-group">
-                            <Form.Control
-                              type="text"
-                              name="first_name"
-                              placeholder="First Name *"
-                              size="lg"
-                              required
-                            />
+                            <InputGroup>
+                              <InputGroup.Prepend>
+                                <InputGroup.Text id="basic_addon1">
+                                  <FaUserAlt />
+                                </InputGroup.Text>
+                              </InputGroup.Prepend>
+                              <Form.Control
+                                type="text"
+                                name="first_name"
+                                placeholder="First Name *"
+                                size="lg"
+                                required
+                              />
+                            </InputGroup>
+
                             <Form.Control.Feedback type="invalid">
                               Please provide a valid first name.
                             </Form.Control.Feedback>
@@ -101,27 +108,41 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                         </div>
                         <div className="col-12 col-md-6">
                           <div className="form-group">
-                            <Form.Control
-                              type="text"
-                              name="last_name"
-                              placeholder="Last Name *"
-                              size="lg"
-                              required
-                            />
+                            <InputGroup>
+                              <InputGroup.Prepend>
+                                <InputGroup.Text id="basic_addon1" />
+                              </InputGroup.Prepend>
+                              <Form.Control
+                                type="text"
+                                name="last_name"
+                                placeholder="Last Name *"
+                                size="lg"
+                                required
+                              />
+                            </InputGroup>
+
                             <Form.Control.Feedback type="invalid">
                               Please provide a valid last name.
                             </Form.Control.Feedback>
                           </div>
                         </div>
-                        <div className="col-12">
+                        <div className="col-12 col-md-6">
                           <div className="form-group">
-                            <Form.Control
-                              type="email"
-                              name="email"
-                              placeholder="E-mail Address *"
-                              size="lg"
-                              required
-                            />
+                            <InputGroup>
+                              <InputGroup.Prepend>
+                                <InputGroup.Text id="basic_addon1">
+                                  <GrMail />
+                                </InputGroup.Text>
+                              </InputGroup.Prepend>
+                              <Form.Control
+                                type="email"
+                                name="email"
+                                placeholder="E-mail Address *"
+                                size="lg"
+                                required
+                              />
+                            </InputGroup>
+
                             <Form.Control.Feedback type="invalid">
                               Please provide a valid email address.
                             </Form.Control.Feedback>
@@ -129,18 +150,47 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                         </div>
                         <div className="col-12 col-md-6">
                           <div className="form-group">
-                            <Form.Control
-                              as="select"
-                              size="lg"
-                              name="country_residence"
-                              required>
-                              <option value="">Country of Residence</option>
-                              {countries.map(item => (
-                                <option key={item.code} value={item.name}>
-                                  {item.name}
-                                </option>
-                              ))}
-                            </Form.Control>
+                            <InputGroup>
+                              <InputGroup.Prepend>
+                                <InputGroup.Text id="basic_addon1">
+                                  <FaPhoneAlt />
+                                </InputGroup.Text>
+                              </InputGroup.Prepend>
+                              <Form.Control
+                                type="text"
+                                name="number"
+                                placeholder="Cellphone / Telephone ... *"
+                                size="lg"
+                              />
+                            </InputGroup>
+
+                            <Form.Control.Feedback type="invalid">
+                              Please provide a valid email address.
+                            </Form.Control.Feedback>
+                          </div>
+                        </div>
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
+                            <InputGroup>
+                              <InputGroup.Prepend>
+                                <InputGroup.Text id="basic_addon1">
+                                  <FaHome />
+                                </InputGroup.Text>
+                              </InputGroup.Prepend>
+                              <Form.Control
+                                as="select"
+                                size="lg"
+                                name="country_residence"
+                                required>
+                                <option value="">Country of Residence</option>
+                                {countries.map(item => (
+                                  <option key={item.code} value={item.name}>
+                                    {item.name}
+                                  </option>
+                                ))}
+                              </Form.Control>
+                            </InputGroup>
+
                             <Form.Control.Feedback type="invalid">
                               Please provide a valid country.
                             </Form.Control.Feedback>
@@ -148,52 +198,34 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                         </div>
                         <div className="col-12 col-md-6">
                           <div className="form-group">
-                            <Form.Control
-                              as="select"
-                              size="lg"
-                              name="destination_interest"
-                              required>
-                              <option value="">Destination of interest</option>
-                              {destinations[0]?.destinations.map(item => (
-                                <option key={item.title} value={item.title}>
-                                  {item.title}
-                                </option>
-                              ))}
-                            </Form.Control>
+                            <InputGroup>
+                              <InputGroup.Prepend>
+                                <InputGroup.Text id="basic_addon1">
+                                  <FaMapMarker />
+                                </InputGroup.Text>
+                              </InputGroup.Prepend>
+                              <Form.Control
+                                as="select"
+                                size="lg"
+                                name="destination_interest"
+                                required>
+                                <option value="">Destination of interest</option>
+                                {destinations[0]?.destinations.map(item => (
+                                  <option key={item.title} value={item.title}>
+                                    {item.title}
+                                  </option>
+                                ))}
+                              </Form.Control>
+                            </InputGroup>
                             <Form.Control.Feedback type="invalid">
                               Please provide a valid Destination of interest.
                             </Form.Control.Feedback>
                           </div>
                         </div>
-
-                        <div className="col-12 col-md-12">
-                          <div className="form-group">
-                            <Form.Control
-                              as="select"
-                              size="lg"
-                              name="package"
-                              defaultValue=""
-                              required>
-                              <option value="">Tour</option>
-                              {packages?.map(item => (
-                                <option
-                                  key={item.slug}
-                                  value={item.title}
-                                  selected={item.slug === pack}>
-                                  {item.title}
-                                </option>
-                              ))}
-                            </Form.Control>
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid Tour
-                            </Form.Control.Feedback>
-                          </div>
-                        </div>
-
                         <div className="col-12">
                           <div className="form-group">
                             <Form.Control
-                              placeholder="Message"
+                              placeholder="Questions / Comments / Useful Information"
                               as="textarea"
                               size="lg"
                               rows="5"
@@ -220,7 +252,7 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                           spam folder or call 1-860-856-5858. By Signing up for this
                           email, you are agreeing to receive new, offers, and information
                           from Valencia Travel or our partners. Click
-                          <Link href="/Privacy-Policy">
+                          <Link href="/terms-conditions">
                             <a> here </a>
                           </Link>
                           to visit our Privacy Policy. Easy unsubscribe links are provided
@@ -232,6 +264,7 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                       <div className="col-12 col-md-5 mx-auto">
                         <input
                           type="submit"
+                          data-sitekey="6LeoM4oaAAAAAKeP7g_6B2QCobemeKfIcyVmI3Ur"
                           value="Send Message"
                           className="btn btn-primary fs-16 w-100"
                         />

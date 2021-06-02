@@ -1,11 +1,96 @@
 .header {
+  // .logo {
+  //   font-size: 200px !important;
+  //   position: absolute;
+  //   top: -35px;
+  // }
   .logo {
-    font-size: 140px !important;
-    position: absolute;
-    top: -12px;
+    font-size: 200px !important;
+    height: 74px;
   }
+
   button {
     letter-spacing: 1px;
     height: 38px;
+  }
+}
+
+.subnav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  li:not(:first-child) {
+    padding-left: 25px;
+  }
+
+  li:hover {
+    color: #0095ce;
+  }
+}
+.label {
+  font-size: 11px;
+  position: absolute;
+  color: transparent;
+  left: 23px;
+
+  transition: 0.2s ease-in;
+  // position: absolute;
+  // font-size: 15px;
+  // color: #3a3a3a;
+  // background: #fff;
+  z-index: -1;
+}
+.labelFocus {
+  transition: 0.2s ease-in;
+  position: absolute;
+  font-size: 13px;
+  color: #000000;
+  background: #fff;
+  top: -9px;
+  left: 23px;
+}
+.input {
+  color: #383838;
+  font-size: 14px;
+  padding: 10px 20px;
+  width: 500px;
+  border: 1px solid #cdcdcd;
+}
+.input:focus,
+.input:hover {
+  outline: none;
+}
+.suggestionsList {
+  border: 1px solid #cdcdcd;
+}
+.suggestion {
+  color: #383838;
+  font-size: 14px;
+  padding: 5px 15px;
+}
+.suggestionHighlighted {
+  cursor: pointer;
+  background: #ebebeb;
+}
+.suggestionsList {
+  width: 500px;
+  display: block;
+  position: absolute;
+  z-index: 999;
+  background: #fff;
+}
+
+.iconSearch svg {
+  position: absolute;
+  top: 34%;
+  right: 20px;
+}
+
+.svg {
+  width: 40px;
+  padding-right: 6px;
+  img {
+    width: 30px;
   }
 }
