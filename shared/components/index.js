@@ -32,6 +32,7 @@ export * from './molecules/selectedFilter/index';
 export * from './molecules/blog-card/index';
 export * from './molecules/listCategories/index';
 export * from './molecules/categoriesCard/index';
+export * from './molecules/bannerBlog/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
