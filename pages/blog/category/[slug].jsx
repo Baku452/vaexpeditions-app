@@ -85,7 +85,7 @@ export async function getStaticPaths() {
   }));
   const paths = [...arr1, ...arr2];
 
-  return { paths, fallback: true };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {

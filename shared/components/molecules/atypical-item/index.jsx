@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import Link from 'next/link';
 
 function AtypicalItem({ title, slug, thumbnail, content }) {

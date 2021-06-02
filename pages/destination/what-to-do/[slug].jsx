@@ -11,7 +11,7 @@ function Search({
   SSRPackages,
   destinations,
   packagetypes,
-  interests,
+  // interests,
   notifications,
 }) {
   const images = [
@@ -82,7 +82,7 @@ export async function getStaticPaths() {
     params: { slug: item.slug },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {
