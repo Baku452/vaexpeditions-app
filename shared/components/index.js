@@ -8,6 +8,7 @@ export * from './atoms/logo/index';
 export * from './atoms/hero/index';
 
 // MOLECULES
+export * from './molecules/atypical-item/index';
 export * from './molecules/top-tours/index';
 export * from './molecules/banner/index';
 export * from './molecules/package-item/index';
