@@ -31,8 +31,6 @@ function Search({
   notifications,
   packagesAll,
 }) {
-  // console.log('destinations', destination);
-
   const images = [
     {
       id: SSRCountry.id,
@@ -518,7 +516,7 @@ function Search({
                             item =>
                               item.is_what_to_do && (
                                 <div
-                                  key={item?.id.toString()}
+                                  key={item.id.toString()}
                                   className="d-flex col-12 col-md-6 col-lg-4 mb-4">
                                   <DestinationItem
                                     title={item.title}
@@ -571,7 +569,7 @@ export async function getStaticPaths() {
     params: { slug: item.slug },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {
