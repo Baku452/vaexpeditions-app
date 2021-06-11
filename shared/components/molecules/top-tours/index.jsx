@@ -27,7 +27,7 @@ function TopTours({ tours }) {
             <div className="col-12 mx-auto">
               <div className="row">
                 {tours.map(item => (
-                  <Link key={item.id} href={`/${item.slug}`}>
+                  <Link key={item.id} href={`/package/${item.slug}`}>
                     <div className="d-flex col-12 col-md-6 col-lg-6 col-xl-4 pb-4 mb-2">
                       <div className={styles.card}>
                         {item.thumbnail ? (

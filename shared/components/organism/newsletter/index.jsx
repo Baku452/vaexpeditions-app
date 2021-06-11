@@ -66,7 +66,7 @@ function Newsletter({ packagetypes, packagesAll }) {
 
   // rendering suggestions
   const renderSuggestion = suggestion => (
-    <Link href={`/${suggestion.slug}`}>
+    <Link href={`/package/${suggestion.slug}`}>
       <div className="d-flex justify-content-between">
         <p>
           {packagetypes.map(item =>
@@ -98,7 +98,7 @@ function Newsletter({ packagetypes, packagesAll }) {
   // Function on suggestion selected
   function onSuggestionSelected(event, { suggestion }) {
     router.push({
-      pathname: `/${suggestion.slug}`,
+      pathname: `/package/${suggestion.slug}`,
     });
   }
 
