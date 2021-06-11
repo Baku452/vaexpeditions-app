@@ -1,4 +1,5 @@
 @import '../../../../styles/media-queries.scss';
+@import '../../../../node_modules/rfs/scss';
 
 .slideHome {
   max-width: 100% !important;
@@ -52,35 +53,28 @@
     }
   }
 
+  .boxTitleMobile {
+    position: relative;
+    bottom: 0px;
+    width: 95%;
+    left: 3%;
+    color: black !important;
+    padding: 10px;
+  }
   .boxTitle {
     position: absolute;
     bottom: 30px;
     left: 30px;
     z-index: 99;
     color: #fff;
-
-    @media (max-width: $md) {
-      font-size: 30px;
-    }
-
-    @media (max-width: $sm) {
-      position: relative;
-      bottom: 0px;
-      width: 95%;
-      left: 3%;
-      color: black !important;
-      padding: 10px;
-    }
+    bottom: 0px;
+    width: 95%;
+    left: 3%;
   }
 
   .title {
-    // position: absolute;
-    // left: 16px;
-    // bottom: 60px;
-    // z-index: 99;
-    // height: auto;
-    // width: 50%;
-
+    font-weight: bold;
+    @include font-size(48px);
     @media (max-width: $md) {
       font-size: 30px;
     }
@@ -92,27 +86,6 @@
       // left: 3%;
     }
   }
-
-  .subtitle {
-    // position: absolute;
-    // left: 16px;
-    // bottom: 16px;
-    // z-index: 99;
-    // height: auto;
-    // width: 50%;
-
-    @media (max-width: $md) {
-      font-size: 30px;
-    }
-
-    @media (max-width: $sm) {
-      // bottom: 2px;
-      width: 95%;
-      font-size: 24px;
-      // left: 3%;
-    }
-  }
-
   section {
     position: absolute;
     top: 50%;
@@ -182,6 +155,12 @@
       position: absolute;
       width: 100%;
       z-index: 1;
+    }
+    @media (max-width: $md) {
+      &::after,
+      &::before {
+        background: none;
+      }
     }
   }
 }

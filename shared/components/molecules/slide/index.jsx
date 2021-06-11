@@ -16,14 +16,10 @@ function Days({ days }) {
       case 1:
         return 'Full Day';
       default:
-        return `${day} days / ${day - 1} nights`;
+        return `${day} Days / ${day - 1} Nights`;
     }
   }
-  return (
-    <p className={`${styles.subtitle} fs-24 font-weight-light text-white text-left`}>
-      {getNameDays(days)}
-    </p>
-  );
+  return <p>{getNameDays(days)}</p>;
 }
 
 function Slide({
@@ -31,20 +27,25 @@ function Slide({
   navigation = true,
   pagination = true,
   title = false,
-  subtitle,
   isHome = false,
 }) {
-  const navigate = images.length > 1 ? navigation : false;
-
   return (
     <div className={`${styles.slide} ${isHome ? styles.slideHome : ''}`}>
+      {title && (
+        <div className={`${styles.boxTitleMobile} d-block d-md-none`}>
+          <h2 className={`${styles.title} text-left`}>{title}</h2>
+        </div>
+      )}
       <Swiper
+        initialSlide={0}
+        lazy
+        grabCursor
         slidesPerView={1}
-        navigation={navigate}
+        navigation={navigation}
         pagination={pagination ? { pagination, ...{ clickable: true } } : false}
         className={styles.swiper}
         loop>
-        {images.length > 0 ? (
+        {images &&
           images.map(item => (
             <SwiperSlide key={item.id} className={styles.shadow}>
               <img
@@ -59,27 +60,15 @@ function Slide({
                 </section>
               )}
             </SwiperSlide>
-          ))
-        ) : (
-          <SwiperSlide key="1" className={styles.shadow}>
-            <img
-              src="/images/colca.jpg"
-              className="d-block w-100 fit"
-              alt="Va Expeditions"
-            />
-          </SwiperSlide>
-        )}
+          ))}
       </Swiper>
       {title && (
-        <>
-          <h2 className={`${styles.title} fs-48 font-weight-bold text-white text-left`}>
-            {title}
-            {subtitle && <Days days={subtitle} />}
-          </h2>
-        </>
+        <div className={`${styles.boxTitle} d-none d-md-block mb-3 mb-lg-5 `}>
+          <h2 className={`${styles.title} text-left`}>{title}</h2>
+        </div>
       )}
     </div>
   );
 }
 
-export { Slide };
+export { Days, Slide };
