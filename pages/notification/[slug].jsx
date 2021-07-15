@@ -48,7 +48,7 @@ export async function getStaticProps({ params }) {
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
   const packagetypes = await packagetypesResponse.json();
 
-  return { props: { notification, destinations, packagetypes } };
+  return { props: { notification, destinations, packagetypes }, revalidate: 1 };
 }
 
 export default Post;

@@ -182,6 +182,7 @@ export async function getStaticPaths() {
   }));
 
   return { paths, fallback: 'blocking' };
+  // return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
@@ -200,7 +201,10 @@ export async function getStaticProps({ params }) {
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
-  return { props: { pack, destinations, packagetypes, notifications, packagesAll } };
+  return {
+    props: { pack, destinations, packagetypes, notifications, packagesAll },
+    revalidate: 1,
+  };
 }
 
 export default Package;

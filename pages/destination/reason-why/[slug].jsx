@@ -116,6 +116,7 @@ export async function getStaticProps({ params }) {
       interests,
       notifications,
     },
+    revalidate: 1,
   };
 }
 

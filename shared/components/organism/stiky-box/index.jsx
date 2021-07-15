@@ -18,12 +18,10 @@ const menuList = [
   { name: 'Related Trips', to: 'related-trips' },
   { name: 'Related Overview', to: 'old-overview' },
   { name: 'Related Itinerary', to: 'old-itinerario' },
-
-
 ];
 
 function StikyBox({ pack }) {
-  console.log('object', pack);
+  // console.log('object', pack);
   return (
     <StickyBox
       offsetTop={95}
