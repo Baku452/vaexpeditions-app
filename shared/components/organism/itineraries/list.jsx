@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-danger */
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
@@ -11,31 +12,31 @@ const SmartText = ({ text, length = 492 }) => {
 
   return (
     <div>
-      {length === 0 ? (
-        <div className="fs-16 lh-29" dangerouslySetInnerHTML={{ __html: text }} />
+      {text.length > 492 && text.length > 492 + 50 ? (
+        <>
+          <div
+            className="fs-16 lh-29"
+            dangerouslySetInnerHTML={{
+              __html: showLess ? `${text.slice(0, 492)}...` : text,
+            }}
+          />
+          <a
+            role="presentation"
+            style={{
+              cursor: 'pointer',
+              color: '#007bff',
+              // marginTop: '-12px',
+              display: 'block',
+              fontSize: '14px',
+              textDecoration: 'underline !important',
+            }}
+            onClick={() => setShowLess(!showLess)}>
+            {showLess ? 'Show more' : 'Show less'}
+          </a>
+        </>
       ) : (
-          <>
-            <div
-              className="fs-16 lh-29"
-              dangerouslySetInnerHTML={{
-                __html: showLess ? `${text.slice(0, length)}...` : text,
-              }}
-            />
-            <a
-              role="presentation"
-              style={{
-                cursor: 'pointer',
-                color: '#007bff',
-                marginTop: '-12px',
-                display: 'block',
-                fontSize: '14px',
-                textDecoration: 'underline !important',
-              }}
-              onClick={() => setShowLess(!showLess)}>
-              {showLess ? 'Show more' : 'Show less'}
-            </a>
-          </>
-        )}
+        <div className="fs-16 lh-29" dangerouslySetInnerHTML={{ __html: text }} />
+      )}
     </div>
   );
 };
@@ -64,7 +65,7 @@ function List({ itineraries }) {
 
   return (
     <>
-      <Collapse open={0}>
+      <Collapse open={1}>
         {itineraries.map(
           (item, index) =>
             item.active && (
@@ -75,26 +76,26 @@ function List({ itineraries }) {
                 <div className="row pb-4">
                   <div className="col-12 col-md-8 order-2 order-md-1">
                     <SmartText text={item?.content} length={item?.limit} />
-                    {item.items ?
-                      <ItineraryItems items={item?.items} />
-                      : null}
+                    {item.items ? <ItineraryItems items={item?.items} /> : null}
                   </div>
 
-                  {item.images ? item.images.length > 0 && (
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
-                      <img
-                        src={PUBLIC_API + item.images[0].image}
-                        className="d-block w-100 fit"
-                        alt={item.alt}
-                      />
-                      <a
-                        href="/gallery"
-                        onClick={event => openModal(event, item)}
-                        className="btn btn-link fs-16 pt-3 d-block text-right">
-                        View all photos
-                      </a>
-                    </div>
-                  ) : null}
+                  {item.images
+                    ? item.images.length > 0 && (
+                        <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
+                          <a
+                            href="/gallery"
+                            onClick={event => openModal(event, item)}
+                            className="btn btn-link fs-16 pt-3 d-block text-right">
+                            <img
+                              src={PUBLIC_API + item.images[0].image}
+                              className="d-block w-100 fit"
+                              alt={item.alt}
+                            />
+                            View all photos
+                          </a>
+                        </div>
+                      )
+                    : null}
                 </div>
               </CollapseContent>
             ),

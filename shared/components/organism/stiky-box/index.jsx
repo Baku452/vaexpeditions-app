@@ -24,7 +24,7 @@ function StikyBox({ pack }) {
   // console.log('object', pack);
   return (
     <StickyBox
-      offsetTop={95}
+      offsetTop={-10}
       offsetBottom={20}
       className="col-3 d-none d-sm-none d-md-none d-lg-block d-lx-block px-5">
       <ul className={styles.styky}>
@@ -33,7 +33,6 @@ function StikyBox({ pack }) {
             <LinkScroll
               className={styles.link}
               activeClass={styles.active}
-              offset={-130}
               to={item.to}
               spy
               smooth

@@ -148,24 +148,6 @@ function Package({ pack, destinations, packagetypes, notifications, packagesAll 
               packagetypes={packagetypes}
               activities={activities}
             />
-            <Divider />
-            {pack.old_overview && (
-              <div name="old-overview" className="container pt-5 pb-5">
-                <Title title="Related Overview" />
-                <div
-                  className="col-12 fs-16 lh-29"
-                  dangerouslySetInnerHTML={{ __html: pack?.old_overview }}
-                />
-              </div>
-            )}
-            <Divider />
-            {pack?.old_itinerario && (
-              <Itineraries
-                name="old-itinerario"
-                title="Related Itinerary"
-                itineraries={pack?.old_itinerario}
-              />
-            )}
           </div>
         </div>
       </div>

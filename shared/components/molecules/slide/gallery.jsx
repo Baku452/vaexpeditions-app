@@ -43,18 +43,17 @@ function Gallery({ images }) {
 
   return (
     <div className="package-slide-modal">
-      <Swiper
-        width={width}
-        slidesPerView={1}
-        navigation
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={swiper => console.log(swiper)}>
+      <Swiper width={width} slidesPerView={1} navigation>
         {images &&
           images.map(item => (
             <SwiperSlide key={item.id}>
               <h3 className="p-2 p-lg-2">{item.alt}</h3>
 
-              <img src={PUBLIC_API + item.image} className="d-block" alt={item.alt} />
+              <img
+                src={PUBLIC_API + item.image}
+                className="d-block img-fluid"
+                alt={item.alt}
+              />
             </SwiperSlide>
           ))}
       </Swiper>

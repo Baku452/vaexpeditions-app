@@ -1,10 +1,10 @@
 /* import Link from 'next/link'; */
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './index.module.scss';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -41,6 +41,7 @@ function Slide({
         lazy
         grabCursor
         slidesPerView={1}
+        autoplay={{ delay: 3000 }}
         navigation={navigation}
         pagination={pagination ? { pagination, ...{ clickable: true } } : false}
         className={styles.swiper}
