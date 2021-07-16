@@ -41,7 +41,7 @@ function Slide({
         lazy
         grabCursor
         slidesPerView={1}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         navigation={navigation}
         pagination={pagination ? { pagination, ...{ clickable: true } } : false}
         className={styles.swiper}

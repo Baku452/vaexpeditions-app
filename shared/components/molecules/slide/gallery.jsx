@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -43,7 +43,12 @@ function Gallery({ images }) {
 
   return (
     <div className="package-slide-modal">
-      <Swiper width={width} slidesPerView={1} navigation>
+      <Swiper
+        width={width}
+        slidesPerView={1}
+        navigation
+        loop
+        autoplay={{ delay: 2000, disableOnInteraction: false }}>
         {images &&
           images.map(item => (
             <SwiperSlide key={item.id}>
