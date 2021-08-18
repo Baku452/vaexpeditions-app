@@ -34,7 +34,12 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
             {destinations &&
               destinations.map(destination => (
                 <div key={destination.name} className="col-12">
-                  <h5 className="font-weight-bold black">{destination.name}</h5>
+                  <h5 className="font-weight-bold mb-3">
+                    <Link
+                      href={`/continent/${destination.slug}?slug=${destination.slug}`}>
+                      <a className="black">{destination.name} </a>
+                    </Link>
+                  </h5>
                   <ul className={styles.items}>
                     {destination.destinations.map(item => (
                       <MenuItem item={item} key={item.id} tailorMade={tailorMade} />
@@ -43,7 +48,7 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
                 </div>
               ))}
 
-            <div className="col-12 pt-5 pb-5">
+            {/* <div className="col-12 pt-5 pb-5">
               <h5 className="black font-weight-bold mb-3">
                 Other destinations in South America
               </h5>
@@ -57,7 +62,7 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
                     </li>
                   ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
