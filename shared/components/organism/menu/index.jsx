@@ -51,7 +51,7 @@ function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
                 {countries &&
                   countries.map(item => (
                     <li key={item.name}>
-                      <Link href={`/country/${item.slug}?slug=${item.slug}`}>
+                      <Link href={`/continent/${item.slug}?slug=${item.slug}`}>
                         <a className="black">{item.name}</a>
                       </Link>
                     </li>

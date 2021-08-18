@@ -8,8 +8,10 @@ function WhyValencia() {
           <div className="container containerBox">
             <div className="row pt-5 justify-content-md-center">
               <div className="col-lg-10 col-sm-12 ">
-                <h1 className="mb-4 text-center titleUnderline">WHY VALENCIA TRAVEL</h1>
-                <p className="lh-34 px-lg-5 text-justify">
+                <h1 className="mb-4 text-center titleUnderline">
+                  WHY VALENCIA VA EXPEDITIONS
+                </h1>
+                <p className="lh-34 px-lg-5 text-center">
                   Valencia Travel Cusco offers the optimum in unique travel experiences.
                   Whether you are looking for adventure on the Inca Trail hike or
                   Salkantay Trek to Machu Picchu, or if you are looking to take it a

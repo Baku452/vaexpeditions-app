@@ -1,4 +1,5 @@
 /* eslint-disable react/no-danger */
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
@@ -224,7 +225,10 @@ function Search({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Slide images={images} navigation pagination={false} isHome />
-
+      <Head>
+        <title>Va Expeditions - {SSRCountry.name}</title>
+        <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
+      </Head>
       <div className="container d-block d-lg-none pt-3">
         <div className="row ">
           <div className="offset-2 col-8">
@@ -238,11 +242,11 @@ function Search({
         </div>
       </div>
       <section id="tours_all">
-        <div className="container">
+        <div className="containerBox">
           <div className="row">
             <div className="col-12">
               <div className="row">
-                <div
+                {/* <div
                   className={`${styles.aside} ${
                     showFilters ? 'd-block' : 'd-none'
                   }  d-none d-lg-block col-12 col-lg-3 p-0`}>
@@ -259,42 +263,6 @@ function Search({
                       />
                     </a>
                   </div>
-
-                  {/*                 
-                  <Collapse open={1}>
-                    <CollapseContent index={0} title="Destinations">
-                      {destinations.map(
-                        country =>
-                          country.destinations.filter(item => item.active).length > 0 && (
-                            <Collapse open={1} key={country.id}>
-                              <CollapseContent index={0} title={country.name}>
-                                {country.destinations.map(
-                                  destination =>
-                                    destination.active && (
-                                      <Form.Check
-                                        key={destination.id}
-                                        checked={setActionChecked(
-                                          destination.id,
-                                          checkedDestination,
-                                        )}
-                                        type="checkbox"
-                                        onChange={event =>
-                                          actionFiltersDestinations(event, destination.id)
-                                        }
-                                        name={destination.slug}
-                                        id={destination.id}
-                                        label={`${destination.title}`}
-                                      />
-                                    ),
-                                )}
-                              </CollapseContent>
-                            </Collapse>
-                          ),
-                      )}
-                    </CollapseContent>
-                  </Collapse>
- */}
-
                   <Collapse open={1}>
                     <CollapseContent index={0} title="Type of Travel">
                       {packagetypes.map(item => (
@@ -389,36 +357,32 @@ function Search({
                       ))}
                     </CollapseContent>
                   </Collapse>
-                </div>
-                <div className="col-12 col-lg-9">
+                </div> */}
+                <div className="col-12 p-4">
                   <Tabs defaultActiveKey="Overview">
                     <Tab eventKey="Overview" title="Overview">
                       <div className="row">
                         <div
-                          className="col-12 fs-16 lh-25"
+                          className="col-12 p-4"
                           dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
                         />
                       </div>
                       <div className="row">
-                        {packagesList.length > 0 &&
-                          packagesList.map(item => (
+                        {SSRCountry.destinations.length > 0 &&
+                          SSRCountry.destinations.map(item => (
                             <div
                               key={item?.id.toString()}
                               className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                              <PackageItem
+                              <DestinationItem
                                 title={item.title}
-                                days={item.days}
-                                slug={item.slug}
-                                thumbnail={item.thumbnail}
-                                type={item.type_name}
-                                destination={item.destination_name}
-                                featured={item.featured}
-                                packagetypes={packagetypes}
-                                activity={activities.map(act =>
-                                  act.id.toString() === item.activity_name.toString()
-                                    ? act.label
-                                    : null,
-                                )}
+                                summary={item.summary}
+                                slug={{
+                                  pathname: '/search',
+                                  query: {
+                                    destination: item.id,
+                                  },
+                                }}
+                                thumbnail={PUBLIC_API + item.thumbnail}
                               />
                             </div>
                           ))}
