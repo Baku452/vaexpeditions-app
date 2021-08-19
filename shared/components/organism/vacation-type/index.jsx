@@ -36,7 +36,7 @@ function VacationType({ types, packagetypes }) {
             navigation
             // centeredSlides="true"
             preventClicks={false}
-            loop
+            // loop
             slidesPerView={5}
             grabCursor
             // preventClicksPropagation={false}
@@ -52,7 +52,7 @@ function VacationType({ types, packagetypes }) {
                 slidesPerView: 2,
               },
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 5,
                 spaceBetween: 20,
               },
             }}>
