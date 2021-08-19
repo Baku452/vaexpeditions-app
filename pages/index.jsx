@@ -10,7 +10,7 @@ import {
   TopTours,
   VacationType,
   WaysToSave,
-  WhyValencia,
+  WhyVa,
 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
@@ -42,7 +42,7 @@ function Index({
         packagetypes={packagetypes}
         interests={interests}
       />
-      <WhyValencia />
+      <WhyVa />
       <VacationType types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
