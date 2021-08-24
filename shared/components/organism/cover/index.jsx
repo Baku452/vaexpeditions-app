@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { Link as LinkScroll } from 'react-scroll';
 
 import { Slide } from '@/components/index';
 
@@ -55,9 +56,11 @@ function Cover({ destinations, banners, packagetypes, interests }) {
       <div className={styles.form}>
         <div className="row justify-content-center">
           {/* <button className="btn btn-outline-light btn-lg mb-5"> */}
-          <a className="btn btn-light btn-lg mb-5" href="/#top-rated-tours">
-            See Top Rated Tours
-          </a>
+          <LinkScroll to="top-rated-tours" spy smooth duration={500}>
+            <a className="btn btn-light btn-lg mb-5" href="#">
+              See Top Rated Tours
+            </a>
+          </LinkScroll>
           {/* </button> */}
         </div>
         <div className="container">

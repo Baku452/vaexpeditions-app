@@ -22,7 +22,7 @@ export * from './molecules/notification/index';
 export * from './molecules/destination-check/index';
 export * from './molecules/card-box/index';
 export * from './molecules/form-modal/index';
-export * from './molecules/why-valencia/index';
+export * from './molecules/why-va/index';
 export * from './molecules/ways_to_save/index';
 export * from './molecules/destination-item/index';
 export * from './molecules/package-type-item/index';

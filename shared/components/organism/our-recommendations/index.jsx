@@ -21,10 +21,10 @@ function OurRecommendations() {
             <div className="col-12 mx-auto">
               <div className={`${styles.contentBox} row mb-5`}>
                 <div className={` col-12 col-lg-4 text-center`}>
-                  <Link href="/search?destination=16%2C15">
+                  <Link href="/continent/latin-america?slug=latin-america">
                     <div className={`${styles.item} ${styles.item1}`}>
                       <h4 className="m-0 fs-20 lh-20 text-white">
-                        Experience South America with Valencia Travel
+                        Experience South America
                       </h4>
                     </div>
                   </Link>

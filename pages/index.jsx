@@ -1,7 +1,6 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 import React from 'react';
-import ScriptTag from 'react-script-tag';
 
 import {
   Associations,
@@ -11,7 +10,7 @@ import {
   TopTours,
   VacationType,
   WaysToSave,
-  WhyValencia,
+  WhyVa,
 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
@@ -34,24 +33,6 @@ function Index({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(h,o,t,j,a,r){
-                      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                      h._hjSettings={hjid:2306973,hjsv:6};
-                      a=o.getElementsByTagName('head')[0];
-                      r=o.createElement('script');r.async=1;
-                      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                      a.appendChild(r);
-                  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
-            }}
-          />
-          <ScriptTag
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-75417007-1"
-          />
-        </>
         <title>Va Expeditions</title>
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
@@ -61,17 +42,10 @@ function Index({
         packagetypes={packagetypes}
         interests={interests}
       />
-      <WhyValencia />
+      <WhyVa />
       <VacationType types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
-      {/* <section className="overflow-hidden" style={{ backgroundColor: '#f4f4f4' }}>
-        <h2 className="text-center titleUnderline py-4">Tripadvisor Rating</h2>
-        <>
-          <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer />
-          <div className="elfsight-app-a0921e8f-6a48-43ca-b306-5f34845c8c0e" />
-        </>
-      </section> */}
       <WaysToSave />
       <SubNewsletter />
       <Associations />
