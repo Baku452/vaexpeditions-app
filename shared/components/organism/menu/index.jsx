@@ -16,16 +16,14 @@ function MenuItem({ item, tailorMade }) {
             pathname: '/search',
             query: { destination: item.id },
           }}>
-          <a className={styles.route}>
-            {item.title} {item.sub_title && `- ${item.sub_title}`}
-          </a>
+          <a className={styles.route}>{item.title}</a>
         </Link>
       </li>
     )
   );
 }
 
-function MenuContent({ destinations, countries, changeCountry, tailorMade }) {
+function MenuContent({ destinations, tailorMade }) {
   return (
     <div className={styles.menu}>
       <div className={styles.content}>
