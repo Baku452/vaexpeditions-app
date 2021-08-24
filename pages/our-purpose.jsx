@@ -1,5 +1,4 @@
 import Head from 'next/head';
-
 import { Banner, CardBox } from '@/components/index';
 import { Base } from '@/layouts/index';
 
@@ -29,7 +28,7 @@ export default function OurPurpose({
         />
       </Head>
       <Banner
-        description="Connecting humanity with the essence of the world"
+        description=""
         image="/images/portada our purpose.jpg"
         alt="Our Purpose - Valencia Travel"
       />
@@ -40,17 +39,12 @@ export default function OurPurpose({
         <div className="col-12 col-md-6 p-3 mb-3">
           <h1 className="title">Our Purpose</h1>
           <p className="m-0 fs-16 lh-34">
-            We strive to connect people's lives. Through each trip, we seek to create a
-            global community of travelers, free from fear and aware of a sustainable
-            future.
+            Here at Va Expeditions, we strive to unite people through travel. 
+            Each itinerary is especially designed to create a global community of travellers, 
+            free to immerse themselves in different cultures and ways of life, free from fear 
+            and with a focus on creating a sustainable future. 
           </p>
-          <p />
-          <p className="m-0 fs-16 lh-34">
-            With 12 years of experience in the industry, we are passionate local experts
-            with a deep and genuine love for our culture. We love to share the natural
-            wonders of our country and, at the same time, connect with the global
-            community of world travelers.
-          </p>
+          
         </div>
         <div className="col-12 d-none d-md-block p-3 col-md-6 align-self-center">
           <img src="images/our-purpose-min.jpg" alt="Our Purpose" className="img-fluid" />
@@ -70,9 +64,9 @@ export default function OurPurpose({
           <h2 className="title m-0 fs-20 font-weight-bold mb-4">Our Vision</h2>
 
           <p className="m-0 fs-16 lh-34">
-            We aim to place ourselves as the Peruvian tourism company with the greatest
-            presence in the national and international market, with a people-first ethic
-            focused on customer satisfaction and the promotion of sustainable tourism.
+          Our aim is to position ourselves as one of the leaders in the international 
+          travel market with a people -first ethic, basic on customer satisfaction, 
+          as well as ethical and sustainable tourism. 
           </p>
         </div>
       </section>
@@ -82,11 +76,9 @@ export default function OurPurpose({
         <div className="col-12 col-md-6 mb-3 mb-md-5 order-1">
           <h2 className="title m-0 fs-20 font-weight-bold mb-4">Our Mision</h2>
           <p className="m-0 fs-16 lh-34">
-            We strive to create innovative travel experiences that motivate you to explore
-            the incredible geographic diversity of Peru, and at the same time learn from
-            its historical and cultural legacy, providing a personalized and responsible
-            service that contributes to the development of both the community and the
-            travel sector.
+          To design creative and innovative travel experiences to motivate people to explore the 
+          incredible natural diversity of Central and South America, as well as the cultural and historical   
+          magnificence of its countries, positively contributing to local communities and travellers to the continent.   
           </p>
         </div>
         <div className="col-12 col-md-6 mb-5 order-2 align-self-center">

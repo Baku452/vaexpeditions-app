@@ -31,7 +31,7 @@ function TailorMade({
         <title>Peru Travel Tips, Facts, and Information | Valencia Travel</title>
       </Head>
       <Banner
-        description="DESIGN YOUR ULTIMATE ADVENTURE WITH OUR TAILORMADE TOURS SERVICE"
+        description="Design your ultimate travel itinerary with our free tailor -made service!"
         image="/images/tailor-made.jpg"
         alt="weq"
       />
@@ -43,22 +43,24 @@ function TailorMade({
               <div className="row">
                 <div className="col-12">
                   <p className="fs-16 pb-5 m-0 text-justify">
-                    Real life experiences are extremely difficult to find by simply
-                    performing a Google search. Experience a total change of perspective
-                    by allowing us to design a unique and flexible travel itinerary to
-                    enjoy the vacation you have always dreamed of. Offering the freedom to
-                    go, see and do exactly what you like. Far removed from large group
-                    tours and well-trodden paths, our focus is on visiting authentic local
-                    cultures in a sustainable manner, overflowing with uniquely rich
-                    experiences. A holiday with Valencia Travel, is a personal experience
-                    from the moment you contact us, until you have returned home and
-                    become absorbed by your daily routine. Our personalized travel experts
-                    will assist you in taking maximum advantage of your time restraints
-                    and your holiday budget. All you need to do is start dreaming about
-                    your perfect itinerary and we will take charge of the remaining
-                    details. Contact us today or fill in the contact form and one of our
-                    experts will be in touch before you know it.
+                   Authentic, real life experiences are hard to find by performing a Google search!
+                   Allow us to help you design your perfect adventure with flexibility, freedom and 
+                   unique experiences to do exactly what you are interested in! Far removed from the 
+                   well-trodden paths and large tour groups, we will take you to remote communities 
+                   and destinations in a responsible and sustainable way, for unique adventures and 
+                   the experience of a lifetime. A vacation with Va Expeditions is a personalized 
+                   experience from the moment you first contact us until you are safe and sound in
+                   the comfort of your home. Our expert travel designers will help you take maximum 
+                   advantage of your free time, always with your personal budget in mind. All you
+                   need to do is to start dreaming about your ideal destination and we will take
+                   care of the rest!
+                  <br/>
+                  <br/>
+                  Call us today or complete the contact form and one of our experts will be touch 
+                  before you know it!
                   </p>
+                
+              
                 </div>
                 <div className="col-12 col-md-3 mx-auto mb-5">
                   <a
