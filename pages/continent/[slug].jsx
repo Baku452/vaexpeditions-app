@@ -51,7 +51,14 @@ function Search({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}>
-      <Slide images={images} navigation pagination={false} isHome />
+      <Slide
+        title={SSRCountry.name}
+        images={SSRCountry.images}
+        navigation
+        pagination={false}
+        isHome
+        isDestination
+      />
       <Head>
         <title>Va Expeditions - {SSRCountry.name}</title>
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />

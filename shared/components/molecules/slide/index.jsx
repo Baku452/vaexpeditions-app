@@ -28,6 +28,7 @@ function Slide({
   pagination = true,
   title = false,
   isHome = false,
+  isDestination = false,
 }) {
   return (
     <div className={`${styles.slide} ${isHome ? styles.slideHome : ''}`}>
@@ -56,14 +57,14 @@ function Slide({
               />
               {isHome && (
                 <section>
-                  <h2 className="slidesHeadings">{item?.name}</h2>
+                  <h2 className="slidesHeadings">{isDestination ? title : item?.name}</h2>
                   <h3>{item?.subtitle}</h3>
                 </section>
               )}
             </SwiperSlide>
           ))}
       </Swiper>
-      {title && (
+      {title && !isDestination && (
         <div className={`${styles.boxTitle} d-none d-md-block mb-3 mb-lg-5 `}>
           <h2 className={`${styles.title} text-left`}>{title}</h2>
         </div>

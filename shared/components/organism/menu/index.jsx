@@ -13,8 +13,7 @@ function MenuItem({ item, tailorMade }) {
       <li key={item.slug} className="pb-3 pr-5">
         <Link
           href={{
-            pathname: '/search',
-            query: { destination: item.id },
+            pathname: `/destination/${item.slug}`,
           }}>
           <a className={styles.route}>{item.title}</a>
         </Link>
@@ -33,8 +32,7 @@ function MenuContent({ destinations, tailorMade }) {
               destinations.map(destination => (
                 <div key={destination.name} className="col-12">
                   <h5 className="font-weight-bold mb-3">
-                    <Link
-                      href={`/continent/${destination.slug}?slug=${destination.slug}`}>
+                    <Link href={`/continent/${destination.slug}`}>
                       <a className="black">{destination.name} </a>
                     </Link>
                   </h5>
