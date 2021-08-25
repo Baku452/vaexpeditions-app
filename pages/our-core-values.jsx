@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { Banner } from '@/components/index';
 import { CardBox } from '@/components/index';
 import { Base } from '@/layouts/index';
@@ -17,6 +18,13 @@ export default function OurPurpose({
     packagetypes={packagetypes} 
     notifications={notifications}
     packagesAll={packagesAll}>
+      <Head>
+        <title>Va Expeditions - Our Core Values</title>
+        <meta
+          name="description"
+          content="We fully believe in our people.We promote positive change. We are connected worldwide!.We take care of our environment. "
+        />
+      </Head>
       <Banner
         description=""
         image="/images/our-values.jpg"
@@ -28,7 +36,7 @@ export default function OurPurpose({
             <div className="col-10 mx-auto">
 
               <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-5 order-1">
+                <div className="col-12 col-md-6 mb-5 order-1 align-self-center ">
                   <h2 className="title">We fully believe in our people. </h2>
                   <p className="m-0 fs-17 lh-34">
                   All of the people who work in our company have a voice and take part in all the decision-making processes. 
@@ -49,9 +57,9 @@ export default function OurPurpose({
 
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
-                  <img src="images/our-purpose/our-core-values/we-are-committed-to-being-extraordinary.jpg" className="img-fluid" />
+                  <img src="images/our-purpose/our-core-values/we-promote-positive-change.jpg" className="img-fluid" />
                 </div>
-                <div className="col-12 col-md-6 mb-5 order-1 order-md-2">
+                <div className="col-12 col-md-6 mb-5 order-1 order-md-2 align-self-center ">
                   <h2 className="title">We promote positive change.  </h2>
                   <p className="m-0 fs-17 lh-34">
                   We have an established and resilient operational system which helps us to anticipate, prevent, recover and adapt to the 
@@ -62,7 +70,7 @@ export default function OurPurpose({
               </div>
 
               <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-5 order-1">
+                <div className="col-12 col-md-6 mb-5 order-1 align-self-center ">
                   <h2 className="title">We are connected worldwide! </h2>
                   <p className="m-0 fs-17 lh-34">
                   We form part of a global community of travellers, who respect and integrate ourselves in tourism and the places where we operate. 
@@ -71,15 +79,15 @@ export default function OurPurpose({
                    </p>
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-2">
-                  <img src="images/our-purpose/our-core-values/we-promote-positive-change.jpg" className="img-fluid" />
+                  <img src="images/our-purpose/our-core-values/we-are-connected-to-the-world.jpg" className="img-fluid" />
                 </div>
               </div>
 
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
-                  <img src="images/our-purpose/our-core-values/we-are-connected-to-the-world.jpg" className="img-fluid" />
+                  <img src="images/our-purpose/our-core-values/we-take-care-of-our-planet.jpg" className="img-fluid" />
                 </div>
-                <div className="col-12 col-md-6 mb-5 order-1 order-md-2">
+                <div className="col-12 col-md-6 mb-5 order-1 order-md-2 align-self-center ">
                   <h2 className="title">We take care of our environment.</h2>
 
                   <p className="m-0 fs-17 lh-34">

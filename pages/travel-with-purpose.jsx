@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
@@ -17,8 +18,18 @@ export default function OurPurpose({
 {
   return (
     <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications} packagesAll={packagesAll}>
+      <Head>
+        <title>Va Expeditions - Travel with purpose</title>
+        <meta
+          name="description"
+          content="Va Expeditions wholeheartedly believes that by travelling in a sustainable and conscientious manner, 
+          we can transform the world and connect a myriad of cultures. For this reason, we are completely committed 
+          to preserving the magic of local communities, wildlife, and the environment. We want to share our local knowledge 
+          and the wisdom of the native people to contribute to a better world."
+        />
+      </Head>
       <Banner
-       image="/images/social-responsability.jpg"
+       image="/images/social-responsability2.jpg"
         alt="weq"
       />
       <section id="more"
@@ -194,6 +205,11 @@ export default function OurPurpose({
                           <li>Freedom from fear and distress by ensuring conditions and treatment which avoid mental suffering. </li>
                         </ol>
                       </p>
+                      <a
+                      target="blank" 
+                      href="https://www.abta.com/industry-zone/sustainability-in-travel-and-tourism/animals-in-tourism" >
+                      https://www.abta.com/industry-zone/sustainability-in-travel-and-tourism/animals-in-tourism 
+                      </a>
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img

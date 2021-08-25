@@ -1,5 +1,4 @@
 import Head from 'next/head';
-
 import { Banner, CardBox } from '@/components/index';
 import { Base } from '@/layouts/index';
 
@@ -17,9 +16,19 @@ export default function OurPurpose({
     destinations={destinations} 
     packagetypes={packagetypes} 
     notifications={notifications}>
+      <Head>
+        <title>
+        Va Expeditions - Why Va Expeditions
+        </title>
+        <meta
+          name="description"
+          content="We have 15 years of designing travel itineraries for over 6000 happy travellers, 
+          throughout a number of Central and South American destinations and with 100% satisfaction!"
+        />
+      </Head>
       <Banner
         description=""
-        image="/images/why-chose-valencia.jpg"
+        image="/images/why-chose-va.jpg"
         alt="weq"
       />
 
@@ -33,7 +42,7 @@ export default function OurPurpose({
                   We have 15 years of designing travel itineraries for over 6000 happy travellers, 
                   throughout a number of Central and South American destinations and with 100% satisfaction!
                 </p>
-                 <div className="col-12 col-md-6 mb-3">
+                 <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">Expand your horizons.</h2>
                   <p className="m-0 fs-17 lh-34">
                   Transform the way you think about life, reconnect with your essence and discover a new way 
@@ -42,14 +51,14 @@ export default function OurPurpose({
                   </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/extraordinary-life-experiences.jpg" alt="" className="img-fluid" />
+                  <img src="images/our-purpose/why-valencia/expand-your-horizons.jpg" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/reconnection-with-the-real-world.png" alt="" className="img-fluid" />
+                  <img src="images/our-purpose/why-valencia/reconnect-with-the-planet.jpg" alt="" className="img-fluid" />
                 </div>
-                <div className="col-12 col-md-6 mb-3">
+                <div className="col-12 col-md-6 mb-3 align-self-center">
                   <h2 className="title">Reconnect with the planet.
                   </h2>
                   <p className="m-0 fs-17 lh-34">We have reinvented the definition of luxury to promote your well-being, by combining 
@@ -59,7 +68,7 @@ export default function OurPurpose({
                 </div>
               </div>
               <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-3">
+                <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">Local Experiences.</h2>
                   <p className="m-0 fs-17 lh-34">
                   It is important for us to share our local knowledge and authentic true essence of this magical region by 
@@ -69,14 +78,14 @@ export default function OurPurpose({
                     </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/profound-local-experience.jpg" alt="" className="img-fluid" />
+                  <img src="images/our-purpose/why-valencia/local-experience.jpg" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 m-b-25">
                   <img src="images/our-purpose/why-valencia/attention-24-7.jpg" alt="" className="img-fluid" />
                 </div>
-                <div className="col-12 col-md-6 mb-3">
+                <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">24/7 service </h2>
                   <p className="m-0 fs-17 lh-34">
                   Be safe in the knowledge that we are always there for you.  There is always one of our travel specialists to answer any questions 
@@ -86,7 +95,7 @@ export default function OurPurpose({
                 </div>
               </div>
               <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-3">
+                <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">100% Guaranteed departures.</h2>
                   <p className="m-0 fs-17 lh-34">
                   At Va Expeditions, all departures are guaranteed. Once you have paid for your vacation, we will not change or cancel your trip unless 
@@ -95,14 +104,14 @@ export default function OurPurpose({
                     </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/100-guaranteed-departures.png" alt="" className="img-fluid" />
+                  <img src="images/our-purpose/why-valencia/guaranteed-departures.jpg" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 m-b-25">
                   <img src="images/our-purpose/why-valencia/guarantee-of-best-quality.jpg" alt="" className="img-fluid" />
                 </div>
-                <div className="col-12 col-md-6 mb-3">
+                <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">Best Quality Guarantee.</h2>
                   <p className="m-0 fs-17 lh-34">
                   We are totally committed to the highest standard of service possible as we as your security and safety during your vacation. Our staff are all 
@@ -111,7 +120,7 @@ export default function OurPurpose({
                 </div>
               </div>
               <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-3">
+                <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">We are worldwide connected!</h2>
                   <p className="m-0 fs-17 lh-34">
                   We form part of a global community of international travellers who are socially and culturally aware. We help travellers 
@@ -127,7 +136,7 @@ export default function OurPurpose({
                 <div className="col-12 col-md-6 m-b-25">
                   <img src="images/our-purpose/why-valencia/responsible-travel.jpg" alt="" className="img-fluid" />
                 </div>
-                <div className="col-12 col-md-6 mb-3">
+                <div className="col-12 col-md-6 mb-3 align-self-center">
                   <h2 className="title">Responsible travel.</h2>
                   <p className="m-0 fs-17 lh-34">
                   We travel with a focus on positive impact wherever we go!  We help empower local, indigenous communities, women and children 

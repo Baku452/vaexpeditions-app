@@ -15,7 +15,7 @@ function PageContent({ page, ourpurpose }) {
                     </div>
                     <div className="row pt-5 justify-content-md-center">
                         {page.original ? <>
-                            <div className="col-12 col-md-4 text-justify fs-18">
+                            <div className="col-12 col-md-4 text-justify align-self-center fs-18">
                                 <div
                                     dangerouslySetInnerHTML={{ __html: page.content1 }}
                                 >
