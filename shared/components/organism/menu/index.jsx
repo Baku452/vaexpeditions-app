@@ -13,8 +13,7 @@ function MenuItem({ item, tailorMade }) {
       <li key={item.slug} className="pb-3 pr-5">
         <Link
           href={{
-            pathname: '/search',
-            query: { destination: item.id },
+            pathname: `/destination/${item.slug}`,
           }}>
           <a className={styles.route}>{item.title}</a>
         </Link>
