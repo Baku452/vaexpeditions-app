@@ -33,7 +33,14 @@ function Search({
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}>
-      <Slide images={images} navigation pagination={false} isHome />
+      <Slide
+        title={SSRDestination.title}
+        images={SSRDestination.images}
+        navigation
+        pagination={false}
+        isHome
+        isDestination
+      />
 
       <section id="tours_all" className="row p-4">
         <div className="col-12 containerBox">
@@ -49,7 +56,7 @@ function Search({
             <Tab eventKey="TravelFacts" title="Travel Facts">
               <h3 className="text-center py-4">
                 Travel Facts in{' '}
-                <span className="line font-weight-semibold">{SSRDestination?.name}</span>
+                <span className="line font-weight-semibold">{SSRDestination?.title}</span>
               </h3>
               {/* <div className="row">
                 {SSRDestination.package_type.length > 0 &&
