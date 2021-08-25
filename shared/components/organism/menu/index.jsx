@@ -32,8 +32,7 @@ function MenuContent({ destinations, tailorMade }) {
               destinations.map(destination => (
                 <div key={destination.name} className="col-12">
                   <h5 className="font-weight-bold mb-3">
-                    <Link
-                      href={`/continent/${destination.slug}?slug=${destination.slug}`}>
+                    <Link href={`/continent/${destination.slug}`}>
                       <a className="black">{destination.name} </a>
                     </Link>
                   </h5>

@@ -15,15 +15,6 @@ function Search({
   // interests,
   notifications,
 }) {
-  const images = [
-    {
-      id: SSRDestination.id,
-      alt: SSRDestination.title,
-      name: `${SSRDestination.title} ${SSRDestination.sub_title}`,
-      image: SSRDestination.original,
-    },
-  ];
-
   const router = useRouter();
 
   useEffect(() => {}, [router]);
@@ -93,7 +84,7 @@ function Search({
                   ))}
               </div> */}
             </Tab>
-            <Tab eventKey="BestPlaces" title="The best places to visit">
+            <Tab eventKey="BestPlaces" title="The Best Places to Visit">
               <h3 className="text-center py-4">
                 The best places to visit in{' '}
                 <span className="line font-weight-semibold">{SSRDestination?.title}</span>
@@ -119,55 +110,14 @@ function Search({
                   ))}
               </div>
             </Tab>
-            <Tab eventKey="HowTo" title={`The best places to visit `}>
-              <h3 className="text-center pb-5">The best places to visit </h3>
-
-              {/* <div className="row">
-                {SSRDestination.packages.length > 0 &&
-                  SSRDestination.packages.map(
-                    item =>
-                      item.is_what_to_do && (
-                        <div
-                          key={item.id.toString()}
-                          className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                          <DestinationItem
-                            title={item.title}
-                            summary={item.summary}
-                            slug={`/destination/what-to-do/${item.slug}`}
-                            thumbnail={PUBLIC_API + item.thumbnail}
-                          />
-                        </div>
-                      ),
-                  )}
-              </div> */}
+            <Tab eventKey="Best Time to Visit" title="Best time to visit">
+              <h3 className="text-center py-4">Best time to visit </h3>
             </Tab>
-            <Tab eventKey="BestPlace" title="The best places to visit">
-              <h3 className="text-center pb-5">
-                The best places to visit in{' '}
-                <span className="line font-weight-semibold">{SSRDestination?.title}</span>
-              </h3>
-
-              {/* <div className="row">
-                {SSRDestination.packages.length > 0 &&
-                  SSRDestination.packages.map(
-                    item =>
-                      item.is_what_to_do && (
-                        <div
-                          key={item.id.toString()}
-                          className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                          <DestinationItem
-                            title={item.title}
-                            summary={item.summary}
-                            slug={`/destination/what-to-do/${item.slug}`}
-                            thumbnail={PUBLIC_API + item.thumbnail}
-                          />
-                        </div>
-                      ),
-                  )}
-              </div> */}
+            <Tab eventKey="BestPlace" title="Travel Advice">
+              <h3 className="text-center py-4">Travel Advice</h3>
             </Tab>
             <Tab eventKey="Faqs" title="FAQs">
-              <h3 className="text-center pb-5">FAQs</h3>
+              <h3 className="text-center py-4">FAQs</h3>
 
               {SSRDestination?.faqs ? <Faqs faqs={SSRDestination?.faqs} /> : null}
             </Tab>
