@@ -48,7 +48,7 @@ export default function OurPurpose({
         </div>
       </section>
       <section>
-        <div className="containerBox text-justify center">
+        <div className="containerBox center">
 
           <Accordion defaultActiveKey={2} className="mb-j">
             <div>
@@ -327,9 +327,9 @@ export default function OurPurpose({
                                  </ul>
                             </ul>
                           </p></li>
-                          <li><p>Support community-based resource management. For example, by creating new opportunities that enable people living 
+                          <li>Support community-based resource management. For example, by creating new opportunities that enable people living 
                             around historic sites to prosper and build ecosystems for long-term sustainability. 
-                          </p></li>
+                          </li>
                         </ol>
                      
                     </div>
@@ -425,20 +425,20 @@ export default function OurPurpose({
                       <p>Va Expeditions allocates 5% of the total tourist packages to help this community. We know this won't solve all of the difficulties this 
                         community faces on a day-to-day basis, but we think it's a good start and a great way to promote more smiles during the holiday season and 
                         make daily life a little easier. </p>
-                        <ol>
-                      <p><ul>
+                      <ol>
+                      <ul>
                         <li>We deliver essential groceries such as rice, beans, bread and cookies for families.</li>
                         <li>Articles without the presence of plastic such as craft toys, notebooks, pencils and healthy snacks for children. Each gift is age appropriate.</li>
-                      </ul></p>
+                      </ul>
                       </ol>
                       <p>We encourage our guests to save some space in their luggage to bring something small to help these communities, as long as 
                         the material does not contaminate or contain plastic. </p>
                       <p>These treasured items can be as simple as a T-shirt, a pair of socks, a baseball cap, or a pair of shoes. It's okay if these items are second-hand, 
                         as long as they're clean and in good condition. Educational materials are also appreciated! Items like notebooks, pens, pencils, rulers, and glue are 
                         local favorites. If you really want to be a rock star, bring a calculator!</p>
-                      <p>For the last three years we have been carrying out social support, where we share basic food and coats with the families of Inca trail porters, 
-                        all of them from the communities with which we have worked the Inca Trail route for the past 9 years.</p>
-                      </div>
+                      <p>For the last three years we have been carrying out social support, where we share basic food and coats with the families of Inca trailporters, 
+                        all of them from the communities with wich we have worked the Inca Trail route for the past 9 years </p>
+                    </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
                         src="images/our-purpose/travel-with-purpose/community-filantrophy.jpg"
