@@ -8,6 +8,8 @@ import Tabs from 'react-bootstrap/Tabs';
 import { DestinationItem, PackageTypeItem, Slide, Weather } from '@/components/index';
 import { Base } from '@/layouts/index';
 
+import styles from './index.module.scss';
+
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Search({
@@ -63,171 +65,40 @@ function Search({
         <title>Va Expeditions - {SSRCountry.name}</title>
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
-      <section id="tours_all">
-        <div className="containerBox">
-          <div className="row">
-            <div className="col-12">
-              <div className="row">
-                <div className="col-12 p-4">
-                  <Tabs defaultActiveKey="Overview">
-                    <Tab eventKey="Overview" title="Overview">
-                      <div className="row">
-                        <div
-                          className="col-12 p-4"
-                          dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
-                        />
-                      </div>
-                      <div className="row">
-                        {SSRCountry.destinations.length > 0 &&
-                          SSRCountry.destinations.map(item => (
-                            <div
-                              key={item?.id.toString()}
-                              className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                              <DestinationItem
-                                title={item.title}
-                                summary={item.summary}
-                                slug={{
-                                  pathname: `/destination/${item.slug}`,
-                                  // query: {
-                                  //   destination: item.id,
-                                  // },
-                                }}
-                                thumbnail={PUBLIC_API + item.thumbnail}
-                              />
-                            </div>
-                          ))}
-                      </div>
-                    </Tab>
-                    <Tab eventKey="Holiday" title="Holiday Types">
-                      <h3 className="text-center py-4">
-                        Holiday Types in{' '}
-                        <span className="line font-weight-semibold">
-                          {SSRCountry?.name}
-                        </span>
-                      </h3>
-                      <div className="row">
-                        {SSRCountry.package_type.length > 0 &&
-                          SSRCountry.package_type.map(item => (
-                            <div
-                              key={item?.id.toString()}
-                              className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                              <PackageTypeItem
-                                id={item.id}
-                                title={item.title}
-                                thumbnail={PUBLIC_API + item.thumbnail}
-                              />
-                            </div>
-                          ))}
-                      </div>
-                    </Tab>
-                    <Tab eventKey="Tour" title={`Tour in ${SSRCountry?.name}`}>
-                      <h3 className="text-center py-4">
-                        Tour in{' '}
-                        <span className="line font-weight-semibold">
-                          {SSRCountry?.name}
-                        </span>
-                      </h3>
-                      <div className="row">
-                        {SSRCountry.destinations.length > 0 &&
-                          SSRCountry.destinations.map(item => (
-                            <div
-                              key={item?.id.toString()}
-                              className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                              <DestinationItem
-                                title={item.title}
-                                summary={item.summary}
-                                slug={{
-                                  pathname: '/search',
-                                  query: {
-                                    destination: item.id,
-                                  },
-                                }}
-                                thumbnail={PUBLIC_API + item.thumbnail}
-                              />
-                            </div>
-                          ))}
-                      </div>
-                    </Tab>
-
-                    <Tab eventKey="Reason" title={`Reason why ${SSRCountry?.name}`}>
-                      <h3 className="text-center py-4">
-                        Reason why{' '}
-                        <span className="line font-weight-semibold">
-                          {SSRCountry?.name}
-                        </span>
-                      </h3>
-
-                      <div className="row">
-                        {SSRCountry.destinations.length > 0 &&
-                          SSRCountry.destinations.map(
-                            item =>
-                              item.is_why_reason && (
-                                <div
-                                  key={item?.id.toString()}
-                                  className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                                  <DestinationItem
-                                    title={item.title}
-                                    summary={item.summary}
-                                    slug={`/destination/reason-why/${item.slug}`}
-                                    thumbnail={PUBLIC_API + item.thumbnail}
-                                  />
-                                </div>
-                              ),
-                          )}
-                      </div>
-                    </Tab>
-                    <Tab eventKey="What" title="What To Do">
-                      <h3 className="text-center pb-5">
-                        What To Do{' '}
-                        <span className="line font-weight-semibold">
-                          {SSRCountry?.name}
-                        </span>
-                      </h3>
-
-                      <div className="row">
-                        {SSRCountry.destinations.length > 0 &&
-                          SSRCountry.destinations.map(
-                            item =>
-                              item.is_what_to_do && (
-                                <div
-                                  key={item.id.toString()}
-                                  className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                                  <DestinationItem
-                                    title={item.title}
-                                    summary={item.summary}
-                                    slug={`/destination/what-to-do/${item.slug}`}
-                                    thumbnail={PUBLIC_API + item.thumbnail}
-                                  />
-                                </div>
-                              ),
-                          )}
-                      </div>
-                    </Tab>
-
-                    <Tab eventKey="When" title="When To Go">
-                      <h3 className="text-center pb-5">
-                        When To Go{' '}
-                        <span className="line font-weight-semibold">
-                          {SSRCountry?.name}
-                        </span>
-                      </h3>
-
-                      <div className="row">
-                        {SSRCountry.destinations.length > 0 &&
-                          SSRCountry.destinations.map(destination => (
-                            <div
-                              key={destination?.id.toString()}
-                              className="col-12 text-center">
-                              <h3>{destination.title}</h3>
-                              <Weather weathers={destination.weathers} />
-                            </div>
-                          ))}
-                      </div>
-                    </Tab>
-                  </Tabs>
-                </div>
-              </div>
+      <section id="tours_all" className="row containerBox">
+        <div className="col-12 py-4">
+          <div className="row p-4">
+            <div className="col-12 col-lg-8">
+              <h1 className="title">Overview of {SSRCountry.name}</h1>
+              <div
+                className="pr-5"
+                dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
+              />
             </div>
+            <div
+              className={`col-12 col-lg-4 p-4 ${styles.quote}`}
+              dangerouslySetInnerHTML={{ __html: SSRCountry?.quote }}
+            />
+          </div>
+          <div className="row p-4">
+            <div className="col-12">
+              <h2 className="title">Destinations in {SSRCountry.name}</h2>
+            </div>
+            {SSRCountry.destinations.length > 0 &&
+              SSRCountry.destinations.map(item => (
+                <div
+                  key={item?.id.toString()}
+                  className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                  <DestinationItem
+                    title={item.title}
+                    summary={item.summary}
+                    slug={{
+                      pathname: `/destination/${item.slug}`,
+                    }}
+                    thumbnail={PUBLIC_API + item.thumbnail}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </section>
