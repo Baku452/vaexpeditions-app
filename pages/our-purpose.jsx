@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { Banner, CardBox } from '@/components/index';
 import { Base } from '@/layouts/index';
-
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 export default function OurPurpose({
@@ -18,15 +17,15 @@ export default function OurPurpose({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Valencia Travel - Who we are, tourism services for Inca Trail Tours</title>
+       <title>Va Expeditions - Our Purpose</title>
         <meta
           name="description"
-          content="We strive to connect people's lives. 
-            Through each trip, we seek to create a
-            global community of travelers, free from fear and aware of a sustainable
-            future"
+          content="Here at Va Expeditions, we strive to unite people through travel. 
+          Each itinerary is especially designed to create a global community of travellers, 
+          free to immerse themselves in different cultures and ways of life, free from fear 
+          and with a focus on creating a sustainable future"
         />
-      </Head>
+      </Head> 
       <Banner
         description=""
         image="/images/portada our purpose.jpg"
@@ -37,7 +36,7 @@ export default function OurPurpose({
         id="ourPurpose"
         className="row containerBox text-justify py-5 align-items-center">
         <div className="col-12 col-md-6 p-3 mb-3">
-          <h1 className="title">Our Purpose</h1>
+          <h2 className="title m-0 fs-20 font-weight-bold mb-4">Our Purpose</h2>
           <p className="m-0 fs-16 lh-34">
             Here at Va Expeditions, we strive to unite people through travel. 
             Each itinerary is especially designed to create a global community of travellers, 
@@ -50,19 +49,19 @@ export default function OurPurpose({
           <img src="images/our-purpose-min.jpg" alt="Our Purpose" className="img-fluid" />
         </div>
       </section>
+
       <section
         id="vision"
         className="containerBox text-justify row align-items-center pb-5">
         <div className="col-12 col-md-6 order-2 order-md-1 align-self-center">
           <img
             alt="Valencia Travel visión"
-            src="images/vision.jpg"
+            src="images/vision2.jpg"
             className="img-fluid"
           />
         </div>
         <div className="col-12 col-md-6 mb-3 mb-md-5 order-1 order-md-2">
           <h2 className="title m-0 fs-20 font-weight-bold mb-4">Our Vision</h2>
-
           <p className="m-0 fs-16 lh-34">
           Our aim is to position ourselves as one of the leaders in the international 
           travel market with a people -first ethic, basic on customer satisfaction, 
@@ -84,7 +83,7 @@ export default function OurPurpose({
         <div className="col-12 col-md-6 mb-5 order-2 align-self-center">
           <img
             alt="Valencia Travel misión"
-            src="images/mision.jpg"
+            src="images/mision2.jpg"
             className="img-fluid"
           />
         </div>
