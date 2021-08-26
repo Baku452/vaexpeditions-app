@@ -50,12 +50,12 @@ function WaysToSave() {
                   <Link href="/refer-a-friend">
                     <div>
                       <img
-                        alt="refer a friends"
+                        alt="referral Credits"
                         src="icons/refer_a_friends.svg"
                         className={`${styles.img} card-img-top`}
                       />
                       <div className="card-body">
-                        <a href="#">Refer a Friends</a>
+                        <a href="#">Referral Credits</a>
                       </div>
                     </div>
                   </Link>
@@ -71,7 +71,7 @@ function WaysToSave() {
                         className={`${styles.img} card-img-top`}
                       />
                       <div className="card-body">
-                        <a href="#">Coupons and Discounts</a>
+                        <a href="#">Special Promotions</a>
                       </div>
                     </div>
                   </Link>
