@@ -33,6 +33,7 @@ export * from './molecules/blog-card/index';
 export * from './molecules/listCategories/index';
 export * from './molecules/categoriesCard/index';
 export * from './molecules/bannerBlog/index';
+export * from './molecules/where-to/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -62,3 +63,4 @@ export * from './organism/pop-up/index';
 export * from './organism/sortingItemsRegular/index';
 export * from './organism/searchBar/index';
 export * from './organism/asideBlog/index';
+export * from './organism/faqs-destinations/index';
