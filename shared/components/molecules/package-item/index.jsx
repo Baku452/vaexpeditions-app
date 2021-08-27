@@ -80,10 +80,12 @@ function PackageItem({
                 <h6 className="fs-13 font-weight-bold mr-2 mb-0">Activity level: </h6>
                 <span>{activity}</span>
               </div>
-              <div className="d-flex fs-13 mb-3 align-items-center">
-                <h6 className="fs-13 font-weight-bold mr-2 mb-0">Destination: </h6>
-                <span>{destination}</span>
-              </div>
+              {destination ? (
+                <div className="d-flex fs-13 mb-3 align-items-center">
+                  <h6 className="fs-13 font-weight-bold mr-2 mb-0">Destination: </h6>
+                  <span>{destination}</span>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

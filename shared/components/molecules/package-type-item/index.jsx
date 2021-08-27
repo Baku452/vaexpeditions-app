@@ -8,7 +8,7 @@ function PackageTypeItem({ id, title, thumbnail }) {
         query: { types: id },
       }}>
       <div className="card w-100 cursor-pointer">
-        {thumbnail == null ? (
+        {thumbnail != null ? (
           <img src={thumbnail} className="card-img-top" alt={title} />
         ) : (
           <img src="/images/colca.jpg" className="card-img-top" alt={title} />
