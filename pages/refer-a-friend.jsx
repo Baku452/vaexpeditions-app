@@ -20,7 +20,7 @@ function FriendsFamily({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Refer a Friends - Peru Travel Deals - Free Travel</title>
+        <title>Referral Credits - Peru Travel Deals - Free Travel</title>
         <meta name="description" content />
         <meta name="keywords" content />
       </Head>
@@ -28,26 +28,17 @@ function FriendsFamily({
         <div className="row pt-5 pb-4 mb-3">
           <div className="col-12">
             <h1 className="font-weight-semi-bold text-center">
-              VALENCIA TRAVEL'S REFER A FRIEND PROGRAM
+               Va Expeditions Refer a friend Programme. 
             </h1>
             <div className="row">
               <div className="fs-16 lh-29 p-3 col-10 m-auto">
-                {' '}
-                <p>
-                  Traveling with friends and family is rewarding and we are making it even
-                  more rewarding with our Friends & Family Program! Start earning cash
-                  rewards, when 7 friends or family members join your tour. 7 traveling /
-                  paying passengers: $100 (USD) discount to the group leader 9 traveling /
-                  paying passengers: $200 (USD) discount to the group leader 11 traveling
-                  / paying passengers: $300 (USD) discount to the group leader 13 or more
-                  traveling / paying passengers: $400 (USD) discount to the group leader
-                  We make it easy! You even get your own webpage to share with your
-                  Friends & Family! Simply Call: (888) 803 8004 and speak with a Friends &
-                  Family specialist (Lisette). Select your tour from a comprehensive
-                  worldwide selection of tours and treks. Book your trip and create your
-                  own free personalized web page to share with your friends & family or we
-                  can create one for you. Then, start preparing for your trip! Don't wait.
-                  See more of the World for Less!
+               <p>
+                The Va expeditions refer a friend programme is especially for those who have 
+                already travelled with us. After you have enjoyed your trip in Central or 
+                South America, the benefits continue to arrive! If you want to share with 
+                your friends or acquaintances what an amazing time you had on a Va 
+                Expeditions tour or refer someone to us, you can both benefit from 
+                this amazing offer!
                 </p>
               </div>
             </div>
@@ -58,18 +49,18 @@ function FriendsFamily({
                   <ul>
                     <li>Give your friend your Account Number and name.</li>
                     <li>
-                      When they call, make sure they give both your name and Valencia
-                      Travel Cusco account number to their travel specialist or enter it
-                      online.
+                    When they call, make sure they give both your name and your Va 
+                    Expeditions account number to their travel specialist or enter it 
+                    online
                     </li>
                     <li>
-                      Your friend (the new Valencia Travel Cusco passenger) will receive a
-                      $100 (USD) credit off their booking immediately; only on
-                      tours/treks.
+                    Your friend (the new Va Expeditions passenger) will receive a
+                     $100 (USD) credit off their booking immediately; only on tours and 
+                     treks.
                     </li>
                     <li>
-                      When you book a new reservation, the $100 (USD) will be waiting,
-                      when you book your next tour/trek.
+                    When you book a new reservation with us, we will deduct $100 (USD) 
+                    when you book your next trip with Va Expeditions!
                     </li>
                   </ul>
                 </p>
@@ -81,22 +72,23 @@ function FriendsFamily({
                 <p className="listStyle">
                   <ul>
                     <li>
-                      Must be a past customer who has completed travel, with Valencia
-                      Travel Cusco, to refer a friend.
-                    </li>
-                    <li>Credit may not be applied towards an existing reservation.</li>
-                    <li>
-                      Credit may not be combined with special offers on "The Deal" or any
-                      promotional code-based discounts
+                    Must be a past customer who has completed a travel itinerary, with Va Expeditions, to refer a friend.
                     </li>
                     <li>
-                      If your booking is ineligible for referral credits, you will be
-                      offered a credit towards your next tour/trek.
+                      Credit may not be applied towards an existing reservation.
+                    </li>
+                    <li>
+                    Credit may not be combined with special offers 
+                    on "The Deal" or any promotional code-based discounts
+                    </li>
+                    <li>
+                    If your booking is ineligible for referral credits, 
+                    you will be offered a credit towards your next tour with us.
                     </li>
                     <li>Only one credit per room.</li>
                     <li>
-                      The new traveling passenger must be booking his/her first
-                      reservation with Valencia Travel Cusco.
+                    The new travelling passenger must 
+                    be booking his/her first reservation with Va Expeditions.
                     </li>
                     <li>
                       As the referrer, you can accrue multiple credits but can only apply
@@ -117,7 +109,7 @@ function FriendsFamily({
                   </ul>
                 </p>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>

@@ -67,7 +67,7 @@ function ContactForm({ destinations, title = true }) {
                     </p>
 
                     <p>
-                      If you have a question about our Valencia Travel trips, please
+                      If you have a question about our Va Expeditions trips, please
                       submit your inquiry via the form below:
                     </p>
 
@@ -251,7 +251,7 @@ function ContactForm({ destinations, title = true }) {
                           not hear back from us within this timeframe, please check your
                           spam folder or call 1-860-856-5858. By Signing up for this
                           email, you are agreeing to receive new, offers, and information
-                          from Valencia Travel or our partners. Click
+                          from Va Expeditions or our partners. Click
                           <Link href="/terms-conditions">
                             <a> here </a>
                           </Link>

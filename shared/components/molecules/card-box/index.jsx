@@ -13,7 +13,7 @@ function CardBox({ items }) {
         </h2>
         <div className="row">
           {items.map(item => (
-            <Link key={item.id} href={`/${item.slug}`}>
+            <Link key={item.id} href={`/our-purpose/${item.slug}`}>
               <div className={`${styles.card} col-12 col-sm-6 col-lg-4 pb-0 pb-lg-5`}>
                 <div className="w-100 overflow-hidden">
                   <img

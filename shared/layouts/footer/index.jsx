@@ -174,9 +174,10 @@ function Footer() {
           <div className="row position-relative">
             <div className="col-12 p-0 text-center">
               <p className="m-0 fs-13 text-white">
-                2021 Valencia Travel Cusco, Inc. All Rights Reserved:
+                2021 Va Expeditions, Inc. All Rights Reserved:
                 <Link href="/terms-conditions">
                   <a href="#" className="skyblue">
+                  {' '}
                     Terms & Conditions
                   </a>
                 </Link>
