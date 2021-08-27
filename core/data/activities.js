@@ -1,12 +1,12 @@
 const activities = [
   {
     id: 1,
-    label: 'Very HIgh',
+    label: 'Very High',
     checked: false,
   },
   {
     id: 2,
-    label: 'HIgh',
+    label: 'High',
     checked: false,
   },
   {
