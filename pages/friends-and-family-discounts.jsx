@@ -30,12 +30,12 @@ function FriendsFamily({
             <h1 className="font-weight-bold text-center">
               FAMILY & FRIENDS' DISCOUNT 
             </h1>
-            <h2 className="fs-16 lh-29 p-3 col-7 m-auto text-center">
+            <h2 className="fs-16 lh-29 col-7 m-auto text-center">
             Earn special discounts and special travel bonuses with our innovative 
             “Friends and family” programme. 
             </h2>
             <div className="text-center row mt-5">
-              <div className="col-5 m-auto p-4 bg-dark text-white ">
+              <div className="col-5 m-auto p-4 bg-light shadow-5 text-primary  ">
                 <p>
                   <strong>
                     Simply call us on 0888 803 8004 to 
@@ -87,7 +87,7 @@ function FriendsFamily({
                 Unfortunately, not, these are dependent on external carriers and fares will 
                 be applicable at the time of booking.
                 </p>
-                <h3>How do I apply a “friends and family booking?  </h3>
+                <h3>How do I apply a "friends and family booking"?  </h3>
                 <p>
                 Simply select the friends and family icon during your online booking or we will connect 
                 you will a friends and family tour designer, who will facilitate your tour selection,  
@@ -129,13 +129,34 @@ function FriendsFamily({
                      giving a 7-day notice period.
                     </li>
                   </ul>
-
+                  <br/>
+                  <br/>
                 <h3>How are the discounts applied to my booking?</h3>
                 <p>
                 Once we have received full payment from al group members we will apply the discount to your 
                 booking in the form of a credit card payment to the group leader. (Discounts apply depending 
                 on the group size, as previously mentioned).
                 </p>
+                <h3> Contact us now!</h3>
+                <ul>
+                    <li>
+                      <strong>Toll-Free Phone Number USA & Canada:</strong>
+                      <a href="tel:888-803-8004"> 1 - (888) 803 8004</a>
+                    </li>
+                    <li>
+                      <strong>Customer Service</strong>
+                      <a href="tel:860-856-5858"> 1 - (860) 856 5858</a>
+                    </li>
+                    <li>
+                      <strong>Cusco, Peru Office Telephone:</strong>
+                       +51-84-25-59-07
+                    </li>
+                    <li>
+                      <strong>Emergency Assistance 24/7:</strong>
+                       +51-979706464 / +51-984961333
+                    </li>
+                  </ul>
+                
               </div>
             </div>
           </div>

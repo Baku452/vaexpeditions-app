@@ -22,7 +22,7 @@ function PageContent({ page, ourpurpose }) {
                                 </div>
                                 {
                                     page.content2 ?
-                                        <div
+                                        <div 
                                             dangerouslySetInnerHTML={{ __html: page.content2 }}
                                         >
                                         </div>
@@ -30,7 +30,7 @@ function PageContent({ page, ourpurpose }) {
                             </div>
 
                             <div className="col-12 col-md-5">
-                                <img
+                                <img 
                                     src={PUBLIC_API + page.original}
                                     alt={page.title}
                                 ></img>
