@@ -28,7 +28,7 @@ function FriendsFamily({
         <div className="row pt-5 pb-4 mb-3">
           <div className="col-12">
             <h1 className="font-weight-bold text-center">
-              FAMILY & FRIENDS' DISCOUNT 
+            FRIENDS & FAMILY DISCOUNT 
             </h1>
             <h2 className="fs-16 lh-29 col-7 m-auto text-center">
             Earn special discounts and special travel bonuses with our innovative 

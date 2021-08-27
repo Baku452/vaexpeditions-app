@@ -53,7 +53,7 @@ function Newsletter({ destinations, packagetypes, notifications }) {
         <div className="container">
           <div className="row">
             <div className="col-11 col-md-10 p-0 pb-5 mb-5 p-0 mx-auto">
-              <h2 className="fs-35 pt-5 pb-4">Newsletter</h2>
+              <h2 className="fs-35 pt-5 pb-4">Subscribe Newsletter</h2>
 
               {success ? (
                 <div className="card border mb-5 pb-5">
