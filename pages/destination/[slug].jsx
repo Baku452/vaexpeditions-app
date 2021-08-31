@@ -85,18 +85,19 @@ function Search({
                       {SSRDestination?.title}
                     </span>
                   </h2>
-                  {SSRDestination.where.length > 0 &&
-                    SSRDestination.where.map(item => (
-                      <WhereToItem
-                        key={item.id}
-                        id={item.id}
-                        index={item.index}
-                        title={item.title}
-                        items={item.items}
-                        thumbnail={PUBLIC_API + item.image}
-                        content={item.content}
-                      />
-                    ))}
+                  {SSRDestination.where
+                    ? SSRDestination.where.map(item => (
+                        <WhereToItem
+                          key={item.id}
+                          id={item.id}
+                          index={item.index}
+                          title={item.title}
+                          items={item.items}
+                          thumbnail={PUBLIC_API + item.image}
+                          content={item.content}
+                        />
+                      ))
+                    : null}
                 </div>
               </div>
             </Tab>
