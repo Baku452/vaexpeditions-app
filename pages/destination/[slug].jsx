@@ -90,9 +90,8 @@ function Search({
                         <WhereToItem
                           key={item.id}
                           id={item.id}
-                          index={item.index}
                           title={item.title}
-                          items={item.items}
+                          items={item.items ? item.items : null}
                           thumbnail={PUBLIC_API + item.image}
                           content={item.content}
                         />

@@ -2,11 +2,9 @@
 /* eslint-disable react/no-danger */
 import { Tab, Tabs } from 'react-bootstrap';
 
-import { Divider } from '@/components/index';
-
 import styles from './index.module.scss';
 
-function WhereToItem({ id, title, items, index, content, thumbnail }) {
+function WhereToItem({ id, title, items, content, thumbnail }) {
   return (
     <section className="row p-4">
       <div className="row">
