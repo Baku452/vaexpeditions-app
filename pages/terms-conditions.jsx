@@ -20,57 +20,35 @@ function TermsConditions({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Valencia Travel Cusco - Terms and Conditions</title>
+        <title>Va Expeditions - Terms and Conditions</title>
         <meta name="description" content="Terms and conditions" />
         <meta name="keywords" content="Terms & conditions" />
       </Head>
       <div className="container">
-        <div className="row pt-5 pb-4 mb-3">
-          <div className="col-12">
-            <h1> Payment and Cancellation Policy</h1>
-            <div className="fs-16 lh-29" />
+        <div className="row col-12 pt-5 pb-4 mb-3 fs-16 lh-29">
+          <div>
+            <h1 className="text-center">Terms and Conditions</h1>
+            <div/>
             <p>
-              Valencia Travel Cusco, requires an initial deposit of 40% of the total cost
-              of the trip. This 40%, is necessary for operational costs and is
-              non-refundable should the trip be cancelled by the client. The remaining 60%
-              must be paid at least 90 days prior to your trip.
+            The use of the Va expeditions web site (here referred to as “the Web Site”) is subject 
+            to the terms and conditions stated below. The use of the Web Site constitutes an agreement 
+            by you, the user (here referred to as “the Client”), that your use is governed by these 
+            terms and conditions.
             </p>
             <p>
-              Less than 90 days before the trip, it is required the 100% payment. Wire
-              Transfer Terra Bank: Registered company name: Valencia Travel Agency S.A.C
-              Registered company address: Portal de Panes 123 C.C. Ruiseñores Of. 306 -
-              307 Cusco - Peru. Company Number: 20490589857 Name of Director: Rene Hurtado
-              Valencia Bank Details: Name of Beneficiary: Valencia Travel Agency S.A.C.
-              Address of Beneficiary: Portal de Panes 123 C.C. Riuseñores of. 306 -307
-              Cusco - Peru Bank Name: Terra Bank, N.A. Bank Address: 3191 Coral Way Miami
-              Fl 33145 ABA/Routing: 066012333 SWIFT: TBNAUS33 Account: #(U$D): 1297969406
-              Add approx. USD 40.00 to the amount you are sending to cover the transaction
-              fee. Payment with Credit Card We accept Visa, Mastercard, American Express,
-              Diners Club, payments can be done through our website. Additional charge of
-              a 5% would be applied over the final amount of the tour as a result of using
-              a credit card services and added to your bill. In case you need any
-              assistance contact us to process your payment. Western Union: You can pay by
-              Western Union at their office (they have offices internationally) or online
-              (www.westernunion.com): Receiver’s first name: Rene Receiver’s last name:
-              Hurtado Valencia City/Town: Cusco Country: Peru P.S: In the “message” space
-              on the Western Union form, please write the name of your tour and your
-              arrival date. Once you made the transaction, please send us the tracking
-              number (MTCN code)
+            In addition, when using particular Va expeditions services, you will be subject to any guidelines 
+            or rules applicable to such services that may be posted here. Make sure you check terms and 
+            conditions regularly for any updates.  
             </p>
           </div>
-          <h2>CANCELLATION POLICY</h2>
-          <div className="fs-16 lh-29">
+          <h2>Contract between the Client and Va Expeditions</h2>
+          <div>
             <p>
-              At the time we receive a written notice, that you want to cancel your trip,
-              the following fees will be charged:
+            To secure a booking with Va expeditions, the Client must deposit 40% of the entire cost of the trip. 
+            All domestic and international flights must be paid 100% in advance to secure spaces. Cruise bookings 
+            are subject to a special deposit policy depending on the boat. This deposit is non-refundable. Clients 
+            booking by telephone or email will be deemed to have read the booking conditions.
             </p>
-            <ul>
-              <li>30 to 59 days before departure date: 40% of trip cost</li>
-              <li>7 to 29 days: 70% of trip cost</li>
-              <li>
-                Less than 7 days before departure date or no-show: 100% of trip cost
-              </li>
-            </ul>
             <p>
               Valencia Travel Cusco, guarantees and provides transportation, bilingual
               guides, equipment, and food as stated in the detailed itinerary. All tour
