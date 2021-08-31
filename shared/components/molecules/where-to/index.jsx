@@ -21,7 +21,7 @@ function WhereToItem({ id, title, items, content, thumbnail }) {
         </div>
       </div>
       <div className="row p-5">
-        {items ? (
+        {items.length > 0 ? (
           <Tabs defaultActiveKey={items[0].title}>
             {items.map(item => (
               <Tab eventKey={item.title} title={item.title}>

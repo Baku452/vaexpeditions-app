@@ -91,7 +91,7 @@ function Search({
                           key={item.id}
                           id={item.id}
                           title={item.title}
-                          items={item.items ? item.items : null}
+                          items={item.items}
                           thumbnail={PUBLIC_API + item.image}
                           content={item.content}
                         />
