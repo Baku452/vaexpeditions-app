@@ -28,175 +28,135 @@ function FriendsFamily({
         <div className="row pt-5 pb-4 mb-3">
           <div className="col-12">
             <h1 className="font-weight-bold text-center">
-              FRIENDS & FAMILY PROGRAM - EARN DISCOUNTS & FREE TRAVEL BENEFITS
+            FRIENDS & FAMILY DISCOUNT 
             </h1>
+            <h2 className="fs-16 lh-29 col-7 m-auto text-center">
+            Earn special discounts and special travel bonuses with our innovative 
+            “Friends and family” programme. 
+            </h2>
             <div className="text-center row mt-5">
-              <div className="col-5 m-auto p-4 bg-dark text-white ">
+              <div className="col-5 m-auto p-4 bg-light shadow-5 text-primary  ">
                 <p>
                   <strong>
-                    Simply Call: (888) 803 8004 and speak with a Friends & Family
-                    specialist (Lisette).
+                    Simply call us on 0888 803 8004 to 
+                    speak to your “Friends and Family” travel designer (“Claire”). 
                   </strong>
                   <br />
-                  Free personalized web page to share with your friends & family Reserve
-                  space for up to 30 days while you promote your group (conditions apply).
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="fs-16 lh-29 p-3 col-10 m-auto">
-                <h3 className="p-3 text-center">Travel FREE with Friends & Family</h3>
-                <p>
-                  Traveling with friends and family is rewarding and we are making it even
-                  more rewarding with our Friends & Family Program! Start earning cash
-                  rewards, when 7 friends or family members join your tour. 7 traveling /
-                  paying passengers: $100 (USD) discount to the group leader 9 traveling /
-                  paying passengers: $200 (USD) discount to the group leader 11 traveling
-                  / paying passengers: $300 (USD) discount to the group leader 13 or more
-                  traveling / paying passengers: $400 (USD) discount to the group leader
-                  We make it easy! You even get your own webpage to share with your
-                  Friends & Family! Simply Call: (888) 803 8004 and speak with a Friends &
-                  Family specialist (Lisette). Select your tour from a comprehensive
-                  worldwide selection of tours and treks. Book your trip and create your
-                  own free personalized web page to share with your friends & family or we
-                  can create one for you. Then, start preparing for your trip! Don't wait.
-                  See more of the World for Less!
+                  Choose from the carefully selected tours and treks available throughout 
+                  central and South America and start to plan your trip! 
+                  This is the perfect opportunity to experience Central and South America 
+                  in all of its true essence… what  are you waiting for?!
                 </p>
               </div>
             </div>
             <div className="row listStyle">
               <div className="fs-16 lh-29 p-3 col-10 m-auto">
-                <h2 className="p-3 text-center">
-                  ABOUT THE FRIENDS & FAMILY PROGRAM (FFP)
-                </h2>
-                <h3>Which tours can be booked for Friends & Family?</h3>
+                <h2 className="p-3 text-center">Travel FREE with Friends & Family</h2>
                 <p>
-                  Friends & Family Program (FFP) reservations apply to select Tours/Treks.
-                  Eligible products will display the Friends and Family icon.
-                </p>
-                <h3>Do early booking discounts and other promotions still apply?</h3>
-                <p>
-                  Yes. All Tour/Trek promotions apply, including "Book By" discounts and
-                  offers made on Valencia Travel's weekly "The Deal". Promotions apply to
-                  bookings at the time each individual reservation is complete. Promotions
-                  which applied when a Friends & Family Program booking was initiated but
-                  subsequently expired, do not apply to individual bookings completed
-                  after the promotion expiration date.
-                </p>
-                <h3>Are airfares guaranteed?</h3>
-                <p>
-                  No. Airfares are subject to prices and availability at the time each
-                  individual booking is complete.
-                </p>
-                <h3>How do I initiate a Friends & Family booking?</h3>
-                <p>
-                  Select the Friends & Family icon, when booking online or we will connect
-                  you with a Friends & Family Program representative. Who will help you
-                  select your tour, create your personal reservation, and prepare your
-                  unique web page link to forward to your friends and family! (Please
-                  note: that personalized web pages are not available for bookings).
-                </p>
-                <h3>How do I tell my friends and family about the tour?</h3>
-                <p>
-                  Your selected tour and departure date will be featured on your
-                  personalized web page link, which you can easily email to your friends
-                  and family. You can create your own email and web page link or we can
-                  send you a link through an email address. Simply forward the email
-                  address to your friends and family, we will take care of the rest.
-                </p>
-                <h3>How do my friends and family complete their bookings?</h3>
-                <p>
-                  Friends and family bookings may be completed online using the provided
-                  link or via our call center at: (888) 803 8004 to speak with a Friends &
-                  Family specialist (Fredy). When booking via the call center, your
-                  friends and family specialist will reference your personal tour. All
-                  subsequent communications including invoices, payment reminders and
-                  final documentation will be sent directly to each friend or family
-                  member.
-                </p>
-                <h3>
-                  Are there any special terms and conditions that apply only to Friends &
-                  Family tours?
-                </h3>
-                <p>
-                  No. Individual reservations will be subject to Valencia Travel Cusco
-                  Terms & Conditions.
-                </p>
-                <h3>Can I reserve space for my friends & family?</h3>
-                <p>
-                  Yes.
+                Travelling is an experience best shared and who better to share it with, but your family and friends! 
+                Allow us to make it even more rewarding with our “Friends and family” with our special rewards programme.
+                <br/>
                   <ul>
-                    <li>
-                      If you are booking up to 180 days prior to the date of departure of
-                      the tour, you may hold rooms and cabins for as many as 10 friends
-                      and family for up to 30 days from the date you initiate and pay a
-                      deposit on your booking.
-                    </li>
-                    <li>
-                      If you are booking between 179 and 90 days prior to the date of
-                      departure of the tour, you may hold space for 21 days.
-                    </li>
-                    <li>
-                      If you are booking between 89 and 60 days prior to the date of
-                      departure of the tour, you may only hold space for 7 days.
-                    </li>
-                    <li>
-                      At 60 days or less prior to departure, space can no longer be
-                      reserved. Once the space is booked, let your friends and family
-                      members know that they have only a limited time to complete their
-                      reservation with guaranteed space.
-                    </li>
-                    <li>
-                      After 30 days (or 21 days if booking between 179 and 90 days prior,
-                      or 7 days if booking between 89 and 60 days prior), any unsold rooms
-                      and cabins will be automatically released.
-                    </li>
-                    <li>
-                      On the release date, if at least 50% of the space has been reserved,
-                      you may call to request additional time to offer the remaining space
-                      to additional friends and family.
-                    </li>
-                    <li>
-                      After 60 days, all unsold space will be released. At any time, a
-                      Friends & Family program may be promoted without space being
-                      guaranteed. Valencia Travel Cusco reserves the right to recall any
-                      unsold space, at any time, with 7 days’ notice.
-                    </li>
+                  <li> *when 7 people join your group (total group size) receive a $100 USD discount!</li>
+                  <li> *when 9 people join your group (total group size), receive a $200USD discount!</li>
+                  <li>*when 11 people join your group (total group size), receive a $300USD discount!</li>
+                  <li> * when 13 or more people are in the group (total group size), receive a $400 USD discount!</li>
                   </ul>
                 </p>
-                <h3>How are earned credits applied to my booking?</h3>
                 <p>
-                  Once, your friends and family members have paid in full for their
-                  reservations, approximately 10 days prior to your date of departure.
-                  Your earned incentives will be applied to your personal reservation in
-                  the form of a credit. Credit will be applied as followed: for every 10
-                  paid-in-full passengers, you will earn one complementary land only
-                  package based on shared twin/double occupancy excluding any applicable
-                  taxes or fees, optional tours, single supplements and Trip Protection
-                  Plan premiums For less than 10 paid-in-full passengers, credits will be
-                  applied as followed:
+                It couldn´t be easier and you will receive a private group webpage to share with your friends and family, 
+                which you can create or we will do it for you! 
                 </p>
-                <ul>
-                  <li>Up to 6 paid-in-full passengers: $0 (USD);</li>
-                  <li>7 paid-in-full passengers: $100 (USD) total;</li>
-                  <li>9 paid-in-full passengers: $200 (USD) total;</li>
-                  <li>11 paid-in-full passengers: $300 (USD) total;</li>
-                  <li>13 paid-in-full passengers: $400 (USD) total.</li>
-                </ul>
+               </div>
+            </div>
+            <div className="row listStyle">
+              <div className="fs-16 lh-29 p-3 col-10 m-auto">
+                <h2 className="p-3 text-center">
+                  ABOUT THE FFP (FRIENDS & FAMILY PROGRAM) 
+                </h2>
                 <p>
-                  The earned credit of up to $400 will be applied to group leader's
-                  reservation only. The free travel benefit may not be combined with cash
-                  discounts earned for 7-9 paying passengers.
+                The FFP discount applies to those tours where the FFP icon is displayed. 
+                </p>
+                <h3>Do early booking discounts still apply? </h3>
+                <p>
+                YES! All other special promotions still apply so you can accumulate your discounts 
+                as long as all the booking conditions are fulfilled by yourself!
+                </p>
+                <h3>Are air fares guaranteed?</h3>
+                <p>
+                Unfortunately, not, these are dependent on external carriers and fares will 
+                be applicable at the time of booking.
+                </p>
+                <h3>How do I apply a "friends and family booking"?  </h3>
+                <p>
+                Simply select the friends and family icon during your online booking or we will connect 
+                you will a friends and family tour designer, who will facilitate your tour selection,  
+                create your personal reservation and personal webpage link to send to your friends and 
+                family! (Please note that a private webpage is not available for regular bookings).
+                </p>
+                <h3>How do I tell my friends and family?</h3>
+                <p>
+                Your selected tour and departure date will feature on your webpage. This page can be 
+                shared easily with your friends and family via an e mail address and we will do the rest!
+                </p>
+                <h3>How do my friends and family complete their booking? </h3>
+                <p>
+                Your friends and family may book using the link provided or via our call centre (0888 803 8004). 
+                When you call, our travel designer will reference your personal tour. All subsequent communication 
+                /invoices will be sent to each individual group member.
+                </p>
+                <h3>Are there any special terms and conditions for FFP group members? </h3>
+                <p>
+                No... all bookings are covered under the Va Expeditions general booking terms and conditions.
                 </p>
                 <h3>
-                  Can I earn Refer a Friend benefits on the Friends & Family Program?
+                Can I reserve a space for my friends and family? 
                 </h3>
                 <p>
-                  Yes, this program may be combined with our Refer a Friend program. Visit
-                  Refer a Friend for complete details. *Please note: Travel Agents who
-                  make Friends & Family bookings are limited to 5% commission, if a free
-                  travel benefit is earned.
+                Yes …. You can reserve rooms/cabins/excursions for up to and including 10 FFP members, up to 
+                180 days prior to departure and up to 30 days from the date you initiate the booking process 
+                and deposit payment.
                 </p>
+                  <ul>
+                    <li>
+                    At 60 days or less we cannot reserve spaces without a deposit so make sure you advise 
+                    your friends and family well in advance so that group spaces are secured.
+                    </li>
+                    <li>
+                    After 60 days before the trip departure deposit payment has not been received, we will 
+                    release all group spaces. Your friends and family may still join but spaces can no longer 
+                    be guaranteed. Va Expeditions reserves the right to recall any unsold space and at any time,
+                     giving a 7-day notice period.
+                    </li>
+                  </ul>
+                  <br/>
+                  <br/>
+                <h3>How are the discounts applied to my booking?</h3>
+                <p>
+                Once we have received full payment from al group members we will apply the discount to your 
+                booking in the form of a credit card payment to the group leader. (Discounts apply depending 
+                on the group size, as previously mentioned).
+                </p>
+                <h3> Contact us now!</h3>
+                <ul>
+                    <li>
+                      <strong>Toll-Free Phone Number USA & Canada:</strong>
+                      <a href="tel:888-803-8004"> 1 - (888) 803 8004</a>
+                    </li>
+                    <li>
+                      <strong>Customer Service</strong>
+                      <a href="tel:860-856-5858"> 1 - (860) 856 5858</a>
+                    </li>
+                    <li>
+                      <strong>Cusco, Peru Office Telephone:</strong>
+                       +51-84-25-59-07
+                    </li>
+                    <li>
+                      <strong>Emergency Assistance 24/7:</strong>
+                       +51-979706464 / +51-984961333
+                    </li>
+                  </ul>
+                
               </div>
             </div>
           </div>

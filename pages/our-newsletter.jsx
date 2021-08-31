@@ -53,7 +53,7 @@ function Newsletter({ destinations, packagetypes, notifications }) {
         <div className="container">
           <div className="row">
             <div className="col-11 col-md-10 p-0 pb-5 mb-5 p-0 mx-auto">
-              <h2 className="fs-35 pt-5 pb-4">Newsletter</h2>
+              <h2 className="fs-35 pt-5 pb-4">Subscribe Newsletter</h2>
 
               {success ? (
                 <div className="card border mb-5 pb-5">
@@ -72,15 +72,14 @@ function Newsletter({ destinations, packagetypes, notifications }) {
               ) : (
                 <div className="card border">
                   <div className="col-12 pt-5 mt-3 text-left newsletter">
-                    <h2>Start watching the world with a different view </h2>
+                    <h2>View Central and South America from a totally different perspective. </h2>
                     <p>
-                      Travel destinations will surprise you, stories that inspire, life
-                      experiences, mindful Travel and advices of our experts travellers
-                      delivered straight to your mail inbox.
+                    Unique destinations, travel advice, inspirational travel stories, mindful 
+                    travel tips, helpful information and advice from our experts and clients 
+                    delivered straight to your inbox!
                     </p>
                     <p className="card-text fs-20 lh-29 mb-4">
-                      In order to complete your subscription please fill out the following
-                      information
+                    Subscribe to our newsletter by completing the following information:
                     </p>
                   </div>
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
