@@ -68,19 +68,21 @@ function BlogPost({
             </div>
             <section className="mx-auto row py-3">
               <div className="row">
-                {postList.map(item => (
-                  <div key={item.slug} className="col-12 col-md-6 col-lg-6 pb-4">
-                    <BlogCard
-                      key={item.title}
-                      title={item.title}
-                      destination={item.destination}
-                      slug={item.slug}
-                      thumbnail={item.thumbnail_cat}
-                      description={item.content}
-                      type={item.type_name}
-                    />
-                  </div>
-                ))}
+                {postList
+                  ? postList.map(item => (
+                      <div key={item.slug} className="col-12 col-md-6 col-lg-6 pb-4">
+                        <BlogCard
+                          key={item.title}
+                          title={item.title}
+                          destination={item.destination}
+                          slug={item.slug}
+                          thumbnail={item.thumbnail_cat}
+                          description={item.content}
+                          type={item.type_name}
+                        />
+                      </div>
+                    ))
+                  : null}
               </div>
             </section>
           </div>
