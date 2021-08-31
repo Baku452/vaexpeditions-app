@@ -23,18 +23,20 @@ function WhereToItem({ id, title, items, index, content, thumbnail }) {
         </div>
       </div>
       <div className="row p-5">
-        <Tabs defaultActiveKey={items[0].title}>
-          {items.map(item => (
-            <Tab eventKey={item.title} title={item.title}>
-              <div>
-                <div
-                  className="col-12 p-4"
-                  dangerouslySetInnerHTML={{ __html: item?.content }}
-                />
-              </div>
-            </Tab>
-          ))}
-        </Tabs>
+        {items ? (
+          <Tabs defaultActiveKey={items[0].title}>
+            {items.map(item => (
+              <Tab eventKey={item.title} title={item.title}>
+                <div>
+                  <div
+                    className="col-12 p-4"
+                    dangerouslySetInnerHTML={{ __html: item?.content }}
+                  />
+                </div>
+              </Tab>
+            ))}
+          </Tabs>
+        ) : null}
       </div>
     </section>
   );
