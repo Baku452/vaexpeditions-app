@@ -22,8 +22,8 @@ function Footer() {
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
               <ul className="fs-15">
                 <li>
-                  <Link href="/search?destination=1">
-                    <a href="#">Arequipa</a>
+                  <Link href="/destination/argentina">
+                    <a href="#">Argentina</a>
                   </Link>
                 </li>
                 <li>
