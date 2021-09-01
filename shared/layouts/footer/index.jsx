@@ -22,18 +22,23 @@ function Footer() {
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
               <ul className="fs-15">
                 <li>
-                  <Link href="/destination/peru">
-                    <a href="#">Peru</a>
-                  </Link>
-                </li>
-                <li>
                   <Link href="/destination/argentina">
                     <a href="#">Argentina</a>
                   </Link>
                 </li>
                 <li>
+                  <Link href="/destination/bolivia ">
+                    <a href="#">Bolivia</a>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/destination/brasil">
-                    <a href="#">Brazil</a>
+                    <a href="#">Brasil</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/destination/chile">
+                    <a href="#">Chile</a>
                   </Link>
                 </li>
                 <li>
@@ -44,11 +49,6 @@ function Footer() {
                 <li>
                   <Link href="/destination/costa-rica">
                     <a href="#">Costa Rica</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/destination/mexico">
-                    <a href="#">Mexico</a>
                   </Link>
                 </li>
               </ul>
