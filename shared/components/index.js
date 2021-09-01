@@ -34,6 +34,7 @@ export * from './molecules/listCategories/index';
 export * from './molecules/categoriesCard/index';
 export * from './molecules/bannerBlog/index';
 export * from './molecules/where-to/index';
+export * from './molecules/banner-2/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';

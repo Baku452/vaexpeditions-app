@@ -1,20 +1,11 @@
+/* eslint-disable react/no-danger */
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { Accordion, AccordionContext } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
-import {
-  ContextAwareToggle,
-  DestinationItem,
-  FaqsDestinations,
-  PackageItem,
-  Slide,
-  Weather,
-  WhereToItem,
-} from '@/components/index';
+import { FaqsDestinations, PackageItem, Slide, WhereToItem } from '@/components/index';
 import { activities } from '@/core/index';
 import { Base } from '@/layouts/index';
 
@@ -50,7 +41,7 @@ function Search({
         isDestination
       />
 
-      <section id="tours_all" className="row p-4">
+      <section id="destination" className="py-4">
         <div className="col-12 containerBox">
           <Tabs defaultActiveKey="Overview">
             <Tab eventKey="Overview" title="Overview">
@@ -85,18 +76,21 @@ function Search({
                       {SSRDestination?.title}
                     </span>
                   </h2>
-                  {SSRDestination.where
-                    ? SSRDestination.where.map(item => (
-                        <WhereToItem
-                          key={item.id}
-                          id={item.id}
-                          title={item.title}
-                          items={item.items}
-                          thumbnail={PUBLIC_API + item.image}
-                          content={item.content}
-                        />
-                      ))
-                    : null}
+                  <div className="row">
+                    {SSRDestination.where
+                      ? SSRDestination.where.map(item => (
+                          <WhereToItem
+                            key={item.id}
+                            id={item.id}
+                            title={item.title}
+                            items={item.items}
+                            summary={item.summary}
+                            thumbnail={PUBLIC_API + item.image}
+                            slug={item.slug}
+                          />
+                        ))
+                      : null}
+                  </div>
                 </div>
               </div>
             </Tab>

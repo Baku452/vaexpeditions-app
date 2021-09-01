@@ -1,0 +1,23 @@
+.banner {
+  height: calc(650px);
+  position: relative !important;
+  display: block;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover !important;
+  }
+  .texto {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    top: 40%;
+    text-transform: uppercase;
+    h2 {
+      font-size: 68px;
+      text-shadow: 3px 3px 5px #2b2b2b;
+    }
+  }
+}
