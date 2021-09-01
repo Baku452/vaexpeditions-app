@@ -20,35 +20,35 @@ function Footer() {
           <div className={`row position-relative pb-4 mb-4 ${styles.title}`}>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
-              <ul className="fs-15">
+              <ul className="fs-15 list-unstyled">
                 <li>
                   <Link href="/destination/brasil">
-                    <a href="#">Brasil</a>
+                    <a >Brasil</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/destination/colombia ">
-                    <a href="#">Colombia</a>
+                    <a>Colombia</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/destination/costa-rica">
-                    <a href="#">Costa Rica</a>
+                    <a>Costa Rica</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/destination/ecuador">
-                    <a href="#">Ecuador</a>
+                    <a>Ecuador</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/destination/mexico">
-                    <a href="#">Mexico</a>
+                    <a>Mexico</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/destination/peru">
-                    <a href="#">Peru</a>
+                    <a>Peru</a>
                   </Link>
                 </li>
               </ul>
@@ -58,15 +58,15 @@ function Footer() {
                 EXPLORE VALENCIA TRAVEL
               </h6>
 
-              <ul className="fs-15">
+              <ul className="fs-15 list-unstyled">
                 <li>
                   <Link href="/search">
-                    <a href="#">Destinations</a>
+                    <a>Destinations</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/tailor-made-tour">
-                    <a href="#">Tailor Made Tours</a>
+                    <a>Tailor Made Tours</a>
                   </Link>
                 </li>
                 <li>
@@ -87,7 +87,7 @@ function Footer() {
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">COMPANY</h6>
 
-              <ul className="fs-15">
+              <ul className="fs-15 list-unstyled">
                 <li>
                   <a href="tel:+18888038004">
                     USA and Canada Toll Free: <br /> <b>1-(888)803-8004</b>
@@ -176,14 +176,14 @@ function Footer() {
               <p className="m-0 fs-13 text-white">
                 2021 Va Expeditions, Inc. All Rights Reserved:
                 <Link href="/terms-conditions">
-                  <a href="#" className="skyblue">
+                  <a className="skyblue">
                   {' '}
                     Terms & Conditions
                   </a>
                 </Link>
                 -
                 <Link href="/contact-us">
-                  <a href="#" className="skyblue">
+                  <a className="skyblue">
                     {' '}
                     Contact us
                   </a>

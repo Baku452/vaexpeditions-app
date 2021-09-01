@@ -13,7 +13,7 @@ function ListCategories({ items }) {
             key={item.title}
             href={`/blog/category/${item.title.toLowerCase().replace(' ', '-')}`}>
             <li key={item.id} className={`${styles.boxCategory} cursor-pointer`}>
-              <a href="#">{item.title}</a>
+              <link href="#"><a >{item.title}</a></link>
             </li>
           </Link>
         ))}

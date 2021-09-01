@@ -46,23 +46,7 @@ export default function TravelAvailability({
                    Bolivia and Chile, who´s international borders remain closed. 
                   </p>
                   <p />
-                  {/* <h3 className="fs-20 lh-34 font-weight-bold">
-                    Risk free flexible booking offer.
-                  </h3>
-                  <p className="m-0 fs-20 lh-34">
-                    We appreciate that as the world is slowly returning to normal, that
-                    flexibility is a major factor, which is why we want to facilitate your
-                    travel plans and offer you peace of mind throughout your booking
-                    process. This is with the exception of the Inca trail, as we need to
-                    purchase permits in advance for this trek. We expect these to go on
-                    sale within the next few months, but there is no confirmed exact date
-                    as yet from the Ministry of Culture, who issue the Inca Trail permits,
-                    however, we are expecting more news very soon! We suggest you book now
-                    and leave it up to us to secure the permits when they do become
-                    available, knowing that if for any reason you cannot travel, we can
-                    always change your dates.
-                  </p> */}
-                </div>
+                 </div>
                 <div className="col-12 col-md-6 m-b-25">
                   <img
                     src="images/our-purpose-min.jpg"

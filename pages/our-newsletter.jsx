@@ -63,7 +63,7 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                     </h5>
                     <p className="card-text fs-18 lh-29">
                       While you are still here, feel free to navigate through our
-                      <Link href="/tailor-made-tour">
+                      <Link href="/tailor-made-tour" >
                         <a> Tailor Made Tours</a>
                       </Link>
                     </p>

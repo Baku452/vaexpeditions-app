@@ -23,7 +23,7 @@ function WaysToSave() {
                         className={`${styles.img} card-img-top`}
                       />
                       <div className="card-body">
-                        <a href="#">Subscribe Newsletter</a>
+                        <a>Subscribe Newsletter</a>
                       </div>
                     </div>
                   </Link>
@@ -39,7 +39,7 @@ function WaysToSave() {
                         className={`${styles.img} card-img-top`}
                       />
                       <div className="card-body">
-                        <a href="#">Friends and Family Discounts</a>
+                        <a>Friends and Family Discounts</a>
                       </div>
                     </div>
                   </Link>
@@ -55,7 +55,7 @@ function WaysToSave() {
                         className={`${styles.img} card-img-top`}
                       />
                       <div className="card-body">
-                        <a href="#">Refer a Friend</a>
+                        <a>Refer a Friend</a>
                       </div>
                     </div>
                   </Link>
@@ -71,7 +71,7 @@ function WaysToSave() {
                         className={`${styles.img} card-img-top`}
                       />
                       <div className="card-body">
-                        <a href="#">Special Promotions</a>
+                        <a>Special Promotions</a>
                       </div>
                     </div>
                   </Link>

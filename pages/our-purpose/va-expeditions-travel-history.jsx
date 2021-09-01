@@ -73,12 +73,7 @@ export default function History({ destinations, packagetypes, notifications, our
                   </p>
                 </div>
                 </div>
-            
-
-              
-
-              
-           </div>
+            </div>
           </div>
         </div>
       </section>

@@ -87,10 +87,10 @@ function CintaNegra ({price, offer, type, activity, specialist, showspecialist, 
               </div>
         </div>
         <div className="col-lg-3 col-sm-12" >
+            <link href="#contact-form-package" >
             <a
-            href="#contact-form-package"
-            className="ml-2 py-3 btn btn-primary fs-16 w-100">Booking Now
-            </a>
+            className="ml-2 py-3 btn btn-primary fs-16 w-100"> Booking Now </a>
+            </link>
             <a className="text-white fs-13 pt-3 d-block" href="tel:1-(888) 803-8004" >Call Us  1-(888) 803-8004</a>
         </div>
     </div>
