@@ -35,7 +35,7 @@ function FriendsFamily({
             “Friends and family” programme. 
             </h2>
             <div className="text-center row mt-5">
-              <div className="col-5 m-auto p-4 bg-light shadow-5 text-primary  ">
+              <div className="col-5 m-auto p-4 bg-dark text-white ">
                 <p>
                   <strong>
                     Simply call us on 0888 803 8004 to 

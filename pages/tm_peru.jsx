@@ -188,7 +188,7 @@ export default function OurPurpose({ destinations, packagetypes, notifications }
                         src="images/history-of-the-valencia-min.jpg"
                         height="247"
                         className="card-img-top"
-                        alt="Valencia Travel history"
+                        alt="Va Expeditions history"
                       />
                       <div className="card-body">
                         <div className="row align-items-start justify-content-start">

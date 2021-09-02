@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import Head from 'next/head';
@@ -28,7 +29,7 @@ function TailorMade({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Peru Travel Tips, Facts, and Information | Valencia Travel</title>
+        <title>Peru Travel Tips, Facts, and Information | Va Expeditions</title>
       </Head>
       <Banner
         description="Design your ultimate travel itinerary with our free tailor-made service!"
@@ -43,24 +44,24 @@ function TailorMade({
               <div className="row">
                 <div className="col-12">
                   <p className="fs-16 pb-5 m-0 text-justify">
-                   Authentic, real life experiences are hard to find by performing a Google search!
-                   Allow us to help you design your perfect adventure with flexibility, freedom and 
-                   unique experiences to do exactly what you are interested in! Far removed from the 
-                   well-trodden paths and large tour groups, we will take you to remote communities 
-                   and destinations in a responsible and sustainable way, for unique adventures and 
-                   the experience of a lifetime. A vacation with Va Expeditions is a personalized 
-                   experience from the moment you first contact us until you are safe and sound in
-                   the comfort of your home. Our expert travel designers will help you take maximum 
-                   advantage of your free time, always with your personal budget in mind. All you
-                   need to do is to start dreaming about your ideal destination and we will take
-                   care of the rest!
-                  <br/>
-                  <br/>
-                  Call us today or complete the contact form and one of our experts will be touch 
-                  before you know it!
+                    Authentic, real life experiences are hard to find by performing a
+                    Google search! Allow us to help you design your perfect adventure with
+                    flexibility, freedom and unique experiences to do exactly what you are
+                    interested in! Far removed from the well-trodden paths and large tour
+                    groups, we will take you to remote communities and destinations in a
+                    responsible and sustainable way, for unique adventures and the
+                    experience of a lifetime. A vacation with Va Expeditions is a
+                    personalized experience from the moment you first contact us until you
+                    are safe and sound in the comfort of your home. Our expert travel
+                    designers will help you take maximum advantage of your free time,
+                    always with your personal budget in mind. All you need to do is to
+                    start dreaming about your ideal destination and we will take care of
+                    the rest!
+                    <br />
+                    <br />
+                    Call us today or complete the contact form and one of our experts will
+                    be touch before you know it!
                   </p>
-                
-              
                 </div>
                 <div className="col-12 col-md-3 mx-auto mb-5">
                   <a

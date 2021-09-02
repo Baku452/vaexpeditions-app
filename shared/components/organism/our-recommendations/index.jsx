@@ -21,19 +21,27 @@ function OurRecommendations() {
             <div className="col-12 mx-auto">
               <div className={`${styles.contentBox} row mb-5`}>
                 <div className="col-12 col-lg-4 text-center">
-                  <Link href="/continent/latin-america?slug=latin-america">
-                    <div className={`${styles.item} position-relative `}  >
-                      <img src="images/experiences.jpg" className="img-fluid" alt="experiences" />
-                      <h4  className="m-0 fs-20 lh-20 text-white position-absolute">
-                      Experience South America
+                  <Link href="/continent/central-and-south-america">
+                    <div className={`${styles.item} position-relative `}>
+                      <img
+                        src="images/experiences.jpg"
+                        className="img-fluid"
+                        alt="experiences"
+                      />
+                      <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
+                        Experience Central % South America
                       </h4>
-                      </div>
-                   </Link>
+                    </div>
+                  </Link>
                 </div>
                 <div className="col-12 col-lg-4  text-center">
                   <Link href="/search?destination=&start=0&end=1&status=1%2C0%2C0%2C0">
                     <div className={`${styles.item} position-relative`}>
-                    <img src="images/add experiences.jpg" className="img-fluid" alt="addexperiences" />
+                      <img
+                        src="images/add experiences.jpg"
+                        className="img-fluid"
+                        alt="addexperiences"
+                      />
                       <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
                         Add experiences to your tours to enhance your travel
                       </h4>
@@ -43,7 +51,7 @@ function OurRecommendations() {
                 <div className="col-12 col-lg-4 text-center">
                   <Link href="/tailor-made-tour">
                     <div className={`${styles.item} position-relative`}>
-                    <img src="images/tm_peru.jpg" className="img-fluid" />
+                      <img src="images/tm_peru.jpg" className="img-fluid" alt="" />
                       <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
                         Design your own travel experience. We can help you.
                       </h4>
