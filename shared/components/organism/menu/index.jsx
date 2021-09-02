@@ -43,22 +43,6 @@ function MenuContent({ destinations, tailorMade }) {
                   </ul>
                 </div>
               ))}
-
-            {/* <div className="col-12 pt-5 pb-5">
-              <h5 className="black font-weight-bold mb-3">
-                Other destinations in South America
-              </h5>
-              <ul>
-                {countries &&
-                  countries.map(item => (
-                    <li key={item.name}>
-                      <Link href={`/continent/${item.slug}?slug=${item.slug}`}>
-                        <a className="black">{item.name}</a>
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
-            </div> */}
           </div>
         </div>
       </div>
