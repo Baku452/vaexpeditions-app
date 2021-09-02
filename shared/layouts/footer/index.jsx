@@ -56,7 +56,7 @@ function Footer() {
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">
-                EXPLORE VALENCIA TRAVEL
+                EXPLORE VA EXPEDITIONS
               </h6>
 
               <ul className="fs-15 list-unstyled">
@@ -150,17 +150,13 @@ function Footer() {
                   <FaLinkedin className="icon-size-m" />
                 </a>
                 {/* <a
-                  href="https://www.tripadvisor.com/UserReviewEdit-g294314-d2469804-Valencia_Travel_Day_Tours-Cusco_Cusco_Region.html"
+                  href="https://www.tripadvisor.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-3">
                   <FaTripadvisor className="icon-size-m" />
                 </a> */}
-                {/* <a
-                  href="skype:valenciatravel.cusco?call"
-                  className="d-inline-block pb-3 pr-3">
-                  <FaSkype className="icon-size-m" />
-                </a> */}
+                
                 <a
                   href="https://www.youtube.com/channel/UCvMe8o6P4jsvaKBKdfc2ffA"
                   target="_blank"

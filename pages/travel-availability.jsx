@@ -19,7 +19,7 @@ export default function TravelAvailability({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Travel Availability from January onwards - Valencia Travel Cusco </title>
+        <title>Travel Availability from January onwards - VaExpeditions </title>
       </Head>
       <section id="more">
         <div className="container text-justify">

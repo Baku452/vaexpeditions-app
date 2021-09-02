@@ -137,7 +137,7 @@ function Newsletter({ packagetypes, packagesAll }) {
           <Link href="/">
             <a className="position-relative">
               <img
-                alt="Logo Valencia Travel"
+                alt="Logo Va Expeditions"
                 className={styles.logo}
                 src="/icons/logo_horizontalWeb.svg"
               />

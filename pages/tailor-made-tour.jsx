@@ -28,7 +28,7 @@ function TailorMade({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Peru Travel Tips, Facts, and Information | Valencia Travel</title>
+        <title>Peru Travel Tips, Facts, and Information | Va Expeditions</title>
       </Head>
       <Banner
         description="Design your ultimate travel itinerary with our free tailor-made service!"
