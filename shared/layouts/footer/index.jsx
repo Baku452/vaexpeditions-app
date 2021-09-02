@@ -4,6 +4,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaPinterestSquare,
+  FaTwitter,
   FaSkype,
   FaTripadvisor,
   FaVimeoSquare,
@@ -112,28 +113,28 @@ function Footer() {
               <h6 className="text-white font-weight-bold fs-13 pb-2 "> FOLLOW US</h6>
               <div>
                 <a
-                  href="https://www.facebook.com/valenciatravelcusco/"
+                  href="https://www.facebook.com/vaexpeditions/"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-3">
                   <FaFacebook className="icon-size-m" />
                 </a>
                 <a
-                  href="https://www.instagram.com/valenciatravelcusco/"
+                  href="https://www.instagram.com/vaexpeditions/"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block  pb-3 pr-3">
                   <FaInstagram className="icon-size-m" />
                 </a>
-                <a
+                {/* <a
                   href="https://vimeo.com/user131526189"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-3">
                   <FaVimeoSquare className="icon-size-m" />
-                </a>
+                </a> */}
                 <a
-                  href="https://www.pinterest.com/Valencia100/_created/"
+                  href="https://www.pinterest.com/vaexpeditions/"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-3">
@@ -142,30 +143,37 @@ function Footer() {
               </div>
               <div>
                 <a
-                  href="https://www.linkedin.com/company/valencia-travel-cusco/"
+                  href="https://www.linkedin.com/company/vaexpeditions/"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-3">
                   <FaLinkedin className="icon-size-m" />
                 </a>
-                <a
+                {/* <a
                   href="https://www.tripadvisor.com/UserReviewEdit-g294314-d2469804-Valencia_Travel_Day_Tours-Cusco_Cusco_Region.html"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-3">
                   <FaTripadvisor className="icon-size-m" />
-                </a>
-                <a
+                </a> */}
+                {/* <a
                   href="skype:valenciatravel.cusco?call"
                   className="d-inline-block pb-3 pr-3">
                   <FaSkype className="icon-size-m" />
-                </a>
+                </a> */}
                 <a
-                  href="https://www.youtube.com/ValenciaTravelCuscoPeru"
+                  href="https://www.youtube.com/channel/UCvMe8o6P4jsvaKBKdfc2ffA"
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-3">
                   <FaYoutube className="icon-size-m" />
+                </a>
+                <a
+                  href="https://twitter.com/vaexpeditions"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block pb-3 pr-3">
+                  <FaTwitter className="icon-size-m" />
                 </a>
               </div>
             </div>

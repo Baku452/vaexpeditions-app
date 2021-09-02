@@ -32,7 +32,7 @@ export default function NewRisk({
                     <h2 className="fs-20 lh-34 font-weight-bold">
                       New Risk-Free flexible booking offer
                     </h2>
-                    <p className="m-0 fs-18 lh-34">
+                    <p className="m-0  ">
                     With all of the uncertainty around travel in a post-Coronavirus world, 
                     even the hardy travellers who are participants on Va Expeditions tours, 
                     are feeling understandably anxious and seeking assurance. It is clear 
@@ -46,45 +46,30 @@ export default function NewRisk({
                     </p>
                   </div>
                 </div>
-                <div className="row justify-content-md-center py-5">
-                  <div className="col-5 m-0 fs-13  text-center">
+                <div className="row justify-content-md-center">
+                  <div className=" col-10 text-center">
                     <div>
+                      <h3 className="fs-20 lh-34 font-weight-bold">High-Flex booking option — 40% Deposit</h3>
                       <p>
-                        <strong>HIGH-FLEX BOOKING OPTION — 40% DEPOSIT—</strong>
+                      Book any tour of your choice and change the trip dates and tour destination 1 time for Free* up to 60 days before departure.
                       </p>
+                    </div>
+                    <div>
+                      <h3 className="fs-20 lh-34 font-weight-bold">Extreme-Flex booking option —Full Deposit</h3>
                       <p>
-                        BOOK ANY TOUR OF YOUR CHOICE AND CHANGE THE TRIP DATES
-                        <br />
-                        AND TOUR DESTINATION 1 TIME FOR FREE*
-                        <br />
-                        UP TO 60 DAYS BEFORE DEPARTURE. 
-                        <br />
+                      Book any tour of your choice and change the trip dates and tour destination as many times as you like up to 31 days before departure.
                       </p>
                     </div>
                     <div>
                       <p>
-                        {' '}
-                        <strong>EXTREME-FLEX BOOKING OPTION —FULL DEPOSIT—</strong>
-                      </p>
-                      <p>
-                        BOOK ANY TOUR OF YOUR CHOICE AND CHANGE THE TRIP DATES
-                        <br />
-                        AND TOUR DESTINATION AS MANY TIMES AS YOU LIKE
-                        <br />
-                        UP TO 31 DAYS BEFORE DEPARTURE.
-                        <br />
-                      </p>
-                    </div>
-                    <div>
-                      <p>
-                        <strong>CODES:</strong>
+                        <h3 className="fs-20 lh-34 font-weight-bold" >Codes:</h3>
                       </p>
                       <p>HIGH-FLEX — 40% DEPOSIT— EXTREME-FLEX —FULL DEPOSIT—</p>
                     </div>
                   </div>
-                  <div className="col-lg-5 col-sm-12">
+                  <div className="col-10 ">
                     <h3 className="fs-20 lh-34 font-weight-bold">
-                      SEE FULL TERMS & CONDITIONS ON THE BOOKING CONDITIONS PAGE
+                    See full terms & conditions on the booking conditions page
                     </h3>
                     <p>
                     *Of course, there are some conditions applicable and you can read these in full on our 
@@ -95,10 +80,10 @@ export default function NewRisk({
                     </p>
                   </div>
                 </div>
-                <div className="row justify-content-md-center py-5">
+                <div className="row justify-content-md-center">
                   <div className="col-10 listStyle">
                     <h3 className="fs-20 lh-34 font-weight-bold">
-                      CORONAVIRUS CANCELLATION TERMS & CONDITIONS
+                    Coronavirus cancellation terms & conditions
                     </h3>
                     <ul>
                       <li>
@@ -113,7 +98,7 @@ export default function NewRisk({
                       original booking and the season rate of the new booking.
                       </li>
                     </ul>
-                    <h4 className="fs-20 lh-34 font-weight-bold">HIGH FLEX</h4>
+                    <h3 className="fs-20 lh-34 font-weight-bold">High Flex</h3>
                     <ul>
                       <li>
                       These terms apply to bookings where only the deposit has been paid and the 
@@ -149,7 +134,7 @@ export default function NewRisk({
                       that voucher. Once you have re-booked, the published tour departure price at the time of booking applies.
                       </li>
                     </ul>
-                    <h4 className="fs-20 lh-34 font-weight-bold">EXTREME FLEX</h4>
+                    <h3 className="fs-20 lh-34 font-weight-bold">Extreme Flex</h3>
                     <p>
                     If you have paid for your tour in full, either at the time of booking, or by deposit and balance
                     installments, then you will be eligible for EXTREME FLEX terms. 
@@ -187,8 +172,7 @@ export default function NewRisk({
                       Where the group size reduces due to a change, a re-price of the tour may be required.
                       </li>
                     </ul>
-
-                    <h4 className="fs-20 lh-34 font-weight-bold">CANCELLATION BY YOU.</h4>
+                    <h3 className="fs-20 lh-34 font-weight-bold">Cancellation by You</h3>
                     <p>
                     For these reasons, at the time we receive written notice that you wish to cancel your trip, 
                     you will be charged the following fees:

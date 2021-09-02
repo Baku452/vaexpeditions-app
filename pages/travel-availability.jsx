@@ -26,11 +26,12 @@ export default function TravelAvailability({
           <div className="row pt-5">
             <div className="col-10 mx-auto">
               <div className="row mb-5">
-                <div className="col-12 col-md-6 mb-3">
+                
+                <div className="col-12 col-lg-6 mb-3">
                   <h2 className="fs-20 lh-34 font-weight-bold">
                     Travel Availability from January onwards.
                   </h2>
-                  <p className="m-0 fs-20 lh-34">
+                  <p className="m-0 fs-20 lh-34 ">
                   The world is now a very different place than it was in 2020 and things 
                   continue to change on a daily basis, especially in the world of travel 
                   and tourism! Since November 2020, here in South America,the tourist 
@@ -46,14 +47,21 @@ export default function TravelAvailability({
                    Bolivia and Chile, who´s international borders remain closed. 
                   </p>
                   <p />
-                 </div>
-                <div className="col-12 col-md-6 m-b-25">
+                  </div>
+                  <div className="col-12 col-lg-6">
+
                   <img
-                    src="images/our-purpose-min.jpg"
+                    src="images/travel availability.jpg"
                     alt="Our Purpose"
-                    className="img-fluid pb-4"
-                  />
-                  <h3 className="fs-20 lh-34 font-weight-bold">Safety Protocols</h3>
+                    className="img-fluid pb-4 "
+                    />
+                    </div>
+                 <br/>
+                <div className="col-12 col-lg-6 m-b-25 order-1 order-lg-2 ">
+                
+                  <br/>
+
+                  <h3 className="fs-20 lh-34 font-weight-bold order-xl-1">Safety Protocols</h3>
                   <p className="m-0 fs-20 lh-34">
                   Here at Va Expeditions, we take our passenger’s safety and security very seriously. 
                   This is even more so now that we are dealing with reactivation of tourism after the 
@@ -66,7 +74,15 @@ export default function TravelAvailability({
                   America so we can once more, show you the best of these incredible countries, always 
                   with your safety in mind!
                   </p>
-                </div>
+                  <p />
+                  </div>
+                  <div className="col-12 col-lg-6 order-2 order-lg-1">
+                    <img
+                    src="images/safepro.jpg"
+                    alt="Our Purpose"
+                    className="img-fluid pb-4 "
+                    />
+                  </div>
               </div>
             </div>
           </div>
