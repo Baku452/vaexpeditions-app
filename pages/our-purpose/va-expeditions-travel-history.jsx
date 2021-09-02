@@ -30,7 +30,7 @@ export default function History({ destinations, packagetypes, notifications, our
             <div className="col-10 mx-auto">
             <h2 className=" font-weight-bold text-center">Va Expeditions History</h2>
               <div className="row mb-5 pt-5">
-                <div className="col-10 mb-5 col-md-6 order-1 order-md-2  m-0 fs-17 lh-34 text-fluid align-self-center">
+                <div className="col-12 mb-5 col-md-6 order-1 order-md-2  m-0 fs-17 lh-34 text-fluid align-self-center">
                  <p>
                   Va Expeditions was founded in 2009. The company came about as a dream of the Hurtado Valencia brothers to 
                   create a business venture in the world of tourism.  René, a professional guide and the actual CMO of the Company, 

@@ -29,7 +29,7 @@ export default function OurPurpose({
       <Banner
         description=""
         image="/images/portada our purpose.jpg"
-        alt="Our Purpose - Valencia Travel"
+        alt="Our Purpose - Va Expeditions"
       />
 
       <section
@@ -55,7 +55,7 @@ export default function OurPurpose({
         className="containerBox text-justify row align-items-center pb-5">
         <div className="col-12 col-md-6 order-2 order-md-1 align-self-center">
           <img
-            alt="Valencia Travel visión"
+            alt="Va visión"
             src="images/vision2.jpg"
             className="img-fluid"
           />
@@ -82,7 +82,7 @@ export default function OurPurpose({
         </div>
         <div className="col-12 col-md-6 mb-5 order-2 align-self-center">
           <img
-            alt="Valencia Travel mission"
+            alt="Va mission"
             src="images/mision2.jpg"
             className="img-fluid"
           />

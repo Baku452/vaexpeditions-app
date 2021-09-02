@@ -150,7 +150,7 @@ export default function OurPurpose({
                         People matter, and we all should have equal opportunity to develop, progress, and be rewarded and recognized at work. Organizations must ensure that their 
                         people management practices champion this fundamental principle.” </p>
                       <p><b>Goals:</b>
-                      <br />Ensure that the Valencia teams, partners and travelers are equally represented within the LGBTQ +, Indigenous and People of Color communities 
+                      <br />Ensure that the Va Expedition teams, partners and travelers are equally represented within the LGBTQ +, Indigenous and People of Color communities 
                       and we as a company will not work with companies that don’t support LGBT+, BLM, BAME, human rights, women´s rights, workers benefits. </p>
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">

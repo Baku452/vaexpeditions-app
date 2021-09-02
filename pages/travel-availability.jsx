@@ -52,7 +52,7 @@ export default function TravelAvailability({
 
                   <img
                     src="images/travel availability.jpg"
-                    alt="Our Purpose"
+                    alt="Travel Availability"
                     className="img-fluid pb-4 "
                     />
                     </div>
@@ -79,7 +79,7 @@ export default function TravelAvailability({
                   <div className="col-12 col-lg-6 order-2 order-lg-1">
                     <img
                     src="images/safepro.jpg"
-                    alt="Our Purpose"
+                    alt="Travel Availability"
                     className="img-fluid pb-4 "
                     />
                   </div>
