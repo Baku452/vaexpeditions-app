@@ -244,8 +244,9 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                     // eslint-disable-next-line max-len
                     className={`${styles.asideHeaderMobile} d-block d-lg-none pt-3 pb-3 fixed-top`}>
                     <h3 className="text-left ml-3 mb-0">Filters</h3>
-                    <link href="#">
+                    {/* <link href="#"> */}
                     <a
+                      href="#"
                       className={styles.close}
                       onClick={() => setShowFilters(false)}>
                       <Icon
@@ -254,7 +255,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                         className="icon-size-l"
                       />
                     </a>
-                    </link>
+                    {/* </link> */}
                   </div>
                   {!showFilters ? (
                     <div className={`${styles.boxaside}  m-0`}>

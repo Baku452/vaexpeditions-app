@@ -165,7 +165,7 @@ function Newsletter({ packagetypes, packagesAll }) {
             <div className="col-auto p-0">
               {/* <p className="m-0 fs-13">Subscribe to our newsletter</p> */}
               <Form
-                className="form-inline p-1"
+                className={`form-inline p-1 ${styles.listSuggestion}`}
                 // noValidate
                 // validated={validated}
                 onSubmit={handleSubmit}

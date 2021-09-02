@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 import {
   CintaNegra,
+  ContactPackage,
   Divider,
   Faqs,
   Itineraries,
@@ -23,7 +24,14 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Package({ pack, destinations, packagetypes, notifications, packagesAll }) {
+function Package({
+  pack,
+  destinations,
+  packagetypes,
+  notifications,
+  packagesAll,
+  resCities,
+}) {
   const [packagesList, setPackagesList] = useState([]);
   const [packagesOptionals, setPackagesOptionals] = useState([]);
   const [packageTypeLabel, setpackageTypeLabel] = useState('');
@@ -93,6 +101,7 @@ function Package({ pack, destinations, packagetypes, notifications, packagesAll 
         pagination={false}
       />
       <CintaNegra
+        days={pack.days}
         price={pack.price}
         offer={pack.offer}
         type={packageTypeLabel}
@@ -148,6 +157,12 @@ function Package({ pack, destinations, packagetypes, notifications, packagesAll 
               packagetypes={packagetypes}
               activities={activities}
             />
+            <ContactPackage
+              destinations={destinations}
+              packages={packages}
+              pack={pack}
+              cities={resCities}
+            />
           </div>
         </div>
       </div>
@@ -168,6 +183,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const headers = new Headers();
+  headers.append(
+    'X-CSCAPI-KEY',
+    'aXpIVG5iUDdTTTVubVoyelZiMHgxU2MxcDk0clZ0amdLQUh2dE4wMw==',
+  );
+
+  const requestOptions = {
+    method: 'GET',
+    headers: headers,
+    redirect: 'follow',
+  };
   const response = await fetch(`${PUBLIC_API}/package/${params.slug}`);
   const pack = await response.json();
 
@@ -183,8 +209,14 @@ export async function getStaticProps({ params }) {
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
+  const cities = await fetch(
+    'https://api.countrystatecity.in/v1/countries',
+    requestOptions,
+  );
+  const resCities = await cities.json();
+
   return {
-    props: { pack, destinations, packagetypes, notifications, packagesAll },
+    props: { pack, destinations, packagetypes, notifications, packagesAll, resCities },
     revalidate: 1,
   };
 }

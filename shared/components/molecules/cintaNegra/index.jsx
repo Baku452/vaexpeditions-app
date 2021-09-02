@@ -1,99 +1,117 @@
-import React from 'react'
+import React from 'react';
+import { Link as LinkScroll } from 'react-scroll';
+
+import { Days } from '@/components/index';
+
 import styles from './index.module.scss';
+
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-
-
-function CintaNegra ({price, offer, type, activity, specialist, showspecialist, packageTypeSvg, activityID}) {
-    let iconActivity="";
-    const searchIcon = (id) =>{
-        switch(id){
-            case 1:
-                iconActivity='/icons/level 4.svg';
-                return ;
-            case 2:
-                iconActivity='/icons/level 3.svg';
-                return ;
-            case 3:
-                iconActivity='/icons/level 2.svg';
-                return ;
-            case 4:
-                iconActivity='/icons/level 1.svg';
-                return ;
-            default:
-                iconActivity='/icons/level 1.svg';
-                return ;
-        }
+function CintaNegra({
+  price,
+  days,
+  offer,
+  type,
+  activity,
+  specialist,
+  packageTypeSvg,
+  activityID,
+}) {
+  let iconActivity = '';
+  const searchIcon = id => {
+    switch (id) {
+      case 1:
+        iconActivity = '/icons/activity_level/very high.png';
+        return;
+      case 2:
+        iconActivity = '/icons/activity_level/high.png';
+        return;
+      case 3:
+        iconActivity = '/icons/activity_level/moderate.png';
+        return;
+      case 4:
+        iconActivity = '/icons/activity_level/low.png';
+        return;
+      default:
+        iconActivity = '/icons/activity_level/low.png';
     }
+  };
 
-    return(
-    <div className={`${styles.cinta} row container mx-auto text-center px-3 py-4`}>
-        {price && offer ?
-        <div className="col-lg-3 col-sm-12">
-            <div className="">
-                <p className="line-through">After {price}</p>
-                <p className="font-weight-bold">{offer} per person</p>
-            </div>          
+  return (
+    <div
+      className={`${
+        price && offer ? styles.cinta : styles.cintaEstandar
+      } row mx-auto text-center px-2 px-lg-5 py-4`}>
+      {price && offer ? (
+        <div className="text-left">
+          <p className="font-weight-bold fs-22 m-0">
+            {offer} <span className="fs-16">per person</span>
+          </p>
+          {/* <p className="m-0 mb-3"></p> */}
+          <p className="line-through m-0">Before {price}</p>
         </div>
-            : null
-        }
-        <div className="col">
-            <p>Package Type</p>
-            <div className="d-flex flex-row align-items-center justify-content-center">
-                {/* <img
-                    className={`${styles.icons}`}
-                    src={PUBLIC_API+packageTypeSvg}
-                >
-                </img> */}
-                <p className="m-0">
-                    {type}
-                </p>
-            </div>
+      ) : null}
+      <div>
+        <p className="mb-4">
+          <span>Duration</span>
+        </p>
+        <Days days={days} />
+      </div>
+      <div>
+        <p>
+          <span>Package Type</span>
+        </p>
+        <div className="d-flex flex-row align-items-center justify-content-center">
+          <img
+            alt={PUBLIC_API + packageTypeSvg}
+            className={`${styles.iconSVG}`}
+            src={PUBLIC_API + packageTypeSvg}
+          />
+          <p className="m-0 ml-2">{type}</p>
         </div>
-        {
-            activityID ?
-            searchIcon(activityID) :
-            searchIcon(0)
-        }
-        <div className="col">
-            <p>Activity Level</p>
-            <div className="d-flex flex-row align-items-center justify-content-center">
-                <img
-                    className={`${styles.icons}`}
-                    src={iconActivity}
-                >
-                </img>
-                <p className="m-0">
-                    {activity}
-                </p>
-            </div>
+      </div>
+      {activityID ? searchIcon(activityID) : searchIcon(0)}
+      <div>
+        <p>
+          <span>Activity Level</span>
+        </p>
+        <div className="d-flex flex-row align-items-center justify-content-center">
+          <img alt="Activity Level" className={`${styles.icons}`} src={iconActivity} />
+          <p className="m-0 ml-2">{activity}</p>
         </div>
-        <div className={`${offer ? "col-lg-2":"col-lg-3"} col-md-12`}>
-        
-              <div className="row">
-                <div className="col-12 col-xl-6 text-center">
-                  <img
-                    src={PUBLIC_API + specialist}
-                    alt="Contact Us"
-                    className={styles.circle}
-                  />
-                </div>
-                <div className="col-12 col-xl-6 p-0 pr-2">
-                    <p className="fs-18">
-                    Travel specialist
-                    </p>
-                </div>
-    
-              </div>
+      </div>
+      {/* <div className={styles.specialist}>
+        <p className="d-block d-lg-none">
+          <span>Travel specialist</span>
+        </p>
+        <div className={`${styles.specialistMobile}`}>
+          <img
+            src={PUBLIC_API + specialist.thumbnail}
+            alt="Contact Us"
+            className={`${styles.circle} p-0`}
+          />
+          <div>
+            <p className="d-none d-lg-block">
+              <span>Travel specialist</span>
+            </p>
+            <p>{specialist.fullname}</p>
+          </div>
         </div>
-        <div className="col-lg-3 col-sm-12" >
-            <link href="#contact-form-package" >
-            <a
-            className="ml-2 py-3 btn btn-primary fs-16 w-100"> Booking Now </a>
-            </link>
-            <a className="text-white fs-13 pt-3 d-block" href="tel:1-(888) 803-8004" >Call Us  1-(888) 803-8004</a>
-        </div>
+      </div> */}
+      <div className={`d-none d-lg-block ${styles.booknow}`}>
+        <LinkScroll
+          className={`${styles.trackBook} py-1 btn btn-primary fs-24`}
+          to="contact-form-package"
+          spy
+          smooth
+          duration={500}>
+          Book Now
+        </LinkScroll>
+        <a className="text-white fs-14 pt-3 d-block" href="tel:1-(888) 803-8004">
+          Call Us 1-(888) 803-8004
+        </a>
+      </div>
     </div>
-);
+  );
 }
-export {CintaNegra};
+export { CintaNegra };

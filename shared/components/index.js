@@ -35,6 +35,8 @@ export * from './molecules/categoriesCard/index';
 export * from './molecules/bannerBlog/index';
 export * from './molecules/where-to/index';
 export * from './molecules/banner-2/index';
+export * from './molecules/contactFormB2C/index';
+export * from './molecules/contactFormB2B/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -65,3 +67,4 @@ export * from './organism/sortingItemsRegular/index';
 export * from './organism/searchBar/index';
 export * from './organism/asideBlog/index';
 export * from './organism/faqs-destinations/index';
+export * from './organism/contactPackage/index';

@@ -1,0 +1,12 @@
+@import '../../../../styles/media-queries.scss';
+.form {
+  border: 1px solid #dee2e6;
+  @media (max-width: $md) {
+    padding: 0 15px;
+    border: none;
+  }
+  img {
+    width: 220px;
+    margin: 0 auto;
+  }
+}
