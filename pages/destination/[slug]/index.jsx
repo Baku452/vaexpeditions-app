@@ -94,12 +94,10 @@ function Search({
                 </div>
               </div>
             </Tab>
-            <Tab eventKey="BestPlaces" title="The Best Places to Visit">
+            <Tab eventKey="BestPlaces" title={`${SSRDestination?.title} Itineraries`}>
               <div className="row p-4">
                 <div className="col-12">
-                  <h2 className="title2 py-4">
-                    The Best Places to Visit in {SSRDestination?.title}
-                  </h2>
+                  <h2 className="title2 py-4">Our {SSRDestination?.title} Itineraries</h2>
                   <div className="row py-4">
                     {SSRDestination.packages.length > 0 &&
                       SSRDestination.packages.map(item => (
