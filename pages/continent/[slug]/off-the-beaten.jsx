@@ -54,7 +54,7 @@ function OfftheBeaten({
   );
 }
 export async function getStaticPaths() {
-  const response = await fetch(`${PUBLIC_API}/destinations/everyone/`);
+  const response = await fetch(`${PUBLIC_API}/countries/`);
   const countriesResponse = await response.json();
 
   const paths = countriesResponse.map(item => ({
