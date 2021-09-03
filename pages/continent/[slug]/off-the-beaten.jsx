@@ -33,7 +33,8 @@ function OfftheBeaten({
         <div className="col-12 p-4">
           <h1 className="text-center">Off the Beaten Track in {country.name}</h1>
         </div>
-        {country.destinations.length > 0 &&
+        {country.destinations.length &&
+          country.destinations > 0 &&
           country.destinations.map(item => (
             <div
               key={item?.id.toString()}
