@@ -6,15 +6,16 @@ import styles from './index.module.scss';
 function ListCategories({ items }) {
   return (
     <>
-      <ul>
+      <ul className="list-unstyled">
         {items.map(item => (
           <Link
             // className="cursor-pointer"
             key={item.title}
             href={`/blog/category/${item.title.toLowerCase().replace(' ', '-')}`}>
-            <li key={item.id} className={`${styles.boxCategory} cursor-pointer`}>
-              <link href="#"><a >{item.title}</a></link>
-            </li>
+            <a className={`${styles.boxCategory} cursor-pointer`}>
+              <li key={item.id} />
+              {item.title}{' '}
+            </a>
           </Link>
         ))}
       </ul>

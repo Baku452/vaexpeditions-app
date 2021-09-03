@@ -244,8 +244,9 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                     // eslint-disable-next-line max-len
                     className={`${styles.asideHeaderMobile} d-block d-lg-none pt-3 pb-3 fixed-top`}>
                     <h3 className="text-left ml-3 mb-0">Filters</h3>
-                    <link href="#">
+                    {/* <link href="#"> */}
                     <a
+                      href="#"
                       className={styles.close}
                       onClick={() => setShowFilters(false)}>
                       <Icon
@@ -254,7 +255,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                         className="icon-size-l"
                       />
                     </a>
-                    </link>
+                    {/* </link> */}
                   </div>
                   {!showFilters ? (
                     <div className={`${styles.boxaside}  m-0`}>
@@ -284,38 +285,38 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                       ) : null}
                     </div>
                   )}
-                  <Collapse open={1}>
-                    <CollapseContent index={0} title="Destinations">
-                      {destinations.map(
-                        country =>
-                          country.destinations.filter(item => item.active).length > 0 && (
-                            <Collapse open={1}>
-                              <CollapseContent index={0} title={country.name}>
-                                {country.destinations.map(
-                                  destination =>
-                                    destination.active && (
-                                      <Form.Check
-                                        key={destination.id}
-                                        checked={setActionChecked(
-                                          destination.id,
-                                          checkedDestination,
-                                        )}
-                                        type="checkbox"
-                                        onChange={event =>
-                                          actionFiltersDestinations(event, destination.id)
-                                        }
-                                        name={destination.slug}
-                                        id={destination.id}
-                                        label={`${destination.title}`}
-                                      />
-                                    ),
-                                )}
-                              </CollapseContent>
-                            </Collapse>
-                          ),
-                      )}
-                    </CollapseContent>
-                  </Collapse>
+                  {/* <Collapse open={1}>
+                    <CollapseContent index={0} title="Destinations"> */}
+                  {destinations.map(
+                    country =>
+                      country.destinations.filter(item => item.active).length > 0 && (
+                        <Collapse open={1}>
+                          <CollapseContent index={0} title={country.name}>
+                            {country.destinations.map(
+                              destination =>
+                                destination.active && (
+                                  <Form.Check
+                                    key={destination.id}
+                                    checked={setActionChecked(
+                                      destination.id,
+                                      checkedDestination,
+                                    )}
+                                    type="checkbox"
+                                    onChange={event =>
+                                      actionFiltersDestinations(event, destination.id)
+                                    }
+                                    name={destination.slug}
+                                    id={destination.id}
+                                    label={`${destination.title}`}
+                                  />
+                                ),
+                            )}
+                          </CollapseContent>
+                        </Collapse>
+                      ),
+                  )}
+                  {/* </CollapseContent>
+                  </Collapse> */}
 
                   <Collapse open={1}>
                     <CollapseContent index={0} title="Duration (Days)">
@@ -377,37 +378,6 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                           id={`activity${item.id}`}
                           label={item.label}
                         />
-                      ))}
-                    </CollapseContent>
-                  </Collapse>
-
-                  <Collapse open={1}>
-                    <CollapseContent index={0} title="Month of Travel">
-                      {years.map((year, yearIndex) => (
-                        <Collapse open={1} key={year.id}>
-                          <CollapseContent index={0} title={year.name}>
-                            {year.months.map((month, monthIndex) => (
-                              <Form.Check
-                                disabled={month.disabled}
-                                key={year.id + month.id}
-                                checked={month.checked}
-                                type="checkbox"
-                                className={styles.month}
-                                onChange={event =>
-                                  actionFiltersMonths(
-                                    event,
-                                    month.id,
-                                    yearIndex,
-                                    monthIndex,
-                                  )
-                                }
-                                name={year.id + month.id}
-                                id={year.id + month.id}
-                                label={month.id.substring(0, 3)}
-                              />
-                            ))}
-                          </CollapseContent>
-                        </Collapse>
                       ))}
                     </CollapseContent>
                   </Collapse>

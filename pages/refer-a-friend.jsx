@@ -28,17 +28,17 @@ function FriendsFamily({
         <div className="row pt-5 pb-4 mb-3">
           <div className="col-12">
             <h1 className="font-weight-semi-bold text-center">
-               Va Expeditions Refer a friend Programme. 
+              Va Expeditions Refer a friend Programme.
             </h1>
             <div className="row">
               <div className="fs-16 lh-29 p-3 col-10 m-auto">
-               <p>
-                The Va expeditions refer a friend programme is especially for those who have 
-                already travelled with us. After you have enjoyed your trip in Central or 
-                South America, the benefits continue to arrive! If you want to share with 
-                your friends or acquaintances what an amazing time you had on a Va 
-                Expeditions tour or refer someone to us, you can both benefit from 
-                this amazing offer!
+                <p>
+                  The Va expeditions refer a friend programme is especially for those who
+                  have already travelled with us. After you have enjoyed your trip in
+                  Central or South America, the benefits continue to arrive! If you want
+                  to share with your friends or acquaintances what an amazing time you had
+                  on a Va Expeditions tour or refer someone to us, you can both benefit
+                  from this amazing offer!
                 </p>
               </div>
             </div>
@@ -49,18 +49,17 @@ function FriendsFamily({
                   <ul>
                     <li>Give your friend your Account Number and name.</li>
                     <li>
-                    When they call, make sure they give both your name and your Va 
-                    Expeditions account number to their travel specialist or enter it 
-                    online
+                      When they call, make sure they give both your name and your Va
+                      Expeditions account number to their travel specialist or enter it
+                      online
                     </li>
                     <li>
-                    Your friend (the new Va Expeditions passenger) will receive a
-                     $100 (USD) credit off their booking immediately; only on tours and 
-                     treks.
+                      Your friend (the new Va Expeditions passenger) will receive a $100
+                      (USD) credit off their booking immediately; only on tours and treks.
                     </li>
                     <li>
-                    When you book a new reservation with us, we will deduct $100 (USD) 
-                    when you book your next trip with Va Expeditions!
+                      When you book a new reservation with us, we will deduct $100 (USD)
+                      when you book your next trip with Va Expeditions!
                     </li>
                   </ul>
                 </p>
@@ -72,23 +71,22 @@ function FriendsFamily({
                 <p className="listStyle">
                   <ul>
                     <li>
-                    Must be a past customer who has completed a travel itinerary, with Va Expeditions, to refer a friend.
+                      Must be a past customer who has completed a travel itinerary, with
+                      Va Expeditions, to refer a friend.
+                    </li>
+                    <li>Credit may not be applied towards an existing reservation.</li>
+                    <li>
+                      Credit may not be combined with special offers on "The Deal" or any
+                      promotional code-based discounts
                     </li>
                     <li>
-                      Credit may not be applied towards an existing reservation.
-                    </li>
-                    <li>
-                    Credit may not be combined with special offers 
-                    on "The Deal" or any promotional code-based discounts
-                    </li>
-                    <li>
-                    If your booking is ineligible for referral credits, 
-                    you will be offered a credit towards your next tour with us.
+                      If your booking is ineligible for referral credits, you will be
+                      offered a credit towards your next tour with us.
                     </li>
                     <li>Only one credit per room.</li>
                     <li>
-                    The new travelling passenger must 
-                    be booking his/her first reservation with Va Expeditions.
+                      The new travelling passenger must be booking his/her first
+                      reservation with Va Expeditions.
                     </li>
                     <li>
                       As the referrer, you can accrue multiple credits but can only apply
@@ -109,7 +107,7 @@ function FriendsFamily({
                   </ul>
                 </p>
               </div>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
