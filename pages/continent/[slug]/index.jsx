@@ -2,10 +2,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
 
-import { DestinationItem, PackageTypeItem, Slide, Weather } from '@/components/index';
+import { DestinationItem, Slide } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -19,15 +17,6 @@ function Search({
   notifications,
   packagesAll,
 }) {
-  const images = [
-    {
-      id: SSRCountry.id,
-      alt: SSRCountry.name,
-      name: SSRCountry.name,
-      image: SSRCountry.original,
-    },
-  ];
-
   const router = useRouter();
 
   useEffect(() => {

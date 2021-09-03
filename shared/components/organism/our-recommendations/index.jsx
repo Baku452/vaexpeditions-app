@@ -34,18 +34,20 @@ function OurRecommendations() {
                     </div>
                   </Link>
                 </div>
-                <div className="col-12 col-lg-4  text-center">
-                  <Link href="/search?destination=&start=0&end=1&status=1%2C0%2C0%2C0">
-                    <div className={`${styles.item} position-relative`}>
-                      <img
-                        src="images/add experiences.jpg"
-                        className="img-fluid"
-                        alt="addexperiences"
-                      />
-                      <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
-                        Add experiences to your tours to enhance your travel
-                      </h4>
-                    </div>
+                <div className="col-12 col-lg-4 text-center">
+                  <Link href="/continent/latin-america/off-the-beaten">
+                    <a>
+                      <div className={`${styles.item} position-relative`}>
+                        <img
+                          src="images/add experiences.jpg"
+                          className="img-fluid"
+                          alt="addexperiences"
+                        />
+                        <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
+                          Add experiences to your tours to enhance your travel
+                        </h4>
+                      </div>
+                    </a>
                   </Link>
                 </div>
                 <div className="col-12 col-lg-4 text-center">
