@@ -43,7 +43,7 @@ function OfftheBeaten({
                 title={item.title}
                 summary={item.summary}
                 slug={{
-                  pathname: `/destination/${item.slug}`,
+                  pathname: `/package/${item.slug}`,
                 }}
                 thumbnail={PUBLIC_API + item.thumbnail}
               />
