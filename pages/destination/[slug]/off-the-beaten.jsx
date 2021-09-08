@@ -6,7 +6,7 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function OfftheBeaten({
+function OfftheBeatenDest({
   destinations,
   packagetypes,
   notifications,
@@ -43,7 +43,7 @@ function OfftheBeaten({
                 title={item.title}
                 summary={item.summary}
                 slug={{
-                  pathname: `/destination/${item.slug}`,
+                  pathname: `/package/${item.slug}`,
                 }}
                 thumbnail={PUBLIC_API + item.thumbnail}
               />
@@ -98,4 +98,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default OfftheBeaten;
+export default OfftheBeatenDest;

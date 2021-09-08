@@ -35,7 +35,7 @@ function OurRecommendations() {
                   </Link>
                 </div>
                 <div className="col-12 col-lg-4 text-center">
-                  <Link href="/continent/latin-america/off-the-beaten">
+                  <Link href="/continent/central-and-south-america/off-the-beaten">
                     <a>
                       <div className={`${styles.item} position-relative`}>
                         <img

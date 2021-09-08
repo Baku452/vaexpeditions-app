@@ -34,6 +34,7 @@ function OfftheBeaten({
           <h1 className="text-center">Off the Beaten Track in {country.name}</h1>
         </div>
         {country.destinations.length > 0 &&
+          country.destinations &&
           country.destinations.map(item => (
             <div
               key={item?.id.toString()}
@@ -53,7 +54,7 @@ function OfftheBeaten({
   );
 }
 export async function getStaticPaths() {
-  const response = await fetch(`${PUBLIC_API}/destinations/everyone/`);
+  const response = await fetch(`${PUBLIC_API}/countries/`);
   const countriesResponse = await response.json();
 
   const paths = countriesResponse.map(item => ({
