@@ -51,13 +51,13 @@ export default function OurPurpose({
                   </p>
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-2">
-                  <img src="images/our-purpose/our-core-values/we-believe-in-our-people.jpg" className="img-fluid" />
+                  <img src="/images/our-purpose/our-core-values/we-believe-in-our-people.jpg" className="img-fluid" />
                 </div>
               </div>
 
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
-                  <img src="images/our-purpose/our-core-values/we-promote-positive-change.jpg" className="img-fluid" />
+                  <img src="/images/our-purpose/our-core-values/we-promote-positive-change.jpg" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-1 order-md-2 align-self-center ">
                   <h2 className="title">We promote positive change.  </h2>
@@ -79,13 +79,13 @@ export default function OurPurpose({
                    </p>
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-2">
-                  <img src="images/our-purpose/our-core-values/we-are-connected-to-the-world.jpg" className="img-fluid" />
+                  <img src="/images/our-purpose/our-core-values/we-are-connected-to-the-world.jpg" className="img-fluid" />
                 </div>
               </div>
 
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
-                  <img src="images/our-purpose/our-core-values/we-take-care-of-our-planet.jpg" className="img-fluid" />
+                  <img src="/images/our-purpose/our-core-values/we-take-care-of-our-planet.jpg" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-1 order-md-2 align-self-center ">
                   <h2 className="title">We take care of our environment.</h2>

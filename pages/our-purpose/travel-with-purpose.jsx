@@ -97,7 +97,7 @@ export default function OurPurpose({
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/fair-wages.jpg"
+                        src="/images/our-purpose/travel-with-purpose/fair-wages.jpg"
                         className="d-block w-100 fit"
                         alt="Fair wages"
                       />
@@ -155,7 +155,7 @@ export default function OurPurpose({
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/gender-equality.jpg"
+                        src="/images/our-purpose/travel-with-purpose/gender-equality.jpg"
                         className="d-block w-100 fit"
                         alt="Gender equality & diversity and inclusion."
                       />
@@ -213,7 +213,7 @@ export default function OurPurpose({
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/animal-protection.jpg"
+                        src="/images/our-purpose/travel-with-purpose/animal-protection.jpg"
                         className="d-block w-100 fit"
                         alt="Animal protection"
                       />
@@ -273,7 +273,7 @@ export default function OurPurpose({
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/climate-change.jpg"
+                        src="/images/our-purpose/travel-with-purpose/climate-change.jpg"
                         className="d-block w-100 fit"
                         alt="Climate change."
                       />
@@ -335,7 +335,7 @@ export default function OurPurpose({
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/cultura-preservation.jpg"
+                        src="/images/our-purpose/travel-with-purpose/cultura-preservation.jpg"
                         className="d-block w-100 fit"
                         alt="Cultural preservation."
                       />
@@ -394,7 +394,7 @@ export default function OurPurpose({
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/empowering.jpg"
+                        src="/images/our-purpose/travel-with-purpose/empowering.jpg"
                         className="d-block w-100 fit"
                         alt="Empowering local communities."
                       />
@@ -441,7 +441,7 @@ export default function OurPurpose({
                     </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/community-filantrophy.jpg"
+                        src="/images/our-purpose/travel-with-purpose/community-filantrophy.jpg"
                         className="d-block w-100 fit"
                         alt="Community philanthropy."
                       />
@@ -485,7 +485,7 @@ export default function OurPurpose({
                    </div>
                     <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
                       <img
-                        src="images/our-purpose/travel-with-purpose/inclusive-travel.jpg"
+                        src="/images/our-purpose/travel-with-purpose/inclusive-travel.jpg"
                         className="d-block w-100 fit"
                         alt="Inclusive travel."
                       />

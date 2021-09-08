@@ -48,6 +48,7 @@ function CollapseContent({ index, title, children }) {
     return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
   }
 
+
   return (
     <>
       <Card.Header className={styles.header}>
@@ -63,4 +64,23 @@ function CollapseContent({ index, title, children }) {
   );
 }
 
-export { ContextAwareToggle, Collapse, CollapseContent };
+function CollapseContent2({ index, title, children }) {
+  
+
+
+  return (
+    <>
+      <Card.Header className={styles.header}>
+        <ContextAwareToggle eventKey={index + 1} className={'#ffffff'}>
+          <h2 className="fs-16 m-0 p-0">{title}</h2>
+        </ContextAwareToggle>
+      </Card.Header>
+
+      <Accordion.Collapse eventKey={index + 1}>
+        <Card.Body style={{ background: '#ffffff' }}>{children}</Card.Body>
+      </Accordion.Collapse>
+    </>
+  );
+}
+
+export { ContextAwareToggle, Collapse, CollapseContent, CollapseContent2};
