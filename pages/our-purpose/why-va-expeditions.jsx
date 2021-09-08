@@ -51,12 +51,12 @@ export default function OurPurpose({
                   </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/expand-your-horizons.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/expand-your-horizons.jpg" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/reconnect-with-the-planet.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/reconnect-with-the-planet.jpg" alt="" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 mb-3 align-self-center">
                   <h2 className="title">Reconnect with the planet.
@@ -78,12 +78,12 @@ export default function OurPurpose({
                     </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/local-experience.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/local-experience.jpg" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/attention-24-7.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/attention-24-7.jpg" alt="" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">24/7 service </h2>
@@ -104,12 +104,12 @@ export default function OurPurpose({
                     </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/guaranteed-departures.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/guaranteed-departures.jpg" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/guarantee-of-best-quality.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/guarantee-of-best-quality.jpg" alt="" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 mb-3 align-self-center ">
                   <h2 className="title">Best Quality Guarantee.</h2>
@@ -129,12 +129,12 @@ export default function OurPurpose({
                     </p>
                 </div>
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/we-are-worldwide-connected.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/we-are-worldwide-connected.jpg" alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="row mb-5">
                 <div className="col-12 col-md-6 m-b-25">
-                  <img src="images/our-purpose/why-valencia/responsible-travel.jpg" alt="" className="img-fluid" />
+                  <img src="/images/our-purpose/why-valencia/responsible-travel.jpg" alt="" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 mb-3 align-self-center">
                   <h2 className="title">Responsible travel.</h2>
