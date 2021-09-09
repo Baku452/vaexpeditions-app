@@ -63,8 +63,8 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                     </h5>
                     <p className="card-text fs-18 lh-29">
                       While you are still here, feel free to navigate through our
-                      <Link href="/tailor-made-tour" >
-                        <a> Tailor Made Tours</a>
+                      <Link href="/tailor-made-tour">
+                        <a> Tailor-Made Tours</a>
                       </Link>
                     </p>
                   </div>
@@ -72,14 +72,16 @@ function Newsletter({ destinations, packagetypes, notifications }) {
               ) : (
                 <div className="card border">
                   <div className="col-12 pt-5 mt-3 text-left newsletter">
-                    <h2>View Central and South America from a totally different perspective. </h2>
+                    <h2>
+                      View Central and South America from a totally different perspective.
+                    </h2>
                     <p>
-                    Unique destinations, travel advice, inspirational travel stories, mindful 
-                    travel tips, helpful information and advice from our experts and clients 
-                    delivered straight to your inbox!
+                      Unique destinations, travel advice, inspirational travel stories,
+                      mindful travel tips, helpful information and advice from our experts
+                      and clients delivered straight to your inbox!
                     </p>
                     <p className="card-text fs-20 lh-29 mb-4">
-                    Subscribe to our newsletter by completing the following information:
+                      Subscribe to our newsletter by completing the following information:
                     </p>
                   </div>
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
