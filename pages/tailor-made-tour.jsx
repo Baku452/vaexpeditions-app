@@ -32,7 +32,7 @@ function TailorMade({
         <title>Peru Travel Tips, Facts, and Information | Va Expeditions</title>
       </Head>
       <Banner
-        description="Design your ultimate travel itinerary with our free tailor-made service!"
+        description="Design your ultimate travel experience with our free tailor-made service!"
         image="/images/tailor-made.jpg"
         alt="weq"
       />
