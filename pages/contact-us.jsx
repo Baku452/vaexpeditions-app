@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -6,7 +7,7 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function ContactUs({ destinations, packagetypes, packages, notifications }) {
+function ContactUs({ destinations, packagetypes, packages, notifications, packagesAll }) {
   const router = useRouter();
   const [pack, setPack] = useState('');
 
@@ -15,8 +16,19 @@ function ContactUs({ destinations, packagetypes, packages, notifications }) {
   }, [router]);
 
   return (
-    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
+    <Base
+      destinations={destinations}
+      packagetypes={packagetypes}
+      notifications={notifications}
+      packagesAll={packagesAll}>
       <ContactForm destinations={destinations} packages={packages} pack={pack} />
+      <Head>
+        <title>Va Expeditions | Contact Us</title>
+        <meta
+          name="Description"
+          content="Contact Us to Explore Multidestinations with VAExpeditions"
+        />
+      </Head>
     </Base>
   );
 }
@@ -31,6 +43,8 @@ export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
+  const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
+  const packagesAll = await packagesRes.json();
 
   return {
     props: {
@@ -38,6 +52,7 @@ export async function getStaticProps() {
       packagetypes,
       packages,
       notifications,
+      packagesAll,
     },
     revalidate: 1,
   };
