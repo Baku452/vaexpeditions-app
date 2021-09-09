@@ -29,7 +29,7 @@ function OurRecommendations() {
                         alt="experiences"
                       />
                       <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
-                        Experience Central % South America
+                        Experience Central and South America
                       </h4>
                     </div>
                   </Link>

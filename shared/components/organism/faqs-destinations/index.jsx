@@ -41,7 +41,7 @@ function FaqsDestinations({ faqs }) {
      <Card> 
      <Accordion.Toggle as={Card.Header} eventKey="1" >
         <div className={`${styles.pre} `}>
-          <h2>ON-TRAVEL</h2>
+          <h2>DURING YOUR TRIP</h2>
         </div>
         </Accordion.Toggle> 
         <Card.Body>

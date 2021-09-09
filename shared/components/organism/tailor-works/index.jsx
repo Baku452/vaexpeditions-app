@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 function TailorWork({}) {
   const items = [
     {
-      label: 'Design your own itinerary',
+      label: 'Design your own experience',
       icon: '/icons/tm1.svg ',
     },
     {
