@@ -1,23 +1,26 @@
 /* eslint-disable react/no-danger */
+import AccordionCollapse from 'node_modules/react-bootstrap/esm/AccordionCollapse';
 import React from 'react';
-import {Accordion,Card} from 'react-bootstrap';
+import {Accordion,Card, Button} from 'react-bootstrap';
 import { Collapse, CollapseContent } from '../../atoms/acoordion/index';
 import { CollapseContent2 } from '../../atoms/acoordion/index';
-import { Title } from '../../atoms/title/index';
 import styles from './index.module.scss';
 
 function FaqsDestinations({ faqs }) {
   return (
     <>
 
-<Accordion defaultActiveKey="0" flush>
-      
-    <Card> 
-      <Accordion.Toggle  as={Card.Header} eventKey="0" >
-        <div className={`${styles.pre}`}>
-          <h2>PRE-TRAVEL</h2>
+<Accordion key="0" defaultActiveKey="0"  >
+  
+  
+      <Accordion.Toggle  variant="" eventKey="0" className="w-100 text-center border-0" >
+      <Card.Header>
+         <div className={`${styles.pre} `}>
+          <h2 >PRE-TRAVEL</h2>
         </div>
+      </Card.Header>
       </Accordion.Toggle> 
+      <AccordionCollapse eventKey="0">
         <Card.Body>
         <Collapse eventKey="0" open={0}>
           {faqs
@@ -35,17 +38,20 @@ function FaqsDestinations({ faqs }) {
           ))}
         </Collapse>  
       </Card.Body>
-    </Card>  
+      </AccordionCollapse>
       
 
      <Card> 
-     <Accordion.Toggle as={Card.Header} eventKey="1" >
-        <div className={`${styles.pre} `}>
-          <h2>DURING YOUR TRIP</h2>
+   <Accordion.Toggle  variant="" eventKey="1" className="w-100 text-center border-0" >
+      <Card.Header>
+         <div className={`${styles.pre} `}>
+          <h2 >DURING YOUR TRIP</h2>
         </div>
-        </Accordion.Toggle> 
-        <Card.Body>
-        <Collapse eventKey="1" open={0}>
+      </Card.Header>
+      </Accordion.Toggle> 
+      <AccordionCollapse eventKey="1">
+      <Card.Body>
+        <Collapse eventKey="1" open={1}>
           {faqs
             .filter(faq => faq.onTravel)
             .map(item => (
@@ -59,18 +65,22 @@ function FaqsDestinations({ faqs }) {
                 />
               </CollapseContent2>
             ))}
-      </Collapse>
-      </Card.Body>          
+      </Collapse>         
+      </Card.Body>
+      </AccordionCollapse>
       </Card>
 
-      
-      <Accordion.Toggle as={Card.Header} eventKey="2" > 
-       <div className={`${styles.pre}`}>
-          <h2>POST-TRAVEL</h2>
+      <Card> 
+      <Accordion.Toggle  eventKey="2" className="w-100 text-center border-0" >
+      <Card.Header>
+         <div className={`${styles.pre} `}>
+          <h2 >POST-TRAVEL</h2>
         </div>
-        </Accordion.Toggle> 
+      </Card.Header>
+      </Accordion.Toggle>  
+        <AccordionCollapse eventKey="2">
         <Card.Body>       
-        <Collapse eventKey="2" open={0} >
+        <Collapse eventKey="2" open={2} >
          {faqs
             .filter(faq => faq.postTravel)
             .map(item => (
@@ -84,10 +94,16 @@ function FaqsDestinations({ faqs }) {
                 />
               </CollapseContent2>
             ))}
-        </Collapse>
-        </Card.Body>  
+        </Collapse>         
+      </Card.Body>
+      </AccordionCollapse>
+      </Card>
     
+
     </Accordion>
+
+   
+
     </>
   );
 }
