@@ -15,7 +15,9 @@ function MenuItem({ item, tailorMade }) {
           href={{
             pathname: `/destination/${item.slug}`,
           }}>
-          <a className={styles.route}>{item.title}</a>
+          <a className={styles.route}>
+            {item.title} - {item.sub_title}
+          </a>
         </Link>
       </li>
     )
@@ -33,7 +35,7 @@ function MenuContent({ destinations, tailorMade }) {
                 <div key={destination.name} className="col-12">
                   <h5 className="font-weight-bold mb-3">
                     <Link href={`/continent/${destination.slug}`}>
-                      <a className="black">{destination.name} </a>
+                      <a className="black">{destination.name}</a>
                     </Link>
                   </h5>
                   <ul className={styles.items}>

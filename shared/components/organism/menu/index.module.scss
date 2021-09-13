@@ -56,7 +56,8 @@
   padding: 0;
   list-style-type: none;
   flex-wrap: wrap;
-  display: flex;
+  columns: 4;
+  // display: flex;
   li {
     flex: 1 0 22%;
     // flex: 1 0 25%;

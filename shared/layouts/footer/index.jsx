@@ -4,9 +4,9 @@ import {
   FaInstagram,
   FaLinkedin,
   FaPinterestSquare,
-  FaTwitter,
   FaSkype,
   FaTripadvisor,
+  FaTwitter,
   FaVimeoSquare,
   FaYoutube,
 } from 'react-icons/fa';
@@ -24,7 +24,7 @@ function Footer() {
               <ul className="fs-15 list-unstyled">
                 <li>
                   <Link href="/destination/brasil">
-                    <a >Brasil</a>
+                    <a>Brasil</a>
                   </Link>
                 </li>
                 <li>
@@ -67,7 +67,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link href="/tailor-made-tour">
-                    <a>Tailor Made Tours</a>
+                    <a>Tailor-Made Tours</a>
                   </Link>
                 </li>
                 <li>
@@ -156,7 +156,7 @@ function Footer() {
                   className="d-inline-block pb-3 pr-3">
                   <FaTripadvisor className="icon-size-m" />
                 </a> */}
-                
+
                 <a
                   href="https://www.youtube.com/channel/UCvMe8o6P4jsvaKBKdfc2ffA"
                   target="_blank"
@@ -180,17 +180,11 @@ function Footer() {
               <p className="m-0 fs-13 text-white">
                 2021 Va Expeditions, Inc. All Rights Reserved:
                 <Link href="/terms-conditions">
-                  <a className="skyblue">
-                  {' '}
-                    Terms & Conditions
-                  </a>
+                  <a className="skyblue"> Terms & Conditions</a>
                 </Link>
                 -
                 <Link href="/contact-us">
-                  <a className="skyblue">
-                    {' '}
-                    Contact us
-                  </a>
+                  <a className="skyblue"> Contact us</a>
                 </Link>
               </p>
             </div>

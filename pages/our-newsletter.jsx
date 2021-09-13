@@ -64,7 +64,7 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                     <p className="card-text fs-18 lh-29">
                       While you are still here, feel free to navigate through our
                       <Link href="/tailor-made-tour">
-                        <a> Tailor Made Tours</a>
+                        <a> Tailor-Made Tours</a>
                       </Link>
                     </p>
                   </div>
@@ -73,7 +73,7 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                 <div className="card border">
                   <div className="col-12 pt-5 mt-3 text-left newsletter">
                     <h2>
-                      View Central and South America from a totally different perspective.{' '}
+                      View Central and South America from a totally different perspective.
                     </h2>
                     <p>
                       Unique destinations, travel advice, inspirational travel stories,

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const VALENCIA_API = process.env.NEXT_PUBLIC_API;
-const KEYCITIES = process.env.CITIES_API;
 
 const services = axios.create({
   baseURL: `${VALENCIA_API}`,
