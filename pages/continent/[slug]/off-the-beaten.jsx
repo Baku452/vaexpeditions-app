@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 
-import { Banner2, DestinationItem } from '@/components/index';
+import { Banner2, DestinationItem, Divider } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -29,10 +29,24 @@ function OfftheBeaten({
         image="/images/off-the-beaten.jpg"
         alt={country.title}
       />
-      <section className="row containerBox py-4">
+      <section className="row container mx-auto py-4">
         <div className="col-12 p-4">
           <h1 className="text-center">Off the Beaten Track in {country.name}</h1>
         </div>
+        <div className="col-12 p-3">
+          <p>
+            If you are looking for something a little bit different to the regular tours
+            and want to have unique and different experiences on your vacation, our “off
+            the beaten track” programmes may be just be what you are looking for.
+            Experience the lesser -visited destinations in each country and make your
+            holiday a unique experience with the safeguard that we are with you, every
+            step of the way. Whether you choose Mexico or Peru, we have the perfect
+            adventure for you!
+          </p>
+        </div>
+
+        <Divider />
+
         {country.destinations.length > 0 &&
           country.destinations &&
           country.destinations.map(item => (
