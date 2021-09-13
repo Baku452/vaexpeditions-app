@@ -6,45 +6,45 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function MenuItem({ item, tailorMade }) {
+function MenuItem({ title, subtitle, id, slug }) {
   return (
-    item.tailor_made === tailorMade &&
-    item.active && (
-      <li key={item.slug} className="pb-3 pr-5">
-        <Link
-          href={{
-            pathname: `/destination/${item.slug}`,
-          }}>
-          <a className={styles.route}>
-            {item.title} - {item.sub_title}
-          </a>
-        </Link>
-      </li>
-    )
+    <li key={id} className="pb-3 pr-5">
+      <Link
+        href={{
+          pathname: `/destination/${slug}`,
+        }}>
+        <a className={styles.route}>
+          {title} - {subtitle}
+        </a>
+      </Link>
+    </li>
   );
 }
 
-function MenuContent({ destinations, tailorMade }) {
+function MenuContent({ countries, continent }) {
   return (
     <div className={styles.menu}>
       <div className={styles.content}>
         <div className="container d-block">
           <div className="row">
-            {destinations &&
-              destinations.map(destination => (
-                <div key={destination.name} className="col-12">
-                  <h5 className="font-weight-bold mb-3">
-                    <Link href={`/continent/${destination.slug}`}>
-                      <a className="black">{destination.name}</a>
-                    </Link>
-                  </h5>
-                  <ul className={styles.items}>
-                    {destination.destinations.map(item => (
-                      <MenuItem item={item} key={item.id} tailorMade={tailorMade} />
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div key="1" className="col-12">
+              {/* <h5 className="font-weight-bold mb-3">
+                  <Link href={`/continent/${destination.slug}`}>
+                    <a className="black">{destination.name}</a>
+                  </Link>
+                </h5> */}
+              <ul className={styles.items}>
+                {countries.map(item => (
+                  <MenuItem
+                    key={item.id}
+                    title={item.title}
+                    subtitle={item.sub_title}
+                    id={item.id}
+                    slug={item.slug}
+                  />
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
