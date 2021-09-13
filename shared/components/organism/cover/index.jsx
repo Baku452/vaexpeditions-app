@@ -70,20 +70,12 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                     size="lg"
                     onChange={event => handleChangeDestination(event)}>
                     <option>Destination</option>
-                    {
-                      destinations.length > 0 &&
-                        destinations.map(
-                          item =>
-                            item.active && (
-                              <option value={item.id} key={item.id}>
-                                {item.title} - {item.active && `${item.sub_title}`}
-                              </option>
-                            ),
-                        )
-                      // destinations[0].destinations.map(item => (
-                      // )
-                      // )
-                    }
+                    {destinations.length > 0 &&
+                      destinations.map(item => (
+                        <option value={item.id} key={item.id}>
+                          {item.title} - {item.sub_title}
+                        </option>
+                      ))}
                   </Form.Control>
                 </div>
                 <div className="col-11 col-lg-4 mx-auto p-0">

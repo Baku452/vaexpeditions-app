@@ -37,7 +37,7 @@ function Index({
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
       <Cover
-        destinations={destinations}
+        destinations={destinations[0].destinations}
         banners={banners}
         packagetypes={packagetypes}
         interests={interests}
