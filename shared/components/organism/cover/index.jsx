@@ -35,9 +35,6 @@ function Cover({ destinations, banners, packagetypes, interests }) {
   function handleChangeInterest(event) {
     setInterestsType(event.target.value);
   }
-  const scrollButton = ref => {
-    window.scrollIntoView({ top: 1500, behavior: 'smooth' });
-  };
   function handleSearch() {
     router.push({
       pathname: '/search',
@@ -75,15 +72,13 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                     <option>Destination</option>
                     {
                       destinations.length > 0 &&
-                        destinations.map(country =>
-                          country.destinations.map(
-                            item =>
-                              item.active && (
-                                <option value={item.id} key={item.id}>
-                                  {item.title} - {item.active && `${item.sub_title}`}
-                                </option>
-                              ),
-                          ),
+                        destinations.map(
+                          item =>
+                            item.active && (
+                              <option value={item.id} key={item.id}>
+                                {item.title} - {item.active && `${item.sub_title}`}
+                              </option>
+                            ),
                         )
                       // destinations[0].destinations.map(item => (
                       // )

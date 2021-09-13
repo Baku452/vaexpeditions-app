@@ -19,9 +19,6 @@ function Base({
         packagetypes={packagetypes}
         packagesAll={packagesAll}
       />
-      {/* {popups.map((item, index) => (
-        <PopUp key={index} popup={item} />
-      ))} */}
       <section>{children}</section>
       <Footer />
     </>

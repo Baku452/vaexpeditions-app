@@ -4,10 +4,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaPinterestSquare,
-  FaSkype,
-  FaTripadvisor,
   FaTwitter,
-  FaVimeoSquare,
   FaYoutube,
 } from 'react-icons/fa';
 

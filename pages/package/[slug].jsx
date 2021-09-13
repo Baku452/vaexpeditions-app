@@ -15,7 +15,6 @@ import {
   RelatedTrips,
   Slide,
   StikyBox,
-  Title,
   TripOverview,
   WhatsIncluded,
 } from '@/components/index';
