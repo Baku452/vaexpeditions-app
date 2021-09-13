@@ -21,30 +21,33 @@ function MenuItem({ title, subtitle, id, slug }) {
   );
 }
 
-function MenuContent({ countries, continent }) {
+function MenuContent({ continents }) {
   return (
     <div className={styles.menu}>
       <div className={styles.content}>
         <div className="container d-block">
           <div className="row">
-            <div key="1" className="col-12">
-              {/* <h5 className="font-weight-bold mb-3">
-                  <Link href={`/continent/${destination.slug}`}>
-                    <a className="black">{destination.name}</a>
-                  </Link>
-                </h5> */}
-              <ul className={styles.items}>
-                {countries.map(item => (
-                  <MenuItem
-                    key={item.id}
-                    title={item.title}
-                    subtitle={item.sub_title}
-                    id={item.id}
-                    slug={item.slug}
-                  />
-                ))}
-              </ul>
-            </div>
+            {continents &&
+              continents.map(continent => (
+                <div key={continent.name} className="col-12">
+                  <h5 className="font-weight-bold mb-3">
+                    <Link href={`/continent/${continent.slug}`}>
+                      <a className="black">{continent.name}</a>
+                    </Link>
+                  </h5>
+                  <ul className={styles.items}>
+                    {continent.destinations.map(item => (
+                      <MenuItem
+                        key={item.id}
+                        title={item.title}
+                        subtitle={item.sub_title}
+                        id={item.id}
+                        slug={item.slug}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -121,8 +124,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                   Destinations
                 </a>
                 <MenuContent
-                  destinations={destinations}
-                  countries={countries}
+                  continents={destinations}
                   changeCountry={changeCountry}
                   tailorMade={false}
                 />
@@ -131,7 +133,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                 <a
                   className={`${active(router.pathname, '/experiences')} ${styles.link}`}
                   role="button">
-                  HOLIDAY TYPES
+                  Holiday Types
                 </a>
                 <MenuHoliday packagetypes={packagetypes} />
               </li>
@@ -145,13 +147,6 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                     Tailor Made Tours
                   </a>
                 </Link>
-
-                {/* <MenuContent
-                  destinations={destinations}
-                  countries={countries}
-                  changeCountry={changeCountry}
-                  tailorMade
-                /> */}
               </li>
               <li className={styles.nav}>
                 <Link href="/our-purpose">
