@@ -59,17 +59,15 @@ function Search({
               <div className="row p-4">
                 <div className="col-12">
                   <h2 className="py-4 title2">
-                    Travel Facts in{' '}
-                    <span className="line font-weight-semibold"> {SSRDestination?.title}</span> 
+                  Travel Facts in{' '}
+                  <span className="line font-weight-semibold"> {SSRDestination?.title}</span> 
                   </h2>
-                  <section className="row containerBox  lign-items-center">
-                  
-                    <div className="col-12 d-none d-md-block col-md-6 align-self-center" dangerouslySetInnerHTML={{ __html:SSRDestination.travelfact }} />
-                    <div className="col-12 d-none d-md-block col-md-6  "> 
-                    <img  className="img-fluid" src={PUBLIC_API+SSRDestination?.imageTraveFact}></img>
-                    </div>
-               
-              </section>
+                <section className="row containerBox  lign-items-center">
+                  <div className="col-12  col-lg-6 align-self-center" dangerouslySetInnerHTML={{ __html:SSRDestination.travelfact }} />
+                  <div className="col-12   col-lg-6  "> 
+                  <img  className="img-fluid" src={PUBLIC_API+SSRDestination?.imageTraveFact}></img>
+                  </div>
+               </section>
               </div>
               </div>
             </Tab>
