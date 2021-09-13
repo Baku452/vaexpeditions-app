@@ -20,7 +20,7 @@ function Base({
         packagesAll={packagesAll}
       />
       <section>{children}</section>
-      <Footer />
+      <Footer continents={destinations} />
     </>
   );
 }

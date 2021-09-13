@@ -64,7 +64,16 @@ export default function History({
                     className="img-fluid llama"
                   />
                 </div>
-                <div className="col-12 mb-5 order-md-2  m-0 fs-17 lh-34 text-fluid">
+
+                <div className="col-12 col-md-6 mb-5 order-2">
+                  <img
+                    src="/images/ReneValTra.jpg"
+                    alt="Travel History"
+                    className="img-fluid llama"
+                  />
+                </div>
+
+                <div className="col-12 mb-5 col-md-6 order-1 order-md-2  m-0 fs-17 lh-34 text-fluid align-self-center">
                   <p>
                     ´´We started with a small office space and an enormous dream. Now our
                     company is one of the leaders in the tourism industry and renowned for
@@ -95,6 +104,7 @@ export default function History({
                     blessed to have been born in this part of the world.
                   </p>
                 </div>
+                
               </div>
             </div>
           </div>
