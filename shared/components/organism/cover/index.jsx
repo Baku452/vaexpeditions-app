@@ -69,7 +69,7 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                     as="select"
                     size="lg"
                     onChange={event => handleChangeDestination(event)}>
-                    <option>Destination</option>
+                    <option>All Destinations</option>
                     {destinations.length > 0 &&
                       destinations.map(item => (
                         <option value={item.id} key={item.id}>

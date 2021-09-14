@@ -37,7 +37,7 @@ function VacationType({ types, packagetypes }) {
             // centeredSlides="true"
             preventClicks={false}
             // loop
-            slidesPerView={5}
+            slidesPerView={4}
             grabCursor
             // preventClicksPropagation={false}
             breakpoints={{
