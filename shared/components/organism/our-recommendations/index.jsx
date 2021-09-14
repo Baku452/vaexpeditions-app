@@ -44,7 +44,7 @@ function OurRecommendations() {
                           alt="addexperiences"
                         />
                         <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
-                          Add experiences to your tours to enhance your travel
+                          Off The Beaten Track - unique and original experiences
                         </h4>
                       </div>
                     </a>

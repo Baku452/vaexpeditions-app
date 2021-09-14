@@ -52,7 +52,7 @@ function VacationType({ types, packagetypes }) {
                 slidesPerView: 2,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 4,
                 spaceBetween: 20,
               },
             }}>
