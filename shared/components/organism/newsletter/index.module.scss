@@ -63,6 +63,8 @@
 }
 .suggestionsList {
   border: 1px solid #cdcdcd;
+  height: 500px;
+  overflow-y: auto !important;
 }
 .suggestion {
   color: #383838;
