@@ -19,6 +19,8 @@ function Search({
   notifications,
 }) {
   const router = useRouter();
+  const reg = /\/media/g;
+  const content = SSRDestination.travelAdvice.replace(reg, `${PUBLIC_API}/media`);
 
   useEffect(() => {}, [router]);
 
@@ -142,7 +144,7 @@ function Search({
                 <div className="col-12">
                   <h2 className="title2 py-4">Travel Advice</h2>
                   <div
-                    dangerouslySetInnerHTML={{ __html: SSRDestination?.travelAdvice }}
+                    dangerouslySetInnerHTML={{ __html: content }}
                   />
                 </div>
               </div>

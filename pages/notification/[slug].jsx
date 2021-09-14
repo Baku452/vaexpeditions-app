@@ -1,6 +1,8 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 
+import {Hero2 } from '@/components/index';
+
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -12,9 +14,15 @@ function Post({ notification, destinations, packagetypes }) {
         <meta name="description" content={notification.title} />
         <meta name="keywords" content={notification.keywords} />
       </Head>
+      <Hero2
+        title="Coronavirus Disease (COVID-19) Travel Alert "
+        image="/images/covid.jpg"
+        alt="new risk"
+      />
+
       <div className="container">
         <div className="row pt-5 pb-4 mb-3">
-          <div className="col-12">
+          <div className="col-10">
             <h2>{notification.title}</h2>
             <div
               className="fs-16 lh-29"

@@ -1,6 +1,7 @@
 import Head from 'next/head';
-
+import Link from 'next/link';
 import { Base } from '@/layouts/index';
+import {Hero2 } from '@/components/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -22,20 +23,30 @@ export default function NewRisk({
       <Head>
         <title>NEW Regulations to enter Machu Picchu 2019</title>
       </Head>
+
+      <Hero2
+        title="New Risk-Free flexible booking offer"
+        image="/images/arequipa2.jpg"
+        alt="new risk"
+      />
       <section id="more">
         <div className="container  text-justify">
           <div className="row pt-5">
             <div className="col-10 mx-auto">
               <div className="row mb-5">
+
                 <div className="row justify-content-md-center">
                   <div className="col-10 mb-3">
+
+                  <div className="row justify-content-md-center">
                     <h2 className="fs-20 lh-34 font-weight-bold">
-                      New Risk-Free flexible booking offer
+                      {/* New Risk-Free flexible booking offer */}
                     </h2>
                     <p className="m-0  ">
                     With all of the uncertainty around travel in a post-Coronavirus world, 
-                    even the hardy travellers who are participants on Va Expeditions tours, 
-                    are feeling understandably anxious and seeking assurance. It is clear 
+                    even the hardy travellers who are participants on
+                    <Link href="https://vaexpeditions.com/search?types="><a target="_blank"> Va Expeditions tours</a></Link>,
+                     are feeling understandably anxious and seeking assurance. It is clear 
                     that for the time being, the complicated web of restrictions and flight 
                     cancelations make travel a challenge right now. So we have worked with all 
                     our guests on a case-by-case basis to find the best solution for them, be 
@@ -46,6 +57,7 @@ export default function NewRisk({
                     </p>
                   </div>
                 </div>
+
                 <div className="row justify-content-md-center">
                   <div className=" col-10 text-center">
                     <div>
@@ -67,7 +79,9 @@ export default function NewRisk({
                       <p>HIGH-FLEX — 40% DEPOSIT— EXTREME-FLEX —FULL DEPOSIT—</p>
                     </div>
                   </div>
-                  <div className="col-10 ">
+                  
+                </div>
+                <div className="col-10 ">
                     <h3 className="fs-20 lh-34 font-weight-bold">
                     See full terms & conditions on the booking conditions page
                     </h3>
@@ -98,7 +112,9 @@ export default function NewRisk({
                       original booking and the season rate of the new booking.
                       </li>
                     </ul>
-                    <h3 className="fs-20 lh-34 font-weight-bold">High Flex</h3>
+
+                    
+                    <h3 className="fs-20 lh-34 font-weight-bold m-0">High Flex</h3>
                     <ul>
                       <li>
                       These terms apply to bookings where only the deposit has been paid and the 
@@ -109,6 +125,9 @@ export default function NewRisk({
                       made at the time of booking, EXTREME FLEX applies (see next section).
                       </li>
                     </ul>
+                    
+                    <div className="row ">
+                    <div className="col-10 col-md-8 mb-3 align-self-center ">
                     <strong>Change permitted under HIGH FLEX:</strong>
                     <ul>
                       <li>
@@ -134,12 +153,20 @@ export default function NewRisk({
                       that voucher. Once you have re-booked, the published tour departure price at the time of booking applies.
                       </li>
                     </ul>
+                    </div>
+                     <div className="col-10 col-md-4 mb-3 align-self-center">
+                     <img src="/images/newrisk3.jpg" alt="" className="img-fluid" />
+                      </div>
+                     </div>
+                    
                     <h3 className="fs-20 lh-34 font-weight-bold">Extreme Flex</h3>
                     <p>
                     If you have paid for your tour in full, either at the time of booking, or by deposit and balance
                     installments, then you will be eligible for EXTREME FLEX terms. 
                     </p>
-                    <p>Changes permitted:</p>
+                    <div className="row ">
+                    <div className="col-10 col-md-8 mb-3 align-self-center ">
+                    <strong>Changes permitted:</strong>
                     <ul>
                       <li>The date on which you will take the tour</li>
                       <li>The tour programme (move between different tours)</li>
@@ -172,6 +199,16 @@ export default function NewRisk({
                       Where the group size reduces due to a change, a re-price of the tour may be required.
                       </li>
                     </ul>
+                    </div>
+                     <div className="col-10 col-md-4 mb-3 ">
+                     <img src="/images/newrisk2.jpg" alt="" className="img-fluid" />
+                     <br/>
+                     <br/>
+                     <img src="/images/newrisk1.jpg" alt="" className="img-fluid" />
+                      </div>
+                     </div>
+
+
                     <h3 className="fs-20 lh-34 font-weight-bold">Cancellation by You</h3>
                     <p>
                     For these reasons, at the time we receive written notice that you wish to cancel your trip, 
