@@ -10,9 +10,7 @@ import {
 
 import styles from './index.module.scss';
 
-function Footer(
-  {continents}
-) {
+function Footer({ continents }) {
   return (
     <>
       <footer className={styles.footer}>
@@ -20,18 +18,18 @@ function Footer(
           <div className={`row position-relative pb-4 mb-4 ${styles.title}`}>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2">DESTINATIONS</h6>
-              
-                  <ul className={`fs-15 list-unstyled ${styles.lista} `}>
-                  {continents.map(continent => (
-                      continent.destinations.map(item => (
-                        <li>
-                          <Link href={`/destination/${item.slug}`}>
-                          <a> {item.title}</a>
-                          </Link>
-                        </li>))
-                    ))
-                  }
-                  </ul>
+
+              <ul className={`fs-15 list-unstyled ${styles.lista} `}>
+                {continents.map(continent =>
+                  continent.destinations.map(item => (
+                    <li key={item.slug}>
+                      <Link href={`/destination/${item.slug}`}>
+                        <a> {item.title}</a>
+                      </Link>
+                    </li>
+                  )),
+                )}
+              </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">

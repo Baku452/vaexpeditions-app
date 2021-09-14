@@ -192,7 +192,7 @@ function Newsletter({ packagetypes, packagesAll }) {
             <div className="col-auto pt-3">
               <div className="row flex-nowrap align-items-center">
                 <div className="col-auto p-0">
-                  <OverlayTrigger
+                  {/* <OverlayTrigger
                     key="bottom"
                     delay={{ show: 250, hide: 1200 }}
                     placement="bottom"
@@ -208,12 +208,14 @@ function Newsletter({ packagetypes, packagesAll }) {
                         <br />
                         <a href="tel:51979706464">Peru: +51-979706464 </a>
                       </Tooltip>
-                    }>
-                    <Button className="btn btn-light">
-                      <FaPhone />{' '}
-                      <a href="tel:1-(888)803-8004">Toll free : 1-(888)803-8004</a>
-                    </Button>
-                  </OverlayTrigger>
+                    }
+                  /> */}
+                  {/* <Button className="btn btn-light"> */}
+                  <FaPhone />{' '}
+                  <a className="fs-16" href="tel:+18888038004">
+                    Toll free (USA / Canada): +1 (888) 803-8004
+                  </a>
+                  {/* </Button> */}
                 </div>
                 <div className="col-auto">
                   <Link href="/contact-us">

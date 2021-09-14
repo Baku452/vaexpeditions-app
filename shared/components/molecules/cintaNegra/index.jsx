@@ -107,7 +107,7 @@ function CintaNegra({
           duration={500}>
           Book Now
         </LinkScroll>
-        <a className="text-white fs-14 pt-3 d-block" href="tel:1-(888) 803-8004">
+        <a className="text-white fs-14 pt-3 d-block" href="tel:+18888038004">
           Call Us 1-(888) 803-8004
         </a>
       </div>

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
@@ -27,8 +28,6 @@ function Search({ destinations, packagetypes, interests, notifications, packages
   const [checkedTypes, setCheckedTypes] = useState([]);
   const [checkedInterest, setCheckedInterest] = useState([]);
 
-  const [checkedMonths, setCheckedMonths] = useState([]);
-  const [checkedYearMonth, setCheckedYearMonth] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
 
   const handleCleanFilter = () => {
@@ -41,34 +40,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
     setCheckedActvity([]);
     setCheckedTypes([]);
     setCheckedInterest([]);
-    setCheckedMonths([]);
   };
-  function actionFiltersMonths(event, id, yearIndex, monthIndex) {
-    years[yearIndex].months[monthIndex].checked = event.target.checked;
-
-    const idYearMonth = `${yearIndex}-${monthIndex}`;
-
-    const indexCurrentYM = checkedYearMonth.findIndex(
-      item => item === String(idYearMonth),
-    );
-
-    if (indexCurrentYM === -1) {
-      checkedYearMonth.push(idYearMonth);
-      checkedMonths.push(id);
-    } else {
-      checkedYearMonth.splice(indexCurrentYM, 1);
-      checkedMonths.splice(indexCurrentYM, 1);
-    }
-
-    router.push({
-      pathname: '/search',
-      query: {
-        ...router.query,
-        months: checkedMonths.join(),
-        ym: checkedYearMonth.join(),
-      },
-    });
-  }
 
   function actionFiltersTypes(value, id) {
     const index = checkedTypes.findIndex(item => item === String(id));
@@ -198,16 +170,12 @@ function Search({ destinations, packagetypes, interests, notifications, packages
     }
 
     if (router?.query?.months) {
-      const statusMonths = router?.query?.months?.split(',') || [];
       const statusYearMonth = router?.query?.ym?.split(',') || [];
 
       statusYearMonth.forEach(yearMonth => {
         const [myYearIndex, myMonthIndex] = yearMonth.split('-');
         years[myYearIndex].months[myMonthIndex].checked = true;
       });
-
-      setCheckedMonths(statusMonths);
-      setCheckedYearMonth(statusYearMonth);
     }
 
     fetchPackages();
@@ -219,6 +187,10 @@ function Search({ destinations, packagetypes, interests, notifications, packages
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}>
+      <Head>
+        <title>Search Tour Trips in VA Expeditions</title>
+        <meta name="description" content="Search our Tours on VA Expeditions" />
+      </Head>
       <div className="container d-block d-lg-none pt-3">
         <div className="row ">
           <div className="offset-2 col-8">
