@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import Head from 'next/head';
 import { useState } from 'react';
+import Link from 'next/link';
 
 // Error de immportac
 // import { Banner, ContactUsForm } from '@/components/index';
@@ -58,6 +59,15 @@ function TailorMade({
                     start dreaming about your ideal destination and we will take care of
                     the rest!
                     <br />
+                    <br />
+                    For 
+                    <Link href="https://vaexpeditions.com/search?types=2&interests="><a target="_blank"> unique adventures </a></Link> 
+                    and the experience of a lifetime. Whether your 
+                    idea of the perfect vacation is an idyllic beach in
+                    <Link href="https://vaexpeditions.com/package/brazil-beaches-abound"><a target="_blank"> Brazil </a></Link>
+                    or hiking in 
+                    <Link href="https://vaexpeditions.com/package/trekking-patagonia" target="_blank"><a target="_blank"> Chilean Patagonia</a></Link>
+                    , we have just the ideal vacation for you!
                     <br />
                     Call us today or complete the contact form and one of our experts will
                     be touch before you know it!
