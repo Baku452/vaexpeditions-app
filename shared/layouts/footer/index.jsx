@@ -10,46 +10,28 @@ import {
 
 import styles from './index.module.scss';
 
-function Footer() {
+function Footer(
+  {continents}
+) {
   return (
     <>
       <footer className={styles.footer}>
         <div className={`container ${styles.container}`}>
           <div className={`row position-relative pb-4 mb-4 ${styles.title}`}>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
-              <h6 className="text-white font-weight-bold fs-13 pb-2 ">DESTINATIONS</h6>
-              <ul className="fs-15 list-unstyled">
-                <li>
-                  <Link href="/destination/brasil">
-                    <a>Brasil</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/destination/colombia ">
-                    <a>Colombia</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/destination/costa-rica">
-                    <a>Costa Rica</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/destination/ecuador">
-                    <a>Ecuador</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/destination/mexico">
-                    <a>Mexico</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/destination/peru">
-                    <a>Peru</a>
-                  </Link>
-                </li>
-              </ul>
+              <h6 className="text-white font-weight-bold fs-13 pb-2">DESTINATIONS</h6>
+              
+                  <ul className={`fs-15 list-unstyled ${styles.lista} `}>
+                  {continents.map(continent => (
+                      continent.destinations.map(item => (
+                        <li>
+                          <Link href={`/destination/${item.slug}`}>
+                          <a> {item.title}</a>
+                          </Link>
+                        </li>))
+                    ))
+                  }
+                  </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 ">
