@@ -122,15 +122,15 @@ function BlogPost({
         </div>
       </div>
       <section className="containerBox px-3 pb-4">
-        <div className="row">
+        <div className="row mx-auto">
           <div className="col-12 pb-3">
             <h2 className="fs-20 font-weight-bold">Check our Recent Posts </h2>
           </div>
         </div>
-        <div>
+        <div className="row col-12">
           {blogsPosts
             ? blogsPosts.map(item => (
-                <div key={item.slug} className="col-12 col-md-6 col-lg-6 pb-4">
+                <div key={item.slug} className="col-12 col-md-4 col-lg-4 pb-4">
                   <BlogCard
                     key={item.title}
                     title={item.title}
