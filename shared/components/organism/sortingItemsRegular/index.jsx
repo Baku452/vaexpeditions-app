@@ -119,8 +119,9 @@ function SortingItemsRegular({
           <div className="row">
             {packagesList.length > 0 ? (
               packagesList.map(item => (
-                <div key={item?.id} className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                <div key={item?.slug} className="d-flex col-12 col-md-6 col-lg-4 mb-4">
                   <PackageItem
+                    key={item.slug}
                     title={item.title}
                     days={item.days}
                     slug={item.slug}

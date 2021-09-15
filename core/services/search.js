@@ -1,7 +1,10 @@
 import { services } from '../middlewares/index';
 
-function packages({ queryParams = '' }) {
-  return services({ url: `/packages/${queryParams}`, method: 'GET' })
+function packages({ queryParams = '', offset = 0 }) {
+  return services({
+    url: `/packages/?limit=9&offset=${offset}&${queryParams}`,
+    method: 'GET',
+  })
     .then(result => {
       return { result };
     })

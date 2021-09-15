@@ -63,7 +63,7 @@
 }
 .suggestionsList {
   border: 1px solid #cdcdcd;
-  height: 500px;
+  max-height: 500px;
   overflow-y: auto !important;
 }
 .suggestion {

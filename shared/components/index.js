@@ -6,6 +6,7 @@ export * from './atoms/divider/index';
 export * from './atoms/toggle/index';
 export * from './atoms/logo/index';
 export * from './atoms/hero/index';
+export * from './atoms/showMore/index';
 
 // MOLECULES
 export * from './molecules/atypical-item/index';

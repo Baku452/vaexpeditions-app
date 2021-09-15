@@ -129,7 +129,7 @@ function BlogPost({
         </div>
         <div>
           {blogsPosts
-            ? blogsPosts.map(item => (
+            ? blogsPosts.results.map(item => (
                 <div key={item.slug} className="col-12 col-md-6 col-lg-6 pb-4">
                   <BlogCard
                     key={item.title}
@@ -153,7 +153,7 @@ export async function getStaticPaths() {
   const response = await fetch(`${PUBLIC_API}/blog/list/`);
   const blogs = await response.json();
 
-  const paths = blogs.map(item => ({
+  const paths = blogs.results.map(item => ({
     params: { slug: item.slug },
   }));
 

@@ -43,7 +43,7 @@ function BlogCategory({
         <div className="row">
           <div className="col-12 col-lg-8">
             <section className="mx-auto row">
-              {blogsPosts.map(item => (
+              {blogsPosts.results.map(item => (
                 <div key={item.title} className="col-12 col-md-6 col-lg-12 pb-4">
                   <BlogCard
                     key={item.slug}

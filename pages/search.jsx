@@ -8,6 +8,7 @@ import {
   CollapseContent,
   Icon,
   SearchBar,
+  ShowMore,
   SortingItemsRegular,
 } from '@/components/index';
 import { activities, days, packages, years } from '@/core/index';
@@ -27,9 +28,10 @@ function Search({ destinations, packagetypes, interests, notifications, packages
   const [checkedActvity, setCheckedActvity] = useState([]);
   const [checkedTypes, setCheckedTypes] = useState([]);
   const [checkedInterest, setCheckedInterest] = useState([]);
+  const [numberPackages, setNumberPackages] = useState(0);
+  const [offset, setOffset] = useState(0);
 
   const [showFilters, setShowFilters] = useState(false);
-
   const handleCleanFilter = () => {
     router.push({
       pathname: '/search',
@@ -121,12 +123,24 @@ function Search({ destinations, packagetypes, interests, notifications, packages
 
   async function fetchPackages() {
     const [, querySet] = router.asPath.split('?');
-    const queryParams = querySet ? `?${querySet}` : '';
+    const queryParams = querySet ? `${querySet}` : '';
     const { result } = await packages({ queryParams });
-
-    setPackagesList(result?.data);
+    setPackagesList(result?.data.results);
+    setNumberPackages(result?.data.count);
+    setOffset(9);
   }
 
+  async function fetchMorePackages() {
+    setOffset(prevState => prevState + 9);
+    const [, querySet] = router.asPath.split('?');
+    const queryParams = querySet ? `${querySet}` : '';
+    const { result } = await packages({ queryParams, offset });
+    setPackagesList([...packagesList, ...result?.data.results]);
+  }
+
+  function handleMoreitems() {
+    fetchMorePackages();
+  }
   useEffect(() => {
     if (Object.entries(router.query).length === 0) {
       setClearFilter(false);
@@ -177,7 +191,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
         years[myYearIndex].months[myMonthIndex].checked = true;
       });
     }
-
+    console.log('test');
     fetchPackages();
   }, [router]);
 
@@ -233,7 +247,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                     <div className={`${styles.boxaside}  m-0`}>
                       <h2 className="font-weight-bold fs-20 pt-3">All our Tours</h2>
                       {packagesList.length > 0 ? (
-                        <h4 className="fs-18 py-3 mb-0">{packagesList.length} Tours</h4>
+                        <h4 className="fs-18 py-3 mb-0">{numberPackages} Tours</h4>
                       ) : null}
                       <SearchBar packagetypes={packagetypes} packagesAll={packagesAll} />
                       {clearFilter ? (
@@ -354,7 +368,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                     </CollapseContent>
                   </Collapse>
                 </div>
-                {packagesList ? (
+                {packagesList.length > 0 ? (
                   <div className="col-12 col-lg-9">
                     <SortingItemsRegular
                       activities={activities}
@@ -362,6 +376,9 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                       packagesList={packagesList}
                       setPackagesList={setPackagesList}
                     />
+                    {packagesList.length < numberPackages ? (
+                      <ShowMore eventHandler={handleMoreitems} />
+                    ) : null}
                   </div>
                 ) : null}
               </div>

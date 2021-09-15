@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Autosuggest from 'react-autosuggest';
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+// import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { BsSearch } from 'react-icons/bs';
 import { FaPhone } from 'react-icons/fa';
