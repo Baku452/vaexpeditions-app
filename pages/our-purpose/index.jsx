@@ -36,7 +36,7 @@ export default function OurPurpose({
       <Hero
         title="Va Expedition's Purpose"
         image="/images/portada our purpose.jpg"
-        alt="new risk"
+        alt="our purpose"
       />
 
       <section

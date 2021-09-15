@@ -32,10 +32,10 @@ export default function History({
       <section id="mision_vision">
         <div className="container bc-F7F5F5 mt-5">
           <div className="row">
-            <div className="col-10 mx-auto">
+            <div className="col-12 mx-auto">
               <h2 className=" font-weight-bold text-center">Va Expeditions History</h2>
               <div className="row mb-5 pt-5">
-                <div className="col-12 mb-5 col-md-6 order-1 order-md-2  m-0 fs-17 lh-34 text-fluid align-self-center">
+                <div className="col-12 mb-5 col-lg-6 order-1 order-md-1 col-md-12 m-0 fs-17 lh-34 text-fluid align-self-center">
                   <p>
                     Va Expeditions was founded in 2009. The company came about as a dream
                     of the Hurtado Valencia brothers to create a business venture in the
@@ -57,7 +57,7 @@ export default function History({
                     standards.
                   </p>
                 </div>
-                <div className="col-12 col-md-6 mb-5 order-2">
+                <div className="col-12 col-lg-6 mb-5 order-2 col-md-12 align-self-center">
                   <img
                     src="/images/llamas-cruzadas-2.jpg"
                     alt="Travel History"
@@ -65,7 +65,7 @@ export default function History({
                   />
                 </div>
 
-                <div className="col-12 col-md-6 mb-5 order-2">
+                <div className="col-12 col-lg-6 mb-5 order-4 order-lg-3 col-md-12 align-self-center">
                   <img
                     src="/images/ReneValTra.jpg"
                     alt="Travel History"
@@ -73,7 +73,7 @@ export default function History({
                   />
                 </div>
 
-                <div className="col-12 mb-5 col-md-6 order-1 order-md-2  m-0 fs-17 lh-34 text-fluid align-self-center">
+                <div className="col-12 mb-5 col-lg-6 order-3 order-lg-4 col-md-12 m-0 fs-17 lh-34 text-fluid align-self-center">
                   <p>
                     ´´We started with a small office space and an enormous dream. Now our
                     company is one of the leaders in the tourism industry and renowned for
