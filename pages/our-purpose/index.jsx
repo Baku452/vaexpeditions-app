@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Banner, CardBox } from '@/components/index';
 import { Base } from '@/layouts/index';
+import {Hero } from '@/components/index';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 export default function OurPurpose({
@@ -26,10 +27,16 @@ export default function OurPurpose({
           and with a focus on creating a sustainable future"
         />
       </Head> 
-      <Banner
+      {/* <Banner
         description=""
         image="/images/portada our purpose.jpg"
         alt="Our Purpose - Va Expeditions"
+      /> */}
+
+      <Hero
+        title="Va Expedition's Purpose"
+        image="/images/portada our purpose.jpg"
+        alt="our purpose"
       />
 
       <section
