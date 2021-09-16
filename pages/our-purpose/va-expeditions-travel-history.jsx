@@ -75,20 +75,20 @@ export default function History({
 
                 <div className="col-12 mb-5 col-lg-6 order-3 order-lg-4 col-md-12 m-0 fs-17 lh-34 text-fluid align-self-center">
                   <p>
-                    ´´We started with a small office space and an enormous dream. Now our
+                    We started with a small office space and an enormous dream. Now our
                     company is one of the leaders in the tourism industry and renowned for
                     its quality of service, technology and the unique experiences that we
-                    offer”.
+                    offer.
                   </p>
                   <p>In the words of Rene Valencia:</p>
                   <p>
-                    Our Brand identity emerged from an idea that came about from the
+                    "Our Brand identity emerged from an idea that came about from the
                     numerous visits to Machu Picchu working as a tour guide and Tour
                     conductor. I had the opportunity to photograph the many archaeological
                     sites in the area. “It is impossible to NOT ask yourself about why
                     Machu Picchu is here. There are so many possible places that this
                     amazing site could have been built and create an empire that
-                    controlled the territory from Chile to Ecuador.”
+                    controlled the territory from Chile to Ecuador.
                   </p>
                   <p>
                     For what unfathomable reason did the Incas decide to build this site
@@ -101,7 +101,7 @@ export default function History({
                     combine these incredible sites with idyllic beaches, fascinating
                     cultures, abundant rainforests and delicious cuisine, all through
                     Central and South America and I consider myself to be lucky and
-                    blessed to have been born in this part of the world.
+                    blessed to have been born in this part of the world.”
                   </p>
                 </div>
                 

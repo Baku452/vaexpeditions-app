@@ -89,11 +89,18 @@ export default function NewRisk({
                       </div>
                     </div>
                   </div>
-                  <div className="col-10 ">
-                    <h3 className="fs-20 lh-34 font-weight-bold">
+                  </div>
+
+
+                  <div className="row justify-content-md-center">
+                  <div className="col-10 listStyle">
+
+                  <div className="row ">
+                      <div className="col-10 col-md-8 mb-3 align-self-center ">
+                      <h3 className="fs-20 lh-34 font-weight-bold">
                       See full terms & conditions on the booking conditions page
-                    </h3>
-                    <p>
+                      </h3>
+                      <p>
                       *Of course, there are some conditions applicable and you can read
                       these in full on our  Booking Conditions page or you can chat to a
                       real person by email or by phone for more details. At the end of the
@@ -101,10 +108,13 @@ export default function NewRisk({
                       times to come, as they surely will. FEEL FREE TO CONTACT US WITH ANY
                       QUESTIONS: TOLL FREE (USA / CANADA): 1 - (888) 803 8004
                     </p>
-                  </div>
-                </div>
-                <div className="row justify-content-md-center">
-                  <div className="col-10 listStyle">
+                      </div>
+                      <div className="col-10 col-md-4 mb-3 align-self-center">
+                        <img src="/images/newrisk1.jpg" alt="" className="img-fluid align-self-center" />
+                      </div>
+                    </div>
+
+                
                     <h3 className="fs-20 lh-34 font-weight-bold">
                       Coronavirus cancellation terms & conditions
                     </h3>
@@ -174,7 +184,7 @@ export default function NewRisk({
                         </ul>
                       </div>
                       <div className="col-10 col-md-4 mb-3 align-self-center">
-                        <img src="/images/newrisk3.jpg" alt="" className="img-fluid" />
+                        <img src="/images/newrisk3.jpg" alt="" className="img-fluid align-self-center" />
                       </div>
                     </div>
 
@@ -229,12 +239,9 @@ export default function NewRisk({
                           </li>
                         </ul>
                       </div>
-                      <div className="col-10 col-md-4 mb-3 ">
-                        <img src="/images/newrisk2.jpg" alt="" className="img-fluid" />
-                        <br />
-                        <br />
-                        <img src="/images/newrisk1.jpg" alt="" className="img-fluid" />
-                      </div>
+                      <div className="col-10 col-md-4 mb-3 align-self-center ">
+                        <img src="/images/newrisk2.jpg" alt="" className="img-fluid " />
+                        </div>
                     </div>
 
                     <h3 className="fs-20 lh-34 font-weight-bold">Cancellation by You</h3>
