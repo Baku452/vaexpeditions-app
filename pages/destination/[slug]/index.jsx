@@ -65,10 +65,19 @@ function Search({
                   <span className="line font-weight-semibold"> {SSRDestination?.title}</span> 
                   </h2>
                 <section className="row containerBox  lign-items-center">
-                  <div className="col-12  col-lg-6 align-self-center" dangerouslySetInnerHTML={{ __html:SSRDestination.travelfact }} />
-                  <div className="col-12   col-lg-6  "> 
-                  <img  className="img-fluid" src={PUBLIC_API+SSRDestination?.imageTraveFact}></img>
+                  
+                  <div className={`col-12 ${SSRDestination?.imageTraveFact.toString() !== "/media/null" ? "col-lg-6" : ""} align-self-center`} dangerouslySetInnerHTML={{ __html:SSRDestination.travelfact }} />
+                  
+                  {SSRDestination?.imageTraveFact.toString() !== "/media/null" || !SSRDestination?.imageTraveFact ? (
+                    <div className="col-12   col-lg-6  "> 
+                    <img  className="img-fluid" src={PUBLIC_API+SSRDestination?.imageTraveFact}></img>
+                    </div>
+                  ) :  
+                  <div className="col-12"> 
                   </div>
+                  }
+                       
+
                </section>
               </div>
               </div>
