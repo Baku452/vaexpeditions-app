@@ -65,7 +65,7 @@ function Package({
 
     const { result } = await packages({ queryParams });
     if (result && packagesList.length === 0) {
-      setPackagesList(result.data);
+      setPackagesList(result.data.results);
     }
     packagetypes.map(item => {
       if (item.id == pack.package_type) {
