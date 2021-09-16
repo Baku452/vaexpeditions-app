@@ -28,7 +28,7 @@ function BlogPost({
     const [, querySet] = router.asPath.split('?');
     const queryParams = querySet ? `?${querySet}` : '';
     const { result } = await posts({ queryParams });
-    setPostList(result?.data);
+    setPostList(result?.data.results);
   }
 
   useEffect(() => {
