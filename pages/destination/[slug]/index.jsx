@@ -58,27 +58,23 @@ function Search({
             </Tab>
 
             <Tab eventKey="TravelFacts" title="Travel Facts">
-              <div className="row p-4">
+              <div className="row py-4">
                 <div className="col-12">
-                  <h2 className="py-4 title2">
+                  <h2 className=" title2 text-center py-4">
                   Travel Facts in{' '}
                   <span className="line font-weight-semibold"> {SSRDestination?.title}</span> 
                   </h2>
-                <section className="row containerBox  lign-items-center">
-                  
+                <section className="row containerBox  align-items-center">
                   <div className={`col-12 ${SSRDestination?.imageTraveFact.toString() !== "/media/null" ? "col-lg-6" : ""} align-self-center`} dangerouslySetInnerHTML={{ __html:SSRDestination.travelfact }} />
-                  
-                  {SSRDestination?.imageTraveFact.toString() !== "/media/null" || !SSRDestination?.imageTraveFact ? (
-                    <div className="col-12   col-lg-6  "> 
-                    <img  className="img-fluid" src={PUBLIC_API+SSRDestination?.imageTraveFact}></img>
-                    </div>
-                  ) :  
-                  <div className="col-12"> 
-                  </div>
-                  }
-                       
-
-               </section>
+                      {SSRDestination?.imageTraveFact.toString() !== "/media/null" || !SSRDestination?.imageTraveFact ? 
+                      (
+                      <div className="col-12 col-lg-6 align-self-center"> 
+                      <img  className="img-fluid" src={PUBLIC_API+SSRDestination?.imageTraveFact}></img>
+                      </div>
+                      ) :  
+                 null
+                      }
+                </section>
               </div>
               </div>
             </Tab>
