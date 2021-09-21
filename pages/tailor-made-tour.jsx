@@ -2,8 +2,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import Head from 'next/head';
-import { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 // Error de immportac
 // import { Banner, ContactUsForm } from '@/components/index';
@@ -60,13 +60,21 @@ function TailorMade({
                     the rest!
                     <br />
                     <br />
-                    For 
-                    <Link href="https://vaexpeditions.com/search?types=2&interests="><a target="_blank"> unique adventures </a></Link> 
-                    and the experience of a lifetime. Whether your 
-                    idea of the perfect vacation is an idyllic beach in
-                    <Link href="https://vaexpeditions.com/package/brazil-beaches-abound"><a target="_blank"> Brazil </a></Link>
-                    or hiking in 
-                    <Link href="https://vaexpeditions.com/package/trekking-patagonia" target="_blank"><a target="_blank"> Chilean Patagonia</a></Link>
+                    For
+                    <Link href="https://vaexpeditions.com/search?types=2&interests=">
+                      <a target="_blank"> unique adventures </a>
+                    </Link>
+                    and the experience of a lifetime. Whether your idea of the perfect
+                    vacation is an idyllic beach in
+                    <Link href="https://vaexpeditions.com/package/brazil-beaches-abound">
+                      <a target="_blank"> Brazil </a>
+                    </Link>
+                    or hiking in
+                    <Link
+                      href="https://vaexpeditions.com/package/trekking-patagonia"
+                      target="_blank">
+                      <a target="_blank"> Chilean Patagonia</a>
+                    </Link>
                     , we have just the ideal vacation for you!
                     <br />
                     Call us today or complete the contact form and one of our experts will
@@ -108,7 +116,7 @@ export async function getStaticProps() {
   const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const tailorsResponse = await fetch(`${PUBLIC_API}/tailors/list/`);
