@@ -1,5 +1,5 @@
 import Head from 'next/head';
-
+import Link from 'next/link';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -22,12 +22,12 @@ export default function TravelAvailability({
         <title>Travel Availability from January onwards - VaExpeditions </title>
       </Head>
       <section id="more">
-        <div className="container text-justify">
+        <div className="container text-justify align-items-center" >
           <div className="row pt-5">
             <div className="col-10 mx-auto">
               <div className="row mb-5">
                 
-                <div className="col-12 col-lg-6 mb-3">
+                <div className="col-12 col-lg-6 mb-3 align-items-center ">
                   <h2 className="fs-20 lh-34 font-weight-bold">
                     Travel Availability from January onwards.
                   </h2>
@@ -37,18 +37,21 @@ export default function TravelAvailability({
                   and tourism! Since November 2020, here in South America,the tourist 
                   attractions, archaeological sites and trekking routes are starting to 
                   open once more, slowly but surely  and some countries now have their 
-                  international borders open for travel, including Brazil, Mexico, Costa 
+                  international borders open for travel, including <Link href="https://vaexpeditions.com/destination/brasil">
+                  <a target="_blank">Brazil</a></Link>, Mexico, Costa 
                   Rica, Peru and Ecuador . There are in fact some international borders 
-                  such as Mexico, Spain, USA and most European destinations, now open, which 
+                  such as <Link href="https://vaexpeditions.com/destination/mexico">
+                  <a target="_blank">Mexico</a></Link>, Spain, USA and most European destinations, now open, which 
                   has made us all believe here at Va Expeditions that things are starting to
                    get back to some kind of normal and we are super excited! Here at Va 
                    Expeditions, we are now operating ALL of our tours and excursions for 
                    the first time since the pandemic began with the exception of Argentina, 
-                   Bolivia and Chile, who´s international borders remain closed. 
+                   Bolivia and <Link href="https://vaexpeditions.com/destination/chile">
+                  <a target="_blank">Chile</a></Link>, who´s international borders remain closed. 
                   </p>
                   <p />
                   </div>
-                  <div className="col-12 col-lg-6">
+                  <div className="col-12 col-lg-6 align-self-center">
 
                   <img
                     src="images/travel availability.jpg"
@@ -57,7 +60,7 @@ export default function TravelAvailability({
                     />
                     </div>
                  <br/>
-                <div className="col-12 col-lg-6 m-b-25 order-1 order-lg-2 ">
+                <div className="col-12 col-lg-6 m-b-25 order-1 order-lg-2  align-self-center">
                 
                   <br/>
 
@@ -76,7 +79,7 @@ export default function TravelAvailability({
                   </p>
                   <p />
                   </div>
-                  <div className="col-12 col-lg-6 order-2 order-lg-1">
+                  <div className="col-12 col-lg-6 order-2 order-lg-1 align-self-center">
                     <img
                     src="images/safepro.jpg"
                     alt="Travel Availability"
