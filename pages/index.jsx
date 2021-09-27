@@ -17,7 +17,6 @@ import { Base } from '@/layouts/index';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Index({
-  types,
   tours,
   destinations,
   banners,
@@ -43,7 +42,7 @@ function Index({
         interests={interests}
       />
       <WhyVa />
-      <VacationType types={types} packagetypes={packagetypes} />
+      <VacationType packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
       <WaysToSave />
@@ -54,9 +53,6 @@ function Index({
 }
 
 export async function getStaticProps() {
-  const typesResponse = await fetch(`${PUBLIC_API}/experiences/list/`);
-  const types = await typesResponse.json();
-
   const toursResponse = await fetch(`${PUBLIC_API}/packages/home/`);
   const tours = await toursResponse.json();
 
@@ -66,7 +62,7 @@ export async function getStaticProps() {
   const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
@@ -80,7 +76,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      types,
       tours,
       destinations,
       banners,

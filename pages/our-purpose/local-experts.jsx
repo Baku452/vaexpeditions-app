@@ -1,14 +1,24 @@
 import Head from 'next/head';
+
 import { Banner, PageContent } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-export default function OurPurpose({ destinations, packagetypes, notifications, ourpurpose, pagecontent }) {
+export default function OurPurpose({
+  destinations,
+  packagetypes,
+  notifications,
+  ourpurpose,
+  pagecontent,
+}) {
   return (
-    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
-       <Head>
-       <title>Va Expeditions - Local Experts</title>
+    <Base
+      destinations={destinations}
+      packagetypes={packagetypes}
+      notifications={notifications}>
+      <Head>
+        <title>Va Expeditions - Local Experts</title>
         <meta
           name="description"
           content="These incredible people were born in the heart of the destination that you will visit. These people adore 
@@ -18,12 +28,8 @@ export default function OurPurpose({ destinations, packagetypes, notifications, 
           that you will visit, answer any questions that you may have and recommend the incredible services on offer for 
           you to enjoy."
         />
-      </Head> 
-      <Banner
-        description=""
-        image="/images/local-experts.jpg"
-        alt="weq"
-      />
+      </Head>
+      <Banner description="" image="/images/local-experts.jpg" alt="weq" />
       <PageContent page={pagecontent[2]} ourpurpose={ourpurpose} />
     </Base>
   );
@@ -33,7 +39,7 @@ export async function getStaticProps() {
   const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
@@ -44,7 +50,6 @@ export async function getStaticProps() {
 
   const pagecontentResponse = await fetch(`${PUBLIC_API}/history/`);
   const pagecontent = await pagecontentResponse.json();
-
 
   return {
     props: {

@@ -61,21 +61,33 @@ function Search({
               <div className="row py-4">
                 <div className="col-12">
                   <h2 className=" title2 text-center py-4">
-                  Travel Facts in{' '}
-                  <span className="line font-weight-semibold"> {SSRDestination?.title}</span> 
+                    Travel Facts in{' '}
+                    <span className="line font-weight-semibold">
+                      {' '}
+                      {SSRDestination?.title}
+                    </span>
                   </h2>
-                <section className="row containerBox  align-items-center">
-                  <div className={`col-12 ${SSRDestination?.imageTraveFact.toString() !== "/media/null" ? "col-lg-6" : ""} align-self-center`} dangerouslySetInnerHTML={{ __html:SSRDestination.travelfact }} />
-                      {SSRDestination?.imageTraveFact.toString() !== "/media/null" || !SSRDestination?.imageTraveFact ? 
-                      (
-                      <div className="col-12 col-lg-6 align-self-center"> 
-                      <img  className="img-fluid" src={PUBLIC_API+SSRDestination?.imageTraveFact}></img>
+                  <section className="row containerBox  align-items-center">
+                    <div
+                      className={`col-12 ${
+                        SSRDestination?.imageTraveFact.toString() !== '/media/null'
+                          ? 'col-lg-6'
+                          : ''
+                      } align-self-center`}
+                      dangerouslySetInnerHTML={{ __html: SSRDestination.travelfact }}
+                    />
+                    {SSRDestination?.imageTraveFact.toString() !== '/media/null' ||
+                    !SSRDestination?.imageTraveFact ? (
+                      <div className="col-12 col-lg-6 align-self-center">
+                        <img
+                          alt="Travel Fact"
+                          className="img-fluid"
+                          src={PUBLIC_API + SSRDestination?.imageTraveFact}
+                        />
                       </div>
-                      ) :  
-                 null
-                      }
-                </section>
-              </div>
+                    ) : null}
+                  </section>
+                </div>
               </div>
             </Tab>
 
@@ -148,9 +160,7 @@ function Search({
               <div className="row p-4">
                 <div className="col-12">
                   <h2 className="title2 py-4">Travel Advice</h2>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: content }}
-                  />
+                  <div dangerouslySetInnerHTML={{ __html: content }} />
                 </div>
               </div>
             </Tab>
@@ -193,7 +203,7 @@ export async function getStaticProps({ params }) {
   const fetchpackages = await fetch(`${PUBLIC_API}/packages/${params.slug}`);
   const SSRPackages = await fetchpackages.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);

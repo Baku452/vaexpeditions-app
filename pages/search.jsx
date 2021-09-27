@@ -191,7 +191,6 @@ function Search({ destinations, packagetypes, interests, notifications, packages
         years[myYearIndex].months[myMonthIndex].checked = true;
       });
     }
-    console.log('test');
     fetchPackages();
   }, [router]);
 
@@ -394,7 +393,7 @@ export async function getStaticProps() {
   const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);

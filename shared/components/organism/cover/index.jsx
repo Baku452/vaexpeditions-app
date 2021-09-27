@@ -53,10 +53,13 @@ function Cover({ destinations, banners, packagetypes, interests }) {
       <div className={styles.form}>
         <div className="row justify-content-center">
           {/* <button className="btn btn-outline-light btn-lg mb-5"> */}
-          <LinkScroll to="top-rated-tours" spy smooth duration={500}>
-            <a className="btn btn-light btn-lg mb-5" href="#">
-              See Top Rated Tours
-            </a>
+          <LinkScroll
+            className="btn btn-light btn-lg mb-5"
+            to="top-rated-tours"
+            spy
+            smooth
+            duration={500}>
+            See Top Rated Tours
           </LinkScroll>
           {/* </button> */}
         </div>

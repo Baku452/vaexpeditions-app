@@ -113,7 +113,7 @@ export async function getStaticProps({ params }) {
   const countryResponse = await fetch(`${PUBLIC_API}/countries/${params.slug}`);
   const country = await countryResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);

@@ -8,7 +8,7 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 SwiperCore.use([Navigation]);
 
-function VacationType({ types, packagetypes }) {
+function VacationType({ packagetypes }) {
   const packagesTypes = packagetypes.map(item => item.id);
 
   return (
@@ -31,7 +31,7 @@ function VacationType({ types, packagetypes }) {
             </div>
           </div>
         </div>
-        {types.length > 0 && (
+        {packagetypes.length > 0 && (
           <Swiper
             navigation
             // centeredSlides="true"
@@ -56,13 +56,13 @@ function VacationType({ types, packagetypes }) {
                 spaceBetween: 20,
               },
             }}>
-            {types.map(type => (
+            {packagetypes.map(type => (
               <SwiperSlide key={type.id} className={styles.slide}>
                 <Link
                   key={type.id}
                   href={{
                     pathname: '/search',
-                    query: { types: type.package_type.join() },
+                    query: { types: type.id },
                   }}>
                   <div className="vacation position-relative">
                     <img

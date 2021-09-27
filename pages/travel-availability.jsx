@@ -64,28 +64,32 @@ export default function TravelAvailability({
                 
                   <br/>
 
-                  <h3 className="fs-20 lh-34 font-weight-bold order-xl-1">Safety Protocols</h3>
+                  <h3 className="fs-20 lh-34 font-weight-bold order-xl-1">
+                    Safety Protocols
+                  </h3>
                   <p className="m-0 fs-20 lh-34">
-                  Here at Va Expeditions, we take our passenger’s safety and security very seriously. 
-                  This is even more so now that we are dealing with reactivation of tourism after the 
-                  pandemic. We continue to maintain our protocols since the very beginning of the 
-                  pandemic with extra cleaning and disinfecting of our vehicles, alcohol gel and facemasks 
-                  readily available to all of our passengers and staff team, as well as appropriate 
-                  distancing in our vehicles and with respect to our group sizes. We are over the moon 
-                  to have operated a number of groups during 2021 with all of our protocols in place 
-                  and with maximum customer satisfaction. We are now waiting for you to come to South 
-                  America so we can once more, show you the best of these incredible countries, always 
-                  with your safety in mind!
+                    Here at Va Expeditions, we take our passenger’s safety and security
+                    very seriously. This is even more so now that we are dealing with
+                    reactivation of tourism after the pandemic. We continue to maintain
+                    our protocols since the very beginning of the pandemic with extra
+                    cleaning and disinfecting of our vehicles, alcohol gel and facemasks
+                    readily available to all of our passengers and staff team, as well as
+                    appropriate distancing in our vehicles and with respect to our group
+                    sizes. We are over the moon to have operated a number of groups during
+                    2021 with all of our protocols in place and with maximum customer
+                    satisfaction. We are now waiting for you to come to South America so
+                    we can once more, show you the best of these incredible countries,
+                    always with your safety in mind!
                   </p>
                   <p />
-                  </div>
-                  <div className="col-12 col-lg-6 order-2 order-lg-1 align-self-center">
-                    <img
+                </div>
+                <div className="col-12 col-lg-6 order-2 order-lg-1  align-self-center">
+                  <img
                     src="images/safepro.jpg"
                     alt="Travel Availability"
                     className="img-fluid pb-4 "
-                    />
-                  </div>
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -99,7 +103,7 @@ export async function getStaticProps() {
   const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
