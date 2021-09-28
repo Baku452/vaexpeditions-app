@@ -5,8 +5,9 @@ export * from './atoms/title/index';
 export * from './atoms/divider/index';
 export * from './atoms/toggle/index';
 export * from './atoms/logo/index';
-export * from './atoms/hero/index';
 export * from './atoms/showMore/index';
+export * from './atoms/navbarFixed/index';
+export * from './atoms/ItemTravelAdvice/index';
 
 // MOLECULES
 export * from './molecules/atypical-item/index';
@@ -38,6 +39,8 @@ export * from './molecules/where-to/index';
 export * from './molecules/banner-2/index';
 export * from './molecules/contactFormB2C/index';
 export * from './molecules/contactFormB2B/index';
+export * from './molecules/hero/index';
+export * from './molecules/gridTravelAdvice/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
