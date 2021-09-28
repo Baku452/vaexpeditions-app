@@ -1,26 +1,30 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
 
-import { FaqsDestinations, PackageItem, Slide, WhereToItem } from '@/components/index';
-import { activities } from '@/core/index';
+import {
+  FaqsDestinations,
+  GridTravelAdvice,
+  Hero3,
+  NavBarFixed,
+  PackageItem,
+  WhereToItem,
+} from '@/components/index';
+import { activities, navDestinations } from '@/core/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({
+function Destination({
   SSRDestination,
   destinations,
   packagetypes,
-  // interests,
+  SSRPackages,
   notifications,
 }) {
   const router = useRouter();
-  const reg = /\/media/g;
-  const content = SSRDestination.travelAdvice.replace(reg, `${PUBLIC_API}/media`);
 
   useEffect(() => {}, [router]);
 
@@ -30,11 +34,11 @@ function Search({
       packagetypes={packagetypes}
       notifications={notifications}>
       <Head>
-        <title>{SSRDestination?.title} - VA Expeditions</title>
+        <title>{SSRDestination?.title} Destination | VA Expeditions</title>
         <meta name="description" content={SSRDestination?.summary} />
         <meta name="keywords" content />
       </Head>
-      <Slide
+      <Hero3
         title={SSRDestination.title}
         images={SSRDestination.images}
         navigation
@@ -43,139 +47,111 @@ function Search({
         isDestination
       />
 
-      <section id="destination" className="py-4">
-        <div className="col-12 containerBox">
-          <Tabs defaultActiveKey="Overview">
-            <Tab eventKey="Overview" title="Overview">
-              <div className="row p-4">
-                <div className="col-12">
-                  <h2 className="title2 text-center py-4">
-                    Overview of {SSRDestination.title}
-                  </h2>
-                  <div dangerouslySetInnerHTML={{ __html: SSRDestination?.content }} />
+      <NavBarFixed items={navDestinations} />
+      <section id="overview" className="py-5 containerBox">
+        {/* <h2 className="title py-4">Overview of {SSRDestination.title}</h2> */}
+        <div
+          className="lh-29 text-center"
+          dangerouslySetInnerHTML={{ __html: SSRDestination?.content }}
+        />
+      </section>
+      <section id="top-tours" className="background2 py-5 overflow-hidden">
+        <div className="containerBox">
+          <h2 className="title2">Top Rated Tours</h2>
+          <div className="row py-4">
+            {SSRPackages.length > 0 &&
+              SSRPackages.map(item => (
+                <div key={item.slug} className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                  <PackageItem
+                    key={item.slug}
+                    title={item.title}
+                    days={item.days}
+                    slug={item.slug}
+                    type={item.type_name}
+                    thumbnail={PUBLIC_API + item.thumbnail}
+                    featured={item.featured}
+                    packagetypes={packagetypes}
+                    activity={activities.map(act =>
+                      act.id.toString() === item.activity_name.toString()
+                        ? act.label
+                        : null,
+                    )}
+                  />
                 </div>
+              ))}
+          </div>
+          <div className="text-center mx-auto fs-26 link font-weight-bold">
+            <Link replace href={`/destination/${SSRDestination.slug}/search`}>
+              <a className="link">`SHOW ME MORE {'>>'}</a>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section id="travel-facts" className="py-5">
+        <div className="col-12">
+          <h2 className=" title2 text-center py-4">
+            Travel Facts in{' '}
+            <span className="line font-weight-semibold"> {SSRDestination?.title}</span>
+          </h2>
+          <section className="row containerBox  align-items-center">
+            <div
+              className={`col-12 ${
+                SSRDestination?.imageTraveFact.toString() !== '/media/null'
+                  ? 'col-lg-6'
+                  : ''
+              } align-self-center`}
+              dangerouslySetInnerHTML={{ __html: SSRDestination.travelfact }}
+            />
+            {SSRDestination?.imageTraveFact.toString() !== '/media/null' ||
+            !SSRDestination?.imageTraveFact ? (
+              <div className="col-12 col-lg-6 align-self-center">
+                <img
+                  alt="Travel Fact"
+                  className="img-fluid"
+                  src={PUBLIC_API + SSRDestination?.imageTraveFact}
+                />
               </div>
-            </Tab>
-
-            <Tab eventKey="TravelFacts" title="Travel Facts">
-              <div className="row py-4">
-                <div className="col-12">
-                  <h2 className=" title2 text-center py-4">
-                    Travel Facts in{' '}
-                    <span className="line font-weight-semibold">
-                      {' '}
-                      {SSRDestination?.title}
-                    </span>
-                  </h2>
-                  <section className="row containerBox  align-items-center">
-                    <div
-                      className={`col-12 ${
-                        SSRDestination?.imageTraveFact.toString() !== '/media/null'
-                          ? 'col-lg-6'
-                          : ''
-                      } align-self-center`}
-                      dangerouslySetInnerHTML={{ __html: SSRDestination.travelfact }}
-                    />
-                    {SSRDestination?.imageTraveFact.toString() !== '/media/null' ||
-                    !SSRDestination?.imageTraveFact ? (
-                      <div className="col-12 col-lg-6 align-self-center">
-                        <img
-                          alt="Travel Fact"
-                          className="img-fluid"
-                          src={PUBLIC_API + SSRDestination?.imageTraveFact}
-                        />
-                      </div>
-                    ) : null}
-                  </section>
-                </div>
-              </div>
-            </Tab>
-
-            <Tab eventKey="WhereTo" title="Where to go">
-              <div className="row p-4">
-                <div className="col-12">
-                  <h2 className="title2 py-4">
-                    Where to go in{' '}
-                    <span className="line font-weight-semibold">
-                      {SSRDestination?.title}
-                    </span>
-                  </h2>
-                  <div className="row">
-                    {SSRDestination.where
-                      ? SSRDestination.where.map(item => (
-                          <WhereToItem
-                            key={item.id}
-                            id={item.id}
-                            title={item.title}
-                            items={item.items}
-                            summary={item.summary}
-                            thumbnail={PUBLIC_API + item.image}
-                            slug={item.slug}
-                          />
-                        ))
-                      : null}
-                  </div>
-                </div>
-              </div>
-            </Tab>
-            <Tab eventKey="Experiences" title={`${SSRDestination?.title} Experiences`}>
-              <div className="row p-4">
-                <div className="col-12">
-                  <h2 className="title2 py-4">Our {SSRDestination?.title} Experiences</h2>
-                  <div className="row py-4">
-                    {SSRDestination.packages.length > 0 &&
-                      SSRDestination.packages.map(item => (
-                        <div
-                          key={item?.id.toString()}
-                          className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                          <PackageItem
-                            title={item.title}
-                            days={item.days}
-                            slug={item.slug}
-                            type={item.type_name}
-                            thumbnail={PUBLIC_API + item.thumbnail}
-                            featured={item.featured}
-                            packagetypes={packagetypes}
-                            activity={activities.map(act =>
-                              act.id.toString() === item.activity_name.toString()
-                                ? act.label
-                                : null,
-                            )}
-                          />
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </Tab>
-            <Tab eventKey="Best Time to Visit" title="Best time to visit">
-              <div className="row p-4">
-                <div className="col-12">
-                  <h2 className="title2 py-4">Best time to visit </h2>
-                  <div dangerouslySetInnerHTML={{ __html: SSRDestination?.bestTime }} />
-                </div>
-              </div>
-            </Tab>
-            <Tab eventKey="BestPlace" title="Travel Advice">
-              <div className="row p-4">
-                <div className="col-12">
-                  <h2 className="title2 py-4">Travel Advice</h2>
-                  <div dangerouslySetInnerHTML={{ __html: content }} />
-                </div>
-              </div>
-            </Tab>
-            <Tab eventKey="Faqs" title="FAQs">
-              <div className="row p-4">
-                <div className="col-12">
-                  <h2 className="title2 py-4">FAQs</h2>
-                </div>
-              </div>
-
-              {SSRDestination?.faqs ? (
-                <FaqsDestinations faqs={SSRDestination?.faqs} />
-              ) : null}
-            </Tab>
-          </Tabs>
+            ) : null}
+          </section>
+        </div>
+      </section>
+      <section id="where-to-go" className="background2 py-5">
+        <h2 className="title2 py-4">
+          Where to go in{' '}
+          <span className="line font-weight-semibold">{SSRDestination?.title}</span>
+        </h2>
+        <div className="containerBox row">
+          {SSRDestination.where
+            ? SSRDestination.where.map(item => (
+                <WhereToItem
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  items={item.items}
+                  summary={item.summary}
+                  thumbnail={PUBLIC_API + item.image}
+                  slug={item.slug}
+                />
+              ))
+            : null}
+        </div>
+      </section>
+      <section id="best-time">
+        <div className="containerBox">
+          <h2 className="title2 py-4">Best time to visit </h2>
+          <div dangerouslySetInnerHTML={{ __html: SSRDestination?.bestTime }} />
+        </div>
+      </section>
+      <section id="travel-advice" className="background2 py-5">
+        <div className="containerBox">
+          <h2 className="title2 py-4">Travel Advice</h2>
+          <GridTravelAdvice items={SSRDestination?.advice} />
+        </div>
+      </section>
+      <section id="faqs" className="py-5">
+        <div className="containerBox">
+          <h2 className="title2 py-4">FAQs</h2>
+          {SSRDestination?.faqs ? <FaqsDestinations faqs={SSRDestination?.faqs} /> : null}
         </div>
       </section>
     </Base>
@@ -200,14 +176,11 @@ export async function getStaticProps({ params }) {
   const fetchDestination = await fetch(`${PUBLIC_API}/destination/${params.slug}`);
   const SSRDestination = await fetchDestination.json();
 
-  const fetchpackages = await fetch(`${PUBLIC_API}/packages/${params.slug}`);
+  const fetchpackages = await fetch(`${PUBLIC_API}/packages/featured/${params.slug}`);
   const SSRPackages = await fetchpackages.json();
 
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
-
-  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
-  const interests = await interestResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
@@ -218,11 +191,10 @@ export async function getStaticProps({ params }) {
       SSRPackages,
       destinations,
       packagetypes,
-      interests,
       notifications,
     },
     revalidate: 1,
   };
 }
 
-export default Search;
+export default Destination;

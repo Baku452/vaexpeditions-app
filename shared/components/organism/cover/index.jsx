@@ -52,7 +52,6 @@ function Cover({ destinations, banners, packagetypes, interests }) {
       <Slide images={banners} navigation pagination={false} isHome />
       <div className={styles.form}>
         <div className="row justify-content-center">
-          {/* <button className="btn btn-outline-light btn-lg mb-5"> */}
           <LinkScroll
             className="btn btn-light btn-lg mb-5"
             to="top-rated-tours"
@@ -61,7 +60,6 @@ function Cover({ destinations, banners, packagetypes, interests }) {
             duration={500}>
             See Top Rated Tours
           </LinkScroll>
-          {/* </button> */}
         </div>
         <div className="container">
           <div className="row justify-content-center">

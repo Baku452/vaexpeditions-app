@@ -12,6 +12,20 @@ function packages({ queryParams = '', offset = 0 }) {
       return { error: error.response };
     });
 }
+
+function packagesDestination({ queryParams = '', offset = 0, destination }) {
+  return services({
+    url: `/packages/${destination}/?limit=9&offset=${offset}&${queryParams}`,
+    method: 'GET',
+  })
+    .then(result => {
+      return { result };
+    })
+    .catch(error => {
+      return { error: error.response };
+    });
+}
+
 function packagesOptional({ queryParams = '' }) {
   return services({ url: `/packages/optional/${queryParams}`, method: 'GET' })
     .then(result => {
@@ -41,4 +55,4 @@ function posts({ queryParams = '' }) {
       return { error: error.response };
     });
 }
-export { packages, packagesTypes, packagesOptional, posts };
+export { packages, packagesDestination, packagesTypes, packagesOptional, posts };
