@@ -52,7 +52,7 @@ export default function OurPurpose({
             fear and with a focus on creating a sustainable future.
           </p>
         </div>
-        <div className="col-12 d-none d-md-block p-3 col-md-6 align-self-center">
+        <div className="col-12  p-3 col-md-6 align-self-center">
           <img src="images/our-purpose-min.jpg" alt="Our Purpose" className="img-fluid" />
         </div>
       </section>
