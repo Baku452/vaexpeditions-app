@@ -11,6 +11,7 @@ import {
   NavBarFixed,
   PackageItem,
   WhereToItem,
+  ShowMore,
 } from '@/components/index';
 import { activities, navDestinations } from '@/core/index';
 import { Base } from '@/layouts/index';
@@ -50,10 +51,13 @@ function Destination({
       <NavBarFixed items={navDestinations} />
       <section id="overview" className="py-5 containerBox">
         {/* <h2 className="title py-4">Overview of {SSRDestination.title}</h2> */}
+        <div className="containerBox">
+          <h2 className="title2 py-4">OVERVIEW</h2>
         <div
           className="lh-29 text-center"
           dangerouslySetInnerHTML={{ __html: SSRDestination?.content }}
         />
+        </div>
       </section>
       <section id="top-tours" className="background2 py-5 overflow-hidden">
         <div className="containerBox">
@@ -81,9 +85,11 @@ function Destination({
               ))}
           </div>
           <div className="text-center mx-auto fs-26 link font-weight-bold">
-            <Link replace href={`/destination/${SSRDestination.slug}/search`}>
-              <a className="link">`SHOW ME MORE {'>>'}</a>
-            </Link>
+          <Link replace href={`/destination/${SSRDestination.slug}/search`}>
+              <a className="link" >
+              <ShowMore  />
+              </a>
+          </Link>
           </div>
         </div>
       </section>
