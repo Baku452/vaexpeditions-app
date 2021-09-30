@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 
 import { Icon } from '@/components/index';
-import Valencia from '@/icons/valencia.svg';
+import Valencia from '@/icons/logo_horizontalWeb.svg';
 
 import styles from './index.module.scss';
 
