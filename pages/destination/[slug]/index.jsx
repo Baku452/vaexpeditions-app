@@ -36,7 +36,6 @@ function Destination({
       <Head>
         <title>{SSRDestination?.title} Destination | VA Expeditions</title>
         <meta name="description" content={SSRDestination?.summary} />
-        <meta name="keywords" content />
       </Head>
       <Hero3
         title={SSRDestination.title}
