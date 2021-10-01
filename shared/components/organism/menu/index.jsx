@@ -8,10 +8,7 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function MenuItem({ title, subtitle, slug }) {
   return (
-    <Link
-      href={{
-        pathname: `/destination/${slug}`,
-      }}>
+    <Link href={`/destination/${slug}`}>
       <a className={`${styles.route} d-block mb-3 mr-5`}>
         <span>
           {title} - {subtitle}
