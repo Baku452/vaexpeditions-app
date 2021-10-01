@@ -40,7 +40,7 @@ function TailorMade({
 
       <section id="descripion">
         <div className="containerBox">
-          <div className="row pt-5">
+          <div className="row pt-5 p-3">
             <div className="col-12 mx-auto">
               <div className="row">
                 <div className="col-12">

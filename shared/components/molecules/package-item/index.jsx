@@ -48,9 +48,9 @@ function PackageItem({
             <p className={`${styles.tag} card-title fs-12 lh-23`}>Featured</p>
           ) : null}
           {thumbnail ? (
-            <img src={thumbnail} className="card-img-top" alt={title} />
+            <img src={thumbnail} className="card-img-top " alt={title} />
           ) : (
-            <img src="/images/colca.jpg" lassName="card-img-top" alt={title} />
+            <img src="/images/colca.jpg" className="card-img-top" alt={title} />
           )}
           <div
             className="card-body"
