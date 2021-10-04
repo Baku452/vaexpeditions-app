@@ -6,18 +6,15 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function MenuItem({ title, subtitle, id, slug }) {
+function MenuItem({ title, subtitle, slug }) {
   return (
-    <li key={id} className="pb-3 pr-5">
-      <Link
-        href={{
-          pathname: `/destination/${slug}`,
-        }}>
-        <a className={styles.route}>
+    <Link href={`/destination/${slug}`}>
+      <a className={`${styles.route} d-block mb-3 mr-5`}>
+        <span>
           {title} - {subtitle}
-        </a>
-      </Link>
-    </li>
+        </span>
+      </a>
+    </Link>
   );
 }
 
@@ -35,7 +32,7 @@ function MenuContent({ continents }) {
                       <a className="black">{continent.name}</a>
                     </Link>
                   </h5>
-                  <ul className={styles.items}>
+                  <div className={styles.items}>
                     {continent.destinations.map(item => (
                       <MenuItem
                         key={item.id}
@@ -45,7 +42,7 @@ function MenuContent({ continents }) {
                         slug={item.slug}
                       />
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
           </div>
