@@ -85,17 +85,9 @@ function Destination({
               ))}
           </div>
           <div className="text-center mx-auto fs-26 link font-weight-bold">
-<<<<<<< HEAD
           <Link  href={`/destination/${SSRDestination.slug}/search`} >
-              <a className="link" >
-              <button className={` ${styles.boton} p-2 my-4`} type="button">
-                SHOW MORE
-             </button>
-=======
-            <Link replace href={`/destination/${SSRDestination.slug}/search`}>
-              <a className="link">
-                <ShowMore />
->>>>>>> master
+              <a className="link" className={` ${styles.boton} p-2 my-4`} type="button">
+              SHOW MORE
               </a>
             </Link>
           </div>
