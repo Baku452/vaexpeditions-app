@@ -15,6 +15,7 @@ import {
 } from '@/components/index';
 import { activities, navDestinations } from '@/core/index';
 import { Base } from '@/layouts/index';
+import styles from './../index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -85,9 +86,11 @@ function Destination({
               ))}
           </div>
           <div className="text-center mx-auto fs-26 link font-weight-bold">
-          <Link replace href={`/destination/${SSRDestination.slug}/search`}>
+          <Link  href={`/destination/${SSRDestination.slug}/search`} >
               <a className="link" >
-              <ShowMore  />
+              <button className={` ${styles.boton} p-2 my-4`} type="button">
+                SHOW MORE
+             </button>
               </a>
           </Link>
           </div>

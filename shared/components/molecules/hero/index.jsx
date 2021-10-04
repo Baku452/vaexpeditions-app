@@ -45,7 +45,7 @@ export { Hero2 };
 
 function Hero3({ title, image, images, alt }) {
   return (
-    <div className={`position-relative ${styles.banner3}`}>
+    <div className={`w-100 position-relative ${styles.banner3}`}>
       <div className="banner-content">
         {title && (
           <div className={`h-100 ${styles.align} ${styles.align}`}>
@@ -67,7 +67,7 @@ function Hero3({ title, image, images, alt }) {
                 <SwiperSlide key={item.id} className={styles.shadow}>
                   <img
                     src={PUBLIC_API + item.image}
-                    className="d-block w-100 fit"
+                    className="l0 0 d-md-block w-100 fit h-100 position-relative"
                     alt={item.alt}
                   />
                   <section>

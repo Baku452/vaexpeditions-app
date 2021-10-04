@@ -15,11 +15,11 @@ function WhereToItem({ title, summary, slug, thumbnail }) {
             {thumbnail != null ? (
               <img src={thumbnail} className="img-fluid w-100" alt={title} />
             ) : (
-              <img src="/images/colca.jpg" className="card-img-top" alt={title} />
+              <img src="/images/colca.jpg" className="card-img-top " alt={title} />
             )}
             <div className={`p-3 ${styles.contentBox}`}>
-              <h3>{title}</h3>
-              <div>{summary}</div>
+              <h3 className="fs-3">{title}</h3>
+              <div className="d-none d-sm-none d-sm-block" >{summary}</div>
             </div>
           </div>
         </a>
