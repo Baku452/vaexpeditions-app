@@ -5,7 +5,7 @@
   margin-bottom: 30px;
   h3 {
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 1px 1px #000;
     margin: auto;
     position: absolute;
     width: 100%;
@@ -23,4 +23,9 @@
   max-height:600px;
   margin-right: 0px;
 
+}
+
+.shadow {
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
 }

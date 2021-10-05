@@ -14,7 +14,7 @@ const ItemTravelAdvice = ({ title, content, image }) => {
   return (
     <>
       <div role="button" className={styles.box} tabIndex={0} onClick={handleShow}>
-        <h3>{title}</h3>
+        <h3  className={styles.shadow} >{title}</h3>
         <img className="w-100" src={PUBLIC_API + image} alt={title} />
       </div>
 
