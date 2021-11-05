@@ -36,6 +36,18 @@ function Package({
   const [packageTypeLabel, setpackageTypeLabel] = useState('');
   const [packageActivityLabel, setpackageActivityLabel] = useState([]);
   const [packageTypeSvg, setpackageSvg] = useState('');
+  const navBreadcrums = [
+    {
+      title: pack.destination_name,
+      slug: `/destination/${pack.destination_name.toLowerCase()}/search`,
+    },
+    {
+      title: pack.type_name,
+      slug: `/destination/${pack.destination_name.toLowerCase()}/search?types=${pack.package_type}`,
+    },
+    
+    
+  ];
 
   async function fetchOptional() {
     let { destination } = pack;
@@ -98,6 +110,7 @@ function Package({
         title={pack.title}
         subtitle={pack.days}
         pagination={false}
+        navBreadcrums={navBreadcrums}
       />
       <CintaNegra
         days={pack.days}
@@ -127,12 +140,12 @@ function Package({
 
             <Divider />
 
-            {pack?.dates_prices.length > 0 && (
+            {pack?.dates_prices.length > 0 ? (
               <>
                 <PricesAndDates dates={pack?.dates_prices} />
                 <Divider />
               </>
-            )}
+            ) : null}
             {pack?.faqs.length > 0 && (
               <>
                 <Faqs faqs={pack?.faqs} />

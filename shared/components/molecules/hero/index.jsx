@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Link from 'next/link';
 
 import styles from './index.module.scss';
 
@@ -47,6 +48,20 @@ function Hero3({ title, image, images, alt }) {
   return (
     <div className={`w-100 position-relative ${styles.banner3}`}>
       <div className="banner-content">
+      <nav aria-label="breadcrumb" className={styles.breadcrumbs}>
+          <ol className="">
+            <li>
+              <Link href="/">
+                <a href="/">Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/continent/central-and-south-america">
+                <a href="/">Central and South America</a>
+              </Link>
+            </li>
+          </ol>
+        </nav>
         {title && (
           <div className={`h-100 ${styles.align} ${styles.align}`}>
             <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>

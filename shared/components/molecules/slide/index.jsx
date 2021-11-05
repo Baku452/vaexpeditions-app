@@ -1,4 +1,5 @@
 /* import Link from 'next/link'; */
+import Link from 'next/link';
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -29,9 +30,28 @@ function Slide({
   title = false,
   isHome = false,
   isDestination = false,
+  navBreadcrums,
 }) {
   return (
     <div className={`${styles.slide} ${isHome ? styles.slideHome : ''}`}>
+      {!isHome && (
+        <nav aria-label="breadcrumb" className={styles.breadcrumbs}>
+          <ol className="">
+            <li>
+              <Link href="/">
+                <a href="/">HOME</a>
+              </Link>
+            </li>
+            {navBreadcrums.map(item => (
+              <li key={item.title}>
+                <Link href={item.slug}>
+                  <a>{item.title}</a>
+                </Link>
+              </li>
+            ))}
+            </ol>
+        </nav>
+      )}
       {title && (
         <div className={`${styles.boxTitleMobile} d-block d-md-none`}>
           <h2 className={`${styles.title} text-left`}>{title}</h2>
