@@ -44,7 +44,6 @@ function SearchDestination({
     router.push({
       pathname: `/destination/${SSRDestination.slug}/search`,
     });
-
     setCheckedDestination([]);
     setCheckedDays([]);
     setCheckedActvity([]);
@@ -184,7 +183,7 @@ function SearchDestination({
     }
 
     if (router?.query?.where_to_go) {
-      setCheckedActvity(router?.query?.where_to_go.split(','));
+      setCheckedDestination(router?.query?.where_to_go.split(','));
     }
 
     if (router?.query?.start || router?.query?.end) {

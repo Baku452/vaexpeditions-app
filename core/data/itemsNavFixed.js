@@ -37,4 +37,28 @@ const navDestinations = [
   },
 ];
 
-export { navDestinations };
+const navSubDestinations = [
+  {
+    id: 1,
+    title: 'Overview',
+    slug: 'overview',
+  },
+  {
+    id: 2,
+    title: 'Holidays',
+    slug: 'holidays',
+  },
+  {
+    id: 3,
+    title: 'What to Do',
+    slug: 'what-to-do',
+  },
+  {
+    id: 4,
+    title: 'When to Go',
+    slug: 'when-to-go',
+  },
+  
+];
+
+export { navDestinations, navSubDestinations };
