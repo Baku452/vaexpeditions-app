@@ -1,24 +1,57 @@
 @import '../../../../styles/media-queries.scss';
 
+.boxnotWhatsInclude, .boxWhatsInclude{
+
+    ul {
+        // list-style: none;
+        padding-inline-start: 20px;
+        li{
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+      }
+}
 .boxWhatsInclude {
 
+    border-right: 1px solid #dee2e6 !important;
     @media (max-width: $md) {
-        & div h3 {
-            font-size: 1.5rem !important;
-        }
-
-        border-right: none !important;
-    }
-
-    &>div:first-child {
-        padding-right: 15px;
-        padding-bottom: 50px;
-        border-right: 1px solid #dee2e6 !important;
-    }
-
-    @media (max-width: $sm) {
-        &>div:first-child {
             border-right: none !important;
-        }
+            padding-bottom: 40px;
     }
+      li::marker {
+        content: "\2713";
+        color: #2ca4dc;
+      }
 }
+
+.boxnotWhatsInclude {
+      li::marker {
+        content: "X";
+        color: #2ca4dc;
+      }
+}
+
+
+
+// .boxWhatsInclude {
+
+//     @media (max-width: $md) {
+//         & div h3 {
+//             font-size: 1.5rem !important;
+//         }
+
+//         border-right: none !important;
+//     }
+
+//     &>div:first-child {
+//         padding-right: 15px;
+//         padding-bottom: 50px;
+//         border-right: 1px solid #dee2e6 !important;
+//     }
+
+//     @media (max-width: $sm) {
+//         &>div:first-child {
+//             border-right: none !important;
+//         }
+//     }
+// }
