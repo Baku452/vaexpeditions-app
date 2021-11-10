@@ -15,7 +15,7 @@ const NavBarFixed = ({ items }) => {
                   isDynamic
                   spy
                   duration={1000}
-                  offset={-50}
+                  offset={-110}
                   to={item.slug}
                   smooth
                   key={item.id}>

@@ -20,7 +20,8 @@ export default function NewRisk({
       packagetypes={packagetypes}
       notifications={notifications}
       popups={popups}
-      packagesAll={packagesAll}>
+      packagesAll={packagesAll}
+      pixels={520}>
       <Head>
         <title>NEW Regulations to enter Machu Picchu 2019</title>
       </Head>

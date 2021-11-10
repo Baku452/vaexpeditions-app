@@ -223,7 +223,8 @@ function SearchDestination({
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      packagesAll={packagesAll}>
+      packagesAll={packagesAll}
+      pixels={680}>
       <Head>
         <title>Search Tour Trips in {SSRDestination.title} | VA Expeditions</title>
         <meta name="description" content="Search our Tours on VA Expeditions" />

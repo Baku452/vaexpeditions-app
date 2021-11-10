@@ -1,7 +1,47 @@
-.stickyHeader {
+@import '../../../styles/media-queries.scss';
+
+// .stickyHeader {
+//   position: sticky;
+//   top: 0;
+//   z-index: 998;
+//   background: #fff;
+//   box-shadow: 1px 3px 0px 0px #0095ce;
+// }
+
+.stickyHeaderRes{
+  position: relative;
+  z-index: 999;
+  nav[id="nav-mobile"]{
+
+    background-color: #fff;
+  }
+
+  
+  // @media (max-width: $lg) {
+  //   position: sticky;
+  //   top: 0;
+  // }
+}
+.headerFixed{
   position: sticky;
-  top: 0;
-  z-index: 998;
-  background: #fff;
-  box-shadow: 1px 3px 0px 0px #0095ce;
+  z-index: 999;
+  top: -75px;
+  transition: .3s ease;
+   nav > div ul li{
+    // padding: 20px 0;
+  }
+
+}
+
+.fixed{
+  width: 100%;
+  transition: .3s ease;
+  position: fixed;
+  top: 0px;
+  nav ul li > div{
+    margin-top: 80px !important;
+  }
+  nav>div > ul >li{
+    padding:15px 0 !important;
+  }
 }

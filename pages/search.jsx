@@ -19,7 +19,7 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({ destinations, packagetypes, interests, notifications, packagesAll }) {
+function Search({ destinations, packagetypes, interests, notifications, packagesAll, popups }) {
   const router = useRouter();
   const [clearFilter, setClearFilter] = useState(false);
   const [packagesList, setPackagesList] = useState([]);
@@ -199,12 +199,15 @@ function Search({ destinations, packagetypes, interests, notifications, packages
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      packagesAll={packagesAll}>
+      packagesAll={packagesAll}
+      popups={popups}
+      pixels={10}>
+
       <Head>
         <title>Search Tour Trips in VA Expeditions</title>
         <meta name="description" content="Search our Tours on VA Expeditions" />
       </Head>
-      <div className="container d-block d-lg-none pt-3">
+      <div className="container d-block d-lg-none pt-3 pb-3 overflow-hidden sticky">
         <div className="row ">
           <div className="offset-2 col-8">
             <button

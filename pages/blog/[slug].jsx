@@ -44,7 +44,8 @@ function BlogPost({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      popups={popups}>
+      popups={popups}
+      pixels={200}>
       <Head>
         {blog.titleSEO ? <title>{blog.titleSEO}</title> : <title>{blog.title}</title>}
         <meta name="keywords" content={blog?.keywords} />

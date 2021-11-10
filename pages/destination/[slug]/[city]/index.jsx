@@ -25,7 +25,8 @@ function City({
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
-      notifications={notifications}>
+      notifications={notifications}
+      pixels={710}>
       <Head>
         <title>{city?.title} - VA Expeditions</title>
         <meta name="description" content={city?.summary} />

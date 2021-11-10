@@ -40,7 +40,8 @@ function BlogPost({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      popups={popups}>
+      popups={popups}
+      pixels={700}>
       <Head>
         <title>Blog | Va Expeditions</title>
         <meta name="description" content="Blog Va Expeditions" />

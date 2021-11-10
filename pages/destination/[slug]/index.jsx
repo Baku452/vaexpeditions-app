@@ -34,7 +34,8 @@ function Destination({
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
-      notifications={notifications}>
+      notifications={notifications}
+      pixels={600}>
       <Head>
         <title>{SSRDestination?.title} Destination | VA Expeditions</title>
         <meta name="description" content={SSRDestination?.summary} />
@@ -49,9 +50,9 @@ function Destination({
       />
 
       <NavBarFixed items={navDestinations} />
-      <section id="overview" className="py-5 containerBox">
+      <section id="overview" className="py-5 containerBox ">
         {/* <h2 className="title py-4">Overview of {SSRDestination.title}</h2> */}
-        <div className="containerBox">
+        <div className="containerBox py-10 ">
           <h2 className="title2 py-4">OVERVIEW</h2>
           <div
             className="lh-29 text-center"
@@ -59,7 +60,7 @@ function Destination({
           />
         </div>
       </section>
-      <section id="top-tours" className="background2 py-5 overflow-hidden">
+      <section id="top-tours" className="py-5 background2  overflow-hidden">
         <div className="containerBox">
           <h2 className="title2">Top Rated Tours</h2>
           <div className="row py-4">
