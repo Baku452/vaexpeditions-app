@@ -22,6 +22,23 @@ function Hero({ title, image, alt }) {
 
 export { Hero };
 
+function HeroBlog({ title, image, alt }) {
+  return (
+    <div className={`position-relative ${styles.bannerBlog}`}>
+      <div className="banner-content">
+        {title && (
+          <div className={` `}>
+            <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>
+          </div>
+        )}
+      </div>
+      {image ? <img src={image} alt={alt} /> : null}
+    </div>
+  );
+}
+
+export { HeroBlog };
+
 function Hero2({ title, image, alt }) {
   return (
     <div className={`position-relative ${styles.banner2}`}>

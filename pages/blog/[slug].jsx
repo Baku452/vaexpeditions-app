@@ -15,7 +15,7 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 
-import { BannerBlog, BlogCard } from '@/components/index';
+import { HeroBlog, BlogCard } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -52,6 +52,15 @@ function BlogPost({
         <meta name="description" content={blog?.summary} />
       </Head>
 
+      {blog?.banner ? (
+          <HeroBlog
+            title={blog?.title}
+            description={blog?.title}
+            image={PUBLIC_API + blog?.banner}
+            alt={blog?.title}
+          />
+      ) : null}
+      
       <div className="containerBox p-3 p-lg-5">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
@@ -107,14 +116,7 @@ function BlogPost({
             <p>Share the good stuff</p>
           </div>
         </section>
-        {blog?.banner ? (
-          <BannerBlog
-            title={blog?.title}
-            description={blog?.title}
-            image={PUBLIC_API + blog?.banner}
-            alt={blog?.title}
-          />
-        ) : null}
+        
         <div className="row containerBox listStyle">
           <div
             className={`${styles.content}`}
