@@ -51,8 +51,58 @@
     }
   }
 }
+
+.boxMeta2 {
+  text-align: center;
+  letter-spacing: .2em;
+  line-height: 1.3;
+  .boxSocial {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    & > p {
+      margin-bottom: 0 !important;
+      margin-left: 15px !important;
+      color: #919191;
+      font-weight: 600;
+      padding-left: 10px;
+      border-left: 1px solid #919191;
+    }
+    @media (max-width: $md) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .boxSocial > button {
+    padding-left: 20px !important;
+    color: #000000 !important;
+    font-size: 15px !important;
+    // width: 88px;
+  }
+  .boxSocial > button p {
+    display: none;
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
+}
+
+.posts {
+  letter-spacing: 4.4px;
+}
+
+
+
 .content {
+  h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 50px 0;
+    font-weight: 700;
+  }
   max-width: 100%;
+
 }
 
 .grid {

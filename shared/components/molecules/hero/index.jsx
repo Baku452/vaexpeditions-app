@@ -22,13 +22,38 @@ function Hero({ title, image, alt }) {
 
 export { Hero };
 
-function HeroBlog({ title, image, alt }) {
+function HeroBlog({ title, image, alt, navBreadcrums, }) {
   return (
+     
     <div className={`position-relative ${styles.bannerBlog}`}>
       <div className="banner-content">
+      <nav aria-label="breadcrumb" className={styles.breadcrumbs}>
+          <ol className="">
+            <li>
+              <Link href="/">
+                <a href="/">Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog">
+                <a href="/blog">BLOG</a>
+              </Link>
+            </li>
+            {navBreadcrums.map(item => (
+              <li key={item.title}>
+                <Link href={item.slug}>
+                  <a>{item.title}</a>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </nav>
+        
+      </div>
+            <div className="">
         {title && (
           <div className={` `}>
-            <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>
+            <h1 className={`fs-48 text-center ${styles.titleBlog}`}>{title}</h1>
           </div>
         )}
       </div>
@@ -39,7 +64,7 @@ function HeroBlog({ title, image, alt }) {
 
 export { HeroBlog };
 
-function Hero2({ title, image, alt }) {
+function Hero2({ title, image, alt,}) {
   return (
     <div className={`position-relative ${styles.banner2}`}>
       <div className="banner-content">

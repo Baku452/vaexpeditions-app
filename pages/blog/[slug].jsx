@@ -5,17 +5,15 @@ import { useRouter } from 'next/router';
 import {
   EmailIcon,
   EmailShareButton,
-  FacebookIcon,
   FacebookShareButton,
-  PinterestIcon,
-  PinterestShareButton,
-  TwitterIcon,
   TwitterShareButton,
-  WhatsappIcon,
-  WhatsappShareButton,
 } from 'react-share';
+import {
+  FaFacebook,
+  FaTwitter,
+} from 'react-icons/fa';
 
-import { HeroBlog, BlogCard } from '@/components/index';
+import { HeroBlog, BlogCard2 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -37,6 +35,16 @@ function BlogPost({
   const size = '2rem';
   const reg = /\/media/g;
   const content = blog.content.replace(reg, `${PUBLIC_API}/media`);
+  const navBreadcrums = [
+    {
+          title: blog.destination,
+          slug: `/blog/category/${blog.destination}`,
+    },
+    {
+          title: blog.type_name,
+          slug: `/blog/category/${blog.type_name}`,
+      },
+  ];
 
   return (
     <Base
@@ -58,33 +66,13 @@ function BlogPost({
             description={blog?.title}
             image={PUBLIC_API + blog?.banner}
             alt={blog?.title}
+            navBreadcrums={navBreadcrums}
           />
       ) : null}
       
-      <div className="containerBox p-3 p-lg-5">
-        <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item">
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-            </li>
-            <li className="breadcrumb-item active" aria-current="page">
-              <Link
-                href={`/blog/category/${blog.type_name
-                  .toString()
-                  .toLowerCase()
-                  .replace(' ', '-')}`}>
-                <a>{blog.type_name}</a>
-              </Link>
-            </li>
-          </ol>
-        </nav>
-        <section>
-          <h1 className={`${styles.title}`}>{blog?.title}</h1>
-        </section>
-        <section className={`${styles.boxMeta} pb-4`}>
-          <div className="d-flex py-3">
+      <div className="containerBox  p-5">
+        <section className={`${styles.boxMeta} `}>
+          <div className="d-flex ">
             <h4 className="pr-3 border-right text-muted">
               Written by:
               <span className="text-underlined text-uppercase">
@@ -93,30 +81,7 @@ function BlogPost({
             </h4>
             <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
           </div>
-          <div className={`${styles.boxSocial}`}>
-            <FacebookShareButton url={URL_PACKAGE + router.asPath}>
-              <FacebookIcon size={size} /> <p>Post</p>
-            </FacebookShareButton>
-            <TwitterShareButton url={URL_PACKAGE + router.asPath}>
-              <TwitterIcon size={size} /> <p>Tweet</p>
-            </TwitterShareButton>
-            {blog.banner ? (
-              <PinterestShareButton
-                url={URL_PACKAGE + router.asPath}
-                media={PUBLIC_API + blog?.banner}>
-                <PinterestIcon size={size} /> <p>Pin</p>
-              </PinterestShareButton>
-            ) : null}
-            <WhatsappShareButton url={URL_PACKAGE + router.asPath}>
-              <WhatsappIcon size={size} /> <p>Share</p>
-            </WhatsappShareButton>
-            <EmailShareButton url={URL_PACKAGE + router.asPath}>
-              <EmailIcon size={size} /> <p>Mail</p>
-            </EmailShareButton>
-            <p>Share the good stuff</p>
-          </div>
-        </section>
-        
+          </section>
         <div className="row containerBox listStyle">
           <div
             className={`${styles.content}`}
@@ -124,17 +89,35 @@ function BlogPost({
           />
         </div>
       </div>
-      <section className="containerBox px-3 pb-4">
+
+      <div className="containerBox">
+      <section className={`${styles.boxMeta2}  `}>
+            <h2 className="p-3">SHARE THIS POST </h2>
+          <div className={`${styles.boxSocial} pb-5`}>
+            <EmailShareButton url={URL_PACKAGE + router.asPath}>
+              <EmailIcon size={size} /> <p>Mail</p>
+            </EmailShareButton>
+            <FacebookShareButton url={URL_PACKAGE + router.asPath}>
+              <FaFacebook size={size} /> <p>Post</p>
+            </FacebookShareButton>
+            <TwitterShareButton url={URL_PACKAGE + router.asPath}>
+              <FaTwitter size={size} /> <p>Tweet</p>
+            </TwitterShareButton>
+          </div>
+        </section>
+        </div>
+
+        <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
-          <div className="col-12 pb-3">
-            <h2 className="fs-20 font-weight-bold">Check our Recent Posts </h2>
+          <div className="col-12 p-5">
+            <h2 className={`${styles.posts} fs-30 font-weight-bold text-center`}>POPULAR POSTS </h2>
           </div>
         </div>
-        <div className="row col-12">
+        <div className="row containerBox">
           {blogsPosts
             ? blogsPosts.results.map(item => (
-                <div key={item.slug} className="col-12 col-md-4 col-lg-4 pb-4">
-                  <BlogCard
+                <div key={item.slug} className="col-12 col-md-6 col-lg-3 pb-4">
+                  <BlogCard2
                     key={item.title}
                     title={item.title}
                     destination={item.destination}

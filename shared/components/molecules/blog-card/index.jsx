@@ -36,4 +36,21 @@ function BlogCard({ title, destination, slug, thumbnail, type, description }) {
   );
 }
 
-export { BlogCard };
+function BlogCard2({ title,slug, thumbnail }) {
+  return (
+    // <Link href={`/package/${slug}`}>
+      <Link href={`/blog/${slug}`}>
+          <a>
+            <div className={` ${styles.carta2}`}>
+              <img className="cursor-pointer" src={thumbnail} alt={title} />
+              <div className={`${styles.cardPost2}`}>
+                <h3 >{title}</h3> 
+              </div>
+            </div>
+          </a>
+      </Link>
+  
+  );
+}
+
+export {BlogCard, BlogCard2 };
