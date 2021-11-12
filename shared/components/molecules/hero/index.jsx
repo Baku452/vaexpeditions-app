@@ -1,5 +1,5 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './index.module.scss';
 
@@ -20,24 +20,14 @@ function Hero({ title, image, alt }) {
   );
 }
 
-export { Hero };
-
 function HeroBlog({ title, image, alt }) {
   return (
     <div className={`position-relative ${styles.bannerBlog}`}>
-      <div className="banner-content">
-        {title && (
-          <div className={` `}>
-            <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>
-          </div>
-        )}
-      </div>
+      {title && <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>}
       {image ? <img src={image} alt={alt} /> : null}
     </div>
   );
 }
-
-export { HeroBlog };
 
 function Hero2({ title, image, alt }) {
   return (
@@ -59,13 +49,11 @@ function Hero2({ title, image, alt }) {
   );
 }
 
-export { Hero2 };
-
 function Hero3({ title, image, images, alt }) {
   return (
     <div className={`w-100 position-relative ${styles.banner3}`}>
       <div className="banner-content">
-      <nav aria-label="breadcrumb" className={styles.breadcrumbs}>
+        <nav aria-label="breadcrumb" className={styles.breadcrumbs}>
           <ol className="">
             <li>
               <Link href="/">
@@ -116,4 +104,4 @@ function Hero3({ title, image, images, alt }) {
   );
 }
 
-export { Hero3 };
+export { Hero, HeroBlog, Hero2, Hero3 };

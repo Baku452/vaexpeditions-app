@@ -4,10 +4,11 @@ import styles from './index.module.scss';
 
 function BlogCard({ title, destination, slug, thumbnail, type, description }) {
   return (
-    // <Link href={`/package/${slug}`}>
     <div className={`w-100 ${styles.carta}`}>
       <Link href={`/blog/${slug}`}>
-        <img className="cursor-pointer" src={thumbnail} alt={title} />
+        <a>
+          <img src={thumbnail} alt={title} />
+        </a>
       </Link>
       <div className={`${styles.cardPost}`}>
         <div className={`${styles.boxTags}`}>
