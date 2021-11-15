@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 
-function BlogCard({ title, slug, thumbnail, description }) {
+function BlogCard({ title, slug, thumbnail, description, time }) {
   return (
     <Link href={`/blog/${slug}`}>
       <a>
@@ -10,9 +10,13 @@ function BlogCard({ title, slug, thumbnail, description }) {
           <div className="w-100 col-12 col-md-6 order-md-1">
             <img src={thumbnail} alt={title} />
           </div>
-          <div
-            className={`${styles.cardPost} col-12 col-md-6  order-md-2 align-self-center`}>
+          <div className={`${styles.cardPost} col-12 col-md-6  order-md-2 align-self-center`}>
             <h3>{title}</h3>
+            <div className={`${styles.cardTime} text-center`} >
+            <span className={`${styles.time}`}>{time}</span>
+            <span className={`${styles.min}`}>MIN</span>
+            <span className={`${styles.read}`}>READ</span>
+            </div>
             <div
               className={`${styles.cardText} align-self-center lh-29 d-none d-md-block`}
               dangerouslySetInnerHTML={{
