@@ -24,10 +24,10 @@ function BlogPage({
   const [interestActive, setInterest] = useState();
   const [numberPosts, setNumberPosts] = useState(0);
   const [queryBlog, setQueryBlog] = useState('');
-  const [offset, setOffset] = useState(1);
+  const [offset, setOffset] = useState(10);
 
   async function fetchMorePosts() {
-    setOffset(prevState => prevState + 1);
+    setOffset(prevState => prevState + 10);
     const { result } = await posts({ queryParams: queryBlog, offset });
     setPostList([...postList, ...result?.data.results]);
   }
@@ -58,7 +58,7 @@ function BlogPage({
     });
     setPostList(result?.data.results);
     setNumberPosts(result?.data.count);
-    setOffset(1);
+    setOffset(10);
   }
 
   useEffect(() => {

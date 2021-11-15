@@ -48,7 +48,7 @@ function packagesTypes() {
 
 function posts({ queryParams = '', offset = 0 }) {
   return services({
-    url: `/blog/?limit=1&offset=${offset}${queryParams}`,
+    url: `/blog/?limit=10&offset=${offset}${queryParams}`,
     method: 'GET',
   })
     .then(result => {
