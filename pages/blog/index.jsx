@@ -1,10 +1,9 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-import { AsideBlog, BlogCard, HeroBlog } from '@/components/index';
+import { BlogCard, HeroBlog, ShowMore } from '@/components/index';
 import { posts } from '@/core/index';
 import { Base } from '@/layouts/index';
 
@@ -19,35 +18,52 @@ function BlogPage({
   blogtypesRes,
   interests,
 }) {
-  const router = useRouter();
   const [postList, setPostList] = useState([]);
   const [destinationsActive, setDestinationsActive] = useState();
   const [typeActive, setTypeActive] = useState();
+  const [interestActive, setInterest] = useState();
+  const [numberPosts, setNumberPosts] = useState(0);
+  const [queryBlog, setQueryBlog] = useState('');
+  const [offset, setOffset] = useState(1);
 
+  async function fetchMorePosts() {
+    setOffset(prevState => prevState + 1);
+    const { result } = await posts({ queryParams: queryBlog, offset });
+    setPostList([...postList, ...result?.data.results]);
+  }
+
+  function handleMoreitems() {
+    fetchMorePosts();
+  }
   function handleChangeDestination(event) {
     setDestinationsActive(event.target.value);
-    // setDestinations(event.target.value);
   }
   function handleChangeTypes(event) {
     setTypeActive(event.target.value);
-    // setTypes(event.target.value);
   }
 
   function handleChangeInterest(event) {
-    // setTypes(event.target.value);
+    setInterest(event.target.value);
   }
 
   async function fetchPosts() {
-    const destQuery = destinationsActive ? `?destination=${destinationsActive}` : '';
-    const typeQuery = typeActive ? `?types=${typeActive}` : '';
+    const destQuery = destinationsActive ? `&destination=${destinationsActive}` : '';
+    const typeQuery = typeActive ? `&types=${typeActive}` : '';
+    const interesteQuery = interestActive ? `&interest=${interestActive}` : '';
 
-    const { result } = await posts({ queryParams: destQuery + typeQuery });
+    setQueryBlog(destQuery + typeQuery + interesteQuery);
+
+    const { result } = await posts({
+      queryParams: destQuery + typeQuery + interesteQuery,
+    });
     setPostList(result?.data.results);
+    setNumberPosts(result?.data.count);
+    setOffset(1);
   }
 
   useEffect(() => {
     fetchPosts();
-  }, [destinationsActive, typeActive]);
+  }, [destinationsActive, typeActive, interestActive]);
   return (
     <Base
       destinations={destinations}
@@ -112,7 +128,7 @@ function BlogPage({
             <section className="mx-auto row py-3">
               {postList
                 ? postList.map(item => (
-                    <div key={item.slug} className="col-12 col-md-6 col-lg-6 pb-4">
+                    <div key={item.slug} className="col-12 pb-4">
                       <BlogCard
                         key={item.title}
                         title={item.title}
@@ -125,6 +141,9 @@ function BlogPage({
                     </div>
                   ))
                 : null}
+              {postList && postList.length < numberPosts ? (
+                <ShowMore eventHandler={handleMoreitems} />
+              ) : null}
             </section>
           </div>
         </section>

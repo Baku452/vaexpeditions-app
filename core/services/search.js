@@ -46,8 +46,11 @@ function packagesTypes() {
     });
 }
 
-function posts({ queryParams = '' }) {
-  return services({ url: `/blog/${queryParams}`, method: 'GET' })
+function posts({ queryParams = '', offset = 0 }) {
+  return services({
+    url: `/blog/?limit=1&offset=${offset}${queryParams}`,
+    method: 'GET',
+  })
     .then(result => {
       return { result };
     })
