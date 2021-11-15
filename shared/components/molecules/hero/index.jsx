@@ -20,14 +20,21 @@ function Hero({ title, image, alt }) {
   );
 }
 
-export { Hero };
+function HeroBlog({ title, image, alt }) {
+  return (
+    <div className={`position-relative ${styles.bannerBlog}`}>
+      {title && <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>}
+      {image ? <img src={image} alt={alt} /> : null}
+    </div>
+  );
+}
 
-function HeroBlog({ title, image, alt, navBreadcrums, }) {
+function HeroBlog2({ title, image, alt, navBreadcrums, }) {
   return (
      
-    <div className={`position-relative ${styles.bannerBlog}`}>
+    <div className={`w-100 position-relative ${styles.bannerBlog}`}>
       <div className="banner-content">
-      <nav aria-label="breadcrumb" className={styles.breadcrumbs}>
+      <nav aria-label="breadcrumb" className={`${styles.breadcrumbs} d-none d-md-block `}>
           <ol className="">
             <li>
               <Link href="/">
@@ -48,22 +55,12 @@ function HeroBlog({ title, image, alt, navBreadcrums, }) {
             ))}
           </ol>
         </nav>
-        
       </div>
-            <div className="">
-        {title && (
-          <div className={` `}>
-            <h1 className={`fs-48 text-center ${styles.titleBlog}`}>{title}</h1>
-          </div>
-        )}
-      </div>
+      {title && (<h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1> )}
       {image ? <img src={image} alt={alt} /> : null}
     </div>
   );
 }
-
-export { HeroBlog };
-
 function Hero2({ title, image, alt,}) {
   return (
     <div className={`position-relative ${styles.banner2}`}>
@@ -83,9 +80,6 @@ function Hero2({ title, image, alt,}) {
     </div>
   );
 }
-
-export { Hero2 };
-
 function Hero3({ title, image, images, alt }) {
   return (
     <div className={`w-100 position-relative ${styles.banner3}`}>
@@ -141,4 +135,4 @@ function Hero3({ title, image, images, alt }) {
   );
 }
 
-export { Hero3 };
+export {Hero, HeroBlog,HeroBlog2, Hero2, Hero3 };

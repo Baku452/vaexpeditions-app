@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
-  EmailIcon,
   EmailShareButton,
   FacebookShareButton,
   TwitterShareButton,
@@ -11,9 +10,10 @@ import {
 import {
   FaFacebook,
   FaTwitter,
+  FaEnvelope,
 } from 'react-icons/fa';
 
-import { HeroBlog, BlogCard2 } from '@/components/index';
+import { HeroBlog2, BlogCard2 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -61,7 +61,7 @@ function BlogPost({
       </Head>
 
       {blog?.banner ? (
-          <HeroBlog
+          <HeroBlog2
             title={blog?.title}
             description={blog?.title}
             image={PUBLIC_API + blog?.banner}
@@ -70,7 +70,7 @@ function BlogPost({
           />
       ) : null}
       
-      <div className="containerBox  p-5">
+      <div className="containerBox px-5 pt-2 ">
         <section className={`${styles.boxMeta} `}>
           <div className="d-flex ">
             <h4 className="pr-3 border-right text-muted">
@@ -82,7 +82,7 @@ function BlogPost({
             <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
           </div>
           </section>
-        <div className="row containerBox listStyle">
+        <div className="row containerBox listStyle py-3">
           <div
             className={`${styles.content}`}
             dangerouslySetInnerHTML={{ __html: content }}
@@ -95,7 +95,7 @@ function BlogPost({
             <h2 className="p-3">SHARE THIS POST </h2>
           <div className={`${styles.boxSocial} pb-5`}>
             <EmailShareButton url={URL_PACKAGE + router.asPath}>
-              <EmailIcon size={size} /> <p>Mail</p>
+              <FaEnvelope size={size} /> <p>Mail</p>
             </EmailShareButton>
             <FacebookShareButton url={URL_PACKAGE + router.asPath}>
               <FaFacebook size={size} /> <p>Post</p>

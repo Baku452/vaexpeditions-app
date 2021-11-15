@@ -1,34 +1,44 @@
 .carta {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
   img {
+    padding-bottom: 5px;
     width: 100%;
     height: 100%;
+    max-width: 520px;
     object-fit: cover;
   }
 }
 .cardPost {
-  position: relative;
+  text-align: center;
   margin: 0 auto;
   z-index: 10;
-  width: 100%;
-  font-size: 12px;
+  font-size: 17px;
+  padding-left: 40px;
+  
   h3 {
-    font-size: 23px;
+    font-size: 28px;
     font-weight: 600;
+    letter-spacing: 5.6px;
+    text-align: center;
+    text-transform: uppercase;
     margin-bottom: 15px;
     color: black;
     transition: 0.2s ease;
   }
   h3:hover {
-    color: #0095ce;
+    //color: #0095ce;
   }
-  h4 {
+
+}
+
+.cardBtn {
+  a {
     font-size: 15px;
-    // position: absolute;
-    bottom: 0;
+    color: #0095ce;
+    background-color: rgb(255, 255, 255);
   }
+}
+.cardText {
+  color:  rgb(0, 0, 0) !important;
 }
 
 .carta2 {

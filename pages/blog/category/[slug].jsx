@@ -59,7 +59,7 @@ function BlogCategory({
             </section>
           </div>
 
-          <AsideBlog destinations={destinations} blogtypesRes={blogtypesRes} />
+          {/* <AsideBlog destinations={destinations} blogtypesRes={blogtypesRes} /> */}
         </div>
       </section>
     </Base>
