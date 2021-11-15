@@ -1,19 +1,10 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  TwitterShareButton,
-} from 'react-share';
-import {
-  FaFacebook,
-  FaTwitter,
-  FaEnvelope,
-} from 'react-icons/fa';
+import { FaEnvelope, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { EmailShareButton, FacebookShareButton, TwitterShareButton } from 'react-share';
 
-import { HeroBlog2, BlogCard2 } from '@/components/index';
+import { BlogCard2, HeroBlog2 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -27,9 +18,8 @@ function BlogPost({
   destinations,
   packagetypes,
   notifications,
-  popups,
   packagesAll,
-  blogsPosts,
+  popularPosts,
 }) {
   const router = useRouter();
   const size = '2rem';
@@ -52,7 +42,6 @@ function BlogPost({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      popups={popups}
       pixels={200}>
       <Head>
         {blog.titleSEO ? <title>{blog.titleSEO}</title> : <title>{blog.title}</title>}
@@ -61,15 +50,15 @@ function BlogPost({
       </Head>
 
       {blog?.banner ? (
-          <HeroBlog2
-            title={blog?.title}
-            description={blog?.title}
-            image={PUBLIC_API + blog?.banner}
-            alt={blog?.title}
-            navBreadcrums={navBreadcrums}
-          />
+        <HeroBlog2
+          title={blog?.title}
+          description={blog?.title}
+          image={PUBLIC_API + blog?.banner}
+          alt={blog?.title}
+          navBreadcrums={navBreadcrums}
+        />
       ) : null}
-      
+
       <div className="containerBox px-5 pt-2 ">
         <section className={`${styles.boxMeta} `}>
           <div className="d-flex ">
@@ -81,7 +70,7 @@ function BlogPost({
             </h4>
             <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
           </div>
-          </section>
+        </section>
         <div className="row containerBox listStyle py-3">
           <div
             className={`${styles.content}`}
@@ -91,8 +80,8 @@ function BlogPost({
       </div>
 
       <div className="containerBox">
-      <section className={`${styles.boxMeta2}  `}>
-            <h2 className="p-3">SHARE THIS POST </h2>
+        <section className={`${styles.boxMeta2}  `}>
+          <h2 className="p-3">SHARE THIS POST </h2>
           <div className={`${styles.boxSocial} pb-5`}>
             <EmailShareButton url={URL_PACKAGE + router.asPath}>
               <FaEnvelope size={size} /> <p>Mail</p>
@@ -105,17 +94,19 @@ function BlogPost({
             </TwitterShareButton>
           </div>
         </section>
-        </div>
+      </div>
 
-        <section className="px-3 pb-4 background2 col-12">
+      <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
           <div className="col-12 p-5">
-            <h2 className={`${styles.posts} fs-30 font-weight-bold text-center`}>POPULAR POSTS </h2>
+            <h2 className={`${styles.posts} fs-30 font-weight-bold text-center`}>
+              POPULAR POSTS{' '}
+            </h2>
           </div>
         </div>
         <div className="row containerBox">
-          {blogsPosts
-            ? blogsPosts.results.map(item => (
+          {popularPosts
+            ? popularPosts.results.map(item => (
                 <div key={item.slug} className="col-12 col-md-6 col-lg-3 pb-4">
                   <BlogCard2
                     key={item.title}
@@ -159,14 +150,11 @@ export async function getStaticProps({ params }) {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
-  const popupResponse = await fetch(`${PUBLIC_API}/popup/`);
-  const popups = await popupResponse.json();
-
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
-  const blogsReq = await fetch(`${PUBLIC_API}/blog/`);
-  const blogsPosts = await blogsReq.json();
+  const reqPopularPosts = await fetch(`${PUBLIC_API}/blog/popular/`);
+  const popularPosts = await reqPopularPosts.json();
 
   return {
     props: {
@@ -175,8 +163,7 @@ export async function getStaticProps({ params }) {
       packagetypes,
       notifications,
       packagesAll,
-      popups,
-      blogsPosts,
+      popularPosts,
     },
     revalidate: 1,
   };
