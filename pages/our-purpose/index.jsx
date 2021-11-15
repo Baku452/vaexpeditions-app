@@ -17,7 +17,8 @@ export default function OurPurpose({
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      packagesAll={packagesAll}>
+      packagesAll={packagesAll}
+      pixels={700}>
       <Head>
         <title>Va Expeditions - Our Purpose</title>
         <meta

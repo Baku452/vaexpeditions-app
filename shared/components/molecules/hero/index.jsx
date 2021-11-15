@@ -20,9 +20,49 @@ function Hero({ title, image, alt }) {
   );
 }
 
-export { Hero };
+function HeroBlog({ title, image, alt }) {
+  return (
+    <div className={`position-relative ${styles.bannerBlog}`}>
+      {title && <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>}
+      {image ? <img src={image} alt={alt} /> : null}
+    </div>
+  );
+}
 
-function Hero2({ title, image, alt }) {
+function HeroBlog2({ title, image, alt, navBreadcrums, }) {
+  return (
+     
+    <div className={`w-100 position-relative ${styles.bannerBlog}`}>
+      <div className="banner-content">
+      <nav aria-label="breadcrumb" className={`${styles.breadcrumbs} d-none d-md-block `}>
+          <ol className="">
+            <li>
+              <Link href="/">
+                <a href="/">Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog">
+                <a href="/blog">BLOG</a>
+              </Link>
+            </li>
+            {navBreadcrums.map(item => (
+              <li >
+                <a >{item.title}</a>
+                {/* <Link href={item.slug}>
+                  <a>{item.title}</a>
+                </Link> */}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+      {title && (<h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1> )}
+      {image ? <img src={image} alt={alt} /> : null}
+    </div>
+  );
+}
+function Hero2({ title, image, alt,}) {
   return (
     <div className={`position-relative ${styles.banner2}`}>
       <div className="banner-content">
@@ -41,9 +81,6 @@ function Hero2({ title, image, alt }) {
     </div>
   );
 }
-
-export { Hero2 };
-
 function Hero3({ title, image, images, alt }) {
   return (
     <div className={`w-100 position-relative ${styles.banner3}`}>
@@ -99,4 +136,4 @@ function Hero3({ title, image, images, alt }) {
   );
 }
 
-export { Hero3 };
+export {Hero, HeroBlog,HeroBlog2, Hero2, Hero3 };

@@ -89,7 +89,7 @@ function MenuHoliday({ packagetypes }) {
   );
 }
 
-function Menu({ destinations: destinationsCurrent, packagetypes }) {
+function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
   const router = useRouter();
   const [destinations, setDestinations] = useState([]);
   const countries = destinationsCurrent;
@@ -113,6 +113,17 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
       <div className="container p-0 d-block">
         <nav className="navbar-expand-lg d-none d-md-block px-0 position-static">
           <div className="collapse navbar-collapse">
+          {fixed ? (
+              <Link href="/">
+                <a className="position-relative">
+                  <img
+                    alt="Logo Valencia Travel"
+                    className={styles.logo}
+                    src="/images/VTC_Logotipo_Horizontal_blanco.svg"
+                  />
+                </a>
+              </Link>
+            ) : null}
             <ul className="navbar-nav">
               <li className={styles.nav}>
                 <a
@@ -171,6 +182,18 @@ function Menu({ destinations: destinationsCurrent, packagetypes }) {
                 </Link>
               </li>
             </ul>
+            {fixed ? (
+              <div className="col-auto">
+                <Link href="/contact-us">
+                  <button
+                    type="button"
+                    style={{ backgroundColor: '#a6192e', border: 'none' }}
+                    className="btn btn-primary">
+                    Book Your Adventure!
+                  </button>
+                </Link>
+              </div>
+            ) : null}
           </div>
         </nav>
       </div>

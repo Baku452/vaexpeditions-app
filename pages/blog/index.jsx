@@ -1,51 +1,83 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import SwiperCore, { Navigation } from 'swiper';
+import React, { useEffect, useState } from 'react';
+import Form from 'react-bootstrap/Form';
 
-import { AsideBlog, BlogCard, Hero } from '@/components/index';
+import { BlogCard, HeroBlog, ShowMore } from '@/components/index';
 import { posts } from '@/core/index';
 import { Base } from '@/layouts/index';
 
-SwiperCore.use([Navigation]);
-// import fetch from 'cross-fetch';
-
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function BlogPost({
+function BlogPage({
   destinations,
   packagetypes,
   notifications,
   popups,
   packagesAll,
   blogtypesRes,
+  interests,
 }) {
-  const router = useRouter();
   const [postList, setPostList] = useState([]);
+  const [destinationsActive, setDestinationsActive] = useState();
+  const [typeActive, setTypeActive] = useState();
+  const [interestActive, setInterest] = useState();
+  const [numberPosts, setNumberPosts] = useState(0);
+  const [queryBlog, setQueryBlog] = useState('');
+  const [offset, setOffset] = useState(10);
+
+  async function fetchMorePosts() {
+    setOffset(prevState => prevState + 10);
+    const { result } = await posts({ queryParams: queryBlog, offset });
+    setPostList([...postList, ...result?.data.results]);
+  }
+
+  function handleMoreitems() {
+    fetchMorePosts();
+  }
+  function handleChangeDestination(event) {
+    setDestinationsActive(event.target.value);
+  }
+  function handleChangeTypes(event) {
+    setTypeActive(event.target.value);
+  }
+
+  function handleChangeInterest(event) {
+    setInterest(event.target.value);
+  }
 
   async function fetchPosts() {
-    const [, querySet] = router.asPath.split('?');
-    const queryParams = querySet ? `?${querySet}` : '';
-    const { result } = await posts({ queryParams });
+    const destQuery = destinationsActive ? `&destination=${destinationsActive}` : '';
+    const typeQuery = typeActive ? `&types=${typeActive}` : '';
+    const interesteQuery = interestActive ? `&interest=${interestActive}` : '';
+
+    setQueryBlog(destQuery + typeQuery + interesteQuery);
+
+    const { result } = await posts({
+      queryParams: destQuery + typeQuery + interesteQuery,
+    });
     setPostList(result?.data.results);
+    setNumberPosts(result?.data.count);
+    setOffset(10);
   }
 
   useEffect(() => {
     fetchPosts();
-  }, [router]);
+  }, [destinationsActive, typeActive, interestActive]);
   return (
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      popups={popups}>
+      popups={popups}
+      pixels={700}
+      interests={interests}>
       <Head>
         <title>Blog | Va Expeditions</title>
         <meta name="description" content="Blog Va Expeditions" />
       </Head>
-      <Hero
+      <HeroBlog
         title="Blog Va Expeditions"
         description="12 years of experience, 84,000+ travellers 
         13 Destinations 100% Satisfaction"
@@ -55,40 +87,68 @@ function BlogPost({
       {/* <section id="categories" className="container">
           <CountryFilter items={blogtypesRes}/>
       </section> */}
-      <section className="containerBox px-3 pt-5">
-        <div className="row">
-          <div className="col-12 col-lg-8 order-2 order-lg-1">
-            <div className="row">
-              <div className="col-12 pb-3">
-                <h2>Trending Posts </h2>
-                <p>
-                  Rediscover the wonder of the world – and book the travel you've missed.
-                </p>
-              </div>
-            </div>
-            <section className="mx-auto row py-3">
-              <div className="row">
-                {postList
-                  ? postList.map(item => (
-                      <div key={item.slug} className="col-12 col-md-6 col-lg-6 pb-4">
-                        <BlogCard
-                          key={item.title}
-                          title={item.title}
-                          destination={item.destination}
-                          slug={item.slug}
-                          thumbnail={item.thumbnail_cat}
-                          description={item.content}
-                          type={item.type_name}
-                        />
-                      </div>
-                    ))
-                  : null}
-              </div>
+      <div className="containerBox  pt-5">
+        <section id="filter" className="row pb-5">
+          <div className="col-12 col-lg-4 mx-auto px-3">
+            <Form.Control as="select" onChange={event => handleChangeDestination(event)}>
+              <option value="">DESTINATION</option>
+              {destinations.length > 0 &&
+                destinations[0].destinations.map(item => (
+                  <option value={item.id} key={item.id}>
+                    {item.title} - {item.sub_title}
+                  </option>
+                ))}
+            </Form.Control>
+          </div>
+          <div className="col-12 col-lg-4 mx-auto px-3">
+            <Form.Control as="select" onChange={event => handleChangeTypes(event)}>
+              <option value="">CATEGORY</option>
+              {blogtypesRes.length > 0 &&
+                blogtypesRes.map(item => (
+                  <option value={item.id} key={item.id}>
+                    {item.title}
+                  </option>
+                ))}
+            </Form.Control>
+          </div>
+          <div className="col-12 col-lg-4 mx-auto px-3">
+            <Form.Control as="select" onChange={event => handleChangeInterest(event)}>
+              <option value="">INTEREST</option>
+              {interests.length > 0 &&
+                interests.map(item => (
+                  <option value={item.id} key={item.id}>
+                    {item.title}
+                  </option>
+                ))}
+            </Form.Control>
+          </div>
+        </section>
+        <section className="">
+          <div className="col-12">
+            <section className="mx-auto ">
+              {postList
+                ? postList.map(item => (
+                    <div key={item.slug} className="col-12">
+                      <BlogCard
+                        key={item.title}
+                        title={item.title}
+                        destination={item.destination}
+                        slug={item.slug}
+                        thumbnail={item.thumbnail_cat}
+                        description={item.content}
+                        type={item.type_name}
+                        time={item.time_reading}
+                      />
+                    </div>
+                  ))
+                : null}
+              {postList && postList.length < numberPosts ? (
+                <ShowMore eventHandler={handleMoreitems} />
+              ) : null}
             </section>
           </div>
-          <AsideBlog destinations={destinations} blogtypesRes={blogtypesRes} />
-        </div>
-      </section>
+        </section>
+      </div>
     </Base>
   );
 }
@@ -115,6 +175,8 @@ export async function getStaticProps() {
   const blogtypes = await fetch(`${PUBLIC_API}/blogtypes/`);
   const blogtypesRes = await blogtypes.json();
 
+  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interests = await interestResponse.json();
   return {
     props: {
       destinations,
@@ -124,9 +186,10 @@ export async function getStaticProps() {
       popups,
       blogsPosts,
       blogtypesRes,
+      interests,
     },
     revalidate: 1,
   };
 }
 
-export default BlogPost;
+export default BlogPage;

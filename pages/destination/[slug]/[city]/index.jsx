@@ -1,23 +1,25 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import Link from 'next/link';
-import { Banner2, DestinationItem,NavBarFixed, PackageItem } from '@/components/index';
+
+import { Banner2, DestinationItem, NavBarFixed, PackageItem } from '@/components/index';
+import { activities, navSubDestinations } from '@/core/index';
 import { Base } from '@/layouts/index';
 
-import { activities,navSubDestinations } from '@/core/index';
-import styles from './../../index.module.scss';
+import styles from '../../index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function City({ 
-  city, 
-  destinations, 
-  packagetypes, 
-  notifications, 
+function City({
+  city,
+  destinations,
+  packagetypes,
+  notifications,
   SSRDestination,
-  SSRPackages }) {
+  SSRPackages,
+}) {
   const router = useRouter();
   useEffect(() => {}, [router]);
 
@@ -25,7 +27,8 @@ function City({
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
-      notifications={notifications}>
+      notifications={notifications}
+      pixels={710}>
       <Head>
         <title>{city?.title} - VA Expeditions</title>
         <meta name="description" content={city?.summary} />
@@ -68,46 +71,44 @@ function City({
           </div>
 
           <div className="text-center mx-auto fs-26 link font-weight-bold">
-          <Link  href={`/destination/${SSRDestination.slug}/search?where_to_go=${city.id}`} >
+            <Link
+              href={`/destination/${SSRDestination.slug}/search?where_to_go=${city.id}`}>
               <a className="link" className={`${styles.boton} p-2 my-4`} type="button">
-              SHOW MORE
+                SHOW MORE
               </a>
             </Link>
           </div>
-
         </div>
-
       </section>
       <section id="what-to-do" className="py-5 containerBox">
         <div className="containerBox row col-12 p-4 ">
-        <div className="col-12">
-          <h2 className="title2 py-4">What to Do in {city?.title} </h2>
-        </div>
-              {city.items
-                ? city.items.map(item => (
-                    <div
-                      key={item?.id.toString()}
-                      className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                      <DestinationItem
-                        title={item.title}
-                        content={item.content}
-                        thumbnail={PUBLIC_API + item.image}
-                      />
-                    </div>
-                  ))
-                : null}
+          <div className="col-12">
+            <h2 className="title2 py-4">What to Do in {city?.title} </h2>
+          </div>
+          {city.items
+            ? city.items.map(item => (
+                <div
+                  key={item?.id.toString()}
+                  className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                  <DestinationItem
+                    title={item.title}
+                    content={item.content}
+                    thumbnail={PUBLIC_API + item.image}
+                  />
+                </div>
+              ))
+            : null}
         </div>
       </section>
       <section id="when-to-go" className="py-5 background2">
         <div className="containerBox ">
-        <div className="row p-4">
-              <div className="col-12">
-                <h2 className="title2 py-4">When To Go {city?.title}</h2>
-              </div>
+          <div className="row p-4">
+            <div className="col-12">
+              <h2 className="title2 py-4">When To Go {city?.title}</h2>
             </div>
+          </div>
         </div>
       </section>
-
 
       {/* <section id="city" className="col-12 containerBox py-4 position-relative ">
         <Tabs defaultActiveKey="Overview">
@@ -163,7 +164,6 @@ function City({
           </Tab>
         </Tabs>
       </section> */}
-
     </Base>
   );
 }
@@ -195,7 +195,9 @@ export async function getStaticProps({ params }) {
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
-  const fetchpackages = await fetch(`${PUBLIC_API}/packages/${params.slug}/${params.city}`);
+  const fetchpackages = await fetch(
+    `${PUBLIC_API}/packages/${params.slug}/${params.city}`,
+  );
   const SSRPackages = await fetchpackages.json();
 
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
@@ -212,7 +214,7 @@ export async function getStaticProps({ params }) {
       interests,
       notifications,
       SSRDestination,
-      SSRPackages
+      SSRPackages,
     },
     revalidate: 1,
   };
