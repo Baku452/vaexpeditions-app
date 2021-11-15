@@ -39,11 +39,11 @@ function BlogPost({
     {
           title: blog.destination,
           slug: `/blog/category/${blog.destination}`,
-    },
-    {
-          title: blog.type_name,
-          slug: `/blog/category/${blog.type_name}`,
-      },
+     },
+    // {
+    //       title: blog.type_name,
+    //       slug: `/blog/category/${blog.type_name}`,
+    //   },
   ];
 
   return (
