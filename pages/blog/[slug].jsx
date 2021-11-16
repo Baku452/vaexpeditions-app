@@ -116,6 +116,7 @@ function BlogPost({
                     thumbnail={item.thumbnail_cat}
                     description={item.content}
                     type={item.type_name}
+                    time={item.time_reading}
                   />
                 </div>
               ))

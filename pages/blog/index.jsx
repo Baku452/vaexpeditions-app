@@ -3,9 +3,10 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-import { BlogCard, HeroBlog, ShowMore } from '@/components/index';
+import { BlogCard, HeroBlog, ShowMore ,BlogCard2} from '@/components/index';
 import { posts } from '@/core/index';
 import { Base } from '@/layouts/index';
+import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -17,6 +18,7 @@ function BlogPage({
   packagesAll,
   blogtypesRes,
   interests,
+  popularPosts,
 }) {
   const [postList, setPostList] = useState([]);
   const [destinationsActive, setDestinationsActive] = useState();
@@ -148,7 +150,35 @@ function BlogPage({
             </section>
           </div>
         </section>
+        
       </div>
+      <section className="px-3 pb-4 background2 col-12">
+        <div className="row mx-auto">
+          <div className="col-12 p-5">
+            <h2 className={`${styles.posts} fs-30 font-weight-bold text-center`}>
+              POPULAR POSTS{' '}
+            </h2>
+          </div>
+        </div>
+        <div className="row containerBox">
+          {popularPosts
+            ? popularPosts.results.map(item => (
+                <div key={item.slug} className="col-12 col-md-6 col-lg-3 pb-4">
+                  <BlogCard2
+                    key={item.title}
+                    title={item.title}
+                    destination={item.destination}
+                    slug={item.slug}
+                    thumbnail={item.thumbnail_cat}
+                    description={item.content}
+                    type={item.type_name}
+                    time={item.time_reading}
+                  />
+                </div>
+              ))
+            : null}
+        </div>
+      </section>
     </Base>
   );
 }
@@ -177,6 +207,10 @@ export async function getStaticProps() {
 
   const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
   const interests = await interestResponse.json();
+
+  const reqPopularPosts = await fetch(`${PUBLIC_API}/blog/popular/`);
+  const popularPosts = await reqPopularPosts.json();
+
   return {
     props: {
       destinations,
@@ -187,6 +221,7 @@ export async function getStaticProps() {
       blogsPosts,
       blogtypesRes,
       interests,
+      popularPosts,
     },
     revalidate: 1,
   };

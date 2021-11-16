@@ -38,7 +38,7 @@ function BlogCard({ title, slug, thumbnail, description, time }) {
   );
 }
 
-function BlogCard2({ title, slug, thumbnail }) {
+function BlogCard2({ title, slug, thumbnail,time }) {
   return (
     // <Link href={`/package/${slug}`}>
     <Link href={`/blog/${slug}`}>
@@ -48,6 +48,13 @@ function BlogCard2({ title, slug, thumbnail }) {
           <div className={`${styles.cardPost2}`}>
             <h3>{title}</h3>
           </div>
+
+           <div className={`${styles.cardTime2} text-center`} >
+            <span >{time}</span>
+            <span className={`${styles.min}`}>MIN</span>
+            <span className={`${styles.read}`}>READ</span>
+            </div>
+          
         </div>
       </a>
     </Link>
