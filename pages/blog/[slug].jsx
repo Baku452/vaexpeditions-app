@@ -27,13 +27,13 @@ function BlogPost({
   const content = blog.content.replace(reg, `${PUBLIC_API}/media`);
   const navBreadcrums = [
     {
-      title: blog.destination,
-      slug: `/blog/category/${blog.destination}`,
-    },
-    {
-      title: blog.type_name,
-      slug: `/blog/category/${blog.type_name}`,
-    },
+          title: blog.destination,
+          slug: `/blog/category/${blog.destination}`,
+     },
+    // {
+    //       title: blog.type_name,
+    //       slug: `/blog/category/${blog.type_name}`,
+    //   },
   ];
 
   return (

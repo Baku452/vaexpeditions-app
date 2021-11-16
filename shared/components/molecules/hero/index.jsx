@@ -47,10 +47,11 @@ function HeroBlog2({ title, image, alt, navBreadcrums, }) {
               </Link>
             </li>
             {navBreadcrums.map(item => (
-              <li key={item.title}>
-                <Link href={item.slug}>
+              <li >
+                <a >{item.title}</a>
+                {/* <Link href={item.slug}>
                   <a>{item.title}</a>
-                </Link>
+                </Link> */}
               </li>
             ))}
           </ol>
