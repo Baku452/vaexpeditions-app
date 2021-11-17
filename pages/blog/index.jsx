@@ -169,7 +169,7 @@ function BlogPage({
                     title={item.title}
                     destination={item.destination}
                     slug={item.slug}
-                    thumbnail={item.thumbnail_cat}
+                    thumbnail={item.thumbnail}
                     description={item.content}
                     type={item.type_name}
                     time={item.time_reading}

@@ -59,8 +59,8 @@ function BlogPost({
         />
       ) : null}
 
-      <div className="containerBox px-5 pt-2 ">
-        <section className={`${styles.boxMeta} `}>
+      <div className="containerBox row ">
+        <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
           <div className="d-flex ">
             <h4 className="pr-3 border-right text-muted">
               Written by:
@@ -71,7 +71,7 @@ function BlogPost({
             <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
           </div>
         </section>
-        <div className="row containerBox listStyle py-3">
+        <div className="row containerBox listStyle py-3 col-10">
           <div
             className={`${styles.content}`}
             dangerouslySetInnerHTML={{ __html: content }}
