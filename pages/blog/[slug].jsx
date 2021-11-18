@@ -42,7 +42,7 @@ function BlogPost({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      pixels={200}>
+      pixels={650}>
       <Head>
         {blog.titleSEO ? <title>{blog.titleSEO}</title> : <title>{blog.title}</title>}
         <meta name="keywords" content={blog?.keywords} />
@@ -56,6 +56,7 @@ function BlogPost({
           image={PUBLIC_API + blog?.banner}
           alt={blog?.title}
           navBreadcrums={navBreadcrums}
+          time={blog?.time_reading}
         />
       ) : null}
 
@@ -78,7 +79,6 @@ function BlogPost({
           />
         </div>
       </div>
-
       <div className="containerBox">
         <section className={`${styles.boxMeta2}  `}>
           <h2 className="p-3">SHARE THIS POST </h2>
@@ -95,7 +95,7 @@ function BlogPost({
           </div>
         </section>
       </div>
-
+    
       <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
           <div className="col-12 p-5">

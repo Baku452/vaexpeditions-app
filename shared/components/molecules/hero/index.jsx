@@ -29,7 +29,7 @@ function HeroBlog({ title, image, alt }) {
   );
 }
 
-function HeroBlog2({ title, image, alt, navBreadcrums, }) {
+function HeroBlog2({ title, image, alt, navBreadcrums,time }) {
   return (
      
     <div className={`w-100 position-relative ${styles.bannerBlog}`}>
@@ -56,6 +56,11 @@ function HeroBlog2({ title, image, alt, navBreadcrums, }) {
             ))}
           </ol>
         </nav>
+        <div className={`${styles.cardTime} text-center `} >
+            <span >0{time}</span>
+            <span className={`${styles.min}`}>MIN</span>
+            <span className={`${styles.read}`}>READ</span>
+      </div>
       </div>
       {title && (<h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1> )}
       {image ? <img src={image} alt={alt} /> : null}

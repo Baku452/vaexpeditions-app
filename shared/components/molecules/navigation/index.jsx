@@ -12,24 +12,23 @@ function Navigation() {
   }
 
   return (
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="mr-auto mt-1 pt-4 pl-3 pb-4">
-        <Link href="/search">
-          <a className={active(router.pathname, '/experiences')}>Destinations</a>
+    <Navbar.Collapse id="responsive-navbar-nav ">
+      <Nav className="mr-auto mt-1 pt-4 pl-3 pb-4 ">
+        <Link href="/continent/central-and-south-america">
+          <a className={active(router.pathname, '/continent/central-and-south-america')}>Destinations</a>
         </Link>
 
-        <Link href="/search">
-          <a className={active(router.pathname, '/search')}>Tailor Made Tours</a>
+        <Link href="/tailor-made-tour">
+          <a className={active(router.pathname, '/tailor-made-tour')}>Tailor Made Tours</a>
         </Link>
 
         <Link href="/our-purpose">
           <a className={active(router.pathname, '/our-purpose')}>Our Purpose</a>
         </Link>
 
-        <a className="nav-link" href="#">
-          Blog
-        </a>
-
+        <Link href="/blog">
+          <a className={active(router.pathname, '/blog')}>Blog</a>
+        </Link>
         <Link href="/contact-us">
           <a className={active(router.pathname, '/contact-us')}>Contact Us</a>
         </Link>
