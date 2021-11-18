@@ -6,28 +6,26 @@ function BlogCard({ title, slug, thumbnail, description, time }) {
   return (
     <Link href={`/blog/${slug}`}>
       <a>
-        <div className={`row containerBox my-5  ${styles.carta}`}>
-          <div className="w-100 col-12 col-md-6 order-md-1">
-            <img src={thumbnail} alt={title} />
-          </div>
-          <div className={`${styles.cardPost} col-12 col-md-6  order-md-2 align-self-center`}>
-            <h3>{title}</h3>
+        <div className={`row containerBox my-5  ${styles.carta} text-justify row align-items-center`}>
+          <div className="w-100 h-100 col-12 col-md-6 img-fluid ">
+            <img src={thumbnail} alt={title}  />
             <div className={`${styles.cardTime} text-center`} >
-            <span className={`${styles.time}`}>{time}</span>
-            <span className={`${styles.min}`}>MIN</span>
-            <span className={`${styles.read}`}>READ</span>
+              <span className={`${styles.time}`}>{time}</span>
+              <span className={`${styles.min}`}>MIN</span>
+              <span className={`${styles.read}`}>READ</span>
             </div>
+          </div>
+          <div className={`${styles.cardPost} col-12 col-md-6 `}>
+            <h3>{title}</h3>
             <div
-              className={`${styles.cardText} align-self-center lh-29 d-none d-md-block`}
+              className={`${styles.cardText}  lh-29 d-none d-md-block`}
               dangerouslySetInnerHTML={{
                 __html:
                   description.length > 150
                     ? `${description.slice(0, 200)}...`
-                    : description,
-              }}
-            />
+                    : description,}}/>
             <div className={`${styles.cardBtn} row justify-content-center`}>
-              <Link href={`/blog/${slug}`} className="align-self-center">
+              <Link href={`/blog/${slug}`}>
                 <a className="btn btn-primary btn-lg mb-5">READ ARTICLE</a>
               </Link>
             </div>

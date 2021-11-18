@@ -4,12 +4,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    align-items: center;
-  justify-content: center;
   @media (max-width: 767px) {
     width: 100%;
-    
-  }
+    }
   }
 }
 .cardPost {
@@ -21,7 +18,10 @@
   @media (max-width: 767px) {
     padding-top: 30px;
     padding-left: 15px;
-    
+  }
+  @media (max-width: 560px) {
+    padding-top: 40px;
+    padding-left: 15px;
   }
   
   h3 {
@@ -49,8 +49,8 @@
   background-color: black;
   color: #fff;
   font-size: 25px;
-  top: calc(100px);
-  left: calc(-50px); 
+  top: calc(155px);
+  left: calc(91%); 
   margin: 0;
 
   .min {
@@ -61,15 +61,19 @@
     font-size: 10px !important;
     letter-spacing: .34em;
   }
-  @media (max-width: 767px) {
-    top: calc(-80px);
-    left: calc(45% ); 
-    margin: 0;
-    
+  @media (max-width: 1024px) {
+    top: calc(38%);
+    left: calc(89%); 
   }
-  @media (max-width: 425px) {
+  @media (max-width: 767px) {
+    top: calc(83%);
+    left: calc(45% ); 
+   
+  }
+  @media (max-width: 560px) {
+    padding: 0px 14px 0px 14px;
+    top: calc(80%);
     left: calc(40% ); 
-    margin: 0;
     
   }
  }
