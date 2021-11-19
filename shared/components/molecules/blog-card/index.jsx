@@ -19,7 +19,7 @@ function BlogCard({ title, slug, thumbnail, summary, time }) {
             <h3>{title}</h3>
             <div
               className={`${styles.cardText}  lh-29 d-none d-md-block`}>
-                {summary.length > 205 ? `${summary.slice(0, 206)}...`: summary}
+                {summary}
             </div>
             <div className={`${styles.cardBtn} pt-3 row justify-content-center`}>
               <Link href={`/blog/${slug}`}>
