@@ -134,6 +134,7 @@ function BlogPage({
                       <BlogCard
                         key={item.title}
                         title={item.title}
+                        summary={item.summary}
                         destination={item.destination}
                         slug={item.slug}
                         thumbnail={item.thumbnail}
