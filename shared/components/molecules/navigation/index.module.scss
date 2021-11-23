@@ -10,3 +10,26 @@
     margin: 5px 0;
   }
 }
+.superNav {
+  background-color: black !important;
+  border-bottom: 5px solid #0095ce !important;
+}
+.nav {
+  a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #343a40;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    display: block;
+  }
+  .boxNav {
+    padding: 18px 0;
+    border-top: 2px solid rgb(218, 218, 218);
+  }
+  & .boxNav a {
+    font-size: 16px;
+    color: #0778a5 !important;
+  }
+}
+

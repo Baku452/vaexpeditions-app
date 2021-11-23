@@ -53,7 +53,7 @@ function Footer({ continents }) {
                   </Link>
                 </li>
                 <li>
-                  <a href="/blog">Passion Passport</a>
+                  <a href="/blog">Blog</a>
                 </li>
                 <li>
                   <Link href="/contact-us">

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
@@ -83,4 +84,41 @@ function CollapseContent2({ index, title, children }) {
   );
 }
 
-export { ContextAwareToggle, Collapse, CollapseContent, CollapseContent2};
+function CollapseMenu({ children, open = 0 }) {
+  return (
+    <Accordion defaultActiveKey="0" className={`${styles.accordion}`}>
+      {children}
+    </Accordion>
+  );
+}
+
+
+function CollapseContentMenu({ index, title, link, children }) {
+  return (
+    <>
+     <Card.Header className={`${styles.header} d-flex justify-content-between`}>
+        <Link href={link ? link : '#'}>
+          <a className="col-11 d-inline-block">{title}</a>
+        </Link>
+        <ContextAwareToggleMenu eventKey={index + 1} >
+          <a className="col-1 fs-16 m-0 p-0 text-dark"></a>
+        </ContextAwareToggleMenu>
+      </Card.Header>
+
+      <Accordion.Collapse eventKey={index + 1}>
+        <Card.Body  className="py-0" >{children}</Card.Body>
+      </Accordion.Collapse> <Accordion.Header className={`${styles.header} d-flex justify-content-between`}>
+        <Link href={link || '#'}>
+          <a className="p-0">{title}</a>
+        </Link>
+      </Accordion.Header>
+
+      {/* <Accordion.Collapse eventKey={1}> */}
+      <Accordion.Body className="py-0">{children}</Accordion.Body>
+      {/* </Accordion.Collapse> */}
+    </>
+  );
+}
+
+
+export { CollapseMenu, CollapseContentMenu, ContextAwareToggle, Collapse, CollapseContent, CollapseContent2};
