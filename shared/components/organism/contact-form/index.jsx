@@ -37,21 +37,18 @@ function ContactForm({ destinations, title = true }) {
     <section id="thank_you">
       <div className="container">
         <div className="row mb-5">
-          <div className="col-11 col-md-10 p-0 pb-5 mb-5 p-0 mx-auto">
-            {title && <h2 className="fs-35 pt-5 pb-4">Contact Us</h2>}
+          <div className="col-11 col-md-10 p-0 py-5 mb-5 p-0 mx-auto ">
+            {/* {title && <h2 className="fs-35 pt-5 pb-4">Contact Us</h2>} */}
 
             {success ? (
               // router.push('/contact-us/thank-you-contact-us')
               <h2 className="text-center">Sending Mail...</h2>
             ) : (
               <div className="card border">
-                <p className="card-text fs-20 lh-29 py-5 text-center">
-                  Please fill out the following information. <br />
-                  We will get back to you in a maximum time of 48 hours.
-                </p>
-                <div className="row px-5">
-                  <div className="fs-14 col-sm-12 col-md-12 col-lg-3">
-                    <p>
+                 <div className="row px-5">
+
+                  <div className="fs-14 col-sm-12 col-md-12 col-lg-3 pt-3 mb-3 pb-0 order-2 align-self-center background2">
+                    <p className="p">
                       Portal Panes #123 / Centro Comercial Ruiseñores
                       <br />
                       Office #: 306-307 / Cusco - Peru
@@ -78,11 +75,15 @@ function ContactForm({ destinations, title = true }) {
 
                   <Form
                     id="contact-us-form"
-                    className="col-sm-12 col-md-12 col-lg-9 mx-auto p-0 text-left"
+                    className="col-sm-12 col-md-12 col-lg-9 px-2 p-0 text-left order-1"
                     noValidate
                     validated={validated}
                     onSubmit={handleSubmit}>
                     <div>
+                    <p className="card-text fs-20 lh-29 py-5 text-center">
+                      Please fill out the following information. <br />
+                      We will get back to you in a maximum time of 48 hours.
+                      </p>
                       <div className="row mb-4">
                         <div className="col-12 col-md-6">
                           <div className="form-group">
@@ -110,7 +111,9 @@ function ContactForm({ destinations, title = true }) {
                           <div className="form-group">
                             <InputGroup>
                               <InputGroup.Prepend>
-                                <InputGroup.Text id="basic_addon1" />
+                              <InputGroup.Text id="basic_addon1">
+                                  <FaUserAlt />
+                                </InputGroup.Text>
                               </InputGroup.Prepend>
                               <Form.Control
                                 type="text"
