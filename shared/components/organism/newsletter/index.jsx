@@ -5,11 +5,12 @@ import Autosuggest from 'react-autosuggest';
 // import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { BsSearch } from 'react-icons/bs';
-import { FaPhone } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
 
 import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
+
 function Newsletter({ packagetypes, packagesAll }) {
   // States for React Suggestions
   const [value, setValue] = useState('');
@@ -131,13 +132,13 @@ function Newsletter({ packagetypes, packagesAll }) {
     });
   };
   return (
-    <div className={`header-lg container d-none d-lg-block pt-4 pb-4 ${styles.header}`}>
-      <div className="row flex-nowrap justify-content-between align-items-start level-1">
-        <div className="col-2 px-3 justify-content-center">
+    <div className={`container d-none d-lg-block py-4 ${styles.header}`}>
+      <div className="row justify-content-between">
+        <div className="px-3 justify-content-center">
           <Link href="/">
             <a className="position-relative">
               <img
-                alt="Logo Valencia Travel"
+                alt="Logo Va Expeditions"
                 className={styles.logo}
                 src="/icons/logo_horizontalWeb.svg"
               />
@@ -147,25 +148,30 @@ function Newsletter({ packagetypes, packagesAll }) {
         <div className="col-8">
           <div className="row">
             <div className={`col-12 ${styles.subnav}`}>
-              <ul className="navbar-nav fs-13">
-                <Link href="/travel-availability">
-                  <li className={styles.nav}>
+              <ul className="navbar-nav fs-13 pb-2 ">
+              <li>
+                <a href="tel:1 - (888) 803 8004">
+                  <FaPhoneAlt/> (Usa / Canada) : 1 - (888) 803 8004
+                </a>
+              </li>
+                <li>
+                  <Link href="/travel-availability">
                     <a role="button">Travel Availability</a>
-                  </li>
-                </Link>
-                <Link href="/new-risk">
-                  <li className={styles.nav}>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/new-risk">
                     <a role="button">New Risk-Free Flexible Booking Offer</a>
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
-          <div className="row justify-content-between align-items-start">
-            <div className="col-auto p-0">
+          <div className={`row align-items-center  ${styles.subnav2}`}>
+            <div className="col-8 p-0 ">
               {/* <p className="m-0 fs-13">Subscribe to our newsletter</p> */}
               <Form
-                className={`form-inline p-1 ${styles.listSuggestion}`}
+                className={`p-1  ${styles.listSuggestion}`}
                 // noValidate
                 // validated={validated}
                 onSubmit={handleSubmit}
@@ -189,38 +195,15 @@ function Newsletter({ packagetypes, packagesAll }) {
               </Form>
             </div>
 
-            <div className="col-auto pt-3">
-              <div className="row flex-nowrap align-items-center">
-                <div className="col-auto p-0">
-                  {/* <OverlayTrigger
-                    key="bottom"
-                    delay={{ show: 250, hide: 1200 }}
-                    placement="bottom"
-                    overlay={
-                      <Tooltip className={`${styles.tooltip}`} id="tooltip-bottom">
-                        <a href="tel:1 - (860) 856 5858">
-                          (Usa / Canada) Customer Service: 1 - (860) 856 5858
-                        </a>
-                        <br />
-                        <a href="tel:1 - (917) 983 2727">
-                          Sales: 1 - (917) 983 2727
-                        </a>{' '}
-                        <br />
-                        <a href="tel:51979706464">Peru: +51-979706464 </a>
-                      </Tooltip>
-                    }
-                  /> */}
-                  {/* <Button className="btn btn-light"> */}
-                  <FaPhone />{' '}
-                  <a className="fs-16" href="tel:+18888038004">
-                    Toll free (USA / Canada): +1 (888) 803-8004
-                  </a>
-                  {/* </Button> */}
-                </div>
+            <div className="col-auto pr-3">
+              <div className="row flex-nowrap ">
                 <div className="col-auto">
                   <Link href="/contact-us">
-                    <button type="button" className="btn btn-primary">
-                      CONTACT US
+                    <button 
+                    type="button" 
+                    style={{ backgroundColor: '#a6192e', border: 'none'}}
+                    className="btn btn-primary">
+                    Book Your Adventure!
                     </button>
                   </Link>
                 </div>
