@@ -8,7 +8,7 @@ import styles from './index.module.scss';
 function WhereToItem({ title, summary, slug, thumbnail }) {
   const router = useRouter();
   return (
-    <div className="col-4">
+    <div className="col-6 col-md-4">
       <Link href={`${router.asPath}/${slug}`} passHref>
         <a>
           <div className={`${styles.cardBox} text-dark`}>

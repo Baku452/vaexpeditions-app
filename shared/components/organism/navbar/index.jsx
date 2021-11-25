@@ -12,7 +12,7 @@ function NavToolbar({ destinations, continents, packagetypes }) {
     id="nav-mobile"
     collapseOnSelect
     expand="xl"
-    className={`navbar border-bottom d-xl-none px-3 d-block pb-2 position-sticky`}>
+    className={`navbar border-bottom d-lg-none px-3 d-block pb-2 position-sticky`}>
       <Link href="/">
       <a className="position-relative">
           <img

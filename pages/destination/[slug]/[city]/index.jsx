@@ -28,7 +28,7 @@ function City({
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      pixels={710}>
+      pixels={600}>
       <Head>
         <title>{city?.title} - VA Expeditions</title>
         <meta name="description" content={city?.summary} />
@@ -37,20 +37,20 @@ function City({
       <Banner2 title={city.title} image={PUBLIC_API + city.image} alt={city.title} />
 
       <NavBarFixed items={navSubDestinations} />
-      <section id="overview" className="py-5 containerBox">
-        <div className="containerBox">
+      <section id="overview" className="p-3 containerBox">
+        <div className="containerBox ">
           <h2 className="title2 text-center py-4">Overview of {city.title}</h2>
           <div className="lh-29" dangerouslySetInnerHTML={{ __html: city?.content }} />
         </div>
       </section>
 
-      <section id="holidays" className="py-5 background2 overflow-hidden">
+      <section id="holidays" className="p-3 background2 overflow-hidden">
         <div className="containerBox ">
           <h2 className="title2 py-4">{city?.title} Holidays</h2>
           <div className="row py-4">
             {SSRPackages.length > 0 &&
               SSRPackages.map(item => (
-                <div key={item.slug} className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                <div key={item.slug} className="d-flex col-12 col-sm-6 col-lg-4 mb-4 ">
                   <PackageItem
                     key={item.slug}
                     title={item.title}
@@ -80,10 +80,10 @@ function City({
           </div>
         </div>
       </section>
-      <section id="what-to-do" className="py-5 containerBox">
+      <section id="what-to-do" className="p-3 containerBox">
         <div className="containerBox row col-12 p-4 ">
           <div className="col-12">
-            <h2 className="title2 py-4">What to Do in {city?.title} </h2>
+            <h2 className="title2 p-3">What to Do in {city?.title} </h2>
           </div>
           {city.items
             ? city.items.map(item => (
@@ -100,7 +100,7 @@ function City({
             : null}
         </div>
       </section>
-      <section id="when-to-go" className="py-5 background2">
+      <section id="when-to-go" className="p-3 background2">
         <div className="containerBox ">
           <div className="row p-4">
             <div className="col-12">

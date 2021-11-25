@@ -1,6 +1,11 @@
+@import '../../../../styles/media-queries.scss';
+
 .cardBox {
   background-color: #f1f1f1;
   .contentBox {
     height: 180px;
+    @media(max-width: 575px){
+      height: 100px;
+    }
   }
 }
