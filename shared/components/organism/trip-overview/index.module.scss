@@ -1,12 +1,42 @@
+@import '../../../../styles/media-queries.scss';
+
 .overview {
   .content {
     background-color: #f2f2f2;
-  }
+    
   .circle {
     width: 80px;
     border-radius: 50%;
   }
   .icon-rating {
     font-size: 36px !important;
+    
   }
+}
+
+.title {
+  margin: 0 0 10px;
+  display: flex;
+  flex: 1 1 auto;
+  font-weight: 600;
+
+  &::before {
+    background: #0095ce;
+    content: '';
+    display: block;
+    -webkit-flex: 0 0 5px;
+    -ms-flex: 0 0 5px;
+    flex: 0 0 5px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-top: 0px;
+    position: relative;
+  }
+}
+.specialist{
+    img{
+      object-fit: cover;
+
+    }
+}
 }
