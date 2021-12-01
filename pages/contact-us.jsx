@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { ContactForm } from '@/components/index';
+import { ContactForm, Hero2 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -21,7 +21,6 @@ function ContactUs({ destinations, packagetypes, packages, notifications, packag
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}>
-      <ContactForm destinations={destinations} packages={packages} pack={pack} />
       <Head>
         <title>Va Expeditions | Contact Us</title>
         <meta
@@ -29,6 +28,12 @@ function ContactUs({ destinations, packagetypes, packages, notifications, packag
           content="Contact Us to Explore Multidestinations with VAExpeditions"
         />
       </Head>
+      <Hero2
+        title="Contact US"
+        image="/images/contactus.png"
+        alt="contact us"
+      />
+      <ContactForm destinations={destinations} packages={packages} pack={pack} />
     </Base>
   );
 }

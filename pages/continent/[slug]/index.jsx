@@ -55,21 +55,8 @@ function Search({
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
       <section id="tours_all" className="row containerBox">
-        <div className="col-12 py-4">
-          <div className="row p-4">
-            <div className="col-12 col-lg-8">
-              <h1 className="title">Overview of {SSRCountry.name}</h1>
-              <div
-                className="pr-5"
-                dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
-              />
-            </div>
-            <div
-              className={`col-12 col-lg-4 p-4 ${styles.quote}`}
-              dangerouslySetInnerHTML={{ __html: SSRCountry?.quote }}
-            />
-          </div>
-          <div className="row p-4">
+        <div className="col-12 py-4 row d-flex ">
+          <div className="row p-4 order-md-2">
             <div className="col-12">
               <h2 className="title">Destinations in {SSRCountry.name}</h2>
             </div>
@@ -88,6 +75,18 @@ function Search({
                   />
                 </div>
               ))}
+          </div>
+          <div className="row p-4 order-md-1">
+            <div className="col-12 col-lg-8">
+              <h1 className="title">Overview of {SSRCountry.name}</h1>
+              <div className={` ${styles.content} pr-5`}
+                dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
+              />
+            </div>
+            <div
+              className={`col-12 col-lg-4 p-4 ${styles.quote}`}
+              dangerouslySetInnerHTML={{ __html: SSRCountry?.quote }}
+            />
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { Hero2 } from '@/components/index';
 
 import { saveNewsletter } from '@/core/index';
 import { Base } from '@/layouts/index';
@@ -49,11 +50,17 @@ function Newsletter({ destinations, packagetypes, notifications }) {
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}>
+        <Hero2
+        title="Subscribe Newsletter"
+        image="/images/contact.png"
+        alt="subscribe newsletter"
+      />
+
       <section id="thank_you">
         <div className="container">
           <div className="row">
-            <div className="col-11 col-md-10 p-0 pb-5 mb-5 p-0 mx-auto">
-              <h2 className="fs-35 pt-5 pb-4">Subscribe Newsletter</h2>
+            <div className="col-11 col-md-10 p-0 py-5  p-0 mx-auto">
+              {/* <h2 className="fs-35 pt-5 pb-4">Subscribe Newsletter</h2> */}
 
               {success ? (
                 <div className="card border mb-5 pb-5">
@@ -71,23 +78,23 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                 </div>
               ) : (
                 <div className="card border">
-                  <div className="col-12 pt-5 mt-3 text-left newsletter">
-                    <h2>
+                  <div className="col-12 pt-3 mt-3 text-left newsletter">
+                    <h2 className="text-center">
                       View Central and South America from a totally different perspective.
                     </h2>
-                    <p>
+                    <p className="fs-18 lh-29 mb-4">
                       Unique destinations, travel advice, inspirational travel stories,
                       mindful travel tips, helpful information and advice from our experts
                       and clients delivered straight to your inbox!
                     </p>
-                    <p className="card-text fs-20 lh-29 mb-4">
+                    <p className="fs-18 lh-29 mb-4">
                       Subscribe to our newsletter by completing the following information:
                     </p>
                   </div>
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                    <div className="col-12 col-md-10 p-0 mx-auto text-left">
-                      <div className="row pt-3 pb-0 pb-md-3">
-                        <div className="col-12 col-md-6 mx-auto">
+                    <div className="col-12 col-md-12 p-0 mx-auto text-left">
+                      <div className="row m-b-100 px-3">
+                        <div className="col-12 col-md-4">
                           <div className="form-group">
                             <Form.Control
                               type="email"
@@ -102,9 +109,7 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                             </Form.Control.Feedback>
                           </div>
                         </div>
-                      </div>
-                      <div className="row m-b-100">
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4">
                           <div className="form-group">
                             <Form.Control
                               type="text"
@@ -118,7 +123,7 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                             </Form.Control.Feedback>
                           </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4">
                           <div className="form-group">
                             <Form.Control
                               type="text"
@@ -133,12 +138,12 @@ function Newsletter({ destinations, packagetypes, notifications }) {
                           </div>
                         </div>
                       </div>
-                      <div className="row form-group">
-                        <p className="col-12 fs-18 lh-29 pt-5 pb-4">
+                      <div className="row form-group px-3">
+                        <p className="col-12 fs-18 lh-29 pt-3 pb-4">
                           Please tell us some of your interests
                         </p>
                         {packagetypes.map(item => (
-                          <div key={item.id} className="col-12 col-md-4 m-b-25 text-left">
+                          <div key={item.id} className="col-12 col-md-3 m-b-25 text-left">
                             <Form.Check
                               value={item.id}
                               type="checkbox"

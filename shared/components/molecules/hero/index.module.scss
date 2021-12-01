@@ -43,7 +43,7 @@
 .bannerBlog {
   margin: 0 auto;
   height: 500px;
-  overflow: hidden;
+  // overflow: hidden;
   display: flex;
   align-items: center;
   img {
@@ -77,6 +77,31 @@
     }
     //text-shadow: 1px 1px 1px #020202;
   }
+  .cardTime {
+  align-items: center;
+  z-index: 500;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 7px 14px 9px 14px;
+  background-color: black;
+  color: #fff;
+  font-size: 25px;
+  left:48%;
+  margin: 0 auto;
+  // max-width: 100px;
+  bottom: -4%;
+  letter-spacing: 4.2px;
+
+  .min {
+    font-size: 14px !important;
+    letter-spacing: 4.2px;
+  }
+  .read {
+    font-size: 10px !important;
+    letter-spacing: .34em;
+  }
+ }
 }
 
 .banner2 {
@@ -172,6 +197,7 @@
   font-weight: 700;
   color: rgb(255, 255, 255);
   position: absolute;
+  text-transform: uppercase;
   @media (max-width: $xs) {
     display: none;
   }

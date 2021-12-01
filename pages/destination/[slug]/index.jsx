@@ -51,7 +51,7 @@ function Destination({
       />
 
       <NavBarFixed items={navDestinations} />
-      <section id="overview" className="py-5 containerBox ">
+      <section id="overview" className="p-3 containerBox ">
         {/* <h2 className="title py-4">Overview of {SSRDestination.title}</h2> */}
         <div className="containerBox py-10 ">
           <h2 className="title2 py-4">OVERVIEW</h2>
@@ -61,13 +61,13 @@ function Destination({
           />
         </div>
       </section>
-      <section id="top-tours" className="py-5 background2  overflow-hidden">
+      <section id="top-tours" className="py-5 px-3 background2  overflow-hidden">
         <div className="containerBox">
           <h2 className="title2">Top Rated Tours</h2>
           <div className="row py-4">
             {SSRPackages.length > 0 &&
               SSRPackages.map(item => (
-                <div key={item.slug} className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                <div key={item.slug} className="d-flex col-12 col-sm-6 col-lg-4 mb-4">
                   <PackageItem
                     key={item.slug}
                     title={item.title}
@@ -150,7 +150,7 @@ function Destination({
           <div dangerouslySetInnerHTML={{ __html: SSRDestination?.bestTime }} />
         </div>
       </section>
-      <section id="travel-advice" className="background2 py-5">
+      <section id="travel-advice" className="background2 py-5 px-3">
         <div className="containerBox">
           <h2 className="title2 py-4">Travel Advice</h2>
           <GridTravelAdvice items={SSRDestination?.advice} />

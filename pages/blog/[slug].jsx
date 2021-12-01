@@ -42,7 +42,7 @@ function BlogPost({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      pixels={200}>
+      pixels={650}>
       <Head>
         {blog.titleSEO ? <title>{blog.titleSEO}</title> : <title>{blog.title}</title>}
         <meta name="keywords" content={blog?.keywords} />
@@ -56,11 +56,12 @@ function BlogPost({
           image={PUBLIC_API + blog?.banner}
           alt={blog?.title}
           navBreadcrums={navBreadcrums}
+          time={blog?.time_reading}
         />
       ) : null}
 
-      <div className="containerBox px-5 pt-2 ">
-        <section className={`${styles.boxMeta} `}>
+      <div className="containerBox row ">
+        <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
           <div className="d-flex ">
             <h4 className="pr-3 border-right text-muted">
               Written by:
@@ -71,14 +72,13 @@ function BlogPost({
             <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
           </div>
         </section>
-        <div className="row containerBox listStyle py-3">
+        <div className="row containerBox listStyle py-3 col-10">
           <div
             className={`${styles.content}`}
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
       </div>
-
       <div className="containerBox">
         <section className={`${styles.boxMeta2}  `}>
           <h2 className="p-3">SHARE THIS POST </h2>
@@ -95,7 +95,7 @@ function BlogPost({
           </div>
         </section>
       </div>
-
+    
       <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
           <div className="col-12 p-5">
@@ -116,6 +116,7 @@ function BlogPost({
                     thumbnail={item.thumbnail}
                     description={item.content}
                     type={item.type_name}
+                    time={item.time_reading}
                   />
                 </div>
               ))
