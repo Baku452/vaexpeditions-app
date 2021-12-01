@@ -6,19 +6,36 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function MenuItem({ title, subtitle, slug }) {
+const handleFocus = (item, where, setDestinations, setDestFocused) => {
+  // console.log(item);
+  console.log('A');
+  setDestFocused(item);
+  setDestinations(where);
+};
+function MenuItem({
+  title,
+  subtitle,
+  slug,
+  where,
+  item,
+  setDestinations,
+  setDestFocused,
+}) {
   return (
     <Link href={`/destination/${slug}`}>
-      <a className={`${styles.route} d-block mb-3 mr-5`}>
-        <span>
-          {title} - {subtitle}
-        </span>
+      <a
+        onFocus={() => handleFocus(item, where, setDestinations, setDestFocused)}
+        onMouseOver={() => handleFocus(item, where, setDestinations, setDestFocused)}
+        className={`${styles.route} d-block mb-3 mr-5`}>
+        {title} - {subtitle}
       </a>
     </Link>
   );
 }
 
 function MenuContent({ continents }) {
+  const [destinationsList, setDestinations] = useState([]);
+  const [destFocused, setDestFocused] = useState([]);
   return (
     <div className={styles.menu}>
       <div className={styles.content}>
@@ -32,16 +49,44 @@ function MenuContent({ continents }) {
                       <a className="black">{continent.name}</a>
                     </Link>
                   </h5>
-                  <div className={styles.items}>
-                    {continent.destinations.map(item => (
-                      <MenuItem
-                        key={item.id}
-                        title={item.title}
-                        subtitle={item.sub_title}
-                        id={item.id}
-                        slug={item.slug}
-                      />
-                    ))}
+                  <div className="row">
+                    <div className={`${styles.items} col-4`}>
+                      {continent.destinations.map(item => (
+                        <MenuItem
+                          key={item.id}
+                          title={item.title}
+                          subtitle={item.sub_title}
+                          id={item.id}
+                          slug={item.slug}
+                          where={item.where}
+                          item={item}
+                          setDestinations={setDestinations}
+                          setDestFocused={setDestFocused}
+                        />
+                      ))}
+                    </div>
+                    <div className="col-4">
+                      <h3>List de Subdestinos</h3>
+                      <ul>
+                        {destinationsList
+                          ? destinationsList.map(item => (
+                              <li key={item.title}>{item.title}</li>
+                            ))
+                          : null}
+                      </ul>
+                    </div>
+                    <div className="col-4">
+                      {destFocused ? (
+                        <>
+                          <h3>{destFocused.title}</h3>
+                          <img
+                            alt={destFocused.title}
+                            src={PUBLIC_API + destFocused.thumbnail}
+                          />
+                          <p>{destFocused.summary}</p>
+                        </>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -113,7 +158,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
       <div className="container p-0 d-block">
         <nav className="navbar-expand-lg d-none d-md-block px-0 position-static">
           <div className="collapse navbar-collapse">
-          {fixed ? (
+            {fixed ? (
               <Link href="/">
                 <a className="position-relative">
                   <img
@@ -152,7 +197,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                       styles.link
                     }`}
                     role="button">
-                    Tailor Made Tours
+                    Tailor-Made Tours
                   </a>
                 </Link>
               </li>

@@ -11,7 +11,7 @@
 .nav {
   //padding: 6px 20px 0 20px;
   //height: 55px;
-   .link {
+  .link {
     color: #ffffff !important;
     text-transform: uppercase;
     font-size: 11px;
@@ -45,19 +45,19 @@
     background-color: #fff;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
   }
-  .extendAbout{
+  .extendAbout {
     padding-left: 20px;
     background-color: rgb(240, 240, 240);
     // padding-top: 20px;
     ul {
       padding-top: 20px;
       list-style-type: none;
-      li{
+      li {
         padding-bottom: 20px;
       }
-      a{
+      a {
         color: #000;
-        &:hover{
+        &:hover {
           color: #179bd7;
         }
       }
@@ -76,7 +76,7 @@
   padding: 0;
   list-style-type: none;
   flex-wrap: wrap;
-  columns: 4;
+  // columns: 4;
   // display: flex;
   li {
     flex: 1 0 22%;
@@ -108,7 +108,7 @@
   text-transform: initial;
   font-size: 15px;
   letter-spacing: 0.2px;
-  &:hover span{
+  &:hover span {
     color: #000;
     border-bottom: 2px solid #179bd7;
   }

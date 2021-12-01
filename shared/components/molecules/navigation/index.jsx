@@ -19,7 +19,7 @@ function Navigation() {
         </Link>
 
         <Link href="/search">
-          <a className={active(router.pathname, '/search')}>Tailor Made Tours</a>
+          <a className={active(router.pathname, '/search')}>Tailor-Made Tours</a>
         </Link>
 
         <Link href="/our-purpose">
