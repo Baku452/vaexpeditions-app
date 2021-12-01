@@ -1,12 +1,22 @@
 import Head from 'next/head';
+
 import { Banner, PageContent } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-export default function OurPhilosophy({ destinations, packagetypes, notifications, ourpurpose, pagecontent }) {
+export default function OurPhilosophy({
+  destinations,
+  packagetypes,
+  notifications,
+  ourpurpose,
+  pagecontent,
+}) {
   return (
-    <Base destinations={destinations} packagetypes={packagetypes} notifications={notifications}>
+    <Base
+      destinations={destinations}
+      packagetypes={packagetypes}
+      notifications={notifications}>
       <Head>
         <title>Va Expeditions - Our Philosophy</title>
         <meta
@@ -17,19 +27,14 @@ export default function OurPhilosophy({ destinations, packagetypes, notification
           that of ancient communities to contribute to making our planet a better place."
         />
       </Head>
-      <Banner
-        description=""
-        image="/images/our-philosophy.jpg"
-        alt="weq"
-      />
+      <Banner description="" image="/images/our-philosophy.jpg" alt="weq" />
       <PageContent page={pagecontent[1]} ourpurpose={ourpurpose} />
-
     </Base>
   );
 }
 
 export async function getStaticProps() {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
   const destinations = await destinationsResponse.json();
 
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
@@ -50,7 +55,7 @@ export async function getStaticProps() {
       packagetypes,
       notifications,
       ourpurpose,
-      pagecontent
+      pagecontent,
     },
   };
 }

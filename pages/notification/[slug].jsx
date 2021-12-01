@@ -1,8 +1,7 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 
-import {Hero2 } from '@/components/index';
-
+import { Hero2 } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -50,7 +49,7 @@ export async function getStaticProps({ params }) {
   const response = await fetch(`${PUBLIC_API}/notification/${params.slug}`);
   const notification = await response.json();
 
-  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
   const destinations = await destinationsResponse.json();
 
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);

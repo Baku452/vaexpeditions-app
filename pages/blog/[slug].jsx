@@ -11,7 +11,7 @@ import styles from './index.module.scss';
 // import fetch from 'cross-fetch';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
-const URL_PACKAGE = process.env.NEXT_PUBLIC_DOMAIN;
+const URL_POST = process.env.NEXT_PUBLIC_DOMAIN;
 
 function BlogPost({
   blog,
@@ -27,9 +27,9 @@ function BlogPost({
   const content = blog.content.replace(reg, `${PUBLIC_API}/media`);
   const navBreadcrums = [
     {
-          title: blog.destination,
-          slug: `/blog/category/${blog.destination}`,
-     },
+      title: blog.destination,
+      slug: `/blog/category/${blog.destination}`,
+    },
     // {
     //       title: blog.type_name,
     //       slug: `/blog/category/${blog.type_name}`,
@@ -83,19 +83,19 @@ function BlogPost({
         <section className={`${styles.boxMeta2}  `}>
           <h2 className="p-3">SHARE THIS POST </h2>
           <div className={`${styles.boxSocial} pb-5`}>
-            <EmailShareButton url={URL_PACKAGE + router.asPath}>
+            <EmailShareButton url={URL_POST + router.asPath}>
               <FaEnvelope size={size} /> <p>Mail</p>
             </EmailShareButton>
-            <FacebookShareButton url={URL_PACKAGE + router.asPath}>
+            <FacebookShareButton url={URL_POST + router.asPath}>
               <FaFacebook size={size} /> <p>Post</p>
             </FacebookShareButton>
-            <TwitterShareButton url={URL_PACKAGE + router.asPath}>
+            <TwitterShareButton url={URL_POST + router.asPath}>
               <FaTwitter size={size} /> <p>Tweet</p>
             </TwitterShareButton>
           </div>
         </section>
       </div>
-    
+
       <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
           <div className="col-12 p-5">
@@ -142,7 +142,7 @@ export async function getStaticProps({ params }) {
   const response = await fetch(`${PUBLIC_API}/blog/${params.slug}`);
   const blog = await response.json();
 
-  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
   const destinations = await destinationsResponse.json();
 
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
