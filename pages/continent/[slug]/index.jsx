@@ -106,7 +106,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
   const destinations = await destinationsResponse.json();
 
   const countryResponse = await fetch(`${PUBLIC_API}/countries/${params.slug}`);

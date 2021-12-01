@@ -104,7 +104,6 @@ export default function History({
                     blessed to have been born in this part of the world.”
                   </p>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -117,7 +116,7 @@ export default function History({
 }
 
 export async function getStaticProps() {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
   const destinations = await destinationsResponse.json();
 
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);

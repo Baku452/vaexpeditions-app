@@ -43,10 +43,10 @@ function Package({
     },
     {
       title: pack.type_name,
-      slug: `/destination/${pack.destination_name.toLowerCase()}/search?types=${pack.package_type}`,
+      slug: `/destination/${pack.destination_name.toLowerCase()}/search?types=${
+        pack.package_type
+      }`,
     },
-    
-    
   ];
 
   async function fetchOptional() {
@@ -209,7 +209,7 @@ export async function getStaticProps({ params }) {
   const response = await fetch(`${PUBLIC_API}/package/${params.slug}`);
   const pack = await response.json();
 
-  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
   const destinations = await destinationsResponse.json();
 
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
