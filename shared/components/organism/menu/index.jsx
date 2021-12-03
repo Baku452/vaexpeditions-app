@@ -7,39 +7,41 @@ import styles from './index.module.scss';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 const handleFocus = (item, where, setDestinations, setDestFocused) => {
-  // console.log(item);
-  console.log('A');
   setDestFocused(item);
   setDestinations(where);
 };
 function MenuItem({
+  id,
   title,
-  subtitle,
   slug,
   where,
   item,
   setDestinations,
   setDestFocused,
+  focusedID
 }) {
   return (
-    <Link href={`/destination/${slug}`}>
+    <div className={`${styles.itemsMenu} `}>
+    <Link href={`/destination/${slug}`} >
       <a
         onFocus={() => handleFocus(item, where, setDestinations, setDestFocused)}
         onMouseOver={() => handleFocus(item, where, setDestinations, setDestFocused)}
-        className={`${styles.route} d-block mb-3 mr-5`}>
-        {title} - {subtitle}
+        className={`${styles.route} ${id == focusedID ? 'active' : ''} mr-5`}>
+        {title}
       </a>
     </Link>
+    </div>
   );
 }
 
-function MenuContent({ continents }) {
-  const [destinationsList, setDestinations] = useState([]);
-  const [destFocused, setDestFocused] = useState([]);
+function MenuContent({ continents, destFocused, setDestFocused,destinationsList,setDestinations
+}) {
+
   return (
+    
     <div className={styles.menu}>
       <div className={styles.content}>
-        <div className="container d-block">
+        <div className="container d-block" >
           <div className="row">
             {continents &&
               continents.map(continent => (
@@ -50,7 +52,7 @@ function MenuContent({ continents }) {
                     </Link>
                   </h5>
                   <div className="row">
-                    <div className={`${styles.items} col-4`}>
+                    <div className={` col-3`}>
                       {continent.destinations.map(item => (
                         <MenuItem
                           key={item.id}
@@ -62,30 +64,40 @@ function MenuContent({ continents }) {
                           item={item}
                           setDestinations={setDestinations}
                           setDestFocused={setDestFocused}
+                          focusedID={destFocused.id}
                         />
                       ))}
                     </div>
-                    <div className="col-4">
-                      <h3>List de Subdestinos</h3>
+                    <div className="col-9">
+                      <div className={`${destFocused.id ? 'col-3' : 'col-0'} h-100 position-absolute ${styles.itemsSubMenu} `}>
+                      
                       <ul>
-                        {destinationsList
-                          ? destinationsList.map(item => (
-                              <li key={item.title}>{item.title}</li>
-                            ))
-                          : null}
-                      </ul>
-                    </div>
-                    <div className="col-4">
-                      {destFocused ? (
-                        <>
-                          <h3>{destFocused.title}</h3>
-                          <img
+                          <>
+                          {destinationsList
+                            ? destinationsList.map(item => (
+                              <li key={item.title}>
+                                  <Link href={`/`}>
+                                    <a> {item.title}</a>
+                                  </Link>
+                                </li>
+                              ))
+                              : <li>
+                                Welcome to VA
+                                </li>}
+                            </>
+                        </ul>
+                      </div>
+                      <div className={`${styles.itemsThumb}`}>
+                          {destFocused.image ? (
+                            <img                            
                             alt={destFocused.title}
-                            src={PUBLIC_API + destFocused.thumbnail}
-                          />
-                          <p>{destFocused.summary}</p>
-                        </>
-                      ) : null}
+                            src={PUBLIC_API + destFocused.image}
+                            />
+                            ) :   <img                            
+                            alt={destFocused.title}
+                            src={'/images/12345.jpg'}
+                            />}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -114,7 +126,6 @@ function MenuHoliday({ packagetypes }) {
                           <img src={PUBLIC_API + types.svg} alt={types.title} />
                         )}
                       </i>
-
                       <Link
                         className={styles.Link}
                         href={{
@@ -137,6 +148,9 @@ function MenuHoliday({ packagetypes }) {
 function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
   const router = useRouter();
   const [destinations, setDestinations] = useState([]);
+  const [destFocused, setDestFocused] = useState([]);
+  const [destinationsList, setDestinationsList] = useState([]);
+
   const countries = destinationsCurrent;
 
   function changeCountry(event, id) {
@@ -173,13 +187,26 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
               <li className={styles.nav}>
                 <a
                   className={`${active(router.pathname, '/search')} ${styles.link}`}
-                  role="button">
+                  role="button"
+                  onMouseOver={()=>{
+                    setDestFocused([]);
+                    setDestinationsList([]);
+                  }}
+                  onFocus={()=>{
+                    setDestFocused([]);
+                    setDestinationsList([]);
+                  }}
+                  >
                   Destinations
                 </a>
                 <MenuContent
                   continents={destinations}
                   changeCountry={changeCountry}
                   tailorMade={false}
+                  destFocused={destFocused}
+                  setDestFocused={setDestFocused}
+                  destinationsList={destinationsList}
+                  setDestinations={setDestinationsList}
                 />
               </li>
               <li className={styles.nav}>
@@ -214,7 +241,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
               </li>
               <li className={styles.nav}>
                 <Link href="/blog">
-                  <a className={`nav-link ${styles.link}`}>Blog</a>
+                  <a className={`nav-link ${styles.link}`}>Passion Passport - Blog</a>
                 </Link>
               </li>
               <li className={styles.nav}>
