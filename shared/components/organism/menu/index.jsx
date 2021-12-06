@@ -42,6 +42,7 @@ function MenuContent({
   setDestFocused,
   destinationsList,
   setDestinations,
+  imageMenu,
 }) {
   return (
     <div className={styles.menu}>
@@ -110,11 +111,8 @@ function MenuContent({
                         </>
                       </div>
                       <div className={`${styles.itemsThumb}`}>
-                        {destFocused.image_home ? (
-                          <img
-                            alt={destFocused.title}
-                            src={PUBLIC_API + destFocused.image_home}
-                          />
+                        {imageMenu ? (
+                          <img alt={destFocused.title} src={PUBLIC_API + imageMenu} />
                         ) : (
                           <img alt={destFocused.title} src="/images/12345.jpg" />
                         )}
@@ -171,6 +169,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
   const [destinations, setDestinations] = useState([]);
   const [destFocused, setDestFocused] = useState([]);
   const [destinationsList, setDestinationsList] = useState([]);
+  const [imageMenu, setImageMenu] = useState();
 
   const countries = destinationsCurrent;
 
@@ -183,6 +182,10 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
   useEffect(() => {
     setDestinations(destinationsCurrent?.filter(item => item.id === 1));
   }, []);
+
+  useEffect(() => {
+    setImageMenu(destFocused.image_home);
+  }, [destFocused]);
 
   function active(pathname, page) {
     return pathname === page ? 'nav-link active' : 'nav-link';
@@ -227,6 +230,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                   setDestFocused={setDestFocused}
                   destinationsList={destinationsList}
                   setDestinations={setDestinationsList}
+                  imageMenu={imageMenu}
                 />
               </li>
               <li className={styles.nav}>
