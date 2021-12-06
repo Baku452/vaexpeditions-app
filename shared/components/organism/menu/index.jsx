@@ -110,10 +110,10 @@ function MenuContent({
                         </>
                       </div>
                       <div className={`${styles.itemsThumb}`}>
-                        {destFocused.image ? (
+                        {destFocused.image_home ? (
                           <img
                             alt={destFocused.title}
-                            src={PUBLIC_API + destFocused.image}
+                            src={PUBLIC_API + destFocused.image_home}
                           />
                         ) : (
                           <img alt={destFocused.title} src="/images/12345.jpg" />
