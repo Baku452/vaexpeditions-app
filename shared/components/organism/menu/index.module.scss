@@ -108,7 +108,7 @@
     padding: 9px 22.5px;
     font-weight: 600;
     display: flex;
-    letter-spacing: .025em;
+    letter-spacing: 0.025em;
     justify-content: space-between;
     text-transform: uppercase;
   }
@@ -125,7 +125,7 @@
   list-style-type: none;
   z-index: 10;
   background: rgba(0, 0, 0, 0.5);
-   
+
   li {
     padding-top: 10px;
     display: flex;
@@ -134,9 +134,8 @@
   li:hover {
     cursor: pointer;
   }
-  ul{
+  ul {
     padding-left: 0 !important;
-
   }
   a {
     color: rgb(255, 255, 255);
@@ -145,7 +144,19 @@
     border-bottom: 1px solid transparent;
     &:hover {
       color: #ffffff !important;
-      border-bottom: 1px solid #ffffff
+      border-bottom: 1px solid #ffffff;
+    }
+  }
+  .itemsSubMenu__content {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    h4 {
+      font-size: 3rem !important;
+      font-weight: bold;
     }
   }
 }
@@ -153,20 +164,18 @@
 .overlay {
   //position: fixed; /* Sit on top of the page content */
   //display: none; /* Hidden by default */
- // width: 100%; /* Full width (cover the whole page) */
+  // width: 100%; /* Full width (cover the whole page) */
   //height: 100%; /* Full height (cover the whole page) */
- // top: 0;
+  // top: 0;
   //left: 0;
-//right: 0;
- // bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-   /* Specify a stack order in case you're using a different order for other elements */
+  //right: 0;
+  // bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
 
-
 .itemsThumb {
-
   // background-image: url('/images/post.jpg') ;
   // background-position: right 0px top 0px;
   // background-size: cover;
@@ -176,32 +185,29 @@
   max-height: 515px;
   position: relative;
 
-  h3{
-    letter-spacing: .05em;
+  h3 {
+    letter-spacing: 0.05em;
     margin-top: 30px;
     margin-bottom: 30px;
     text-transform: uppercase;
     text-align: center;
-    
   }
-  img{
-    // position: absolute; 
-    width: 100%;    
+  img {
+    // position: absolute;
+    width: 100%;
     height: 100%;
     // width: 150%;
     // height: 515px;
     // left: -50%;
     object-fit: cover !important;
-
   }
-  
-  p{
+
+  p {
     padding-left: 140px;
     padding-right: 140px;
     @media (max-width: $laptop) {
-     padding-left: 100px;
-    padding-right: 100px;
-      
+      padding-left: 100px;
+      padding-right: 100px;
     }
   }
 }
