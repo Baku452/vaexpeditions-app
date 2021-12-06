@@ -43,7 +43,7 @@ function HeroBlog2({ title, image, alt, navBreadcrums,time }) {
             </li>
             <li>
               <Link href="/blog">
-                <a href="/blog">BLOG</a>
+                <a href="/blog">Passion Passport - Blog</a>
               </Link>
             </li>
             {navBreadcrums.map(item => (

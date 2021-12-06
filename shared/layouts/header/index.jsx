@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+
 import { Menu, NavToolbar, Newsletter, Notification } from '@/components/index';
+
 import styles from './index.module.scss';
 
 function Header({ destinations, packagetypes, notifications, packagesAll, pixels }) {
@@ -22,9 +24,16 @@ function Header({ destinations, packagetypes, notifications, packagesAll, pixels
         <Notification notifications={notifications} />
         <Newsletter packagetypes={packagetypes} packagesAll={packagesAll} />
 
-        <div className={`${styles.headerFixed} ${showMenu ? styles.fixed : styles.notFixed}`}>
-        <NavToolbar destinations={destinations} packagetypes={packagetypes} />
-        <Menu destinations={destinations} packagetypes={packagetypes} fixed={showMenu} />
+        <div
+          className={`${styles.headerFixed} ${
+            showMenu ? styles.fixed : styles.notFixed
+          }`}>
+          <NavToolbar destinations={destinations} packagetypes={packagetypes} />
+          <Menu
+            destinations={destinations}
+            packagetypes={packagetypes}
+            fixed={showMenu}
+          />
         </div>
       </header>
     </>

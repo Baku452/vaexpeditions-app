@@ -11,7 +11,7 @@
 .nav {
   //padding: 6px 20px 0 20px;
   //height: 55px;
-   .link {
+  .link {
     color: #ffffff !important;
     text-transform: uppercase;
     font-size: 11px;
@@ -45,19 +45,19 @@
     background-color: #fff;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
   }
-  .extendAbout{
+  .extendAbout {
     padding-left: 20px;
     background-color: rgb(240, 240, 240);
     // padding-top: 20px;
     ul {
       padding-top: 20px;
       list-style-type: none;
-      li{
+      li {
         padding-bottom: 20px;
       }
-      a{
+      a {
         color: #000;
-        &:hover{
+        &:hover {
           color: #179bd7;
         }
       }
@@ -76,7 +76,7 @@
   padding: 0;
   list-style-type: none;
   flex-wrap: wrap;
-  columns: 4;
+  // columns: 4;
   // display: flex;
   li {
     flex: 1 0 22%;
@@ -102,13 +102,123 @@
   }
 }
 
+.itemsMenu {
+  list-style-type: none;
+  a {
+    padding: 9px 22.5px;
+    font-weight: 600;
+    display: flex;
+    letter-spacing: 0.025em;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+  a::after {
+    content: '❯';
+  }
+  a:hover {
+    cursor: pointer;
+    color: #179bd7;
+  }
+}
+
+.itemsSubMenu {
+  list-style-type: none;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+
+  li {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  li:hover {
+    cursor: pointer;
+  }
+  ul {
+    padding-left: 0 !important;
+  }
+  a {
+    color: rgb(255, 255, 255);
+    z-index: 1000;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      color: #ffffff !important;
+      border-bottom: 1px solid #ffffff;
+    }
+  }
+  .itemsSubMenu__content {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    h4 {
+      font-size: 3rem !important;
+      font-weight: bold;
+    }
+  }
+}
+
+.overlay {
+  //position: fixed; /* Sit on top of the page content */
+  //display: none; /* Hidden by default */
+  // width: 100%; /* Full width (cover the whole page) */
+  //height: 100%; /* Full height (cover the whole page) */
+  // top: 0;
+  //left: 0;
+  //right: 0;
+  // bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.itemsThumb {
+  // background-image: url('/images/post.jpg') ;
+  // background-position: right 0px top 0px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: absolute 2;
+  overflow: hidden;
+  max-height: 515px;
+  position: relative;
+
+  h3 {
+    letter-spacing: 0.05em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  img {
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+    // width: 150%;
+    // height: 515px;
+    // left: -50%;
+    object-fit: cover !important;
+  }
+
+  p {
+    padding-left: 140px;
+    padding-right: 140px;
+    @media (max-width: $laptop) {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+}
+
 .route {
   color: #000;
   line-height: 25px;
   text-transform: initial;
   font-size: 15px;
   letter-spacing: 0.2px;
-  &:hover span{
+  &:hover span {
     color: #000;
     border-bottom: 2px solid #179bd7;
   }

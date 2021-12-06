@@ -111,7 +111,7 @@ function Navigation({ continents, packagetypes }) {
         </Link>
 
         <Link key="bl" href="/blog">
-        <a className="text-dark">Blog</a>
+        <a className="text-dark">Passion Passport - Blog</a>
         </Link>
 
         <div className={`${styles.boxNav}`}>
