@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { Hero , PageContent , OurCoreValues} from '@/components/index';
+import { Hero , PageContent , OurCoreValue} from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -44,7 +44,7 @@ export default function OurPeople({
             </section>
 
             <section id="OurCoreValues" className="row py-4 py-xl-5">
-                <OurCoreValues />
+                <OurCoreValue />
 
 
 
