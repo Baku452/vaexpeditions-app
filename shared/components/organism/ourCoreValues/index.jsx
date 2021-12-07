@@ -12,7 +12,7 @@ function OurCoreValues() {
   
                 <div className="row mb-5">
                   <div className="col-12 col-md-6 mb-5 order-1 align-self-center ">
-                    <h2 className="title">We fully believe in our people. </h2>
+                    <h2 className="title">We fully believe in our people.</h2>
                     <p className="m-0 fs-17 lh-34">
                     All of the people who work in our company have a voice and take part in all the decision-making processes. 
                     Every member of our team is a local expert in their area and are involved in and fully participate in the development 
