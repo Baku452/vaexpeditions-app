@@ -106,8 +106,8 @@ function Navigation({ continents, packagetypes }) {
           <a className="text-dark">Tailor-Made Tours</a>
         </Link>
 
-        <Link key="op" href="/our-purpose">
-        <a className="text-dark">Our Purpose</a>
+        <Link key="op" href="/about/who-we-are#aboutUs">
+        <a className="text-dark">About</a>
         </Link>
 
         <Link key="bl" href="/blog">

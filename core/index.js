@@ -8,6 +8,7 @@ export * from './data/budget';
 export * from './data/hear_about';
 export * from './data/level';
 export * from './data/itemsNavFixed';
+export * from './data/menu-about';
 // Services
 export * from './services/home';
 export * from './services/search';
