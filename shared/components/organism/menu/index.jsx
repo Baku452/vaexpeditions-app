@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -62,37 +64,51 @@ function MenuItem({
   item,
   setDestinations,
   setDestFocused,
-  focusedID
+  focusedID,
 }) {
   return (
     <div className={`${styles.itemsMenu} `}>
-    <Link href={`/destination/${slug}`} >
-      <a
-        onFocus={() => handleFocus(item, where, setDestinations, setDestFocused)}
-        onMouseOver={() => handleFocus(item, where, setDestinations, setDestFocused)}
-        className={`${styles.route} ${id == focusedID ? 'active' : ''} mr-5`}>
-        {title}
-      </a>
-    </Link>
+      <Link href={`/destination/${slug}`}>
+        <a
+          onFocus={() => handleFocus(item, where, setDestinations, setDestFocused)}
+          onMouseOver={() => handleFocus(item, where, setDestinations, setDestFocused)}
+          className={`${styles.route} ${id === focusedID ? 'active' : ''} mr-5`}>
+          {title}
+        </a>
+      </Link>
     </div>
   );
 }
 
-function MenuContent({ continents, destFocused, setDestFocused,destinationsList,setDestinations
+function MenuContent({
+  continents,
+  destFocused,
+  setDestFocused,
+  destinationsList,
+  setDestinations,
 }) {
-
   return (
-    
     <div className={styles.menu}>
       <div className={styles.content}>
-        <div className="container d-block" >
+        <div className="container d-block">
           <div className="row">
             {continents &&
               continents.map(continent => (
                 <div key={continent.name} className="col-12">
                   <h5 className="font-weight-bold mb-3">
                     <Link href={`/continent/${continent.slug}`}>
-                      <a className="black">{continent.name}</a>
+                      <a
+                        onMouseOver={() => {
+                          setDestFocused([]);
+                          setDestinations([]);
+                        }}
+                        onFocus={() => {
+                          setDestFocused([]);
+                          setDestinations([]);
+                        }}
+                        className="black">
+                        {continent.name}
+                      </a>
                     </Link>
                   </h5>
                   <div className="row">
@@ -112,35 +128,40 @@ function MenuContent({ continents, destFocused, setDestFocused,destinationsList,
                         />
                       ))}
                     </div>
-                    <div className="col-9">
-                      <div className={`${destFocused.id ? 'col-3' : 'col-0'} h-100 position-absolute ${styles.itemsSubMenu} `}>
-                      
-                      <ul>
-                          <>
-                          {destinationsList
-                            ? destinationsList.map(item => (
-                              <li key={item.title}>
-                                  <Link href={`/`}>
+                    <div className="col-9 p-0">
+                      <div
+                        className={`${
+                          destFocused.id ? 'col-3' : 'col-12'
+                        } h-100 position-absolute ${styles.itemsSubMenu} `}>
+                        <>
+                          {destinationsList.length > 0 ? (
+                            <ul>
+                              {destinationsList.map(item => (
+                                <li key={item.title}>
+                                  <Link
+                                    href={`/destination/${destFocused.slug}/${item.slug}`}>
                                     <a> {item.title}</a>
                                   </Link>
                                 </li>
-                              ))
-                              : <li>
-                                Welcome to VA
-                                </li>}
-                            </>
-                        </ul>
+                              ))}
+                            </ul>
+                          ) : (
+                            <div className={`${styles.itemsSubMenu__content}`}>
+                              <h3>Find your Destination</h3>
+                              <h4>VA Expeditions</h4>
+                            </div>
+                          )}
+                        </>
                       </div>
                       <div className={`${styles.itemsThumb}`}>
-                          {destFocused.image ? (
-                            <img                            
+                        {destFocused.image ? (
+                          <img
                             alt={destFocused.title}
                             src={PUBLIC_API + destFocused.image}
-                            />
-                            ) :   <img                            
-                            alt={destFocused.title}
-                            src={'/images/12345.jpg'}
-                            />}
+                          />
+                        ) : (
+                          <img alt={destFocused.title} src="/images/12345.jpg" />
+                        )}
                       </div>
                     </div>
                   </div>
@@ -239,15 +260,14 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                 <a
                   className={`${active(router.pathname, '/search')} ${styles.link}`}
                   role="button"
-                  onMouseOver={()=>{
+                  onMouseOver={() => {
                     setDestFocused([]);
                     setDestinationsList([]);
                   }}
-                  onFocus={()=>{
+                  onFocus={() => {
                     setDestFocused([]);
                     setDestinationsList([]);
-                  }}
-                  >
+                  }}>
                   Destinations
                 </a>
                 <MenuContent

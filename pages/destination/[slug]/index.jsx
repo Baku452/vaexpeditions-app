@@ -10,7 +10,6 @@ import {
   Hero3,
   NavBarFixed,
   PackageItem,
-  ShowMore,
   WhereToItem,
 } from '@/components/index';
 import { activities, navDestinations } from '@/core/index';
@@ -88,7 +87,7 @@ function Destination({
           </div>
           <div className="text-center mx-auto fs-26 link font-weight-bold">
             <Link href={`/destination/${SSRDestination.slug}/search`}>
-              <a className="link" className={` ${styles.boton} p-2 my-4`} type="button">
+              <a className={` ${styles.boton} link p-2 my-4`} type="button">
                 SHOW MORE
               </a>
             </Link>
