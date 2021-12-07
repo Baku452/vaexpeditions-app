@@ -3,10 +3,54 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { menuAbout } from '@/core/index';
 
 import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
+
+function MenuAbout({ items, changeAbout }) {
+  return (
+    <div className={`${styles.menu}`}>
+      <div className={`${styles.content} `}>
+        <div className="container ">
+          <div className="row">
+            <div className="col-4">
+              <h4 className="fw-bold black">About Va Expeditions</h4>
+              {menuAbout.map(
+                item =>
+                  item && (
+                    <div key={item.titulo} className="col-12">
+                      <ul className={`${styles.itemsAbout}`}>
+                        <Link href={item.slug}>
+                          <li
+                            onFocus={event => changeAbout(event, item.id)}
+                            onMouseOver={event => changeAbout(event, item.id)}>
+                            {item.titulo}
+                          </li>
+                        </Link>
+                      </ul>
+                    </div>
+                  ),
+              )}
+            </div>
+            <div className={`${styles.extendAbout} col-8`}>
+              <ul>
+                {items.map(item => (
+                  <li key={item.titulo}>
+                    <Link key={item.slug} href={item.slug ? item.slug : '#'}>
+                      <a>{item.titulo}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const handleFocus = (item, where, setDestinations, setDestFocused) => {
   setDestFocused(item);
@@ -168,6 +212,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
   const router = useRouter();
   const [destinations, setDestinations] = useState([]);
   const [destFocused, setDestFocused] = useState([]);
+  const [itemsAbout, setItemsAbout] = useState(menuAbout[0].submenu);
   const [destinationsList, setDestinationsList] = useState([]);
   const [imageMenu, setImageMenu] = useState();
 
@@ -177,6 +222,12 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
     event.preventDefault();
     const destination = countries.filter(item => item.id === id);
     setDestinations(destination);
+  }
+
+  function changeAbout(event, id) {
+    event.preventDefault();
+    const about = menuAbout.filter(item => item.id === id);
+    setItemsAbout(about[0].submenu);
   }
 
   useEffect(() => {
@@ -253,15 +304,16 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                 </Link>
               </li>
               <li className={styles.nav}>
-                <Link href="/our-purpose">
+                <Link href="/about/who-we-are#aboutUs">
                   <a
                     className={`${active(router.pathname, '/our-purpose')} ${
                       styles.link
                     }`}
                     role="button">
-                    Our Purpose
+                    About
                   </a>
                 </Link>
+                <MenuAbout items={itemsAbout} changeAbout={changeAbout} />
               </li>
               <li className={styles.nav}>
                 <Link href="/blog">

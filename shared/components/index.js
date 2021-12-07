@@ -72,3 +72,5 @@ export * from './organism/searchBar/index';
 export * from './organism/asideBlog/index';
 export * from './organism/faqs-destinations/index';
 export * from './organism/contactPackage/index';
+export * from './organism/travelWithPurpose/index';
+export * from './organism/OurCoreValues/index';
