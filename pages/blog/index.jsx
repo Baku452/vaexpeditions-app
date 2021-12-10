@@ -3,9 +3,10 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-import { BlogCard, HeroBlog, ShowMore ,BlogCard2} from '@/components/index';
+import { BlogCard, BlogCard2, HeroBlog, ShowMore } from '@/components/index';
 import { posts } from '@/core/index';
 import { Base } from '@/layouts/index';
+
 import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -151,7 +152,6 @@ function BlogPage({
             </section>
           </div>
         </section>
-        
       </div>
       <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
