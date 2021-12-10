@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { Hero , PageContent , OurCoreValue} from '@/components/index';
+import { GridCard, Hero, OurCoreValue, PageContent } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -14,6 +14,7 @@ export default function OurPeople({
   ourpurpose,
   packagesAll,
   pagecontent,
+  collaborators,
 }) {
   return (
     <Base
@@ -24,37 +25,40 @@ export default function OurPeople({
       pixels={700}>
       <Head>
         <title>Va Expeditions - Our People</title>
-        <meta
-          name="description"
-          content=""
-        />
+        <meta name="description" content="" />
       </Head>
 
-      <Hero
-        title="Our People"
-        image="/images/why-chose-va.jpg"
-        alt="who we are"
-      />
+      <Hero title="Our People" image="/images/why-chose-va.jpg" alt="who we are" />
+      <div className={`${styles.anchor} px-4 px-lg-5 px-xl-0 lh-34`}>
+        <section id="OurTeam" className=" containerBox row py-4 py-xl-5">
+          <div className="col-12 text-center">
+            <h2 className="titleUnderline fs-30 lh-34 text-center">Our Team</h2>
+            <p className="pt-5">
+              Our team is the reason of our success. We are committed to them, and the
+              result is a joined effort of discovering new extraordinary, transformative,
+              revitalizing and personalized travel experiences that are connected to the
+              lives of our clients.
+            </p>
+          </div>
+        </section>
+        {collaborators ? (
+          <section className="background2 py-4 py-xl-5">
+            <div className="containerBox">
+              <GridCard
+                items={collaborators}
+                className="col-12 col-sm-6 col-md-4 col-lg-3"
+              />
+            </div>
+          </section>
+        ) : null}
+        <section id="LocalExperts" className="containerBox row py-4 py-xl-5">
+          <PageContent page={pagecontent[2]} ourpurpose={ourpurpose} />
+        </section>
 
-        <div className={`containerBox ${styles.anchor} px-4 px-lg-5 px-xl-0 lh-34`}>
-                        
-
-            <section id="LocalExperts" className="row py-4 py-xl-5">
-              <PageContent page={pagecontent[2]} ourpurpose={ourpurpose} />
-            </section>
-
-            <section id="OurCoreValues" className="row py-4 py-xl-5">
-                <OurCoreValue />
-
-
-
-            </section>
-       
-
-        </div>
-
-
-      
+        <section id="OurCoreValues" className="containerBox row py-4 py-xl-5">
+          <OurCoreValue />
+        </section>
+      </div>
     </Base>
   );
 }
@@ -78,6 +82,9 @@ export async function getStaticProps() {
   const pagecontentResponse = await fetch(`${PUBLIC_API}/history/`);
   const pagecontent = await pagecontentResponse.json();
 
+  const collaboratorsReq = await fetch(`${PUBLIC_API}/collaborators`);
+  const collaborators = await collaboratorsReq.json();
+
   return {
     props: {
       destinations,
@@ -86,6 +93,7 @@ export async function getStaticProps() {
       ourpurpose,
       packagesAll,
       pagecontent,
+      collaborators,
     },
     revalidate: 1,
   };

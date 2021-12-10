@@ -41,6 +41,7 @@ export * from './molecules/contactFormB2C/index';
 export * from './molecules/contactFormB2B/index';
 export * from './molecules/hero/index';
 export * from './molecules/gridTravelAdvice/index';
+export * from './molecules/collaboratorCard/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
