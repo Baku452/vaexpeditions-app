@@ -30,7 +30,7 @@ function ContactUs({ destinations, packagetypes, packages, notifications, packag
       </Head>
       <Hero2
         title="Contact US"
-        image="/images/contactus.png"
+        image="/images/contact.jpg"
         alt="contact us"
       />
       <ContactForm destinations={destinations} packages={packages} pack={pack} />
