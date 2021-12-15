@@ -114,10 +114,16 @@ function Navigation({ continents, packagetypes }) {
         <a className="text-dark">Passion Passport - Blog</a>
         </Link>
 
+
         <div className={`${styles.boxNav}`}>
           <Link key="cu" href="/contact-us">
             <a className="text-dark">
               Contact Us
+            </a>
+          </Link>
+          <Link key="cu" href="/our-newsletter">
+            <a className="text-dark">
+              Sign Up for Email
             </a>
           </Link>
           <a href="tel:1-(888) 803-8004">Call Us 1-(888) 803-8004</a>

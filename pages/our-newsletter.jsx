@@ -53,7 +53,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
       packagesAll={packagesAll}>
       <Hero2
         title="Subscribe Newsletter"
-        image="/images/contact.png"
+        image="/images/contact.jpg"
         alt="subscribe newsletter"
       />
 
