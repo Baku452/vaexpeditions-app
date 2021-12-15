@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import { Hero2 } from '@/components/index';
 
+import { Hero2 } from '@/components/index';
 import { saveNewsletter } from '@/core/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Newsletter({ destinations, packagetypes, notifications }) {
+function Newsletter({ destinations, packagetypes, notifications, packagesAll }) {
   const router = useRouter();
 
   const [validated, setValidated] = useState(false);
@@ -49,8 +49,9 @@ function Newsletter({ destinations, packagetypes, notifications }) {
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
-      notifications={notifications}>
-        <Hero2
+      notifications={notifications}
+      packagesAll={packagesAll}>
+      <Hero2
         title="Subscribe Newsletter"
         image="/images/contact.png"
         alt="subscribe newsletter"
@@ -186,11 +187,15 @@ export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
+  const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
+  const packagesAll = await packagesRes.json();
+
   return {
     props: {
       destinations,
       packagetypes,
       notifications,
+      packagesAll,
     },
   };
 }

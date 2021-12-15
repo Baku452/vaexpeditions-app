@@ -7,16 +7,7 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function CintaNegra({
-  price,
-  days,
-  offer,
-  type,
-  activity,
-  specialist,
-  packageTypeSvg,
-  activityID,
-}) {
+function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activityID }) {
   let iconActivity = '';
   const searchIcon = id => {
     switch (id) {
@@ -102,8 +93,8 @@ function CintaNegra({
         <LinkScroll
           className={`${styles.trackBook} py-1 btn btn-primary fs-24`}
           to="contact-form-package"
-          spy
           smooth
+          offset={-190}
           duration={500}>
           Book Now
         </LinkScroll>

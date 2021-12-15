@@ -71,11 +71,6 @@ function TripOverview({ pack }) {
                     <h6 className="pt-2 ">
                       {pack?.specialist?.fullname}
                     </h6>
-                  {/* {pack?.show_specialist && (
-                    <h6 className="pt-2 font-weight-bold">
-                      {pack?.specialist?.fullname}
-                    </h6>
-                  )} */}
                 </div>
                 </div>
                 <Modal className="p-4" show={show} onHide={handleClose}>
