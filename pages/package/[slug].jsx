@@ -18,7 +18,7 @@ import {
   TripOverview,
   WhatsIncluded,
 } from '@/components/index';
-import { activities, levelActivity, packages, packagesOptional } from '@/core/index';
+import { activities, packages, packagesOptional } from '@/core/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -33,9 +33,6 @@ function Package({
 }) {
   const [packagesList, setPackagesList] = useState([]);
   const [packagesOptionals, setPackagesOptionals] = useState([]);
-  const [packageTypeLabel, setpackageTypeLabel] = useState('');
-  const [packageActivityLabel, setpackageActivityLabel] = useState([]);
-  const [packageTypeSvg, setpackageSvg] = useState('');
   const navBreadcrums = [
     {
       title: pack.destination_name,
@@ -64,7 +61,17 @@ function Package({
       setPackagesOptionals(result?.data);
     }
   }
+  function svgType() {
+    let svType = '';
+    packagetypes.map(item => {
+      if (parseInt(item.id, 10) === parseInt(pack.package_type, 10)) {
+        svType = item.svg;
+      }
+      return svType;
+    });
 
+    return svType;
+  }
   async function fetchPackages() {
     const { activity, package_type, destination } = pack;
     const query = { activity, package_type, destination };
@@ -79,15 +86,6 @@ function Package({
     if (result && packagesList.length === 0) {
       setPackagesList(result.data.results);
     }
-    packagetypes.map(item => {
-      if (item.id == pack.package_type) {
-        setpackageTypeLabel(item.title);
-        setpackageSvg(item.svg);
-      }
-    });
-    levelActivity.map(item => {
-      if (item.id == pack.activity) return setpackageActivityLabel(item.label);
-    });
   }
   useEffect(() => {
     fetchPackages();
@@ -116,12 +114,12 @@ function Package({
         days={pack.days}
         price={pack.price}
         offer={pack.offer}
-        type={packageTypeLabel}
+        type={pack.type_name}
         activityID={pack.activity}
-        activity={packageActivityLabel}
+        activity={pack.activity_name}
         specialist={pack?.specialist?.thumbnail}
         showspecialist={pack?.show_specialist}
-        packageTypeSvg={packageTypeSvg}
+        packageTypeSvg={svgType()}
       />
       <div className="container aside">
         <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
