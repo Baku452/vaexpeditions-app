@@ -28,11 +28,7 @@ function ContactUs({ destinations, packagetypes, packages, notifications, packag
           content="Contact Us to Explore Multidestinations with VAExpeditions"
         />
       </Head>
-      <Hero2
-        title="Contact US"
-        image="/images/contact.jpg"
-        alt="contact us"
-      />
+      <Hero2 title="Contact US" image="/images/contact.jpg" alt="contact us" />
       <ContactForm destinations={destinations} packages={packages} pack={pack} />
     </Base>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { InputGroup } from 'node_modules/react-bootstrap/esm/index';
@@ -8,7 +9,7 @@ import { GrMail } from 'react-icons/gr';
 
 import { countries, saveContactUs } from '@/core/index';
 
-function ContactForm({ destinations, title = true }) {
+function ContactForm({ destinations }) {
   const router = useRouter();
   const [validated, setValidated] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -45,9 +46,8 @@ function ContactForm({ destinations, title = true }) {
               <h2 className="text-center">Sending Mail...</h2>
             ) : (
               <div className="card border">
-                 <div className="row px-5">
-
-                  <div className="fs-14 col-sm-12 col-md-12 col-lg-3 pt-3 mb-3 pb-0 order-2 align-self-center background2">
+                <div className="row px-5">
+                  <div className="fs-14 col-md-12 col-lg-3 pt-3 mb-3 pb-0 order-2 align-self-center background2">
                     <p className="p">
                       Portal Panes #123 / Centro Comercial Ruiseñores
                       <br />
@@ -64,8 +64,8 @@ function ContactForm({ destinations, title = true }) {
                     </p>
 
                     <p>
-                      If you have a question about our Va Expeditions trips, please
-                      submit your inquiry via the form below:
+                      If you have a question about our Va Expeditions trips, please submit
+                      your inquiry via the form below:
                     </p>
 
                     <p>
@@ -80,9 +80,9 @@ function ContactForm({ destinations, title = true }) {
                     validated={validated}
                     onSubmit={handleSubmit}>
                     <div>
-                    <p className="card-text fs-20 lh-29 py-5 text-center">
-                      Please fill out the following information. <br />
-                      We will get back to you in a maximum time of 48 hours.
+                      <p className="card-text fs-20 lh-29 py-5 text-center">
+                        Please fill out the following information. <br />
+                        We will get back to you in a maximum time of 48 hours.
                       </p>
                       <div className="row mb-4">
                         <div className="col-12 col-md-6">
@@ -111,7 +111,7 @@ function ContactForm({ destinations, title = true }) {
                           <div className="form-group">
                             <InputGroup>
                               <InputGroup.Prepend>
-                              <InputGroup.Text id="basic_addon1">
+                                <InputGroup.Text id="basic_addon1">
                                   <FaUserAlt />
                                 </InputGroup.Text>
                               </InputGroup.Prepend>
@@ -168,7 +168,7 @@ function ContactForm({ destinations, title = true }) {
                             </InputGroup>
 
                             <Form.Control.Feedback type="invalid">
-                              Please provide a valid email address.
+                              Please provide a valid number
                             </Form.Control.Feedback>
                           </div>
                         </div>

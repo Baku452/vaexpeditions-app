@@ -5,7 +5,7 @@ import { InputGroup } from 'node_modules/react-bootstrap/esm/index';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-import { getCities, getStates, saveContactUsB2C } from '@/core/index';
+import { saveContactUsB2C } from '@/core/index';
 
 const URL_PACKAGE = process.env.NEXT_PUBLIC_DOMAIN;
 
@@ -13,39 +13,11 @@ function ContactFormB2C({ pack, cities }) {
   const router = useRouter();
   const [additionalInfo, setAdditionalInfo] = useState('Orgánico');
   const [validated, setValidated] = useState(false);
-  const [newsletter, setNewsletter] = useState(false);
   const [sending, setSending] = useState(false);
   const [isPromo, setPromo] = useState(pack.promo);
   const [urlPackage, setUrlPackage] = useState(URL_PACKAGE + router.asPath);
+  const [sendingText, setSendingMail] = useState("We are sending you're mail");
   const states2 = [...cities];
-  const [selectedCountry, setSelectedCountry] = useState('AF');
-  const [selectedState, setSelectedState] = useState('BDS');
-  const [selectedStates, setSelectedStates] = useState([
-    {
-      name: 'No states available',
-      state_code: '',
-    },
-  ]);
-  const [selectedCities, setSelectedCities] = useState([
-    {
-      name: 'No cities available',
-      state_code: '',
-    },
-  ]);
-  const handleChange = event => {
-    switch (event.target.name) {
-      case 'country':
-        setSelectedCountry(event.target.value);
-        return;
-      case 'state':
-        setSelectedState(event.target.value);
-
-        return;
-      default:
-        // eslint-disable-next-line no-unused-expressions
-        null;
-    }
-  };
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -57,34 +29,20 @@ function ContactFormB2C({ pack, cities }) {
       const formDataEntries = Object.fromEntries(formData.entries());
       const formValues = {
         ...formDataEntries,
-        ...{ is_newsletter: newsletter },
         ...{ is_promo: isPromo },
         ...{ url: urlPackage },
         ...{ extra_data: additionalInfo },
       };
-      const { result, error } = await saveContactUsB2C({ data: formValues });
-      router.push('/contact-us/thank-you-contact-us');
+      const { error } = await saveContactUsB2C({ data: formValues });
+      if (error) {
+        setSendingMail('We cannot send your message , try later');
+        setSending(false);
+      } else {
+        router.push('/contact-us/thank-you-contact-us');
+      }
     }
     setValidated(true);
   };
-
-  async function fetchStates() {
-    const { result } = await getStates({ ciso: selectedCountry });
-    setSelectedStates(result.data);
-  }
-
-  async function fetchCities() {
-    const { result } = await getCities({ ciso: selectedCountry, siso: selectedState });
-    setSelectedCities(result.data);
-  }
-
-  useEffect(() => {
-    fetchStates();
-  }, [selectedCountry]);
-
-  useEffect(() => {
-    fetchCities();
-  }, [selectedState]);
 
   useEffect(() => {
     if (router.query.utm_source) {
@@ -197,14 +155,10 @@ function ContactFormB2C({ pack, cities }) {
                 <InputGroup.Prepend>
                   <InputGroup.Text id="basic_addon1">Country</InputGroup.Text>
                 </InputGroup.Prepend>
-                <Form.Control
-                  onChange={handleChange}
-                  as="select"
-                  size="lg"
-                  name="country">
+                <Form.Control as="select" size="lg" name="country">
                   <option value="">Country of Residence</option>
                   {states2.map(item => (
-                    <option key={item.iso2} value={item.iso2}>
+                    <option key={item.iso2} value={item.name}>
                       {item.name}
                     </option>
                   ))}
@@ -222,16 +176,13 @@ function ContactFormB2C({ pack, cities }) {
                 <InputGroup.Prepend>
                   <InputGroup.Text id="basic_addon1">State</InputGroup.Text>
                 </InputGroup.Prepend>
-                <Form.Control onChange={handleChange} as="select" size="lg" name="state">
-                  {selectedStates.length === 0 ? <option value="">State</option> : null}
-                  {selectedStates.map(item => (
-                    <option
-                      key={item.state_code}
-                      value={item.iso2 ? item.iso2.replace('-', '') : ''}>
-                      {item.name}
-                    </option>
-                  ))}
-                </Form.Control>
+                <Form.Control
+                  placeholder="State"
+                  as="textarea"
+                  size="lg"
+                  rows="1"
+                  name="state"
+                />
               </InputGroup>
               <Form.Control.Feedback type="invalid">
                 Please provide a valid city.
@@ -244,14 +195,13 @@ function ContactFormB2C({ pack, cities }) {
                 <InputGroup.Prepend>
                   <InputGroup.Text id="basic_addon1">City</InputGroup.Text>
                 </InputGroup.Prepend>
-                <Form.Control onChange={handleChange} as="select" size="lg" name="city">
-                  {selectedCities.length === 0 ? <option value="">City</option> : null}
-                  {selectedCities.map(item => (
-                    <option key={item.id} value={selectedCountry + item.id}>
-                      {item.name}
-                    </option>
-                  ))}
-                </Form.Control>
+                <Form.Control
+                  placeholder="City"
+                  as="textarea"
+                  size="lg"
+                  rows="1"
+                  name="city"
+                />
               </InputGroup>
 
               <Form.Control.Feedback type="invalid">
@@ -276,8 +226,8 @@ function ContactFormB2C({ pack, cities }) {
           </div>
           <p className="col-12 pt-3 fs-14">
             *By submitting your information, you are automatically accepting our
-            <Link href="/pages/privacy-policy-of-valencia-travel">
-              <a href="#"> privacy policy. </a>
+            <Link href="/privacy-policy-of-valencia-travel">
+              <a target="_blank"> privacy policy. </a>
             </Link>
           </p>
         </div>
@@ -295,8 +245,7 @@ function ContactFormB2C({ pack, cities }) {
     </Form>
   ) : (
     <div className="container text-center">
-      <img alt="sending GIF" src="/gifs/sending.gif" />
-      <p>We are sending you´re mail</p>
+      <p>{sendingText}</p>
     </div>
   );
 }
