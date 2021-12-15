@@ -54,13 +54,11 @@
   .trackBook {
     background-color: #a6192e !important;
     border: none;
+    width: 50%;
   }
   .booknow {
     a {
-      width: 250px;
-      @media (max-width: 1024px) {
-        width: 170px !important;
-      }
+      width: 100%;
       color: #fff;
     }
   }
@@ -102,4 +100,10 @@
   @media (max-width: $sm) {
     grid-template-columns: 1fr 1fr;
   }
+}
+.icono{
+  color: #fff;
+  filter: invert(1);
+  width: 15px;
+  padding-right: 2px;
 }

@@ -89,17 +89,25 @@ function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activi
           </div>
         </div>
       </div> */}
-      <div className={`d-none d-lg-block ${styles.booknow}`}>
+      <div className={`${styles.booknow}`}>
         <LinkScroll
-          className={`${styles.trackBook} py-1 btn btn-primary fs-24`}
+          className={`${styles.trackBook} d-none d-lg-block py-1 btn btn-primary fs-24 `}
           to="contact-form-package"
           smooth
           offset={-190}
           duration={500}>
           Book Now
         </LinkScroll>
-        <a className="text-white fs-14 pt-3 d-block" href="tel:+18888038004">
-          Call Us 1-(888) 803-8004
+        <p className='d-block d-lg-none'>
+          <span>Call Us</span>
+        </p>
+        <a className="text-white fs-14 pt-2 d-block text-center" href="tel:+18888038004">
+        <img
+            alt="telephone"
+            className={`${styles.icono} `}
+            src="/icons/telefono.svg"
+          />
+              1-(888) 803-8004
         </a>
       </div>
     </div>

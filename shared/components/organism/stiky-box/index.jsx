@@ -74,18 +74,13 @@ function StikyBox({ pack }) {
       <Divider />
       <br />
       <LinkScroll
-        className={`${styles.trackBook} btn btn-primary  fs-16 w-100 mb-2 `}
+        className={`${styles.trackBook}  btn btn-primary  fs-16 w-100 mb-2 `}
         to="contact-form-package"
         smooth
         offset={-120}
         duration={500}>
         Book Now
       </LinkScroll>
-      {/* <a
-        href="#contact-form-package"
-        className={`${styles.trackBook} btn btn-primary  fs-16 w-100 mb-2 `}>
-        Book Now
-      </a> */}
       <p
         className="mb-5 px-3"
         style={{

@@ -3,6 +3,7 @@
 import fetch from 'cross-fetch';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import { Link as LinkScroll } from 'react-scroll';
 
 import {
   CintaNegra,
@@ -112,6 +113,7 @@ function Package({
       />
       <CintaNegra
         days={pack.days}
+        pack={pack}
         price={pack.price}
         offer={pack.offer}
         type={pack.type_name}
@@ -121,6 +123,14 @@ function Package({
         showspecialist={pack?.show_specialist}
         packageTypeSvg={svgType()}
       />
+      <LinkScroll
+        smooth
+        duration={600}
+        style={{ backgroundColor: '#a6192e', border: 'none' }}
+        className="fixedContact trackBook btn btn-primary fs-24 d-lg-none d-block fixed-bottom w-100"
+        to="contact-form-package">
+        Book Now
+      </LinkScroll>
       <div className="container aside">
         <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
           <StikyBox pack={pack} />

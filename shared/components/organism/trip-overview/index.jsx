@@ -13,38 +13,56 @@ function TripOverview({ pack }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Element name="trip-overview" className="container">
+    <Element name="trip-overview" className="container ">
       <div className={styles.overview}>
-        <div className="container">
-          <div className={`${styles.content} row pb-2 mb-3`}>
-            <div className="containerBox col-12 col-md-5">
-              <div className="row pt-4 pb-2">
+        <div className="container ">
+          <div className={`row mb-3`}>
+            
+            <div className={`${styles.content} containerBox col-12 col-md-6  mt-3 background2`}>
+              <div className="row pb-2">
                 <div className="col-12 pt-3 pb-2">
                   <div className="row ">
-                    <div className="col-12 col-md-7 fs-16 pt-1 pb-3 pt-md-0 pb-md-0 font-weight-bold ">
-                      Physical Difficulty
+                    <div className={` ${styles.titulo} row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 font-weight-bold`}>
+                    <img
+                        alt="Wildlife expectation"
+                        className={` ${styles.icono} `}
+                        src="/icons/hiking.svg"
+                      />
+                      <p className="pl-2">Physical Difficulty</p>
                     </div>
-                    <div className="col-12 col-md-5 d-flex">
+                    <div className={` ${styles.puntos} px-1 col-md-3 d-flex`}>
                       <Rating number={pack?.physical_difficulty} />
                     </div>
                   </div>
                 </div>
                 <div className="col-12 pb-2">
                   <div className="row ">
-                    <div className="col-12 col-md-7 fs-16 pt-1 pb-3 pt-md-0 pb-md-0  font-weight-bold">
-                      Cultural rating
+                    <div className={` ${styles.titulo} row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 font-weight-bold`}>
+                    <img
+                        alt="Wildlife expectation"
+                        className={`card-img-top ${styles.icono}`}
+                        src="/icons/culture2.svg"
+                      />
+                      <p className="pl-2">Cultural rating</p>
                     </div>
-                    <div className="col-12 col-md-5 d-flex">
+                    <div className={` ${styles.puntos} px-1 col-12 col-md-3 d-flex`}>
                       <Rating number={pack?.cultural_rating} />
                     </div>
                   </div>
                 </div>
                 <div className="col-12 pb-2">
                   <div className="row">
-                    <div className="col-12 col-md-7 pt-1 pb-3 pt-md-0 pb-md-0  fs-16 font-weight-bold">
+                    <div className={` ${styles.titulo} row col-md-9 fs-16 pt-1  pt-md-0 pb-md-0 font-weight-bold`}>
+                    <img
+                        alt="Wildlife expectation"
+                        className={`card-img-top ${styles.icono}`}
+                        src="/icons/ave.svg"
+                      />
+                      <p className="pl-2">
                       Wildlife expectation
+                      </p>
                     </div>
-                    <div className="col-12 col-md-5 d-flex">
+                    <div className={` ${styles.puntos} px-1 col-12 col-md-3 d-flex`}>
                       <Rating number={pack?.wildlife_expectation} />
                     </div>
                   </div>
@@ -52,27 +70,42 @@ function TripOverview({ pack }) {
               </div>
             </div>
 
-            <div className="col-12 col-md-7">
-              <div className="row pt-4 pb-2">
-                <div  
+            <div className={`${styles.content2} col-12 col-md-6 text-center mt-3 pt-2 background2`}>
+              <div className="row  pb-2 ">
+                <div
                 role="button" 
-                className="col-12 col-md-6 text-center"
+                className=" text-center  pt-3  col-md-3 col-12"
                 tabIndex={0}
                 onClick={handleShow}>
                 <div className={`${styles.specialist}`}>
-                  <p className="font-weight-bold">
-                  <span>Travel specialist</span>
-                  </p>
                   <img
                     src={PUBLIC_API + pack?.specialist?.thumbnail}
                     alt="Contact Us"
                     className={styles.circle}
                   />
-                    <h6 className="pt-2 ">
+                </div>
+                </div>
+                <div className=" pt-3 pl-3 col-md-9 col-12">
+                  <p className="font-weight-bold p-0">
+                    <span>Travel specialist</span>
+                  </p>
+                  <div
+                    role="button" 
+                    tabIndex={0}
+                    onClick={handleShow}>
+                    <h6 className={`${styles.name}`}>
                       {pack?.specialist?.fullname}
                     </h6>
+                  </div>
+                  <Link
+                    href={{
+                      pathname: '/contact-us',
+                      query: { package: pack.slug },
+                    }}>
+                    <a className={`${styles.boton} btn btn-primary fs-16`}>Contact Us</a>
+                  </Link>
                 </div>
-                </div>
+
                 <Modal className="p-4" show={show} onHide={handleClose}>
                 <Modal.Header className="p-4" closeButton>
                   <Modal.Title className="fw-bold">{pack?.specialist?.fullname}</Modal.Title>
@@ -100,19 +133,6 @@ function TripOverview({ pack }) {
                   </div>
                 </Modal.Body>
               </Modal>
-                
-                <div className="col-12 col-md-6 text-center pt-2 ">
-                  <h4 className="fs-20 font-weight-bold m-0 pb-3">
-                    Talk to your travel specialists
-                  </h4>
-                  <Link
-                    href={{
-                      pathname: '/contact-us',
-                      query: { package: pack.slug },
-                    }}>
-                    <a className="btn btn-primary fs-16 w-100">Contact Us</a>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>

@@ -2,17 +2,76 @@
 
 .overview {
   .content {
-    background-color: #f2f2f2;
-    
-  .circle {
-    width: 80px;
-    border-radius: 50%;
-  }
+    @media (max-width: $sm) {
+      width: 100%;
+      justify-content: center;
+      align-content: center;
+      
+    }
+        .icono{
+      width: 20px;
+      margin-bottom: 20px;
+      margin-left: 15px;
+      margin-right: 10px;
+      @media (max-width: 1199px) {
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+      @media (max-width: $sm) {
+         margin-left: 15px;
+         margin-right: 10px;
+         margin-bottom: 15px;
+      }
+    }
+    @media (max-width: $sm) {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+    .puntos{
+      @media (max-width: $sm) {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+    }
+    .titulo{
+      @media (max-width: $sm) {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: -10px;
+      }
+    }
+  
   .icon-rating {
     font-size: 36px !important;
+  }
+}
+.content2 {
+  @media (max-width: $sm) {
+    padding: 0px;
+
     
   }
 }
+
+
+.boton{
+  background-color: #fafafa !important;
+  color: #000000;
+  border-color: #000000;
+  &:hover{
+    background-color: #0095ce !important;
+    color: #ffffff;
+    }
+    @media (max-width: $xs) {
+      
+    }
+}
+
 
 .title {
   margin: 0 0 10px;
@@ -34,9 +93,33 @@
   }
 }
 .specialist{
+  padding-left: 90px;
     img{
       object-fit: cover;
-
+      border: 3px solid transparent;
+      &:hover{
+        border: 3px solid #0095ce;
+        }
     }
+  
+    @media (max-width: 1199px) {
+      padding-left: 20px;
+      
+    }
+    @media (max-width: 767px) {
+      padding-left: 0px;
+      
+    }
+
 }
+}
+.circle {
+  width: 100px;
+  justify-self: end;
+  border-radius: 50%;
+}
+.name {
+  &:hover{
+    color:  #0095ce;
+    }
 }
