@@ -226,7 +226,7 @@ function ContactFormB2C({ pack, cities }) {
           </div>
           <p className="col-12 pt-3 fs-14">
             *By submitting your information, you are automatically accepting our
-            <Link href="/privacy-policy-of-valencia-travel">
+            <Link href="/privacy-policy-of-va-expeditions">
               <a target="_blank"> privacy policy. </a>
             </Link>
           </p>
