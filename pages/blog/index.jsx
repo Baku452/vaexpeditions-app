@@ -15,7 +15,6 @@ function BlogPage({
   destinations,
   packagetypes,
   notifications,
-  popups,
   packagesAll,
   blogtypesRes,
   interests,
@@ -73,7 +72,6 @@ function BlogPage({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      popups={popups}
       pixels={700}
       interests={interests}>
       <Head>
@@ -194,9 +192,6 @@ export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
-  const popupResponse = await fetch(`${PUBLIC_API}/popup/`);
-  const popups = await popupResponse.json();
-
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
@@ -218,7 +213,6 @@ export async function getStaticProps() {
       packagetypes,
       notifications,
       packagesAll,
-      popups,
       blogsPosts,
       blogtypesRes,
       interests,
