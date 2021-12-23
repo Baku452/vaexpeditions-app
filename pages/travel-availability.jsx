@@ -22,16 +22,16 @@ export default function TravelAvailability({
         <title>Travel Availability from January onwards - VaExpeditions </title>
       </Head>
       <section id="more">
-        <div className="container text-justify align-items-center" >
-          <div className="row pt-5">
-            <div className="col-10 mx-auto">
+        <div className="containerBox py-5 px-5 " >
+          <div className="row ">
+            <div className="col-12 mx-auto">
               <div className="row mb-5">
                 
-                <div className="col-12 col-lg-6 mb-3 align-items-center ">
-                  <h2 className="fs-20 lh-34 font-weight-bold">
+                <div className="col-12 col-lg-6 mb-2 align-items-center ">
+                  <h2 className="fs-24  title mb-2 ">
                     Travel Availability from January onwards.
                   </h2>
-                  <p className="m-0 fs-20 lh-34 ">
+                  <p className=" lh-34">
                   The world is now a very different place than it was in 2020 and things 
                   continue to change on a daily basis, especially in the world of travel 
                   and tourism! Since November 2020, here in South America,the tourist 
@@ -64,10 +64,10 @@ export default function TravelAvailability({
                 
                   <br/>
 
-                  <h3 className="fs-20 lh-34 font-weight-bold order-xl-1">
+                  <h3 className="fs-24  order-xl-1 title mb-2">
                     Safety Protocols
                   </h3>
-                  <p className="m-0 fs-20 lh-34">
+                  <p className="lh-34">
                     Here at Va Expeditions, we take our passenger’s safety and security
                     very seriously. This is even more so now that we are dealing with
                     reactivation of tourism after the pandemic. We continue to maintain
