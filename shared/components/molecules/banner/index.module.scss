@@ -1,5 +1,27 @@
+@import '../../../../styles/media-queries.scss';
+
 .banner {
   height: calc(100vh - 162px);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: $ipadPro) {
+    height: calc(60vh);
+  }
+
+  @media (max-width: $sm) {
+    height: calc(40vh);
+  }
+}
+
+.title{
+
+  @media (max-width: $sm) {
+    font-size: 10px;
+  }
 }
 
 .align {
@@ -11,7 +33,12 @@
   h2 {
     z-index: 3;
     width: 400px;
+    @media (max-width: $sm) {
+      font-size: 20px !important;
+      width: 300px;
+    }
   }
+  
 }
 .alignend {
   align-items: flex-end;
