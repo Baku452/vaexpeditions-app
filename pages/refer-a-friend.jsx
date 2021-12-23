@@ -20,7 +20,7 @@ function FriendsFamily({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Referral Credits - Peru Travel Deals - Free Travel</title>
+        <title>Refer a friend Programme - Va Expeditions</title>
         <meta name="description" content />
         <meta name="keywords" content />
       </Head>

@@ -18,7 +18,7 @@ function Banner({ title, description, image, alt }) {
           </div>
         )}
         {title && (
-          <div className={`h-100 ${styles.align} ${styles.align}`}>
+          <div className={`h-100 ${styles.title} ${styles.align}`}>
             <h2 className="fs-30 pr-3 font-weight-bold text-white text-right">{title}</h2>
           </div>
         )}

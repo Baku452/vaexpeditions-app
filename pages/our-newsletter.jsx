@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
@@ -51,6 +52,9 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}>
+        <Head>
+        <title>Subscribe Newsletter - VaExpeditions </title>
+      </Head>
       <Hero2
         title="Subscribe Newsletter"
         image="/images/contact.jpg"

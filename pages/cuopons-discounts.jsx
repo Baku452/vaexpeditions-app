@@ -20,7 +20,7 @@ function CoupunsDiscounts({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Special Promotions</title>
+        <title>Special Promotions - Va Expeditions</title>
         <meta name="description" content />
         <meta name="keywords" content />
       </Head>

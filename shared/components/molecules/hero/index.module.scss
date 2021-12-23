@@ -147,17 +147,46 @@
 .banner3 {
   margin: 0 auto;
   overflow: hidden;
-  height: calc(64vh);
-  @media (max-width: $ipadPro) {
-    height: calc(50vh);
+  max-height: 600px;
+  .swiper {
+    max-height: 600px;
+  }
+  img {
+    max-height: 600px;
+  }
+   @media (max-width: $md) {
+    max-height: 500px;
+    .swiper {
+      max-height: 500px;
+    }
+
+    img {
+      max-height: 500px;
+    }
   }
 
   @media (max-width: $sm) {
-    height: calc(30vh);
+    max-height: 400px;
+
+    .swiper {
+      max-height: 400px;
+    }
+
+    img {
+      max-height: 400px;
+    }
   }
 
-  @media (max-width: $md) {
-    height: calc(50vh);
+  @media (max-width: $xss) {
+    max-height: 320px;
+
+    .swiper {
+      max-height: 320px;
+    }
+
+    img {
+      max-height: 320px;
+    }
   }
 
   img {
@@ -198,8 +227,8 @@
   color: rgb(255, 255, 255);
   position: absolute;
   text-transform: uppercase;
-  @media (max-width: $xs) {
-    display: none;
+  @media (max-width: $xss) {
+    font-size: 30px;
   }
   //text-shadow: 1px 1px 1px #020202;
 }
@@ -215,7 +244,7 @@
   margin-left: 3%;
   color: #fff;
   position: absolute;
-  @media (max-width: $md) {
+  @media (max-width: 991px) {
     padding-bottom: 20px;
     position: relative;
     margin-left: 5%;
@@ -232,7 +261,7 @@
       text-transform: uppercase;
       border-bottom: 1px solid #fff;
       color: #fff;
-      @media (max-width: $md) {
+      @media (max-width: 991px) {
         color: #000;
         font-size: 14px;
       }
@@ -243,7 +272,7 @@
       padding-right: 0.5rem;
       padding-left: 0.5rem;
       color: #fff;
-      @media (max-width: $md) {
+      @media (max-width: 991px) {
         color: #000;
       }
     }
