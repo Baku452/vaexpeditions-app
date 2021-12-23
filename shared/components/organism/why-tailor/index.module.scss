@@ -11,14 +11,14 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    height: 100%;
     flex-direction: column;
-    min-height: 78px;
     p {
       padding-top: 15px;
     }
   }
   .imgSlide {
     max-width: 545px;
-    max-height: 275px;
+    // max-height: 275px;
   }
 }
