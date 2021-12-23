@@ -10,7 +10,7 @@ SwiperCore.use([Navigation]);
 function WhyTailor({ tailors }) {
   return (
     <>
-      <div className={`${styles.why_tailor} container mb-5`}>
+      <div className="container mb-5">
         <div className="row pt-5 pb-5">
           <div className="col-12 mx-auto">
             <h2 className="text-center fs-30">Why choose a tailor-made vacation?</h2>
