@@ -33,6 +33,10 @@ function WhyTailor({ tailors }) {
                 slidesPerView: 2,
                 spaceBetween: 50,
               },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
             }}>
             {tailors.map(tailor => (
               <SwiperSlide
