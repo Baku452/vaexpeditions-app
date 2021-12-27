@@ -58,7 +58,6 @@ const navSubDestinations = [
     title: 'When to Go',
     slug: 'when-to-go',
   },
-  
 ];
 
 export { navDestinations, navSubDestinations };

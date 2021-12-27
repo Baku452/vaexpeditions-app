@@ -48,11 +48,9 @@ function CollapseContent({ index, title, children }) {
   function getColor(colorIndex) {
     return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
   }
-
-
   return (
-    <>
-      <Card.Header className={styles.header}>
+    <Accordion defaultActiveKey={1}>
+      <Card.Header className={`${styles.header}`}>
         <ContextAwareToggle eventKey={index + 1} className={getColor(index)}>
           <h2 className="fs-16 m-0 font-weight-bold p-0">{title}</h2>
         </ContextAwareToggle>
@@ -61,22 +59,18 @@ function CollapseContent({ index, title, children }) {
       <Accordion.Collapse eventKey={index + 1}>
         <Card.Body style={{ background: getColor(index) }}>{children}</Card.Body>
       </Accordion.Collapse>
-    </>
+    </Accordion>
   );
 }
 
 function CollapseContent2({ index, title, children }) {
-  
-
-
   return (
     <>
       <Card.Header className={styles.header}>
-        <ContextAwareToggle eventKey={index + 1} className={'#ffffff'}>
+        <ContextAwareToggle eventKey={index + 1} className="#ffffff">
           <h2 className="fs-16 m-0 p-0">{title}</h2>
         </ContextAwareToggle>
       </Card.Header>
-
       <Accordion.Collapse eventKey={index + 1}>
         <Card.Body style={{ background: '#ffffff' }}>{children}</Card.Body>
       </Accordion.Collapse>
@@ -84,7 +78,7 @@ function CollapseContent2({ index, title, children }) {
   );
 }
 
-function CollapseMenu({ children, open = 0 }) {
+function CollapseMenu({ children }) {
   return (
     <Accordion defaultActiveKey="0" className={`${styles.accordion}`}>
       {children}
@@ -92,27 +86,25 @@ function CollapseMenu({ children, open = 0 }) {
   );
 }
 
-
 function CollapseContentMenu({ index, title, link, children }) {
   return (
     <>
-     <Card.Header className={`${styles.header} d-flex justify-content-between`}>
-        <Link href={link ? link : '#'}>
+      <Card.Header className={`${styles.header} d-flex justify-content-between`}>
+        <Link href={link || '#'}>
           <a className="col-11 d-inline-block">{title}</a>
         </Link>
-        <ContextAwareToggleMenu eventKey={index + 1} >
-          <a className="col-1 fs-16 m-0 p-0 text-dark"></a>
+        <ContextAwareToggleMenu eventKey={index + 1}>
+          <a className="col-1 fs-16 m-0 p-0 text-dark" />
         </ContextAwareToggleMenu>
       </Card.Header>
-
       <Accordion.Collapse eventKey={index + 1}>
-        <Card.Body  className="py-0" >{children}</Card.Body>
-      </Accordion.Collapse> <Accordion.Header className={`${styles.header} d-flex justify-content-between`}>
+        <Card.Body className="py-0">{children}</Card.Body>
+      </Accordion.Collapse>{' '}
+      <Accordion.Header className={`${styles.header} d-flex justify-content-between`}>
         <Link href={link || '#'}>
           <a className="p-0">{title}</a>
         </Link>
       </Accordion.Header>
-
       {/* <Accordion.Collapse eventKey={1}> */}
       <Accordion.Body className="py-0">{children}</Accordion.Body>
       {/* </Accordion.Collapse> */}
@@ -120,5 +112,11 @@ function CollapseContentMenu({ index, title, link, children }) {
   );
 }
 
-
-export { CollapseMenu, CollapseContentMenu, ContextAwareToggle, Collapse, CollapseContent, CollapseContent2};
+export {
+  CollapseMenu,
+  CollapseContentMenu,
+  ContextAwareToggle,
+  Collapse,
+  CollapseContent,
+  CollapseContent2,
+};

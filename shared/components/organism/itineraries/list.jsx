@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-import { Collapse, CollapseContent, Gallery, ItineraryItems } from '@/components/index';
+import { CollapseContent, Gallery, ItineraryItems } from '@/components/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-const SmartText = ({ text, length = 492 }) => {
+const SmartText = ({ text }) => {
   const [showLess, setShowLess] = useState(true);
 
   return (
@@ -65,42 +65,39 @@ function List({ itineraries }) {
 
   return (
     <>
-      <Collapse open={1}>
-        {itineraries.map(
-          (item, index) =>
-            item.active && (
-              <CollapseContent
-                key={index.toString()}
-                index={index}
-                title={item?.subtitle}>
-                <div className="row pb-4">
-                  <div className="col-12 col-md-8 order-2 order-md-1">
-                    <SmartText text={item?.content} length={item?.limit} />
-                    {item.items ? <ItineraryItems items={item?.items} /> : null}
-                  </div>
-
-                  {item.images
-                    ? item.images.length > 0 && (
-                        <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
-                          <a
-                            href="/gallery"
-                            onClick={event => openModal(event, item)}
-                            className="btn btn-link fs-16 pt-3 d-block text-right">
-                            <img
-                              src={PUBLIC_API + item.images[0].image}
-                              className="d-block w-100 fit"
-                              alt={item.alt}
-                            />
-                            View all photos
-                          </a>
-                        </div>
-                      )
-                    : null}
+      {/* <Collapse open={1}> */}
+      {itineraries.map(
+        (item, index) =>
+          item.active && (
+            <CollapseContent key={index.toString()} index={index} title={item?.subtitle}>
+              <div className="row pb-4">
+                <div className="col-12 col-md-8 order-2 order-md-1">
+                  <SmartText text={item?.content} length={item?.limit} />
+                  {item.items ? <ItineraryItems items={item?.items} /> : null}
                 </div>
-              </CollapseContent>
-            ),
-        )}
-      </Collapse>
+
+                {item.images
+                  ? item.images.length > 0 && (
+                      <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
+                        <a
+                          href="/gallery"
+                          onClick={event => openModal(event, item)}
+                          className="btn btn-link fs-16 pt-3 d-block text-right">
+                          <img
+                            src={PUBLIC_API + item.images[0].image}
+                            className="d-block w-100 fit"
+                            alt={item.alt}
+                          />
+                          View all photos
+                        </a>
+                      </div>
+                    )
+                  : null}
+              </div>
+            </CollapseContent>
+          ),
+      )}
+      {/* </Collapse> */}
 
       <GalleryWrapper
         images={images}
