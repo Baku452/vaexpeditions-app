@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-import { Collapse, CollapseContent, Gallery, ItineraryItems } from '@/components/index';
+import { CollapseContent, Gallery, ItineraryItems } from '@/components/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 

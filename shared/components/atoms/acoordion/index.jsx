@@ -71,7 +71,6 @@ function CollapseContent2({ index, title, children }) {
           <h2 className="fs-16 m-0 p-0">{title}</h2>
         </ContextAwareToggle>
       </Card.Header>
-
       <Accordion.Collapse eventKey={index + 1}>
         <Card.Body style={{ background: '#ffffff' }}>{children}</Card.Body>
       </Accordion.Collapse>
@@ -79,7 +78,7 @@ function CollapseContent2({ index, title, children }) {
   );
 }
 
-function CollapseMenu({ children, open = 0 }) {
+function CollapseMenu({ children }) {
   return (
     <Accordion defaultActiveKey="0" className={`${styles.accordion}`}>
       {children}
