@@ -1,0 +1,15 @@
+# googlebot
+User-agent: googlebot
+Allow: /
+Disallow: /*.php$
+
+# bingbot
+User-agent: bingbot
+Allow: /
+Disallow: /*.php$
+
+# Host
+Host: https://vaexpeditions.com/
+
+# Sitemaps
+Sitemap: https://vaexpeditions.com/sitemap.xml

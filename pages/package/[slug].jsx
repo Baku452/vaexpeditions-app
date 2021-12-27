@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable camelcase */
 /* eslint-disable react/no-danger */
 import fetch from 'cross-fetch';

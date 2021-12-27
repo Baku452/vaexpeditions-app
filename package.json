@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config next.config.js",
     "start": "next start"
   },
   "dependencies": {
