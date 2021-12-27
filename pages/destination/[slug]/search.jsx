@@ -38,8 +38,9 @@ function SearchDestination({
   const [checkedInterest, setCheckedInterest] = useState([]);
   const [numberPackages, setNumberPackages] = useState(0);
   const [offset, setOffset] = useState(0);
-
   const [showFilters, setShowFilters] = useState(false);
+  const [option, setOption] = useState(0);
+
   const handleCleanFilter = () => {
     router.push({
       pathname: `/destination/${SSRDestination.slug}/search`,
@@ -148,6 +149,10 @@ function SearchDestination({
     return state.find(item => item === String(id)) === String(id);
   }
 
+  const handleChange = event => {
+    setOption(event.target.value);
+  };
+
   async function fetchPackages() {
     const [, querySet] = router.asPath.split('?');
     const queryParams = querySet ? `${querySet}` : '';
@@ -237,15 +242,28 @@ function SearchDestination({
         isHome
         isDestination
       />
-      <div className="container d-block d-lg-none pt-3">
-        <div className="row ">
-          <div className="offset-2 col-8">
+      <div className="container d-block d-lg-none pt-3 pb-3 overflow-hidden sticky">
+        <div className="row">
+          <div className="dropdown col-6 ">
             <button
               type="button"
-              className="btn btn-primary btn-block filter-actions"
+              data-toggle="dropdown"
+              className="w-100 btn btn-primary btn-block filter-actions dropdown-toggle"
               onClick={() => setShowFilters(true)}>
-              Show filters
+              Filter By
             </button>
+          </div>
+          <div className="dropdown col-6">
+            <select
+              className="w-100 btn btn-primary btn-block text-white"
+              onBlur={handleChange}
+              value={option}>
+              <option value={0}>Top rated tours</option>
+              <option value={1}>Name A - Z</option>
+              <option value={2}>Name Z - A</option>
+              <option value={3}>Shortest - Longest</option>
+              <option value={4}>Longest - Shortest</option>
+            </select>
           </div>
         </div>
       </div>

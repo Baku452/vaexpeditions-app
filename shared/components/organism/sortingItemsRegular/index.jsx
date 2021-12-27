@@ -84,7 +84,7 @@ function SortingItemsRegular({
     <div className="row">
       {packagesList ? (
         <div className="col-12">
-          <div className={`${styles.bar} row d-flex p-3 justify-content-center`}>
+          <div className={`${styles.bar} d-none d-lg-flex p-3 justify-content-center`}>
             <div
               className={`m-3 underlined ${activeId === 0 ? 'activeFilter' : ''}`}
               role="button"
@@ -119,7 +119,7 @@ function SortingItemsRegular({
           <div className="row">
             {packagesList.length > 0 ? (
               packagesList.map(item => (
-                <div key={item?.slug} className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                <div key={item?.slug} className="col-12 col-md-6 col-lg-4 mb-4">
                   <PackageItem
                     key={item.slug}
                     title={item.title}
