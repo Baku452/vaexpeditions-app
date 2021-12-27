@@ -12,18 +12,9 @@
   font-weight: 700;
   text-transform: none;
 
-  @media (max-width: 480px){
+  @media (max-width: 1199px) {
     display: none;
   }
-
-  @media (max-width: 1199px){
-    padding-top: 40px;
-  }
-  @media (max-width: 991px){
-    padding-top: 15px;
-    top: 60px;
-  }
-
   ul {
     list-style: none;
     margin-bottom: 0;
