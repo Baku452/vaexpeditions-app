@@ -1,24 +1,22 @@
-.why_tailor {
-  .slide {
-    width: 545px;
+.slide {
+  width: 545px;
+}
+.info {
+  background-color: rgba(231, 231, 231, 0.7);
+  color: #202020;
+  position: relative;
+  padding: 10px 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  p {
+    padding-top: 15px;
   }
-  .info {
-    background-color: rgba(231, 231, 231, 0.7);
-    color: #202020;
-    position: relative;
-    padding: 10px 20px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    p {
-      padding-top: 15px;
-    }
-  }
-  .imgSlide {
-    max-width: 545px;
-    // max-height: 275px;
-  }
+}
+.imgSlide {
+  max-width: 545px;
+  // max-height: 275px;
 }
