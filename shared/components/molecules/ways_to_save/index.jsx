@@ -11,7 +11,7 @@ function WaysToSave() {
           <div className="container containerBox pt-4 pb-4">
             <div className="row mb-2">
               <div className="col-12">
-                <h2 className="text-center mb-5 titleUnderline">Ways To Save</h2>
+                <h2 className="text-center mb-5 titleUnderline">Ways To Save </h2>
               </div>
               <div className="col-lg-3 col-sm-12 text-center">
                 <div className={`${styles.item}`}>
