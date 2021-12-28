@@ -28,9 +28,8 @@ function Associations() {
                   target="_blank">
                   <img
                     alt="kayak logo"
-                    width="150"
-                    height="150"
                     src="https://www.kayak.com/news/wp-content/uploads/sites/78/2020/02/design_image_kayak_travel-guides_circle_orange_find-us-on-tg_150x150_20022x.png"
+                    width="200px"
                   />
                 </a>
               </div>
@@ -59,7 +58,7 @@ function Associations() {
               </div>
               <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
                 <a rel="noopener noreferrer" target="_blank" href="https://ustoa.com/">
-                  <img alt="Ustoa Logo" src="/images/aso_ustoa_logo.png" />
+                  <img alt="Ustoa Logo" src="/images/aso_ustoa_logo.png" width="300px" />
                 </a>
               </div>
               <div className="col-6 col-md-4 col-lg-3 text-center pt-3">
