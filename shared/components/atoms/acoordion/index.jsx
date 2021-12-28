@@ -49,7 +49,6 @@ function CollapseContent({ index, title, children }) {
     return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
   }
 
-
   return (
     <>
       <Card.Header className={styles.header}>
@@ -66,13 +65,10 @@ function CollapseContent({ index, title, children }) {
 }
 
 function CollapseContent2({ index, title, children }) {
-  
-
-
   return (
     <>
       <Card.Header className={styles.header}>
-        <ContextAwareToggle eventKey={index + 1} className={'#ffffff'}>
+        <ContextAwareToggle eventKey={index + 1} className="#ffffff">
           <h2 className="fs-16 m-0 p-0">{title}</h2>
         </ContextAwareToggle>
       </Card.Header>
@@ -92,27 +88,25 @@ function CollapseMenu({ children, open = 0 }) {
   );
 }
 
-
 function CollapseContentMenu({ index, title, link, children }) {
   return (
     <>
-     <Card.Header className={`${styles.header} d-flex justify-content-between`}>
-        <Link href={link ? link : '#'}>
+      <Card.Header className={`${styles.header} d-flex justify-content-between`}>
+        <Link href={link || '#'}>
           <a className="col-11 d-inline-block">{title}</a>
         </Link>
-        <ContextAwareToggleMenu eventKey={index + 1} >
-          <a className="col-1 fs-16 m-0 p-0 text-dark"></a>
-        </ContextAwareToggleMenu>
+        {/* <ContextAwareToggle eventKey={index + 1}>
+          <a className="col-1 fs-16 m-0 p-0 text-dark" />
+        </ContextAwareToggle> */}
       </Card.Header>
-
       <Accordion.Collapse eventKey={index + 1}>
-        <Card.Body  className="py-0" >{children}</Card.Body>
-      </Accordion.Collapse> <Accordion.Header className={`${styles.header} d-flex justify-content-between`}>
+        <Card.Body className="py-0">{children}</Card.Body>
+      </Accordion.Collapse>{' '}
+      <Accordion.Header className={`${styles.header} d-flex justify-content-between`}>
         <Link href={link || '#'}>
           <a className="p-0">{title}</a>
         </Link>
       </Accordion.Header>
-
       {/* <Accordion.Collapse eventKey={1}> */}
       <Accordion.Body className="py-0">{children}</Accordion.Body>
       {/* </Accordion.Collapse> */}
@@ -120,5 +114,11 @@ function CollapseContentMenu({ index, title, link, children }) {
   );
 }
 
-
-export { CollapseMenu, CollapseContentMenu, ContextAwareToggle, Collapse, CollapseContent, CollapseContent2};
+export {
+  CollapseMenu,
+  CollapseContentMenu,
+  ContextAwareToggle,
+  Collapse,
+  CollapseContent,
+  CollapseContent2,
+};
