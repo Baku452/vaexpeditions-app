@@ -7,7 +7,7 @@ import { Collapse, CollapseContent, Gallery, ItineraryItems } from '@/components
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-const SmartText = ({ text, length = 492 }) => {
+const SmartText = ({ text }) => {
   const [showLess, setShowLess] = useState(true);
 
   return (
@@ -78,7 +78,6 @@ function List({ itineraries }) {
                     <SmartText text={item?.content} length={item?.limit} />
                     {item.items ? <ItineraryItems items={item?.items} /> : null}
                   </div>
-
                   {item.images
                     ? item.images.length > 0 && (
                         <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">

@@ -149,11 +149,11 @@ function Newsletter({ packagetypes, packagesAll }) {
           <div className="row">
             <div className={`col-12 ${styles.subnav}`}>
               <ul className="navbar-nav fs-13 pb-2 ">
-              <li>
-                <a href="tel:1 - (888) 803 8004">
-                  <FaPhoneAlt/> (Usa / Canada) : 1 - (888) 803 8004
-                </a>
-              </li>
+                <li>
+                  <a href="tel:1 - (888) 803 8004">
+                    <FaPhoneAlt /> (Usa / Canada) : 1 - (888) 803 8004
+                  </a>
+                </li>
                 <li>
                   <Link href="/travel-availability">
                     <a role="button">Travel Availability</a>
@@ -199,11 +199,11 @@ function Newsletter({ packagetypes, packagesAll }) {
               <div className="row flex-nowrap ">
                 <div className="col-auto">
                   <Link href="/contact-us">
-                    <button 
-                    type="button" 
-                    style={{ backgroundColor: '#a6192e', border: 'none'}}
-                    className="btn btn-primary">
-                    Book Your Adventure!
+                    <button
+                      type="button"
+                      style={{ backgroundColor: '#a6192e', border: 'none' }}
+                      className="btn btn-primary">
+                      Book Your Adventure!
                     </button>
                   </Link>
                 </div>
