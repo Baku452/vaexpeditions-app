@@ -66,7 +66,7 @@ function Destination({
           <div className="row py-4">
             {SSRPackages.length > 0 &&
               SSRPackages.map(item => (
-                <div key={item.slug} className="col-12 col-sm-6 col-lg-4 mb-4">
+                <div key={item.slug} className=" col-12 col-sm-6 col-lg-4 mb-4">
                   <PackageItem
                     key={item.slug}
                     title={item.title}

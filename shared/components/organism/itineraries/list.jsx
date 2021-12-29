@@ -75,7 +75,6 @@ function List({ itineraries }) {
                   <SmartText text={item?.content} length={item?.limit} />
                   {item.items ? <ItineraryItems items={item?.items} /> : null}
                 </div>
-
                 {item.images
                   ? item.images.length > 0 && (
                       <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
@@ -94,6 +93,24 @@ function List({ itineraries }) {
                     )
                   : null}
               </div>
+
+              {item.images
+                ? item.images.length > 0 && (
+                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
+                      <a
+                        href="/gallery"
+                        onClick={event => openModal(event, item)}
+                        className="btn btn-link fs-16 pt-3 d-block text-right">
+                        <img
+                          src={PUBLIC_API + item.images[0].image}
+                          className="d-block w-100 fit"
+                          alt={item.alt}
+                        />
+                        View all photos
+                      </a>
+                    </div>
+                  )
+                : null}
             </CollapseContent>
           ),
       )}

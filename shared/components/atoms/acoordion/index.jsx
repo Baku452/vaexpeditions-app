@@ -44,7 +44,7 @@ function Collapse({ children, open = 1 }) {
   );
 }
 
-function CollapseContent({ index, title, children }) {
+function CollapseContent({ index, title, children, link }) {
   function getColor(colorIndex) {
     return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
   }
@@ -52,12 +52,16 @@ function CollapseContent({ index, title, children }) {
     <Accordion defaultActiveKey={1}>
       <Card.Header className={`${styles.header}`}>
         <ContextAwareToggle eventKey={index + 1} className={getColor(index)}>
-          <h2 className="fs-16 m-0 font-weight-bold p-0">{title}</h2>
+          <Link href={link || '#'}>
+            <a className="fs-16 m-0 font-weight-bold p-0">{title}</a>
+          </Link>
         </ContextAwareToggle>
       </Card.Header>
 
       <Accordion.Collapse eventKey={index + 1}>
-        <Card.Body style={{ background: getColor(index) }}>{children}</Card.Body>
+        <Card.Body style={{ background: getColor(index) }} className="py-1">
+          {children}
+        </Card.Body>
       </Accordion.Collapse>
     </Accordion>
   );
@@ -93,9 +97,9 @@ function CollapseContentMenu({ index, title, link, children }) {
         <Link href={link || '#'}>
           <a className="col-11 d-inline-block">{title}</a>
         </Link>
-        <ContextAwareToggleMenu eventKey={index + 1}>
+        {/* <ContextAwareToggle eventKey={index + 1}>
           <a className="col-1 fs-16 m-0 p-0 text-dark" />
-        </ContextAwareToggleMenu>
+        </ContextAwareToggle> */}
       </Card.Header>
       <Accordion.Collapse eventKey={index + 1}>
         <Card.Body className="py-0">{children}</Card.Body>
