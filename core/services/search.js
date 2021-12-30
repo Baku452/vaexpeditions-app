@@ -58,4 +58,21 @@ function posts({ queryParams = '', offset = 0 }) {
       return { error: error.response };
     });
 }
-export { packages, packagesDestination, packagesTypes, packagesOptional, posts };
+function bloggerAPI({ author }) {
+  return services({ url: `/blogger/${author}`, method: 'GET' })
+    .then(result => {
+      return { result };
+    })
+    .catch(error => {
+      return { error: error.response };
+    });
+}
+
+export {
+  packages,
+  packagesDestination,
+  packagesTypes,
+  packagesOptional,
+  posts,
+  bloggerAPI,
+};

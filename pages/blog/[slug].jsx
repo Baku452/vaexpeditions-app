@@ -1,17 +1,19 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/no-danger */
+import fetch from 'cross-fetch';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-// import React, { useEffect, useState } from 'react';
-// import { Modal } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Modal } from 'react-bootstrap';
 import { FaEnvelope, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { EmailShareButton, FacebookShareButton, TwitterShareButton } from 'react-share';
 
 import { BlogCard2, HeroBlog2 } from '@/components/index';
-// import { bloggerAPI } from '@/core/index';
+import { bloggerAPI } from '@/core/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
-// import fetch from 'cross-fetch';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 const URL_POST = process.env.NEXT_PUBLIC_DOMAIN;
@@ -28,24 +30,26 @@ function BlogPost({
   const size = '2rem';
   const reg = /\/media/g;
   const content = blog.content.replace(reg, `${PUBLIC_API}/media`);
-  // const [author, setauthor] = useState({});
-  // const [show, setShow] = useState(false);
-  // async function getBlogger() {
-  //   const { result } = await bloggerAPI({ author: blog.author });
+  const [author, setauthor] = useState({});
+  const [show, setShow] = useState(false);
 
-  //   setauthor(result.data);
-  // }
+  async function getBlogger() {
+    const { result } = await bloggerAPI({ author: blog.author });
+    setauthor(result.data);
+  }
+
   const navBreadcrums = [
     {
       title: blog.destination,
       slug: `/blog/category/${blog.destination}`,
     },
   ];
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-  // useEffect(() => {
-  //   getBlogger();
-  // }, []);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  useEffect(() => {
+    getBlogger();
+  }, []);
 
   return (
     <Base
@@ -71,19 +75,19 @@ function BlogPost({
         />
       ) : null}
 
-      <div className="containerBox row ">
+      <div className="containerBox row">
         <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
           <div className="d-flex ">
             <h4 className="pr-3 border-right text-muted d-flex">
               Written by:
-              {/* <div role="button" type="button" onClick={handleShow}> */}
-              <span className="text-underlined text-uppercase">
-                {`${blog?.first_name} ${blog.last_name}`}
-              </span>
-              {/* </div> */}
+              <div role="button" type="button" onClick={handleShow}>
+                <span className="text-underlined text-uppercase">
+                  {`${author?.first_name} ${author.last_name}`}
+                </span>
+              </div>
             </h4>
             <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
-            {/* <Modal className="p-4 w-100" show={show} onHide={handleClose}>
+            <Modal className="p-4 w-100" show={show} onHide={handleClose}>
               <Modal.Header closeButton className={`${styles.Head} w-100`}>
                 <span>
                   <img
@@ -115,7 +119,7 @@ function BlogPost({
                   />
                 </div>
               </Modal.Body>
-            </Modal> */}
+            </Modal>
           </div>
         </section>
         <div className="row containerBox listStyle py-3 col-10">
