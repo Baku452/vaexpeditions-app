@@ -1,10 +1,13 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+// import React, { useEffect, useState } from 'react';
+// import { Modal } from 'react-bootstrap';
 import { FaEnvelope, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { EmailShareButton, FacebookShareButton, TwitterShareButton } from 'react-share';
 
 import { BlogCard2, HeroBlog2 } from '@/components/index';
+// import { bloggerAPI } from '@/core/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
@@ -25,16 +28,24 @@ function BlogPost({
   const size = '2rem';
   const reg = /\/media/g;
   const content = blog.content.replace(reg, `${PUBLIC_API}/media`);
+  // const [author, setauthor] = useState({});
+  // const [show, setShow] = useState(false);
+  // async function getBlogger() {
+  //   const { result } = await bloggerAPI({ author: blog.author });
+
+  //   setauthor(result.data);
+  // }
   const navBreadcrums = [
     {
       title: blog.destination,
       slug: `/blog/category/${blog.destination}`,
     },
-    // {
-    //       title: blog.type_name,
-    //       slug: `/blog/category/${blog.type_name}`,
-    //   },
   ];
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+  // useEffect(() => {
+  //   getBlogger();
+  // }, []);
 
   return (
     <Base
@@ -63,13 +74,48 @@ function BlogPost({
       <div className="containerBox row ">
         <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
           <div className="d-flex ">
-            <h4 className="pr-3 border-right text-muted">
+            <h4 className="pr-3 border-right text-muted d-flex">
               Written by:
+              {/* <div role="button" type="button" onClick={handleShow}> */}
               <span className="text-underlined text-uppercase">
                 {`${blog?.first_name} ${blog.last_name}`}
               </span>
+              {/* </div> */}
             </h4>
             <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
+            {/* <Modal className="p-4 w-100" show={show} onHide={handleClose}>
+              <Modal.Header closeButton className={`${styles.Head} w-100`}>
+                <span>
+                  <img
+                    alt={author?.first_name + author?.last_name}
+                    className={` ${styles.imgBlogHead} img-fluid `}
+                    src={PUBLIC_API + author.image}
+                  />
+                </span>
+                <Modal.Title className={`fw-bold ${styles.BlogTitle} `} />
+              </Modal.Header>
+              <Modal.Body>
+                <div className="row p-4 ">
+                  <div className="col-12 ">
+                    <img
+                      className={`
+                      mb-4 img-fluid text-center col-12  ${styles.imgBlogger}`}
+                      src={PUBLIC_API + author.image}
+                      alt={author?.first_name + author?.last_name}
+                    />
+                  </div>
+                  <div className="col-12">
+                    <h3 className={`fw-bold ${styles.BlogTitle} `}>
+                      {`${author?.first_name} ${author?.last_name}`}
+                    </h3>
+                  </div>
+                  <div
+                    className="col-12"
+                    dangerouslySetInnerHTML={{ __html: author.biography }}
+                  />
+                </div>
+              </Modal.Body>
+            </Modal> */}
           </div>
         </section>
         <div className="row containerBox listStyle py-3 col-10">

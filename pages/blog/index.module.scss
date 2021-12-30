@@ -22,7 +22,7 @@
   @media (max-width: $sm) {
     margin-top: 30px;
   }
-   h4 {
+  h4 {
     font-size: 13px;
   }
   .boxSocial {
@@ -57,14 +57,14 @@
 
 .boxMeta2 {
   text-align: center;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   line-height: 1.3;
   .boxSocial {
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    
+
     & > p {
       margin-bottom: 0 !important;
       margin-left: 15px !important;
@@ -76,7 +76,6 @@
     @media (max-width: $md) {
       justify-content: center;
       align-items: center;
-     
     }
   }
   .boxSocial > button {
@@ -85,17 +84,14 @@
     font-size: 15px !important;
     // width: 88px;
     & > *:hover {
-      
       color: #919191;
     }
-    
   }
   .boxSocial > button p {
     display: none;
     @media (max-width: $md) {
       display: none;
     }
-   
   }
 }
 
@@ -103,52 +99,108 @@
   letter-spacing: 4.4px;
 }
 
+.imgBlogger {
+  width: 170px;
+  height: 170px;
+  padding: 0;
+  top: -150px;
+  right: 10px;
+  object-fit: cover;
+  border: 6px solid #fff;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px -1px rgb(0 0 0 / 80%);
+  position: absolute;
 
+  @media (max-width: 434px) {
+    top: -227px;
+    right: 25%;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+}
+
+.BlogTitle {
+  color: #000;
+  text-align: left;
+  margin-bottom: 20px;
+  @media (max-width: 425px) {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.imgBlogHead {
+  width: 450px;
+  height: 150px;
+  object-fit: cover;
+  filter: blur(12px);
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  position: static;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 551px) {
+    width: 300px;
+  }
+  @media (max-width: 434px) {
+    width: 250px;
+    height: 240px;
+  }
+  @media (max-width: 350px) {
+    width: auto;
+  }
+}
+
+.Head {
+  padding: 0px 0px 0px 0px;
+  background-color: black;
+}
 
 .content {
   text-align: center;
 
-  img{
+  img {
     text-align: center;
   }
-  h2{
+  h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-top: 30px;
     margin-bottom: 20px;
     font-weight: 400;
     line-height: 25.5px;
-    letter-spacing: .2em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     line-height: 100%;
   }
-  p{
+  p {
     text-align: left !important;
     font-size: 17px;
     margin: 0%;
     line-height: 150%;
     margin-bottom: 20px;
   }
-  h4{
-    
+  h4 {
     display: inline-block;
     font-size: 17px;
     color: #000000;
     text-align: center;
     background: #ffffff;
-    box-shadow: rgba(0,0,0,0.1) 0 0 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 0;
     margin-top: -20px;
     margin-bottom: 10px;
     padding: 15px 30px 15px 30px;
-
   }
-  h3{
+  h3 {
     text-align: left !important;
     font-size: 20px;
     margin-top: 20px;
     line-height: 150%;
   }
-
 }
 
 .grid {
