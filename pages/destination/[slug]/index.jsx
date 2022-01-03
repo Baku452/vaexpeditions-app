@@ -144,7 +144,7 @@ function Destination({
         </div>
       </section>
       <section id="best-time">
-        <div className="containerBox">
+        <div className="containerBox overflow-auto">
           <h2 className="title2 py-4">Best time to visit </h2>
           <div dangerouslySetInnerHTML={{ __html: SSRDestination?.bestTime }} />
         </div>
