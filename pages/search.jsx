@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 
 import {
   Collapse,
-  CollapseContent,
+  CollapseContent1,
   Icon,
   SearchBar,
   ShowMore,
@@ -19,7 +19,14 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({ destinations, packagetypes, interests, notifications, packagesAll, popups }) {
+function Search({
+  destinations,
+  packagetypes,
+  interests,
+  notifications,
+  packagesAll,
+  popups,
+}) {
   const router = useRouter();
   const [clearFilter, setClearFilter] = useState(false);
   const [packagesList, setPackagesList] = useState([]);
@@ -202,7 +209,6 @@ function Search({ destinations, packagetypes, interests, notifications, packages
       packagesAll={packagesAll}
       popups={popups}
       pixels={10}>
-
       <Head>
         <title>Search Tour Trips in VA Expeditions</title>
         <meta name="description" content="Search our Tours on VA Expeditions" />
@@ -279,7 +285,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                     country =>
                       country.destinations.filter(item => item.active).length > 0 && (
                         <Collapse open={1}>
-                          <CollapseContent index={0} title={country.name}>
+                          <CollapseContent1 index={0} title={country.name}>
                             {country.destinations.map(
                               destination =>
                                 destination.active && (
@@ -299,7 +305,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                                   />
                                 ),
                             )}
-                          </CollapseContent>
+                          </CollapseContent1>
                         </Collapse>
                       ),
                   )}
@@ -307,7 +313,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                   </Collapse> */}
 
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Duration (Days)">
+                    <CollapseContent1 index={0} title="Duration (Days)">
                       {days.map(item => (
                         <Form.Check
                           key={item.id}
@@ -319,11 +325,11 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                           label={`${item.start} - ${item.end}`}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
 
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Type of Travel">
+                    <CollapseContent1 index={0} title="Type of Travel">
                       {packagetypes.map(item => (
                         <Form.Check
                           key={item.id}
@@ -335,11 +341,11 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                           label={item.title}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
 
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Interests">
+                    <CollapseContent1 index={0} title="Interests">
                       {interests.map(item => (
                         <Form.Check
                           key={item.id}
@@ -351,11 +357,11 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                           label={item.title}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
 
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Activity Level">
+                    <CollapseContent1 index={0} title="Activity Level">
                       {activities.map(item => (
                         <Form.Check
                           key={item.id}
@@ -367,7 +373,7 @@ function Search({ destinations, packagetypes, interests, notifications, packages
                           label={item.label}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
                 </div>
                 {packagesList.length > 0 ? (

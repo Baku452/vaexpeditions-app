@@ -53,10 +53,9 @@
   }
   &:hover {
     transition: 0.3s ease;
-
     // background-color: #0095ce;
     // border: 2px solid #0095ce;
-    color: #fff;
+    color: #fff !important;
     &:before {
       right: 0;
     }

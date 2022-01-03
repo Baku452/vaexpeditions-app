@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 
 import {
   Collapse,
-  CollapseContent,
+  CollapseContent1,
   Hero3,
   Icon,
   SearchBar,
@@ -326,7 +326,7 @@ function SearchDestination({
                   {/* <Collapse open={1}>
                     <CollapseContent index={0} title="Destinations"> */}
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Where to Go">
+                    <CollapseContent1 index={0} title="Where to Go">
                       {SSRDestination.where.map(
                         item =>
                           item.active && (
@@ -341,12 +341,12 @@ function SearchDestination({
                             />
                           ),
                       )}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
                   {/* </CollapseContent>
                   </Collapse> */}
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Duration (Days)">
+                    <CollapseContent1 index={0} title="Duration (Days)">
                       {days.map(item => (
                         <Form.Check
                           key={item.id}
@@ -358,10 +358,10 @@ function SearchDestination({
                           label={`${item.start} - ${item.end}`}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Type of Travel">
+                    <CollapseContent1 index={0} title="Type of Travel">
                       {packagetypes.map(item => (
                         <Form.Check
                           key={item.id}
@@ -373,10 +373,10 @@ function SearchDestination({
                           label={item.title}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Interests">
+                    <CollapseContent1 index={0} title="Interests">
                       {interests.map(item => (
                         <Form.Check
                           key={item.id}
@@ -388,10 +388,10 @@ function SearchDestination({
                           label={item.title}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
                   <Collapse open={1}>
-                    <CollapseContent index={0} title="Activity Level">
+                    <CollapseContent1 index={0} title="Activity Level">
                       {activities.map(item => (
                         <Form.Check
                           key={item.id}
@@ -403,7 +403,7 @@ function SearchDestination({
                           label={item.label}
                         />
                       ))}
-                    </CollapseContent>
+                    </CollapseContent1>
                   </Collapse>
                 </div>
                 {packagesList.length > 0 ? (
