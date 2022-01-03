@@ -2,7 +2,7 @@
 import React from 'react';
 import { Element } from 'react-scroll';
 
-import { Collapse, CollapseContent } from '../../atoms/acoordion/index';
+import { Collapse, CollapseContent1 } from '../../atoms/acoordion/index';
 import { Title } from '../../atoms/title/index';
 
 function Faqs({ faqs }) {
@@ -12,12 +12,12 @@ function Faqs({ faqs }) {
       <div className="row">
         <Collapse open={0}>
           {faqs.map((item, index) => (
-            <CollapseContent key={index.toString()} index={index} title={item?.title}>
+            <CollapseContent1 key={index.toString()} index={index} title={item?.title}>
               <div
                 className="col-12 fs-15 lh-29"
                 dangerouslySetInnerHTML={{ __html: item?.content }}
               />
-            </CollapseContent>
+            </CollapseContent1>
           ))}
         </Collapse>
       </div>
