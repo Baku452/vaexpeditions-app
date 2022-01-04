@@ -54,7 +54,7 @@ function ContactFormB2C({ pack, cities }) {
   return !sending ? (
     <Form
       id="contact-us-form"
-      className="col-12 mx-auto p-0 text-left"
+      className="col-12 mx-auto p-0 text-start"
       noValidate
       validated={validated}
       onSubmit={handleSubmit}>

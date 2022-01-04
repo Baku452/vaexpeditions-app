@@ -1,5 +1,9 @@
 .header {
- 
+  @media (max-width: 1199px) {
+    padding-left: 0px;
+    padding-right: 0px;
+    align-self: center;
+  }
   .logo {
     font-size: 200px !important;
     height: 74px;
@@ -34,8 +38,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  z-index: 500;
-
+  z-index: 9999;
 }
 .label {
   font-size: 11px;

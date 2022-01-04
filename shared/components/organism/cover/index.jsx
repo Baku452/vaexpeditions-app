@@ -51,15 +51,16 @@ function Cover({ destinations, banners, packagetypes, interests }) {
     <section className="cover position-relative overflow-hidden">
       <Slide images={banners} navigation pagination={false} isHome />
       <div className={styles.form}>
-        <div className="row justify-content-center">
-          <LinkScroll
-            className="btn btn-light btn-lg mb-5"
-            to="top-rated-tours"
-            spy
-            smooth
-            duration={500}>
-            See Top Rated Tours
-          </LinkScroll>
+        <div className="row  mx-auto justify-content-center">
+          <div className="row ">
+            <div className="mx-auto text-center">
+              <LinkScroll offset={-140} to="top-rated-tours">
+                <button type="button" className={`btn ${styles.botonWhite} mb-5`}>
+                  See Top Rated Tours
+                </button>
+              </LinkScroll>
+            </div>
+          </div>
         </div>
         <div className="container">
           <div className="row justify-content-center">
@@ -115,7 +116,7 @@ function Cover({ destinations, banners, packagetypes, interests }) {
                   <button
                     onClick={handleSearch}
                     type="button"
-                    className="btn btn-primary btn-block">
+                    className="btn btn-primary w-100">
                     SEARCH TRIPS
                   </button>
                 </div>

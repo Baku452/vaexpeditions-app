@@ -81,7 +81,7 @@ function List({ itineraries }) {
                         <a
                           href="/gallery"
                           onClick={event => openModal(event, item)}
-                          className="btn btn-link fs-16 pt-3 d-block text-right">
+                          className="btn btn-link fs-16 pt-3 d-block text-start">
                           <img
                             src={PUBLIC_API + item.images[0].image}
                             className="d-block w-100 fit"

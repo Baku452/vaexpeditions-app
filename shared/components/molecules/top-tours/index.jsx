@@ -15,7 +15,7 @@ function TopTours({ tours }) {
                 <div className="col-12 col-md-6">
                   <h2 className="text-center titleUnderline">Top rated tours</h2>
                 </div>
-                <div className="col-md-3 d-none d-md-block text-right align-self-end ">
+                <div className="col-md-3 d-none d-md-block text-end align-self-end ">
                   <Link href="/search">
                     <a className="btn btn-primary fs-15">Explore all tours</a>
                   </Link>

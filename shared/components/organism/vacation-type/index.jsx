@@ -21,7 +21,7 @@ function VacationType({ packagetypes }) {
               <div className="col-12 col-md-6">
                 <h2 className=" titleUnderline text-center">Choose your vacation type</h2>
               </div>
-              <div className="col-md-3 d-none d-md-block  text-md-right align-self-end ">
+              <div className="col-md-3 d-none d-md-block  text-md-end align-self-end ">
                 <Link
                   href={{ pathname: '/search', query: { types: packagesTypes.join() } }}
                   prefetch={false}>

@@ -73,7 +73,7 @@ function MenuItem({
         <a
           onFocus={() => handleFocus(item, where, setDestinations, setDestFocused)}
           onMouseOver={() => handleFocus(item, where, setDestinations, setDestFocused)}
-          className={`${styles.route} ${id === focusedID ? 'active' : ''} mr-5`}>
+          className={`${styles.route} ${id === focusedID ? 'active' : ''} me-5`}>
           {title}
         </a>
       </Link>
@@ -97,7 +97,7 @@ function MenuContent({
             {continents &&
               continents.map(continent => (
                 <div key={continent.name} className="col-12">
-                  <h5 className="font-weight-bold mb-3">
+                  <h5 className="fw-bold mb-3">
                     <Link href={`/continent/${continent.slug}`}>
                       <a
                         onMouseOver={() => {
@@ -108,13 +108,13 @@ function MenuContent({
                           setDestFocused([]);
                           setDestinations([]);
                         }}
-                        className="black">
+                        className="black ">
                         {continent.name}
                       </a>
                     </Link>
                   </h5>
                   <div className="row">
-                    <div className={` col-3`}>
+                    <div className="col-3">
                       {continent.destinations.map(item => (
                         <MenuItem
                           key={item.id}
@@ -133,8 +133,8 @@ function MenuContent({
                     <div className="col-9 p-0">
                       <div
                         className={`${
-                          destFocused.id ? 'col-3' : 'col-12'
-                        } h-100 position-absolute ${styles.itemsSubMenu} `}>
+                          destFocused.id ? 'col-3' : 'a'
+                        }  position-absolute ${styles.itemsSubMenu} `}>
                         <>
                           {destinationsList.length > 0 ? (
                             <ul>
@@ -148,7 +148,7 @@ function MenuContent({
                               ))}
                             </ul>
                           ) : (
-                            <div className={`${styles.itemsSubMenu__content}`}>
+                            <div className={`${styles.itemsSubMenu__content} `}>
                               <h3>Find your Destination</h3>
                               <h4>VA Expeditions</h4>
                             </div>
@@ -159,7 +159,7 @@ function MenuContent({
                         {imageMenu ? (
                           <img alt={destFocused.title} src={PUBLIC_API + imageMenu} />
                         ) : (
-                          <img alt={destFocused.title} src="/images/12345.jpg" />
+                          <img alt={destFocused.title} src="/images/portada3.jpg" />
                         )}
                       </div>
                     </div>

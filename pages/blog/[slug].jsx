@@ -78,7 +78,7 @@ function BlogPost({
       <div className="containerBox row">
         <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
           <div className="d-flex ">
-            <h4 className="pr-3 border-right text-muted d-flex">
+            <h4 className="pe-3 border-right text-muted d-flex">
               Written by:
               <div role="button" type="button" onClick={handleShow}>
                 <span className="text-underlined text-uppercase">
@@ -86,7 +86,7 @@ function BlogPost({
                 </span>
               </div>
             </h4>
-            <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
+            <h4 className="ps-3 text-muted">Published: {blog.created}</h4>
             <Modal className="p-4 w-100" show={show} onHide={handleClose}>
               <Modal.Header closeButton className={`${styles.Head} w-100`}>
                 <span>

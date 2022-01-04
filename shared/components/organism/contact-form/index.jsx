@@ -75,7 +75,7 @@ function ContactForm({ destinations }) {
 
                   <Form
                     id="contact-us-form"
-                    className="col-sm-12 col-md-12 col-lg-9 px-2 p-0 text-left order-1"
+                    className="col-sm-12 col-md-12 col-lg-9 px-2 p-0 text-start order-1"
                     noValidate
                     validated={validated}
                     onSubmit={handleSubmit}>
@@ -240,7 +240,7 @@ function ContactForm({ destinations }) {
                           </div>
                         </div>
 
-                        <div className="col-12 text-left">
+                        <div className="col-12 text-start">
                           <Form.Check
                             value
                             label="Please send me your email newsletter"

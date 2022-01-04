@@ -12,14 +12,14 @@ function Banner({ title, description, image, alt }) {
       <div className="banner-content l0 position-absolute w-100 h-100">
         {description && (
           <div className={`h-100 ${styles.align}`}>
-            <p className="fs-25 pr-3 font-weight-bold text-white text-right">
+            <p className="fs-25 pe-3 font-weight-bold text-white text-end">
               {description}
             </p>
           </div>
         )}
         {title && (
           <div className={`h-100 ${styles.title} ${styles.align}`}>
-            <h2 className="fs-30 pr-3 font-weight-bold text-white text-right">{title}</h2>
+            <h2 className="fs-30 pe-3 font-weight-bold text-white text-end">{title}</h2>
           </div>
         )}
       </div>

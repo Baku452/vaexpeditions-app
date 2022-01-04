@@ -80,7 +80,7 @@ function Search({
             <div className="col-12 col-lg-8">
               <h1 className="title">Overview of {SSRCountry.name}</h1>
               <div
-                className={` ${styles.content} pr-5`}
+                className={` ${styles.content} pe-5`}
                 dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
               />
             </div>

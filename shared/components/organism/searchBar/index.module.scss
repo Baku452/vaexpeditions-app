@@ -47,8 +47,10 @@
   width: 100%;
   display: block;
   position: absolute;
-  z-index: 999;
+  z-index: 1999;
   background: #fff;
+  max-height: 500px;
+  overflow-y: auto !important;
 }
 
 .iconSearch svg {
@@ -58,12 +60,19 @@
 }
 
 .svg {
-  width: 25px;
+  width: 40px;
   padding-right: 6px;
   img {
-    width: 30px;
+    width: 40px;
   }
 }
 .title {
   max-width: 80%;
+}
+
+.dontList ul {
+  list-style-type: none !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }

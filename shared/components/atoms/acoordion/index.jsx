@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import AccordionContext from 'react-bootstrap/AccordionContext';
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Card from 'react-bootstrap/Card';
 
 import { Icon } from '@/components/index';
@@ -13,7 +13,7 @@ import styles from './index.module.scss';
 function ContextAwareToggle({ children, eventKey, callback, className }) {
   const currentEventKey = useContext(AccordionContext);
 
-  const decoratedOnClick = useAccordionToggle(
+  const decoratedOnClick = useAccordionButton(
     eventKey,
     () => callback && callback(eventKey),
   );
@@ -23,7 +23,7 @@ function ContextAwareToggle({ children, eventKey, callback, className }) {
   return (
     <button
       type="button"
-      className={`text-left position-relative ${styles.button}`}
+      className={`text-start position-relative ${styles.button}`}
       style={{ background: className }}
       onClick={decoratedOnClick}>
       {children}

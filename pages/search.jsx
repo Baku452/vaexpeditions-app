@@ -237,7 +237,7 @@ function Search({
                   <div
                     // eslint-disable-next-line max-len
                     className={`${styles.asideHeaderMobile} d-block d-lg-none pt-3 pb-3 fixed-top`}>
-                    <h3 className="text-left ml-3 mb-0">Filters</h3>
+                    <h3 className="text-start ms-3 mb-0">Filters</h3>
                     {/* <link href="#"> */}
                     <a
                       href="#"

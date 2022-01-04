@@ -75,7 +75,9 @@ function TravelWithPurpose() {
                       </li>
                     </ul>
                   </div>
-                  <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                  <div
+                    className="col-12 offset-md-1 
+                    col-md-3 pt-2 order-1 order-md-2 text-end">
                     <img
                       src="/images/our-purpose/travel-with-purpose/fair-wages.jpg"
                       className="d-block w-100 fit"
@@ -168,7 +170,9 @@ function TravelWithPurpose() {
                       workers benefits.{' '}
                     </p>
                   </div>
-                  <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                  <div
+                    className="col-12 offset-md-1 col-md-3 
+                    pt-2 order-1 order-md-2 text-end">
                     <img
                       src="/images/our-purpose/travel-with-purpose/gender-equality.jpg"
                       className="d-block w-100 fit"
@@ -232,7 +236,7 @@ function TravelWithPurpose() {
                         </li>
                         <li>
                           Freedom to express normal behavior by providing sufficient
-                          space, proper facilities and company of the animal's own kind{' '}
+                          space, proper facilities and company of the animal's own kind
                         </li>
                         <li>
                           Freedom from fear and distress by ensuring conditions and
@@ -246,7 +250,9 @@ function TravelWithPurpose() {
                       https://www.abta.com/industry-zone/sustainability-in-travel-and-tourism/animals-in-tourism
                     </a>
                   </div>
-                  <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                  <div
+                    className="col-12 offset-md-1 col-md-3 
+                    pt-2 order-1 order-md-2 text-end">
                     <img
                       src="/images/our-purpose/travel-with-purpose/animal-protection.jpg"
                       className="d-block w-100 fit"
@@ -341,7 +347,9 @@ function TravelWithPurpose() {
                       </ol>
                     </p>
                   </div>
-                  <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                  <div
+                    className="col-12 offset-md-1 col-md-3 
+                      pt-2 order-1 order-md-2 text-end">
                     <img
                       src="/images/our-purpose/travel-with-purpose/climate-change.jpg"
                       className="d-block w-100 fit"
@@ -442,9 +450,12 @@ function TravelWithPurpose() {
                       </li>
                     </ol>
                   </div>
-                  <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                  <div
+                    className="col-12 offset-md-1 col-md-3 
+                    pt-2 order-1 order-md-2 text-end">
                     <img
-                      src="/images/our-purpose/travel-with-purpose/cultura-preservation.jpg"
+                      src="/images/our-purpose/travel-with-purpose/
+                      cultura-preservation.jpg"
                       className="d-block w-100 fit"
                       alt="Cultural preservation."
                     />
@@ -526,7 +537,9 @@ function TravelWithPurpose() {
                       </ul>
                     </p>
                   </div>
-                  <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                  <div
+                    className="col-12 offset-md-1 col-md-3 
+                    pt-2 order-1 order-md-2 text-end">
                     <img
                       src="/images/our-purpose/travel-with-purpose/empowering.jpg"
                       className="d-block w-100 fit"
@@ -595,14 +608,18 @@ function TravelWithPurpose() {
                       want to be a rock star, bring a calculator!
                     </p>
                     <p>
-                      For the last three years we have been carrying out social support, where we share basic food and coats with the
-                      families of Inca trailporters, all of them from the communities with
-                      wich we have worked the Inca Trail route for the past 9 years{' '}
+                      For the last three years we have been carrying out social support,
+                      where we share basic food and coatsw ith the families of Inca
+                      trailporters, all of them from the communities with wich we have
+                      worked the Inca Trail route for the past 9 years{' '}
                     </p>
                   </div>
-                  <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                  <div
+                    className="col-12 offset-md-1 col-md-3 
+                  pt-2 order-1 order-md-2 text-end">
                     <img
-                      src="/images/our-purpose/travel-with-purpose/community-filantrophy.jpg"
+                      src="/images/our-purpose/travel-with-purpose/
+                      community-filantrophy.jpg"
                       className="d-block w-100 fit"
                       alt="Community philanthropy."
                     />
@@ -645,7 +662,9 @@ function TravelWithPurpose() {
                     to get to know each other and become part of a global community!
                   </p>
                 </div>
-                <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                <div
+                  className="col-12 offset-md-1 col-md-3 
+                    pt-2 order-1 order-md-2 text-end">
                   <img
                     src="/images/our-purpose/travel-with-purpose/inclusive-travel.jpg"
                     className="d-block w-100 fit"

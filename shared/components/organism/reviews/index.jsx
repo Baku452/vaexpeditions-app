@@ -16,9 +16,9 @@ function Reviews() {
                 “Travelling with Valencia Travel was a great experience. We took a 2-day
                 hiking tour and felt like everything was extremely well organized”
               </h2>
-              <div className="fs-20 fs-i text-right">Sandy Rogers - UK</div>
+              <div className="fs-20 fs-i text-end">Sandy Rogers - UK</div>
             </div>
-            <div className="col-12 offset-md-2 col-md-5 text-right">
+            <div className="col-12 offset-md-2 col-md-5 text-end">
               <div className="row justify-content-end">
                 <div className="col-6 col-md-4">
                   <div className="image-dummy" />

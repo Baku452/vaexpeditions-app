@@ -135,7 +135,7 @@ function Package({
       <div className="container aside">
         <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
           <StikyBox pack={pack} />
-          <div className="col-12 col-lg-9 column-left">
+          <div className="col-12 col-lg-9 column-start">
             <TripOverview pack={pack} />
 
             <Itineraries itineraries={pack?.itineraries} />

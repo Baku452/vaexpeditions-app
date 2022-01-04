@@ -28,7 +28,7 @@ function CategoryBlog({
         <meta property="og:title" content="Explore topics - Blog" />
       </Head>
       <section className="containerBox row">
-        <div className="col-12 text-left pt-3 pt-lg-5 pb-5">
+        <div className="col-12 text-start pt-3 pt-lg-5 pb-5">
           <h1>Explore topics</h1>
         </div>
       </section>
@@ -38,7 +38,7 @@ function CategoryBlog({
         </div>
         <div className="row mb-4">
           {blogtypesRes.map(item => (
-            <div key={item.slug} className="col-12 col-sm-6 col-lg-4 pb-4 pl-3">
+            <div key={item.slug} className="col-12 col-sm-6 col-lg-4 pb-4 ps-3">
               <CategoryCard item={item} />
             </div>
           ))}

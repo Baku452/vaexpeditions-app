@@ -4,7 +4,7 @@ import { ItineraryIcons } from '@/components/index';
 
 function ItineraryItems({ items }) {
   return (
-    <ul className="pt-4 pb-2 pl-0">
+    <ul className="pt-4 pb-2 ps-0">
       {items.map(element => (
         <li key={element.id} className="pb-3">
           <ItineraryIcons types={element.types} />

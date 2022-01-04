@@ -13,7 +13,7 @@ import styles from './index.module.scss';
 function Navigation({ continents, packagetypes }) {
   return (
     <Navbar.Collapse id="basic-navbar-nav" className={`${styles.nav}`}>
-      <Nav className={`ml-0 mt-0  `}>
+      <Nav className={`ms-0 mt-0  `}>
         <Accordion defaultActiveKey="0">
           <Card index={0} open={1} className="pt-0">
             <CollapseMenu open={1} index={0}>

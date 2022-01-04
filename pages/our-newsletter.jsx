@@ -1,5 +1,6 @@
-import Link from 'next/link';
+/* eslint-disable no-unused-vars */
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
@@ -52,7 +53,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}>
-        <Head>
+      <Head>
         <title>Subscribe Newsletter - VaExpeditions </title>
       </Head>
       <Hero2
@@ -83,7 +84,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                 </div>
               ) : (
                 <div className="card border">
-                  <div className="col-12 pt-3 mt-3 text-left newsletter">
+                  <div className="col-12 pt-3 mt-3 text-start newsletter">
                     <h2 className="text-center">
                       View Central and South America from a totally different perspective.
                     </h2>
@@ -97,7 +98,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                     </p>
                   </div>
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                    <div className="col-12 col-md-12 p-0 mx-auto text-left">
+                    <div className="col-12 col-md-12 p-0 mx-auto text-start">
                       <div className="row m-b-100 px-3">
                         <div className="col-12 col-md-4">
                           <div className="form-group">
@@ -148,7 +149,9 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                           Please tell us some of your interests
                         </p>
                         {packagetypes.map(item => (
-                          <div key={item.id} className="col-12 col-md-3 m-b-25 text-left">
+                          <div
+                            key={item.id}
+                            className="col-12 col-md-3 m-b-25 text-start">
                             <Form.Check
                               value={item.id}
                               type="checkbox"

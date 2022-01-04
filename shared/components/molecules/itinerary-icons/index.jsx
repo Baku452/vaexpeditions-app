@@ -9,7 +9,7 @@ function ItineraryIcons({ types }) {
     <Icon
       component={types === 'Meals Included' ? Restaurant : Bed}
       viewBox="0 0 512 512"
-      className="icon-size-m mr-2"
+      className="icon-size-m me-2"
     />
   );
 }
