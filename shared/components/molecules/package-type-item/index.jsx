@@ -19,7 +19,7 @@ function PackageTypeItem({ id, title, thumbnail }) {
             bottom: '0',
             background: 'rgba(0,0,0,.7)',
           }}>
-          <h5 className="text-white font-weight-bold pt-1">{title}</h5>
+          <h5 className="text-white fw-bold pt-1">{title}</h5>
         </div>
       </div>
     </Link>

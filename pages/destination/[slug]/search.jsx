@@ -295,7 +295,7 @@ function SearchDestination({
                   </div>
                   {!showFilters ? (
                     <div className={`${styles.boxaside}  m-0`}>
-                      <h2 className="font-weight-bold fs-20 pt-3">
+                      <h2 className="fw-bold fs-20 pt-3">
                         All our Tours in {SSRDestination.title}
                       </h2>
                       {packagesList.length > 0 ? (

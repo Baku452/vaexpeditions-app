@@ -70,10 +70,10 @@ function City({
               ))}
           </div>
 
-          <div className="text-center mx-auto fs-26 link font-weight-bold">
+          <div className="text-center mx-auto fs-26 link fw-bold">
             <Link
               href={`/destination/${SSRDestination.slug}/search?where_to_go=${city.id}`}>
-              <a className="link" className={`${styles.boton} p-2 my-4`} type="button">
+              <a className={`${styles.boton} p-2 my-4 link`} type="button">
                 SHOW MORE
               </a>
             </Link>

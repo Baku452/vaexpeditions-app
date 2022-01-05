@@ -20,7 +20,7 @@ const ItemTravelAdvice = ({ title, content, image }) => {
 
       <Modal size="lg" className="p-4" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="font-weight-bold">{title}</Modal.Title>
+          <Modal.Title className="fw-bold">{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="row">

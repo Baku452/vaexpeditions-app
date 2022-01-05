@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { AtypicalItem, Slide } from '@/components/index';
 import { Base } from '@/layouts/index';
@@ -8,7 +9,6 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Search({
   SSRDestination,
-  SSRPackages,
   destinations,
   packagetypes,
   interests,
@@ -39,8 +39,7 @@ function Search({
           <div className="row">
             <div className="col-12 pt-5 pb-5">
               <h1 className="text-center ">
-                Reason why{' '}
-                <span className="line font-weight-bold">{SSRDestination.title}</span>
+                Reason why <span className="line fw-bold">{SSRDestination.title}</span>
               </h1>
             </div>
           </div>
@@ -95,9 +94,6 @@ export async function getStaticProps({ params }) {
   const fetchDestination = await fetch(`${PUBLIC_API}/destination/${params.slug}`);
   const SSRDestination = await fetchDestination.json();
 
-  const fetchpackages = await fetch(`${PUBLIC_API}/packages/${params.slug}`);
-  const SSRPackages = await fetchpackages.json();
-
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
@@ -110,7 +106,6 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       SSRDestination,
-      SSRPackages,
       destinations,
       packagetypes,
       interests,

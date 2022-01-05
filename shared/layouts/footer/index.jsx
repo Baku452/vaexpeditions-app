@@ -17,7 +17,7 @@ function Footer({ continents }) {
         <div className={`container ${styles.container}`}>
           <div className={`row position-relative pb-4 mb-4 ${styles.title}`}>
             <div className="col-12 col-md-4 col-lg-3 text-start text-white pb-4">
-              <h6 className="text-white font-weight-bold fs-13 pb-2">DESTINATIONS</h6>
+              <h6 className="text-white fw-bold fs-13 pb-2">DESTINATIONS</h6>
 
               <ul className={`fs-15 list-unstyled ${styles.lista} `}>
                 {continents.map(continent =>
@@ -32,9 +32,7 @@ function Footer({ continents }) {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-start text-white pb-4">
-              <h6 className="text-white font-weight-bold fs-13 pb-2 ">
-                EXPLORE VA EXPEDITIONS
-              </h6>
+              <h6 className="text-white fw-bold fs-13 pb-2 ">EXPLORE VA EXPEDITIONS</h6>
 
               <ul className="fs-15 list-unstyled">
                 <li>
@@ -63,7 +61,7 @@ function Footer({ continents }) {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-start text-white pb-4">
-              <h6 className="text-white font-weight-bold fs-13 pb-2 ">COMPANY</h6>
+              <h6 className="text-white fw-bold fs-13 pb-2 ">COMPANY</h6>
 
               <ul className="fs-15 list-unstyled">
                 <li>
@@ -87,7 +85,7 @@ function Footer({ continents }) {
               </ul>
             </div>
             <div className="col-12 col-md-12 col-lg-3 text-start text-white pb-4">
-              <h6 className="text-white font-weight-bold fs-13 pb-2 "> FOLLOW US</h6>
+              <h6 className="text-white fw-bold fs-13 pb-2 "> FOLLOW US</h6>
               <div>
                 <a
                   href="https://www.facebook.com/vaexpeditions/"

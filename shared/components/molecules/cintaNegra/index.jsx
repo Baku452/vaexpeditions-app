@@ -35,7 +35,7 @@ function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activi
       } row mx-auto text-center px-2 px-lg-5 py-4`}>
       {price && offer ? (
         <div className="text-start">
-          <p className="font-weight-bold fs-22 m-0">
+          <p className="fw-bold fs-22 m-0">
             {offer} <span className="fs-16">per person</span>
           </p>
           {/* <p className="m-0 mb-3"></p> */}

@@ -8,7 +8,7 @@ function ItineraryItems({ items }) {
       {items.map(element => (
         <li key={element.id} className="pb-3">
           <ItineraryIcons types={element.types} />
-          <span className="font-weight-bold">{element.types}: </span>
+          <span className="fw-bold">{element.types}: </span>
           {element.text}
         </li>
       ))}

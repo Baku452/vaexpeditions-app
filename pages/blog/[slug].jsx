@@ -149,7 +149,7 @@ function BlogPost({
       <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
           <div className="col-12 p-5">
-            <h2 className={`${styles.posts} fs-30 font-weight-bold text-center`}>
+            <h2 className={`${styles.posts} fs-30 fw-bold text-center`}>
               POPULAR POSTS{' '}
             </h2>
           </div>

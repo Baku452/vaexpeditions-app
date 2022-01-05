@@ -33,7 +33,7 @@ export default function History({
         <div className="container bc-F7F5F5 mt-5">
           <div className="row">
             <div className="col-12 mx-auto">
-              <h2 className=" font-weight-bold text-center">Va Expeditions History</h2>
+              <h2 className=" fw-bold text-center">Va Expeditions History</h2>
               <div className="row mb-5 pt-5">
                 <div className="col-12 mb-5 col-lg-6 order-1 order-md-1 col-md-12 m-0 fs-17 lh-34 text-fluid align-self-center">
                   <p>

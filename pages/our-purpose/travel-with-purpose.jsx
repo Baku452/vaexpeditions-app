@@ -38,7 +38,7 @@ export default function OurPurpose({
         <div className="container">
           <div className="row pt-5" />
           <div className="col-12 mx-auto">
-            <h2 className=" font-weight-bold text-center">Travel with Purpose</h2>
+            <h2 className=" fw-bold text-center">Travel with Purpose</h2>
             <p>
               Va Expeditions wholeheartedly believes that by travelling in a sustainable
               and conscientious manner, we can transform the world and connect a myriad of
@@ -56,7 +56,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={2} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Fair wages</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Fair wages</h2>
                 </ContextAwareToggle>
               </Card.Header>
 
@@ -125,7 +125,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={3} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
+                  <h2 className="fs-16 m-0 fw-bold p-0">
                     Gender equality & diversity and inclusion.
                   </h2>
                 </ContextAwareToggle>
@@ -224,7 +224,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={4} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Animal protection.</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Animal protection.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={4}>
@@ -305,7 +305,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={5} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Climate change.</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Climate change.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={5}>
@@ -403,9 +403,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={6} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
-                    Cultural preservation.
-                  </h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Cultural preservation.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={6}>
@@ -509,9 +507,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={7} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
-                    Empowering local communities.
-                  </h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Empowering local communities.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={7}>
@@ -595,9 +591,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={8} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
-                    Community philanthropy.
-                  </h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Community philanthropy.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={8}>
@@ -673,7 +667,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={10} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Inclusive travel.</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Inclusive travel.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={10}>

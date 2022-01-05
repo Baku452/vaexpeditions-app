@@ -8,9 +8,7 @@ function CardBox({ items }) {
   return (
     <>
       <section id="Card box" className="containerBox">
-        <h2 className="font-weight-bold text-center titleUnderline pb-3 m-0">
-          More About Us
-        </h2>
+        <h2 className="fw-bold text-center titleUnderline pb-3 m-0">More About Us</h2>
         <div className="row">
           {items.map(item => (
             <Link key={item.id} href={`/our-purpose/${item.slug}`}>
@@ -23,9 +21,7 @@ function CardBox({ items }) {
                   />
                 </div>
                 <div className={`${styles.body} p-2 p-md-4`}>
-                  <h5 className="card-title font-weight-bold text-center">
-                    {item.title}
-                  </h5>
+                  <h5 className="card-title fw-bold text-center">{item.title}</h5>
                 </div>
               </div>
             </Link>

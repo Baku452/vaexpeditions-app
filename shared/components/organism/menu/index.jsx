@@ -180,7 +180,7 @@ function MenuHoliday({ packagetypes }) {
         <div className="container d-block">
           <div className="row">
             <div className="col-12">
-              <h5 className="font-weight-bold black">By Types</h5>
+              <h5 className="fw-bold black">By Types</h5>
               <ul className={`${styles.items} row`}>
                 {packagetypes &&
                   packagetypes.map(types => (

@@ -5,19 +5,12 @@ import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function FriendsFamily({
-  destinations,
-  packagetypes,
-  notifications,
-  popups,
-  packagesAll,
-}) {
+function FriendsFamily({ destinations, packagetypes, notifications, packagesAll }) {
   return (
     <Base
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      popups={popups}
       packagesAll={packagesAll}>
       <Head>
         <title>Friends & Family, Earn Discounts & Free Travel Benefits</title>
@@ -27,7 +20,7 @@ function FriendsFamily({
       <div className="container">
         <div className="row pt-5 pb-4 mb-3">
           <div className="col-12">
-            <h1 className="font-weight-bold text-center">FRIENDS & FAMILY DISCOUNT</h1>
+            <h1 className="fw-bold text-center">FRIENDS & FAMILY DISCOUNT</h1>
             <h2 className="fs-16 lh-29 col-7 m-auto text-center">
               Earn special discounts and special travel bonuses with our innovative
               “Friends and family” programme.
@@ -187,7 +180,7 @@ function FriendsFamily({
     </Base>
   );
 }
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
@@ -197,9 +190,6 @@ export async function getStaticProps({ params }) {
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
 
-  const popupResponse = await fetch(`${PUBLIC_API}/popup/`);
-  const popups = await popupResponse.json();
-
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
@@ -208,7 +198,6 @@ export async function getStaticProps({ params }) {
       notifications,
       destinations,
       packagetypes,
-      popups,
       packagesAll,
     },
     revalidate: 1,

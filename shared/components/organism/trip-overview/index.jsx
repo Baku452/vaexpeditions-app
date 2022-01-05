@@ -29,7 +29,7 @@ function TripOverview({ pack }) {
                   <div className="row ">
                     <div
                       className={` ${styles.titulo} 
-                      row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 font-weight-bold`}>
+                      row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 fw-bold`}>
                       <img
                         alt="Wildlife expectation"
                         className={` ${styles.icono} `}
@@ -46,7 +46,7 @@ function TripOverview({ pack }) {
                   <div className="row ">
                     <div
                       className={` ${styles.titulo} 
-                      row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 font-weight-bold`}>
+                      row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 fw-bold`}>
                       <img
                         alt="Wildlife expectation"
                         className={`card-img-top ${styles.icono}`}
@@ -63,7 +63,7 @@ function TripOverview({ pack }) {
                   <div className="row">
                     <div
                       className={` ${styles.titulo} 
-                      row col-md-9 fs-16 pt-1  pt-md-0 pb-md-0 font-weight-bold`}>
+                      row col-md-9 fs-16 pt-1  pt-md-0 pb-md-0 fw-bold`}>
                       <img
                         alt="Wildlife expectation"
                         className={`card-img-top ${styles.icono}`}
@@ -97,7 +97,7 @@ function TripOverview({ pack }) {
                   </div>
                 </div>
                 <div className=" pt-3 ps-3 col-md-9 col-12">
-                  <p className="font-weight-bold p-0">
+                  <p className="fw-bold p-0">
                     <span>Travel specialist</span>
                   </p>
                   <div role="button" tabIndex={0} onClick={handleShow}>

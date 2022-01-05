@@ -17,9 +17,7 @@ function Destinations({ countries }) {
             <div className="row">
               <div className="col-3 d-none d-md-block" />
               <div className="col-12 col-md-6">
-                <h2 className="font-weight-bold text-center fs-30">
-                  Choose your destinations
-                </h2>
+                <h2 className="fw-bold text-center fs-30">Choose your destinations</h2>
               </div>
             </div>
 

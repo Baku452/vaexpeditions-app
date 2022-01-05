@@ -253,7 +253,7 @@ function Search({
                   </div>
                   {!showFilters ? (
                     <div className={`${styles.boxaside}  m-0`}>
-                      <h2 className="font-weight-bold fs-20 pt-3">All our Tours</h2>
+                      <h2 className="fw-bold fs-20 pt-3">All our Tours</h2>
                       {packagesList.length > 0 ? (
                         <h4 className="fs-18 py-3 mb-0">{numberPackages} Tours</h4>
                       ) : null}

@@ -45,9 +45,7 @@ function TopTours({ tours }) {
                         )}
 
                         <div className={`${styles.body} p-4`}>
-                          <h5 className="card-title mb-2 fs-18 font-weight-bold">
-                            {item.title}
-                          </h5>
+                          <h5 className="card-title mb-2 fs-18 fw-bold">{item.title}</h5>
                           <h6 className="fs-18 m-0 pb-3">
                             {item?.days > 1 ? `${item?.days} days` : 'Half-Day'}
                           </h6>

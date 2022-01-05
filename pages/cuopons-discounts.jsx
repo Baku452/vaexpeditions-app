@@ -27,7 +27,7 @@ function CoupunsDiscounts({
       <div className="container">
         <div className="row pt-5 pb-4 mb-3">
           <div className="col-12">
-            <h1 className="font-weight-semi-bold text-center">SPECIAL PROMOTIONS!</h1>
+            <h1 className="fw-bold text-center">SPECIAL PROMOTIONS!</h1>
             <div className="row">
               <div className="fs-16 lh-29 p-3 col-10 m-auto">
                 <h3>Early Bookings</h3>

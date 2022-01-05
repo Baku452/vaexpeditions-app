@@ -82,7 +82,7 @@ function Navigation({ continents, packagetypes }) {
         </Accordion>
 
         <Link key="tm" href="/tailor-made-tour">
-          <a className={` ${styles.sub} fs-15 font-weight-bold border-bottom `}>
+          <a className={` ${styles.sub} fs-15 fw-bold border-bottom `}>
             Tailor-Made Tours
           </a>
         </Link>
@@ -120,7 +120,7 @@ function Navigation({ continents, packagetypes }) {
         </Accordion>
 
         <Link key="bl" href="/blog">
-          <a className={`${styles.sub} fs-16 font-weight-bold border-bottom`}>
+          <a className={`${styles.sub} fs-16 fw-bold border-bottom`}>
             Passion Passport - Blog
           </a>
         </Link>

@@ -53,7 +53,7 @@ function CollapseContent({ index, title, children, link }) {
       <Card.Header className={`${styles.header}`}>
         <ContextAwareToggle eventKey={index + 1} className={getColor(index)}>
           <Link href={link || '#'}>
-            <a className="fs-16 m-0 font-weight-bold p-0">{title}</a>
+            <a className="fs-16 m-0 fw-bold p-0">{title}</a>
           </Link>
         </ContextAwareToggle>
       </Card.Header>

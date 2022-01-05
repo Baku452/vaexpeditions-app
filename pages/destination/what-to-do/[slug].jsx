@@ -39,8 +39,7 @@ function Search({
           <div className="row">
             <div className="col-12 pt-5 pb-5">
               <h1 className="text-center ">
-                What To Do{' '}
-                <span className="line font-weight-bold">{SSRDestination.title}</span>
+                What To Do <span className="line fw-bold">{SSRDestination.title}</span>
               </h1>
             </div>
           </div>

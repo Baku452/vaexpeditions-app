@@ -47,7 +47,7 @@ export default function WhoWeAre({
             id="ourPurpose"
             className="row containerBox text-justify py-5 align-items-center">
             <div className="col-12 col-md-6 p-3 mb-3">
-              <h2 className="title m-0 fs-20 font-weight-bold mb-4">Our Purpose</h2>
+              <h2 className="title m-0 fs-20 fw-bold mb-4">Our Purpose</h2>
               <p className="m-0 fs-16 lh-34">
                 Here at Va Expeditions, we strive to unite people through travel. Each
                 itinerary is especially designed to create a global community of
@@ -71,7 +71,7 @@ export default function WhoWeAre({
               <img alt="Va visión" src="/images/vision2.jpg" className="img-fluid" />
             </div>
             <div className="col-12 col-md-6 mb-3 mb-md-5 order-1 order-md-2">
-              <h2 className="title m-0 fs-20 font-weight-bold mb-4">Our Vision</h2>
+              <h2 className="title m-0 fs-20 fw-bold mb-4">Our Vision</h2>
               <p className="m-0 fs-16 lh-34">
                 Our aim is to position ourselves as one of the leaders in the
                 international travel market with a people -first ethic, basic on customer
@@ -83,7 +83,7 @@ export default function WhoWeAre({
             id="mision"
             className="containerBox text-justify row align-items-center pb-5">
             <div className="col-12 col-md-6 mb-3 mb-md-5 order-1">
-              <h2 className="title m-0 fs-20 font-weight-bold mb-4">Our Mission</h2>
+              <h2 className="title m-0 fs-20 fw-bold mb-4">Our Mission</h2>
               <p className="m-0 fs-16 lh-34">
                 To design creative and innovative travel experiences to motivate people to
                 explore the incredible natural diversity of Central and South America, as
