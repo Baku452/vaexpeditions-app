@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable camelcase */
 /* eslint-disable react/no-danger */
-import fetch from 'cross-fetch';
+// import fetch from 'cross-fetch';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { Link as LinkScroll } from 'react-scroll';
@@ -126,7 +126,7 @@ function Package({
       />
       <LinkScroll
         smooth
-        duration={600}
+        offset={-150}
         style={{ backgroundColor: '#a6192e', border: 'none' }}
         className="fixedContact trackBook btn btn-primary fs-24 d-lg-none d-block fixed-bottom w-100"
         to="contact-form-package">
@@ -237,7 +237,14 @@ export async function getStaticProps({ params }) {
   const resCities = await cities.json();
 
   return {
-    props: { pack, destinations, packagetypes, notifications, packagesAll, resCities },
+    props: {
+      pack,
+      destinations,
+      packagetypes,
+      notifications,
+      packagesAll,
+      resCities,
+    },
     revalidate: 1,
   };
 }

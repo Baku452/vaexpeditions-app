@@ -19,7 +19,7 @@ function WhereToItem({ title, summary, slug, thumbnail }) {
             )}
             <div className={`p-3 ${styles.contentBox}`}>
               <h3 className="fs-3 text-uppercase">{title}</h3>
-              <div className="d-none d-sm-none d-sm-block">{summary}</div>
+              <div className="d-none d-sm-block ">{summary}</div>
             </div>
           </div>
         </a>

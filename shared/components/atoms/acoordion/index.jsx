@@ -93,7 +93,7 @@ function CollapseContent2({ index, title, children }) {
     <>
       <Card.Header className={styles.header}>
         <ContextAwareToggle eventKey={index + 1} className="#ffffff background2 ">
-          <h2 className="fs-18 m-0 p-0 text-center fw-bold ">{title}</h2>
+          <h2 className="fs-18 m-0 p-0 text-center ">{title}</h2>
         </ContextAwareToggle>
       </Card.Header>
       <Accordion.Collapse eventKey={index + 1}>
@@ -109,7 +109,7 @@ function CollapseContent3({ index, title, children }) {
     <>
       <Card.Header className={styles.header}>
         <ContextAwareToggle eventKey={index + 1} className="#ffffff ">
-          <h2 className="fs-18 m-0 p-0 fw-bold ">{title}</h2>
+          <h2 className="fs-18 m-0 p-0 ">{title}</h2>
         </ContextAwareToggle>
       </Card.Header>
       <Accordion.Collapse eventKey={index + 1}>

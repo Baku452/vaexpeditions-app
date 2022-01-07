@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -31,11 +32,9 @@ function HeroBlog({ title, image, alt }) {
 
 function HeroBlog2({ title, image, alt, navBreadcrums, time }) {
   return (
-    <div className={`w-100 position-relative ${styles.bannerBlog}`}>
+    <div className={`w-100 position-relative ${styles.bannerBlogSlug}`}>
       <div className="banner-content">
-        <nav
-          aria-label="breadcrumb"
-          className={`${styles.breadcrumbs} d-none d-md-block `}>
+        <nav aria-label="breadcrumb" className={`${styles.breadcrumbs2}`}>
           <ol className="">
             <li>
               <Link href="/">
@@ -48,7 +47,6 @@ function HeroBlog2({ title, image, alt, navBreadcrums, time }) {
               </Link>
             </li>
             {navBreadcrums.map(item => (
-              // eslint-disable-next-line react/jsx-key
               <li>
                 <a>{item.title}</a>
               </li>
@@ -61,7 +59,11 @@ function HeroBlog2({ title, image, alt, navBreadcrums, time }) {
           <span className={`${styles.read}`}>READ</span>
         </div>
       </div>
-      {title && <h1 className={`fs-48 text-center p-5 ${styles.title}`}>{title}</h1>}
+      {title && (
+        <div className={`${styles.boxTitleMobile} `}>
+          <h1 className={` text-center  ${styles.title}`}>{title}</h1>
+        </div>
+      )}
       {image ? <img src={image} alt={alt} /> : null}
     </div>
   );

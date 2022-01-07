@@ -77,11 +77,11 @@ function BlogPost({
 
       <div className="containerBox row">
         <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
-          <div className="d-flex ">
+          <div className="d-flex py-3">
             <h4 className="pe-3 border-right text-muted d-flex">
               Written by:
               <div role="button" type="button" onClick={handleShow}>
-                <span className="text-underlined text-uppercase">
+                <span className="ms-2 text-underlined text-uppercase">
                   {`${author?.first_name} ${author.last_name}`}
                 </span>
               </div>
