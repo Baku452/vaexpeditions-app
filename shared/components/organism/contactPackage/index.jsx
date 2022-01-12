@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 
 import { ContactFormB2B, ContactFormB2C } from '@/components/index';
@@ -6,7 +7,7 @@ import styles from './index.module.scss';
 
 function ContactPackage({ title = true, pack, cities }) {
   return (
-    <section id="contact-form-package" className="overflow-hidden">
+    <section id="contact-form-package" className="row overflow-hidden">
       <div className="container p-0">
         <div className="row mb-5">
           <div className="col-11 col-md-10 p-0 pb-5 mb-5 p-0 mx-auto">

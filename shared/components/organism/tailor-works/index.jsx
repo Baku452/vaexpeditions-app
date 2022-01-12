@@ -1,3 +1,6 @@
+/* eslint-disable no-empty-pattern */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-key */
 import styles from './index.module.scss';
 
 function TailorWork({}) {
@@ -29,7 +32,7 @@ function TailorWork({}) {
   ];
   return (
     <div className="container">
-      <h3 className="font-weight-regular text-center fs-30 pb-lg-5 pb-md-3">
+      <h3 className="fw-regular text-center fs-30 pb-lg-5 pb-md-3">
         How does a Tailor-made works?
       </h3>
       <div className="row px-lg-5 px-md-1 pb-3 mx-lg-5 mx-md-2">

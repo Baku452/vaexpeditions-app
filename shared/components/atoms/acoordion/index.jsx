@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Link from 'next/link';
 import { useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
@@ -121,7 +122,7 @@ function CollapseContent3({ index, title, children }) {
   );
 }
 
-function CollapseMenu({ children }) {
+function CollapseMenu({ children, open = 0 }) {
   return (
     <Accordion defaultActiveKey="0" className={`${styles.accordion}`}>
       {children}
@@ -129,28 +130,47 @@ function CollapseMenu({ children }) {
   );
 }
 
-function CollapseContentMenu({ index, title, link, children }) {
+function CollapseContentMenu1({ title, children }) {
   return (
     <>
-      <Card.Header className={`${styles.header} d-flex justify-content-between`}>
-        <Link href={link || '#'}>
-          <a className="col-11 d-inline-block">{title}</a>
-        </Link>
-        {/* <ContextAwareToggle eventKey={index + 1}>
-          <a className="col-1 fs-16 m-0 p-0 text-dark" />
-        </ContextAwareToggle> */}
-      </Card.Header>
-      <Accordion.Collapse eventKey={index + 1}>
-        <Card.Body className="py-0">{children}</Card.Body>
-      </Accordion.Collapse>{' '}
-      <Accordion.Header className={`${styles.header} d-flex justify-content-between`}>
+      <Accordion defaultActiveKey="0" className={`${styles.accordion} accordion-into `}>
+        <Accordion.Header className={`${styles.header} `}>
+          <p className="fs-18 m-0 p-0 ">{title}</p>
+        </Accordion.Header>
+        <Accordion.Body className="py-0">{children}</Accordion.Body>
+      </Accordion>
+    </>
+  );
+}
+
+function CollapseContentMenu({ title, link, children }) {
+  return (
+    <>
+      <Accordion.Header className={`${styles.header} d-flex  accordion-into`}>
         <Link href={link || '#'}>
           <a className="p-0">{title}</a>
         </Link>
       </Accordion.Header>
+
       {/* <Accordion.Collapse eventKey={1}> */}
       <Accordion.Body className="py-0">{children}</Accordion.Body>
       {/* </Accordion.Collapse> */}
+    </>
+  );
+}
+
+function CollapseContentMenu2({ title, link, children }) {
+  function getColor(colorIndex) {
+    return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
+  }
+  return (
+    <>
+      <Accordion defaultActiveKey="0" className={`${styles.accordion} `}>
+        <Accordion.Header className={`${styles.header} `}>
+          <p className="fs-18 m-0 p-0 fw-bold">{title}</p>
+        </Accordion.Header>
+        <Accordion.Body className="py-0">{children}</Accordion.Body>
+      </Accordion>
     </>
   );
 }
@@ -164,4 +184,6 @@ export {
   CollapseContent1,
   CollapseContent2,
   CollapseContent3,
+  CollapseContentMenu1,
+  CollapseContentMenu2,
 };

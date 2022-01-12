@@ -45,7 +45,7 @@ function DestinationItem({ title, slug, thumbnail, content, summary }) {
         }}>
         <div className="row align-items-start justify-content-start">
           <div className="col-12">
-            <h5 className="card-title font-weight-semibold fs-18 lh-23">{title}</h5>
+            <h5 className="card-title fw-semi-bold fs-18 lh-23">{title}</h5>
             {summary ? <p className="fs-14">{summary}</p> : null}
             {content ? (
               <div className="fs-14" dangerouslySetInnerHTML={{ __html: content }} />

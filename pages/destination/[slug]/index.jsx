@@ -98,7 +98,7 @@ function Destination({
         <div className="col-12">
           <h2 className=" title2 text-center py-4">
             Travel Facts in{' '}
-            <span className="line font-weight-semibold"> {SSRDestination?.title}</span>
+            <span className="line fw-semi-bold"> {SSRDestination?.title}</span>
           </h2>
           <section className="row containerBox  align-items-center">
             <div
@@ -125,7 +125,7 @@ function Destination({
       <section id="where-to-go" className="background2 py-5">
         <h2 className="title2 py-4">
           Where to go in{' '}
-          <span className="line font-weight-semibold">{SSRDestination?.title}</span>
+          <span className="line fw-semi-bold">{SSRDestination?.title}</span>
         </h2>
         <div className="containerBox row">
           {SSRDestination.where

@@ -83,7 +83,7 @@ function TailorMade({
                 </div>
                 <div className="col-12 col-md-3 mx-auto mb-5">
                   <a
-                    data-toggle="collapse"
+                    data-bs-toggle="collapse"
                     role="button"
                     onClick={() => setShow(v => !v)}
                     aria-expanded="false"

@@ -132,10 +132,10 @@ function Package({
         to="contact-form-package">
         Book Now
       </LinkScroll>
-      <div className="container aside">
-        <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div className="container">
+        <div className="row">
           <StikyBox pack={pack} />
-          <div className="col-12 col-lg-9 column-start">
+          <div className="col-12 col-lg-9 ">
             <TripOverview pack={pack} />
 
             <Itineraries itineraries={pack?.itineraries} />
