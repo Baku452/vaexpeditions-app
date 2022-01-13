@@ -75,7 +75,7 @@ function BlogPost({
         />
       ) : null}
 
-      <div className="containerBox row">
+      <div className={`containerBox row  ${styles.text}`}>
         <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
           <div className="d-flex py-3">
             <h4 className="pe-3 border-right text-muted d-flex">

@@ -11,7 +11,12 @@
   border-bottom: 2px solid #159bd7;
   font-weight: 700;
   text-transform: none;
-
+  a {
+    color: black;
+    &:hover {
+      color: #159bd7 !important;
+    }
+  }
   @media (max-width: 1199px) {
     display: none;
   }
@@ -29,7 +34,6 @@
     overflow: hidden;
     line-height: 1.5625rem;
     &:hover {
-      color: #159bd7;
       cursor: pointer;
     }
     & a:hover::before {

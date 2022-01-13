@@ -1,35 +1,5 @@
 @import '../../../../styles/media-queries.scss';
 
-.toolbar {
-  background-color: #000;
-  top: 0;
-  z-index: 998;
-}
-
-.nav {
-  //padding: 6px 20px 0 20px;
-  //height: 55px;
-  .link {
-    color: #ffffff !important;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    font-weight: 600;
-    //padding-top: 14px;
-    padding: 20px !important;
-    border-bottom: 2px solid transparent;
-    &:hover {
-      border-bottom: 2px solid #179bd7;
-    }
-    @media (max-width: $ipadPro) {
-      padding-left: 0 !important;
-    }
-  }
-  &:hover .menu {
-    display: block;
-  }
-}
-
 .menu {
   z-index: 999;
   display: none;
@@ -42,6 +12,29 @@
     padding: 30px 40px;
     background-color: #fff;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    h5 {
+      a:hover {
+        cursor: pointer;
+        color: #179bd7 !important;
+      }
+    }
+  }
+  .itemsAbout {
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      padding-bottom: 20px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+    }
+    li::after {
+      content: '❯';
+    }
+    li:hover {
+      cursor: pointer;
+      color: #179bd7;
+    }
   }
   .extendAbout {
     padding-left: 20px;
@@ -71,53 +64,6 @@
   }
 }
 
-.items {
-  padding: 0;
-  list-style-type: none;
-  flex-wrap: wrap;
-  // columns: 4;
-  // display: flex;
-  li {
-    flex: 1 0 22%;
-    // flex: 1 0 25%;
-    &.types {
-      display: flex;
-      height: 50px;
-      justify-content: left;
-      align-items: center;
-      .svg {
-        width: 40px;
-        padding-right: 6px;
-        img {
-          width: 30px;
-        }
-      }
-      .link {
-        flex: 1;
-        line-height: 18px;
-        font-size: 15px;
-      }
-    }
-  }
-}
-.itemsAbout {
-  padding-left: 0;
-  list-style-type: none;
-  li {
-    padding-bottom: 20px;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-  }
-  li::after {
-    content: '❯';
-  }
-  li:hover {
-    cursor: pointer;
-    color: #179bd7;
-  }
-}
-
 .itemsMenu {
   list-style-type: none;
   a {
@@ -134,6 +80,18 @@
   a:hover {
     cursor: pointer;
     color: #179bd7 !important;
+  }
+}
+
+.route {
+  color: #000;
+  line-height: 25px;
+  text-transform: initial;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  &:hover span {
+    color: #000;
+    border-bottom: 2px solid #179bd7;
   }
 }
 
@@ -185,11 +143,6 @@
   }
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
 .itemsThumb {
   overflow: hidden;
   height: 100%;
@@ -202,6 +155,77 @@
     text-transform: uppercase;
     text-align: center;
   }
+}
+
+.items {
+  padding: 0;
+  list-style-type: none;
+  flex-wrap: wrap;
+  li {
+    flex: 1 0 22%;
+  }
+}
+.types {
+  display: flex;
+  height: 50px;
+  justify-content: left;
+  align-items: center;
+  .svg {
+    width: 40px;
+    padding-right: 6px;
+    img {
+      width: 30px;
+    }
+  }
+  a {
+    color: black !important;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      border-bottom: 2px solid #179bd7 !important;
+    }
+  }
+}
+
+.toolbar {
+  background-color: #000;
+  top: 0;
+  z-index: 998;
+}
+
+.logo {
+  height: 80px;
+  margin-right: 5rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav {
+  //padding: 6px 20px 0 20px;
+  //height: 55px;
+  .link {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    //padding-top: 14px;
+    padding: 20px !important;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      border-bottom: 2px solid #179bd7;
+    }
+    @media (max-width: $ipadPro) {
+      padding-left: 0 !important;
+    }
+  }
+  &:hover .menu {
+    display: block;
+  }
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .img {
@@ -217,23 +241,4 @@
     padding-left: 100px;
     padding-right: 100px;
   }
-}
-
-.route {
-  color: #000;
-  line-height: 25px;
-  text-transform: initial;
-  font-size: 15px;
-  letter-spacing: 0.2px;
-  &:hover span {
-    color: #000;
-    border-bottom: 2px solid #179bd7;
-  }
-}
-
-.logo {
-  height: 80px;
-  margin-right: 5rem;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }

@@ -19,10 +19,9 @@ function Post({ notification, destinations, packagetypes }) {
         image="/images/covid.jpg"
         alt="new risk"
       />
-
-      <div className="container">
-        <div className="row pt-5 pb-4 mb-3">
-          <div className="col-10">
+      <div className="containerBox">
+        <div className="row pt-5 pb-4 mb-3 px-3">
+          <div className="col-12">
             <h2>{notification.title}</h2>
             <div
               className="fs-16 lh-29"

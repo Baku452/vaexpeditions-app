@@ -34,7 +34,7 @@ export default function WhoWeAre({
       <Hero title="Who we are" image="/images/portada our purpose.jpg" alt="who we are" />
 
       <div className={`containerBox ${styles.anchor} px-4 px-lg-5 px-xl-0 lh-34`}>
-        <section id="aboutUs" className="row py-4 py-xl-5 d-block">
+        <section id="aboutUs" className="row pb-3 pt-5 d-block">
           <div className="col-12 text-center">
             <h2 className="titleUnderline fs-30 text-center">About Us</h2>
           </div>
@@ -45,7 +45,7 @@ export default function WhoWeAre({
           className="row containerBox text-justify align-items-center">
           <section
             id="ourPurpose"
-            className="row containerBox text-justify py-5 align-items-center">
+            className="row containerBox text-justify py-3 align-items-center">
             <div className="col-12 col-md-6 p-3 mb-3">
               <h2 className="title m-0 fs-20 fw-bold mb-4">Our Purpose</h2>
               <p className="m-0 fs-16 lh-34">
@@ -98,11 +98,11 @@ export default function WhoWeAre({
           </section>
         </section>
 
-        <section id="OurPhilosophy" className="row py-3 py-xl-5">
+        <section id="OurPhilosophy" className="row pb-5">
           <PageContent page={pagecontent[1]} ourpurpose={ourpurpose} />
         </section>
 
-        <section id="travelWithPurpose" className="row py-4 py-xl-5 ">
+        <section id="travelWithPurpose" className="row py-5 ">
           <TravelWithPurpose />
         </section>
 
@@ -190,7 +190,7 @@ export default function WhoWeAre({
         </section>
 
         <section id="WhyVaExpeditions" className="row align-items-center m-0 pb-5">
-          <div className="col-12 py-5 text-align-center">
+          <div className="col-12 pb-5 text-align-center">
             <h2 className="titleUnderline fs-30 text-center">Reasons to choose us</h2>
           </div>
           <div className="row mb-5">

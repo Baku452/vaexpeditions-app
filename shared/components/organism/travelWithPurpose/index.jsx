@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 
@@ -454,8 +455,7 @@ function TravelWithPurpose() {
                     className="col-12 offset-md-1 col-md-3 
                     pt-2 order-1 order-md-2 text-end">
                     <img
-                      src="/images/our-purpose/travel-with-purpose/
-                      cultura-preservation.jpg"
+                      src="/images/our-purpose/travel-with-purpose/cultura.jpg"
                       className="d-block w-100 fit"
                       alt="Cultural preservation."
                     />
@@ -614,8 +614,7 @@ function TravelWithPurpose() {
                     className="col-12 offset-md-1 col-md-3 
                   pt-2 order-1 order-md-2 text-end">
                     <img
-                      src="/images/our-purpose/travel-with-purpose/
-                      community-filantrophy.jpg"
+                      src="/images/our-purpose/travel-with-purpose/community-filantrophy.jpg"
                       className="d-block w-100 fit"
                       alt="Community philanthropy."
                     />

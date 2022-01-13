@@ -46,8 +46,8 @@ function Footer({ continents }) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/our-purpose">
-                    <a>Our Purpose</a>
+                  <Link href="/about/who-we-are">
+                    <a>About</a>
                   </Link>
                 </li>
                 <li>
@@ -153,7 +153,7 @@ function Footer({ continents }) {
           <div className="row position-relative">
             <div className="col-12 p-0 text-center">
               <p className="m-0 fs-13 text-white">
-                2021 Va Expeditions, Inc. All Rights Reserved:
+                2022 Va Expeditions, Inc. All Rights Reserved:
                 <Link href="/terms-conditions">
                   <a className="skyblue"> Terms & Conditions</a>
                 </Link>

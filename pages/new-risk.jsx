@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
 import Head from 'next/head';
 import Link from 'next/link';
 
 import { Hero2 } from '@/components/index';
 import { Base } from '@/layouts/index';
+
+import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -11,7 +14,6 @@ export default function NewRisk({
   packagetypes,
   notifications,
   ourpurpose,
-  popups,
   packagesAll,
 }) {
   return (
@@ -19,7 +21,6 @@ export default function NewRisk({
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      popups={popups}
       packagesAll={packagesAll}
       pixels={520}>
       <Head>
@@ -35,7 +36,7 @@ export default function NewRisk({
         <div className="container  text-justify">
           <div className="row pt-5">
             <div className="col-10 mx-auto">
-              <div className="row mb-5">
+              <div className={`${styles.text} row mb-5`}>
                 <div className="row justify-content-md-center">
                   <div className="col-10 mb-3">
                     <div className="row justify-content-md-center">
@@ -290,9 +291,6 @@ export async function getStaticProps() {
   const ourpurposeResponse = await fetch(`${PUBLIC_API}/ourpurpose/list/`);
   const ourpurpose = await ourpurposeResponse.json();
 
-  const popupResponse = await fetch(`${PUBLIC_API}/popup/`);
-  const popups = await popupResponse.json();
-
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
@@ -302,7 +300,6 @@ export async function getStaticProps() {
       packagetypes,
       notifications,
       ourpurpose,
-      popups,
       packagesAll,
     },
     revalidate: 1,

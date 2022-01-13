@@ -17,7 +17,7 @@ function MenuAbout({ items, changeAbout }) {
         <div className="container ">
           <div className="row">
             <div className="col-4">
-              <h4 className="fw-bold black">About Va Expeditions</h4>
+              <h5 className="fw-bold black pb-3">About Va Expeditions</h5>
               {menuAbout.map(
                 item =>
                   item && (
@@ -191,12 +191,11 @@ function MenuHoliday({ packagetypes }) {
                         )}
                       </i>
                       <Link
-                        className={styles.Link}
                         href={{
                           pathname: '/search',
                           query: { types: types.id },
                         }}>
-                        <a className={styles.route}>{types.title} </a>
+                        <a>{types.title} </a>
                       </Link>
                     </li>
                   ))}

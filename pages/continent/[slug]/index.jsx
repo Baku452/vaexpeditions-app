@@ -76,7 +76,7 @@ function Search({
                 </div>
               ))}
           </div>
-          <div className="row p-4 order-md-1">
+          <div className={`row p-4 order-md-1 ${styles.text}`}>
             <div className="col-12 col-lg-8">
               <h1 className="title">Overview of {SSRCountry.name}</h1>
               <div

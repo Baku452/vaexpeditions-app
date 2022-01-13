@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 import { Hero2 } from '@/components/index';
 import { saveNewsletter } from '@/core/index';
@@ -54,11 +55,11 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Subscribe Newsletter - VaExpeditions </title>
+        <title>Newsletter - VaExpeditions </title>
       </Head>
       <Hero2
         title="Subscribe Newsletter"
-        image="/images/contact.jpg"
+        image="/images/toptours2.jpg"
         alt="subscribe newsletter"
       />
 
@@ -66,8 +67,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
         <div className="container">
           <div className="row">
             <div className="col-11 col-md-10 p-0 py-5  p-0 mx-auto">
-              {/* <h2 className="fs-35 pt-5 pb-4">Subscribe Newsletter</h2> */}
-
+              {/* <h2 className="fs-35 title ps-1 pt-2">Newsletter</h2> */}
               {success ? (
                 <div className="card border mb-5 pb-5">
                   <div className="card-body pb-5 pt-5 mt-4 text-center">
@@ -83,17 +83,17 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                   </div>
                 </div>
               ) : (
-                <div className="card border">
-                  <div className="col-12 pt-3 mt-3 text-start newsletter">
-                    <h2 className="text-center">
+                <div className="card border background2">
+                  <div className="col-12 text-start newsletter">
+                    <h2 className="text-center p-3">
                       View Central and South America from a totally different perspective.
                     </h2>
-                    <p className="fs-18 lh-29 mb-4">
+                    <p className="fs-18 lh-29 mb-4 px-3">
                       Unique destinations, travel advice, inspirational travel stories,
                       mindful travel tips, helpful information and advice from our experts
                       and clients delivered straight to your inbox!
                     </p>
-                    <p className="fs-18 lh-29 mb-4">
+                    <p className="fs-18 lh-29 mb-4 px-3">
                       Subscribe to our newsletter by completing the following information:
                     </p>
                   </div>
@@ -101,7 +101,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                     <div className="col-12 col-md-12 p-0 mx-auto text-start">
                       <div className="row m-b-100 px-3">
                         <div className="col-12 col-md-4">
-                          <div className="form-group">
+                          <InputGroup className="mb-3">
                             <Form.Control
                               type="email"
                               name="email"
@@ -110,13 +110,13 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                               defaultValue={email}
                               required
                             />
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid email.
-                            </Form.Control.Feedback>
-                          </div>
+                          </InputGroup>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid email.
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12 col-md-4">
-                          <div className="form-group">
+                          <InputGroup className="mb-3">
                             <Form.Control
                               type="text"
                               name="first_name"
@@ -124,13 +124,13 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                               size="lg"
                               required
                             />
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid First Name.
-                            </Form.Control.Feedback>
-                          </div>
+                          </InputGroup>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid First Name.
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12 col-md-4">
-                          <div className="form-group">
+                          <InputGroup className="mb-3">
                             <Form.Control
                               type="text"
                               name="last_name"
@@ -138,10 +138,10 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                               size="lg"
                               required
                             />
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid Last Name.
-                            </Form.Control.Feedback>
-                          </div>
+                          </InputGroup>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid Last Name.
+                          </Form.Control.Feedback>
                         </div>
                       </div>
                       <div className="row form-group px-3">
@@ -163,7 +163,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                           </div>
                         ))}
                       </div>
-                      <div className="row form-group pt-5">
+                      <div className="row form-group py-5">
                         <div className="col-12 col-md-5 mx-auto">
                           <input
                             type="submit"

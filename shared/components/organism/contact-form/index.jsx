@@ -37,8 +37,8 @@ function ContactForm({ destinations }) {
   return (
     <section id="thank_you">
       <div className="container">
-        <div className="row mb-5">
-          <div className="col-11 col-md-10 p-0 py-5 mb-5 p-0 mx-auto ">
+        <div className="row mb-3">
+          <div className="col-11 col-md-10 p-0 py-5 p-0 mx-auto ">
             {/* {title && <h2 className="fs-35 pt-5 pb-4">Contact Us</h2>} */}
 
             {success ? (
@@ -238,7 +238,7 @@ function ContactForm({ destinations }) {
                         </p>
                       </div>
                     </div>
-                    <div className="row form-group">
+                    <div className="row form-group pb-3">
                       <div className="col-12 col-md-5 mx-auto">
                         <input
                           type="submit"

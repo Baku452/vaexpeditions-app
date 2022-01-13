@@ -1,4 +1,9 @@
 @import '../../styles/media-queries.scss';
+.text {
+  a {
+    color: #179bd7 !important;
+  }
+}
 
 .aside {
   @media (max-width: $md) {

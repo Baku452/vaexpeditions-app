@@ -11,6 +11,8 @@ import { useState } from 'react';
 import { Banner, TailorForm, TailorWork, WhyTailor } from '@/components/index';
 import { Base } from '@/layouts/index';
 
+import styles from './index.module.scss';
+
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function TailorMade({
@@ -43,7 +45,7 @@ function TailorMade({
           <div className="row pt-5 p-3">
             <div className="col-12 mx-auto">
               <div className="row">
-                <div className="col-12">
+                <div className={`${styles.text} col-12`}>
                   <p className="fs-16 pb-5 m-0 text-justify">
                     Authentic, real life experiences are hard to find by performing a
                     Google search! Allow us to help you design your perfect adventure with

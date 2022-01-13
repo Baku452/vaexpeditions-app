@@ -55,7 +55,7 @@ function Destination({
         <div className="containerBox py-10 ">
           <h2 className="title2 py-4">OVERVIEW</h2>
           <div
-            className="lh-29 text-center"
+            className={`lh-29 text-center ${styles.text}`}
             dangerouslySetInnerHTML={{ __html: SSRDestination?.content }}
           />
         </div>
@@ -100,7 +100,7 @@ function Destination({
             Travel Facts in{' '}
             <span className="line fw-semi-bold"> {SSRDestination?.title}</span>
           </h2>
-          <section className="row containerBox  align-items-center">
+          <section className={`row containerBox  align-items-cente ${styles.text}`}>
             <div
               className={`col-12 ${
                 SSRDestination?.imageTraveFact.toString() !== '/media/null'
@@ -156,7 +156,7 @@ function Destination({
         </div>
       </section>
       <section id="faqs" className="py-5">
-        <div className="containerBox">
+        <div className={`containerBox ${styles.text}`}>
           <h2 className="title2 py-4">FAQs</h2>
           {SSRDestination?.faqs ? <FaqsDestinations faqs={SSRDestination?.faqs} /> : null}
         </div>

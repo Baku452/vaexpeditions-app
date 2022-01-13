@@ -25,8 +25,8 @@ function FriendsFamily({ destinations, packagetypes, notifications, packagesAll 
               Earn special discounts and special travel bonuses with our innovative
               “Friends and family” programme.
             </h2>
-            <div className="text-center row mt-5">
-              <div className="col-5 m-auto p-4 bg-dark text-white ">
+            <div className="text-center row mt-3">
+              <div className="col-6 m-auto p-4 bg-secondary text-white">
                 <p>
                   <strong>
                     Simply call us on 0888 803 8004 to speak to your “Friends and Family”
@@ -41,7 +41,7 @@ function FriendsFamily({ destinations, packagetypes, notifications, packagesAll 
               </div>
             </div>
             <div className="row listStyle">
-              <div className="fs-16 lh-29 p-3 col-10 m-auto">
+              <div className="fs-16 lh-29 pt-3 col-10 m-auto">
                 <h2 className="p-3 text-center">Travel FREE with Friends & Family</h2>
                 <p>
                   Travelling is an experience best shared and who better to share it with,
@@ -78,7 +78,7 @@ function FriendsFamily({ destinations, packagetypes, notifications, packagesAll 
               </div>
             </div>
             <div className="row listStyle">
-              <div className="fs-16 lh-29 p-3 col-10 m-auto">
+              <div className="fs-16 lh-29  col-10 m-auto">
                 <h2 className="p-3 text-center">
                   ABOUT THE FFP (FRIENDS & FAMILY PROGRAM)
                 </h2>
@@ -144,8 +144,6 @@ function FriendsFamily({ destinations, packagetypes, notifications, packagesAll 
                     a 7-day notice period.
                   </li>
                 </ul>
-                <br />
-                <br />
                 <h3>How are the discounts applied to my booking?</h3>
                 <p>
                   Once we have received full payment from al group members we will apply

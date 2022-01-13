@@ -38,7 +38,7 @@ export default function OurPeople({
         alt="who we are"
       />
 
-      <div className={`${styles.anchor} px-4 px-lg-5 px-xl-0 lh-34`}>
+      <div className={`${styles.anchor} pt-4 px-xl-0 lh-34`}>
         <section id="OurTeam" className="containerBox row py-4 py-xl-5">
           <div className="col-12 text-center">
             <h2 className="titleUnderline fs-30 lh-34 text-center">Our Team</h2>

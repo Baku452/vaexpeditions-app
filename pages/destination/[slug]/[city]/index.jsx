@@ -38,7 +38,7 @@ function City({
 
       <NavBarFixed items={navSubDestinations} />
       <section id="overview" className="p-3 containerBox">
-        <div className="containerBox ">
+        <div className={`containerBox ${styles.text}`}>
           <h2 className="title2 text-center py-4">Overview of {city.title}</h2>
           <div className="lh-29" dangerouslySetInnerHTML={{ __html: city?.content }} />
         </div>
@@ -81,7 +81,7 @@ function City({
         </div>
       </section>
       <section id="what-to-do" className="p-3 containerBox">
-        <div className="containerBox row col-12 p-4 ">
+        <div className={`containerBox row col-12 p-4 ${styles.text}`}>
           <div className="col-12">
             <h2 className="title2 p-3">What to Do in {city?.title} </h2>
           </div>
