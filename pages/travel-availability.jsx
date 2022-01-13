@@ -22,7 +22,7 @@ export default function TravelAvailability({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Travel Availability from January onwards - VaExpeditions </title>
+        <title>Travel Availability - Va Expeditions </title>
       </Head>
       <section id="more">
         <div className="containerBox py-5 px-5 ">

@@ -8,7 +8,7 @@ import { CollapseContentMenu1, CollapseMenu } from '@/components/index';
 function FaqsDestinations({ faqs }) {
   return (
     <>
-      <CollapseMenu open={0} index={0} className="">
+      <CollapseMenu open={0} index={0} className="accordion-button">
         <CollapseContentMenu1 index={0} title="PRE - TRAVEL">
           <CollapseMenu eventKey="0" open={0}>
             {faqs

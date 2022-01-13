@@ -13,7 +13,7 @@ function FriendsFamily({ destinations, packagetypes, notifications, packagesAll 
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Friends & Family, Earn Discounts & Free Travel Benefits</title>
+        <title>Friends & Family Discounts - Va Expeditions</title>
         <meta name="description" content />
         <meta name="keywords" content />
       </Head>

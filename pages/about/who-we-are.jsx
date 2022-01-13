@@ -23,7 +23,7 @@ export default function WhoWeAre({
       packagesAll={packagesAll}
       pixels={700}>
       <Head>
-        <title>Who We Are | Va Expeditions</title>
+        <title>Who We Are - Va Expeditions</title>
         <meta
           name="description"
           content="Who we are - About Us - Our Purpose - Our Philosophy - 

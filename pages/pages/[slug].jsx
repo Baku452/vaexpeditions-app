@@ -16,7 +16,11 @@ function Page({ destinations, packagetypes, page, notifications, packagesAll }) 
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        {page.titleSEO ? <title>{page.titleSEO}</title> : <title>{page.title}</title>}
+        {page.titleSEO ? (
+          <title>{page.titleSEO} - Va Expeditions</title>
+        ) : (
+          <title>{page.title} - Va Expeditions</title>
+        )}
         <meta name="description" content={page?.summary} />
         <meta name="keywords" content={page?.keywords} />
       </Head>

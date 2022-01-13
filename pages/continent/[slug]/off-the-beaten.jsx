@@ -20,7 +20,7 @@ function OfftheBeaten({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Off the Beaten - {country.name}</title>
+        <title>Off the Beaten - {country.name} - Va Expeditions</title>
         <meta name="description" content />
         <meta name="keywords" content />
       </Head>

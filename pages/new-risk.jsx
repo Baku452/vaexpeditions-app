@@ -24,7 +24,7 @@ export default function NewRisk({
       packagesAll={packagesAll}
       pixels={520}>
       <Head>
-        <title>NEW Regulations to enter Machu Picchu 2019</title>
+        <title>New Risk - Va Expeditions</title>
       </Head>
 
       <Hero2

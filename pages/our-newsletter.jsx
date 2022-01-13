@@ -55,7 +55,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Newsletter - VaExpeditions </title>
+        <title>Newsletter - Va Expeditions </title>
       </Head>
       <Hero2
         title="Subscribe Newsletter"

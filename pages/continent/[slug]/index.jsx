@@ -51,7 +51,7 @@ function Search({
         isDestination
       />
       <Head>
-        <title>Va Expeditions - {SSRCountry.name}</title>
+        <title>{SSRCountry.name} - Va Expeditions</title>
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
       <section id="tours_all" className="row containerBox">

@@ -32,7 +32,7 @@ function TailorMade({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Peru Travel Tips, Facts, and Information | Va Expeditions</title>
+        <title>Tailor Made - Va Expeditions</title>
       </Head>
       <Banner
         description="Design your ultimate travel experience with our free tailor-made service!"

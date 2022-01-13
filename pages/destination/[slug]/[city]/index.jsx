@@ -30,7 +30,7 @@ function City({
       notifications={notifications}
       pixels={600}>
       <Head>
-        <title>{city?.title} - VA Expeditions</title>
+        <title>{city?.title} - Va Expeditions</title>
         <meta name="description" content={city?.summary} />
         <meta name="keywords" content />
       </Head>

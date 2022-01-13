@@ -75,7 +75,7 @@ function BlogPage({
       pixels={700}
       interests={interests}>
       <Head>
-        <title>Passion Passport - Va Expeditions</title>
+        <title>Passion Passport Blog - Va Expeditions</title>
         <meta name="description" content="Blog Va Expeditions" />
       </Head>
       <HeroBlog

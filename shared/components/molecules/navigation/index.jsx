@@ -2,11 +2,12 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-array-index-key */
 import Link from 'next/link';
+import text from 'node_modules/dom-helpers/cjs/text';
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-import { CollapseContent, CollapseContentMenu, CollapseMenu } from '@/components/index';
+import { CollapseContentMenu1, CollapseMenu } from '@/components/index';
 import { menuAbout } from '@/core/index';
 
 import styles from './index.module.scss';
@@ -16,7 +17,7 @@ function Navigation({ continents, packagetypes }) {
     <Navbar.Collapse id="basic-navbar-nav" className={`${styles.nav}`}>
       <Nav className="me-auto mt-1 pt-4">
         <CollapseMenu open={1}>
-          <CollapseContentMenu
+          <CollapseContentMenu1
             index={1}
             title="DESTINATIONS"
             link="/continent/central-and-south-america"
@@ -24,7 +25,7 @@ function Navigation({ continents, packagetypes }) {
             {continents.map(continent =>
               continent.destinations.map(destination => (
                 <CollapseMenu key={destination.name} open={1}>
-                  <CollapseContentMenu
+                  <CollapseContentMenu1
                     index={1}
                     title={destination.title}
                     link={`/destination/${destination.slug}`}
@@ -36,25 +37,21 @@ function Navigation({ continents, packagetypes }) {
                           href={{
                             pathname: `/destination/${destination.slug}/${item.slug}`,
                           }}>
-                          <a
-                            className="d-block"
-                            key={item.id}
-                            name={item.slug}
-                            id={item.id}>
+                          <a className="$" key={item.id} name={item.slug} id={item.id}>
                             {`${item.title}`}
                           </a>
                         </Link>
                       </Navbar.Toggle>
                     ))}
-                  </CollapseContentMenu>
+                  </CollapseContentMenu1>
                 </CollapseMenu>
               )),
             )}
-          </CollapseContentMenu>
+          </CollapseContentMenu1>
         </CollapseMenu>
 
         <CollapseMenu open={0}>
-          <CollapseContentMenu
+          <CollapseContentMenu1
             index={0}
             title="HOLIDAY TYPES"
             link="/search"
@@ -72,20 +69,33 @@ function Navigation({ continents, packagetypes }) {
                 </a>
               </Link>
             ))}
-          </CollapseContentMenu>
+          </CollapseContentMenu1>
         </CollapseMenu>
 
         <Link key="tm" href="/tailor-made-tour">
-          <a className={` ${styles.sub} fs-15 border-bottom `}>Tailor-Made Tours</a>
+          <a className={`${styles.sub} fs-18 border-bottom `}>Tailor-Made Tours</a>
         </Link>
 
         <CollapseMenu open={0}>
-          <CollapseContentMenu index={0} title="About" link="/about/who-we-are">
+          <CollapseContentMenu1
+            index={0}
+            title="ABOUT"
+            link="/about/who-we-are"
+            className={` ${styles.sub} text-uppercase`}>
             {menuAbout.map((item, index) => (
-              <CollapseMenu key={index} open={1}>
-                <CollapseContentMenu index={0} title={item.titulo} link={item.slug}>
+              <CollapseMenu
+                key={index}
+                open={1}
+                className={` ${styles.sub} text-uppercase`}>
+                <CollapseContentMenu1
+                  index={0}
+                  title={item.titulo}
+                  link={item.slug}
+                  className={` ${styles.sub} text-uppercase`}>
                   {item.submenu.map((submenu, index) => (
-                    <Navbar.Toggle key={index} className="d-block border-0 p-0">
+                    <Navbar.Toggle
+                      key={index}
+                      className={` ${styles.sub} d-block border-0 p-0 `}>
                       <Link key={index} href={submenu.slug}>
                         <a
                           className="d-block"
@@ -97,10 +107,10 @@ function Navigation({ continents, packagetypes }) {
                       </Link>
                     </Navbar.Toggle>
                   ))}
-                </CollapseContentMenu>
+                </CollapseContentMenu1>
               </CollapseMenu>
             ))}
-          </CollapseContentMenu>
+          </CollapseContentMenu1>
         </CollapseMenu>
 
         <Link key="bl" href="/blog">

@@ -231,8 +231,8 @@ function SearchDestination({
       packagesAll={packagesAll}
       pixels={680}>
       <Head>
-        <title>Search Tour Trips in {SSRDestination.title} | VA Expeditions</title>
-        <meta name="description" content="Search our Tours on VA Expeditions" />
+        <title>Search Tour Trips in {SSRDestination.title} - Va Expeditions</title>
+        <meta name="description" content="Search our Tours on Va Expeditions" />
       </Head>
       <Hero3
         title={SSRDestination.title}

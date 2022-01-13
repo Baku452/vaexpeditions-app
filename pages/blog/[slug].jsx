@@ -59,7 +59,11 @@ function BlogPost({
       packagesAll={packagesAll}
       pixels={650}>
       <Head>
-        {blog.titleSEO ? <title>{blog.titleSEO}</title> : <title>{blog.title}</title>}
+        {blog.titleSEO ? (
+          <title>{blog.titleSEO} - Va Expeditions</title>
+        ) : (
+          <title>{blog.title} - Va Expeditions</title>
+        )}
         <meta name="keywords" content={blog?.keywords} />
         <meta name="description" content={blog?.summary} />
       </Head>

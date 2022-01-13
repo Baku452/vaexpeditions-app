@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 
@@ -20,14 +21,14 @@ function TermsConditions({
       popups={popups}
       packagesAll={packagesAll}>
       <Head>
-        <title>Va Expeditions - Terms and Conditions</title>
+        <title>Terms and Conditions - Va Expeditions</title>
         <meta name="description" content="Terms and conditions" />
         <meta name="keywords" content="Terms & conditions" />
       </Head>
       <div className="container">
-        <div className="row col-12 pt-5 pb-4 mb-3 fs-16 lh-29">
+        <div className="row col-12 pt-5 pb-4 mb-3 fs-16 lh-29 px-3">
           <div>
-            <h1 className="text-center">Terms and Conditions</h1>
+            <h1 className="text-center title">Terms and Conditions</h1>
             <div />
             <p>
               The use of the Va expeditions web site (here referred to as “the Web Site”)

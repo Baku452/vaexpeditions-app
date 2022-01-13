@@ -22,7 +22,7 @@ function ContactUs({ destinations, packagetypes, packages, notifications, packag
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Va Expeditions | Contact Us</title>
+        <title>Contact Us - Va Expeditions</title>
         <meta
           name="Description"
           content="Contact Us to Explore Multidestinations with VAExpeditions"

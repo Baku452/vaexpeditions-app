@@ -101,7 +101,11 @@ function Package({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        {pack.titleSEO ? <title>{pack.titleSEO}</title> : <title>{pack.title}</title>}
+        {pack.titleSEO ? (
+          <title>{pack.titleSEO} - Va Expeditions</title>
+        ) : (
+          <title>{pack.title} - Va Expeditions</title>
+        )}
         <meta name="description" content={pack?.summary} />
         <meta name="keywords" content={pack?.keywords} />
       </Head>

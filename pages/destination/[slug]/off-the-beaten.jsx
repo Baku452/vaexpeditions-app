@@ -21,7 +21,7 @@ function OfftheBeatenDest({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Off the Beaten - {SSRDestination.title}</title>
+        <title>Off the Beaten - {SSRDestination.title} - Va Expeditions</title>
         <meta name="description" content />
         <meta name="keywords" content />
       </Head>

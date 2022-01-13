@@ -24,7 +24,7 @@ export default function OurPeople({
       packagesAll={packagesAll}
       pixels={700}>
       <Head>
-        <title>Our People | Va Expeditions </title>
+        <title>Our People - Va Expeditions </title>
         <meta
           name="description"
           content="Our People - Our Team - Local Experts - Our Core Values"

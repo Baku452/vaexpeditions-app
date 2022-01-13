@@ -210,7 +210,7 @@ function Search({
       popups={popups}
       pixels={10}>
       <Head>
-        <title>Search Tour Trips in VA Expeditions</title>
+        <title>Search Tour Trips in Va Expeditions</title>
         <meta name="description" content="Search our Tours on VA Expeditions" />
       </Head>
       <div className="container d-block d-lg-none pt-3 pb-3 overflow-hidden sticky">

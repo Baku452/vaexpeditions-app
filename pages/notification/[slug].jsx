@@ -12,7 +12,7 @@ function Post({ notification, destinations, packagetypes }) {
       <Head>
         <meta name="description" content={notification.title} />
         <meta name="keywords" content={notification.keywords} />
-        <title>Coronavirus Disease - Travel Alert - VaExpeditions </title>
+        <title>Coronavirus Disease - Va Expeditions </title>
       </Head>
       <Hero2
         title="Coronavirus Disease (COVID-19) Travel Alert "

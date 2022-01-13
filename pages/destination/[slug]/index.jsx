@@ -37,7 +37,7 @@ function Destination({
       notifications={notifications}
       pixels={600}>
       <Head>
-        <title>{SSRDestination?.title} Destination | VA Expeditions</title>
+        <title>{SSRDestination?.title} - VA Expeditions</title>
         <meta name="description" content={SSRDestination?.summary} />
       </Head>
       <Hero3
@@ -158,7 +158,11 @@ function Destination({
       <section id="faqs" className="py-5">
         <div className={`containerBox ${styles.text}`}>
           <h2 className="title2 py-4">FAQs</h2>
-          {SSRDestination?.faqs ? <FaqsDestinations faqs={SSRDestination?.faqs} /> : null}
+          <div className={` ${styles.text} background2 p-1`}>
+            {SSRDestination?.faqs ? (
+              <FaqsDestinations faqs={SSRDestination?.faqs} />
+            ) : null}
+          </div>
         </div>
       </section>
     </Base>

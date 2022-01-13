@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-pascal-case */
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-unused-vars */
 import Link from 'next/link';
 import { useContext } from 'react';
@@ -39,7 +41,7 @@ function ContextAwareToggle({ children, eventKey, callback, className }) {
 
 function Collapse({ children, open = 1 }) {
   return (
-    <Accordion defaultActiveKey={open} className="accordion w-100">
+    <Accordion defaultActiveKey={open} flush className="accordion w-100">
       {children}
     </Accordion>
   );
@@ -124,7 +126,7 @@ function CollapseContent3({ index, title, children }) {
 
 function CollapseMenu({ children, open = 0 }) {
   return (
-    <Accordion defaultActiveKey="0" className={`${styles.accordion}`}>
+    <Accordion defaultActiveKey="0" flush className={`${styles.accordion} flush `}>
       {children}
     </Accordion>
   );
@@ -133,7 +135,7 @@ function CollapseMenu({ children, open = 0 }) {
 function CollapseContentMenu1({ title, children }) {
   return (
     <>
-      <Accordion defaultActiveKey="0" className={`${styles.accordion} accordion-into `}>
+      <Accordion defaultActiveKey="0" className={`${styles.accordion}`}>
         <Accordion.Header className={`${styles.header} `}>
           <p className="fs-18 m-0 p-0 ">{title}</p>
         </Accordion.Header>
@@ -146,7 +148,7 @@ function CollapseContentMenu1({ title, children }) {
 function CollapseContentMenu({ title, link, children }) {
   return (
     <>
-      <Accordion.Header className={`${styles.header} d-flex  accordion-into`}>
+      <Accordion.Header className={`${styles.header}  `}>
         <Link href={link || '#'}>
           <a className="p-0">{title}</a>
         </Link>
@@ -165,7 +167,7 @@ function CollapseContentMenu2({ title, link, children }) {
   }
   return (
     <>
-      <Accordion defaultActiveKey="0" className={`${styles.accordion} `}>
+      <Accordion defaultActiveKey="0" flush className={` flush `}>
         <Accordion.Header className={`${styles.header} `}>
           <p className="fs-18 m-0 p-0 fw-bold">{title}</p>
         </Accordion.Header>
