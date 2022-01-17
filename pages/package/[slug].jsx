@@ -129,13 +129,13 @@ function Package({
         packageTypeSvg={svgType()}
       />
       <LinkScroll
-        smooth
         offset={-150}
         style={{ backgroundColor: '#a6192e', border: 'none' }}
         className="fixedContact trackBook btn btn-primary fs-24 d-lg-none d-block fixed-bottom w-100"
-        to="contact-form-package">
-        Book Now
-      </LinkScroll>
+        to="contact-form-package"
+        Book
+        Now
+      />
       <div className="container">
         <div className="row">
           <StikyBox pack={pack} />

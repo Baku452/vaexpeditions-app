@@ -93,7 +93,6 @@ function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activi
         <LinkScroll
           className={`${styles.trackBook} d-none d-lg-block py-1 btn btn-primary fs-24 `}
           to="contact-form-package"
-          smooth
           offset={-190}
           duration={500}>
           Book Now

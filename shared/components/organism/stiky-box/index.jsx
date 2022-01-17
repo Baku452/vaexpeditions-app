@@ -76,13 +76,12 @@ function StikyBox({ pack }) {
       <LinkScroll
         className={`${styles.trackBook}  btn btn-primary  fs-16 w-100 mb-2 `}
         to="contact-form-package"
-        smooth
         offset={-120}
         duration={500}>
         Book Now
       </LinkScroll>
       <p
-        className="mb-5 px-3"
+        className={`${styles.text} mb-5 px-3`}
         style={{
           fontSize: '14px',
           color: '#424242',

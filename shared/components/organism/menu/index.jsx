@@ -17,7 +17,7 @@ function MenuAbout({ items, changeAbout }) {
         <div className="container ">
           <div className="row">
             <div className="col-4">
-              <h5 className="fw-bold black pb-3">About Va Expeditions</h5>
+              <h4 className="fw-bold black">About Va Expeditions</h4>
               {menuAbout.map(
                 item =>
                   item && (
@@ -180,7 +180,7 @@ function MenuHoliday({ packagetypes }) {
         <div className="container d-block">
           <div className="row">
             <div className="col-12">
-              <h5 className="fw-bold black">By Types</h5>
+              <h4 className="fw-bold black">By Types</h4>
               <ul className={`${styles.items} row`}>
                 {packagetypes &&
                   packagetypes.map(types => (
@@ -304,9 +304,9 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                 </Link>
               </li>
               <li className={styles.nav}>
-                <Link href="/about/who-we-are#aboutUs">
+                <Link href="/about/who-we-are">
                   <a
-                    className={`${active(router.pathname, '/our-purpose')} ${
+                    className={`${active(router.pathname, '/about/who-we-are')} ${
                       styles.link
                     }`}
                     role="button">
