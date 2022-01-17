@@ -17,7 +17,6 @@ const NavBarFixed = ({ items }) => {
                   duration={1000}
                   offset={-110}
                   to={item.slug}
-                  smooth
                   key={item.id}>
                   {item.title}
                 </LinkScroll>

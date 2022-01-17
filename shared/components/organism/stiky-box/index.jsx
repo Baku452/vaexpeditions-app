@@ -39,7 +39,6 @@ function StikyBox({ pack }) {
                 activeClass={styles.active}
                 to={item.to}
                 spy
-                smooth
                 duration={500}>
                 {item.name}
               </LinkScroll>
@@ -53,7 +52,6 @@ function StikyBox({ pack }) {
               activeClass={styles.active}
               to="optional-tours"
               spy
-              smooth
               duration={500}>
               Optional Tours
             </LinkScroll>
@@ -65,7 +63,6 @@ function StikyBox({ pack }) {
             activeClass={styles.active}
             to="related-trips"
             spy
-            smooth
             duration={500}>
             Related Trips
           </LinkScroll>
