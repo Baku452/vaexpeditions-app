@@ -59,7 +59,11 @@ function BlogPost({
       packagesAll={packagesAll}
       pixels={650}>
       <Head>
-        {blog.titleSEO ? <title>{blog.titleSEO}</title> : <title>{blog.title}</title>}
+        {blog.titleSEO ? (
+          <title>{blog.titleSEO} - Va Expeditions</title>
+        ) : (
+          <title>{blog.title} - Va Expeditions</title>
+        )}
         <meta name="keywords" content={blog?.keywords} />
         <meta name="description" content={blog?.summary} />
       </Head>
@@ -75,18 +79,18 @@ function BlogPost({
         />
       ) : null}
 
-      <div className="containerBox row">
+      <div className={`containerBox row  ${styles.text}`}>
         <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
-          <div className="d-flex ">
-            <h4 className="pr-3 border-right text-muted d-flex">
+          <div className="d-flex py-3">
+            <h4 className="pe-3 border-right text-muted d-flex">
               Written by:
               <div role="button" type="button" onClick={handleShow}>
-                <span className="text-underlined text-uppercase">
+                <span className="ms-2 text-underlined text-uppercase">
                   {`${author?.first_name} ${author.last_name}`}
                 </span>
               </div>
             </h4>
-            <h4 className="pl-3 text-muted">Published: {blog.created}</h4>
+            <h4 className="ps-3 text-muted">Published: {blog.created}</h4>
             <Modal className="p-4 w-100" show={show} onHide={handleClose}>
               <Modal.Header closeButton className={`${styles.Head} w-100`}>
                 <span>
@@ -149,7 +153,7 @@ function BlogPost({
       <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
           <div className="col-12 p-5">
-            <h2 className={`${styles.posts} fs-30 font-weight-bold text-center`}>
+            <h2 className={`${styles.posts} fs-30 fw-bold text-center`}>
               POPULAR POSTS{' '}
             </h2>
           </div>

@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { TopTours, Hero2 } from '@/components/index';
+import { Hero2, TopTours } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -23,17 +25,13 @@ function ContactUs({ destinations, packagetypes, tours, notifications, packagesA
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Va Expeditions | Contact Us | Thank you for contacting</title>
+        <title>Thank you for contacting - Va Expeditions</title>
         <meta
           name="Description"
           content="Thank you for contact us - Explore Multidestinations with VAExpeditions"
         />
       </Head>
-      <Hero2
-        title="Contact US"
-        image="/images/contact.jpg"
-        alt="contact us"
-      />
+      <Hero2 title="Contact US" image="/images/contact.jpg" alt="contact us" />
       <h2 className="text-center fw-bold fs-40 p-5">Thank you for contacting us!</h2>
       <section className="card pb-5">
         <div className="card-body text-center">
@@ -71,7 +69,6 @@ export async function getStaticProps() {
 
   const toursResponse = await fetch(`${PUBLIC_API}/packages/home/`);
   const tours = await toursResponse.json();
-
 
   return {
     props: {

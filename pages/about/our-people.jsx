@@ -24,13 +24,22 @@ export default function OurPeople({
       packagesAll={packagesAll}
       pixels={700}>
       <Head>
-        <title>Va Expeditions - Our People</title>
-        <meta name="description" content="" />
+        <title>Our People - Va Expeditions </title>
+        <meta
+          name="description"
+          content="Our People - Our Team - Local Experts - Our Core Values"
+        />
       </Head>
 
-      <Hero title="Our People" image="/images/why-chose-va.jpg" alt="who we are" />
-      <div className={`${styles.anchor} px-4 px-lg-5 px-xl-0 lh-34`}>
-        <section id="OurTeam" className=" containerBox row py-4 py-xl-5">
+      <Hero
+        title="Our People"
+        image="/images/why-chose-va.jpg"
+        description=""
+        alt="who we are"
+      />
+
+      <div className={`${styles.anchor} pt-4 px-xl-0 lh-34`}>
+        <section id="OurTeam" className="containerBox row py-4 py-xl-5">
           <div className="col-12 text-center">
             <h2 className="titleUnderline fs-30 lh-34 text-center">Our Team</h2>
             <p className="pt-5">

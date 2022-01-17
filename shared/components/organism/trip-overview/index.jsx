@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/no-danger */
+/* eslint-disable jsx-a11y/alt-text */
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
@@ -14,55 +17,65 @@ function TripOverview({ pack }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Element name="trip-overview" className="container ">
-      <div className={styles.overview}>
+    <Element name="trip-overview" className="container">
+      <div className={`${styles.overview} g-0`}>
         <div className="container ">
-          <div className="row mb-3">
+          <div className="row mb-3 ">
             <div
-              className={`${styles.content} containerBox col-12 col-md-6  mt-3 background2`}>
-              <div className="row pb-2">
+              className={`${styles.content} 
+              containerBox col-12 col-md-6  mt-3 background2`}>
+              <div className="pb-2">
                 <div className="col-12 pt-3 pb-2">
-                  <div className="row ">
+                  <div className="container row ">
                     <div
-                      className={` ${styles.titulo} row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 font-weight-bold`}>
-                      <img
-                        alt="Wildlife expectation"
-                        className={` ${styles.icono} `}
-                        src="/icons/hiking.svg"
-                      />
-                      <p className="pl-2">Physical Difficulty</p>
+                      className={`${styles.titulo} 
+                       row g-0 col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 fw-bold`}>
+                      <div className={styles.svg}>
+                        <img
+                          alt="Wildlife expectation"
+                          className={`col ${styles.icono} `}
+                          src="/icons/hiking.svg"
+                        />
+                      </div>
+                      <p className="col">Physical Difficulty</p>
                     </div>
                     <div className={` ${styles.puntos} px-1 col-md-3 d-flex`}>
                       <Rating number={pack?.physical_difficulty} />
                     </div>
                   </div>
                 </div>
-                <div className="col-12 pb-2">
-                  <div className="row ">
+                <div className="col-12 pb-2 ">
+                  <div className="container row ">
                     <div
-                      className={` ${styles.titulo} row col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 font-weight-bold`}>
-                      <img
-                        alt="Wildlife expectation"
-                        className={`card-img-top ${styles.icono}`}
-                        src="/icons/culture2.svg"
-                      />
-                      <p className="pl-2">Cultural rating</p>
+                      className={`${styles.titulo} 
+                      row g-0 col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 fw-bold`}>
+                      <div className={styles.svg}>
+                        <img
+                          alt="Wildlife expectation"
+                          className={`${styles.icono}`}
+                          src="/icons/culture2.svg"
+                        />
+                      </div>
+                      <p className="col">Cultural rating</p>
                     </div>
-                    <div className={` ${styles.puntos} px-1 col-12 col-md-3 d-flex`}>
+                    <div className={` ${styles.puntos} px-1  col-md-3 d-flex`}>
                       <Rating number={pack?.cultural_rating} />
                     </div>
                   </div>
                 </div>
                 <div className="col-12 pb-2">
-                  <div className="row">
+                  <div className="container row ">
                     <div
-                      className={` ${styles.titulo} row col-md-9 fs-16 pt-1  pt-md-0 pb-md-0 font-weight-bold`}>
-                      <img
-                        alt="Wildlife expectation"
-                        className={`card-img-top ${styles.icono}`}
-                        src="/icons/ave.svg"
-                      />
-                      <p className="pl-2">Wildlife expectation</p>
+                      className={` ${styles.titulo} 
+                     row g-0 col-md-9 fs-16 pt-1 pt-md-0 pb-md-0 fw-bold`}>
+                      <div className={styles.svg}>
+                        <img
+                          alt="Wildlife expectation"
+                          className={`col ${styles.icono}`}
+                          src="/icons/ave.svg"
+                        />
+                      </div>
+                      <p className="col">Wildlife expectation</p>
                     </div>
                     <div className={` ${styles.puntos} px-1 col-12 col-md-3 d-flex`}>
                       <Rating number={pack?.wildlife_expectation} />
@@ -73,23 +86,24 @@ function TripOverview({ pack }) {
             </div>
 
             <div
-              className={`${styles.content2} col-12 col-md-6 text-center mt-3 pt-2 background2`}>
-              <div className="row  pb-2 ">
+              className={`${styles.content2} 
+              col-12 col-md-6 text-center mt-3 pt-2 background2`}>
+              <div className="row  pb-2 g-0">
                 <div
                   role="button"
-                  className=" text-center  pt-3  col-md-3 col-12"
+                  className="text-center pt-3 col-md-4 col-12"
                   tabIndex={0}
                   onClick={handleShow}>
                   <div className={`${styles.specialist}`}>
                     <img
                       src={PUBLIC_API + pack?.specialist?.thumbnail}
-                      alt="Contact Us"
+                      alt="Specialist"
                       className={styles.circle}
                     />
                   </div>
                 </div>
-                <div className=" pt-3 pl-3 col-md-9 col-12">
-                  <p className="font-weight-bold p-0">
+                <div className=" pt-3 col-md-8 col-12">
+                  <p className="fw-bold p-0">
                     <span>Travel specialist</span>
                   </p>
                   <div role="button" tabIndex={0} onClick={handleShow}>

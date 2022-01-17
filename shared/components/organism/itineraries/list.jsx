@@ -5,6 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 
 import { CollapseContent1, Gallery, ItineraryItems } from '@/components/index';
 
+import styles from './index.module.scss';
+
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 const SmartText = ({ text }) => {
@@ -70,7 +72,7 @@ function List({ itineraries }) {
         (item, index) =>
           item.active && (
             <CollapseContent1 key={index.toString()} index={index} title={item?.subtitle}>
-              <div className="row pb-4">
+              <div className={` row pb-4 ${styles.text}`}>
                 <div className="col-12 col-md-8 order-2 order-md-1">
                   <SmartText text={item?.content} length={item?.limit} />
                   {item.items ? <ItineraryItems items={item?.items} /> : null}
@@ -81,7 +83,7 @@ function List({ itineraries }) {
                         <a
                           href="/gallery"
                           onClick={event => openModal(event, item)}
-                          className="btn btn-link fs-16 pt-3 d-block text-right">
+                          className="btn btn-link fs-16 pt-3 d-block text-start">
                           <img
                             src={PUBLIC_API + item.images[0].image}
                             className="d-block w-100 fit"

@@ -1,15 +1,18 @@
 .carta {
+  //max-height: 405px !important;
   img {
     padding-bottom: 5px;
     width: 100%;
     height: 100%;
+    max-height: 404px;
     object-fit: cover;
-  @media (max-width: 767px) {
-    width: 100%;
+    @media (max-width: 767px) {
+      width: 100%;
     }
   }
 }
 .cardPost {
+  position: relative;
   text-align: center;
   margin: 0 auto;
   z-index: 10;
@@ -23,7 +26,7 @@
     padding-top: 40px;
     padding-left: 15px;
   }
-  
+
   h3 {
     font-size: 28px;
     font-weight: 600;
@@ -35,10 +38,8 @@
     transition: 0.2s ease;
     @media (max-width: 425px) {
       font-size: 20px;
-      
     }
   }
-
 }
 
 .cardTime {
@@ -49,9 +50,11 @@
   background-color: black;
   color: #fff;
   font-size: 25px;
-  top: calc(155px);
-  left: calc(91%); 
-  margin: 0;
+  margin-top: calc(-250px);
+  left: calc(47.5%);
+  // top: calc(155px);
+  // left: calc(91%);
+  // margin: 0;
 
   .min {
     font-size: 14px !important;
@@ -59,26 +62,88 @@
   }
   .read {
     font-size: 10px !important;
-    letter-spacing: .34em;
+    letter-spacing: 0.34em;
+  }
+  @media (max-width: 1680px) {
+    left: calc(47%);
   }
   @media (max-width: 1024px) {
-    top: calc(38%);
-    left: calc(89%); 
+    left: calc(46%);
+    margin-top: calc(-220px);
+  }
+  @media (max-width: 930px) {
+    left: calc(46%);
+    margin-top: calc(-200px);
   }
   @media (max-width: 767px) {
-    top: calc(83%);
-    left: calc(45% ); 
-   
+    margin-top: calc(-70px);
+    left: calc(45%);
   }
   @media (max-width: 560px) {
-    padding: 0px 14px 0px 14px;
-    top: calc(80%);
-    left: calc(40% ); 
-    
+    margin-top: calc(-70px);
+    left: calc(42%);
   }
- }
+  @media (max-width: 350px) {
+    margin-top: calc(-70px);
+    left: calc(38%);
+  }
+}
 
- .cardTime2 {
+.cardBtn {
+  a {
+    font-size: 15px;
+    color: #0095ce;
+    background-color: rgb(255, 255, 255);
+  }
+}
+.cardText {
+  color: rgb(0, 0, 0) !important;
+}
+
+.carta2 {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 450px;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+
+  &:hover {
+    img {
+      filter: brightness(50%);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: 0.3s ease;
+  }
+}
+
+.cardPost2 {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding: 30px 20px;
+  text-align: center;
+  z-index: 10;
+  letter-spacing: 4.4px;
+  h3 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    transition: 0.2s ease;
+  }
+}
+
+.cardTime2 {
   position: absolute;
   display: flex;
   align-items: center;
@@ -95,65 +160,9 @@
   }
   .read {
     font-size: 10px !important;
-    letter-spacing: .34em;
-  }
- }
-
-
-.cardBtn {
-  a {
-    font-size: 15px;
-    color: #0095ce;
-    background-color: rgb(255, 255, 255);
+    letter-spacing: 0.34em;
   }
 }
-.cardText {
-  color:  rgb(0, 0, 0) !important;
-}
-
-.carta2 {
-  overflow: hidden;
-  display: flex;
-  width: 100%;
-  height: 450px;
-  flex-direction: column;
-  border-radius: 10px;
-  align-items: center;
-
-  &:hover{
-    img{
-      filter: brightness(50%);
-    }
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%);
-    transition: .3s ease;
-  }
-}
-.cardPost2 {
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  padding: 30px 20px;
-  text-align: center;
-
-  z-index: 10;
-  letter-spacing: 4.4px;
-  h3 {
-    text-transform: uppercase;
-    font-size: 22px;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    transition: 0.2s ease;
-  }
-}
-
-
 
 .boxTags {
   //   display: flex;

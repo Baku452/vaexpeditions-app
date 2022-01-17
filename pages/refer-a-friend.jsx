@@ -27,7 +27,7 @@ function FriendsFamily({
       <div className="container">
         <div className="row pt-5 pb-4 mb-3">
           <div className="col-12">
-            <h1 className="font-weight-semi-bold text-center">
+            <h1 className="fw-semi-bold text-center">
               Va Expeditions Refer a friend Programme.
             </h1>
             <div className="row">
@@ -114,7 +114,7 @@ function FriendsFamily({
     </Base>
   );
 }
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 

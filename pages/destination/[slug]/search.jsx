@@ -231,8 +231,8 @@ function SearchDestination({
       packagesAll={packagesAll}
       pixels={680}>
       <Head>
-        <title>Search Tour Trips in {SSRDestination.title} | VA Expeditions</title>
-        <meta name="description" content="Search our Tours on VA Expeditions" />
+        <title>Search Tour Trips in {SSRDestination.title} - Va Expeditions</title>
+        <meta name="description" content="Search our Tours on Va Expeditions" />
       </Head>
       <Hero3
         title={SSRDestination.title}
@@ -279,7 +279,7 @@ function SearchDestination({
                   <div
                     // eslint-disable-next-line max-len
                     className={`${styles.asideHeaderMobile} d-block d-lg-none pt-3 pb-3 fixed-top`}>
-                    <h3 className="text-left ml-3 mb-0">Filters</h3>
+                    <h3 className="text-start ms-3 mb-0">Filters</h3>
                     {/* <link href="#"> */}
                     <a
                       href="#"
@@ -295,7 +295,7 @@ function SearchDestination({
                   </div>
                   {!showFilters ? (
                     <div className={`${styles.boxaside}  m-0`}>
-                      <h2 className="font-weight-bold fs-20 pt-3">
+                      <h2 className="fw-bold fs-20 pt-3">
                         All our Tours in {SSRDestination.title}
                       </h2>
                       {packagesList.length > 0 ? (

@@ -10,7 +10,7 @@ function AtypicalItem({ title, slug, thumbnail, content }) {
         <div className="card-body py-3 px-2 bordered">
           <div className="row align-items-start justify-content-start">
             <div className="col-12">
-              <h5 className="card-title font-weight-semibold fs-18 lh-23">{title}</h5>
+              <h5 className="card-title fw-semi-bold fs-18 lh-23">{title}</h5>
               <p className="fs-14" dangerouslySetInnerHTML={{ __html: content }} />
             </div>
           </div>

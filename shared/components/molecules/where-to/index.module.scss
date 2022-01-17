@@ -3,8 +3,12 @@
 .cardBox {
   background-color: #f1f1f1;
   .contentBox {
+    color: black !important;
     height: 180px;
-    @media(max-width: 575px){
+    h3 {
+      font-size: 20px !important;
+    }
+    @media (max-width: 575px) {
       height: 100px;
     }
   }

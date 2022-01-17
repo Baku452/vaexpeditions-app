@@ -12,17 +12,16 @@ function Post({ notification, destinations, packagetypes }) {
       <Head>
         <meta name="description" content={notification.title} />
         <meta name="keywords" content={notification.keywords} />
-        <title>Coronavirus Disease - Travel Alert - VaExpeditions </title>
+        <title>Coronavirus Disease - Va Expeditions </title>
       </Head>
       <Hero2
         title="Coronavirus Disease (COVID-19) Travel Alert "
         image="/images/covid.jpg"
         alt="new risk"
       />
-
-      <div className="container">
-        <div className="row pt-5 pb-4 mb-3">
-          <div className="col-10">
+      <div className="containerBox">
+        <div className="row pt-5 pb-4 mb-3 px-3">
+          <div className="col-12">
             <h2>{notification.title}</h2>
             <div
               className="fs-16 lh-29"

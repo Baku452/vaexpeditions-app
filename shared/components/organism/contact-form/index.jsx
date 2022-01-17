@@ -37,8 +37,8 @@ function ContactForm({ destinations }) {
   return (
     <section id="thank_you">
       <div className="container">
-        <div className="row mb-5">
-          <div className="col-11 col-md-10 p-0 py-5 mb-5 p-0 mx-auto ">
+        <div className="row mb-3">
+          <div className="col-11 col-md-10 p-0 py-5 p-0 mx-auto ">
             {/* {title && <h2 className="fs-35 pt-5 pb-4">Contact Us</h2>} */}
 
             {success ? (
@@ -75,7 +75,7 @@ function ContactForm({ destinations }) {
 
                   <Form
                     id="contact-us-form"
-                    className="col-sm-12 col-md-12 col-lg-9 px-2 p-0 text-left order-1"
+                    className="col-sm-12 col-md-12 col-lg-9 px-2 p-0 text-start order-1"
                     noValidate
                     validated={validated}
                     onSubmit={handleSubmit}>
@@ -86,144 +86,119 @@ function ContactForm({ destinations }) {
                       </p>
                       <div className="row mb-4">
                         <div className="col-12 col-md-6">
-                          <div className="form-group">
-                            <InputGroup>
-                              <InputGroup.Prepend>
-                                <InputGroup.Text id="basic_addon1">
-                                  <FaUserAlt />
-                                </InputGroup.Text>
-                              </InputGroup.Prepend>
-                              <Form.Control
-                                type="text"
-                                name="first_name"
-                                placeholder="First Name *"
-                                size="lg"
-                                required
-                              />
-                            </InputGroup>
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic_addon1">
+                              <FaUserAlt />
+                            </InputGroup.Text>
+                            <Form.Control
+                              type="text"
+                              name="first_name"
+                              placeholder="First Name *"
+                              size="lg"
+                              required
+                            />
+                          </InputGroup>
 
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid first name.
-                            </Form.Control.Feedback>
-                          </div>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid first name.
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12 col-md-6">
-                          <div className="form-group">
-                            <InputGroup>
-                              <InputGroup.Prepend>
-                                <InputGroup.Text id="basic_addon1">
-                                  <FaUserAlt />
-                                </InputGroup.Text>
-                              </InputGroup.Prepend>
-                              <Form.Control
-                                type="text"
-                                name="last_name"
-                                placeholder="Last Name *"
-                                size="lg"
-                                required
-                              />
-                            </InputGroup>
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic_addon1">
+                              <FaUserAlt />
+                            </InputGroup.Text>
+                            <Form.Control
+                              type="text"
+                              name="last_name"
+                              placeholder="Last Name *"
+                              size="lg"
+                              required
+                            />
+                          </InputGroup>
 
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid last name.
-                            </Form.Control.Feedback>
-                          </div>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid last name.
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12 col-md-6">
-                          <div className="form-group">
-                            <InputGroup>
-                              <InputGroup.Prepend>
-                                <InputGroup.Text id="basic_addon1">
-                                  <GrMail />
-                                </InputGroup.Text>
-                              </InputGroup.Prepend>
-                              <Form.Control
-                                type="email"
-                                name="email"
-                                placeholder="E-mail Address *"
-                                size="lg"
-                                required
-                              />
-                            </InputGroup>
-
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid email address.
-                            </Form.Control.Feedback>
-                          </div>
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic_addon1">
+                              <GrMail />
+                            </InputGroup.Text>
+                            <Form.Control
+                              type="email"
+                              name="email"
+                              placeholder="E-mail Address *"
+                              size="lg"
+                              required
+                            />
+                          </InputGroup>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid email address.
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12 col-md-6">
-                          <div className="form-group">
-                            <InputGroup>
-                              <InputGroup.Prepend>
-                                <InputGroup.Text id="basic_addon1">
-                                  <FaPhoneAlt />
-                                </InputGroup.Text>
-                              </InputGroup.Prepend>
-                              <Form.Control
-                                type="text"
-                                name="number"
-                                placeholder="Cellphone / Telephone ... *"
-                                size="lg"
-                              />
-                            </InputGroup>
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic_addon1">
+                              <FaPhoneAlt />
+                            </InputGroup.Text>
+                            <Form.Control
+                              type="text"
+                              name="number"
+                              placeholder="Cellphone / Telephone ... *"
+                              size="lg"
+                            />
+                          </InputGroup>
 
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid number
-                            </Form.Control.Feedback>
-                          </div>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid number
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12 col-md-6">
-                          <div className="form-group">
-                            <InputGroup>
-                              <InputGroup.Prepend>
-                                <InputGroup.Text id="basic_addon1">
-                                  <FaHome />
-                                </InputGroup.Text>
-                              </InputGroup.Prepend>
-                              <Form.Control
-                                as="select"
-                                size="lg"
-                                name="country_residence"
-                                required>
-                                <option value="">Country of Residence</option>
-                                {countries.map(item => (
-                                  <option key={item.code} value={item.name}>
-                                    {item.name}
-                                  </option>
-                                ))}
-                              </Form.Control>
-                            </InputGroup>
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic_addon1">
+                              <FaHome />
+                            </InputGroup.Text>
+                            <Form.Control
+                              as="select"
+                              size="lg"
+                              name="country_residence"
+                              required>
+                              <option value="">Country of Residence</option>
+                              {countries.map(item => (
+                                <option key={item.code} value={item.name}>
+                                  {item.name}
+                                </option>
+                              ))}
+                            </Form.Control>
+                          </InputGroup>
 
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid country.
-                            </Form.Control.Feedback>
-                          </div>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid country.
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12 col-md-6">
-                          <div className="form-group">
-                            <InputGroup>
-                              <InputGroup.Prepend>
-                                <InputGroup.Text id="basic_addon1">
-                                  <FaMapMarker />
-                                </InputGroup.Text>
-                              </InputGroup.Prepend>
-                              <Form.Control
-                                as="select"
-                                size="lg"
-                                name="destination_interest"
-                                required>
-                                <option value="">Destination of interest</option>
-                                {destinations[0]?.destinations.map(item => (
-                                  <option key={item.title} value={item.title}>
-                                    {item.title}
-                                  </option>
-                                ))}
-                              </Form.Control>
-                            </InputGroup>
-                            <Form.Control.Feedback type="invalid">
-                              Please provide a valid Destination of interest.
-                            </Form.Control.Feedback>
-                          </div>
+                          <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic_addon1">
+                              <FaMapMarker />
+                            </InputGroup.Text>
+                            <Form.Control
+                              as="select"
+                              size="lg"
+                              name="destination_interest"
+                              required>
+                              <option value="">Destination of interest</option>
+                              {destinations[0]?.destinations.map(item => (
+                                <option key={item.title} value={item.title}>
+                                  {item.title}
+                                </option>
+                              ))}
+                            </Form.Control>
+                          </InputGroup>
+                          <Form.Control.Feedback type="invalid">
+                            Please provide a valid Destination of interest.
+                          </Form.Control.Feedback>
                         </div>
                         <div className="col-12">
                           <div className="form-group">
@@ -240,7 +215,7 @@ function ContactForm({ destinations }) {
                           </div>
                         </div>
 
-                        <div className="col-12 text-left">
+                        <div className="col-12 text-start">
                           <Form.Check
                             value
                             label="Please send me your email newsletter"
@@ -263,7 +238,7 @@ function ContactForm({ destinations }) {
                         </p>
                       </div>
                     </div>
-                    <div className="row form-group">
+                    <div className="row form-group pb-3">
                       <div className="col-12 col-md-5 mx-auto">
                         <input
                           type="submit"

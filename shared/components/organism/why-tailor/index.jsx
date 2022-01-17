@@ -56,7 +56,7 @@ function WhyTailor({ tailors }) {
                   />
                 )}
                 <div className={styles.info}>
-                  <h3 className="fs-20 font-weight-semi-bold">{tailor.title}</h3>
+                  <h3 className="fs-20 fw-semi-bold">{tailor.title}</h3>
                   <p className="fs-15 lh-27">{tailor.content}</p>
                 </div>
               </SwiperSlide>

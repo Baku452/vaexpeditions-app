@@ -1,5 +1,5 @@
 const withPlugins = require('next-compose-plugins');
-//const withPurgeCss = require('next-purgecss');
+// const withPurgeCss = require('next-purgecss');
 // const withImages = require('next-images');
 const withSvgr = require('next-svgr');
 
@@ -9,7 +9,7 @@ const nextConfig = {
   devIndicators: {
     autoPrerender: false,
   },
-  //pageExtensions: ['page.jsx', 'page.js'],
+  // pageExtensions: ['page.jsx', 'page.js'],
 };
 
 module.exports = withPlugins([/* withPurgeCss, */ withSvgr], nextConfig);

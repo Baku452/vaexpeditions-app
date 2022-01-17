@@ -49,12 +49,12 @@ function Slide({
                 </Link>
               </li>
             ))}
-            </ol>
+          </ol>
         </nav>
       )}
       {title && (
         <div className={`${styles.boxTitleMobile} d-block d-md-none`}>
-          <h2 className={`${styles.title} text-left`}>{title}</h2>
+          <h2 className={`${styles.title} text-start`}>{title}</h2>
         </div>
       )}
       <Swiper
@@ -86,7 +86,7 @@ function Slide({
       </Swiper>
       {title && !isDestination && (
         <div className={`${styles.boxTitle} d-none d-md-block mb-3 mb-lg-5 `}>
-          <h2 className={`${styles.title} text-left`}>{title}</h2>
+          <h2 className={`${styles.title} text-start`}>{title}</h2>
         </div>
       )}
     </div>

@@ -19,7 +19,7 @@ function Days({ days }) {
   }
   return (
     <h6 className="fs-13 m-0">
-      <span className="mr-2 font-weight-bold">Duration:</span> {getNameDays(days)}
+      <span className="me-2 fw-bold">Duration:</span> {getNameDays(days)}
     </h6>
   );
 }
@@ -64,7 +64,7 @@ function PackageItem({
                 <h5 className={`${styles.title} card-title fs-18 lh-23`}>{title}</h5>
                 {highligths ? <p className="fs-13">{highligths}</p> : null}
                 <div className="d-flex fs-13 mb-2">
-                  <h6 className="fs-13 font-weight-bold mr-2">Trip Type: </h6>
+                  <h6 className="fs-13 fw-bold me-2">Trip Type: </h6>
                   <>
                     {packagetypes.map(item =>
                       // eslint-disable-next-line eqeqeq
@@ -84,12 +84,12 @@ function PackageItem({
                   <Days days={days} />
                 </div>
                 <div className="d-flex fs-13 mb-3 align-items-center">
-                  <h6 className="fs-13 font-weight-bold mr-2 mb-0">Activity level: </h6>
+                  <h6 className="fs-13 fw-bold me-2 mb-0">Activity level: </h6>
                   <span>{activity}</span>
                 </div>
                 {destination ? (
                   <div className="d-flex fs-13 mb-3 align-items-center">
-                    <h6 className="fs-13 font-weight-bold mr-2 mb-0">Destination: </h6>
+                    <h6 className="fs-13 fw-bold me-2 mb-0">Destination: </h6>
                     <span>{destination}</span>
                   </div>
                 ) : null}

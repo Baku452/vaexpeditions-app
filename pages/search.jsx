@@ -210,7 +210,7 @@ function Search({
       popups={popups}
       pixels={10}>
       <Head>
-        <title>Search Tour Trips in VA Expeditions</title>
+        <title>Search Tour Trips in Va Expeditions</title>
         <meta name="description" content="Search our Tours on VA Expeditions" />
       </Head>
       <div className="container d-block d-lg-none pt-3 pb-3 overflow-hidden sticky">
@@ -237,7 +237,7 @@ function Search({
                   <div
                     // eslint-disable-next-line max-len
                     className={`${styles.asideHeaderMobile} d-block d-lg-none pt-3 pb-3 fixed-top`}>
-                    <h3 className="text-left ml-3 mb-0">Filters</h3>
+                    <h3 className="text-start ms-3 mb-0">Filters</h3>
                     {/* <link href="#"> */}
                     <a
                       href="#"
@@ -253,7 +253,7 @@ function Search({
                   </div>
                   {!showFilters ? (
                     <div className={`${styles.boxaside}  m-0`}>
-                      <h2 className="font-weight-bold fs-20 pt-3">All our Tours</h2>
+                      <h2 className="fw-bold fs-20 pt-3">All our Tours</h2>
                       {packagesList.length > 0 ? (
                         <h4 className="fs-18 py-3 mb-0">{numberPackages} Tours</h4>
                       ) : null}

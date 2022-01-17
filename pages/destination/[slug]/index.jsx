@@ -37,7 +37,7 @@ function Destination({
       notifications={notifications}
       pixels={600}>
       <Head>
-        <title>{SSRDestination?.title} Destination | VA Expeditions</title>
+        <title>{SSRDestination?.title} - VA Expeditions</title>
         <meta name="description" content={SSRDestination?.summary} />
       </Head>
       <Hero3
@@ -55,7 +55,7 @@ function Destination({
         <div className="containerBox py-10 ">
           <h2 className="title2 py-4">OVERVIEW</h2>
           <div
-            className="lh-29 text-center"
+            className={`lh-29 text-center ${styles.text}`}
             dangerouslySetInnerHTML={{ __html: SSRDestination?.content }}
           />
         </div>
@@ -85,7 +85,7 @@ function Destination({
                 </div>
               ))}
           </div>
-          <div className="text-center mx-auto fs-26 link font-weight-bold">
+          <div className="text-center mx-auto fs-26 link fw-bold">
             <Link href={`/destination/${SSRDestination.slug}/search`}>
               <a className={` ${styles.boton} link p-2 my-4`} type="button">
                 SHOW MORE
@@ -98,9 +98,9 @@ function Destination({
         <div className="col-12">
           <h2 className=" title2 text-center py-4">
             Travel Facts in{' '}
-            <span className="line font-weight-semibold"> {SSRDestination?.title}</span>
+            <span className="line fw-semi-bold"> {SSRDestination?.title}</span>
           </h2>
-          <section className="row containerBox  align-items-center">
+          <section className={`row containerBox  align-items-cente ${styles.text}`}>
             <div
               className={`col-12 ${
                 SSRDestination?.imageTraveFact.toString() !== '/media/null'
@@ -125,7 +125,7 @@ function Destination({
       <section id="where-to-go" className="background2 py-5">
         <h2 className="title2 py-4">
           Where to go in{' '}
-          <span className="line font-weight-semibold">{SSRDestination?.title}</span>
+          <span className="line fw-semi-bold">{SSRDestination?.title}</span>
         </h2>
         <div className="containerBox row">
           {SSRDestination.where
@@ -156,9 +156,13 @@ function Destination({
         </div>
       </section>
       <section id="faqs" className="py-5">
-        <div className="containerBox">
+        <div className={`containerBox ${styles.text}`}>
           <h2 className="title2 py-4">FAQs</h2>
-          {SSRDestination?.faqs ? <FaqsDestinations faqs={SSRDestination?.faqs} /> : null}
+          <div className={` ${styles.text} background2 p-1`}>
+            {SSRDestination?.faqs ? (
+              <FaqsDestinations faqs={SSRDestination?.faqs} />
+            ) : null}
+          </div>
         </div>
       </section>
     </Base>

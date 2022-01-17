@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
 import Head from 'next/head';
 import Link from 'next/link';
 
 import { Hero2 } from '@/components/index';
 import { Base } from '@/layouts/index';
+
+import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
@@ -11,7 +14,6 @@ export default function NewRisk({
   packagetypes,
   notifications,
   ourpurpose,
-  popups,
   packagesAll,
 }) {
   return (
@@ -19,11 +21,10 @@ export default function NewRisk({
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      popups={popups}
       packagesAll={packagesAll}
       pixels={520}>
       <Head>
-        <title>NEW Regulations to enter Machu Picchu 2019</title>
+        <title>New Risk - Va Expeditions</title>
       </Head>
 
       <Hero2
@@ -35,11 +36,11 @@ export default function NewRisk({
         <div className="container  text-justify">
           <div className="row pt-5">
             <div className="col-10 mx-auto">
-              <div className="row mb-5">
+              <div className={`${styles.text} row mb-5`}>
                 <div className="row justify-content-md-center">
                   <div className="col-10 mb-3">
                     <div className="row justify-content-md-center">
-                      <h2 className="fs-20 lh-34 font-weight-bold">
+                      <h2 className="fs-20 lh-34 fw-bold">
                         {/* New Risk-Free flexible booking offer */}
                       </h2>
                       <p className="m-0  ">
@@ -64,7 +65,7 @@ export default function NewRisk({
                   <div className="row justify-content-md-center">
                     <div className=" col-10 text-center">
                       <div>
-                        <h3 className="fs-20 lh-34 font-weight-bold">
+                        <h3 className="fs-20 lh-34 fw-bold">
                           High-Flex booking option — 40% Deposit
                         </h3>
                         <p>
@@ -73,7 +74,7 @@ export default function NewRisk({
                         </p>
                       </div>
                       <div>
-                        <h3 className="fs-20 lh-34 font-weight-bold">
+                        <h3 className="fs-20 lh-34 fw-bold">
                           Extreme-Flex booking option —Full Deposit
                         </h3>
                         <p>
@@ -84,7 +85,7 @@ export default function NewRisk({
                       </div>
                       <div>
                         <p>
-                          <h3 className="fs-20 lh-34 font-weight-bold">Codes:</h3>
+                          <h3 className="fs-20 lh-34 fw-bold">Codes:</h3>
                         </p>
                         <p>HIGH-FLEX — 40% DEPOSIT— EXTREME-FLEX —FULL DEPOSIT—</p>
                       </div>
@@ -96,7 +97,7 @@ export default function NewRisk({
                   <div className="col-10 listStyle">
                     <div className="row ">
                       <div className="col-10 col-md-8 mb-3 align-self-center ">
-                        <h3 className="fs-20 lh-34 font-weight-bold">
+                        <h3 className="fs-20 lh-34 fw-bold">
                           See full terms & conditions on the booking conditions page
                         </h3>
                         <p>
@@ -118,7 +119,7 @@ export default function NewRisk({
                       </div>
                     </div>
 
-                    <h3 className="fs-20 lh-34 font-weight-bold">
+                    <h3 className="fs-20 lh-34 fw-bold">
                       Coronavirus cancellation terms & conditions
                     </h3>
                     <ul>
@@ -139,7 +140,7 @@ export default function NewRisk({
                       </li>
                     </ul>
 
-                    <h3 className="fs-20 lh-34 font-weight-bold m-0">High Flex</h3>
+                    <h3 className="fs-20 lh-34 fw-bold m-0">High Flex</h3>
                     <ul>
                       <li>
                         These terms apply to bookings where only the deposit has been paid
@@ -195,7 +196,7 @@ export default function NewRisk({
                       </div>
                     </div>
 
-                    <h3 className="fs-20 lh-34 font-weight-bold">Extreme Flex</h3>
+                    <h3 className="fs-20 lh-34 fw-bold">Extreme Flex</h3>
                     <p>
                       If you have paid for your tour in full, either at the time of
                       booking, or by deposit and balance installments, then you will be
@@ -251,7 +252,7 @@ export default function NewRisk({
                       </div>
                     </div>
 
-                    <h3 className="fs-20 lh-34 font-weight-bold">Cancellation by You</h3>
+                    <h3 className="fs-20 lh-34 fw-bold">Cancellation by You</h3>
                     <p>
                       For these reasons, at the time we receive written notice that you
                       wish to cancel your trip, you will be charged the following fees:
@@ -290,9 +291,6 @@ export async function getStaticProps() {
   const ourpurposeResponse = await fetch(`${PUBLIC_API}/ourpurpose/list/`);
   const ourpurpose = await ourpurposeResponse.json();
 
-  const popupResponse = await fetch(`${PUBLIC_API}/popup/`);
-  const popups = await popupResponse.json();
-
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
@@ -302,7 +300,6 @@ export async function getStaticProps() {
       packagetypes,
       notifications,
       ourpurpose,
-      popups,
       packagesAll,
     },
     revalidate: 1,

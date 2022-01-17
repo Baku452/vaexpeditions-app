@@ -15,7 +15,7 @@ function TopTours({ tours }) {
                 <div className="col-12 col-md-6">
                   <h2 className="text-center titleUnderline">Top rated tours</h2>
                 </div>
-                <div className="col-md-3 d-none d-md-block text-right align-self-end ">
+                <div className="col-md-3 d-none d-md-block text-end align-self-end ">
                   <Link href="/search">
                     <a className="btn btn-primary fs-15">Explore all tours</a>
                   </Link>
@@ -45,9 +45,7 @@ function TopTours({ tours }) {
                         )}
 
                         <div className={`${styles.body} p-4`}>
-                          <h5 className="card-title mb-2 fs-18 font-weight-bold">
-                            {item.title}
-                          </h5>
+                          <h5 className="card-title mb-2 fs-18 fw-bold">{item.title}</h5>
                           <h6 className="fs-18 m-0 pb-3">
                             {item?.days > 1 ? `${item?.days} days` : 'Half-Day'}
                           </h6>

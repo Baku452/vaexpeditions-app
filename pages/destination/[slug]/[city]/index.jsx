@@ -30,7 +30,7 @@ function City({
       notifications={notifications}
       pixels={600}>
       <Head>
-        <title>{city?.title} - VA Expeditions</title>
+        <title>{city?.title} - Va Expeditions</title>
         <meta name="description" content={city?.summary} />
         <meta name="keywords" content />
       </Head>
@@ -38,7 +38,7 @@ function City({
 
       <NavBarFixed items={navSubDestinations} />
       <section id="overview" className="p-3 containerBox">
-        <div className="containerBox ">
+        <div className={`containerBox ${styles.text}`}>
           <h2 className="title2 text-center py-4">Overview of {city.title}</h2>
           <div className="lh-29" dangerouslySetInnerHTML={{ __html: city?.content }} />
         </div>
@@ -70,10 +70,10 @@ function City({
               ))}
           </div>
 
-          <div className="text-center mx-auto fs-26 link font-weight-bold">
+          <div className="text-center mx-auto fs-26 link fw-bold">
             <Link
               href={`/destination/${SSRDestination.slug}/search?where_to_go=${city.id}`}>
-              <a className="link" className={`${styles.boton} p-2 my-4`} type="button">
+              <a className={`${styles.boton} p-2 my-4 link`} type="button">
                 SHOW MORE
               </a>
             </Link>
@@ -81,7 +81,7 @@ function City({
         </div>
       </section>
       <section id="what-to-do" className="p-3 containerBox">
-        <div className="containerBox row col-12 p-4 ">
+        <div className={`containerBox row col-12 p-4 ${styles.text}`}>
           <div className="col-12">
             <h2 className="title2 p-3">What to Do in {city?.title} </h2>
           </div>

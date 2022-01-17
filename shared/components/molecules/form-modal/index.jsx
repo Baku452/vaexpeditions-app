@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+
 import { countries, saveContactUs } from '@/core/index';
 
 function ModalForm({ title, content }) {
@@ -32,13 +34,14 @@ function ModalForm({ title, content }) {
       <div className="container">
         <div className="row">
           <div className="col-11 col-md-10 p-0 mx-auto">
-
             {success ? (
               <div className="card mb-5 pb-5">
                 <div className="card-body pb-5 pt-5 mt-4 text-center">
                   <h5 className="card-title fs-30 pb-5">Thank you for contacting us!</h5>
                   <p className="card-text fs-18 lh-29">
-                    Travel destinations that amaze, stories that inspire, life experiences, mindful travel, and advice from our experts delivered straight to your inbox.
+                    Travel destinations that amaze, stories that inspire, life
+                    experiences, mindful travel, and advice from our experts delivered
+                    straight to your inbox.
                     <br />
                     While you are still here, feel free to navigate through our
                     <Link href="/search">
@@ -51,7 +54,7 @@ function ModalForm({ title, content }) {
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <h3> {title}</h3>
                 <p className="pt-5">{content}</p>
-                <div className="col-12 mx-auto p-0 text-left">
+                <div className="col-12 mx-auto p-0 text-start">
                   <div className="row mb-2">
                     <div className="col-12">
                       <div className="form-group">
@@ -64,7 +67,7 @@ function ModalForm({ title, content }) {
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid first name.
-                            </Form.Control.Feedback>
+                        </Form.Control.Feedback>
                       </div>
                     </div>
                     <div className="col-12">
@@ -78,7 +81,7 @@ function ModalForm({ title, content }) {
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid last name.
-                            </Form.Control.Feedback>
+                        </Form.Control.Feedback>
                       </div>
                     </div>
                     <div className="col-12">
@@ -92,7 +95,7 @@ function ModalForm({ title, content }) {
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid email address.
-                            </Form.Control.Feedback>
+                        </Form.Control.Feedback>
                       </div>
                     </div>
                     <div className="col-12">
@@ -111,7 +114,7 @@ function ModalForm({ title, content }) {
                         </Form.Control>
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid country.
-                            </Form.Control.Feedback>
+                        </Form.Control.Feedback>
                       </div>
                     </div>
                   </div>

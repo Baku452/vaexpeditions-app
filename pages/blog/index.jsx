@@ -75,13 +75,12 @@ function BlogPage({
       pixels={700}
       interests={interests}>
       <Head>
-        <title>Blog | Va Expeditions</title>
+        <title>Passion Passport Blog - Va Expeditions</title>
         <meta name="description" content="Blog Va Expeditions" />
       </Head>
       <HeroBlog
-        title="Blog Va Expeditions"
-        description="12 years of experience, 84,000+ travellers 
-        13 Destinations 100% Satisfaction"
+        title="Passion Passport - Blog by Va Expeditions"
+        description="Blogs"
         image="/images/blog-banner.jpg"
         alt="blogVT"
       />
@@ -124,9 +123,11 @@ function BlogPage({
             </Form.Control>
           </div>
         </section>
+      </div>
+      <div className="">
         <section className="">
           <div className="col-12">
-            <section className="mx-auto ">
+            <section className="mx-auto">
               {postList
                 ? postList.map(item => (
                     <div key={item.slug} className="col-12">
@@ -154,7 +155,7 @@ function BlogPage({
       <section className="px-3 pb-4 background2 col-12">
         <div className="row mx-auto">
           <div className="col-12 p-5">
-            <h2 className={`${styles.posts} fs-30 font-weight-bold text-center`}>
+            <h2 className={`${styles.posts} fs-30 fw-bold text-center`}>
               POPULAR POSTS{' '}
             </h2>
           </div>

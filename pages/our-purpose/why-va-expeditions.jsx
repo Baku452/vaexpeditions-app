@@ -10,7 +10,6 @@ export default function OurPurpose({
   packagetypes,
   notifications,
   ourpurpose,
-  packagesAll,
 }) {
   return (
     <Base
@@ -21,8 +20,9 @@ export default function OurPurpose({
         <title>Va Expeditions - Why Va Expeditions</title>
         <meta
           name="description"
-          content="We have 15 years of designing travel itineraries for over 6000 happy travellers, 
-          throughout a number of Central and South American destinations and with 100% satisfaction!"
+          content="We have 15 years of designing travel itineraries 
+          for over 6000 happy travellers, throughout a number of Central 
+          and South American destinations and with 100% satisfaction!"
         />
       </Head>
       <Banner description="" image="/images/why-chose-va.jpg" alt="weq" />
@@ -31,7 +31,7 @@ export default function OurPurpose({
         <div className=" containerBox  align-items-center">
           <div className="row pt-5">
             <div className="col-10 mx-auto">
-              <h2 className=" font-weight-bold text-center">Why Va Expeditions?</h2>
+              <h2 className=" fw-bold text-center">Why Va Expeditions?</h2>
               <div className="row mb-5">
                 <p className="m-0 fs-17 lh-34">
                   We have 15 years of designing travel itineraries for over 6000 happy
@@ -213,16 +213,12 @@ export async function getStaticProps() {
   const ourpurposeResponse = await fetch(`${PUBLIC_API}/ourpurpose/list/`);
   const ourpurpose = await ourpurposeResponse.json();
 
-  const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
-  const packagesAll = await packagesRes.json();
-
   return {
     props: {
       destinations,
       packagetypes,
       notifications,
       ourpurpose,
-      packagesAll,
     },
     revalidate: 1,
   };

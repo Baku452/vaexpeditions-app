@@ -6,21 +6,36 @@
       width: 100%;
       justify-content: center;
       align-content: center;
-      
+      margin: 0 auto;
     }
-        .icono{
-      width: 20px;
-      margin-bottom: 20px;
-      margin-left: 15px;
-      margin-right: 10px;
+    .svg {
+      width: 40px;
       @media (max-width: 1199px) {
-        margin-right: 0px;
-        margin-left: 0px;
+        width: 20px;
       }
       @media (max-width: $sm) {
-         margin-left: 15px;
-         margin-right: 10px;
-         margin-bottom: 15px;
+        width: 100%;
+      }
+
+      img {
+        width: 25px;
+        @media (max-width: 1199px) {
+          padding-right: 10px;
+        }
+        @media (max-width: $sm) {
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+    }
+    .icono {
+      @media (max-width: 1199px) {
+        margin: 0px;
+      }
+      @media (max-width: $sm) {
+        margin-left: 15px;
+        margin-right: 10px;
+        margin-bottom: 15px;
       }
     }
     @media (max-width: $sm) {
@@ -29,88 +44,79 @@
       align-items: center;
       align-content: center;
     }
-    .puntos{
+    .puntos {
       @media (max-width: $sm) {
         width: 100%;
         justify-content: center;
         align-items: center;
       }
-
     }
-    .titulo{
+    .titulo {
       @media (max-width: $sm) {
-        width: 100%;
-        justify-content: center;
+        //width: 100%;
         align-items: center;
-        padding-bottom: -10px;
+        text-align: center;
       }
     }
-  
-  .icon-rating {
-    font-size: 36px !important;
+
+    .icon-rating {
+      font-size: 36px !important;
+    }
   }
-}
-.content2 {
-  @media (max-width: $sm) {
-    padding: 0px;
-
-    
+  .content2 {
+    @media (max-width: $sm) {
+      padding: 0px;
+    }
   }
-}
 
-
-.boton{
-  background-color: #fafafa !important;
-  color: #000000;
-  border-color: #000000;
-  &:hover{
-    background-color: #0095ce !important;
-    color: #ffffff;
+  .boton {
+    background-color: #fafafa !important;
+    color: #000000;
+    border-color: #000000;
+    &:hover {
+      background-color: #0095ce !important;
+      color: #ffffff;
     }
     @media (max-width: $xs) {
-      
     }
-}
-
-
-.title {
-  margin: 0 0 10px;
-  display: flex;
-  flex: 1 1 auto;
-  font-weight: 600;
-
-  &::before {
-    background: #0095ce;
-    content: '';
-    display: block;
-    -webkit-flex: 0 0 5px;
-    -ms-flex: 0 0 5px;
-    flex: 0 0 5px;
-    margin-bottom: 0px;
-    margin-right: 10px;
-    margin-top: 0px;
-    position: relative;
   }
-}
-.specialist{
-  padding-left: 90px;
-    img{
+
+  .title {
+    margin: 0 0 10px;
+    display: flex;
+    flex: 1 1 auto;
+    font-weight: 600;
+
+    &::before {
+      background: #0095ce;
+      content: '';
+      display: block;
+      -webkit-flex: 0 0 5px;
+      -ms-flex: 0 0 5px;
+      flex: 0 0 5px;
+      margin-bottom: 0px;
+      margin-right: 10px;
+      margin-top: 0px;
+      position: relative;
+    }
+  }
+  .specialist {
+    padding-left: 90px;
+    img {
       object-fit: cover;
       border: 3px solid transparent;
-      &:hover{
+      &:hover {
         border: 3px solid #0095ce;
-        }
+      }
     }
-  
+
     @media (max-width: 1199px) {
       padding-left: 20px;
     }
     @media (max-width: 767px) {
       padding-left: 0px;
-      
     }
-
-}
+  }
 }
 .circle {
   width: 100px;
@@ -118,7 +124,7 @@
   border-radius: 50%;
 }
 .name {
-  &:hover{
-    color:  #0095ce;
-    }
+  &:hover {
+    color: #0095ce;
+  }
 }

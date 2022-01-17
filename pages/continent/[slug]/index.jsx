@@ -51,7 +51,7 @@ function Search({
         isDestination
       />
       <Head>
-        <title>Va Expeditions - {SSRCountry.name}</title>
+        <title>{SSRCountry.name} - Va Expeditions</title>
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
       <section id="tours_all" className="row containerBox">
@@ -76,11 +76,11 @@ function Search({
                 </div>
               ))}
           </div>
-          <div className="row p-4 order-md-1">
+          <div className={`row p-4 order-md-1 ${styles.text}`}>
             <div className="col-12 col-lg-8">
               <h1 className="title">Overview of {SSRCountry.name}</h1>
               <div
-                className={` ${styles.content} pr-5`}
+                className={` ${styles.content} pe-5`}
                 dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
               />
             </div>

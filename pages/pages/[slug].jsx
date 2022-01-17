@@ -1,17 +1,13 @@
-/* eslint-disable import/extensions */
-/* eslint-disable max-len */
-/* eslint-disable no-constant-condition */
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 
 import { Base } from '@/layouts/index';
-// import fetch from 'cross-fetch';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Page({ page, destinations, packagetypes, notifications, packagesAll }) {
-  const reg = /\/media/g;
-  const content = page.content.replace(reg, `${PUBLIC_API}/media`);
+function Page({ destinations, packagetypes, page, notifications, packagesAll }) {
+  // const reg = /\/media/g;
+  // const content = page.content.replace(reg, `${PUBLIC_API}/media`);
 
   return (
     <Base
@@ -32,14 +28,13 @@ function Page({ page, destinations, packagetypes, notifications, packagesAll }) 
         <div className="row pt-5">
           <div className="col-12">
             <h2>{page.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
           </div>
         </div>
       </div>
     </Base>
   );
 }
-
 export async function getStaticPaths() {
   const response = await fetch(`${PUBLIC_API}/pages/list/`);
   const pages = await response.json();
@@ -55,13 +50,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const response = await fetch(`${PUBLIC_API}/pages/${params.slug}`);
   const page = await response.json();
-
-  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
-  const destinations = await destinationsResponse.json();
-
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/nav/`);
+  const responseTypes = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinations = await responseTypes.json();
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
   const packagetypes = await packagetypesResponse.json();
-
+  const packagesResponse = await fetch(`${PUBLIC_API}/packages/`);
+  const packages = await packagesResponse.json();
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
@@ -73,6 +67,7 @@ export async function getStaticProps({ params }) {
       page,
       destinations,
       packagetypes,
+      packages,
       notifications,
       packagesAll,
     },

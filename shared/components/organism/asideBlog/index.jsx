@@ -6,9 +6,9 @@ import { ListCategories } from '@/components/index';
 function AsideBlog({ destinations, blogtypesRes }) {
   return (
     <nav className="col-12 order-1 order-lg-2 col-lg-4 px-4">
-      <h2 className="font-weight-bold title">Explore our Categories</h2>
+      <h2 className="fw-bold title">Explore our Categories</h2>
       <ListCategories items={blogtypesRes} />
-      <h2 className="font-weight-bold title pt-3">Destinations</h2>
+      <h2 className="fw-bold title pt-3">Destinations</h2>
       {destinations.map(country => (
         // eslint-disable-next-line react/jsx-key
         <ListCategories items={country.destinations} />

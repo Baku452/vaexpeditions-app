@@ -1,3 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-expressions */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -51,19 +56,19 @@ const SearchBar = ({ packagetypes, packagesAll }) => {
 
   // rendering suggestions
   const renderSuggestion = suggestion => (
-    <Link href={`/pacakage/${suggestion.slug}`}>
+    // <Link href={`/pacakage/${suggestion.slug}`}>
+    <Link href={`/${suggestion.slug}`}>
       <div className="d-flex justify-content-between">
         <p className={`${styles.title}`}>
-          {/* {
-              packagetypes.map(
-                item => (
-                  item.id == suggestion.package_type ? 
-                  <img className={styles.svg} src={PUBLIC_API+item.svg}>
-                  </img> 
-                  : null
-                )
-              )
-            } */}
+          {packagetypes.map(item =>
+            parseInt(item.id, 10) === parseInt(suggestion.package_type, 10) ? (
+              <img
+                alt={suggestion.title}
+                className={styles.svg}
+                src={PUBLIC_API + item.svg}
+              />
+            ) : null,
+          )}
           {suggestion.title}
         </p>
         <p>{FormatDays(suggestion.days)}</p>
@@ -132,7 +137,7 @@ const SearchBar = ({ packagetypes, packagesAll }) => {
     <Form
       // noValidate
       // validated={validated}
-      className="position-relative"
+      className={`position-relative ${styles.dontList}`}
       onSubmit={handleSubmit}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}>

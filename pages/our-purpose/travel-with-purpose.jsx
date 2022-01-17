@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 
-import { Banner, CardBox, ContextAwareToggle, Gallery, Icon } from '@/components/index';
+import { Banner, CardBox, ContextAwareToggle } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
@@ -25,9 +24,12 @@ export default function OurPurpose({
         <title>Va Expeditions - Travel with purpose</title>
         <meta
           name="description"
-          content="Va Expeditions wholeheartedly believes that by travelling in a sustainable and conscientious manner, 
-          we can transform the world and connect a myriad of cultures. For this reason, we are completely committed 
-          to preserving the magic of local communities, wildlife, and the environment. We want to share our local knowledge 
+          content="Va Expeditions wholeheartedly believes that by 
+          travelling in a sustainable and conscientious manner, 
+          we can transform the world and connect a myriad of cultures. 
+          For this reason, we are completely committed 
+          to preserving the magic of local communities, wildlife, and 
+          the environment. We want to share our local knowledge 
           and the wisdom of the native people to contribute to a better world."
         />
       </Head>
@@ -36,7 +38,7 @@ export default function OurPurpose({
         <div className="container">
           <div className="row pt-5" />
           <div className="col-12 mx-auto">
-            <h2 className=" font-weight-bold text-center">Travel with Purpose</h2>
+            <h2 className=" fw-bold text-center">Travel with Purpose</h2>
             <p>
               Va Expeditions wholeheartedly believes that by travelling in a sustainable
               and conscientious manner, we can transform the world and connect a myriad of
@@ -54,7 +56,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={2} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Fair wages</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Fair wages</h2>
                 </ContextAwareToggle>
               </Card.Header>
 
@@ -104,7 +106,9 @@ export default function OurPurpose({
                         </li>
                       </ul>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 
+                    col-md-3 pt-2 order-1 order-md-2 text-start">
                       <img
                         src="/images/our-purpose/travel-with-purpose/fair-wages.jpg"
                         className="d-block w-100 fit"
@@ -121,7 +125,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={3} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
+                  <h2 className="fs-16 m-0 fw-bold p-0">
                     Gender equality & diversity and inclusion.
                   </h2>
                 </ContextAwareToggle>
@@ -201,7 +205,9 @@ export default function OurPurpose({
                         workers benefits.{' '}
                       </p>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 
+                    col-md-3 pt-2 order-1 order-md-2 text-start">
                       <img
                         src="/images/our-purpose/travel-with-purpose/gender-equality.jpg"
                         className="d-block w-100 fit"
@@ -218,7 +224,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={4} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Animal protection.</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Animal protection.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={4}>
@@ -257,7 +263,7 @@ export default function OurPurpose({
                           </li>
                           <li>
                             Freedom from discomfort by providing an appropriate
-                            environment including shelter and a comfortable resting area{' '}
+                            environment including shelter and a comfortable resting area
                           </li>
                           <li>
                             Freedom from pain, injury or disease by prevention or rapid
@@ -265,7 +271,7 @@ export default function OurPurpose({
                           </li>
                           <li>
                             Freedom to express normal behavior by providing sufficient
-                            space, proper facilities and company of the animal's own kind{' '}
+                            space, proper facilities and company of the animal's own kind
                           </li>
                           <li>
                             Freedom from fear and distress by ensuring conditions and
@@ -279,9 +285,12 @@ export default function OurPurpose({
                         https://www.abta.com/industry-zone/sustainability-in-travel-and-tourism/animals-in-tourism
                       </a>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 
+                    col-md-3 pt-2 order-1 order-md-2 text-start">
                       <img
-                        src="/images/our-purpose/travel-with-purpose/animal-protection.jpg"
+                        src="/images/our-purpose/travel-with-purpose/
+                        animal-protection.jpg"
                         className="d-block w-100 fit"
                         alt="Animal protection"
                       />
@@ -296,7 +305,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={5} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Climate change.</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Climate change.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={5}>
@@ -375,7 +384,9 @@ export default function OurPurpose({
                         </ol>
                       </p>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 
+                      col-md-3 pt-2 order-1 order-md-2 text-start">
                       <img
                         src="/images/our-purpose/travel-with-purpose/climate-change.jpg"
                         className="d-block w-100 fit"
@@ -392,9 +403,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={6} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
-                    Cultural preservation.
-                  </h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Cultural preservation.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={6}>
@@ -409,7 +418,7 @@ export default function OurPurpose({
                         remedies, spirituality, personal values, landmarks, monuments and
                         more. We love to connect our travelers with the local heritage and
                         culture, and we consider every trip an educational and enriching
-                        experience. This, in turn, helps to preserve the local traditions.{' '}
+                        experience. This, in turn, helps to preserve the local traditions.
                       </p>
                       <p>
                         We ensure that every cultural exchange is carried out in an
@@ -478,9 +487,12 @@ export default function OurPurpose({
                         </li>
                       </ol>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 
+                      col-md-3 pt-2 order-1 order-md-2 text-start">
                       <img
-                        src="/images/our-purpose/travel-with-purpose/cultura-preservation.jpg"
+                        src="/images/our-purpose/travel-with-purpose/
+                        cultura-preservation.jpg"
                         className="d-block w-100 fit"
                         alt="Cultural preservation."
                       />
@@ -495,9 +507,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={7} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
-                    Empowering local communities.
-                  </h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Empowering local communities.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={7}>
@@ -562,7 +572,9 @@ export default function OurPurpose({
                         </ul>
                       </p>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 col-md-3 
+                    pt-2 order-1 order-md-2 text-start">
                       <img
                         src="/images/our-purpose/travel-with-purpose/empowering.jpg"
                         className="d-block w-100 fit"
@@ -579,9 +591,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={8} className="content-white">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">
-                    Community philanthropy.
-                  </h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Community philanthropy.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={8}>
@@ -631,14 +641,18 @@ export default function OurPurpose({
                         you really want to be a rock star, bring a calculator!
                       </p>
                       <p>
-                        For the last three years we have been carrying out social support, where we share basic food and coats with the
-                        families of Inca trailporters, all of them from the communities
-                        with wich we have worked the Inca Trail route for the past 9 years{' '}
+                        For the last three years we have been carrying out social support,
+                        where we share basic food and coats with the families of Inca
+                        trailporters, all of them from the communities with wich we have
+                        worked the Inca Trail route for the past 9 years{' '}
                       </p>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 
+                    col-md-3 pt-2 order-1 order-md-2 text-start">
                       <img
-                        src="/images/our-purpose/travel-with-purpose/community-filantrophy.jpg"
+                        src="/images/our-purpose/travel-with-purpose/
+                        community-filantrophy.jpg"
                         className="d-block w-100 fit"
                         alt="Community philanthropy."
                       />
@@ -653,7 +667,7 @@ export default function OurPurpose({
             <div>
               <Card.Header>
                 <ContextAwareToggle eventKey={10} className="content-gray">
-                  <h2 className="fs-16 m-0 font-weight-bold p-0">Inclusive travel.</h2>
+                  <h2 className="fs-16 m-0 fw-bold p-0">Inclusive travel.</h2>
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={10}>
@@ -684,7 +698,9 @@ export default function OurPurpose({
                         a global community!
                       </p>
                     </div>
-                    <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 text-right">
+                    <div
+                      className="col-12 offset-md-1 
+                      col-md-3 pt-2 order-1 order-md-2 text-end">
                       <img
                         src="/images/our-purpose/travel-with-purpose/inclusive-travel.jpg"
                         className="d-block w-100 fit"

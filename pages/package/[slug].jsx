@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable camelcase */
 /* eslint-disable react/no-danger */
-import fetch from 'cross-fetch';
+// import fetch from 'cross-fetch';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { Link as LinkScroll } from 'react-scroll';
@@ -101,7 +101,11 @@ function Package({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        {pack.titleSEO ? <title>{pack.titleSEO}</title> : <title>{pack.title}</title>}
+        {pack.titleSEO ? (
+          <title>{pack.titleSEO} - Va Expeditions</title>
+        ) : (
+          <title>{pack.title} - Va Expeditions</title>
+        )}
         <meta name="description" content={pack?.summary} />
         <meta name="keywords" content={pack?.keywords} />
       </Head>
@@ -125,17 +129,17 @@ function Package({
         packageTypeSvg={svgType()}
       />
       <LinkScroll
-        smooth
-        duration={600}
+        offset={-150}
         style={{ backgroundColor: '#a6192e', border: 'none' }}
         className="fixedContact trackBook btn btn-primary fs-24 d-lg-none d-block fixed-bottom w-100"
-        to="contact-form-package">
-        Book Now
-      </LinkScroll>
-      <div className="container aside">
-        <div className="row" style={{ display: 'flex', alignItems: 'flex-start' }}>
+        to="contact-form-package"
+        Book
+        Now
+      />
+      <div className="container">
+        <div className="row">
           <StikyBox pack={pack} />
-          <div className="col-12 col-lg-9 column-left">
+          <div className="col-12 col-lg-9 ">
             <TripOverview pack={pack} />
 
             <Itineraries itineraries={pack?.itineraries} />
@@ -237,7 +241,14 @@ export async function getStaticProps({ params }) {
   const resCities = await cities.json();
 
   return {
-    props: { pack, destinations, packagetypes, notifications, packagesAll, resCities },
+    props: {
+      pack,
+      destinations,
+      packagetypes,
+      notifications,
+      packagesAll,
+      resCities,
+    },
     revalidate: 1,
   };
 }

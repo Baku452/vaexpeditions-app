@@ -22,10 +22,10 @@ function Collaborator({
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>{collaborator.full_name} | Valencia Travel</title>
+        <title>{collaborator.full_name} - Va Expeditions</title>
         <meta
           name="description"
-          content={`${collaborator.full_name} | Valencia Travel `}
+          content={`${collaborator.full_name} - Va Expeditionsl `}
         />
       </Head>
       <div className="containerBox py-5">

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { InputGroup } from 'node_modules/react-bootstrap/esm/index';
@@ -80,7 +81,7 @@ function ContactFormB2B({ pack, cities }) {
   return (
     <Form
       id="contact-us-form"
-      className="col-12 mx-auto p-0 text-left"
+      className="col-12 mx-auto p-0 text-start"
       noValidate
       validated={validated}
       onSubmit={handleSubmit}>

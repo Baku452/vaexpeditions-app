@@ -1,6 +1,9 @@
 .styky {
   list-style-type: none;
-  margin: 40px 0;
+  //margin: 40px 0;
+  // li:first-child {
+  //   margin-top: 0;
+  // }
   li {
     font-size: 16px;
     letter-spacing: 0.2px;
@@ -23,7 +26,15 @@
     color: #000000;
   }
 }
-.trackBook {
-  background-color: #a6192e !important;
-  border: none;
+.text {
+  a {
+    color: #179bd7 !important;
+  }
+}
+
+.boxAside {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0px;
+  height: 110vh;
 }

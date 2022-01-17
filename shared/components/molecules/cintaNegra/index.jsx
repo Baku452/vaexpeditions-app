@@ -34,8 +34,8 @@ function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activi
         price && offer ? styles.cinta : styles.cintaEstandar
       } row mx-auto text-center px-2 px-lg-5 py-4`}>
       {price && offer ? (
-        <div className="text-left">
-          <p className="font-weight-bold fs-22 m-0">
+        <div className="text-start">
+          <p className="fw-bold fs-22 m-0">
             {offer} <span className="fs-16">per person</span>
           </p>
           {/* <p className="m-0 mb-3"></p> */}
@@ -58,7 +58,7 @@ function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activi
             className={`${styles.iconSVG}`}
             src={PUBLIC_API + packageTypeSvg}
           />
-          <p className="m-0 ml-2">{type}</p>
+          <p className="m-0 ms-2">{type}</p>
         </div>
       </div>
       {activityID ? searchIcon(activityID) : searchIcon(0)}
@@ -68,7 +68,7 @@ function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activi
         </p>
         <div className="d-flex flex-row align-items-center justify-content-center">
           <img alt="Activity Level" className={`${styles.icons}`} src={iconActivity} />
-          <p className="m-0 ml-2">{activity}</p>
+          <p className="m-0 ms-2">{activity}</p>
         </div>
       </div>
       {/* <div className={styles.specialist}>
@@ -93,21 +93,16 @@ function CintaNegra({ price, days, offer, type, activity, packageTypeSvg, activi
         <LinkScroll
           className={`${styles.trackBook} d-none d-lg-block py-1 btn btn-primary fs-24 `}
           to="contact-form-package"
-          smooth
           offset={-190}
           duration={500}>
           Book Now
         </LinkScroll>
-        <p className='d-block d-lg-none'>
+        <p className="d-block d-lg-none">
           <span>Call Us</span>
         </p>
         <a className="text-white fs-14 pt-2 d-block text-center" href="tel:+18888038004">
-        <img
-            alt="telephone"
-            className={`${styles.icono} `}
-            src="/icons/telefono.svg"
-          />
-              1-(888) 803-8004
+          <img alt="telephone" className={`${styles.icono} `} src="/icons/telefono.svg" />
+          1-(888) 803-8004
         </a>
       </div>
     </div>

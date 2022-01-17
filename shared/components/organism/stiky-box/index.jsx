@@ -26,9 +26,9 @@ const menuList = [
 function StikyBox({ pack }) {
   return (
     <StickyBox
-      offsetTop={88}
-      offsetBottom={20}
-      className="col-3 d-none d-sm-none d-md-none d-lg-block d-lx-block px-5">
+      offsetTop={80}
+      offsetBottom={-150}
+      className={`col-3 pt-5 d-none d-lg-block px-5 ${styles.boxAside}`}>
       <ul className={styles.styky}>
         {menuList.map((item, index) =>
           (pack[item.backID] instanceof Array ? pack[item.backID].length > 0 : true) &&
@@ -76,13 +76,12 @@ function StikyBox({ pack }) {
       <LinkScroll
         className={`${styles.trackBook}  btn btn-primary  fs-16 w-100 mb-2 `}
         to="contact-form-package"
-        smooth
         offset={-120}
         duration={500}>
         Book Now
       </LinkScroll>
       <p
-        className="mb-5 px-3"
+        className={`${styles.text} mb-5 px-3`}
         style={{
           fontSize: '14px',
           color: '#424242',
