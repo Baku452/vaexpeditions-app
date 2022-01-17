@@ -159,7 +159,7 @@ function MenuContent({
                         {imageMenu ? (
                           <img alt={destFocused.title} src={PUBLIC_API + imageMenu} />
                         ) : (
-                          <img alt={destFocused.title} src="/images/portada3.jpg" />
+                          <img alt={destFocused.title} src="/images/port.jpg" />
                         )}
                       </div>
                     </div>
