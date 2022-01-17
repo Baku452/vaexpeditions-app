@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://valenciatravelcusco.com/',
+  siteUrl: 'https://vaexpeditions.com/',
   generateRobotsTxt: true,
 
   robotsTxtOptions: {
