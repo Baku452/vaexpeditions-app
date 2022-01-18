@@ -135,7 +135,7 @@ export async function getStaticProps({ params }) {
       blogsPosts,
       blogtypesRes,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

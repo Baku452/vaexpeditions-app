@@ -102,7 +102,7 @@ export async function getStaticProps({ params }) {
       packagesAll,
       country,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

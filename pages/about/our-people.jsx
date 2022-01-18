@@ -104,6 +104,6 @@ export async function getStaticProps() {
       pagecontent,
       collaborators,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }

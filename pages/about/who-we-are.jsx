@@ -392,6 +392,6 @@ export async function getStaticProps() {
       packagesAll,
       pagecontent,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }

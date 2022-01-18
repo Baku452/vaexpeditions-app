@@ -94,7 +94,7 @@ export async function getStaticProps({ params }) {
       SSRDestination,
       packagesOfftheBeaten,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

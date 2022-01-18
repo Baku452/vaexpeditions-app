@@ -204,7 +204,7 @@ export async function getStaticProps({ params }) {
       packagetypes,
       notifications,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

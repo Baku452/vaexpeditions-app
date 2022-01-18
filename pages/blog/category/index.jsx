@@ -90,7 +90,7 @@ export async function getStaticProps() {
       popups,
       blogtypesRes,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

@@ -99,7 +99,7 @@ export async function getStaticProps({ params }) {
       notifications,
       packagesAll,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

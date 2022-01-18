@@ -219,7 +219,7 @@ export async function getStaticProps() {
       interests,
       popularPosts,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

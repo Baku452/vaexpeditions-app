@@ -220,7 +220,7 @@ export async function getStaticProps({ params }) {
       packagesAll,
       popularPosts,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

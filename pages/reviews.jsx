@@ -53,7 +53,7 @@ export async function getStaticProps() {
       popups,
       packagesAll,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

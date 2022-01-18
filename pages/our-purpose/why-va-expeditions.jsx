@@ -220,6 +220,6 @@ export async function getStaticProps() {
       notifications,
       ourpurpose,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
