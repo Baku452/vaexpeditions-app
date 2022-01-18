@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -19,14 +20,7 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({
-  destinations,
-  packagetypes,
-  interests,
-  notifications,
-  packagesAll,
-  popups,
-}) {
+function Search({ destinations, packagetypes, interests, notifications, packagesAll }) {
   const router = useRouter();
   const [clearFilter, setClearFilter] = useState(false);
   const [packagesList, setPackagesList] = useState([]);
@@ -114,14 +108,29 @@ function Search({
 
   function actionFiltersDestinations(value, id) {
     const index = checkedDestination.findIndex(item => item === String(id));
-
     if (index === -1) checkedDestination.push(String(id));
     else checkedDestination.splice(index, 1);
 
-    router.push({
-      pathname: '/search',
-      query: { ...router.query, destination: checkedDestination.join() },
-    });
+    if (checkedDestination.length > 0) {
+      router.push(
+        {
+          pathname: '/search',
+          query: { ...router.query, destination: checkedDestination.join() },
+        },
+        null,
+        { shallow: true },
+      );
+    } else {
+      delete router.query.destination;
+      router.push(
+        {
+          pathname: '/search',
+          query: { ...router.query },
+        },
+        null,
+        { shallow: true },
+      );
+    }
   }
 
   function setActionChecked(id, state) {
@@ -207,7 +216,7 @@ function Search({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}
-      popups={popups}
+      continents={destinations}
       pixels={10}>
       <Head>
         <title>Search Tour Trips in Va Expeditions</title>
@@ -279,38 +288,24 @@ function Search({
                       ) : null}
                     </div>
                   )}
-                  {/* <Collapse open={1}>
-                    <CollapseContent index={0} title="Destinations"> */}
-                  {destinations.map(
-                    country =>
-                      country.destinations.filter(item => item.active).length > 0 && (
-                        <Collapse open={1}>
-                          <CollapseContent1 index={0} title={country.name}>
-                            {country.destinations.map(
-                              destination =>
-                                destination.active && (
-                                  <Form.Check
-                                    key={destination.id}
-                                    checked={setActionChecked(
-                                      destination.id,
-                                      checkedDestination,
-                                    )}
-                                    type="checkbox"
-                                    onChange={event =>
-                                      actionFiltersDestinations(event, destination.id)
-                                    }
-                                    name={destination.slug}
-                                    id={destination.id}
-                                    label={`${destination.title}`}
-                                  />
-                                ),
-                            )}
-                          </CollapseContent1>
-                        </Collapse>
-                      ),
-                  )}
-                  {/* </CollapseContent>
-                  </Collapse> */}
+
+                  <Collapse open={1}>
+                    <CollapseContent1 index={0} title="destinations">
+                      {destinations.map(continent =>
+                        continent.destinations.map(item => (
+                          <Form.Check
+                            key={item.id}
+                            checked={setActionChecked(item.id, checkedDestination)}
+                            type="checkbox"
+                            onChange={event => actionFiltersDestinations(event, item.id)}
+                            name={`type${item.id}`}
+                            id={`type${item.id}`}
+                            label={item.title}
+                          />
+                        )),
+                      )}
+                    </CollapseContent1>
+                  </Collapse>
 
                   <Collapse open={1}>
                     <CollapseContent1 index={0} title="Duration (Days)">
