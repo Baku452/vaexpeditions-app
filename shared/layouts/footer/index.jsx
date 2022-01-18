@@ -58,6 +58,11 @@ function Footer({ continents }) {
                     <a>Contact Us</a>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/pages/privacy-policy-of-va-expeditions">
+                    <a>Privacy Policy</a>
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-start text-white pb-4">

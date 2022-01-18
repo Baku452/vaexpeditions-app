@@ -230,7 +230,7 @@ function ContactForm({ destinations }) {
                           spam folder or call 1-860-856-5858. By Signing up for this
                           email, you are agreeing to receive new, offers, and information
                           from Va Expeditions or our partners. Click
-                          <Link href="/terms-conditions">
+                          <Link href="/pages/privacy-policy-of-va-expeditions">
                             <a> here </a>
                           </Link>
                           to visit our Privacy Policy. Easy unsubscribe links are provided

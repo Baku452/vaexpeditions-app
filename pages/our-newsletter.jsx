@@ -163,6 +163,19 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
                           </div>
                         ))}
                       </div>
+                      <div className="row px-3">
+                        <p className="col-12 pt-3 fs-14">
+                          *By submitting your information, you are automatically accepting
+                          our
+                          <Link href="/pages/privacy-policy-of-va-expeditions">
+                            <a href="/pages/privacy-policy-of-va-expeditions">
+                              {' '}
+                              privacy policy.{' '}
+                            </a>
+                          </Link>
+                        </p>
+                      </div>
+
                       <div className="row form-group py-5">
                         <div className="col-12 col-md-5 mx-auto">
                           <input

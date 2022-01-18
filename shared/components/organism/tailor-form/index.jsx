@@ -337,12 +337,14 @@ function TailorForm({ destinations, title = true, types }) {
                     </Form.Control.Feedback>
                   </div>
                 </div>
-                <p className="col-12 pt-3 fs-9">
-                  We respond to all inquiries within one business day. If you do not hear
-                  back from us within this timeframe, please check your spam folder or
-                  call 1-860-856-5858. By Signing up for this email, you are agreeing to
-                  receive new, offers, and information from Va Expeditions or our
-                  partners.
+                <p className="col-12 pt-3 fs-12">
+                  *By submitting your information, you are automatically accepting our
+                  <Link href="/pages/privacy-policy-of-va-expeditions">
+                    <a href="/pages/privacy-policy-of-va-expeditions">
+                      {' '}
+                      privacy policy.{' '}
+                    </a>
+                  </Link>
                 </p>
               </div>
 

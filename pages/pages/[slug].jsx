@@ -6,8 +6,8 @@ import { Base } from '@/layouts/index';
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function Page({ destinations, packagetypes, page, notifications, packagesAll }) {
-  // const reg = /\/media/g;
-  // const content = page.content.replace(reg, `${PUBLIC_API}/media`);
+  const reg = /\/media/g;
+  const content = page.content.replace(reg, `${PUBLIC_API}/media`);
 
   return (
     <Base
@@ -24,11 +24,11 @@ function Page({ destinations, packagetypes, page, notifications, packagesAll }) 
         <meta name="description" content={page?.summary} />
         <meta name="keywords" content={page?.keywords} />
       </Head>
-      <div className="containerBox px-5">
+      <div className="container px-5">
         <div className="row pt-5">
           <div className="col-12">
             <h2>{page.title}</h2>
-            {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
+            <div dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
       </div>
