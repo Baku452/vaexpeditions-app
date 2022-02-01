@@ -12,13 +12,13 @@ const navDestinations = [
   },
   {
     id: 3,
-    title: 'Travel Facts',
-    slug: 'travel-facts',
+    title: 'Where to Go',
+    slug: 'where-to-go',
   },
   {
     id: 4,
-    title: 'Where to Go',
-    slug: 'where-to-go',
+    title: 'Highligths',
+    slug: 'highligths',
   },
   {
     id: 5,
@@ -27,11 +27,16 @@ const navDestinations = [
   },
   {
     id: 6,
+    title: 'Travel Facts',
+    slug: 'travel-facts',
+  },
+  {
+    id: 7,
     title: 'Travel Advice',
     slug: 'travel-advice',
   },
   {
-    id: 7,
+    id: 8,
     title: 'FAQs',
     slug: 'faqs',
   },
