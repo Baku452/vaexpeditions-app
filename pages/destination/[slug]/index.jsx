@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-danger */
 import Head from 'next/head';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import {
   FaqsDestinations,
   GridTravelAdvice,
   Hero3,
+  Highligths,
   NavBarFixed,
   PackageItem,
   WhereToItem,
@@ -94,6 +96,38 @@ function Destination({
           </div>
         </div>
       </section>
+      <section id="where-to-go" className=" py-5">
+        <h2 className="title2 py-4">
+          Where to go in{' '}
+          <span className="line fw-semi-bold">{SSRDestination?.title}</span>
+        </h2>
+        <div className="containerBox row">
+          {SSRDestination.where
+            ? SSRDestination.where.map(item => (
+                <WhereToItem
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  items={item.items}
+                  summary={item.summary}
+                  thumbnail={PUBLIC_API + item.image}
+                  slug={item.slug}
+                />
+              ))
+            : null}
+        </div>
+      </section>
+      <section id="highligths" className=" py-5 background2">
+        <div className="containerBox">
+          <Highligths item={SSRDestination?.highligths} />
+        </div>
+      </section>
+      <section id="best-time">
+        <div className="containerBox overflow-auto">
+          <h2 className="title2 py-4">Best time to visit </h2>
+          <div dangerouslySetInnerHTML={{ __html: SSRDestination?.bestTime }} />
+        </div>
+      </section>
       <section id="travel-facts" className="py-5">
         <div className="col-12">
           <h2 className=" title2 text-center py-4">
@@ -120,33 +154,6 @@ function Destination({
               </div>
             ) : null}
           </section>
-        </div>
-      </section>
-      <section id="where-to-go" className="background2 py-5">
-        <h2 className="title2 py-4">
-          Where to go in{' '}
-          <span className="line fw-semi-bold">{SSRDestination?.title}</span>
-        </h2>
-        <div className="containerBox row">
-          {SSRDestination.where
-            ? SSRDestination.where.map(item => (
-                <WhereToItem
-                  key={item.id}
-                  id={item.id}
-                  title={item.title}
-                  items={item.items}
-                  summary={item.summary}
-                  thumbnail={PUBLIC_API + item.image}
-                  slug={item.slug}
-                />
-              ))
-            : null}
-        </div>
-      </section>
-      <section id="best-time">
-        <div className="containerBox overflow-auto">
-          <h2 className="title2 py-4">Best time to visit </h2>
-          <div dangerouslySetInnerHTML={{ __html: SSRDestination?.bestTime }} />
         </div>
       </section>
       <section id="travel-advice" className="background2 py-5 px-3">
@@ -187,6 +194,9 @@ export async function getStaticProps({ params }) {
   const fetchDestination = await fetch(`${PUBLIC_API}/destination/${params.slug}`);
   const SSRDestination = await fetchDestination.json();
 
+  const fetchCity = await fetch(`${PUBLIC_API}/city/${params.slug}/${params.city}`);
+  const city = await fetchCity.json();
+
   const fetchpackages = await fetch(`${PUBLIC_API}/packages/featured/${params.slug}`);
   const SSRPackages = await fetchpackages.json();
 
@@ -203,6 +213,7 @@ export async function getStaticProps({ params }) {
       destinations,
       packagetypes,
       notifications,
+      city,
     },
     revalidate: 60,
   };

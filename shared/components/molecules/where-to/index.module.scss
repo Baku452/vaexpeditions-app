@@ -1,15 +1,114 @@
 @import '../../../../styles/media-queries.scss';
 
-.cardBox {
-  background-color: #f1f1f1;
-  .contentBox {
-    color: black !important;
-    height: 180px;
-    h3 {
+.vacation {
+  filter: brightness(70%);
+}
+.img {
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  filter: brightness(70%);
+}
+.card {
+  h3 {
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    color: #ffffff;
+    position: absolute;
+    height: 22%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    padding: 20px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px;
+    @media (max-width: 950px) {
       font-size: 20px !important;
+      height: 30%;
+    }
+    @media (max-width: 767px) {
+      font-size: 20px !important;
+      height: 27%;
     }
     @media (max-width: 575px) {
-      height: 100px;
+      font-size: 25px !important;
+      height: 22%;
+    }
+    @media (max-width: 340px) {
+      font-size: 18px !important;
+      height: 26%;
+    }
+  }
+
+  p {
+    top: 0;
+    position: absolute;
+    color: transparent;
+    z-index: 20;
+    height: 100%;
+    padding-top: 15px;
+    transition: 0.2s ease;
+    background: transparent;
+  }
+  &:hover h3 {
+    display: none !important;
+  }
+  &:hover p {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+  }
+  &:hover .cardTime2 {
+    z-index: 50;
+  }
+}
+
+.cardTime2 {
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  z-index: -50;
+  position: absolute;
+  color: transparent;
+  background-color: transparent;
+  //background-color: #179bd7;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.boton {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  background-color: #179bd7 !important;
+  padding: 10px 15px;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1;
+  &:before,
+  &:after {
+    background: rgb(255, 255, 255);
+    transition: 0.3s ease;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+  &:before {
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover {
+    transition: 0.3s ease;
+    color: rgb(0, 0, 0) !important;
+    &:before {
+      right: 0;
     }
   }
 }
