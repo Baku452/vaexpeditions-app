@@ -58,7 +58,7 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
         <title>Newsletter - Va Expeditions </title>
       </Head>
       <Hero2
-        title="Subscribe Newsletter"
+        title="Subscribe to our Newsletter"
         image="/images/toptours2.jpg"
         alt="subscribe newsletter"
       />

@@ -21,7 +21,7 @@ function Base({
         packagesAll={packagesAll}
         pixels={pixels}
       />
-      <section>{children}</section>
+      <>{children}</>
       <Footer continents={destinations} />
     </>
   );
