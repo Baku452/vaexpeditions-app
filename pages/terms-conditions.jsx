@@ -33,11 +33,10 @@ function TermsConditions({
               The use of the Va expeditions web site (here referred to as “the Web Site”)
               is subject to the terms and conditions stated below. The use of the Web Site
               constitutes an agreement by you, the user (here referred to as “the
-              Client”), that your use is governed by these terms and conditions.
-              <br /> In addition, when using particular Va expeditions services, you will
-              be subject to any guidelines or rules applicable to such services that may
-              be posted here. Make sure you check terms and conditions regularly for any
-              updates.
+              Client”), that your use is governed by these terms and conditions.In
+              addition, when using particular Va expeditions services, you will be subject
+              to any guidelines or rules applicable to such services that may be posted
+              here. Make sure you check terms and conditions regularly for any updates.
             </p>
           </div>
           <div className="py-3">
@@ -181,8 +180,8 @@ function TermsConditions({
             </p>
             <p>
               With written notification 7-10 days before departure, the client may
-              postpone their trip to any date in 2021 or 20222 and receive a 65% credit
-              for the future trip. With written notification of less than 7 days before
+              postpone their trip to any date in 2021 or 2022 and receive a 65% credit for
+              the future trip. With written notification of less than 7 days before
               departure, the client may postpone their trip to any date in 2021 or 2022
               and receive 50% credit for the future trip.
             </p>
