@@ -25,26 +25,22 @@ function TermsConditions({
         <meta name="description" content="Terms and conditions" />
         <meta name="keywords" content="Terms & conditions" />
       </Head>
-      <div className="container">
-        <div className="row col-12 pt-5 pb-4 mb-3 fs-16 lh-29 px-3">
-          <div>
+      <div className="containerBox lh-29">
+        <div className="row p-5">
+          <div className="py-3">
             <h1 className="text-center title">Terms and Conditions</h1>
-            <div />
             <p>
               The use of the Va expeditions web site (here referred to as “the Web Site”)
               is subject to the terms and conditions stated below. The use of the Web Site
               constitutes an agreement by you, the user (here referred to as “the
-              Client”), that your use is governed by these terms and conditions.
-            </p>
-            <p>
-              In addition, when using particular Va expeditions services, you will be
-              subject to any guidelines or rules applicable to such services that may be
-              posted here. Make sure you check terms and conditions regularly for any
-              updates.
+              Client”), that your use is governed by these terms and conditions.In
+              addition, when using particular Va expeditions services, you will be subject
+              to any guidelines or rules applicable to such services that may be posted
+              here. Make sure you check terms and conditions regularly for any updates.
             </p>
           </div>
-          <h2>Contract between the Client and Va Expeditions</h2>
-          <div>
+          <div className="py-3">
+            <h2 className="title">Contract between the Client and Va Expeditions</h2>
             <p>
               To secure a booking with Va expeditions, the Client must deposit 40% of the
               entire cost of the trip. All domestic and international flights must be paid
@@ -66,8 +62,8 @@ function TermsConditions({
               and accept these conditions.
             </p>
           </div>
-          <h2>Payment</h2>
-          <div>
+          <div className="py-3">
+            <h2 className="title"> Payment</h2>
             <p>
               The balance of the amount due must be paid to Va Expeditions no later than
               60 days before departure* (different policies may apply for cruise
@@ -107,22 +103,25 @@ function TermsConditions({
               advance of your departure date.
             </p>
           </div>
-          <h2>Changes by the Client</h2>
-          <p>
-            Any changes to the original booking must be confirmed by the person signing
-            the booking form. For any change by the Client to the itinerary after
-            receiving a confirmed Travel Programme from Peru for Less, a US$35 changing
-            fee will be charged plus any costs or charges which are incurred or levied by
-            our suppliers as a result of the amendment. While every reasonable effort will
-            be made to accommodate changes and additional requests, their availability
-            cannot be guaranteed.
-          </p>
-          <p>
-            Services can be transferred from one client to another as long as there is
-            availability and the providers’ conditions allow it.
-          </p>
-          <div>
-            <h2>Substitution of Client</h2>
+          <div className="py-3">
+            <h2 className="title">Changes by the Client</h2>
+            <p>
+              Any changes to the original booking must be confirmed by the person signing
+              the booking form. For any change by the Client to the itinerary after
+              receiving a confirmed Travel Programme from Peru for Less, a US$35 changing
+              fee will be charged plus any costs or charges which are incurred or levied
+              by our suppliers as a result of the amendment. While every reasonable effort
+              will be made to accommodate changes and additional requests, their
+              availability cannot be guaranteed.
+            </p>
+            <p>
+              Services can be transferred from one client to another as long as there is
+              availability and the providers’ conditions allow it.
+            </p>
+          </div>
+
+          <div className="py-3">
+            <h2 className="title">Substitution of Client</h2>
             <p>
               If any member of your party is prevented from travelling, it may be possible
               to transfer the booking to another suitable person, provided that written
@@ -132,8 +131,8 @@ function TermsConditions({
               cannot be transferred.
             </p>
           </div>
-          <div>
-            <h2>Cancellation by the Client</h2>
+          <div className="py-3">
+            <h2 className="title">Cancellation by the Client</h2>
             <p>
               The Client may cancel the booking at any time provided that the cancellation
               is communicated to Va Expeditions in writing. Deposit paid to reserve trip
@@ -161,8 +160,8 @@ function TermsConditions({
               special quotes and services, different cancellation deadlines may apply.
             </p>
           </div>
-          <div>
-            <h2>Postponement by the Client</h2>
+          <div className="py-3">
+            <h2 className="title">Postponement by the Client</h2>
             <p>
               <strong>
                 Note: This policy applies to all new bookings beginning May 1st, 2021.
@@ -181,8 +180,8 @@ function TermsConditions({
             </p>
             <p>
               With written notification 7-10 days before departure, the client may
-              postpone their trip to any date in 2021 or 20222 and receive a 65% credit
-              for the future trip. With written notification of less than 7 days before
+              postpone their trip to any date in 2021 or 2022 and receive a 65% credit for
+              the future trip. With written notification of less than 7 days before
               departure, the client may postpone their trip to any date in 2021 or 2022
               and receive 50% credit for the future trip.
             </p>
@@ -190,11 +189,11 @@ function TermsConditions({
               Period before departure when written notification is received, postponement
               fee as a percentage
             </p>
-            <lu>
+            <ul>
               <li>More than 10 days 0%</li>
               <li>7-10 days 35%</li>
               <li>6 days or less 50%</li>
-            </lu>
+            </ul>
             <p>
               Va Expeditions will cover all price increases between 2021 to 2022. For
               trips postponed to 2022 or later, additional standard inflation rates apply.{' '}
@@ -219,8 +218,8 @@ function TermsConditions({
               special quotes and services, different postponement deadlines may apply.
             </p>
           </div>
-          <div>
-            <h2>Changes and Cancellation by Va expeditions</h2>
+          <div className="py-3">
+            <h2 className="title">Changes and Cancellation by Va expeditions</h2>
             <p>
               While Va Expeditions use its best endeavours to operate all tours as
               advertised, by entering into this contract the Client accepts that it may
@@ -260,8 +259,8 @@ function TermsConditions({
               other form of transport.
             </p>
           </div>
-          <div>
-            <h2>Surcharges</h2>
+          <div className="py-3">
+            <h2 className="title">Surcharges</h2>
             <p>
               Should any price increase, Va Expeditions will absorb the price increase if
               the price increase is less than 2% of the total package price. If the
@@ -269,7 +268,7 @@ function TermsConditions({
             </p>
           </div>
           <div>
-            <h2>Passport, Visa and Vaccinations</h2>
+            <h2 className="title">Passport, Visa and Vaccinations</h2>
             <p>
               It is the responsibility of the Client to be in possession of a valid
               passport, visa permits, inoculations and preventative medicines as may be
@@ -279,7 +278,7 @@ function TermsConditions({
             </p>
           </div>
           <div>
-            <h2>Age, Fitness and Participation</h2>
+            <h2 className="title">Age, Fitness and Participation</h2>
             <p>
               All Clients are expected to assess that their physical fitness aligns with
               the requirements of the itinerary of their choosing prior to booking.
@@ -299,8 +298,8 @@ function TermsConditions({
               from the Client.
             </p>
           </div>
-          <div>
-            <h2>Local laws</h2>
+          <div className="py-3">
+            <h2 className="title">Local laws</h2>
             <p>
               All participants on tours operated by Va Expeditions are expected to obey
               the laws and regulations of the countries visited and any failure to do so
@@ -308,8 +307,8 @@ function TermsConditions({
               under these booking conditions.
             </p>
           </div>
-          <div>
-            <h2>Illness or disability</h2>
+          <div className="py-3">
+            <h2 className="title">Illness or disability</h2>
             <p>
               Anyone suffering from illness or disability or undergoing treatment for any
               physical or medical condition must declare the true nature of such condition
@@ -327,8 +326,8 @@ function TermsConditions({
               safety of the Client at such times as may be appropriate.
             </p>
           </div>
-          <div>
-            <h2>If the Client has a Complaint</h2>
+          <div className="py-3">
+            <h2 className="title">If the Client has a Complaint</h2>
             <p>
               If the Client has a complaint about any of the tour arrangements, he/she
               must bring it to the attention of the tour leader or other representative of
@@ -341,8 +340,8 @@ function TermsConditions({
               Va Expeditions within 28 days of the completion of the tour.
             </p>
           </div>
-          <div>
-            <h2>Flight Bookings</h2>
+          <div className="py-3">
+            <h2 className="title">Flight Bookings</h2>
             <p>
               Peru for Less will use its best endeavors to ensure that all flight prices
               are correct at the time that they are quoted. Airlines reserve the right to
@@ -370,8 +369,8 @@ function TermsConditions({
               industrial action or any other reason.
             </p>
           </div>
-          <div>
-            <h2>Our responsibility</h2>
+          <div className="py-3">
+            <h2 className="title">Our responsibility</h2>
             <p>
               Va Expeditions cannot guarantee the accuracy of any hotel, resort or other
               brochure which is not published by them but may be supplied as an additional
@@ -394,8 +393,8 @@ function TermsConditions({
               upheavals or other causes.
             </p>
           </div>
-          <div>
-            <h2>Website Terms & Conditions</h2>
+          <div className="py-3">
+            <h2 className="title">Website Terms & Conditions</h2>
             <strong>Ownership of Copyrights/Usage Restrictions</strong>
             <p>
               The works of authorship contained in this Web Site, including but not
