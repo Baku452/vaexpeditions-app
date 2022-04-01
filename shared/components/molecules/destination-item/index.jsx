@@ -6,31 +6,36 @@ const borderColor = '1px solid #e6e6e6';
 function DestinationItem({ title, slug, thumbnail, content, summary }) {
   return slug ? (
     <Link href={slug}>
-      <div className="card w-100 cursor-pointer">
-        <img src={thumbnail} className="card-img-top" alt={title} />
+      <a>
+        <div className="card w-100 cursor-pointer text-black">
+          <img src={thumbnail} className="card-img-top" alt={title} />
 
-        <div
-          className="card-body py-3 px-2"
-          style={{
-            borderLeft: borderColor,
-            borderRight: borderColor,
-            borderBottom: borderColor,
-          }}>
-          <div className="px-3">
-            <h5
-              className="lh-23"
-              style={{
-                fontWeight: '600',
-              }}>
-              {title}
-            </h5>
-            {summary ? <p className="fs-14">{summary}</p> : null}
-            {content ? (
-              <div className="fs-14" dangerouslySetInnerHTML={{ __html: { content } }} />
-            ) : null}
+          <div
+            className="card-body py-3 px-2"
+            style={{
+              borderLeft: borderColor,
+              borderRight: borderColor,
+              borderBottom: borderColor,
+            }}>
+            <div className="px-3">
+              <h5
+                className="lh-23"
+                style={{
+                  fontWeight: '600',
+                }}>
+                {title}
+              </h5>
+              {summary ? <p className="fs-14">{summary}</p> : null}
+              {content ? (
+                <div
+                  className="fs-14"
+                  dangerouslySetInnerHTML={{ __html: { content } }}
+                />
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </Link>
   ) : (
     <div className="card w-100">

@@ -22,20 +22,22 @@ function OurRecommendations() {
               <div className={`${styles.contentBox} row mb-5`}>
                 <div className="col-12 col-lg-4 text-center">
                   <Link href="/continent/central-and-south-america">
-                    <div className={`${styles.item} position-relative `}>
-                      <img
-                        src="images/experiences.jpg"
-                        className="img-fluid"
-                        alt="experiences"
-                      />
-                      <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
-                        Experience Central & South America
-                      </h4>
-                    </div>
+                    <a>
+                      <div className={`${styles.item} position-relative `}>
+                        <img
+                          src="images/experiences.jpg"
+                          className="img-fluid"
+                          alt="experiences"
+                        />
+                        <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
+                          Experience Central & South America
+                        </h4>
+                      </div>
+                    </a>
                   </Link>
                 </div>
                 <div className="col-12 col-lg-4 text-center">
-                  <Link href="/continent/central-and-south-america/off-the-beaten">
+                  <Link href="/off-the-beaten">
                     <a>
                       <div className={`${styles.item} position-relative`}>
                         <img
@@ -52,12 +54,14 @@ function OurRecommendations() {
                 </div>
                 <div className="col-12 col-lg-4 text-center">
                   <Link href="/tailor-made-tour">
-                    <div className={`${styles.item} position-relative`}>
-                      <img src="images/tm_peru.jpg" className="img-fluid" alt="" />
-                      <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
-                        Design your own travel experience. We can help you.
-                      </h4>
-                    </div>
+                    <a>
+                      <div className={`${styles.item} position-relative`}>
+                        <img src="images/tm_peru.jpg" className="img-fluid" alt="" />
+                        <h4 className="m-0 fs-20 lh-20 text-white position-absolute">
+                          Design your own travel experience. We can help you.
+                        </h4>
+                      </div>
+                    </a>
                   </Link>
                 </div>
               </div>
