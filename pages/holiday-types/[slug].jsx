@@ -59,7 +59,11 @@ function HolidayTyoe({
       <FilterContextWrapper>
         <Container style={{ borderTop: '1px solid #dedede' }}>
           <Row>
-            <SearchFilter interests={interests} cities={destinations} />
+            <SearchFilter
+              interests={interests}
+              cities={destinations}
+              title={resDestino.title}
+            />
             <Col md={12} lg={9}>
               <ListPackages packagetypes={packagetypes} activities={activities} />
             </Col>

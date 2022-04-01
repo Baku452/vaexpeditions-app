@@ -1,14 +1,14 @@
 /* eslint-disable import/extensions */
 import { Form } from 'react-bootstrap';
 
-import { ClearFilters, CollapseContent, FixedFilter, Icon } from '@/components/index';
+import { ClearFilters, CollapseContent1, FixedFilter, Icon } from '@/components/index';
 import { useFilterContext } from '@/context/FilterContext';
 import { activities, days } from '@/core/index';
 import Close from '@/icons/close.svg';
 
 import styles from './index.module.scss';
 
-const SearchFilter = ({ packagetypes, interests, cities }) => {
+const SearchFilter = ({ packagetypes, interests, cities, title }) => {
   const {
     checkedInterest,
     checkedTypes,
@@ -89,7 +89,7 @@ const SearchFilter = ({ packagetypes, interests, cities }) => {
           showFilters ? 'd-lg-block' : 'd-none'
         } d-lg-block col-12 col-lg-3 ${styles.aside}`}>
         <div className={`${styles.aside__box}  m-0`}>
-          <h2 className="pt-3">All our Tours</h2>
+          <h2 className="pt-3">All our {title} Tours</h2>
           {numberPackages > 0 ? (
             <p className="py-3 mb-0">{numberPackages} Tours</p>
           ) : null}
@@ -104,7 +104,7 @@ const SearchFilter = ({ packagetypes, interests, cities }) => {
         </div>
         <Form>
           {cities ? (
-            <CollapseContent open={1} index={0} title="Destinations">
+            <CollapseContent1 open={1} index={0} title="Destinations">
               {cities.map(item => (
                 <Form.Check
                   key={item.id}
@@ -117,10 +117,10 @@ const SearchFilter = ({ packagetypes, interests, cities }) => {
                   label={item.title}
                 />
               ))}
-            </CollapseContent>
+            </CollapseContent1>
           ) : null}
           {packagetypes ? (
-            <CollapseContent open={1} index={0} title="Type of Travel">
+            <CollapseContent1 open={1} index={0} title="Type of Travel">
               {packagetypes.map(item => (
                 <Form.Check
                   key={item.id}
@@ -133,9 +133,9 @@ const SearchFilter = ({ packagetypes, interests, cities }) => {
                   label={item.title}
                 />
               ))}
-            </CollapseContent>
+            </CollapseContent1>
           ) : null}
-          <CollapseContent open={1} index={0} title="Duration (Days)">
+          <CollapseContent1 open={1} index={0} title="Duration (Days)">
             {days.map(item => (
               <Form.Check
                 key={item.id}
@@ -147,8 +147,8 @@ const SearchFilter = ({ packagetypes, interests, cities }) => {
                 label={`${item.start} - ${item.end}`}
               />
             ))}
-          </CollapseContent>
-          <CollapseContent open={1} index={0} title="Activity Level">
+          </CollapseContent1>
+          <CollapseContent1 open={1} index={0} title="Activity Level">
             {activities.map(item => (
               <Form.Check
                 key={item.id}
@@ -160,8 +160,8 @@ const SearchFilter = ({ packagetypes, interests, cities }) => {
                 label={item.label}
               />
             ))}
-          </CollapseContent>
-          <CollapseContent open={1} index={0} title="Interests">
+          </CollapseContent1>
+          <CollapseContent1 open={1} index={0} title="Interests">
             {interests.map(item => (
               <Form.Check
                 key={item.id}
@@ -173,7 +173,7 @@ const SearchFilter = ({ packagetypes, interests, cities }) => {
                 label={item.title}
               />
             ))}
-          </CollapseContent>
+          </CollapseContent1>
         </Form>
         {showFilters ? (
           <div className={` ${styles.asideMobileFooter} fixed-bottom py-2 px-3`}>
