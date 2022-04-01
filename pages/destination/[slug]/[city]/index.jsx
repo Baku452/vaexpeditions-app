@@ -169,7 +169,7 @@ function City({
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`${PUBLIC_API}/cities/`);
+  const response = await fetch(`${PUBLIC_API}/destinations/cities/`);
   const countriesResponse = await response.json();
 
   // const responseDestinations = await fetch(`${PUBLIC_API}/cities/`);
@@ -186,21 +186,23 @@ export async function getStaticProps({ params }) {
   const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const fetchDestination = await fetch(`${PUBLIC_API}/destination/${params.slug}`);
+  const fetchDestination = await fetch(`${PUBLIC_API}/destinations/${params.slug}`);
   const SSRDestination = await fetchDestination.json();
 
-  const fetchCity = await fetch(`${PUBLIC_API}/city/${params.slug}/${params.city}`);
+  const fetchCity = await fetch(
+    `${PUBLIC_API}/destinations/city/${params.slug}/${params.city}`,
+  );
   const city = await fetchCity.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const fetchpackages = await fetch(
-    `${PUBLIC_API}/packages/${params.slug}/${params.city}`,
+    `${PUBLIC_API}/packages/destination/${params.slug}/city/${params.city}`,
   );
   const SSRPackages = await fetchpackages.json();
 
-  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interestResponse = await fetch(`${PUBLIC_API}/packages/interests/`);
   const interests = await interestResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);

@@ -35,9 +35,9 @@ function ContactUs({ destinations, packagetypes, packages, notifications, packag
 }
 
 export async function getStaticProps() {
-  const responseTypes = await fetch(`${PUBLIC_API}/countries/home/`);
+  const responseTypes = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await responseTypes.json();
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
   const packagesResponse = await fetch(`${PUBLIC_API}/packages/`);
   const packages = await packagesResponse.json();

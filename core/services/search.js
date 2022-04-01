@@ -15,7 +15,7 @@ function packages({ queryParams = '', offset = 0 }) {
 
 function packagesDestination({ queryParams = '', offset = 0, destination }) {
   return services({
-    url: `/packages/${destination}/?limit=9&offset=${offset}&${queryParams}`,
+    url: `/packages/destination/${destination}/?limit=9&offset=${offset}&${queryParams}`,
     method: 'GET',
   })
     .then(result => {
@@ -37,7 +37,7 @@ function packagesOptional({ queryParams = '' }) {
 }
 
 function packagesTypes() {
-  return services({ url: `/packagestype/`, method: 'GET' })
+  return services({ url: `/packages/types/`, method: 'GET' })
     .then(result => {
       return { result };
     })

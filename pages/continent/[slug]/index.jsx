@@ -2,16 +2,17 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { Col, Row } from 'react-bootstrap';
 
-import { DestinationItem, Slide } from '@/components/index';
+import { DestinationItem, Hero } from '@/components/index';
 import { Base } from '@/layouts/index';
 
 import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function Search({
-  country: SSRCountry,
+function Continent({
+  continent,
   destinations,
   packagetypes,
   notifications,
@@ -42,61 +43,59 @@ function Search({
       packagetypes={packagetypes}
       notifications={notifications}
       packagesAll={packagesAll}>
-      <Slide
-        title={SSRCountry.name}
-        images={SSRCountry.images}
-        navigation
-        pagination={false}
-        isHome
-        isDestination
-      />
       <Head>
-        <title>{SSRCountry.name} - Va Expeditions</title>
+        <title>{continent.name} - Va Expeditions</title>
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
-      <section id="tours_all" className="row containerBox">
-        <div className="col-12 py-4 row d-flex ">
-          <div className="row p-4 order-md-2">
-            <div className="col-12">
-              <h2 className="title">Destinations in {SSRCountry.name}</h2>
-            </div>
-            {SSRCountry.destinations.length > 0 &&
-              SSRCountry.destinations.map(item => (
-                <div
-                  key={item?.id.toString()}
-                  className="d-flex col-12 col-md-6 col-lg-4 mb-4">
-                  <DestinationItem
-                    title={item.title}
-                    summary={item.summary}
-                    slug={{
-                      pathname: `/destination/${item.slug}`,
-                    }}
-                    thumbnail={PUBLIC_API + item.thumbnail}
-                  />
-                </div>
-              ))}
-          </div>
-          <div className={`row p-4 order-md-1 ${styles.text}`}>
-            <div className="col-12 col-lg-8">
-              <h1 className="title">Overview of {SSRCountry.name}</h1>
+      <Hero
+        title={continent.name}
+        image={PUBLIC_API + continent.image}
+        alt={continent.name}
+      />
+
+      <div id="continent" className="containerBox px-5 px-lg-4">
+        <section id="overview" className="pt-5">
+          <Row>
+            <Col>
+              <h1 className="title">Overview of {continent.name}</h1>
               <div
                 className={` ${styles.content} pe-5`}
-                dangerouslySetInnerHTML={{ __html: SSRCountry?.content }}
+                dangerouslySetInnerHTML={{ __html: continent?.content }}
               />
-            </div>
-            <div
-              className={`col-12 col-lg-4 p-4 ${styles.quote}`}
-              dangerouslySetInnerHTML={{ __html: SSRCountry?.quote }}
-            />
-          </div>
-        </div>
-      </section>
+            </Col>
+          </Row>
+        </section>
+        <section id="destinations">
+          <Row>
+            <Col>
+              <h2 className="title">Destinations in {continent.name}</h2>
+            </Col>
+            <Row>
+              {destinations &&
+                destinations.map(item => (
+                  <div
+                    key={item?.id.toString()}
+                    className="d-flex col-12 col-md-6 col-lg-4 mb-4">
+                    <DestinationItem
+                      title={item.title}
+                      summary={item.summary}
+                      slug={{
+                        pathname: `/destination/${item.slug}`,
+                      }}
+                      thumbnail={PUBLIC_API + item.thumbnail}
+                    />
+                  </div>
+                ))}
+            </Row>
+          </Row>
+        </section>
+      </div>
     </Base>
   );
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`${PUBLIC_API}/countries/`);
+  const response = await fetch(`${PUBLIC_API}/destinations/continents/`);
   const countriesResponse = await response.json();
 
   const paths = countriesResponse.map(item => ({
@@ -107,16 +106,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const countryResponse = await fetch(`${PUBLIC_API}/countries/${params.slug}`);
-  const country = await countryResponse.json();
+  const continentResponse = await fetch(
+    `${PUBLIC_API}/destinations/continents/${params.slug}`,
+  );
+  const continent = await continentResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
-  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interestResponse = await fetch(`${PUBLIC_API}/packages/interests/`);
   const interests = await interestResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
@@ -127,7 +128,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      country,
+      continent,
       destinations,
       packagetypes,
       interests,
@@ -138,4 +139,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default Search;
+export default Continent;

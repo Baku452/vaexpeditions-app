@@ -36,7 +36,7 @@ function Index({
         <meta name="Description" content="Explore Multidestinations with VAExpeditions" />
       </Head>
       <Cover
-        destinations={destinations[0].destinations}
+        destinations={destinations}
         banners={banners}
         packagetypes={packagetypes}
         interests={interests}
@@ -56,16 +56,16 @@ export async function getStaticProps() {
   const toursResponse = await fetch(`${PUBLIC_API}/packages/home/`);
   const tours = await toursResponse.json();
 
-  const bannersResponse = await fetch(`${PUBLIC_API}/banners/`);
+  const bannersResponse = await fetch(`${PUBLIC_API}/destinations/banners/`);
   const banners = await bannersResponse.json();
 
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/home/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
-  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interestResponse = await fetch(`${PUBLIC_API}/packages/interests/`);
   const interests = await interestResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);

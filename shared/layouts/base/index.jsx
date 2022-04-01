@@ -7,7 +7,6 @@ function Base({
   destinations,
   packagetypes,
   notifications,
-  // popups,
   packagesAll,
   children,
   pixels,
@@ -22,7 +21,7 @@ function Base({
         pixels={pixels}
       />
       <>{children}</>
-      <Footer continents={destinations} />
+      <Footer destinations={destinations} />
     </>
   );
 }

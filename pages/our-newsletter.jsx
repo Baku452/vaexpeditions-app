@@ -198,10 +198,10 @@ function Newsletter({ destinations, packagetypes, notifications, packagesAll }) 
 }
 
 export async function getStaticProps() {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);

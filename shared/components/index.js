@@ -1,3 +1,4 @@
+/* eslint-disable import/export */
 // ATOMS
 export * from './atoms/icon/index';
 export * from './atoms/acoordion/index';
@@ -8,6 +9,8 @@ export * from './atoms/logo/index';
 export * from './atoms/showMore/index';
 export * from './atoms/navbarFixed/index';
 export * from './atoms/ItemTravelAdvice/index';
+export * from './atoms/clearFilters/index';
+export * from './atoms/hero/index';
 
 // MOLECULES
 export * from './molecules/atypical-item/index';
@@ -39,10 +42,11 @@ export * from './molecules/where-to/index';
 export * from './molecules/banner-2/index';
 export * from './molecules/contactFormB2C/index';
 export * from './molecules/contactFormB2B/index';
-export * from './molecules/hero/index';
+// export * from './molecules/hero/index';
 export * from './molecules/gridTravelAdvice/index';
 export * from './molecules/collaboratorCard/index';
 export * from './molecules/highlitghs/index';
+export * from './molecules/fixedFilter/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
@@ -76,3 +80,5 @@ export * from './organism/faqs-destinations/index';
 export * from './organism/contactPackage/index';
 export * from './organism/travelWithPurpose/index';
 export * from './organism/OurCoreValue/index';
+export * from './organism/listPackages/index';
+export * from './organism/search-filter/index';

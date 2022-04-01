@@ -42,7 +42,7 @@ function Package({
     },
     {
       title: pack.type_name,
-      slug: `/destination/${pack.destination_name.toLowerCase()}/search?types=${
+      slug: `/holiday-types/${pack.destination_name.toLowerCase()}/search?types=${
         pack.package_type
       }`,
     },
@@ -219,13 +219,13 @@ export async function getStaticProps({ params }) {
     headers: headers,
     redirect: 'follow',
   };
-  const response = await fetch(`${PUBLIC_API}/package/${params.slug}`);
+  const response = await fetch(`${PUBLIC_API}/packages/${params.slug}`);
   const pack = await response.json();
 
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);

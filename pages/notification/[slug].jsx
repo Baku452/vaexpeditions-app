@@ -49,10 +49,10 @@ export async function getStaticProps({ params }) {
   const response = await fetch(`${PUBLIC_API}/notification/${params.slug}`);
   const notification = await response.json();
 
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   return { props: { notification, destinations, packagetypes }, revalidate: 1 };

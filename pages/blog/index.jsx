@@ -93,7 +93,7 @@ function BlogPage({
             <Form.Control as="select" onChange={event => handleChangeDestination(event)}>
               <option value="">DESTINATION</option>
               {destinations.length > 0 &&
-                destinations[0].destinations.map(item => (
+                destinations.map(item => (
                   <option value={item.id} key={item.id}>
                     {item.title} - {item.sub_title}
                   </option>
@@ -184,10 +184,10 @@ function BlogPage({
 }
 
 export async function getStaticProps() {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
@@ -202,7 +202,7 @@ export async function getStaticProps() {
   const blogtypes = await fetch(`${PUBLIC_API}/blogtypes/`);
   const blogtypesRes = await blogtypes.json();
 
-  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interestResponse = await fetch(`${PUBLIC_API}/packages/interests/`);
   const interests = await interestResponse.json();
 
   const reqPopularPosts = await fetch(`${PUBLIC_API}/blog/popular/`);

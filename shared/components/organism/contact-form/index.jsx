@@ -189,7 +189,7 @@ function ContactForm({ destinations }) {
                               name="destination_interest"
                               required>
                               <option value="">Destination of interest</option>
-                              {destinations[0]?.destinations.map(item => (
+                              {destinations.map(item => (
                                 <option key={item.title} value={item.title}>
                                   {item.title}
                                 </option>

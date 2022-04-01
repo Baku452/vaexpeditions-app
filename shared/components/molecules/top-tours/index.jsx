@@ -28,7 +28,7 @@ function TopTours({ tours }) {
               <div className="row">
                 {tours.map(item => (
                   <Link key={item.id} href={`/package/${item.slug}`}>
-                    <div className="d-flex col-12 col-md-6 col-lg-6 col-xl-4 pb-4 mb-2">
+                    <a className="d-flex col-12 col-lg-6 col-xl-4 pb-4 mb-2">
                       <div className={`${styles.card} w-100`}>
                         {item.thumbnail ? (
                           <img
@@ -53,7 +53,7 @@ function TopTours({ tours }) {
                           <p className="card-text fs-14 lh-25 p-b-30">{item.summary}</p>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </Link>
                 ))}
               </div>

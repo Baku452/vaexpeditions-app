@@ -82,7 +82,7 @@ function MenuItem({
 }
 
 function MenuContent({
-  continents,
+  destinations,
   destFocused,
   setDestFocused,
   destinationsList,
@@ -94,78 +94,75 @@ function MenuContent({
       <div className={styles.content}>
         <div className="container d-block">
           <div className="row">
-            {continents &&
-              continents.map(continent => (
-                <div key={continent.name} className="col-12">
-                  <h5 className="fw-bold mb-3">
-                    <Link href={`/continent/${continent.slug}`}>
-                      <a
-                        onMouseOver={() => {
-                          setDestFocused([]);
-                          setDestinations([]);
-                        }}
-                        onFocus={() => {
-                          setDestFocused([]);
-                          setDestinations([]);
-                        }}
-                        className="black ">
-                        {continent.name}
-                      </a>
-                    </Link>
-                  </h5>
-                  <div className="row">
-                    <div className="col-3">
-                      {continent.destinations.map(item => (
-                        <MenuItem
-                          key={item.id}
-                          title={item.title}
-                          subtitle={item.sub_title}
-                          id={item.id}
-                          slug={item.slug}
-                          where={item.where}
-                          item={item}
-                          setDestinations={setDestinations}
-                          setDestFocused={setDestFocused}
-                          focusedID={destFocused.id}
-                        />
-                      ))}
-                    </div>
-                    <div className="col-9 p-0">
-                      <div
-                        className={`${
-                          destFocused.id ? 'col-3' : 'a'
-                        }  position-absolute ${styles.itemsSubMenu} `}>
-                        <>
-                          {destinationsList.length > 0 ? (
-                            <ul>
-                              {destinationsList.map(item => (
-                                <li key={item.title}>
-                                  <Link
-                                    href={`/destination/${destFocused.slug}/${item.slug}`}>
-                                    <a> {item.title}</a>
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          ) : (
-                            <div className={`${styles.itemsSubMenu__content} `}>
-                              <h3>Find your Destination</h3>
-                              <h4>VA Expeditions</h4>
-                            </div>
-                          )}
-                        </>
-                      </div>
-                      <div className={`${styles.itemsThumb}`}>
-                        {imageMenu ? (
-                          <img alt={destFocused.title} src={PUBLIC_API + imageMenu} />
-                        ) : (
-                          <img alt={destFocused.title} src="/images/port.jpg" />
-                        )}
-                      </div>
-                    </div>
+            <div className="col-12">
+              <h5 className="fw-bold mb-3">
+                <Link href="/continent/central-and-south-america">
+                  <a
+                    onMouseOver={() => {
+                      setDestFocused([]);
+                      setDestinations([]);
+                    }}
+                    onFocus={() => {
+                      setDestFocused([]);
+                      setDestinations([]);
+                    }}
+                    className="black ">
+                    Central and South America
+                  </a>
+                </Link>
+              </h5>
+              <div className="row">
+                <div className="col-3">
+                  {destinations.map(item => (
+                    <MenuItem
+                      key={item.id}
+                      title={item.title}
+                      subtitle={item.sub_title}
+                      id={item.id}
+                      slug={item.slug}
+                      where={item.where}
+                      item={item}
+                      setDestinations={setDestinations}
+                      setDestFocused={setDestFocused}
+                      focusedID={destFocused.id}
+                    />
+                  ))}
+                </div>
+                <div className="col-9 p-0">
+                  <div
+                    className={`${destFocused.id ? 'col-3' : 'a'}  position-absolute ${
+                      styles.itemsSubMenu
+                    } `}>
+                    <>
+                      {destinationsList.length > 0 ? (
+                        <ul>
+                          {destinationsList.map(item => (
+                            <li key={item.title}>
+                              <Link
+                                href={`/destination/${destFocused.slug}/${item.slug}`}>
+                                <a> {item.title}</a>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <div className={`${styles.itemsSubMenu__content} `}>
+                          <h3>Find your Destination</h3>
+                          <h4>VA Expeditions</h4>
+                        </div>
+                      )}
+                    </>
+                  </div>
+                  <div className={`${styles.itemsThumb}`}>
+                    {imageMenu ? (
+                      <img alt={destFocused.title} src={PUBLIC_API + imageMenu} />
+                    ) : (
+                      <img alt={destFocused.title} src="/images/port.jpg" />
+                    )}
                   </div>
                 </div>
-              ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -190,11 +187,7 @@ function MenuHoliday({ packagetypes }) {
                           <img src={PUBLIC_API + types.svg} alt={types.title} />
                         )}
                       </i>
-                      <Link
-                        href={{
-                          pathname: '/search',
-                          query: { types: types.id },
-                        }}>
+                      <Link href={`/holiday-types/${types.slug}`}>
                         <a>{types.title} </a>
                       </Link>
                     </li>
@@ -210,18 +203,13 @@ function MenuHoliday({ packagetypes }) {
 
 function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
   const router = useRouter();
-  const [destinations, setDestinations] = useState([]);
   const [destFocused, setDestFocused] = useState([]);
   const [itemsAbout, setItemsAbout] = useState(menuAbout[0].submenu);
   const [destinationsList, setDestinationsList] = useState([]);
   const [imageMenu, setImageMenu] = useState();
 
-  const countries = destinationsCurrent;
-
-  function changeCountry(event, id) {
+  function changeCountry(event) {
     event.preventDefault();
-    const destination = countries.filter(item => item.id === id);
-    setDestinations(destination);
   }
 
   function changeAbout(event, id) {
@@ -229,10 +217,6 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
     const about = menuAbout.filter(item => item.id === id);
     setItemsAbout(about[0].submenu);
   }
-
-  useEffect(() => {
-    setDestinations(destinationsCurrent?.filter(item => item.id === 1));
-  }, []);
 
   useEffect(() => {
     setImageMenu(destFocused.image_home);
@@ -274,7 +258,7 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                   Destinations
                 </a>
                 <MenuContent
-                  continents={destinations}
+                  destinations={destinationsCurrent}
                   changeCountry={changeCountry}
                   tailorMade={false}
                   destFocused={destFocused}
@@ -285,11 +269,15 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                 />
               </li>
               <li className={styles.nav}>
-                <a
-                  className={`${active(router.pathname, '/experiences')} ${styles.link}`}
-                  role="button">
-                  Holiday Types
-                </a>
+                <Link href="/holiday-types">
+                  <a
+                    className={`${active(router.pathname, '/experiences')} ${
+                      styles.link
+                    }`}
+                    role="button">
+                    Holiday Types
+                  </a>
+                </Link>
                 <MenuHoliday packagetypes={packagetypes} />
               </li>
               <li className={styles.nav}>

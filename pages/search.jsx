@@ -291,19 +291,17 @@ function Search({ destinations, packagetypes, interests, notifications, packages
 
                   <Collapse open={1}>
                     <CollapseContent1 index={0} title="destinations">
-                      {destinations.map(continent =>
-                        continent.destinations.map(item => (
-                          <Form.Check
-                            key={item.id}
-                            checked={setActionChecked(item.id, checkedDestination)}
-                            type="checkbox"
-                            onChange={event => actionFiltersDestinations(event, item.id)}
-                            name={`type${item.id}`}
-                            id={`type${item.id}`}
-                            label={item.title}
-                          />
-                        )),
-                      )}
+                      {destinations.map(item => (
+                        <Form.Check
+                          key={item.id}
+                          checked={setActionChecked(item.id, checkedDestination)}
+                          type="checkbox"
+                          onChange={event => actionFiltersDestinations(event, item.id)}
+                          name={`type${item.id}`}
+                          id={`type${item.id}`}
+                          label={item.title}
+                        />
+                      ))}
                     </CollapseContent1>
                   </Collapse>
 
@@ -394,13 +392,13 @@ function Search({ destinations, packagetypes, interests, notifications, packages
 }
 
 export async function getStaticProps() {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/home/`);
   const destinations = await destinationsResponse.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
-  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interestResponse = await fetch(`${PUBLIC_API}/packages/interests/`);
   const interests = await interestResponse.json();
 
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);

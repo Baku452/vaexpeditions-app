@@ -10,7 +10,7 @@ import {
 
 import styles from './index.module.scss';
 
-function Footer({ continents }) {
+function Footer({ destinations }) {
   return (
     <>
       <footer className={styles.footer}>
@@ -20,15 +20,13 @@ function Footer({ continents }) {
               <h6 className="text-white fw-bold fs-13 pb-2">DESTINATIONS</h6>
 
               <ul className={`fs-15 list-unstyled ${styles.lista} `}>
-                {continents.map(continent =>
-                  continent.destinations.map(item => (
-                    <li key={item.slug}>
-                      <Link href={`/destination/${item.slug}`}>
-                        <a> {item.title}</a>
-                      </Link>
-                    </li>
-                  )),
-                )}
+                {destinations.map(item => (
+                  <li key={item.slug}>
+                    <Link href={`/destination/${item.slug}`}>
+                      <a> {item.title}</a>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-3 text-start text-white pb-4">

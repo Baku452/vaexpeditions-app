@@ -7,7 +7,7 @@ import { Navigation, Toggle } from '@/components/index';
 
 import styles from './index.module.scss';
 
-function NavToolbar({ destinations, continents, packagetypes }) {
+function NavToolbar({ destinations, packagetypes }) {
   return (
     <Navbar
       id="nav-mobile"
@@ -24,7 +24,7 @@ function NavToolbar({ destinations, continents, packagetypes }) {
         </a>
       </Link>
       <Toggle />
-      <Navigation continents={destinations} packagetypes={packagetypes} />
+      <Navigation destinations={destinations} packagetypes={packagetypes} />
     </Navbar>
   );
 }

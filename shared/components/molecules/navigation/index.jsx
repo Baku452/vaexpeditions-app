@@ -12,7 +12,7 @@ import { menuAbout } from '@/core/index';
 
 import styles from './index.module.scss';
 
-function Navigation({ continents, packagetypes }) {
+function Navigation({ destinations, packagetypes }) {
   return (
     <Navbar.Collapse id="basic-navbar-nav" className={`${styles.nav}`}>
       <Nav className="me-auto mt-1 pt-4">
@@ -22,31 +22,29 @@ function Navigation({ continents, packagetypes }) {
             title="DESTINATIONS"
             link="/continent/central-and-south-america"
             className="">
-            {continents.map(continent =>
-              continent.destinations.map(destination => (
-                <CollapseMenu key={destination.name} open={1}>
-                  <CollapseContentMenu1
-                    index={1}
-                    title={destination.title}
-                    link={`/destination/${destination.slug}`}
-                    className="d-block ">
-                    {destination.where.map(item => (
-                      <Navbar.Toggle key={item.id} className="d-block border-0 p-0">
-                        <Link
-                          key={item}
-                          href={{
-                            pathname: `/destination/${destination.slug}/${item.slug}`,
-                          }}>
-                          <a className="$" key={item.id} name={item.slug} id={item.id}>
-                            {`${item.title}`}
-                          </a>
-                        </Link>
-                      </Navbar.Toggle>
-                    ))}
-                  </CollapseContentMenu1>
-                </CollapseMenu>
-              )),
-            )}
+            {destinations.map(destination => (
+              <CollapseMenu key={destination.name} open={1}>
+                <CollapseContentMenu1
+                  index={1}
+                  title={destination.title}
+                  link={`/destination/${destination.slug}`}
+                  className="d-block ">
+                  {destination.where.map(item => (
+                    <Navbar.Toggle key={item.id} className="d-block border-0 p-0">
+                      <Link
+                        key={item}
+                        href={{
+                          pathname: `/destination/${destination.slug}/${item.slug}`,
+                        }}>
+                        <a className="$" key={item.id} name={item.slug} id={item.id}>
+                          {`${item.title}`}
+                        </a>
+                      </Link>
+                    </Navbar.Toggle>
+                  ))}
+                </CollapseContentMenu1>
+              </CollapseMenu>
+            ))}
           </CollapseContentMenu1>
         </CollapseMenu>
 

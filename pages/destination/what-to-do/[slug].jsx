@@ -85,7 +85,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const destinationsResponse = await fetch(`${PUBLIC_API}/countries/home/`);
+  const destinationsResponse = await fetch(`${PUBLIC_API}/destinations/`);
   const destinations = await destinationsResponse.json();
 
   const fetchDestination = await fetch(`${PUBLIC_API}/destination/${params.slug}`);
@@ -94,10 +94,10 @@ export async function getStaticProps({ params }) {
   const fetchpackages = await fetch(`${PUBLIC_API}/packages/${params.slug}`);
   const SSRPackages = await fetchpackages.json();
 
-  const packagetypesResponse = await fetch(`${PUBLIC_API}/packagestype/home/`);
+  const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
 
-  const interestResponse = await fetch(`${PUBLIC_API}/interests/`);
+  const interestResponse = await fetch(`${PUBLIC_API}/packages/interests/`);
   const interests = await interestResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
