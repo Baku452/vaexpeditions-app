@@ -22,12 +22,14 @@ export default function History({
         <meta
           name="description"
           content="Va Expeditions was founded in 2009. The company came about as a dream of the Hurtado Valencia 
-          brothers to create a business venture in the world of tourism.  René, a professional guide and the actual 
-          CMO of the Company, Amílcar, a philosophy student and assistant manager of the company come from a relatively 
-          large family from the province of Chumbivilcas, found 8 hours away from Cusco, Peru."
+          brothers to create a business venture in the world of tourism."
         />
       </Head>
-      <Banner description="" image="/images/history-of-the-valencia.jpg" alt="weq" />
+      <Banner
+        description=""
+        image="/images/history-of-the-valencia.jpg"
+        alt="Hystory of VA Expeditions"
+      />
 
       <section id="mision_vision">
         <div className="container bc-F7F5F5 mt-5">

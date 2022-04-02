@@ -21,10 +21,9 @@ export default function OurPhilosophy({
         <title>Va Expeditions - Our Philosophy</title>
         <meta
           name="description"
-          content="We wholeheartedly believe that by travelling in a conscientious responsible and sustainable way, 
-          we can connect different cultures and change perspectives about the world. We are fully committed to preserving 
-          the unique magic of local communities, animal species and our natural environment by sharing our knowledge and 
-          that of ancient communities to contribute to making our planet a better place."
+          content="We wholeheartedly believe that by travelling in a conscientious 
+          responsible and sustainable way, we can connect different cultures and change 
+          perspectives about the world."
         />
       </Head>
       <Banner description="" image="/images/our-philosophy.jpg" alt="weq" />

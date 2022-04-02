@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Head from 'next/head';
 
 import { Banner, CardBox } from '@/components/index';
@@ -22,7 +23,8 @@ export default function OurPurpose({
         <title>Va Expeditions - Our Core Values</title>
         <meta
           name="description"
-          content="We fully believe in our people.We promote positive change. We are connected worldwide!.We take care of our environment. "
+          content="We fully believe in our people.We promote positive change. 
+          We are connected worldwide!.We take care of our environment. "
         />
       </Head>
       <Banner description="" image="/images/our-values.jpg" alt="weq" />
@@ -51,6 +53,7 @@ export default function OurPurpose({
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-2">
                   <img
+                    alt="Our Core Values"
                     src="/images/our-purpose/our-core-values/we-believe-in-our-people.jpg"
                     className="img-fluid"
                   />
@@ -60,6 +63,7 @@ export default function OurPurpose({
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
                   <img
+                    alt="Our core Values"
                     src="/images/our-purpose/our-core-values/we-promote-positive-change.jpg"
                     className="img-fluid"
                   />
@@ -89,6 +93,7 @@ export default function OurPurpose({
                 </div>
                 <div className="col-12 col-md-6 mb-5 order-2">
                   <img
+                    alt="Our Core Values"
                     src="/images/our-purpose/our-core-values/we-are-connected-to-the-world.jpg"
                     className="img-fluid"
                   />
@@ -98,6 +103,7 @@ export default function OurPurpose({
               <div className="row mb-5">
                 <div className="col-12 col-md-6 mb-5 order-2 order-md-1">
                   <img
+                    alt="Our Core Values"
                     src="/images/our-purpose/our-core-values/we-take-care-of-our-planet.jpg"
                     className="img-fluid"
                   />

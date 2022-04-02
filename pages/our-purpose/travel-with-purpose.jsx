@@ -26,11 +26,7 @@ export default function OurPurpose({
           name="description"
           content="Va Expeditions wholeheartedly believes that by 
           travelling in a sustainable and conscientious manner, 
-          we can transform the world and connect a myriad of cultures. 
-          For this reason, we are completely committed 
-          to preserving the magic of local communities, wildlife, and 
-          the environment. We want to share our local knowledge 
-          and the wisdom of the native people to contribute to a better world."
+          we can transform the world and connect a myriad of cultures."
         />
       </Head>
       <Banner image="/images/social-responsability2.jpg" alt="weq" />
