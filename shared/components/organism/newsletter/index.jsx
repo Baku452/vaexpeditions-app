@@ -49,12 +49,14 @@ function Newsletter({ packagetypes, packagesAll }) {
             </div>
             <div className="">
               <Link href="/contact-us">
-                <button
-                  type="button"
-                  style={{ backgroundColor: '#a6192e', border: 'none' }}
-                  className="btn btn-primary">
-                  Book Your Adventure!
-                </button>
+                <a>
+                  <button
+                    type="button"
+                    style={{ backgroundColor: '#a6192e', border: 'none' }}
+                    className="btn btn-primary">
+                    Book Your Adventure!
+                  </button>
+                </a>
               </Link>
             </div>
           </div>

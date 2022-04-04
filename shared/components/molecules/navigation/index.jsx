@@ -1,8 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-shadow */
-/* eslint-disable react/no-array-index-key */
 import Link from 'next/link';
-import text from 'node_modules/dom-helpers/cjs/text';
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,7 +12,7 @@ function Navigation({ destinations, packagetypes }) {
   return (
     <Navbar.Collapse id="basic-navbar-nav" className={`${styles.nav}`}>
       <Nav className="me-auto mt-1 pt-4">
-        <CollapseMenu open={1}>
+        <CollapseMenu key={1} keyCollapse={1} open={1}>
           <CollapseContentMenu1
             index={1}
             title="DESTINATIONS"
@@ -48,7 +44,7 @@ function Navigation({ destinations, packagetypes }) {
           </CollapseContentMenu1>
         </CollapseMenu>
 
-        <CollapseMenu open={0}>
+        <CollapseMenu key={2} open={0}>
           <CollapseContentMenu1
             index={0}
             title="HOLIDAY TYPES"
@@ -74,15 +70,15 @@ function Navigation({ destinations, packagetypes }) {
           <a className={`${styles.sub} fs-18 border-bottom `}>Tailor-Made Tours</a>
         </Link>
 
-        <CollapseMenu open={0}>
+        <CollapseMenu key={3} open={0}>
           <CollapseContentMenu1
             index={0}
             title="ABOUT"
             link="/about/who-we-are"
             className={` ${styles.sub} text-uppercase`}>
-            {menuAbout.map((item, index) => (
+            {menuAbout.map(item => (
               <CollapseMenu
-                key={index}
+                key={item.titulo}
                 open={1}
                 className={` ${styles.sub} text-uppercase`}>
                 <CollapseContentMenu1
@@ -90,11 +86,11 @@ function Navigation({ destinations, packagetypes }) {
                   title={item.titulo}
                   link={item.slug}
                   className={` ${styles.sub} text-uppercase`}>
-                  {item.submenu.map((submenu, index) => (
+                  {item.submenu.map(submenu => (
                     <Navbar.Toggle
-                      key={index}
+                      key={submenu.id}
                       className={` ${styles.sub} d-block border-0 p-0 `}>
-                      <Link key={index} href={submenu.slug}>
+                      <Link href={submenu.slug}>
                         <a
                           className="d-block"
                           key={submenu.id}
@@ -111,14 +107,14 @@ function Navigation({ destinations, packagetypes }) {
           </CollapseContentMenu1>
         </CollapseMenu>
 
-        <Link key="bl" href="/blog">
+        <Link key="blog" href="/blog">
           <a className={`${styles.sub} fs-16 border-bottom`}>Passion Passport - Blog</a>
         </Link>
         <div className={`${styles.boxNav}`}>
-          <Link key="cu" href="/contact-us">
+          <Link key="contact" href="/contact-us">
             <a className="text-dark">Contact Us</a>
           </Link>
-          <Link key="cu" href="/our-newsletter">
+          <Link key="newsletter" href="/our-newsletter">
             <a className="text-dark">Sign Up for Email</a>
           </Link>
           <a href="tel:1-(888) 803-8004">Call Us 1-(888) 803-8004</a>

@@ -82,3 +82,4 @@ export * from './organism/travelWithPurpose/index';
 export * from './organism/OurCoreValue/index';
 export * from './organism/listPackages/index';
 export * from './organism/search-filter/index';
+export * from './organism/contactFormPackage/index';

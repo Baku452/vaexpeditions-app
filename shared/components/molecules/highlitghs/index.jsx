@@ -1,15 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/no-danger */
-
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './index.module.scss';
 
 function Highligths({ item: highligths }) {
-  const router = useRouter();
   return (
     <section className="py-5 background2">
       <div className="container">
@@ -39,8 +32,6 @@ function Highligths({ item: highligths }) {
           {highligths
             ? highligths.map(item => (
                 <SwiperSlide className="d-inline-block" key={highligths.id}>
-                  {/* <Link 
-                  href={`${router.asPath}/search?where_to_go=${item.id}`} passHref> */}
                   <div className={` ${styles.card}`}>
                     <div className="vacation position-relative">
                       {item.thumbnail != null ? (
@@ -56,7 +47,6 @@ function Highligths({ item: highligths }) {
                       <p className="fs-15 lh-27 p-3">{item.summary}</p>
                     </div>
                   </div>
-                  {/* </Link> */}
                 </SwiperSlide>
               ))
             : null}

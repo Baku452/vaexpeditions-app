@@ -1,20 +1,18 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
 import { ContactForm, Hero2 } from '@/components/index';
 import { Base } from '@/layouts/index';
+import { fetchCities } from '@/utils/citiesApi';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function ContactUs({ destinations, packagetypes, packages, notifications, packagesAll }) {
-  const router = useRouter();
-  const [pack, setPack] = useState('');
-
-  useEffect(() => {
-    if (router?.query?.package) setPack(router?.query?.package);
-  }, [router]);
-
+function ContactUs({
+  destinations,
+  packagetypes,
+  notifications,
+  packagesAll,
+  resCities,
+}) {
   return (
     <Base
       destinations={destinations}
@@ -22,14 +20,14 @@ function ContactUs({ destinations, packagetypes, packages, notifications, packag
       notifications={notifications}
       packagesAll={packagesAll}>
       <Head>
-        <title>Contact Us - Va Expeditions</title>
+        <title>Contact Us | Va Expeditions</title>
         <meta
           name="Description"
           content="Contact Us to Explore Multidestinations with VAExpeditions"
         />
       </Head>
       <Hero2 title="Contact US" image="/images/contact.jpg" alt="contact us" />
-      <ContactForm destinations={destinations} packages={packages} pack={pack} />
+      <ContactForm destinations={destinations} cities={resCities} />
     </Base>
   );
 }
@@ -39,21 +37,22 @@ export async function getStaticProps() {
   const destinations = await responseTypes.json();
   const packagetypesResponse = await fetch(`${PUBLIC_API}/packages/types/home/`);
   const packagetypes = await packagetypesResponse.json();
-  const packagesResponse = await fetch(`${PUBLIC_API}/packages/`);
-  const packages = await packagesResponse.json();
+
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
   const packagesRes = await fetch(`${PUBLIC_API}/packages/titles/`);
   const packagesAll = await packagesRes.json();
 
+  const resCities = await fetchCities();
+
   return {
     props: {
       destinations,
       packagetypes,
-      packages,
       notifications,
       packagesAll,
+      resCities,
     },
     revalidate: 60,
   };
