@@ -3,7 +3,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import {
-  Associations,
+  // Associations,
   Cover,
   OurRecommendations,
   SubNewsletter,
@@ -47,7 +47,7 @@ function Index({
       <TopTours tours={tours} />
       <WaysToSave />
       <SubNewsletter />
-      <Associations />
+      {/* <Associations /> */}
     </Base>
   );
 }

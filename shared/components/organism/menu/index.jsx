@@ -321,12 +321,14 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
             {fixed ? (
               <div className="col-auto">
                 <Link href="/contact-us">
-                  <button
-                    type="button"
-                    style={{ backgroundColor: '#a6192e', border: 'none' }}
-                    className="btn btn-primary">
-                    Book Your Adventure!
-                  </button>
+                  <a>
+                    <button
+                      type="button"
+                      style={{ backgroundColor: '#a6192e', border: 'none' }}
+                      className="btn btn-primary">
+                      Book Your Adventure!
+                    </button>
+                  </a>
                 </Link>
               </div>
             ) : null}

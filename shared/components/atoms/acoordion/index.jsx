@@ -1,6 +1,4 @@
-/* eslint-disable react/jsx-pascal-case */
 /* eslint-disable react/button-has-type */
-/* eslint-disable no-unused-vars */
 import Link from 'next/link';
 import { useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
@@ -124,9 +122,13 @@ function CollapseContent3({ index, title, children }) {
   );
 }
 
-function CollapseMenu({ children, open = 0 }) {
+function CollapseMenu({ keyCollapse, children }) {
   return (
-    <Accordion defaultActiveKey="0" flush className={`${styles.accordion} flush `}>
+    <Accordion
+      key={keyCollapse}
+      defaultActiveKey="0"
+      flush
+      className={`${styles.accordion} flush `}>
       {children}
     </Accordion>
   );
@@ -153,18 +155,12 @@ function CollapseContentMenu({ title, link, children }) {
           <a className="p-0">{title}</a>
         </Link>
       </Accordion.Header>
-
-      {/* <Accordion.Collapse eventKey={1}> */}
       <Accordion.Body className="py-0">{children}</Accordion.Body>
-      {/* </Accordion.Collapse> */}
     </>
   );
 }
 
-function CollapseContentMenu2({ title, link, children }) {
-  function getColor(colorIndex) {
-    return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
-  }
+function CollapseContentMenu2({ title, children }) {
   return (
     <>
       <Accordion defaultActiveKey="0" flush className={` flush `}>

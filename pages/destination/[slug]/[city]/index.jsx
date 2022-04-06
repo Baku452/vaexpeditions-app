@@ -172,9 +172,6 @@ export async function getStaticPaths() {
   const response = await fetch(`${PUBLIC_API}/destinations/cities/`);
   const countriesResponse = await response.json();
 
-  // const responseDestinations = await fetch(`${PUBLIC_API}/cities/`);
-  // const destinationsResponse = await responseDestinations.json();
-
   const paths = countriesResponse.map(item => ({
     params: { city: item.slug, slug: item.slug_destination },
   }));
@@ -198,12 +195,9 @@ export async function getStaticProps({ params }) {
   const packagetypes = await packagetypesResponse.json();
 
   const fetchpackages = await fetch(
-    `${PUBLIC_API}/packages/destination/${params.slug}/city/${params.city}`,
+    `${PUBLIC_API}/packages/${params.slug}/city/${params.city}`,
   );
   const SSRPackages = await fetchpackages.json();
-
-  const interestResponse = await fetch(`${PUBLIC_API}/packages/interests/`);
-  const interests = await interestResponse.json();
 
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
@@ -213,7 +207,6 @@ export async function getStaticProps({ params }) {
       city,
       destinations,
       packagetypes,
-      interests,
       notifications,
       SSRDestination,
       SSRPackages,

@@ -117,7 +117,7 @@ function Destination({
             : null}
         </div>
       </section>
-      <section id="highligths" className=" py-5 background2">
+      <section id="highlights" className=" py-5 background2">
         <div className="containerBox">
           <Highligths item={SSRDestination?.highligths} />
         </div>
@@ -177,7 +177,7 @@ function Destination({
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`${PUBLIC_API}/destinations/everyone/`);
+  const response = await fetch(`${PUBLIC_API}/destinations/`);
   const countriesResponse = await response.json();
 
   const paths = countriesResponse.map(item => ({
@@ -193,11 +193,6 @@ export async function getStaticProps({ params }) {
 
   const fetchDestination = await fetch(`${PUBLIC_API}/destinations/${params.slug}`);
   const SSRDestination = await fetchDestination.json();
-
-  const fetchCity = await fetch(
-    `${PUBLIC_API}/destinations/city/${params.slug}/${params.city}`,
-  );
-  const city = await fetchCity.json();
 
   const fetchpackages = await fetch(`${PUBLIC_API}/packages/featured/${params.slug}`);
   const SSRPackages = await fetchpackages.json();
@@ -215,7 +210,6 @@ export async function getStaticProps({ params }) {
       destinations,
       packagetypes,
       notifications,
-      city,
     },
     revalidate: 60,
   };

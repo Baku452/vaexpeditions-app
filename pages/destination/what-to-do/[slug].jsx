@@ -74,7 +74,7 @@ function Search({
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`${PUBLIC_API}/destinations/everyone/`);
+  const response = await fetch(`${PUBLIC_API}/destinations/`);
   const countriesResponse = await response.json();
 
   const paths = countriesResponse.map(item => ({

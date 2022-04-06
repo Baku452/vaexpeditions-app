@@ -7,6 +7,28 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Approach';
+  src: url('/fonts/Approach-SemiBold.otf');
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Approach';
+  src: url('/fonts/Approach-Bold.otf');
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Approach';
+  src: url('/fonts/Approach-Regular.otf');
+  font-style: normal;
+  font-display: block;
+  font-weight: 400;
+}
+
 $navbar-light-color: #000 !important;
 $btn-border-radius: 0;
 $input-border-radius: 0;
@@ -26,6 +48,7 @@ $theme-colors: (
   'primary': #0095ce,
   'secondary': #000,
 );
+$link-color: #0095ce;
 $container-max-widths: (
   sm: 540px,
   md: 720px,
