@@ -35,8 +35,7 @@ function Unsubscribe({ destinations, packagetypes, notifications, packagesAll })
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      packagesAll={packagesAll}
-    >
+      packagesAll={packagesAll}>
       <Head>
         <title>Unsubscribe Newsletter | Valencia Travel</title>
       </Head>
@@ -50,8 +49,7 @@ function Unsubscribe({ destinations, packagetypes, notifications, packagesAll })
                   noValidate
                   // action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
                   method="DELETE"
-                  onSubmit={handleSubmit}
-                >
+                  onSubmit={handleSubmit}>
                   {/* <input type="hidden" name="oid" value="00D1N000000GccP" />
                   <input
                     type="hidden"

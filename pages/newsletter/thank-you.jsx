@@ -14,8 +14,7 @@ function Unsubscribe({ destinations, packagetypes, notifications, packagesAll, t
       destinations={destinations}
       packagetypes={packagetypes}
       notifications={notifications}
-      packagesAll={packagesAll}
-    >
+      packagesAll={packagesAll}>
       <Head>
         <title>Thank you for your subscription | Valencia Travel Cusco</title>
       </Head>
