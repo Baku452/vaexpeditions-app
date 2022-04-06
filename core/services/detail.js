@@ -1,7 +1,7 @@
 import { citiesData, services } from '../middlewares/index';
 
 function getPackageDetail({ slug = '' }) {
-  return services({ url: `/package/${slug}`, method: 'GET' })
+  return services({ url: `/packages/${slug}`, method: 'GET' })
     .then(result => {
       return { result };
     })
@@ -55,11 +55,21 @@ function saveTailorForm({ data }) {
       return { result };
     })
     .catch(error => {
-      return { error: error.reponse };
+      return { error: error.response };
     });
 }
 function saveNewsletter({ data }) {
   return services({ url: `/newsletter/`, method: 'POST', data })
+    .then(result => {
+      return { result };
+    })
+    .catch(error => {
+      return { error: error.response };
+    });
+}
+
+function removeNewsletter({ email }) {
+  return services({ url: `/newsletter/${email}`, method: 'DELETE' })
     .then(result => {
       return { result };
     })
@@ -100,4 +110,5 @@ export {
   saveTailorForm,
   getStates,
   getCities,
+  removeNewsletter,
 };
