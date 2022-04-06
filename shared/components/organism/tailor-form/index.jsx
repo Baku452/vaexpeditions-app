@@ -317,7 +317,7 @@ function TailorForm({ destinations, types }) {
                 </Form.Control>
               </Form.Group>
             </Row>
-            <Row className="mb-3">
+            {/* <Row className="mb-3">
               <Col lg={12}>
                 <h4 className="fs-18 pb-3">Include international Flights?</h4>
               </Col>
@@ -341,7 +341,7 @@ function TailorForm({ destinations, types }) {
                   label="No"
                 />
               </Form.Group>
-            </Row>
+            </Row> */}
             <Row className="mb-3">
               <Col lg={12}>
                 <h4 className="fs-18 pb-3">Budget per Person</h4>

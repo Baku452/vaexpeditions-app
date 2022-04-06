@@ -7,7 +7,7 @@ function Highligths({ item: highligths }) {
     <section className="py-5 background2">
       <div className="container">
         <h2 className="title2 py-4">
-          Highligths in <span className="fw-semi-bold">{}</span>
+          Highlights in <span className="fw-semi-bold">{}</span>
         </h2>
         <Swiper
           autoplay={{

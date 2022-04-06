@@ -117,7 +117,7 @@ function Destination({
             : null}
         </div>
       </section>
-      <section id="highligths" className=" py-5 background2">
+      <section id="highlights" className=" py-5 background2">
         <div className="containerBox">
           <Highligths item={SSRDestination?.highligths} />
         </div>

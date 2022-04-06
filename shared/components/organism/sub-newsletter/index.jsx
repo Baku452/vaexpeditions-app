@@ -23,7 +23,7 @@ function SubNewsletter() {
       const formDataEntries = Object.fromEntries(formData.entries());
 
       router.push({
-        pathname: '/our-newsletter',
+        pathname: '/newsletter',
         query: { email: formDataEntries.email },
       });
     }

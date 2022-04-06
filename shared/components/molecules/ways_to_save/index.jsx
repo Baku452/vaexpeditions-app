@@ -14,7 +14,7 @@ function WaysToSave() {
           <div className="col-lg-3 col-sm-6 text-center">
             <div className={`${styles.item}`}>
               <Link href="/our-newsletter">
-                <div>
+                <a>
                   <img
                     alt="subscribe for deals"
                     src="icons/subscribe_for_deals.svg"
@@ -23,14 +23,14 @@ function WaysToSave() {
                   <div className="card-body">
                     <a>Subscribe Newsletter</a>
                   </div>
-                </div>
+                </a>
               </Link>
             </div>
           </div>
           <div className="col-lg-3 col-sm-6 text-center">
             <div className={`${styles.item}`}>
               <Link href="/friends-and-family-discounts">
-                <div>
+                <a>
                   <img
                     alt="friends and family"
                     src="icons/friends_and_family.svg"
@@ -39,14 +39,14 @@ function WaysToSave() {
                   <div className="card-body">
                     <a>Friends and Family Discounts</a>
                   </div>
-                </div>
+                </a>
               </Link>
             </div>
           </div>
           <div className="col-lg-3 col-sm-6 text-center">
             <div className={`${styles.item}`}>
               <Link href="/refer-a-friend">
-                <div>
+                <a>
                   <img
                     alt="referral Credits"
                     src="icons/refer_a_friends.svg"
@@ -55,14 +55,14 @@ function WaysToSave() {
                   <div className="card-body">
                     <a>Refer a Friend</a>
                   </div>
-                </div>
+                </a>
               </Link>
             </div>
           </div>
           <div className="col-lg-3 col-sm-6 text-center">
             <div className={`${styles.item}`}>
               <Link href="/cuopons-discounts">
-                <div>
+                <a>
                   <img
                     alt="coupons and discounts"
                     src="icons/coupons and discounts.svg"
@@ -71,7 +71,7 @@ function WaysToSave() {
                   <div className="card-body">
                     <a>Special Promotions</a>
                   </div>
-                </div>
+                </a>
               </Link>
             </div>
           </div>

@@ -248,8 +248,8 @@ function SearchDestination({
             <button
               type="button"
               data-toggle="dropdown"
-              className="w-100 btn btn-primary btn-block filter-actions dropdown-toggle"
-              onClick={() => setShowFilters(true)}>
+              className="w-100 btn btn-primary btn-block filter-actions "
+              onClick={() => setShowFilters(!showFilters)}>
               Filter By
             </button>
           </div>
@@ -267,15 +267,15 @@ function SearchDestination({
           </div>
         </div>
       </div>
-      <section id="tours_all">
+      <section id="filters">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <div className="row">
                 <div
-                  className={`${styles.aside} ${
-                    showFilters ? 'd-block' : 'd-none'
-                  }  d-none d-lg-block col-12 col-lg-3 p-0`}>
+                  className={` ${
+                    showFilters ? 'd-lg-block' : 'd-none'
+                  } d-lg-block col-12 col-lg-3 py-4 ${styles.aside}`}>
                   <div
                     // eslint-disable-next-line max-len
                     className={`${styles.asideHeaderMobile} d-block d-lg-none pt-3 pb-3 fixed-top`}>

@@ -17,8 +17,8 @@ const navDestinations = [
   },
   {
     id: 4,
-    title: 'Highligths',
-    slug: 'highligths',
+    title: 'Highlights',
+    slug: 'highlights',
   },
   {
     id: 5,

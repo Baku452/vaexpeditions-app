@@ -42,11 +42,11 @@ export * from './molecules/where-to/index';
 export * from './molecules/banner-2/index';
 export * from './molecules/contactFormB2C/index';
 export * from './molecules/contactFormB2B/index';
-// export * from './molecules/hero/index';
 export * from './molecules/gridTravelAdvice/index';
 export * from './molecules/collaboratorCard/index';
 export * from './molecules/highlitghs/index';
 export * from './molecules/fixedFilter/index';
+export * from './molecules/formNewsletter/index';
 
 // ORGANISM
 export * from './organism/stiky-box/index';
