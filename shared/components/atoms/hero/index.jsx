@@ -175,8 +175,8 @@ function HeroBlogSlug({ title, image, alt, navBreadcrums, time }) {
               </Link>
             </li>
             <li>
-              <Link href="/passion-passport">
-                <a href="/passion-passport">Passion Passport</a>
+              <Link href="/blog">
+                <a>Blog</a>
               </Link>
             </li>
             {navBreadcrums.map(item => (
