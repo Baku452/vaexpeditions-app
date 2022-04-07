@@ -124,35 +124,29 @@ function BlogPage({
           </div>
         </section>
       </div>
-      <div className="">
-        <section className="">
-          <div className="col-12">
-            <section className="mx-auto">
-              {postList
-                ? postList.map(item => (
-                    <div key={item.slug} className="col-12">
-                      <BlogCard
-                        key={item.title}
-                        title={item.title}
-                        summary={item.summary}
-                        destination={item.destination}
-                        slug={item.slug}
-                        thumbnail={item.thumbnail}
-                        description={item.content}
-                        type={item.type_name}
-                        time={item.time_reading}
-                      />
-                    </div>
-                  ))
-                : null}
-              {postList && postList.length < numberPosts ? (
-                <ShowMore eventHandler={handleMoreitems} />
-              ) : null}
-            </section>
-          </div>
-        </section>
-      </div>
-      <section className="px-3 pb-4 background2 col-12">
+      <section className="row mx-auto containerBox">
+        {postList
+          ? postList.map(item => (
+              <div key={item.slug} className="col-12">
+                <BlogCard
+                  key={item.title}
+                  title={item.title}
+                  summary={item.summary}
+                  destination={item.destination}
+                  slug={item.slug}
+                  thumbnail={item.thumbnail}
+                  description={item.content}
+                  type={item.type_name}
+                  time={item.time_reading}
+                />
+              </div>
+            ))
+          : null}
+        {postList && postList.length < numberPosts ? (
+          <ShowMore eventHandler={handleMoreitems} />
+        ) : null}
+      </section>
+      <section className="px-3 pb-4 background2 ">
         <div className="row mx-auto">
           <div className="col-12 p-5">
             <h2 className={`${styles.posts} fs-30 fw-bold text-center`}>
