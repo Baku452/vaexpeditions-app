@@ -9,7 +9,7 @@ import { Modal } from 'react-bootstrap';
 import { FaEnvelope, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { EmailShareButton, FacebookShareButton, TwitterShareButton } from 'react-share';
 
-import { BlogCard2, HeroBlog2 } from '@/components/index';
+import { BlogCard2, HeroBlogSlug } from '@/components/index';
 import { bloggerAPI } from '@/core/index';
 import { Base } from '@/layouts/index';
 
@@ -69,7 +69,7 @@ function BlogPost({
       </Head>
 
       {blog?.banner ? (
-        <HeroBlog2
+        <HeroBlogSlug
           title={blog?.title}
           description={blog?.title}
           image={PUBLIC_API + blog?.banner}
@@ -79,8 +79,8 @@ function BlogPost({
         />
       ) : null}
 
-      <div className={`containerBox row  ${styles.text}`}>
-        <section className={`${styles.boxMeta} containerBox pt-3 col-10 `}>
+      <div className={`containerBox row ${styles.text}`}>
+        <section className={`${styles.boxMeta} pt-3 col-10 `}>
           <div className="d-flex py-3">
             <h4 className="pe-3 border-right text-muted d-flex">
               Written by:
@@ -150,7 +150,7 @@ function BlogPost({
         </section>
       </div>
 
-      <section className="px-3 pb-4 background2 col-12">
+      <section className="px-3 pb-4 background2">
         <div className="row mx-auto">
           <div className="col-12 p-5">
             <h2 className={`${styles.posts} fs-30 fw-bold text-center`}>

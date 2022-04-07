@@ -275,10 +275,11 @@
     @media (max-width: $md) {
       background-color: rgb(255, 255, 255);
       position: absolute;
-      top: 0px;
-      left: 0px;
+      top: 0;
+      left: 0;
       padding-left: 10px;
       width: 100%;
+      margin: 0;
       margin-bottom: 0 !important;
       padding-top: 10px;
     }

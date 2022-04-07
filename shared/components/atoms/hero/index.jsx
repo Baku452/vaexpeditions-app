@@ -152,7 +152,6 @@ function Hero3({ title, image, images, alt, breadcrumbs }) {
                   <section>
                     <h2>{item?.subtitle}</h2>
                   </section>
-                  )
                 </SwiperSlide>
               ))
             : null}
