@@ -73,7 +73,7 @@ function CollapseContent1({ index, title, children }) {
     return (colorIndex + 1) % 2 === 0 ? '#ffffff' : '#f2f2f2';
   }
   return (
-    <Accordion defaultActiveKey={1}>
+    <Accordion key={index} defaultActiveKey={1}>
       <Card.Header className={`${styles.header}`}>
         <ContextAwareToggle eventKey={index + 1} className={getColor(index)}>
           <h2 className="fs-16 m-0  p-0">{title}</h2>

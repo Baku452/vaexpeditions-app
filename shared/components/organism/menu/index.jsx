@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import Link from 'next/link';
@@ -10,9 +13,9 @@ import styles from './index.module.scss';
 
 const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function MenuAbout({ items, changeAbout }) {
+function MenuAbout({ stateShow, setShowMenu, items, changeAbout }) {
   return (
-    <div className={`${styles.menu}`}>
+    <div className={`${styles.menu} ${!stateShow ? 'd-none' : 'd-block'}`}>
       <div className={`${styles.content} `}>
         <div className="container ">
           <div className="row">
@@ -25,6 +28,7 @@ function MenuAbout({ items, changeAbout }) {
                       <ul className={`${styles.itemsAbout}`}>
                         <Link href={item.slug}>
                           <li
+                            onClick={() => setShowMenu(false)}
                             onFocus={event => changeAbout(event, item.id)}
                             onMouseOver={event => changeAbout(event, item.id)}>
                             {item.titulo}
@@ -58,6 +62,7 @@ const handleFocus = (item, where, setDestinations, setDestFocused) => {
   setDestinations(where);
 };
 function MenuItem({
+  setShowMenu,
   id,
   title,
   slug,
@@ -71,6 +76,8 @@ function MenuItem({
     <div className={`${styles.itemsMenu} `}>
       <Link href={`/destination/${slug}`}>
         <a
+          role="button"
+          onClick={() => setShowMenu(false)}
           onFocus={() => handleFocus(item, where, setDestinations, setDestFocused)}
           onMouseOver={() => handleFocus(item, where, setDestinations, setDestFocused)}
           className={`${styles.route} ${id === focusedID ? 'active' : ''} me-5`}>
@@ -82,6 +89,8 @@ function MenuItem({
 }
 
 function MenuContent({
+  stateShow,
+  setShowMenu,
   destinations,
   destFocused,
   setDestFocused,
@@ -90,7 +99,7 @@ function MenuContent({
   imageMenu,
 }) {
   return (
-    <div className={styles.menu}>
+    <div className={`${styles.menu} ${!stateShow ? 'd-none' : 'd-block'}`}>
       <div className={styles.content}>
         <div className="container d-block">
           <div className="row">
@@ -115,6 +124,7 @@ function MenuContent({
                 <div className="col-3">
                   {destinations.map(item => (
                     <MenuItem
+                      setShowMenu={setShowMenu}
                       key={item.id}
                       title={item.title}
                       subtitle={item.sub_title}
@@ -170,9 +180,9 @@ function MenuContent({
   );
 }
 
-function MenuHoliday({ packagetypes }) {
+function MenuHoliday({ stateShow, setShowMenu, packagetypes }) {
   return (
-    <div className={styles.menu}>
+    <div className={` ${styles.menu} ${!stateShow ? 'd-none' : 'd-block'}`}>
       <div className={styles.content}>
         <div className="container d-block">
           <div className="row">
@@ -188,7 +198,9 @@ function MenuHoliday({ packagetypes }) {
                         )}
                       </i>
                       <Link href={`/holiday-types/${types.slug}`}>
-                        <a>{types.title} </a>
+                        <a role="button" onClick={() => setShowMenu(false)}>
+                          {types.title}{' '}
+                        </a>
                       </Link>
                     </li>
                   ))}
@@ -205,6 +217,9 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
   const router = useRouter();
   const [destFocused, setDestFocused] = useState([]);
   const [itemsAbout, setItemsAbout] = useState(menuAbout[0].submenu);
+  const [showMenuDestinations, setShowMenuDestinations] = useState(false);
+  const [showMenuHoliday, setshowMenuHoliday] = useState(false);
+  const [showMenuAbout, setshowMenuAbout] = useState(false);
   const [destinationsList, setDestinationsList] = useState([]);
   const [imageMenu, setImageMenu] = useState();
 
@@ -243,10 +258,13 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
               </Link>
             ) : null}
             <ul className="navbar-nav">
-              <li className={styles.nav}>
+              <li
+                className={styles.nav}
+                onMouseOver={() => {
+                  setShowMenuDestinations(true);
+                }}
+                onMouseLeave={() => setShowMenuDestinations(false)}>
                 <a
-                  className={`${active(router.pathname, '/search')} ${styles.link}`}
-                  role="button"
                   onMouseOver={() => {
                     setDestFocused([]);
                     setDestinationsList([]);
@@ -254,10 +272,14 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                   onFocus={() => {
                     setDestFocused([]);
                     setDestinationsList([]);
-                  }}>
+                  }}
+                  className={`${active(router.pathname, '/search')} ${styles.link}`}
+                  role="button">
                   Destinations
                 </a>
                 <MenuContent
+                  stateShow={showMenuDestinations}
+                  setShowMenu={setShowMenuDestinations}
                   destinations={destinationsCurrent}
                   changeCountry={changeCountry}
                   tailorMade={false}
@@ -268,7 +290,10 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                   imageMenu={imageMenu}
                 />
               </li>
-              <li className={styles.nav}>
+              <li
+                className={styles.nav}
+                onMouseOver={() => setshowMenuHoliday(true)}
+                onMouseLeave={() => setshowMenuHoliday(false)}>
                 <Link href="/holiday-types">
                   <a
                     className={`${active(router.pathname, '/experiences')} ${
@@ -278,7 +303,11 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                     Holiday Types
                   </a>
                 </Link>
-                <MenuHoliday packagetypes={packagetypes} />
+                <MenuHoliday
+                  stateShow={showMenuHoliday}
+                  setShowMenu={setshowMenuHoliday}
+                  packagetypes={packagetypes}
+                />
               </li>
               <li className={styles.nav}>
                 <Link href="/tailor-made-tour">
@@ -291,7 +320,10 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                   </a>
                 </Link>
               </li>
-              <li className={styles.nav}>
+              <li
+                className={styles.nav}
+                onMouseOver={() => setshowMenuAbout(true)}
+                onMouseLeave={() => setshowMenuAbout(false)}>
                 <Link href="/about/who-we-are">
                   <a
                     className={`${active(router.pathname, '/about/who-we-are')} ${
@@ -301,7 +333,12 @@ function Menu({ destinations: destinationsCurrent, packagetypes, fixed }) {
                     About
                   </a>
                 </Link>
-                <MenuAbout items={itemsAbout} changeAbout={changeAbout} />
+                <MenuAbout
+                  stateShow={showMenuAbout}
+                  setShowMenu={setshowMenuAbout}
+                  items={itemsAbout}
+                  changeAbout={changeAbout}
+                />
               </li>
               <li className={styles.nav}>
                 <Link href="/blog">
